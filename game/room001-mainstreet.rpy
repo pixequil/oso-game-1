@@ -12,7 +12,7 @@ label firstscene:
 
     show item butterfly_package # TODO: #10 needs image!
     "Received the {b}Butterfly Package{/b}!"
-    $ item_butterfly_package_flag = True
+    $ item_butterfly_package = True
     hide item butterfly_package
 
     btnet "_" # parting remarks

@@ -4,7 +4,7 @@ label start:
 
     # setting all the flags to false (is there really no better way to do this?) (prepared to sound stupid)
     $ win_flag = False
-    $ item_butterfly_package_flag = False
+    $ item_butterfly_package = False
     $ party_bs = False
 
     scene bg room

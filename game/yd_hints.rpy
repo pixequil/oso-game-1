@@ -13,7 +13,7 @@ label yd_hints:
         yd "you won; no need to have a hint" # yd explains you dont need hints because you won. or something. replace later
         return
 
-    elif item_butterfly_package_flag:
+    elif item_butterfly_package:
 
         yd "hint for if you just started the game" # TODO: #6 game start hint
         return
