@@ -29,8 +29,8 @@ init python:
        
         if event == "show":
             speaking = name
-        elif event == "slow_done":
-            speaking = None
+        # elif event == "slow_done":
+        #     speaking = None
         elif event == "end":
             speaking = None
   
@@ -82,5 +82,8 @@ label chartest:
     yd "Welcome to the character test room. I get to talk first."
     p "No fair!! Haha, well at least I get to stop talking when I'm not talking. Jealous?"
     yd "Yeah..."
+    p "Well, what if I want to have an inner monologue?"
+    show posty neutral quiet
+    p "{i}How's this?{/i}"
 
     
