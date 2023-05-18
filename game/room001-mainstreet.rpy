@@ -10,7 +10,7 @@ label firstscene:
     p "_" # TODO: #7 conversation where BT Net gives Posty the butterflies
     btnet "_"
 
-    show item butterfly_package # TODO: needs image!
+    show item butterfly_package # TODO: #10 needs image!
     "Received the {b}Butterfly Package{/b}!"
     $ item_butterfly_package_flag = True
     hide item butterfly_package
