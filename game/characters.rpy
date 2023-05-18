@@ -209,7 +209,7 @@ image posty astonished quiet:
 init python: # code taken from https://essrenpytutorials.page/animating-an-image-in-renpy-automatically/
     def next_frame(t, st, at):
         global animation_frame
-        if animation_frame < 18: # todo: change frame amount from being hardcoded, to instead be a variable you can pass to the function
+        if animation_frame < 18: # todo: #3 change frame amount from being hardcoded, to instead be a variable you can pass to the function
             animation_frame += 1
         # else:
         #     animation_frame = 1
