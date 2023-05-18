@@ -6,13 +6,12 @@ image posty neutral:
     "talksprites/posty/posty_neutral_open.png"
     zoom 2.2
     xalign -0.05
-#    yalign 0.7
     pause 0.2
     "talksprites/posty/posty_neutral_close.png"
     pause 0.2
     repeat
 
-# lalala
+# Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
 
