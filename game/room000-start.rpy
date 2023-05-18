@@ -18,4 +18,3 @@ label start:
         "Developer testing room.":
             jump chartest
 
-    return
