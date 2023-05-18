@@ -298,7 +298,7 @@ image bs follow talk:
     "talksprites/brandsoda_open.png"
     xzoom -1.0
     zoom 1.2
-    xalign 1.0
+    xalign 0.35
     pause 0.2
     "talksprites/brandsoda_close.png"
     pause 0.2
@@ -307,7 +307,7 @@ image bs follow quiet:
     "talksprites/brandsoda_close.png"
     xzoom -1.0
     zoom 1.2
-    xalign 1.0
+    xalign 0.35
 
 
 
