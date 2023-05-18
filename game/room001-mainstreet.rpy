@@ -29,13 +29,21 @@ label firstscene:
 
 label mainstreet:
 
+    scene bg mainstreet with fade
+    show posty neutral
+
     p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
 
     menu:
         "Talk to someone.":
             jump .talk
         "Go somewhere.":
-            jump .go
+            if party_bs:
+                show bs follow behind posty
+                bs "_" #TODO: thing for Brand Soda to say to prevent you from leaving main street
+                jump mainstreet
+            else:
+                jump .go
 
 label .talk:
 
@@ -70,3 +78,25 @@ label .go:
             jump park
         "The Dome":
             jump dome
+
+label .brandsoda:
+
+    scene bg mainstreet
+    show posty neutral
+    show bs behind posty
+
+    p "_" # TODO: conversation where Brand Soda decides to follow you
+    bs "_"
+
+    show bs follow with move:
+        xalign 0.35
+    
+    bs "__"
+    $ party_bs = True
+    "{b}{color=#df7dff}Brand Soda{/color}{/b} joined your party!"
+
+    p "_"
+
+    jump mainstreet
+
+
