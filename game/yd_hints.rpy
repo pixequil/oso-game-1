@@ -9,17 +9,19 @@ label yd_hints:
     show yd
     
     if win_flag:
-
         yd "you won; no need to have a hint" # yd explains you dont need hints because you won. or something. replace later
         return
 
-    elif item_butterfly_package:
+    elif party_bs:
+        show bs follow behind posty with moveinleft
+        bs "_"
+        yd "hint for if Brand Soda is following you" # TODO: #13 brand soda hint
 
+    elif item_butterfly_package:
         yd "hint for if you just started the game" # TODO: #6 game start hint
         return
 
     else:
-
         yd "I don't have any hints for you, sorry. You should never see this dialogue."
         p confused "Wuh oh."
         return
