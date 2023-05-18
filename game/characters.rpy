@@ -37,7 +37,7 @@ init python: # stop talking code taken from outdated wiki
 
 ### CHARACTERS ###
 
-define p = Character("Posty", callback=speaker("posty"), who_color="#5282f1")
+define p = Character("Posty", callback=speaker("posty"), image="posty", who_color="#5282f1")
 
 image posty neutral = WhileSpeaking("posty", "posty neutral talk", "posty neutral quiet")
 
@@ -55,7 +55,7 @@ image posty neutral quiet:
     zoom 2.2
     xalign -0.05
 
-define yd = Character("Yellow Diamond", callback=speaker("yd"), who_color="#ffff00")
+define yd = Character("Yellow Diamond", callback=speaker("yd"), image="yd", who_color="#ffff00")
 
 image yd = WhileSpeaking("yd", "yd talk", "yd quiet")
 
@@ -88,7 +88,6 @@ label chartest:
     p "No fair!! Haha, well at least I get to stop talking when I'm not talking. Jealous?"
     yd "What are you talking about? We fixed that."
     p "Well, what if I want to have an inner monologue?"
-    show posty neutral quiet
-    p "{i}How's this?{/i}"
+    p quiet "{i}How's this?{/i}"
 
     
