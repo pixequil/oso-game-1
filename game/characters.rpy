@@ -1,8 +1,6 @@
 # File for defining characters
 
-# stop talking code taken from outdated wiki
-
-init python:
+init python: # stop talking code taken from outdated wiki
   
     # This is set to the name of the character that is speaking, or
     # None if no character is currently speaking.
@@ -37,13 +35,11 @@ init python:
     # Curried form of the same.
     speaker = renpy.curry(speaker_callback)
 
+### CHARACTERS ###
+
 define p = Character("Posty", callback=speaker("posty"), who_color="#5282f1")
 
 image posty neutral = WhileSpeaking("posty", "posty neutral talk", "posty neutral quiet")
-
-# TODO: #1 implement automatic mouth animation stopping when they are not talking
-
-# define p = Character("Posty", who_color="#5282f1", image="posty")
 
 image posty neutral talk:
     "talksprites/posty/posty_neutral_open.png"
