@@ -49,17 +49,17 @@ label .talk:
 
     menu:
         "B.T. Net":
-            jump .btnet
+            jump .btnet #
         "Dolly":
-            jump .dolly
+            jump .dolly #
         "Miso Soup":
-            jump .miso
-        "Brand Soda":
+            jump .miso #
+        "Brand Soda" if party_bs == False:
             jump .brandsoda
         "Toasty":
-            jump .toasty
+            jump .toasty #
         "Tooly":
-            jump .tooly
+            jump .tooly #
         "Yellow Diamond":
             call yd_hints
             jump mainstreet
