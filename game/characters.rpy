@@ -55,9 +55,11 @@ image posty neutral quiet:
     zoom 2.2
     xalign -0.05
 
-define yd = Character("Yellow Diamond", who_color="#ffff00", image="yd")
+define yd = Character("Yellow Diamond", callback=speaker("yd"), who_color="#ffff00")
 
-image yd:
+image yd = WhileSpeaking("yd", "yd talk", "yd quiet")
+
+image yd talk:
     "talksprites/yd_open.png"
     zoom 1.2
     xalign 1.0
@@ -66,6 +68,13 @@ image yd:
     "talksprites/yd_close.png"
     pause 0.2
     repeat
+
+image yd quiet:
+    "talksprites/yd_close.png"
+    zoom 1.2
+    xalign 1.0
+    yalign 0.0
+
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
@@ -77,7 +86,7 @@ label chartest:
     show yd
     yd "Welcome to the character test room. I get to talk first."
     p "No fair!! Haha, well at least I get to stop talking when I'm not talking. Jealous?"
-    yd "Yeah..."
+    yd "What are you talking about? We fixed that."
     p "Well, what if I want to have an inner monologue?"
     show posty neutral quiet
     p "{i}How's this?{/i}"
