@@ -265,6 +265,52 @@ image btnet:
     xalign 1.0
 
 
+define bs = Character("Brand Soda", 
+    callback=speaker("bs"), 
+    image="bs", 
+    who_color="#df7dff"
+    )
+
+image bs = WhileSpeaking(
+    "bs", 
+    "bs talk", 
+    "bs quiet"
+    )
+image bs talk:
+    "talksprites/brandsoda_open.png"
+    zoom 1.2
+    xalign 1.0
+    pause 0.2
+    "talksprites/brandsoda_close.png"
+    pause 0.2
+    repeat
+image bs quiet:
+    "talksprites/brandsoda_close.png"
+    zoom 1.2
+    xalign 1.0
+
+image bs follow = WhileSpeaking(
+    "bs", 
+    "bs follow talk", 
+    "bs follow quiet"
+    )
+image bs follow talk:
+    "talksprites/brandsoda_open.png"
+    xzoom -1.0
+    zoom 1.2
+    xalign 1.0
+    pause 0.2
+    "talksprites/brandsoda_close.png"
+    pause 0.2
+    repeat
+image bs follow quiet:
+    "talksprites/brandsoda_close.png"
+    xzoom -1.0
+    zoom 1.2
+    xalign 1.0
+
+
+
 
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
@@ -291,6 +337,19 @@ label .other:
     hide yd
     show btnet
     btnet "Hi, I'm B.T. Net!"
+    hide btnet
+    show bs behind posty
+    bs "Hi, I'm Brand Soda!"
+#    show bs follow
+    show bs follow with move:
+        xalign 0.35
+    bs "And now I'm next to you!"
+    p astonished "Aaah!"
+#    show bs -follow
+    show bs with move:
+        xalign 1.0
+    bs "Okay I stopped being next to you."
+    p neutral "Good."
 
 label .posty:
 
