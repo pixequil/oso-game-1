@@ -37,11 +37,10 @@ init python: # stop talking code taken from outdated wiki
 
 ### CHARACTERS ###
 
-define p = Character(
-    "Posty", 
+define p = Character("Posty", 
     callback=speaker("posty"), 
     image="posty", 
-    who_color="#5282f1"
+    who_color="#5581c1"
     )
 
 image posty neutral = WhileSpeaking(
@@ -228,8 +227,7 @@ image posty astonished anim:
 
 
 
-define yd = Character(
-    "Yellow Diamond", 
+define yd = Character("Yellow Diamond", 
     callback=speaker("yd"), 
     image="yd", 
     who_color="#ffff00"
