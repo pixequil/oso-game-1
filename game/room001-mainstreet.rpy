@@ -7,7 +7,7 @@ label firstscene:
     show posty neutral
     show btnet
 
-    p "_" # TODO: conversation where BT Net gives Posty the butterflies
+    p "_" # TODO: #7 conversation where BT Net gives Posty the butterflies
     btnet "_"
 
     show item butterfly_package # TODO: needs image!
@@ -20,7 +20,7 @@ label firstscene:
     p "_" # internal monologue
 
     show yd with moveintop
-    yd "_" # TODO: conversation where Yellow Diamond implies you can use them for hints
+    yd "_" # TODO: #8 conversation where Yellow Diamond implies you can use them for hints
     p "_"
 
     hide yd with moveouttop
@@ -29,7 +29,7 @@ label firstscene:
 
 label mainstreet:
 
-    p "__" # TODO: replace this choice tree with an imagemap that scrolls
+    p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
 
     menu:
         "Talk to someone.":

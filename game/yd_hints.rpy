@@ -15,7 +15,7 @@ label yd_hints:
 
     elif item_butterfly_package_flag:
 
-        yd "hint for if you just started the game" # TODO: game start hint
+        yd "hint for if you just started the game" # TODO: #6 game start hint
         return
 
     else:
