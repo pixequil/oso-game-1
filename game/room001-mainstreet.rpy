@@ -1,0 +1,2 @@
+label firstscene:
+    p "Hello!"
