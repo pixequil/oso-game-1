@@ -37,9 +37,18 @@ init python: # stop talking code taken from outdated wiki
 
 ### CHARACTERS ###
 
-define p = Character("Posty", callback=speaker("posty"), image="posty", who_color="#5282f1")
+define p = Character(
+    "Posty", 
+    callback=speaker("posty"), 
+    image="posty", 
+    who_color="#5282f1"
+    )
 
-image posty neutral = WhileSpeaking("posty", "posty neutral talk", "posty neutral quiet")
+image posty neutral = WhileSpeaking(
+    "posty", 
+    "posty neutral talk", 
+    "posty neutral quiet"
+    )
 
 image posty neutral talk:
     "talksprites/posty/posty_neutral_open.png"
@@ -55,9 +64,18 @@ image posty neutral quiet:
     zoom 2.2
     xalign -0.05
 
-define yd = Character("Yellow Diamond", callback=speaker("yd"), image="yd", who_color="#ffff00")
+define yd = Character(
+    "Yellow Diamond", 
+    callback=speaker("yd"), 
+    image="yd", 
+    who_color="#ffff00"
+    )
 
-image yd = WhileSpeaking("yd", "yd talk", "yd quiet")
+image yd = WhileSpeaking(
+    "yd", 
+    "yd talk", 
+    "yd quiet"
+    )
 
 image yd talk:
     "talksprites/yd_open.png"
