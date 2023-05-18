@@ -30,4 +30,6 @@ label start:
 
     # This ends the game.
 
+    jump chartest
+
     return
