@@ -1,9 +1,35 @@
+
+
 label firstscene:
 
     scene bg mainstreet
-    show posty neutral
 
+    show posty neutral
+    show btnet
+
+    p "_" # TODO: conversation where BT Net gives Posty the butterflies
+    btnet "_"
+
+    show item butterfly_package # TODO: needs image!
+    "Received the {b}Butterfly Package{/b}!"
+    $ item_butterfly_package_flag = True
+    hide item butterfly_package
+
+    btnet "_" # parting remarks
+    hide btnet with moveoutright
+    p "_" # internal monologue
+
+    show yd with moveintop
+    yd "_" # TODO: conversation where Yellow Diamond implies you can use them for hints
     p "_"
+
+    hide yd with moveouttop
+
+    p "_" # parting remarks?
+
+label mainstreet:
+
+    p "__" # TODO: replace this choice tree with an imagemap that scrolls
 
     menu:
         "Talk to someone.":
@@ -27,7 +53,8 @@ label .talk:
         "Tooly":
             jump .tooly
         "Yellow Diamond":
-            jump yd_hints
+            call yd_hints
+            jump mainstreet
         
 
 label .go:
