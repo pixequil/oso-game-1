@@ -261,7 +261,6 @@ image yd quiet:
 label chartest:
 
     scene bg room with fade
-    $animation_frame = 1
 
     show posty neutral
     show yd
@@ -272,8 +271,25 @@ label chartest:
     p quiet "{i}How's this?{/i}"
     yd "I heard that"
     p astonished before "..."
+    $animation_frame = 1
     p astonished anim "..!"
     p -anim "How..?!"
     yd "Dunno."
+    p neutral "Well, never mind that. {w} Let's demonstrate my different expressions, yeah?"
+    yd "Sounds like a plan!"
+    p "So, this one's called neutral."
+    p happy "Happy!"
+    p sad "Sad."
+    p angry "Angry..!"
+    p annoyed "Annoyed."
+    p astonished "Astonished, if you remember."
+    $animation_frame = 1
+    p astonished anim "And astonished comes with an animation, too."
+    p confused "Confused?"
+    p concerned "Concerned..."
+    p zany "ZANY!!1"
+    yd "What was that last one?"
+    p "USE THIS ONE SPARINGLY!!!!11"
+
 
     
