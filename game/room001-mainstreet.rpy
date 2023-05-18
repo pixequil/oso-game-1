@@ -40,7 +40,7 @@ label mainstreet:
         "Go somewhere.":
             if party_bs:
                 show bs follow behind posty
-                bs "_" #TODO: thing for Brand Soda to say to prevent you from leaving main street
+                bs "_" #TODO: #11 thing for Brand Soda to say to prevent you from leaving main street
                 jump mainstreet
             else:
                 jump .go
@@ -85,7 +85,7 @@ label .brandsoda:
     show posty neutral
     show bs behind posty
 
-    p "_" # TODO: conversation where Brand Soda decides to follow you
+    p "_" # TODO: #12 conversation where Brand Soda decides to follow you
     bs "_"
 
     show bs follow with move:
