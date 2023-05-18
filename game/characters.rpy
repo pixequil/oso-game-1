@@ -254,6 +254,19 @@ image yd quiet:
     yalign 0.0
 
 
+define btnet = Character("B.T. Net", 
+    image="btnet", 
+    who_color="#ff8aa7"
+    )
+
+image btnet:
+    "talksprites/btnet.png"
+    zoom 1.4
+    xalign 1.0
+
+
+
+
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
@@ -262,9 +275,27 @@ label chartest:
 
     show posty neutral
     show yd
-    yd "Welcome to the character test room. I get to talk first."
-    p "No fair!! Haha, well at least I get to stop talking when I'm not talking. Jealous?"
-    yd "What are you talking about? We fixed that."
+    yd "Welcome to the character test room. Pick a thing to test."
+
+    menu:
+        "Posty sprites.":
+            jump .posty
+        "Other characters.":
+            jump .other
+
+label .other:
+
+    p "Other people!"
+    yd "K, well I'm Yellow Diamond. You already knew that part."
+    yd "Time to take my leave!"
+    hide yd
+    show btnet
+    btnet "Hi, I'm B.T. Net!"
+
+label .posty:
+
+    p "Meee!!!"
+    yd "Cool, you can at least talk."
     p "Well, what if I want to have an inner monologue?"
     p quiet "{i}How's this?{/i}"
     yd "I heard that"
