@@ -194,11 +194,11 @@ image posty astonished = WhileSpeaking(
     "posty astonished quiet"
     )
 image posty astonished talk:
-    "talksprites/posty/posty_astonished_open.png"
+    "talksprites/posty/posty_astonished_close.png"
     zoom 2.2
     xalign -0.05
     pause 0.2
-    "talksprites/posty/posty_astonished_close.png"
+    "talksprites/posty/posty_astonished_open.png"
     pause 0.2
     repeat
 image posty astonished quiet:
@@ -214,6 +214,10 @@ init python: # code taken from https://essrenpytutorials.page/animating-an-image
         # else:
         #     animation_frame = 1
 
+image posty astonished before:
+    "talksprites/posty/posty_astonished_anim_1.png"
+    zoom 2.2
+    xalign -0.05
 image posty astonished anim:
     zoom 2.2
     xalign -0.05
@@ -267,7 +271,7 @@ label chartest:
     p "Well, what if I want to have an inner monologue?"
     p quiet "{i}How's this?{/i}"
     yd "I heard that"
-    p astonished quiet "..."
+    p astonished before "..."
     p astonished anim "..!"
     p -anim "How..?!"
     yd "Dunno."
