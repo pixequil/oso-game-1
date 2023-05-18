@@ -1,6 +1,6 @@
 # File for defining characters
 
-# TODO: implement automatic mouth animation stopping when they are not talking
+# TODO: #1 implement automatic mouth animation stopping when they are not talking
 
 define p = Character("Posty", who_color="#5282f1", image="posty")
 
