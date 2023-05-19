@@ -2,7 +2,7 @@
 
 label firstscene:
 
-    scene bg mainstreet
+    scene bg mainstreet # TODO: #23 main street conversation bg
 
     show posty neutral
     show btnet
