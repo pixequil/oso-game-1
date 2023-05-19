@@ -41,7 +41,7 @@ label .sweets:
         show posty neutral
         show bonbon
         show sgummy behind bonbon
-        p "_" # TODO: bonbon and sour gummy conversation about dome
+        p "_" # TODO: #22 bonbon and sour gummy conversation about dome
         bonbon "_"
         sgummy "_"
         jump dome
