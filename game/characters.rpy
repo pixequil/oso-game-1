@@ -440,6 +440,12 @@ image retainer crying quiet:
     xzoom -1.0
     xalign 1.0
 
+define cameron = Character("Security Cameron",
+    callback=speaker("cameron"), 
+    image="cameron", 
+    who_color="#b7aea8"
+    )
+
 
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.

@@ -10,6 +10,7 @@ label start:
     $ party_bs = False
     $ money = 0
     $ quest_bs = False
+    $ saw_museum = False
     $ item_makeshift_trophy = False
 
     scene bg room
