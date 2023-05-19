@@ -13,6 +13,7 @@ label .first_time:
     show cameron # TODO: #27 Security Cameron talksprite
     p "_" # TODO: #28 Security Cameron welcomes Posty to the museum when she first arrives
     cameron "_"
+    $ saw_museum = True
     jump museum_entrance
 
 
