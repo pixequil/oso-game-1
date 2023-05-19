@@ -1,5 +1,12 @@
+image bg dome_top:
+    "bgs/dome_top.png"
+    zoom 1.5
+    yalign 0.2
+
+# TODO: #24 dome conversation bg
+
 label dome:
-    scene bg dome with fade
+    scene bg dome_top with fade
     show posty neutral
 
     p "_" # TODO: #20 dome imagemap

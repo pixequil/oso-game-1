@@ -1,4 +1,5 @@
-
+image bg mainstreet_top:
+    "bgs/mainstreet_top.png"
 
 label firstscene:
 
@@ -29,7 +30,7 @@ label firstscene:
 
 label mainstreet:
 
-    scene bg mainstreet with fade
+    scene bg mainstreet_top with fade
     show posty neutral
 
     p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
