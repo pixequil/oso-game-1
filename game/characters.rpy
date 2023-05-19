@@ -320,6 +320,56 @@ image bs follow quiet:
     xalign 0.35
 
 
+define bonbon = Character("Bon-Bon", 
+    callback=speaker("bonbon"), 
+    image="bonbon", 
+    who_color="#65a9d2"
+    )
+
+image bonbon = WhileSpeaking(
+    "bonbon", 
+    "bonbon talk", 
+    "bonbon quiet"
+    )
+image bonbon talk:
+    "talksprites/bonbon_open.png"
+    zoom 1.2
+    xalign 1.1
+    pause 0.2
+    "talksprites/bonbon_close.png"
+    pause 0.2
+    repeat
+image bonbon quiet:
+    "talksprites/bonbon_close.png"
+    zoom 1.2
+    xalign 1.1
+
+
+define sgummy = Character("Sour Gummy", 
+    callback=speaker("sgummy"), 
+    image="sgummy", 
+    who_color="#fd85ed"
+    )
+
+image sgummy = WhileSpeaking(
+    "sgummy", 
+    "sgummy talk", 
+    "sgummy quiet"
+    )
+image sgummy talk:
+    "talksprites/sourgummy_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.75
+    pause 0.2
+    "talksprites/sourgummy_close.png"
+    pause 0.2
+    repeat
+image sgummy quiet:
+    "talksprites/sourgummy_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.75
 
 
 
@@ -350,6 +400,12 @@ label .other:
     show btnet
     btnet "Hi, I'm B.T. Net!"
     hide btnet
+    show bonbon
+    show sgummy behind bonbon
+    bonbon "I'm Bon-Bon!"
+    sgummy "And I'm Sour Gummy."
+    hide bonbon
+    hide sgummy
     show bs behind posty
     bs "Hi, I'm Brand Soda!"
 #    show bs follow
