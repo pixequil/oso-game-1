@@ -12,6 +12,9 @@ label toasty_hints:
         t "you won; no need to have a hint" # toasty explains you dont need hints because you won. or something. replace later
         return
 
+    elif quest_bs:
+        t "hint for if you finished Brand Soda quest" # TODO: #18 hint for after brand soda quest
+
     elif party_bs:
         show bs follow behind posty with moveinleft
         bs "_"
