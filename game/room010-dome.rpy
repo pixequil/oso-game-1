@@ -16,7 +16,7 @@ label dome:
 
 label .cb:
     if quest_retainer:
-        jump .cb_talk
+        jump .cb_talk #
     else:
         "Seems like {b}{color=#fc809d}Retainer{/color}{/b} is in the way..."
         $ saw_retainerblock = True
@@ -24,11 +24,24 @@ label .cb:
 
 label .retainer:
     if item_makeshift_trophy:
-        jump .retainer_give
+        jump .retainer_give #
     else:
         scene bg dome
         show posty neutral
         show retainer sad
         p "_" # TODO: #21 retainer is sad he got eliminated
         retainer "_"
+        jump dome
+
+label .sweets:
+    if quest_retainer:
+        jump .sweets_sawthat #
+    else:
+        scene bg dome
+        show posty neutral
+        show bonbon
+        show sgummy behind bonbon
+        p "_" # TODO: bonbon and sour gummy conversation about dome
+        bonbon "_"
+        sgummy "_"
         jump dome
