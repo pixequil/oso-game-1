@@ -372,6 +372,73 @@ image sgummy quiet:
     xalign 0.75
 
 
+define retainer = Character("Retainer", 
+    callback=speaker("retainer"), 
+    image="retainer", 
+    who_color="#fc809d"
+    )
+
+image retainer sad = WhileSpeaking(
+    "retainer", 
+    "retainer sad talk", 
+    "retainer sad quiet"
+    )
+image retainer sad talk:
+    "talksprites/retainer_sad_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/retainer_sad_close.png"
+    pause 0.2
+    repeat
+image retainer sad quiet:
+    "talksprites/retainer_sad_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+
+image retainer happy = WhileSpeaking(
+    "retainer", 
+    "retainer happy talk", 
+    "retainer happy quiet"
+    )
+image retainer happy talk:
+    "talksprites/retainer_happy_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/retainer_happy_close.png"
+    pause 0.2
+    repeat
+image retainer happy quiet:
+    "talksprites/retainer_happy_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+
+image retainer crying = WhileSpeaking(
+    "retainer", 
+    "retainer crying talk", 
+    "retainer crying quiet"
+    )
+image retainer crying talk:
+    "talksprites/retainer_crying.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    yalign 1.05
+    pause 0.2
+    "talksprites/retainer_crying.png"
+    yalign 1.0
+    pause 0.2
+    repeat
+image retainer crying quiet:
+    "talksprites/retainer_crying.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
 
 
 
@@ -400,6 +467,12 @@ label .other:
     show btnet
     btnet "Hi, I'm B.T. Net!"
     hide btnet
+    show retainer sad
+    retainer "I'm Retainer, and I'm sad."
+    retainer happy "Now I'm happy!"
+    show retainer crying with hpunch
+    retainer "Now I'm crying!!!"
+    hide retainer
     show bonbon
     show sgummy behind bonbon
     bonbon "I'm Bon-Bon!"
