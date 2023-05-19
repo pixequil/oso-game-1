@@ -440,11 +440,40 @@ image retainer crying quiet:
     xzoom -1.0
     xalign 1.0
 
+
 define cameron = Character("Security Cameron",
     callback=speaker("cameron"), 
     image="cameron", 
     who_color="#b7aea8"
     )
+
+
+define redtile = Character("Red Tile", 
+    callback=speaker("redtile"), 
+    image="redtile", 
+    who_color="#ff0000"
+    )
+
+image redtile = WhileSpeaking(
+    "redtile", 
+    "redtile talk", 
+    "redtile quiet"
+    )
+image redtile talk:
+    "talksprites/redtile_open.png"
+    zoom 1.2
+    xalign 1.0
+    yalign 1.7
+    pause 0.2
+    "talksprites/redtile_close.png"
+    pause 0.2
+    repeat
+image redtile quiet:
+    "talksprites/redtile_close.png"
+    zoom 1.2
+    xalign 1.0
+    yalign 1.7
+
 
 
 
@@ -473,6 +502,9 @@ label .other:
     show btnet
     btnet "Hi, I'm B.T. Net!"
     hide btnet
+    show redtile
+    redtile "Hi I'm Red Tile."
+    hide redtile
     show retainer sad
     retainer "I'm Retainer, and I'm sad."
     retainer happy "Now I'm happy!"
