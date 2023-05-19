@@ -227,7 +227,7 @@ image posty astonished anim:
 
 
 
-define t = Character("Toasty", 
+define t = Character("Toasty",  # TODO: #14 toasty sprites (she needs plenty)
     callback=speaker("toasty"), 
     image="toasty", 
     who_color="#c8a28b"
