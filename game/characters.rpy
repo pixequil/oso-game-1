@@ -227,6 +227,16 @@ image posty astonished anim:
 
 
 
+define t = Character("Toasty", 
+    callback=speaker("toasty"), 
+    image="toasty", 
+    who_color="#c8a28b"
+    )
+
+
+
+
+
 define yd = Character("Yellow Diamond", 
     callback=speaker("yd"), 
     image="yd", 
@@ -308,6 +318,8 @@ image bs follow quiet:
     xzoom -1.0
     zoom 1.2
     xalign 0.35
+
+
 
 
 

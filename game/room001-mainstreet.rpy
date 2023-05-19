@@ -19,11 +19,11 @@ label firstscene:
     hide btnet with moveoutright
     p "_" # internal monologue
 
-    show yd with moveintop
-    yd "_" # TODO: #8 conversation where Yellow Diamond implies you can use them for hints
+    show toasty neutral with moveinbottom
+    t "_" # TODO: #8 conversation where Toasty implies you can use her for hints
     p "_"
 
-    hide yd with moveouttop
+    hide toasty with moveoutright
 
     p "_" # parting remarks?
 
@@ -57,12 +57,12 @@ label .talk:
         "Brand Soda" if party_bs == False:
             jump .brandsoda
         "Toasty":
-            jump .toasty #
+            call toasty_hints
+            jump mainstreet
         "Tooly":
             jump .tooly #
         "Yellow Diamond":
-            call yd_hints
-            jump mainstreet
+            jump .yd #
         
 
 label .go:
