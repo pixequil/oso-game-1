@@ -43,4 +43,9 @@ label .easels:
     "Maybe you can make a work of art here, if you collect enough {color=#ffff00}inspiration{/color}."
     jump museum_entrance
 
-
+label .cameron:
+    scene bg museum_entrance
+    show posty neutral
+    show cameron
+    p "_" # TODO: talking to Security Cameron again
+    jump museum_entrance
