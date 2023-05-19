@@ -110,14 +110,14 @@ label .yd:
     elif quest_bs:
         jump .yd_bs_happy
     else:
-        p "_" # TODO: conversation where yd implies they want to get into advertising
+        p "_" # TODO: #15 conversation where yd implies they want to get into advertising
         yd "_"
 
         jump mainstreet
 
 label .yd_bs_money:
     show bs follow behind posty
-    p "_" # TODO: conversation where posty convinces yd to support Brand Soda. Brand Soda, grateful, gives Posty some money as thanks.
+    p "_" # TODO: #16 conversation where posty convinces yd to support Brand Soda. Brand Soda, grateful, gives Posty some money as thanks.
     yd "_"
     bs "_"
 
@@ -139,7 +139,7 @@ label .yd_bs_happy:
     show bs behind yd:
         xalign 0.65
         yalign 1.0
-    p "_" # TODO: conversation with the now-satisfied yd and bs
+    p "_" # TODO: #17 conversation with the now-satisfied yd and bs
     yd "_"
     bs "_"
     jump mainstreet
