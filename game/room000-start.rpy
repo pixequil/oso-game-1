@@ -6,6 +6,8 @@ label start:
     $ win_flag = False
     $ item_butterfly_package = False
     $ party_bs = False
+    $ money = 0
+    $ quest_bs = False
 
     scene bg room
 

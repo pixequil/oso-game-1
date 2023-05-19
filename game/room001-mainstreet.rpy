@@ -54,15 +54,17 @@ label .talk:
             jump .dolly #
         "Miso Soup":
             jump .miso #
-        "Brand Soda" if party_bs == False:
+        "Brand Soda" if (party_bs == False) and (quest_bs == False):
             jump .brandsoda
         "Toasty":
             call toasty_hints
             jump mainstreet
         "Tooly":
             jump .tooly #
-        "Yellow Diamond":
-            jump .yd #
+        "Yellow Diamond" if quest_bs == False:
+            jump .yd
+        "Yellow Diamond & Brand Soda" if quest_bs:
+            jump .yd
         
 
 label .go:
@@ -98,5 +100,49 @@ label .brandsoda:
     p "_"
 
     jump mainstreet
+
+label .yd:
+    scene bg mainstreet
+    show posty neutral
+    show yd
+    if party_bs:
+        jump .yd_bs_money
+    elif quest_bs:
+        jump .yd_bs_happy
+    else:
+        p "_" # TODO: conversation where yd implies they want to get into advertising
+        yd "_"
+
+        jump mainstreet
+
+label .yd_bs_money:
+    show bs follow behind posty
+    p "_" # TODO: conversation where posty convinces yd to support Brand Soda. Brand Soda, grateful, gives Posty some money as thanks.
+    yd "_"
+    bs "_"
+
+    show bs with move:
+        xalign 0.65
+    $ party_bs = False
+    "{b}{color=#df7dff}Brand Soda{/color}{/b} left your party!"
+
+    bs "_"
+
+    $ money += 1
+    $ quest_bs = True
+    "{b}{color=#df7dff}Brand Soda{/color}{/b} gave you {b}some money{/b}!"
+
+    bs "_"
+    jump mainstreet
+
+label .yd_bs_happy:
+    show bs behind yd:
+        xalign 0.65
+        yalign 1.0
+    p "_" # TODO: conversation with the now-satisfied yd and bs
+    yd "_"
+    bs "_"
+    jump mainstreet
+
 
 
