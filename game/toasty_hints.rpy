@@ -14,11 +14,13 @@ label toasty_hints:
 
     elif quest_bs:
         t "hint for if you finished Brand Soda quest" # TODO: #18 hint for after brand soda quest
+        return
 
     elif party_bs:
         show bs follow behind posty with moveinleft
         bs "_"
         t "hint for if Brand Soda is following you" # TODO: #13 brand soda hint
+        return
 
     elif item_butterfly_package:
         t "hint for if you just started the game" # TODO: #6 game start hint
