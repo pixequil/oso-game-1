@@ -5,6 +5,8 @@ label start:
     # setting all the flags to false (is there really no better way to do this?) (prepared to sound stupid)
     $ win_flag = False
     $ item_butterfly_package = False
+    $ quest_retainer = False
+    $ saw_retainerblock = False
     $ party_bs = False
     $ money = 0
     $ quest_bs = False

@@ -22,6 +22,10 @@ label toasty_hints:
         t "hint for if Brand Soda is following you" # TODO: #13 brand soda hint
         return
 
+    elif saw_retainerblock:
+        t "hint for after you try to deliver the butterflies" # todo: #19 blocked by retainer hint
+        return
+
     elif item_butterfly_package:
         t "hint for if you just started the game" # TODO: #6 game start hint
         return

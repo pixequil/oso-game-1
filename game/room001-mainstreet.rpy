@@ -71,13 +71,13 @@ label .go:
 
     menu:
         "Music Store":
-            jump musicstore
+            jump musicstore #
         "Art Museum":
-            jump museum_entrance
+            jump museum_entrance #
         "Shady Back Alley":
-            jump alley
+            jump alley #
         "Park":
-            jump park
+            jump park #
         "The Dome":
             jump dome
 
