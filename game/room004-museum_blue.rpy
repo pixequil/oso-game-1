@@ -14,6 +14,8 @@ label museum_blue:
                 jump .bt
             "Talk to Red Tile":
                 jump .rt
+            "Return to the entrance.":
+                jump museum_entrance
 
 label .redcash:
     scene bg museum_blue
