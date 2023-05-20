@@ -1,5 +1,11 @@
 # todo: #32 blue exhibit conversation background
 
+image redcash:
+    "items/redcash.png"
+    xalign 0.5
+    yalign 0.5
+    zoom 3.0
+
 label museum_blue:
     if item_red_cash == False:
         jump .redcash
@@ -22,8 +28,7 @@ label .redcash:
     show posty neutral
     p "_" # TODO: #34 Posty finds Red Cash on the floor upon entering the blue room.    
     
-    show redcash at truecenter:
-        zoom 3.0
+    show redcash
     $ item_red_cash = True
     "You got the {b}{color=#de474e}red cash{/color}{/b}!"
     jump museum_blue
