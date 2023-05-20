@@ -54,7 +54,7 @@ label .talk:
         "Dolly":
             jump dolly # in money.rpy
         "Miso Soup":
-            jump .miso #
+            jump .miso
         "Brand Soda" if (party_bs == False) and (quest_bs == False):
             jump .brandsoda
         "Toasty":
@@ -148,6 +148,40 @@ label .yd_bs_happy:
     yd "_"
     bs "_"
     jump mainstreet
+
+label .miso:
+    scene bg mainstreet
+    show posty neutral
+    show miso # TODO: #45 Miso Soup talksprite
+
+    if (item_ladle_empty == False) and (miso_took == False):
+        p "_" # TODO: #46 miso soup conversation before youve taken any soup
+        miso "_"
+        jump mainstreet
+    
+    elif item_ladle_empty and (miso_took == False):
+        p "_" # TODO: #47 you take soup from Miso Soup 
+        miso "_"
+        $ item_ladle_empty = False
+        $ item_ladle_full = True
+        $ miso_took = True
+        show ladle_full
+        "You filled the {b}ladle{/b} with {b}miso soup{/b}!" # TODO: #48 describe soup-filled ladle
+        miso "_"
+        jump mainstreet
+
+    elif miso_took and (quest_painting_blue == False):
+        p "_" #TODO: #49 miso soup conversation after you've taken soup
+        miso "_"
+        jump mainstreet
+
+    elif miso_took and quest_painting_blue:
+        p "_" # todo: #50 miso soup conversation after splashing miso soup on painting
+        miso "_"
+        jump mainstreet
+
+    else:
+        p "Players should not see this text."
 
 
 

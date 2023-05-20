@@ -16,6 +16,9 @@ label start:
     $ item_red_cash = False
     $ saw_redtile = False
     $ item_ladle_empty = False
+    $ item_ladle_full = False
+    $ miso_took = False
+    $ quest_painting_blue = False
     $ item_painting_blue = False
     $ item_makeshift_trophy = False
 

@@ -502,6 +502,12 @@ image dolly quiet:
     xalign 1.3
 
 
+define miso = Character("Miso Soup",
+    callback=speaker("miso"), 
+    image="miso", 
+    who_color="#ab9d67"
+    )
+
 
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.

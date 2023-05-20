@@ -38,7 +38,7 @@ label .rt:
     scene bg museum_blue
     show posty neutral
     show redtile
-    
+
     if saw_redtile == False:
         $ saw_redtile = True
         p "_" # TODO: #40 first Red Tile conversation. Red Tile is A grumpy character that absolutely hates this exhibit, and is mostly here out of spite. They have previously thrown some Miso Soup at one of the paintings, leaving its gate rusted, but managed to avoid the blame for it. Regardless, they’re not trying to draw too much attention to themselves. They also have some choice words about Blue Tile.
@@ -49,7 +49,7 @@ label .rt:
         rt "_"
         jump museum_blue
 
-    elif item_ladle_empty and (item_painting_blue == False):
+    elif item_ladle_empty:
         p "_" # todo: #44 short conversation with red tile
         jump museum_blue
 
