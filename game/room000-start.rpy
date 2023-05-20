@@ -10,6 +10,7 @@ label start:
     $ party_bs = False
     $ money = 0
     $ quest_bs = False
+    $ dolly_first = False
     $ saw_museum = False
     $ item_red_cash = False
     $ item_makeshift_trophy = False

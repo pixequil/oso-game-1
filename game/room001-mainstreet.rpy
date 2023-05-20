@@ -52,7 +52,7 @@ label .talk:
         "B.T. Net":
             jump .btnet #
         "Dolly":
-            jump .dolly #
+            jump dolly # in money.rpy
         "Miso Soup":
             jump .miso #
         "Brand Soda" if (party_bs == False) and (quest_bs == False):
