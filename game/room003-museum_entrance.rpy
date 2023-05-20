@@ -47,5 +47,5 @@ label .cameron:
     scene bg museum_entrance
     show posty neutral
     show cameron
-    p "_" # TODO: talking to Security Cameron again
+    p "_" # TODO: #31 talking to Security Cameron again
     jump museum_entrance
