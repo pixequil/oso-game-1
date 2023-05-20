@@ -14,6 +14,9 @@ label start:
     $ saw_museum = False
     $ saw_blue = False
     $ item_red_cash = False
+    $ saw_redtile = False
+    $ item_ladle_empty = False
+    $ item_painting_blue = False
     $ item_makeshift_trophy = False
 
     scene bg room
