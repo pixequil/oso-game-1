@@ -11,6 +11,7 @@ label start:
     $ money = 0
     $ quest_bs = False
     $ saw_museum = False
+    $ item_red_cash = False
     $ item_makeshift_trophy = False
 
     scene bg room
