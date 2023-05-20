@@ -475,6 +475,33 @@ image redtile quiet:
     yalign 1.7
 
 
+define dolly = Character("Dolly", 
+    callback=speaker("dolly"), 
+    image="dolly", 
+    who_color="#e3d3ab"
+    )
+
+image dolly = WhileSpeaking(
+    "dolly", 
+    "dolly talk", 
+    "dolly quiet"
+    )
+image dolly talk:
+    "talksprites/dolly_open.png"
+    zoom 2.0
+    xzoom -1.0
+    xalign 1.3
+    pause 0.2
+    "talksprites/dolly_close.png"
+    pause 0.2
+    repeat
+image dolly quiet:
+    "talksprites/dolly_idle.png"
+    zoom 2.0
+    xzoom -1.0
+    xalign 1.3
+
+
 
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
@@ -502,6 +529,11 @@ label .other:
     show btnet
     btnet "Hi, I'm B.T. Net!"
     hide btnet
+    show dolly
+    p "Hi Dolly. This is what you look like when you're not speaking. Also I just wanna test where the text wraps just out of curiosity."
+    dolly "That's right. And this is what I look like when I {i}am{/i} speaking."
+    p "Damn!"
+    hide dolly
     show redtile
     redtile "Hi I'm Red Tile."
     hide redtile
