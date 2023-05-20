@@ -37,6 +37,8 @@ label .money_check:
             jump mainstreet
         else:
             p "i have nothing" # todo: #38 posty has no money
+            jump mainstreet
     elif money == 1:
         p "i have some money" # todo: #39 posty has "some" money
+        jump mainstreet
 
