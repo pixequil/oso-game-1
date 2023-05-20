@@ -209,8 +209,9 @@ init python:
     class FBFAnimation():
         """Represent a frame-by-frame animation, which only plays once."""
 
-        def __init__(self, num_frames):
+        def __init__(self, num_frames, framerate):
             self.num_frames = num_frames
+            self.wait = 1 / framerate
 
             self.reset()
 
@@ -221,7 +222,7 @@ init python:
             if self.num_frames != self.frame:
                 self.frame += 1
 
-define anims.posty.astonished = FBFAnimation(18)
+define anims.posty.astonished = FBFAnimation(18, 24)
 
 image posty astonished before:
     "talksprites/posty/posty_astonished_anim_1.png"
@@ -235,7 +236,7 @@ image posty astonished anim:
     block:
         "talksprites/posty/posty_astonished_anim_[anims.posty.astonished.frame].png"
         function anims.posty.astonished.advance
-        pause 0.04
+        pause anims.posty.astonished.wait
         repeat
 
 
