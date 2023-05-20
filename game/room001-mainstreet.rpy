@@ -131,7 +131,11 @@ label .yd_bs_money:
 
     $ money += 1
     $ quest_bs = True
+    show cash_bundle_1
+    $ renpy.transition(irisout, layer="master")
     "{b}{color=#df7dff}Brand Soda{/color}{/b} gave you {b}some money{/b}!"
+    hide cash_bundle_1
+    call money_get
 
     bs "_"
     jump mainstreet
