@@ -12,6 +12,7 @@ label start:
     $ quest_bs = False
     $ dolly_first = False
     $ saw_museum = False
+    $ saw_blue = False
     $ item_red_cash = False
     $ item_makeshift_trophy = False
 
