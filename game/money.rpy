@@ -33,12 +33,14 @@ label .drepeat:
 label .money_check:
     if money == 0:
         if item_red_cash:
+            show redcash
             p "i have red cash" # TODO: #37 Posty offers the red cash since she lacks real money
             jump mainstreet
         else:
             p "i have nothing" # todo: #38 posty has no money
             jump mainstreet
     elif money == 1:
+        show cash_bundle_1
         p "i have some money" # todo: #39 posty has "some" money
         jump mainstreet
 
