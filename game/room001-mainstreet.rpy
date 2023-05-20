@@ -74,7 +74,7 @@ label .go:
         "Music Store":
             jump musicstore #
         "Art Museum":
-            jump museum_entrance #
+            jump museum_entrance 
         "Shady Back Alley":
             jump alley #
         "Park":
