@@ -227,6 +227,16 @@ image posty astonished anim:
 
 
 
+define t = Character("Toasty",  # TODO: #14 toasty sprites (she needs plenty)
+    callback=speaker("toasty"), 
+    image="toasty", 
+    who_color="#c8a28b"
+    )
+
+
+
+
+
 define yd = Character("Yellow Diamond", 
     callback=speaker("yd"), 
     image="yd", 
@@ -254,6 +264,252 @@ image yd quiet:
     yalign 0.0
 
 
+define btnet = Character("B.T. Net", 
+    image="btnet", 
+    who_color="#ff8aa7"
+    )
+
+image btnet:
+    "talksprites/btnet.png"
+    zoom 1.4
+    xalign 1.0
+
+
+define bs = Character("Brand Soda", 
+    callback=speaker("bs"), 
+    image="bs", 
+    who_color="#df7dff"
+    )
+
+image bs = WhileSpeaking(
+    "bs", 
+    "bs talk", 
+    "bs quiet"
+    )
+image bs talk:
+    "talksprites/brandsoda_open.png"
+    zoom 1.2
+    xalign 1.0
+    pause 0.2
+    "talksprites/brandsoda_close.png"
+    pause 0.2
+    repeat
+image bs quiet:
+    "talksprites/brandsoda_close.png"
+    zoom 1.2
+    xalign 1.0
+
+image bs follow = WhileSpeaking(
+    "bs", 
+    "bs follow talk", 
+    "bs follow quiet"
+    )
+image bs follow talk:
+    "talksprites/brandsoda_open.png"
+    xzoom -1.0
+    zoom 1.2
+    xalign 0.35
+    pause 0.2
+    "talksprites/brandsoda_close.png"
+    pause 0.2
+    repeat
+image bs follow quiet:
+    "talksprites/brandsoda_close.png"
+    xzoom -1.0
+    zoom 1.2
+    xalign 0.35
+
+
+define bonbon = Character("Bon-Bon", 
+    callback=speaker("bonbon"), 
+    image="bonbon", 
+    who_color="#65a9d2"
+    )
+
+image bonbon = WhileSpeaking(
+    "bonbon", 
+    "bonbon talk", 
+    "bonbon quiet"
+    )
+image bonbon talk:
+    "talksprites/bonbon_open.png"
+    zoom 1.2
+    xalign 1.1
+    pause 0.2
+    "talksprites/bonbon_close.png"
+    pause 0.2
+    repeat
+image bonbon quiet:
+    "talksprites/bonbon_close.png"
+    zoom 1.2
+    xalign 1.1
+
+
+define sgummy = Character("Sour Gummy", 
+    callback=speaker("sgummy"), 
+    image="sgummy", 
+    who_color="#fd85ed"
+    )
+
+image sgummy = WhileSpeaking(
+    "sgummy", 
+    "sgummy talk", 
+    "sgummy quiet"
+    )
+image sgummy talk:
+    "talksprites/sourgummy_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.75
+    pause 0.2
+    "talksprites/sourgummy_close.png"
+    pause 0.2
+    repeat
+image sgummy quiet:
+    "talksprites/sourgummy_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.75
+
+
+define retainer = Character("Retainer", 
+    callback=speaker("retainer"), 
+    image="retainer", 
+    who_color="#fc809d"
+    )
+
+image retainer sad = WhileSpeaking(
+    "retainer", 
+    "retainer sad talk", 
+    "retainer sad quiet"
+    )
+image retainer sad talk:
+    "talksprites/retainer_sad_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/retainer_sad_close.png"
+    pause 0.2
+    repeat
+image retainer sad quiet:
+    "talksprites/retainer_sad_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+
+image retainer happy = WhileSpeaking(
+    "retainer", 
+    "retainer happy talk", 
+    "retainer happy quiet"
+    )
+image retainer happy talk:
+    "talksprites/retainer_happy_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/retainer_happy_close.png"
+    pause 0.2
+    repeat
+image retainer happy quiet:
+    "talksprites/retainer_happy_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+
+image retainer crying = WhileSpeaking(
+    "retainer", 
+    "retainer crying talk", 
+    "retainer crying quiet"
+    )
+image retainer crying talk:
+    "talksprites/retainer_crying.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    yalign 1.05
+    pause 0.2
+    "talksprites/retainer_crying.png"
+    yalign 1.0
+    pause 0.2
+    repeat
+image retainer crying quiet:
+    "talksprites/retainer_crying.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+
+
+define cameron = Character("Security Cameron",
+    callback=speaker("cameron"), 
+    image="cameron", 
+    who_color="#b7aea8"
+    )
+
+
+define redtile = Character("Red Tile", 
+    callback=speaker("redtile"), 
+    image="redtile", 
+    who_color="#ff0000"
+    )
+
+image redtile = WhileSpeaking(
+    "redtile", 
+    "redtile talk", 
+    "redtile quiet"
+    )
+image redtile talk:
+    "talksprites/redtile_open.png"
+    zoom 1.2
+    xalign 1.0
+    yalign 1.7
+    pause 0.2
+    "talksprites/redtile_close.png"
+    pause 0.2
+    repeat
+image redtile quiet:
+    "talksprites/redtile_close.png"
+    zoom 1.2
+    xalign 1.0
+    yalign 1.7
+
+
+define dolly = Character("Dolly", 
+    callback=speaker("dolly"), 
+    image="dolly", 
+    who_color="#e3d3ab"
+    )
+
+image dolly = WhileSpeaking(
+    "dolly", 
+    "dolly talk", 
+    "dolly quiet"
+    )
+image dolly talk:
+    "talksprites/dolly_open.png"
+    zoom 2.0
+    xzoom -1.0
+    xalign 1.3
+    pause 0.2
+    "talksprites/dolly_close.png"
+    pause 0.2
+    repeat
+image dolly quiet:
+    "talksprites/dolly_idle.png"
+    zoom 2.0
+    xzoom -1.0
+    xalign 1.3
+
+
+define miso = Character("Miso Soup",
+    callback=speaker("miso"), 
+    image="miso", 
+    who_color="#ab9d67"
+    )
+
+
+
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
@@ -262,9 +518,60 @@ label chartest:
 
     show posty neutral
     show yd
-    yd "Welcome to the character test room. I get to talk first."
-    p "No fair!! Haha, well at least I get to stop talking when I'm not talking. Jealous?"
-    yd "What are you talking about? We fixed that."
+    yd "Welcome to the character test room. Pick a thing to test."
+
+    menu:
+        "Posty sprites.":
+            jump .posty
+        "Other characters.":
+            jump .other
+
+label .other:
+
+    p "Other people!"
+    yd "K, well I'm Yellow Diamond. You already knew that part."
+    yd "Time to take my leave!"
+    hide yd
+    show btnet
+    btnet "Hi, I'm B.T. Net!"
+    hide btnet
+    show dolly
+    p "Hi Dolly. This is what you look like when you're not speaking. Also I just wanna test where the text wraps just out of curiosity."
+    dolly "That's right. And this is what I look like when I {i}am{/i} speaking."
+    p "Damn!"
+    hide dolly
+    show redtile
+    redtile "Hi I'm Red Tile."
+    hide redtile
+    show retainer sad
+    retainer "I'm Retainer, and I'm sad."
+    retainer happy "Now I'm happy!"
+    show retainer crying with hpunch
+    retainer "Now I'm crying!!!"
+    hide retainer
+    show bonbon
+    show sgummy behind bonbon
+    bonbon "I'm Bon-Bon!"
+    sgummy "And I'm Sour Gummy."
+    hide bonbon
+    hide sgummy
+    show bs behind posty
+    bs "Hi, I'm Brand Soda!"
+#    show bs follow
+    show bs follow with move:
+        xalign 0.35
+    bs "And now I'm next to you!"
+    p astonished "Aaah!"
+#    show bs -follow
+    show bs with move:
+        xalign 1.0
+    bs "Okay I stopped being next to you."
+    p neutral "Good."
+
+label .posty:
+
+    p "Meee!!!"
+    yd "Cool, you can at least talk."
     p "Well, what if I want to have an inner monologue?"
     p quiet "{i}How's this?{/i}"
     yd "I heard that"
