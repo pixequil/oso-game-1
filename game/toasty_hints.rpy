@@ -21,6 +21,13 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif item_ladle_full:
+        t "hint for if you have full ladle" # todo: #51 full ladle hint (further rust the bars)
+
+    elif item_ladle_empty:
+        t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
+        return
+    
     elif quest_bs:
         t "hint for if you finished Brand Soda quest" # TODO: #18 hint for after brand soda quest (go in the museum)
         return
