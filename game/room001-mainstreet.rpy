@@ -50,7 +50,7 @@ label .talk:
 
     menu:
         "B.T. Net":
-            jump .btnet #
+            jump .btnet 
         "Dolly":
             jump dolly # in money.rpy
         "Miso Soup":
@@ -183,5 +183,18 @@ label .miso:
     else:
         p "Players should not see this text."
 
+label .btnet:
+    scene bg mainstreet
+    show posty neutral
+    show btnet
+    if item_butterfly_package:
+        p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
+        btnet "_"
 
+        jump mainstreet
+    else:
+        p "_" # TODO: #54 talking to B.T. Net after a successful delivery! (game is in win state)
+        btnet "_"
+
+        jump mainstreet
 
