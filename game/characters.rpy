@@ -282,7 +282,7 @@ image bs = WhileSpeaking(
     )
 image bs talk:
     "talksprites/brandsoda_open.png"
-    zoom 1.2
+#    zoom 0.9
     xalign 1.0
     pause 0.2
     "talksprites/brandsoda_close.png"
@@ -290,7 +290,7 @@ image bs talk:
     repeat
 image bs quiet:
     "talksprites/brandsoda_close.png"
-    zoom 1.2
+#    zoom 0.9
     xalign 1.0
 
 image bs follow = WhileSpeaking(
@@ -301,7 +301,7 @@ image bs follow = WhileSpeaking(
 image bs follow talk:
     "talksprites/brandsoda_open.png"
     xzoom -1.0
-    zoom 1.2
+#    zoom 0.9
     xalign 0.35
     pause 0.2
     "talksprites/brandsoda_close.png"
@@ -310,7 +310,7 @@ image bs follow talk:
 image bs follow quiet:
     "talksprites/brandsoda_close.png"
     xzoom -1.0
-    zoom 1.2
+#    zoom 0.9
     xalign 0.35
 
 
