@@ -12,7 +12,7 @@ label firstscene:
     btnet "_"
 
     show butterfly_package # TODO: #10 needs image!
-    "Received the {b}Butterfly Package{/b}!" # Todo: #55 butterfly package description
+    "Received the {b}Butterfly Package{/b}!{p}{cps=5}...{/cps}{p=0.125}there is something fluttering inside..!"
     $ item_butterfly_package = True
     hide butterfly_package
 
