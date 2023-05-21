@@ -319,6 +319,8 @@ screen navigation():
 
         textbutton _("About") action ShowMenu("about")
 
+        textbutton _("Watch the show!") action OpenURL("https://www.youtube.com/playlist?list=PLxQjvGipjO7kx8qRRVeZ2CNrRWQ7AZWw7")
+
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
