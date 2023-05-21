@@ -205,13 +205,24 @@ image posty astonished quiet:
     zoom 2.2
     xalign -0.05
 
-init python: # code taken from https://essrenpytutorials.page/animating-an-image-in-renpy-automatically/
-    def next_frame(t, st, at):
-        global animation_frame
-        if animation_frame < 18: # todo: #3 change frame amount from being hardcoded, to instead be a variable you can pass to the function
-            animation_frame += 1
-        # else:
-        #     animation_frame = 1
+init python:
+    class FBFAnimation():
+        """Represent a frame-by-frame animation, which only plays once."""
+
+        def __init__(self, num_frames, framerate):
+            self.num_frames = num_frames
+            self.wait = 1 / framerate
+
+            self.reset()
+
+        def reset(self, *args): # We don't care about the arguments
+            self.frame = 1
+
+        def advance(self, *args): # Same with here
+            if self.num_frames != self.frame:
+                self.frame += 1
+
+define anims.posty.astonished = FBFAnimation(18, 24)
 
 image posty astonished before:
     "talksprites/posty/posty_astonished_anim_1.png"
@@ -220,10 +231,13 @@ image posty astonished before:
 image posty astonished anim:
     zoom 2.2
     xalign -0.05
-    "talksprites/posty/posty_astonished_anim_[animation_frame].png"
-    pause 0.04
-    function next_frame
-    repeat
+    function anims.posty.astonished.reset
+
+    block:
+        "talksprites/posty/posty_astonished_anim_[anims.posty.astonished.frame].png"
+        function anims.posty.astonished.advance
+        pause anims.posty.astonished.wait
+        repeat
 
 
 
@@ -576,7 +590,6 @@ label .posty:
     p quiet "{i}How's this?{/i}"
     yd "I heard that"
     p astonished before "..."
-    $animation_frame = 1
     p astonished anim "..!"
     p -anim "How..?!"
     yd "Dunno."
@@ -588,7 +601,6 @@ label .posty:
     p angry "Angry..!"
     p annoyed "Annoyed."
     p astonished "Astonished, if you remember."
-    $animation_frame = 1
     p astonished anim "And astonished comes with an animation, too."
     p confused "Confused?"
     p concerned "Concerned..."
