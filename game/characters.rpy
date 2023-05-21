@@ -50,7 +50,6 @@ image posty neutral = WhileSpeaking(
     )
 image posty neutral talk:
     "talksprites/posty/posty_neutral_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_neutral_close.png"
@@ -58,7 +57,6 @@ image posty neutral talk:
     repeat
 image posty neutral quiet:
     "talksprites/posty/posty_neutral_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty happy = WhileSpeaking(
@@ -68,7 +66,6 @@ image posty happy = WhileSpeaking(
     )
 image posty happy talk:
     "talksprites/posty/posty_happy_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_happy_close.png"
@@ -76,7 +73,6 @@ image posty happy talk:
     repeat
 image posty happy quiet:
     "talksprites/posty/posty_happy_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty sad = WhileSpeaking(
@@ -86,7 +82,6 @@ image posty sad = WhileSpeaking(
     )
 image posty sad talk:
     "talksprites/posty/posty_sad_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_sad_close.png"
@@ -94,7 +89,6 @@ image posty sad talk:
     repeat
 image posty sad quiet:
     "talksprites/posty/posty_sad_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty concerned = WhileSpeaking(
@@ -104,7 +98,6 @@ image posty concerned = WhileSpeaking(
     )
 image posty concerned talk:
     "talksprites/posty/posty_concerned_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_concerned_close.png"
@@ -112,7 +105,6 @@ image posty concerned talk:
     repeat
 image posty concerned quiet:
     "talksprites/posty/posty_concerned_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty confused = WhileSpeaking(
@@ -122,7 +114,6 @@ image posty confused = WhileSpeaking(
     )
 image posty confused talk:
     "talksprites/posty/posty_confused_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_confused_close.png"
@@ -130,7 +121,6 @@ image posty confused talk:
     repeat
 image posty confused quiet:
     "talksprites/posty/posty_confused_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty zany = WhileSpeaking(
@@ -140,7 +130,6 @@ image posty zany = WhileSpeaking(
     )
 image posty zany talk:
     "talksprites/posty/posty_zany_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_zany_close.png"
@@ -148,7 +137,6 @@ image posty zany talk:
     repeat
 image posty zany quiet:
     "talksprites/posty/posty_zany_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty angry = WhileSpeaking(
@@ -158,7 +146,6 @@ image posty angry = WhileSpeaking(
     )
 image posty angry talk:
     "talksprites/posty/posty_angry_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_angry_close.png"
@@ -166,7 +153,6 @@ image posty angry talk:
     repeat
 image posty angry quiet:
     "talksprites/posty/posty_angry_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty annoyed = WhileSpeaking(
@@ -176,7 +162,6 @@ image posty annoyed = WhileSpeaking(
     )
 image posty annoyed talk:
     "talksprites/posty/posty_annoyed_open.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_annoyed_close.png"
@@ -184,7 +169,6 @@ image posty annoyed talk:
     repeat
 image posty annoyed quiet:
     "talksprites/posty/posty_annoyed_close.png"
-    zoom 2.2
     xalign -0.05
 
 image posty astonished = WhileSpeaking(
@@ -194,7 +178,6 @@ image posty astonished = WhileSpeaking(
     )
 image posty astonished talk:
     "talksprites/posty/posty_astonished_close.png"
-    zoom 2.2
     xalign -0.05
     pause 0.2
     "talksprites/posty/posty_astonished_open.png"
@@ -202,7 +185,6 @@ image posty astonished talk:
     repeat
 image posty astonished quiet:
     "talksprites/posty/posty_astonished_close.png"
-    zoom 2.2
     xalign -0.05
 
 init python: # code taken from https://essrenpytutorials.page/animating-an-image-in-renpy-automatically/
@@ -215,10 +197,8 @@ init python: # code taken from https://essrenpytutorials.page/animating-an-image
 
 image posty astonished before:
     "talksprites/posty/posty_astonished_anim_1.png"
-    zoom 2.2
     xalign -0.05
 image posty astonished anim:
-    zoom 2.2
     xalign -0.05
     "talksprites/posty/posty_astonished_anim_[animation_frame].png"
     pause 0.04
