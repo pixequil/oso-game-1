@@ -42,11 +42,11 @@ label .rt:
     if saw_redtile == False:
         $ saw_redtile = True
         p "_" # TODO: #40 first Red Tile conversation. Red Tile is A grumpy character that absolutely hates this exhibit, and is mostly here out of spite. They have previously thrown some Miso Soup at one of the paintings, leaving its gate rusted, but managed to avoid the blame for it. Regardless, they’re not trying to draw too much attention to themselves. They also have some choice words about Blue Tile.
-        rt "_" # Red Tile gives you the soup ladle, They’re very interested in getting rid of the incriminating evidence.
+        redtile "_" # Red Tile gives you the soup ladle, They’re very interested in getting rid of the incriminating evidence.
         $ item_ladle_empty = True
         show ladle_empty # TODO: #41 ladle, empty and filled with soup versions
         "You got the {b}ladle{/b}!" # todo: #43 describe ladle
-        rt "_"
+        redtile "_"
         jump museum_blue
 
     elif item_ladle_empty:
