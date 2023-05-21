@@ -1,6 +1,11 @@
 image bg mainstreet_top:
     "bgs/mainstreet_top.png"
 
+image butterfly_package:
+    "items/butterfly_package.png"
+    zoom 0.5
+    truecenter
+
 label firstscene:
 
     scene bg mainstreet # TODO: #23 main street conversation bg
