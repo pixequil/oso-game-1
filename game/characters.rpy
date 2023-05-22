@@ -460,19 +460,19 @@ image cameron talk:
 
     block:
         parallel:
-            easein_elastic 0.5 xzoom (0.45 + 0.0225)
+            easein_elastic 0.4 xzoom (0.45 + 0.02)
         parallel:
-            easein_elastic 0.5 yzoom (0.45 - 0.0225)
+            easein_elastic 0.4 yzoom (0.45 - 0.02)
 
-        pause 0.15
+        pause 0.05
 
 
         parallel:
-            easein_elastic 0.5 xzoom (0.45 - 0.02)
+            easein_elastic 0.4 xzoom (0.45 - 0.02)
         parallel:
-            easein_elastic 0.5 yzoom (0.45 + 0.02)
+            easein_elastic 0.4 yzoom (0.45 + 0.02)
 
-        pause 0.15
+        pause 0.05
 
         repeat
 
