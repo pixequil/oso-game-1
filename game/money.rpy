@@ -32,7 +32,7 @@ label .drepeat:
 
 label .money_check:
     if money == 0:
-        if item_red_cash:
+        if item.red_cash:
             show redcash
             p "i have red cash" # TODO: #37 Posty offers the red cash since she lacks real money
             jump mainstreet

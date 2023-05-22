@@ -1,22 +1,22 @@
 # Flags and other trinkets
 
 # QUESTS
-default quest_retainer = False
-default quest_painting_blue = False
+default quest.retainer = False
+default quest.painting_blue = False
 
 # ITEMS
-default item_butterfly_package = False
-default item_red_cash = False
-default item_ladle_empty = False
-default item_ladle_full = False
-default item_painting_blue = False
-default item_makeshift_trophy = False
+default item.butterfly_package = False
+default item.red_cash = False
+default item.ladle_empty = False
+default item.ladle_full = False
+default item.painting_blue = False
+default item.makeshift_trophy = False
 
-# CHARACTERS SEEN
-default saw_museum = False
-default saw_blue = False
-default saw_redtile = False
-default saw_retainerblock = False
+# PLACES/CHARACTERS VISITED
+default saw.museum = False
+default saw.blue = False
+default saw.redtile = False
+default saw.retainerblock = False
 
 # VARIOUS FLAGS
 default win_flag = False

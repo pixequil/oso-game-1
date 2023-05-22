@@ -18,7 +18,7 @@ label firstscene:
 
     show butterfly_package # TODO: #10 needs image!
     "Received the {b}Butterfly Package{/b}!{p}There is something fluttering inside..!"
-    $ item_butterfly_package = True
+    $ item.butterfly_package = True
     hide butterfly_package
 
     btnet "_" # parting remarks
@@ -159,16 +159,16 @@ label .miso:
     show posty neutral
     show miso # TODO: #45 Miso Soup talksprite
 
-    if (item_ladle_empty == False) and (miso_took == False):
+    if (item.ladle_empty == False) and (miso_took == False):
         p "_" # TODO: #46 miso soup conversation before youve taken any soup
         miso "_"
         jump mainstreet
     
-    elif item_ladle_empty and (miso_took == False):
+    elif item.ladle_empty and (miso_took == False):
         p "_" # TODO: #47 you take soup from Miso Soup 
         miso "_"
-        $ item_ladle_empty = False
-        $ item_ladle_full = True
+        $ item.ladle_empty = False
+        $ item.ladle_full = True
         $ miso_took = True
         show ladle_full
         "You filled the {b}ladle{/b} with {b}miso soup{/b}!" # TODO: #48 describe soup-filled ladle
@@ -192,7 +192,7 @@ label .btnet:
     scene bg mainstreet
     show posty neutral
     show btnet
-    if item_butterfly_package:
+    if item.butterfly_package:
         p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
         btnet "_"
 
