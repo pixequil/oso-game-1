@@ -448,12 +448,12 @@ image cameron = WhileSpeaking(
 )
 
 image cameron quiet:
-    "talksprites/Security_Cameron.png"
+    "talksprites/security_cameron.png"
     zoom 0.45
     xcenter 0.8
 
 image cameron talk:
-    "talksprites/Security_Cameron.png"
+    "talksprites/security_cameron.png"
     xzoom 0.45
     yzoom 0.45
     xcenter 0.8
