@@ -16,10 +16,10 @@ default item_makeshift_trophy = False
 default saw_museum = False
 default saw_blue = False
 default saw_redtile = False
+default saw_retainerblock = False
 
 # VARIOUS FLAGS
 default win_flag = False
-default saw_retainerblock = False
 default party_bs = False
 default quest_bs = False
 default dolly_first = False
