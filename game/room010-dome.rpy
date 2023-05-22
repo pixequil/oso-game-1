@@ -22,15 +22,15 @@ label dome:
             jump mainstreet
 
 label .cb:
-    if quest_retainer:
+    if quest.retainer:
         jump .cb_talk #
     else:
         "Seems like {b}{color=#fc809d}Retainer{/color}{/b} is in the way..."
-        $ saw_retainerblock = True
+        $ saw.retainerblock = True
         jump dome
 
 label .retainer:
-    if item_makeshift_trophy:
+    if item.makeshift_trophy:
         jump .retainer_give #
     else:
         scene bg dome
@@ -41,7 +41,7 @@ label .retainer:
         jump dome
 
 label .sweets:
-    if quest_retainer:
+    if quest.retainer:
         jump .sweets_sawthat #
     else:
         scene bg dome

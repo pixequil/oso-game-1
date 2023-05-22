@@ -18,7 +18,7 @@ label firstscene:
 
     show butterfly_package # TODO: #10 needs image!
     "Received the {b}Butterfly Package{/b}!{p}There is something fluttering inside..!"
-    $ item_butterfly_package = True
+    $ item.butterfly_package = True
     hide butterfly_package
 
     btnet "_" # parting remarks
@@ -60,16 +60,16 @@ label .talk:
             jump dolly # in money.rpy
         "Miso Soup":
             jump .miso
-        "Brand Soda" if (party_bs == False) and (quest_bs == False):
+        "Brand Soda" if (party_bs == False) and (quest.bs == False):
             jump .brandsoda
         "Toasty":
             call toasty_hints
             jump mainstreet
         "Tooly":
             jump .tooly #
-        "Yellow Diamond" if quest_bs == False:
+        "Yellow Diamond" if quest.bs == False:
             jump .yd
-        "Yellow Diamond & Brand Soda" if quest_bs:
+        "Yellow Diamond & Brand Soda" if quest.bs:
             jump .yd
         
 
@@ -113,7 +113,7 @@ label .yd:
     show yd
     if party_bs:
         jump .yd_bs_money
-    elif quest_bs:
+    elif quest.bs:
         jump .yd_bs_happy
     else:
         p "_" # TODO: #15 conversation where yd implies they want to get into advertising
@@ -135,7 +135,7 @@ label .yd_bs_money:
     bs "_"
 
     $ money += 1
-    $ quest_bs = True
+    $ quest.bs = True
     show cash_bundle_1
     $ renpy.transition(irisout, layer="master")
     "{b}{color=#df7dff}Brand Soda{/color}{/b} gave you {b}some money{/b}!"
@@ -159,16 +159,16 @@ label .miso:
     show posty neutral
     show miso # TODO: #45 Miso Soup talksprite
 
-    if (item_ladle_empty == False) and (miso_took == False):
+    if (item.ladle_empty == False) and (miso_took == False):
         p "_" # TODO: #46 miso soup conversation before youve taken any soup
         miso "_"
         jump mainstreet
     
-    elif item_ladle_empty and (miso_took == False):
+    elif item.ladle_empty and (miso_took == False):
         p "_" # TODO: #47 you take soup from Miso Soup 
         miso "_"
-        $ item_ladle_empty = False
-        $ item_ladle_full = True
+        $ item.ladle_empty = False
+        $ item.ladle_full = True
         $ miso_took = True
         show ladle_full
         "You filled the {b}ladle{/b} with {b}miso soup{/b}!" # TODO: #48 describe soup-filled ladle
@@ -192,7 +192,7 @@ label .btnet:
     scene bg mainstreet
     show posty neutral
     show btnet
-    if item_butterfly_package:
+    if item.butterfly_package:
         p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
         btnet "_"
 

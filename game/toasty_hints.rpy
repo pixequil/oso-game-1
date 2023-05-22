@@ -21,22 +21,22 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
-    elif item_ladle_full:
+    elif item.ladle_full:
         t "hint for if you have full ladle" # todo: #51 full ladle hint (further rust the bars)
 
-    elif item_ladle_empty:
+    elif item.ladle_empty:
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
         return
     
-    elif quest_bs:
+    elif quest.bs:
         t "hint for if you finished Brand Soda quest" # TODO: #18 hint for after brand soda quest (go in the museum)
         return
 
-    elif saw_retainerblock:
+    elif saw.retainerblock:
         t "hint for after you try to deliver the butterflies" # todo: #19 blocked by retainer hint (idk look around and talk to people or something)
         return
 
-    elif item_butterfly_package:
+    elif item.butterfly_package:
         t "hint for if you just started the game" # TODO: #6 game start hint (try delivering the butterflies)
         return
 
