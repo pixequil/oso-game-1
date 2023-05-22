@@ -16,7 +16,7 @@ label firstscene:
     p "_" # TODO: #7 conversation where BT Net gives Posty the butterflies
     btnet "_"
 
-    show butterfly_package # TODO: #10 needs image!
+    show butterfly_package
     "Received the {b}Butterfly Package{/b}!{p}There is something fluttering inside..!"
     $ item.butterfly_package = True
     hide butterfly_package
