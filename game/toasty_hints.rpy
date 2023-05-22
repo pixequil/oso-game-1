@@ -28,7 +28,7 @@ label toasty_hints:
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
         return
     
-    elif quest_bs:
+    elif quest.bs:
         t "hint for if you finished Brand Soda quest" # TODO: #18 hint for after brand soda quest (go in the museum)
         return
 

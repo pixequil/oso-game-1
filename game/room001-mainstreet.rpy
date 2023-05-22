@@ -60,16 +60,16 @@ label .talk:
             jump dolly # in money.rpy
         "Miso Soup":
             jump .miso
-        "Brand Soda" if (party_bs == False) and (quest_bs == False):
+        "Brand Soda" if (party_bs == False) and (quest.bs == False):
             jump .brandsoda
         "Toasty":
             call toasty_hints
             jump mainstreet
         "Tooly":
             jump .tooly #
-        "Yellow Diamond" if quest_bs == False:
+        "Yellow Diamond" if quest.bs == False:
             jump .yd
-        "Yellow Diamond & Brand Soda" if quest_bs:
+        "Yellow Diamond & Brand Soda" if quest.bs:
             jump .yd
         
 
@@ -113,7 +113,7 @@ label .yd:
     show yd
     if party_bs:
         jump .yd_bs_money
-    elif quest_bs:
+    elif quest.bs:
         jump .yd_bs_happy
     else:
         p "_" # TODO: #15 conversation where yd implies they want to get into advertising
@@ -135,7 +135,7 @@ label .yd_bs_money:
     bs "_"
 
     $ money += 1
-    $ quest_bs = True
+    $ quest.bs = True
     show cash_bundle_1
     $ renpy.transition(irisout, layer="master")
     "{b}{color=#df7dff}Brand Soda{/color}{/b} gave you {b}some money{/b}!"

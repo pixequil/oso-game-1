@@ -3,6 +3,7 @@
 # QUESTS
 default quest.retainer = False
 default quest.painting_blue = False
+default quest.bs = False
 
 # ITEMS
 default item.butterfly_package = False
@@ -21,7 +22,6 @@ default saw.retainerblock = False
 # VARIOUS FLAGS
 default win_flag = False
 default party_bs = False
-default quest_bs = False
 default dolly_first = False
 default miso_took = False
 
