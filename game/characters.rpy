@@ -441,6 +441,40 @@ define cameron = Character("Security Cameron",
     who_color="#b7aea8"
     )
 
+image cameron = WhileSpeaking(
+    "cameron",
+    "cameron talk",
+    "cameron quiet"
+)
+
+image cameron quiet:
+    "talksprites/security_cameron.png"
+    zoom 0.45
+    xcenter 0.8
+
+image cameron talk:
+    "talksprites/security_cameron.png"
+    xzoom 0.45
+    yzoom 0.45
+    xcenter 0.8
+
+    block:
+        parallel:
+            easein_elastic 0.4 xzoom (0.45 + 0.02)
+        parallel:
+            easein_elastic 0.4 yzoom (0.45 - 0.02)
+
+        pause 0.05
+
+
+        parallel:
+            easein_elastic 0.4 xzoom (0.45 - 0.02)
+        parallel:
+            easein_elastic 0.4 yzoom (0.45 + 0.02)
+
+        pause 0.05
+
+        repeat
 
 define redtile = Character("Red Tile", 
     callback=speaker("redtile"), 
@@ -561,6 +595,10 @@ label .other:
         xalign 1.0
     bs "Okay I stopped being next to you."
     p neutral "Good."
+    hide bs
+    show cameron
+    cameron "Hello, I'm Security Camera, but they call me Security Cameron."
+    p neutral "Hello, Security Cameron."
 
 label .posty:
 
