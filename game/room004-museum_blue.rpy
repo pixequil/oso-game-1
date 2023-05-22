@@ -45,7 +45,7 @@ label .rt:
         redtile "_" # Red Tile gives you the soup ladle, They’re very interested in getting rid of the incriminating evidence.
         $ item.ladle_empty = True
         show ladle_empty # TODO: #41 ladle, empty and filled with soup versions
-        "You got the {b}ladle{/b}!{p}You feel guilty just carrying it..." # todo: #43 describe ladle
+        "You got the {b}ladle{/b}!{p}You feel guilty just carrying it..."
         redtile "_"
         jump museum_blue
 
