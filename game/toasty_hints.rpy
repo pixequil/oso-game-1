@@ -6,7 +6,7 @@ label toasty_hints:
 
     scene bg mainstreet
     show posty neutral
-    show toasty neutral at right
+    show toasty neutral
     
     if win_flag:
         t "you won; no need to have a hint" # toasty explains you dont need hints because you won. or something. replace later
