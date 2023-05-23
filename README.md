@@ -42,6 +42,7 @@ _(Don't remove the blank bullets)_
 
 ### Dialogue
 * BumpBob Looly
+* Satomi
 
 ### Original Writers
 * Steppie Berry

@@ -8,30 +8,57 @@ image butterfly_package:
 
 label firstscene:
 
-    scene bg mainstreet # TODO: #23 main street conversation bg
-
+    scene black
+    ""
+    p "And this is going to..."
+    
+    show bg mainstreet # TODO: #23 main street conversation bg
+    $ renpy.transition(dissolve, layer="master")
     show posty neutral
-    show btnet
+    show btnet 
 
-    p "_" # TODO: #7 conversation where BT Net gives Posty the butterflies
-    btnet "_"
+    extend " {i}1189 Brick Ave{/i}, right?"
+    btnet "That's right!"
+    p quiet "Okay, that's..."
+    show posty astonished before
+    extend " ..!"
+    p astonished anim "THAT'S THE OSO DOME!!!"
+    btnet "Yeah, it's my biggest job yet!"
+    p -anim "And you want ME to deliver it??"
+    btnet "Of course! I can always trust you for a swift and intact delivery, Posty."
+    p happy "I'll take care of it right away! I have no other deliveries today, so, consider it express with no extra charge!"
 
     show butterfly_package
     "Received the {b}Butterfly Package{/b}!{p}There is something fluttering inside..!"
     $ item.butterfly_package = True
     hide butterfly_package
 
-    btnet "_" # parting remarks
+    btnet "Best of luck!"
+    p "Thanks! Not that I'll need it, since it's just a short walk west of here."
+    btnet "I'll leave you to it then."
     hide btnet with moveoutright
-    p "_" # internal monologue
+    p quiet "..."
+    p astonished "Wow..! I get to deliver to the OSO Dome!"
+    p "I bet they're gonna use this in a challenge or something!"
 
-    show toasty neutral with moveinbottom
-    t "_" # TODO: #8 conversation where Toasty implies you can use her for hints
-    p "_"
+    show toasty turned2
+    $ renpy.transition(moveinbottom, layer="master")
+    p "I can't believe I get to be involved in Open Source Objects!!!"
+    t "La la la, just minding my own business..." 
+    t annoyed "Oh. {i}You're{/i} here. Didn't see ya."
+    p neutral "Hi Toasty."
+    t smug "Guess you got another job, huh."
+    p "You were listening?"
+    t smug2 "For that stoopid show, what was it?{w}\nOpen Source{w=0.4} Items{w=0.4} or whatever."
+    t smug5 "Well, I don't even care!"
+    p "K."
+    t pointandlaugh "I bet you'll trip and fall on your way there!"
+    p "I have to go deliver this now. See you later Toasty."
+    t laugh "Hah, well, don't come crying to me if you need help with anything!"
 
     hide toasty with moveoutright
 
-    p "_" # parting remarks?
+    p "Welp. Better get going!"
 
 label mainstreet:
 
