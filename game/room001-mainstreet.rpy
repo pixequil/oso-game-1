@@ -228,17 +228,18 @@ label .miso:
 label .btnet:
     scene bg mainstreet
     show btnet
-    if item.butterfly_package:
-        show posty neutral
-        p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
-        btnet "_"
-
-        jump mainstreet
         
-    elif party_bs:
+    if party_bs:
         show posty neutral
         show bs follow behind posty
         p "_" # todo: #109 
+
+        jump mainstreet
+
+    elif item.butterfly_package:
+        show posty neutral
+        p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
+        btnet "_"
 
         jump mainstreet
 

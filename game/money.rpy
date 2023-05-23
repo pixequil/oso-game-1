@@ -27,6 +27,7 @@ label .dbs:
     show posty neutral
     show bs follow behind posty
     p "_" #todo: #111 Dolly quickly rejects Brand Soda, saying they've already spoken.
+    jump mainstreet
 
 label .dfirst:
     show posty neutral
