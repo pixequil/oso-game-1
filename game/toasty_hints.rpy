@@ -22,7 +22,13 @@ label toasty_hints:
     # below this line are hints displayed in roughly reverse walkthrough order
 
     elif item.ladle_full:
-        t "hint for if you have full ladle" # todo: #51 full ladle hint (further rust the bars)
+        t smug2 "Oh, so you decided to use that ladle on something, hmm?"
+        t laugh "What are you going to do with that soup, anyway? Start a food fight?"
+        t pointandlaugh "Hah! Just the thought of you getting everything rusty makes me chuckle!"
+        t neutral quiet "..."
+        t enthused "Actually, if you are, can I join?"
+        p neutral "Uh, I'm not planning any fights, sorry."
+        t annoyed "Ugh, {i}lame{/i}."
 
     elif item.ladle_empty:
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
