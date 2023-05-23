@@ -35,6 +35,7 @@ _(Don't remove the blank bullets)_
 ### Item Descriptions
 * Martysh12
 * Jurta
+* Compital
 
 ### Dialogue
 * 
