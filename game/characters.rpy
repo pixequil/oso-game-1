@@ -968,6 +968,8 @@ label chartest:
             jump .toasty
         "Other characters.":
             jump .other
+        "End the game please.":
+            return
 
 label .other:
 
