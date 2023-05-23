@@ -17,7 +17,7 @@ label firstscene:
     show posty neutral
     show btnet 
 
-    extend " {i}1189 Brick Ave{/i}, right?"
+    extend " {b}{color=#c0d4e7}Crayon Box{/color}{/b}, at {i}1189 Brick Ave{/i}, right?"
     btnet "That's right!"
     p quiet "Okay, that's..."
     show posty astonished before
@@ -39,7 +39,7 @@ label firstscene:
     hide btnet with moveoutright
     p quiet "..."
     p astonished "Wow..! I get to deliver to the OSO Dome!"
-    p "I bet they're gonna use this in a challenge or something!"
+    p "I bet {b}{color=#c0d4e7}Crayon Box{/color}{/b} is gonna use this in a challenge or something!"
 
     show toasty turned2
     $ renpy.transition(moveinbottom, layer="master")
