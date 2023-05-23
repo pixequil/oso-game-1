@@ -1014,6 +1014,7 @@ label .other:
     show cameron
     cameron "Hello, I'm Security Camera, but they call me Security Cameron."
     p neutral "Hello, Security Cameron."
+    hide cameron
 
 label .toasty:
 
@@ -1060,6 +1061,8 @@ label .toasty:
     t turned2 "pretending I'm not paying attention (turned2),"
     t angry "angry,"
     t crossedarms "and then this one where I'm crossing my arms (crossedarms)."
+    hide toasty
+    show yd
 
 label .posty:
 
