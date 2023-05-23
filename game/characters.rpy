@@ -1041,7 +1041,7 @@ label .toasty:
     show toasty enthused
     t "and coming back with my toast in a different state doesn't play the animation."
     t annoyed "Well, actually the state of my toast isn't automatically thrown out when I'm hidden, so by default it does still play."
-    t neutral2 "You have to put \"$ states.toasty.reset()\" before showing me in order to prevent the transition."
+    t neutral2 "You have to put \"$ states.toasty.no_anim()\" before showing me in order to prevent the transition."
     t neutral "Going from not smug to smug with a hide in between"
     hide toasty
     p quiet "..."
