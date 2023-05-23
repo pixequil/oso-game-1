@@ -27,6 +27,10 @@ _(Don't remove the blank bullets)_
 * Riley Cooke
 * Meow
 
+## Programmers
+* Martysh12
+* A Jar of Copper Salts
+
 ## Outline Adaptation
 * Satomi
 
