@@ -968,6 +968,8 @@ label chartest:
             jump .toasty
         "Other characters.":
             jump .other
+        "End the game please.":
+            return
 
 label .other:
 
@@ -1014,6 +1016,8 @@ label .other:
     show cameron
     cameron "Hello, I'm Security Camera, but they call me Security Cameron."
     p neutral "Hello, Security Cameron."
+    hide cameron
+    jump chartest
 
 label .toasty:
 
@@ -1060,6 +1064,8 @@ label .toasty:
     t turned2 "pretending I'm not paying attention (turned2),"
     t angry "angry,"
     t crossedarms "and then this one where I'm crossing my arms (crossedarms)."
+    hide toasty
+    jump chartest
 
 label .posty:
 
@@ -1086,6 +1092,6 @@ label .posty:
     p zany "ZANY!!1"
     yd "What was that last one?"
     p "USE THIS ONE SPARINGLY!!!!11"
-
+    jump chartest
 
     
