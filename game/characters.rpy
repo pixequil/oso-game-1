@@ -671,12 +671,19 @@ image yd quiet:
     yalign 0.0
 
 
-define btnet = Character("B.T. Net", 
+define btnet = Character("B.T. Net",
+    callback=speaker("btnet"),
     image="btnet", 
     who_color="#ff8aa7"
     )
 
-image btnet:
+image btnet = WhileSpeaking(
+    "btnet",
+    "btnet talk",
+    "btnet quiet"
+)
+
+image btnet quiet:
     "talksprites/btnet.png"
     zoom 1.4
     xalign 0.825
@@ -688,6 +695,22 @@ image btnet:
     block:
         ease_cubic 3.0 rotate -1.5
         ease_cubic 3.0 rotate 1.5
+        repeat
+image btnet talk:
+    "talksprites/btnet.png"
+    xzoom 1.4
+    yzoom 1.4
+    xalign 0.825
+    yalign 1.01 # Is here to make sure the rotation doesn't cause missing pixels on the bottom
+    xanchor 0.5 yanchor 1.0
+    transform_anchor True
+
+    block:
+        easein_elastic 0.4 xzoom (1.4 + 0.02) yzoom (1.4 - 0.02)
+        pause 0.05
+        easein_elastic 0.4 xzoom (1.4 - 0.02) yzoom (1.4 + 0.02)
+        pause 0.05
+
         repeat
 
 define bs = Character("Brand Soda", 
@@ -987,6 +1010,7 @@ label .other:
     hide yd
     show btnet
     btnet "Hi, I'm B.T. Net!"
+    p "Hello, B.T. Net!"
     hide btnet
     show dolly
     p "Hi Dolly. This is what you look like when you're not speaking. Also I just wanna test where the text wraps just out of curiosity."
