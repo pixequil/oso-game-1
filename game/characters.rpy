@@ -1015,6 +1015,7 @@ label .other:
     cameron "Hello, I'm Security Camera, but they call me Security Cameron."
     p neutral "Hello, Security Cameron."
     hide cameron
+    jump chartest
 
 label .toasty:
 
@@ -1062,7 +1063,7 @@ label .toasty:
     t angry "angry,"
     t crossedarms "and then this one where I'm crossing my arms (crossedarms)."
     hide toasty
-    show yd
+    jump chartest
 
 label .posty:
 
@@ -1089,6 +1090,6 @@ label .posty:
     p zany "ZANY!!1"
     yd "What was that last one?"
     p "USE THIS ONE SPARINGLY!!!!11"
-
+    jump chartest
 
     
