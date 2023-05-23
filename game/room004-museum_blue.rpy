@@ -1,5 +1,10 @@
 # todo: #32 blue exhibit conversation background
 
+# #113
+# todo: image museum_blue_p_rusty
+# todo: image museum_blue_p_opened
+# todo: image museum_blue_p_missing
+
 image redcash:
     "items/redcash.png"
     xalign 0.5
@@ -36,10 +41,10 @@ label .redcash:
         
 label .rt:
     scene bg museum_blue
-    show posty neutral
     show redtile
 
     if saw.redtile == False:
+        show posty neutral
         $ saw.redtile = True
         p "_" # TODO: #40 first Red Tile conversation. Red Tile is A grumpy character that absolutely hates this exhibit, and is mostly here out of spite. They have previously thrown some Miso Soup at one of the paintings, leaving its gate rusted, but managed to avoid the blame for it. Regardless, they’re not trying to draw too much attention to themselves. They also have some choice words about Blue Tile.
         redtile "_" # Red Tile gives you the soup ladle, They’re very interested in getting rid of the incriminating evidence.
@@ -50,6 +55,15 @@ label .rt:
         jump museum_blue
 
     elif item.ladle_empty:
+        show posty neutral
         p "_" # todo: #44 short conversation with red tile
+        jump museum_blue
+
+label .bt:
+    if saw.bluetile == False:
+        show bg museum_blue_p_rusty
+        show posty neutral
+        $ saw.bluetile = True
+        p "_" #114 Blue Tile explains their whole deal, while Posty is captured by the compulsion to take the painting
         jump museum_blue
 
