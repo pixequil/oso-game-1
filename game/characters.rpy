@@ -255,7 +255,7 @@ init python:
             else:
                 self.mouth_state = "close"
 
-        def reset(self, *args):
+        def no_anim(self, *args):
             self.unset = True
 
 define anims.toasty.toast = FBFAnimation(5, 25, reset_after=True, reset_frame=0)
