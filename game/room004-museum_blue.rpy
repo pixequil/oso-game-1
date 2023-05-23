@@ -31,7 +31,7 @@ label .redcash:
     show redcash
     $ saw.blue = True
     $ item.red_cash = True
-    "You got the {b}{color=#de474e}red cash{/color}{/b}!" # todo: #42 describe red cash
+    "You got the {b}{color=#de474e}red cash{/color}{/b}!{p}It\'s money but it\'s red."
     jump museum_blue
         
 label .rt:
