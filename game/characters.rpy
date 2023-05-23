@@ -190,7 +190,7 @@ image posty astonished quiet:
 
 init python:
     class FBFAnimation():
-        """Represent a frame-by-frame animation, which only plays once."""
+        """Represent a frame-by-frame animation."""
 
         def __init__(self, num_frames, framerate, reset_after=False, reset_frame=1):
             self.num_frames = num_frames
