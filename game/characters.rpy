@@ -1022,7 +1022,7 @@ label .other:
 label .toasty:
 
     hide yd
-    $ states.toasty.reset()
+    $ states.toasty.no_anim()
     show toasty neutral
     t "I'm toasty and this is my neutral expression."
     t smug "When I have a smug expression my toast pops."
@@ -1037,7 +1037,7 @@ label .toasty:
     t smug2 "Leaving"
     hide toasty
     p quiet "..."
-    $ states.toasty.reset()
+    $ states.toasty.no_anim()
     show toasty enthused
     t "and coming back with my toast in a different state doesn't play the animation."
     t annoyed "Well, actually the state of my toast isn't automatically thrown out when I'm hidden, so by default it does still play."
@@ -1045,7 +1045,7 @@ label .toasty:
     t neutral "Going from not smug to smug with a hide in between"
     hide toasty
     p quiet "..."
-    $ states.toasty.reset()
+    $ states.toasty.no_anim()
     show toasty smug5
     t "Can also be made to not play the animation."
     p neutral "So, what different expressions you have?"
