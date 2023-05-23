@@ -4,6 +4,8 @@
 #
 # +/- type path
 - image game/gui/**
-- image game/**
+- image game/images/talksprites/**
+- image game/images/items/**
++ image game/**
 + music game/audio/**
 + voice game/voice/**
