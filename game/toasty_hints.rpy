@@ -35,7 +35,7 @@ label toasty_hints:
     elif saw.retainerblock:
         p "Hey Toasty."
         t "Hey loser."
-        p "I just tried to deliever his package of butterflies to Crayon Box and this guy who just got eliminated is blocking the walkway."
+        p "I just tried to deliever my package of butterflies to Crayon Box and this guy who just got eliminated is blocking the walkway."
         t "Oh yeah, Retainer. Kind of a wimp."
         t "He's the type of guy who wants instant gratification. Like a medal or trophy or something."
         t "But I wish good luck on anyone trying to find something for him."
