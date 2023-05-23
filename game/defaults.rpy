@@ -27,5 +27,3 @@ default miso_took = False
 
 # VARIOUS COUNTERS
 default money = 0
-
-default animation_frame_toasty = 0
