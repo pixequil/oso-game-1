@@ -48,7 +48,14 @@ label .sweets:
         show posty neutral
         show bonbon
         show sgummy behind bonbon
-        p "_" # TODO: #22 bonbon and sour gummy conversation about dome
-        bonbon "_"
-        sgummy "_"
+        bonbon "What's the point in the dome? It sucks and needs to be destroyed."
+        sgummy "How can you hate the dome. Look at how I can see my reflection, its round shape, and its durability. I wish that was me."
+        bonbon "What!? Do you want to be a dome?"
+        sgummy "Yes! Being a dome means I\'ll have everything ever wanted!"
+        bonbon "You don\'t make any sense. You can\'t become a dome."
+        sgummy "Why not?"
+        bonbon "If you did then that means I\'ll have to destroy you too!"
+        sgummy "You wouldn\'t because nothing would hurt me!"
+        bonbon "I can!"
+        sgummy "Yeah right!"
         jump dome
