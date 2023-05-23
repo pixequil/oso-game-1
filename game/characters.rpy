@@ -686,29 +686,22 @@ image btnet = WhileSpeaking(
 image btnet quiet:
     "talksprites/btnet.png"
     zoom 1.4
-    xalign 0.825
-    yalign 1.01 # Is here to make sure the rotation doesn't cause missing pixels on the bottom
+    xalign 0.825 yalign 1.01
     xanchor 0.5 yanchor 1.0
     rotate_pad True
     transform_anchor True
 
-
-    block:
-        ease_cubic 3.0 rotate -1.5
-        ease_cubic 3.0 rotate 1.5
-        repeat
 image btnet talk:
     "talksprites/btnet.png"
     zoom 1.4
-    xalign 0.825
-    yalign 1.01 # Is here to make sure the rotation doesn't cause missing pixels on the bottom
+    xalign 0.825 yalign 1.01 # Is here to make sure the rotation doesn't cause missing pixels on the bottom
     xanchor 0.5 yanchor 1.0
     rotate_pad True
     transform_anchor True
 
     block:
-        ease 1.0 rotate -1
-        ease 1.0 rotate 1
+        ease 2.0 rotate -3
+        ease 2.0 rotate  3
         repeat
 
 define bs = Character("Brand Soda", 
