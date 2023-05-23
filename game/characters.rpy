@@ -1,6 +1,7 @@
 # File for defining characters
 
-init python: # stop talking code taken from outdated wiki
+init python:
+    # stop talking code taken from outdated wiki
   
     # This is set to the name of the character that is speaking, or
     # None if no character is currently speaking.
@@ -219,14 +220,489 @@ image posty astonished anim:
         pause anims.posty.astonished.wait
         repeat
 
+init python:
+    def is_popped_True(t, st, at):
+        global is_popped
+        global animation_frame_toasty
+        if not ('is_popped' in globals()):
+            is_popped = True
+        if is_popped != True:
+            is_popped = True
+            animation_frame_toasty = 1
+        else:
+            animation_frame_toasty = 0
 
+    def is_popped_False(t, st, at):
+        global is_popped
+        global animation_frame_toasty
+        if not ('is_popped' in globals()):
+            is_popped = False
+        if is_popped != False:
+            is_popped = False
+            animation_frame_toasty = 1
+        else:
+            animation_frame_toasty = 0
 
-define t = Character("Toasty",  # TODO: #14 toasty sprites (she needs plenty)
+    def next_frame_toasty(t, st, at):
+        global animation_frame_toasty
+        if animation_frame_toasty < 5 and animation_frame_toasty > 0:
+            animation_frame_toasty += 1
+        else:
+            animation_frame_toasty = 0
+
+    def clear_toasty_transition():
+        if ('is_popped' in globals()):
+            global is_popped
+            del is_popped
+
+define t = Character("Toasty",
     callback=speaker("toasty"), 
     image="toasty", 
     who_color="#c8a28b"
     )
 
+image toasty neutral = WhileSpeaking(
+    "toasty", 
+    "toasty neutral talk",
+    "toasty neutral quiet"
+    )
+image toasty neutral talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_neutral_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_neutral_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty neutral quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_neutral_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty neutral2 = WhileSpeaking(
+    "toasty", 
+    "toasty neutral2 talk",
+    "toasty neutral2 quiet"
+    )
+image toasty neutral2 talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_neutral2_close2_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_neutral2_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty neutral2 quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_neutral2_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty smug = WhileSpeaking(
+    "toasty", 
+    "toasty smug talk", 
+    "toasty smug quiet"
+    )
+image toasty smug talk:
+    xalign 1.0
+    function is_popped_True
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_smug_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_smug_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty smug quiet:
+    xalign 1.0
+    function is_popped_True
+    block:
+        "talksprites/toasty/toasty_smug_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty smug2 = WhileSpeaking(
+    "toasty", 
+    "toasty smug2 talk", 
+    "toasty smug2 quiet"
+    )
+image toasty smug2 talk:
+    xalign 1.0
+    function is_popped_True
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_smug2_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_smug2_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty smug2 quiet:
+    xalign 1.0
+    function is_popped_True
+    block:
+        "talksprites/toasty/toasty_smug2_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty smug3 = WhileSpeaking(
+    "toasty", 
+    "toasty smug3 talk", 
+    "toasty smug3 quiet"
+    )
+image toasty smug3 talk:
+    xalign 1.0
+    function is_popped_True
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_smug3_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_smug3_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty smug3 quiet:
+    xalign 1.0
+    function is_popped_True
+    block:
+        "talksprites/toasty/toasty_smug3_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty smug4:
+    xalign 1.0
+    function is_popped_True
+    block:
+        "talksprites/toasty/toasty_smug4_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty smug5 = WhileSpeaking(
+    "toasty", 
+    "toasty smug5 talk", 
+    "toasty smug5 quiet"
+    )
+image toasty smug5 talk:
+    xalign 1.0
+    function is_popped_True
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_smug5_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_smug5_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty smug5 quiet:
+    xalign 1.0
+    function is_popped_True
+    block:
+        "talksprites/toasty/toasty_smug5_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty angry = WhileSpeaking(
+    "toasty", 
+    "toasty angry talk", 
+    "toasty angry quiet"
+    )
+image toasty angry talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_angry_close2_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_angry_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty angry quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_angry_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty annoyed = WhileSpeaking(
+    "toasty", 
+    "toasty annoyed talk", 
+    "toasty annoyed quiet"
+    )
+image toasty annoyed talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_annoyed_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_annoyed_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty annoyed quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_annoyed_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty crossedarms = WhileSpeaking(
+    "toasty", 
+    "toasty crossedarms talk", 
+    "toasty crossedarms quiet"
+    )
+image toasty crossedarms talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_crossedarms_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_crossedarms_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty crossedarms quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_crossedarms_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty enthused = WhileSpeaking(
+    "toasty", 
+    "toasty enthused talk", 
+    "toasty enthused quiet"
+    )
+image toasty enthused talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_enthused_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_enthused_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty enthused quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_enthused_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty laugh = WhileSpeaking(
+    "toasty", 
+    "toasty laugh talk", 
+    "toasty laugh quiet"
+    )
+image toasty laugh talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_laugh_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_laugh_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty laugh quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_laugh_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty pointandlaugh = WhileSpeaking(
+    "toasty", 
+    "toasty pointandlaugh talk", 
+    "toasty pointandlaugh quiet"
+    )
+image toasty pointandlaugh talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_pointandlaugh_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_pointandlaugh_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty pointandlaugh quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_pointandlaugh_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty turned = WhileSpeaking(
+    "toasty", 
+    "toasty turned talk", 
+    "toasty turned quiet"
+    )
+image toasty turned talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_turned_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_turned_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty turned quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_turned_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
+
+image toasty turned2 = WhileSpeaking(
+    "toasty", 
+    "toasty turned2 talk", 
+    "toasty turned2 quiet"
+    )
+image toasty turned2 talk:
+    xalign 1.0
+    function is_popped_False
+    parallel:
+        pause 0.04
+        function next_frame_toasty
+        repeat
+    parallel:
+        block:
+            "talksprites/toasty/toasty_turned2_close_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        block:
+            "talksprites/toasty/toasty_turned2_open_[animation_frame_toasty].png"
+            pause 0.04
+            repeat 5
+        repeat
+image toasty turned2 quiet:
+    xalign 1.0
+    function is_popped_False
+    block:
+        "talksprites/toasty/toasty_turned2_close_[animation_frame_toasty].png"
+        pause 0.04
+        function next_frame_toasty
+        repeat 6
 
 
 
@@ -551,6 +1027,8 @@ label chartest:
     menu:
         "Posty sprites.":
             jump .posty
+        "Toasty sprites.":
+            jump .toasty
         "Other characters.":
             jump .other
 
@@ -599,6 +1077,52 @@ label .other:
     show cameron
     cameron "Hello, I'm Security Camera, but they call me Security Cameron."
     p neutral "Hello, Security Cameron."
+
+label .toasty:
+
+    hide yd
+    $ clear_toasty_transition()
+    show toasty neutral
+    t "I'm toasty and this is my neutral expression."
+    t smug "When I have a smug expression my toast pops."
+    p "ok"
+    t smug2 "This is another one."
+    show toasty neutral
+    p "What happens if you shift expressions when you're not saying anything?"
+    show toasty smug4
+    p "Does it still animate?"
+    show toasty neutral
+    p "Looks like it does."
+    t smug2 "Leaving"
+    hide toasty
+    p quiet "..."
+    $ clear_toasty_transition()
+    show toasty enthused
+    t "and coming back with my toast in a different state doesn't play the animation."
+    t annoyed "Well, actually the state of my toast isn't automatically thrown out when I'm hidden, so by default it does still play."
+    t neutral2 "You have to put \"$ clear_toasty_transition()\" before showing me in order to prevent the transition."
+    t neutral "Going from not smug to smug with a hide in between"
+    hide toasty
+    p quiet "..."
+    $ clear_toasty_transition()
+    show toasty smug5
+    t "Can also be made to not play the animation."
+    p neutral "So, what different expressions you have?"
+    t neutral "Well there's neutral,"
+    t neutral2 "the other neutral (neutral2),"
+    t smug "smug,"
+    t smug2 "smug explainy (smug2),"
+    t smug3 "a secret third smug expression (smug3),"
+    t smug4 "{i}this one which doesn't have lip sync (smug4),{/i}"
+    t smug5 "smug with my eyes closed (smug5),"
+    t annoyed "this sort of annoyed bashful expression (annoyed),"
+    t laugh "laughing I guess? (laugh),"
+    t enthused "enthused,"
+    t pointandlaugh "pointing and laughing (pointandlaugh),"
+    t turned "looking in the other direction (turned),"
+    t turned2 "pretending I'm not paying attention (turned2),"
+    t angry "angry,"
+    t crossedarms "and then this one where I'm crossing my arms (crossedarms)."
 
 label .posty:
 
