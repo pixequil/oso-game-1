@@ -692,25 +692,23 @@ image btnet quiet:
     rotate_pad True
     transform_anchor True
 
+
     block:
         ease_cubic 3.0 rotate -1.5
         ease_cubic 3.0 rotate 1.5
         repeat
 image btnet talk:
     "talksprites/btnet.png"
-    xzoom 1.4
-    yzoom 1.4
+    zoom 1.4
     xalign 0.825
     yalign 1.01 # Is here to make sure the rotation doesn't cause missing pixels on the bottom
     xanchor 0.5 yanchor 1.0
+    rotate_pad True
     transform_anchor True
 
     block:
-        easein_elastic 0.4 xzoom (1.4 + 0.02) yzoom (1.4 - 0.02)
-        pause 0.05
-        easein_elastic 0.4 xzoom (1.4 - 0.02) yzoom (1.4 + 0.02)
-        pause 0.05
-
+        ease 1.0 rotate -1
+        ease 1.0 rotate 1
         repeat
 
 define bs = Character("Brand Soda", 
