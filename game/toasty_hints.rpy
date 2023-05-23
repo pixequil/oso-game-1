@@ -43,7 +43,7 @@ label toasty_hints:
         t crossedarms "I'm hanging out here, where all the action is!"
         t enthused "Music, art, local businesses, it all just...makes me feel alive!"
         t smug "And then I look at your face."
-        show toasty pointandlaugh
+        show toasty pointandlaugh talk
         p annoyed "Thanks, I guess."
         return
 
