@@ -41,7 +41,7 @@ _(Don't remove the blank bullets)_
 * Jurta
 
 ### Dialogue
-* 
+* BumpBob Looly
 
 ### Original Writers
 * Steppie Berry
