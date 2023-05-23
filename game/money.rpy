@@ -15,18 +15,26 @@ label money_get:
 
 label dolly:
     scene bg mainstreet
-    show posty neutral
     show dolly
-    if dolly_first == False:
+    if party_bs:
+        jump .dbs
+    elif dolly_first == False:
         jump .dfirst
     else:
         jump .drepeat
 
+label .dbs:
+    show posty neutral
+    show bs follow behind posty
+    p "_" #todo: #111 Dolly quickly rejects Brand Soda, saying they've already spoken.
+
 label .dfirst:
+    show posty neutral
     p "meeting dolly first time" # TODO: #35 initial dolly conversation; transition seamlessly into money checking tree
     jump .money_check
 
 label .drepeat:
+    show posty neutral
     p "revisiting dolly" # TODO: #36 repeat dolly conversation; transition seamlessly into money checking tree
     jump .money_check
 
