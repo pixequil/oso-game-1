@@ -265,7 +265,7 @@ define states.toasty = ToastyStates()
 define t = Character("Toasty",
     callback=speaker("toasty"), 
     image="toasty", 
-    who_color="#c8a28b"
+    who_color="#be2533"
     )
 
 image toasty neutral = WhileSpeaking(
