@@ -192,7 +192,7 @@ init python:
     class FBFAnimation():
         """Represent a frame-by-frame animation."""
 
-        def __init__(self, num_frames, framerate, reset_after=False, reset_frame=1):
+        def __init__(self, num_frames, framerate, *, reset_after=False, reset_frame=1):
             self.num_frames = num_frames
             self.wait = 1 / framerate
             self.reset_frame = reset_frame
@@ -258,7 +258,7 @@ init python:
         def reset(self, *args):
             self.unset = True
 
-define anims.toasty.toast = FBFAnimation(5, 25, True, 0)
+define anims.toasty.toast = FBFAnimation(5, 25, reset_after=True, reset_frame=0)
 
 define states.toasty = ToastyStates()
 
