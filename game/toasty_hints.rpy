@@ -48,7 +48,7 @@ label toasty_hints:
         return
 
     elif item.butterfly_package:
-        t "hint for before you try to deliever the butterfly package to posty"
+        t "hint for before you try to deliever the butterfly package to Crayon Box" # todo #6 
         return
 
     else:
