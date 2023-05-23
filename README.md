@@ -39,10 +39,12 @@ _(Don't remove the blank bullets)_
 ### Item Descriptions
 * Martysh12
 * Jurta
+* Compital
 
 ### Dialogue
 * BumpBob Looly
 * FunnyBoy044
+* Satomi
 
 ### Original Writers
 * Steppie Berry
