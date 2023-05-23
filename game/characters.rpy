@@ -679,8 +679,16 @@ define btnet = Character("B.T. Net",
 image btnet:
     "talksprites/btnet.png"
     zoom 1.4
-    xalign 1.0
+    xalign 0.825
+    yalign 1.01 # Is here to make sure the rotation doesn't cause missing pixels on the bottom
+    xanchor 0.5 yanchor 1.0
+    rotate_pad True
+    transform_anchor True
 
+    block:
+        ease_cubic 3.0 rotate -1.5
+        ease_cubic 3.0 rotate 1.5
+        repeat
 
 define bs = Character("Brand Soda", 
     callback=speaker("bs"), 
