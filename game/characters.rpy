@@ -231,10 +231,10 @@ init python:
             self.unset = True
             self.mouth_state = "close"
 
-        def set_False(self, *args):
+        def unpop(self, *args):
             self.set_popped_state(False)
 
-        def set_True(self, *args):
+        def pop(self, *args):
             self.set_popped_state(True)
 
         def set_popped_state(self, new_state):
@@ -275,7 +275,7 @@ image toasty neutral = WhileSpeaking(
     )
 image toasty neutral talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_neutral_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -287,7 +287,7 @@ image toasty neutral talk:
         repeat
 image toasty neutral quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_neutral_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -301,7 +301,7 @@ image toasty smug = WhileSpeaking(
     )
 image toasty smug talk:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     parallel:
         "talksprites/toasty/toasty_smug_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -313,7 +313,7 @@ image toasty smug talk:
         repeat
 image toasty smug quiet:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     block:
         "talksprites/toasty/toasty_smug_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -327,7 +327,7 @@ image toasty smug2 = WhileSpeaking(
     )
 image toasty smug2 talk:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     parallel:
         "talksprites/toasty/toasty_smug2_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -339,7 +339,7 @@ image toasty smug2 talk:
         repeat
 image toasty smug2 quiet:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     block:
         "talksprites/toasty/toasty_smug2_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -353,7 +353,7 @@ image toasty neutral2 = WhileSpeaking(
     )
 image toasty neutral2 talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_neutral2_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -365,7 +365,7 @@ image toasty neutral2 talk:
         repeat
 image toasty neutral2 quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_neutral2_close2_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -379,7 +379,7 @@ image toasty smug3 = WhileSpeaking(
     )
 image toasty smug3 talk:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     parallel:
         "talksprites/toasty/toasty_smug3_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -391,7 +391,7 @@ image toasty smug3 talk:
         repeat
 image toasty smug3 quiet:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     block:
         "talksprites/toasty/toasty_smug3_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -400,7 +400,7 @@ image toasty smug3 quiet:
 
 image toasty smug4:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     block:
         "talksprites/toasty/toasty_smug4_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -414,7 +414,7 @@ image toasty smug5 = WhileSpeaking(
     )
 image toasty smug5 talk:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     parallel:
         "talksprites/toasty/toasty_smug5_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -426,7 +426,7 @@ image toasty smug5 talk:
         repeat
 image toasty smug5 quiet:
     xalign 1.0
-    function states.toasty.set_True
+    function states.toasty.pop
     block:
         "talksprites/toasty/toasty_smug5_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -440,7 +440,7 @@ image toasty angry = WhileSpeaking(
     )
 image toasty angry talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_angry_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -452,7 +452,7 @@ image toasty angry talk:
         repeat
 image toasty angry quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_angry_close2_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -466,7 +466,7 @@ image toasty annoyed = WhileSpeaking(
     )
 image toasty annoyed talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_annoyed_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -478,7 +478,7 @@ image toasty annoyed talk:
         repeat
 image toasty annoyed quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_annoyed_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -492,7 +492,7 @@ image toasty crossedarms = WhileSpeaking(
     )
 image toasty crossedarms talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_crossedarms_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -504,7 +504,7 @@ image toasty crossedarms talk:
         repeat
 image toasty crossedarms quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_crossedarms_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -518,7 +518,7 @@ image toasty enthused = WhileSpeaking(
     )
 image toasty enthused talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_enthused_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -530,7 +530,7 @@ image toasty enthused talk:
         repeat
 image toasty enthused quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_enthused_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -544,7 +544,7 @@ image toasty laugh = WhileSpeaking(
     )
 image toasty laugh talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_laugh_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -556,7 +556,7 @@ image toasty laugh talk:
         repeat
 image toasty laugh quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_laugh_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -570,7 +570,7 @@ image toasty pointandlaugh = WhileSpeaking(
     )
 image toasty pointandlaugh talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_pointandlaugh_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -582,7 +582,7 @@ image toasty pointandlaugh talk:
         repeat
 image toasty pointandlaugh quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_pointandlaugh_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -596,7 +596,7 @@ image toasty turned = WhileSpeaking(
     )
 image toasty turned talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_turned_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -608,7 +608,7 @@ image toasty turned talk:
         repeat
 image toasty turned quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_turned_close_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -622,7 +622,7 @@ image toasty turned2 = WhileSpeaking(
     )
 image toasty turned2 talk:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     parallel:
         "talksprites/toasty/toasty_turned2_[states.toasty.mouth_state]_[anims.toasty.toast.frame].png"
         pause 0.04
@@ -634,7 +634,7 @@ image toasty turned2 talk:
         repeat
 image toasty turned2 quiet:
     xalign 1.0
-    function states.toasty.set_False
+    function states.toasty.unpop
     block:
         "talksprites/toasty/toasty_turned2_close_[anims.toasty.toast.frame].png"
         pause 0.04
