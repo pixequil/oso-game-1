@@ -33,11 +33,22 @@ label toasty_hints:
         return
 
     elif saw.retainerblock:
-        t "hint for after you try to deliver the butterflies" # todo: #19 blocked by retainer hint (idk look around and talk to people or something)
+        show toasty neutral
+        p concerned "Hey Toasty."
+        t smug "Hey loser."
+        t smug2 "Looks like you met Retainer." 
+        t smug3 "Let me guess, was he bitter and in denial?"
+        p "Pretty much..."
+        t laugh "HA! Good thing I'm not wasting my time over there!"
+        t crossedarms "I'm hanging out here, where all the action is!"
+        t enthused "Music, art, local businesses, it all just...makes me feel alive!"
+        t smug "And then I look at your face."
+        show toasty pointandlaugh
+        p annoyed "Thanks, I guess."
         return
 
     elif item.butterfly_package:
-        t "hint for if you just started the game" # TODO: #6 game start hint (try delivering the butterflies)
+        t "hint for before you try to deliever the butterfly package to posty"
         return
 
     else:

@@ -42,6 +42,7 @@ _(Don't remove the blank bullets)_
 
 ### Dialogue
 * BumpBob Looly
+* FunnyBoy044
 
 ### Original Writers
 * Steppie Berry
