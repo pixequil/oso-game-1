@@ -21,6 +21,24 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif quest.painting_blue:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you got the blue painting" #124 toasty cant believe you did that! check out other exhibits
+        return
+
+    elif bt_distracted:
+        show posty neutral
+        show toasty neutral
+        t "hint for if blue tile is distracted and you can finally take the painting" #120
+        return
+
+    elif miso_blocked:
+        show posty neutral
+        show toasty neutral
+        t "hint for if blue tile doesn't let you spill soup on the painting" #117
+        return
+
     elif item.ladle_full:
         t smug2 "Oh, so you decided to use that ladle on something, hmm?"
         t laugh "What are you going to do with that soup, anyway? Start a food fight?"
@@ -29,6 +47,7 @@ label toasty_hints:
         t enthused "Actually, if you are, can I join?"
         p neutral "Uh, I'm not planning any fights, sorry."
         t annoyed "Ugh, {i}lame{/i}."
+        return
 
     elif item.ladle_empty:
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)

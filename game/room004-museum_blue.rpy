@@ -21,9 +21,13 @@ label museum_blue:
         p "_"
 
         menu:
-            "Talk to Blue Tile":
-                jump .bt
-            "Talk to Red Tile":
+            "Main Exhibit & Blue Tile" if (bt_distracted == False):
+                jump .painting
+            "Red Tile" if (bt_distracted == False):
+                jump .rt
+            "Main Exhibit" if bt_distracted:
+                jump .painting
+            "Red Tile & Blue Tile" if bt_distracted:
                 jump .rt
             "Return to the entrance.":
                 jump museum_entrance
@@ -43,6 +47,11 @@ label .rt:
     scene bg museum_blue
     show redtile
 
+    if quest.painting_blue:
+        show posty neutral
+        p "_" #126 red tile after you steal the painting
+        jump museum_blue
+
     if saw.redtile == False:
         show posty neutral
         $ saw.redtile = True
@@ -59,11 +68,82 @@ label .rt:
         p "_" # todo: #44 short conversation with red tile
         jump museum_blue
 
-label .bt:
+    elif item.ladle_full and miso_blocked:
+        show posty neutral
+        $ bt_distracted = True
+        $ item.red_cash = False
+        p "_" #118 red tile offers to distract blue tile in exchange for the red cash (and because they want that painting harmed)
+        jump museum_blue
+
+    elif bt_distracted:
+        show posty neutral
+        show bluetile scared
+        p "_" #119 red tile urges you to quickly do what you need to do, while continuing to distract blue tile
+        jump museum_blue
+
+
+label .painting:
     if saw.bluetile == False:
         show bg museum_blue_p_rusty
         show posty neutral
+        show bluetile giddy
         $ saw.bluetile = True
         p "_" #114 Blue Tile explains their whole deal, while Posty is captured by the compulsion to take the painting
+        if item.ladle_full:
+            jump .painting_ladle_blocked
+        else:
+            p "_" # posty says bye
+            jump museum_blue
+
+    elif quest.painting_blue:
+        show bg museum_blue_p_missing
+        show posty neutral
+        show bluetile scared
+        p "_" # blue tile after the painting is stolen (still doesn't know posty did it)
         jump museum_blue
+
+    elif saw.bluetile and (item.ladle_full == False):
+        show bg museum_blue_p_rusty
+        show posty neutral
+        show bluetile giddy
+        p "_" #123 revisiting blue tile casually before anything happens
+        jump museum_blue
+
+    elif item.ladle_full:
+        jump .painting_ladle
+
+label .painting_ladle:
+    if bt_distracted:
+        show bg museum_blue_p_rusty
+        show posty neutral
+        p "_" #121 scene where posty, alone, splashes miso soup on the painting and takes the painting on impulse now that the bars are rusted away. blue tile shows up, too late, and is upset about it.
+        "You repeat Red Tile's crime, splashing more miso soup on the painting!"
+        show bg museum_blue_p_opened
+        p "__" # posty takes the painting.
+        show bg museum_blue_p_missing
+        show painting_blue #122 blue exhibit main painting on display
+        "You got an {b}art piece{/b}!" #127 describe blue painting
+        $ item.ladle_full = False
+        $ item.painting_blue = True
+        $ quest.painting_blue = True
+        $ bt_distracted = False
+        $ paintings += 1
+        hide painting_blue
+        show bluetile scared behind posty
+        $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
+        bluetile "_" # blue tile freaks out
+        p "_" # posty decides to quickly leave.
+
+    else:
+        jump .painting_ladle_blocked
+
+label .painting_ladle_blocked:
+    show bg museum_blue_p_rusty
+    show posty neutral
+    show bluetile scared
+    $ miso_blocked = True
+    "You attempt to repeat Red Tile's crime, splashing more miso soup on the painting."
+    p "_" #116 blue tile stops you from splashing miso soup on the painting when you try to.
+    jump museum_blue
+
 

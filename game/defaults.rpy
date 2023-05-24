@@ -25,6 +25,9 @@ default win_flag = False
 default party_bs = False
 default dolly_first = False
 default miso_took = False
+default miso_blocked = False
+default bt_distracted = False
 
 # VARIOUS COUNTERS
 default money = 0
+default paintings = 0
