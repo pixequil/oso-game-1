@@ -47,7 +47,6 @@ label toasty_hints:
         return
 
     elif saw.retainerblock:
- 19-toasty-hint-blockedbyretainer
         show toasty neutral
         p concerned "Hey Toasty."
         t smug "Hey loser."
@@ -73,7 +72,6 @@ label toasty_hints:
         show posty neutral
         show toasty neutral
         t "hint for if you just started the game" # TODO: #6 game start hint (try delivering the butterflies)
-        main
         return
 
     else:
