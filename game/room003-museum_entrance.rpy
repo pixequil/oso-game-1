@@ -45,7 +45,13 @@ label .easels:
 
 label .cameron:
     scene bg museum_entrance
-    show posty neutral
     show cameron
-    p "_" # TODO: #31 talking to Security Cameron again
-    jump museum_entrance
+    if quest.blue_painting:
+        show posty neutral
+        p "_" #128 talking to security cameron after splashing soup on the painting
+        jump museum_entrance
+        
+    else:
+        show posty neutral
+        p "_" # TODO: #31 talking to Security Cameron again
+        jump museum_entrance

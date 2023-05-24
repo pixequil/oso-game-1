@@ -207,7 +207,7 @@ label .miso:
         miso "_"
         jump mainstreet
 
-    elif miso_took and quest_painting_blue:
+    elif quest_painting_blue:
         p "_" # todo: #50 miso soup conversation after splashing miso soup on painting
         miso "_"
         jump mainstreet
