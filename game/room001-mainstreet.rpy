@@ -1,5 +1,5 @@
 image bg mainstreet_top:
-    "bgs/mainstreet_top.png"
+    "map-bgs/mainstreet_top.png"
 
 image butterfly_package:
     "items/butterfly_package.png"
