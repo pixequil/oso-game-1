@@ -68,6 +68,14 @@ label .rt:
         p "_" # todo: #44 short conversation with red tile
         jump museum_blue
 
+    elif bt_distracted:
+        show posty neutral
+        show bluetile scared behind redtile:
+            xzoom -1.0
+            xpos 0.75
+        p "_" #119 red tile urges you to quickly do what you need to do, while continuing to distract blue tile
+        jump museum_blue
+
     elif item.ladle_full and miso_blocked:
         show posty neutral
         p "_" #118 red tile offers to distract blue tile in exchange for the money (and because they want that painting harmed)
@@ -76,16 +84,15 @@ label .rt:
                 "Offer cash." if (money > 0):
                     p "_" # red tile refuses the regular cash.
                     jump .rt_money
-                "Offer red cash."
+                "Offer red cash.":
                     p "_" # red tile takes the red cash.
                     $ item.red_cash = False
                     $ bt_distracted = True
                     jump museum_blue
 
-    elif bt_distracted:
+    elif item.ladle_full:
         show posty neutral
-        show bluetile scared
-        p "_" #119 red tile urges you to quickly do what you need to do, while continuing to distract blue tile
+        p "_" #130 red tile refuses to use the ladle a second time, urging posty to do it
         jump museum_blue
 
 
@@ -140,6 +147,7 @@ label .painting_ladle:
         $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
         bluetile "_" # blue tile freaks out
         p "_" # posty decides to quickly leave.
+        jump museum_blue
 
     else:
         jump .painting_ladle_blocked
