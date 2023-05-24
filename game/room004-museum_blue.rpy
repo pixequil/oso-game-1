@@ -70,10 +70,17 @@ label .rt:
 
     elif item.ladle_full and miso_blocked:
         show posty neutral
-        $ bt_distracted = True
-        $ item.red_cash = False
-        p "_" #118 red tile offers to distract blue tile in exchange for the red cash (and because they want that painting harmed)
-        jump museum_blue
+        p "_" #118 red tile offers to distract blue tile in exchange for the money (and because they want that painting harmed)
+        label .rt_money:
+            menu:
+                "Offer cash." if (money > 0):
+                    p "_" # red tile refuses the regular cash.
+                    jump .rt_money
+                "Offer red cash."
+                    p "_" # red tile takes the red cash.
+                    $ item.red_cash = False
+                    $ bt_distracted = True
+                    jump museum_blue
 
     elif bt_distracted:
         show posty neutral
