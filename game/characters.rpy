@@ -681,7 +681,7 @@ image btnet = WhileSpeaking(
     "btnet",
     "btnet talk",
     "btnet quiet"
-)
+    )
 
 image btnet quiet:
     "talksprites/btnet.png"
@@ -703,6 +703,7 @@ image btnet talk:
         ease 2.0 rotate -3
         ease 2.0 rotate  3
         repeat
+
 
 define bs = Character("Brand Soda", 
     callback=speaker("bs"), 
@@ -880,7 +881,7 @@ image cameron = WhileSpeaking(
     "cameron",
     "cameron talk",
     "cameron quiet"
-)
+    )
 
 image cameron quiet:
     "talksprites/security_cameron.png"
@@ -911,6 +912,7 @@ image cameron talk:
 
         repeat
 
+
 define redtile = Character("Red Tile", 
     callback=speaker("redtile"), 
     image="redtile", 
@@ -936,6 +938,79 @@ image redtile quiet:
     zoom 1.2
     xalign 1.0
     yalign 1.7
+
+
+define bluetile = Character("Blue Tile", 
+    callback=speaker("bluetile"), 
+    image="bluetile", 
+    who_color="#2469ff"
+    )
+
+image bluetile annoyed = WhileSpeaking(
+    "bluetile", 
+    "bluetile annoyed talk", 
+    "bluetile annoyed quiet"
+    )
+image bluetile annoyed talk:
+    "talksprites/bluetile_annoyed_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+    pause 0.2
+    "talksprites/bluetile_annoyed_close.png"
+    pause 0.2
+    repeat
+image bluetile annoyed quiet:
+    "talksprites/bluetile_annoyed_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+
+image bluetile giddy = WhileSpeaking(
+    "bluetile", 
+    "bluetile giddy talk", 
+    "bluetile giddy quiet"
+    )
+image bluetile giddy talk:
+    "talksprites/bluetile_giddy_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+    pause 0.2
+    "talksprites/bluetile_giddy_close.png"
+    pause 0.2
+    repeat
+image bluetile giddy quiet:
+    "talksprites/bluetile_giddy_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+
+image bluetile scared = WhileSpeaking(
+    "bluetile", 
+    "bluetile scared talk", 
+    "bluetile scared quiet"
+    )
+image bluetile scared talk:
+    "talksprites/bluetile_scared_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+    pause 0.2
+    "talksprites/bluetile_scared_close.png"
+    pause 0.2
+    repeat
+image bluetile scared quiet:
+    "talksprites/bluetile_scared_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
 
 
 define dolly = Character("Dolly", 
@@ -1003,6 +1078,12 @@ label .other:
     btnet "Hi, I'm B.T. Net!"
     p "Hello, B.T. Net!"
     hide btnet
+    show bluetile annoyed
+    bluetile "Grr, I'm Blue Tile."
+    bluetile giddy "Yay though!"
+    bluetile scared "Aah!"
+    p "Ok."
+    hide bluetile
     show dolly
     p "Hi Dolly. This is what you look like when you're not speaking. Also I just wanna test where the text wraps just out of curiosity."
     dolly "That's right. And this is what I look like when I {i}am{/i} speaking."
