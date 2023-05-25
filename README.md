@@ -45,6 +45,7 @@ _(Don't remove the blank bullets)_
 * FunnyBoy044
 * Satomi
 * Jurta
+* Multi
 
 ### Original Writers
 * Steppie Berry
