@@ -6,6 +6,12 @@ image butterfly_package:
     zoom 0.5
     truecenter
 
+image ladle_full:
+    "items/ladle_full.png"
+    xalign 0.5
+    yalign 0.5
+    zoom 0.6
+
 label firstscene:
 
     scene black

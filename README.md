@@ -129,6 +129,7 @@ _(Don't remove the blank bullets)_
 * Mak1n' Bacon
 * skiddzy
 * SuperGoat527
+* Faye's_odd.5450
 
 ### Additional Character Designers
 * DominicK 
