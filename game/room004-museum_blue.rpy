@@ -6,6 +6,12 @@ image redcash:
     yalign 0.5
     zoom 3.0
 
+image ladle_empty:
+    "items/ladle_empty.png"
+    xalign 0.5
+    yalign 0.5
+    zoom 0.6
+
 label museum_blue:
     if saw.blue == False:
         jump .redcash
