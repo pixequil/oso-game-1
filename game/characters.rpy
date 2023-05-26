@@ -1079,6 +1079,31 @@ image capsule happy quiet:
     xalign 1.0
 
 
+define buff = Character("Buff", 
+    callback=speaker("buff"), 
+    image="buff", 
+    who_color="#b5bed6"
+    )
+
+image buff = WhileSpeaking(
+    "buff", 
+    "buff talk", 
+    "buff quiet"
+    )
+image buff talk:
+    "talksprites/buff_open.png"
+    zoom 1.6
+    xalign 1.03
+    pause 0.2
+    "talksprites/buff_close.png"
+    pause 0.2
+    repeat
+image buff quiet:
+    "talksprites/buff_close.png"
+    zoom 1.6
+    xalign 1.03
+
+
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1117,6 +1142,9 @@ label .other:
     btnet "Hi, I'm B.T. Net!"
     p "Hello, B.T. Net!"
     hide btnet
+    show buff
+    buff "I'm buff. I mean, I'm Buff."
+    hide buff
     show capsule pain
     capsule "Ah I'm in pain!"
     capsule happy "Just kidding!"

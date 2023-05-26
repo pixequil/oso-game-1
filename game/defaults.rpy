@@ -12,6 +12,7 @@ default item.ladle_empty = False
 default item.ladle_full = False
 default item.painting_blue = False
 default item.heavier = False
+default item.imaginary_lighter = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
@@ -29,6 +30,7 @@ default dolly_first = False
 default miso_took = False
 default miso_blocked = False
 default bt_distracted = False
+default burger_extinguish = False
 
 # VARIOUS COUNTERS
 default money = 0
