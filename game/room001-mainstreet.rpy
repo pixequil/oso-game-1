@@ -146,7 +146,7 @@ label .brandsoda:
     bs "But I am, like, banned from every street and establishment in this town."
     bs "Hope that's not a problem!"
     p astonished quiet "..."
-    p confused "Uh, of course not!"
+    p sad "Uh, of course not!"
 
     jump mainstreet
 
