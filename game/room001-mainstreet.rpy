@@ -134,7 +134,6 @@ label .brandsoda:
     p "I see. And how do you want me to help?"
     bs "Well, I was wondering if you could take me around the town for some marketing!"
     p "Hmm, well, I have a package to deliver, but..."
-    p happy "Sure! I don't see why not.."
 
     show bs follow with move:
         xalign 0.35
