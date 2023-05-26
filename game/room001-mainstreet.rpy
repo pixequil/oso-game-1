@@ -131,7 +131,7 @@ label .brandsoda:
     bs "Say, I have a favor to ask you..."
     bs "You see, I wish to be the next big thing around these parts..."
     bs "You know, reach for the stars!"
-    p "I see. And how do you want me to help?"
+    p "I see... And how do you want me to help?"
     bs "Well, I was wondering if you could take me around the town for some marketing!"
     p "Hmm, well, I have a package to deliver, but..."
 
