@@ -718,7 +718,6 @@ image bs = WhileSpeaking(
     )
 image bs talk:
     "talksprites/brandsoda_open.png"
-#    zoom 0.9
     xalign 1.0
     pause 0.2
     "talksprites/brandsoda_close.png"
@@ -726,7 +725,6 @@ image bs talk:
     repeat
 image bs quiet:
     "talksprites/brandsoda_close.png"
-#    zoom 0.9
     xalign 1.0
 
 image bs follow = WhileSpeaking(
@@ -737,7 +735,6 @@ image bs follow = WhileSpeaking(
 image bs follow talk:
     "talksprites/brandsoda_open.png"
     xzoom -1.0
-#    zoom 0.9
     xalign 0.35
     pause 0.2
     "talksprites/brandsoda_close.png"
@@ -746,7 +743,6 @@ image bs follow talk:
 image bs follow quiet:
     "talksprites/brandsoda_close.png"
     xzoom -1.0
-#    zoom 0.9
     xalign 0.35
 
 
@@ -1040,6 +1036,49 @@ image dolly quiet:
     xalign 1.3
 
 
+define capsule = Character("Capsule", 
+    callback=speaker("capsule"), 
+    image="capsule", 
+    who_color="#fb9609"
+    )
+
+image capsule pain = WhileSpeaking(
+    "capsule", 
+    "capsule pain talk", 
+    "capsule pain quiet"
+    )
+image capsule pain talk:
+    "talksprites/capsule_pain_open.png"
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_pain_close.png"
+    pause 0.2
+    repeat
+image capsule pain quiet:
+    "talksprites/capsule_pain_close.png"
+    xzoom -1.0
+    xalign 1.0
+
+image capsule happy = WhileSpeaking(
+    "capsule", 
+    "capsule happy talk", 
+    "capsule happy quiet"
+    )
+image capsule happy talk:
+    "talksprites/capsule_happy_open.png"
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_happy_close.png"
+    pause 0.2
+    repeat
+image capsule happy quiet:
+    "talksprites/capsule_happy_close.png"
+    xzoom -1.0
+    xalign 1.0
+
+
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1078,6 +1117,10 @@ label .other:
     btnet "Hi, I'm B.T. Net!"
     p "Hello, B.T. Net!"
     hide btnet
+    show capsule pain
+    capsule "Ah I'm in pain!"
+    capsule happy "Just kidding!"
+    hide capsule
     show bluetile annoyed
     bluetile "Grr, I'm Blue Tile."
     bluetile giddy "Yay though!"

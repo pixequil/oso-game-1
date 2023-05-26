@@ -11,6 +11,7 @@ default item.red_cash = False
 default item.ladle_empty = False
 default item.ladle_full = False
 default item.painting_blue = False
+default item.heavier = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
@@ -19,6 +20,7 @@ default saw.museum = False
 default saw.blue = False
 default saw.redtile = False
 default saw.bluetile = False
+default saw.war = False
 
 # VARIOUS FLAGS
 default win_flag = False
