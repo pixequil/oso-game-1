@@ -126,17 +126,28 @@ label .brandsoda:
     show posty neutral
     show bs behind posty
 
-    p "_" # TODO: #12 conversation where Brand Soda decides to follow you
-    bs "_"
+    p "Oh, hey Brand Soda."
+    bs "Hey Posty."
+    bs "Say, I have a favor to ask you..."
+    bs "You see, I wish to be the next big thing around these parts..."
+    bs "You know, reach for the stars!"
+    p "I see. And how do you want me to help?"
+    bs "Well, I was wondering if you could take me around the town for some marketing!"
+    p "Hmm, well, I have a package to deliver, but..."
+    p happy "Sure! I don't see why not.."
 
     show bs follow with move:
         xalign 0.35
     
-    bs "__"
+    bs "Sweet, thanks!"
     $ party_bs = True
     "{b}{color=#df7dff}Brand Soda{/color}{/b} joined your party!"
 
-    p "_"
+    bs "Also, I forgot to mention this..."
+    bs "But I am, like, banned from every street and establishment in this town."
+    bs "Hope that's not a problem!"
+    p astonished quiet "..."
+    p confused "Uh, of course not!"
 
     jump mainstreet
 
