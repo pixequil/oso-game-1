@@ -873,7 +873,7 @@ image retainer crying quiet:
 define cameron = Character("Security Cameron",
     callback=speaker("cameron"), 
     image="cameron", 
-    who_color="#b7aea8"
+    who_color="#bdbfe2"
     )
 
 image cameron = WhileSpeaking(
