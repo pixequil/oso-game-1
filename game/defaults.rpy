@@ -13,24 +13,29 @@ default item.ladle_full = False
 default item.painting_blue = False
 default item.heavier = False
 default item.imaginary_lighter = False
+default item.battery = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
 default saw.retainerblock = False
+default saw.dolly = False
 default saw.museum = False
 default saw.blue = False
 default saw.redtile = False
 default saw.bluetile = False
 default saw.war = False
+default saw.ahiss = False
+default saw.pal = False
 
 # VARIOUS FLAGS
 default win_flag = False
 default party_bs = False
-default dolly_first = False
 default miso_took = False
 default miso_blocked = False
 default bt_distracted = False
 default burger_extinguish = False
+default battery_asked = False
+default deed_burned = False
 
 # VARIOUS COUNTERS
 default money = 0

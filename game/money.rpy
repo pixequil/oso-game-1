@@ -17,7 +17,7 @@ label dolly:
     scene bg mainstreet
     show posty neutral
     show dolly
-    if dolly_first == False:
+    if saw.dolly == False:
         jump .dfirst
     else:
         jump .drepeat
