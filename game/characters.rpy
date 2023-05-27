@@ -1104,6 +1104,33 @@ image buff quiet:
     xalign 1.03
 
 
+define ahiss = Character("Ahiss the Cat", 
+    callback=speaker("ahiss"), 
+    image="ahiss", 
+    who_color="#f19c79"
+    )
+
+image ahiss = WhileSpeaking(
+    "ahiss", 
+    "ahiss talk", 
+    "ahiss quiet"
+    )
+image ahiss talk:
+    "talksprites/ahiss_open.png"
+    zoom 1.5
+    xalign 1.0
+    xzoom -1.0
+    pause 0.2
+    "talksprites/ahiss_close.png"
+    pause 0.2
+    repeat
+image ahiss quiet:
+    "talksprites/ahiss_close.png"
+    zoom 1.5
+    xalign 1.0
+    xzoom -1.0
+
+
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1142,6 +1169,10 @@ label .other:
     btnet "Hi, I'm B.T. Net!"
     p "Hello, B.T. Net!"
     hide btnet
+    show ahiss
+    ahiss "Hiss!"
+    p "ok"
+    hide ahiss
     show buff
     buff "I'm buff. I mean, I'm Buff."
     hide buff
