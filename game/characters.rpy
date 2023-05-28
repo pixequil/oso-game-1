@@ -977,6 +977,26 @@ define notepad = Character("Notepad",
     who_color="#eff5f9"
     )
 
+image notepad = WhileSpeaking(
+    "notepad", 
+    "notepad talk", 
+    "notepad quiet"
+    )
+image notepad talk:
+    "talksprites/notepad_open.png"
+    zoom 1.6
+    xzoom -1.0
+    xalign 1.1
+    pause 0.2
+    "talksprites/notepad_close.png"
+    pause 0.2
+    repeat
+image notepad quiet:
+    "talksprites/notepad_close.png"
+    zoom 1.6
+    xzoom -1.0
+    xalign 1.1
+
 
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
