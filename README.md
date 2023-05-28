@@ -87,6 +87,7 @@ _(Don't remove the blank bullets)_
 ### Talk Sprites
 * Martysh12
 * A Jar of Copper Salts
+* Fluffystar_XD
 * 
 * A.R.S.O.N.
 * APigeonWithCoffee

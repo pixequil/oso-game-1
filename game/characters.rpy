@@ -971,6 +971,12 @@ define miso = Character("Miso Soup",
     who_color="#ab9d67"
     )
 
+define notepad = Character("Notepad",
+    callback=speaker("notepad"), 
+    image="notepad", 
+    who_color="#eff5f9"
+    )
+
 
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
@@ -1040,6 +1046,9 @@ label .other:
     cameron "Hello, I'm Security Camera, but they call me Security Cameron."
     p neutral "Hello, Security Cameron."
     hide cameron
+    show notepad
+    notepad "Hey, I'm Notepad."
+    hide notepad
     jump chartest
 
 label .toasty:
