@@ -88,6 +88,7 @@ _(Don't remove the blank bullets)_
 * Martysh12
 * A Jar of Copper Salts
 * Fluffystar_XD
+* gomigg
 * 
 * A.R.S.O.N.
 * APigeonWithCoffee
@@ -96,7 +97,6 @@ _(Don't remove the blank bullets)_
 * Duckling
 * enden 
 * Enturos
-* gomigg
 * Melody Love
 * meme cat
 * Pacifist Player
