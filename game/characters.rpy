@@ -999,6 +999,34 @@ image notepad quiet:
 
 
 
+define tag = Character("Tag",
+    callback=speaker("tag"), 
+    image="tag", 
+    who_color="#ebeaef"
+    )
+
+image tag = WhileSpeaking(
+    "tag", 
+    "tag talk", 
+    "tag quiet"
+    )
+image tag talk:
+    "talksprites/tag_open.png"
+    zoom 1.4
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/tag_close.png"
+    pause 0.2
+    repeat
+image tag quiet:
+    "talksprites/tag_close.png"
+    zoom 1.4
+    xzoom 1.0
+    xalign 1.0
+
+
+
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
@@ -1069,6 +1097,11 @@ label .other:
     show notepad
     notepad "Hey, I'm Notepad."
     hide notepad
+    show tag
+    tag "Sup. it's me, tag. i'm cool, i guess."
+    p "How come you didn't capitalize your i's?"
+    tag "it's subversive."
+    hide tag
     jump chartest
 
 label .toasty:
