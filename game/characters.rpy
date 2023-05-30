@@ -1027,6 +1027,33 @@ image tag quiet:
 
 
 
+define stickshift = Character("Stick Shift",
+    callback=speaker("stickshift"), 
+    image="stickshift", 
+    who_color="#434343"
+    )
+
+image stickshift = WhileSpeaking(
+    "stickshift", 
+    "stickshift talk", 
+    "stickshift quiet"
+    )
+image stickshift talk:
+    "talksprites/stickshift_open.png"
+    zoom 1.4
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/stickshift_close.png"
+    pause 0.2
+    repeat
+image stickshift quiet:
+    "talksprites/stickshift_close.png"
+    zoom 1.4
+    xzoom 1.0
+    xalign 1.0
+
+
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
@@ -1102,6 +1129,9 @@ label .other:
     p "How come you didn't capitalize your i's?"
     tag "it's subversive."
     hide tag
+    show stickshift
+    stickshift "Hi, my name is Stick Shift."
+    hide stickshift
     jump chartest
 
 label .toasty:

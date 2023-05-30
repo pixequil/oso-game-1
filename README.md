@@ -89,6 +89,7 @@ _(Don't remove the blank bullets)_
 * A Jar of Copper Salts
 * Fluffystar_XD
 * gomigg
+* Tempøral Løser
 * 
 * A.R.S.O.N.
 * APigeonWithCoffee
