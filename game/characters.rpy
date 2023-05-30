@@ -1040,7 +1040,7 @@ image stickshift = WhileSpeaking(
     )
 image stickshift talk:
     "talksprites/stickshift_open.png"
-    zoom 1.4
+    zoom 1.3
     xzoom 1.0
     xalign 1.0
     pause 0.2
@@ -1049,7 +1049,7 @@ image stickshift talk:
     repeat
 image stickshift quiet:
     "talksprites/stickshift_close.png"
-    zoom 1.4
+    zoom 1.3
     xzoom 1.0
     xalign 1.0
 
