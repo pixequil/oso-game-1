@@ -1054,6 +1054,106 @@ image stickshift quiet:
     xalign 1.0
 
 
+
+define auto = Character("Automotone",
+    callback=speaker("auto"), 
+    image="auto", 
+    who_color="#00DAFF"
+    )
+
+image auto bothered= WhileSpeaking(
+    "auto", 
+    "auto bothered talk", 
+    "auto bothered quiet",
+    )
+image auto bothered talk:
+    "talksprites/automotone_bothered_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/automotone_bothered_close.png"
+    pause 0.2
+    repeat
+image auto bothered quiet:
+    "talksprites/automotone_bothered_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.0
+
+
+image auto sad= WhileSpeaking(
+    "auto",
+    "auto sad talk", 
+    "auto sad quiet"
+)
+image auto sad talk:
+    "talksprites/automotone_sad_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/automotone_sad_close.png"
+    pause 0.2
+    repeat
+image auto sad quiet:
+    "talksprites/automotone_sad_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.0
+
+
+
+
+define tb = Character("Ticket Booth",
+    callback=speaker("tb"), 
+    image="tb", 
+    who_color="#5D3266"
+    )
+
+image tb neutral= WhileSpeaking(
+    "tb", 
+    "tb neutral talk", 
+    "tb neutral quiet"
+    )
+image tb neutral talk:
+    "talksprites/ticketbooth_normal_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/ticketbooth_normal_close.png"
+    pause 0.2
+    repeat
+image tb neutral quiet:
+    "talksprites/ticketbooth_normal_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+
+image tb shy= WhileSpeaking(
+    "tb",
+    "tb shy talk", 
+    "tb shy quiet"
+)
+image tb shy talk:
+    "talksprites/ticketbooth_shy_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/ticketbooth_shy_close.png"
+    pause 0.2
+    repeat
+image tb shy quiet:
+    "talksprites/ticketbooth_shy_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+
+
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
@@ -1132,6 +1232,22 @@ label .other:
     show stickshift
     stickshift "Hi, my name is Stick Shift."
     hide stickshift
+    show auto bothered
+    auto bothered "Huh? Oh, I'm Automotone."
+    auto sad "The artist made extra assets for me and now I'm sad."
+    auto sad "They put in too much hard work for an NPC."
+    p "I wouldn't worry about it."
+    p zany "JUST LOOK AT ME!"
+    auto sad "I can't be beared to look. :("
+    hide auto sad
+    show posty neutral
+    show tb neutral
+    tb neutral "Hello! I'm Ticket Booth."
+    tb neutral "I also have extra assets!"
+    tb neutral "I have these neutral talking sprites!"
+    tb shy "And I have shy talking sprites..."
+    tb shy "More sprites are helpful, right?"
+    p "Yeah, I guess so."
     jump chartest
 
 label .toasty:
