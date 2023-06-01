@@ -87,9 +87,11 @@ _(Don't remove the blank bullets)_
 ### Talk Sprites
 * Martysh12
 * A Jar of Copper Salts
+* CosmiKirby
 * Fluffystar_XD
 * gomigg
 * Tempøral Løser
+* VAPORTUESGAYTOR <3
 * 
 * A.R.S.O.N.
 * APigeonWithCoffee
