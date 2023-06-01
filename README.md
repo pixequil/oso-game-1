@@ -121,7 +121,8 @@ _(Don't remove the blank bullets)_
 * Анимации Жени (Eugene's Animations)
 
 ### Conversation Backgrounds
-* 
+* foolcrum - Main Street
+* Rand0m00 - The Dome
 
 ### Props
 * Martysh12

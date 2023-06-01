@@ -1,6 +1,9 @@
 image bg mainstreet_top:
     "bgs/mainstreet_top.png"
 
+image bg mainstreet:
+    "dbgs/mainstreet_dialogue_bg.png"
+
 image butterfly_package:
     "items/butterfly_package.png"
     zoom 0.5
