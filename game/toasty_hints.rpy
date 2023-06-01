@@ -47,6 +47,7 @@ label toasty_hints:
         return
 
     elif saw.retainerblock:
+        show posty concerned
         show toasty neutral
         p concerned "Hey Toasty."
         t smug "Hey loser."
