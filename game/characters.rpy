@@ -188,6 +188,22 @@ image posty astonished quiet:
     "talksprites/posty/posty_astonished_close.png"
     xalign -0.05
 
+image posty suspicious = WhileSpeaking(
+    "posty", 
+    "posty suspicious talk", 
+    "posty suspicious quiet"
+    )
+image posty suspicious talk:
+    "talksprites/posty/posty_suspicious_close.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_suspicious_open.png"
+    pause 0.2
+    repeat
+image posty suspicious quiet:
+    "talksprites/posty/posty_suspicious_close.png"
+    xalign -0.05
+
 init python:
     class FBFAnimation():
         """Represent a frame-by-frame animation."""
@@ -1320,9 +1336,10 @@ label .posty:
     p astonished anim "And astonished comes with an animation, too."
     p confused "Confused?"
     p concerned "Concerned..."
+    p neutral quiet "..."
+    p suspicious "... suspicious..."
+    yd "Suspicious indeed."
     p zany "ZANY!!1"
     yd "What was that last one?"
     p "USE THIS ONE SPARINGLY!!!!11"
     jump chartest
-
-    
