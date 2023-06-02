@@ -1183,7 +1183,7 @@ image sb = WhileSpeaking(
     )
 image sb talk:
     "talksprites/squirtbottle_open.png"
-    zoom 1.5
+    zoom 1.4
     xzoom 1.0
     xalign 1.0
     pause 0.2
@@ -1192,7 +1192,7 @@ image sb talk:
     repeat
 image sb quiet:
     "talksprites/squirtbottle_close.png"
-    zoom 1.5
+    zoom 1.4
     xzoom 1.0
     xalign 1.0
 
@@ -1224,9 +1224,170 @@ image marble quiet:
     xzoom 1.0
     xalign 1.0
 
+
+
+define ahiss = Character("Ahiss the Cat",
+    callback=speaker("ahiss"), 
+    image="ahiss", 
+    who_color="#F19C79"
+    )
+
+image ahiss = WhileSpeaking(
+    "ahiss", 
+    "ahiss talk", 
+    "ahiss quiet"
+    )
+image ahiss talk:
+    "talksprites/ahiss_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/ahiss_close.png"
+    pause 0.2
+    repeat
+image ahiss quiet:
+    "talksprites/ahiss_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+
+
+define bcg = Character("Blue-Colored Glasses",
+    callback=speaker("bcg"), 
+    image="bcg", 
+    who_color="#AED6E3"
+    )
+
+image bcg = WhileSpeaking(
+    "bcg", 
+    "bcg talk", 
+    "bcg quiet"
+    )
+image bcg talk:
+    "talksprites/bcg_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 0.9
+    pause 0.2
+    "talksprites/bcg_close.png"
+    pause 0.2
+    repeat
+image bcg quiet:
+    "talksprites/bcg_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 0.9
+
+define buff = Character("Buff",
+    callback=speaker("buff"), 
+    image="buff", 
+    who_color="#314A93"
+    )
+
+image buff = WhileSpeaking(
+    "buff", 
+    "buff talk", 
+    "buff quiet"
+    )
+image buff talk:
+    "talksprites/buff_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/buff_close.png"
+    pause 0.2
+    repeat
+image buff quiet:
+    "talksprites/buff_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+
+
+define cb = Character("Crayon Box",
+    callback=speaker("cb"), 
+    image="cb", 
+    who_color="#AED6E3"
+    )
+
+image cb = WhileSpeaking(
+    "cb", 
+    "cb talk", 
+    "cb quiet"
+    )
+image cb talk:
+    "talksprites/crayonbox_open.png"
+    zoom 1.5
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/crayonbox_close.png"
+    pause 0.2
+    repeat
+image cb quiet:
+    "talksprites/crayonbox_close.png"
+    zoom 1.5
+    xzoom -1.0
+    xalign 1.0
     
 
+define dolly = Character("Dolly",
+    callback=speaker("dolly"), 
+    image="dolly", 
+    who_color="#D5B589"
+    )
 
+image dolly = WhileSpeaking(
+    "dolly", 
+    "dolly talk", 
+    "dolly quiet"
+    )
+image dolly talk:
+    "talksprites/dolly_open.png"
+    zoom 1.6
+    xzoom -1.0
+    xalign 1.1
+    pause 0.2
+    "talksprites/dolly_close.png"
+    pause 0.2
+    repeat
+image dolly quiet:
+    "talksprites/dolly_idle.png"
+    zoom 1.6
+    xzoom -1.0
+    xalign 1.1
+
+
+
+define pal = Character("Palettette",
+    callback=speaker("pal"), 
+    image="pal", 
+    who_color="#D3907B"
+    )
+
+image pal = WhileSpeaking(
+    "pal", 
+    "pal talk", 
+    "pal quiet"
+    )
+image pal talk:
+    "talksprites/palettette_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/palettette_close.png"
+    pause 0.2
+    repeat
+image pal quiet:
+    "talksprites/palettette_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
@@ -1329,6 +1490,29 @@ label .other:
     hide sb
     show marble
     marble "My name is Marble Bust, and I'm personally starting to doubt that one person seriously drew all these assets."
+    hide marble
+    show ahiss
+    ahiss "Good afternoon, darling. My name is Ahiss the Cat."
+    hide ahiss
+    show bcg
+    bcg "Uhh, hi, I'm Blue-Colored Glasses."
+    hide bcg
+    show buff
+    buff "I'm Buff!"
+    hide buff
+    show cb
+    cb "Heya, kiddo! It's me Crayon Box, host of Open Source Objects!"
+    hide cb
+    show dolly
+    dolly "Hey, it's me Dolly, and I can program your whole game and make the art for you for only fifty easy payments of $999.99."
+    dolly "That means you pay me $999.99 fifty seperate times."
+    p annoyed "I can tell you're really invested in helping me..."
+    dolly "Thank you! (and btw did you notice my idle sprite back there)"
+    hide dolly
+    show posty neutral
+    show pal
+    pal "Howdy, it's me, Palettette@!"
+    hide pal
     jump chartest
 
 label .toasty:
