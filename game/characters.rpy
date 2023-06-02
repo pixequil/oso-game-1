@@ -1118,6 +1118,158 @@ image auto sad quiet:
     xzoom -1.0
     xalign 1.0
 
+#bluetile
+
+define bluetile = Character("Blue Tile",
+    callback=speaker("bluetile"), 
+    image="bluetile", 
+    who_color="#2469FF"
+    )
+
+image bluetile annoyed= WhileSpeaking(
+    "bluetile", 
+    "bluetile annoyed talk", 
+    "bluetile annoyed quiet",
+    )
+image bluetile annoyed talk:
+    "talksprites/bluetile_annoyed_open.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+    pause 0.2
+    "talksprites/bluetile_annoyed_close.png"
+    pause 0.2
+    repeat
+image bluetile annoyed quiet:
+    "talksprites/bluetile_annoyed_close.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+
+
+image bluetile happy= WhileSpeaking(
+    "bluetile", 
+    "bluetile happy talk", 
+    "bluetile happy quiet",
+    )
+image bluetile happy talk:
+    "talksprites/bluetile_giddy_open.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+    pause 0.2
+    "talksprites/bluetile_giddy_close.png"
+    pause 0.2
+    repeat
+image bluetile happy quiet:
+    "talksprites/bluetile_giddy_close.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+
+
+image bluetile scared= WhileSpeaking(
+    "bluetile", 
+    "bluetile scared talk", 
+    "bluetile scared quiet",
+    )
+image bluetile scared talk:
+    "talksprites/bluetile_scared_open.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+    pause 0.2
+    "talksprites/bluetile_scared_close.png"
+    pause 0.2
+    repeat
+image bluetile scared quiet:
+    "talksprites/bluetile_scared_close.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+
+#capsule
+
+define capsule = Character("Capsule",
+    callback=speaker("capsule"), 
+    image="capsule", 
+    who_color="#FB8904"
+    )
+
+image capsule happy= WhileSpeaking(
+    "capsule", 
+    "capsule happy talk", 
+    "capsule happy quiet",
+    )
+image capsule happy talk:
+    "talksprites/capsule_happy_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_happy_close.png"
+    pause 0.2
+    repeat
+image capsule happy quiet:
+    "talksprites/capsule_happy_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+
+image capsule pain= WhileSpeaking(
+    "capsule", 
+    "capsule pain talk", 
+    "capsule pain quiet",
+    )
+image capsule pain talk:
+    "talksprites/capsule_pain_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_pain_close.png"
+    pause 0.2
+    repeat
+image capsule pain quiet:
+    "talksprites/capsule_pain_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+#rcg
+
+define rcg = Character("Rose-Colored Glasses",
+    callback=speaker("rcg"), 
+    image="rcg", 
+    who_color="#FF5295"
+    )
+
+image rcg = WhileSpeaking(
+    "rcg", 
+    "rcg talk", 
+    "rcg quiet"
+    )
+image rcg talk:
+    "talksprites/rcg_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.95
+    pause 0.2
+    "talksprites/rcg_close.png"
+    pause 0.2
+    repeat
+image rcg quiet:
+    "talksprites/rcg_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.95
 
 
 
@@ -1389,6 +1541,8 @@ image pal quiet:
     xzoom 1.0
     xalign 1.0
 
+    
+
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
@@ -1513,6 +1667,20 @@ label .other:
     show pal
     pal "Howdy, it's me, Palettette@!"
     hide pal
+    show bluetile happy
+    bluetile happy "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
+    bluetile happy "Happy..."
+    bluetile scared "Scared..."
+    bluetile annoyed "And annoyed."
+    hide bluetile annoyed
+    show capsule happy
+    capsule happy "Hello! It's me, Capsule. I'm feeling happy."
+    capsule pain "And now I'm in pain..."
+    p "Pain from what?"
+    capsule "Existential dread."
+    hide capsule
+    show rcg
+    rcg "Hello there, I'm Rose-Colored Glasses."
     jump chartest
 
 label .toasty:
