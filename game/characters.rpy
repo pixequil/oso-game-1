@@ -1170,6 +1170,64 @@ image tb shy quiet:
 
 
 
+define sb = Character("Squirt Bottle",
+    callback=speaker("sb"), 
+    image="sb", 
+    who_color="#eb4034"
+    )
+
+image sb = WhileSpeaking(
+    "sb", 
+    "sb talk", 
+    "sb quiet"
+    )
+image sb talk:
+    "talksprites/squirtbottle_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/squirtbottle_close.png"
+    pause 0.2
+    repeat
+image sb quiet:
+    "talksprites/squirtbottle_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+
+
+define marble = Character("Marble Bust",
+    callback=speaker("marble"), 
+    image="marble", 
+    who_color="#bdbb9a"
+    )
+
+image marble = WhileSpeaking(
+    "marble", 
+    "marble talk", 
+    "marble quiet"
+    )
+image marble talk:
+    "talksprites/marblebust_open.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/marblebust_close.png"
+    pause 0.2
+    repeat
+image marble quiet:
+    "talksprites/marblebust_close.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+
+    
+
+
+
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
 label chartest:
@@ -1264,6 +1322,13 @@ label .other:
     tb shy "And I have shy talking sprites..."
     tb shy "More sprites are helpful, right?"
     p "Yeah, I guess so."
+    hide tb
+    show sb
+    sb "What do you want? I'm busy!"
+    p "Sorry, Squirt Bottle."
+    hide sb
+    show marble
+    marble "My name is Marble Bust, and I'm personally starting to doubt that one person seriously drew all these assets."
     jump chartest
 
 label .toasty:
