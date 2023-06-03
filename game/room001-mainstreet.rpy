@@ -18,7 +18,7 @@ image ladle_full:
 label firstscene:
 
     scene black
-    ""
+    p "..."
     p "And this is going to..."
     
     show bg mainstreet # TODO: #23 main street conversation bg
