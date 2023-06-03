@@ -1118,6 +1118,158 @@ image auto sad quiet:
     xzoom -1.0
     xalign 1.0
 
+#bluetile
+
+define bluetile = Character("Blue Tile",
+    callback=speaker("bluetile"), 
+    image="bluetile", 
+    who_color="#2469FF"
+    )
+
+image bluetile annoyed= WhileSpeaking(
+    "bluetile", 
+    "bluetile annoyed talk", 
+    "bluetile annoyed quiet",
+    )
+image bluetile annoyed talk:
+    "talksprites/bluetile_annoyed_open.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+    pause 0.2
+    "talksprites/bluetile_annoyed_close.png"
+    pause 0.2
+    repeat
+image bluetile annoyed quiet:
+    "talksprites/bluetile_annoyed_close.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+
+
+image bluetile happy= WhileSpeaking(
+    "bluetile", 
+    "bluetile happy talk", 
+    "bluetile happy quiet",
+    )
+image bluetile happy talk:
+    "talksprites/bluetile_giddy_open.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+    pause 0.2
+    "talksprites/bluetile_giddy_close.png"
+    pause 0.2
+    repeat
+image bluetile happy quiet:
+    "talksprites/bluetile_giddy_close.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+
+
+image bluetile scared= WhileSpeaking(
+    "bluetile", 
+    "bluetile scared talk", 
+    "bluetile scared quiet",
+    )
+image bluetile scared talk:
+    "talksprites/bluetile_scared_open.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+    pause 0.2
+    "talksprites/bluetile_scared_close.png"
+    pause 0.2
+    repeat
+image bluetile scared quiet:
+    "talksprites/bluetile_scared_close.png"
+    zoom 1.1
+    xzoom -1.0
+    yalign 1.4
+    xalign 1.0
+
+#capsule
+
+define capsule = Character("Capsule",
+    callback=speaker("capsule"), 
+    image="capsule", 
+    who_color="#FB8904"
+    )
+
+image capsule happy= WhileSpeaking(
+    "capsule", 
+    "capsule happy talk", 
+    "capsule happy quiet",
+    )
+image capsule happy talk:
+    "talksprites/capsule_happy_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_happy_close.png"
+    pause 0.2
+    repeat
+image capsule happy quiet:
+    "talksprites/capsule_happy_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+
+image capsule pain= WhileSpeaking(
+    "capsule", 
+    "capsule pain talk", 
+    "capsule pain quiet",
+    )
+image capsule pain talk:
+    "talksprites/capsule_pain_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_pain_close.png"
+    pause 0.2
+    repeat
+image capsule pain quiet:
+    "talksprites/capsule_pain_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+#rcg
+
+define rcg = Character("Rose-Colored Glasses",
+    callback=speaker("rcg"), 
+    image="rcg", 
+    who_color="#FF5295"
+    )
+
+image rcg = WhileSpeaking(
+    "rcg", 
+    "rcg talk", 
+    "rcg quiet"
+    )
+image rcg talk:
+    "talksprites/rcg_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.95
+    pause 0.2
+    "talksprites/rcg_close.png"
+    pause 0.2
+    repeat
+image rcg quiet:
+    "talksprites/rcg_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 0.95
 
 
 
@@ -1169,6 +1321,227 @@ image tb shy quiet:
     xalign 1.0
 
 
+
+define sb = Character("Squirt Bottle",
+    callback=speaker("sb"), 
+    image="sb", 
+    who_color="#eb4034"
+    )
+
+image sb = WhileSpeaking(
+    "sb", 
+    "sb talk", 
+    "sb quiet"
+    )
+image sb talk:
+    "talksprites/squirtbottle_open.png"
+    zoom 1.4
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/squirtbottle_close.png"
+    pause 0.2
+    repeat
+image sb quiet:
+    "talksprites/squirtbottle_close.png"
+    zoom 1.4
+    xzoom 1.0
+    xalign 1.0
+
+
+
+define marble = Character("Marble Bust",
+    callback=speaker("marble"), 
+    image="marble", 
+    who_color="#bdbb9a"
+    )
+
+image marble = WhileSpeaking(
+    "marble", 
+    "marble talk", 
+    "marble quiet"
+    )
+image marble talk:
+    "talksprites/marblebust_open.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/marblebust_close.png"
+    pause 0.2
+    repeat
+image marble quiet:
+    "talksprites/marblebust_close.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+
+
+
+define ahiss = Character("Ahiss the Cat",
+    callback=speaker("ahiss"), 
+    image="ahiss", 
+    who_color="#F19C79"
+    )
+
+image ahiss = WhileSpeaking(
+    "ahiss", 
+    "ahiss talk", 
+    "ahiss quiet"
+    )
+image ahiss talk:
+    "talksprites/ahiss_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/ahiss_close.png"
+    pause 0.2
+    repeat
+image ahiss quiet:
+    "talksprites/ahiss_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+
+
+define bcg = Character("Blue-Colored Glasses",
+    callback=speaker("bcg"), 
+    image="bcg", 
+    who_color="#AED6E3"
+    )
+
+image bcg = WhileSpeaking(
+    "bcg", 
+    "bcg talk", 
+    "bcg quiet"
+    )
+image bcg talk:
+    "talksprites/bcg_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 0.9
+    pause 0.2
+    "talksprites/bcg_close.png"
+    pause 0.2
+    repeat
+image bcg quiet:
+    "talksprites/bcg_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 0.9
+
+define buff = Character("Buff",
+    callback=speaker("buff"), 
+    image="buff", 
+    who_color="#314A93"
+    )
+
+image buff = WhileSpeaking(
+    "buff", 
+    "buff talk", 
+    "buff quiet"
+    )
+image buff talk:
+    "talksprites/buff_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/buff_close.png"
+    pause 0.2
+    repeat
+image buff quiet:
+    "talksprites/buff_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+
+
+define cb = Character("Crayon Box",
+    callback=speaker("cb"), 
+    image="cb", 
+    who_color="#AED6E3"
+    )
+
+image cb = WhileSpeaking(
+    "cb", 
+    "cb talk", 
+    "cb quiet"
+    )
+image cb talk:
+    "talksprites/crayonbox_open.png"
+    zoom 1.5
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/crayonbox_close.png"
+    pause 0.2
+    repeat
+image cb quiet:
+    "talksprites/crayonbox_close.png"
+    zoom 1.5
+    xzoom -1.0
+    xalign 1.0
+    
+
+define dolly = Character("Dolly",
+    callback=speaker("dolly"), 
+    image="dolly", 
+    who_color="#D5B589"
+    )
+
+image dolly = WhileSpeaking(
+    "dolly", 
+    "dolly talk", 
+    "dolly quiet"
+    )
+image dolly talk:
+    "talksprites/dolly_open.png"
+    zoom 1.6
+    xzoom -1.0
+    xalign 1.1
+    pause 0.2
+    "talksprites/dolly_close.png"
+    pause 0.2
+    repeat
+image dolly quiet:
+    "talksprites/dolly_idle.png"
+    zoom 1.6
+    xzoom -1.0
+    xalign 1.1
+
+
+
+define pal = Character("Palettette",
+    callback=speaker("pal"), 
+    image="pal", 
+    who_color="#D3907B"
+    )
+
+image pal = WhileSpeaking(
+    "pal", 
+    "pal talk", 
+    "pal quiet"
+    )
+image pal talk:
+    "talksprites/palettette_open.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/palettette_close.png"
+    pause 0.2
+    repeat
+image pal quiet:
+    "talksprites/palettette_close.png"
+    zoom 1.5
+    xzoom 1.0
+    xalign 1.0
+
+    
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
 
@@ -1264,6 +1637,50 @@ label .other:
     tb shy "And I have shy talking sprites..."
     tb shy "More sprites are helpful, right?"
     p "Yeah, I guess so."
+    hide tb
+    show sb
+    sb "What do you want? I'm busy!"
+    p "Sorry, Squirt Bottle."
+    hide sb
+    show marble
+    marble "My name is Marble Bust, and I'm personally starting to doubt that one person seriously drew all these assets."
+    hide marble
+    show ahiss
+    ahiss "Good afternoon, darling. My name is Ahiss the Cat."
+    hide ahiss
+    show bcg
+    bcg "Uhh, hi, I'm Blue-Colored Glasses."
+    hide bcg
+    show buff
+    buff "I'm Buff!"
+    hide buff
+    show cb
+    cb "Heya, kiddo! It's me Crayon Box, host of Open Source Objects!"
+    hide cb
+    show dolly
+    dolly "Hey, it's me Dolly, and I can program your whole game and make the art for you for only fifty easy payments of $999.99."
+    dolly "That means you pay me $999.99 fifty seperate times."
+    p annoyed "I can tell you're really invested in helping me..."
+    dolly "Thank you! (and btw did you notice my idle sprite back there)"
+    hide dolly
+    show posty neutral
+    show pal
+    pal "Howdy, it's me, Palettette@!"
+    hide pal
+    show bluetile happy
+    bluetile happy "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
+    bluetile happy "Happy..."
+    bluetile scared "Scared..."
+    bluetile annoyed "And annoyed."
+    hide bluetile annoyed
+    show capsule happy
+    capsule happy "Hello! It's me, Capsule. I'm feeling happy."
+    capsule pain "And now I'm in pain..."
+    p "Pain from what?"
+    capsule "Existential dread."
+    hide capsule
+    show rcg
+    rcg "Hello there, I'm Rose-Colored Glasses."
     jump chartest
 
 label .toasty:
