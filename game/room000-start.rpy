@@ -1,5 +1,8 @@
 ﻿# The game starts here.
 
+image bg room:
+    "bgs/room.png"
+
 label start:
 
     scene bg room
