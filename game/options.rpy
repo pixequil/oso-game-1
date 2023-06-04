@@ -152,6 +152,12 @@ define config.save_directory = "OpenSourceObjects-game-1"
 
 define config.window_icon = "gui/window_icon.png"
 
+## Typewriter Text #############################################################
+##
+## Speed of text appearing letter-by-letter
+
+define config.default_text_cps = 30
+
 
 ## Build configuration #########################################################
 ##
