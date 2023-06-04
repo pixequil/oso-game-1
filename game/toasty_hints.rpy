@@ -63,13 +63,6 @@ label toasty_hints:
         return
 
     elif item.butterfly_package:
-        t "hint for before you try to deliever the butterfly package to Crayon Box" # todo #6 
-        show posty neutral
-        show toasty neutral
-        t "hint for after you try to deliver the butterflies" # todo: #19 blocked by retainer hint (idk look around and talk to people or something)
-        return
-
-    elif item.butterfly_package:
         show posty neutral
         show toasty neutral
         t "hint for if you just started the game" # TODO: #6 game start hint (try delivering the butterflies)
