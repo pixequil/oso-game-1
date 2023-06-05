@@ -36,174 +36,7 @@ init python:
     # Curried form of the same.
     speaker = renpy.curry(speaker_callback)
 
-### CHARACTERS ###
-
-define p = Character("Posty", 
-    callback=speaker("posty"), 
-    image="posty", 
-    who_color="#5581c1"
-    )
-
-image posty neutral = WhileSpeaking(
-    "posty", 
-    "posty neutral talk", 
-    "posty neutral quiet"
-    )
-image posty neutral talk:
-    "talksprites/posty/posty_neutral_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_neutral_close.png"
-    pause 0.2
-    repeat
-image posty neutral quiet:
-    "talksprites/posty/posty_neutral_close.png"
-    xalign -0.05
-
-image posty happy = WhileSpeaking(
-    "posty", 
-    "posty happy talk", 
-    "posty happy quiet"
-    )
-image posty happy talk:
-    "talksprites/posty/posty_happy_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_happy_close.png"
-    pause 0.2
-    repeat
-image posty happy quiet:
-    "talksprites/posty/posty_happy_close.png"
-    xalign -0.05
-
-image posty sad = WhileSpeaking(
-    "posty", 
-    "posty sad talk", 
-    "posty sad quiet"
-    )
-image posty sad talk:
-    "talksprites/posty/posty_sad_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_sad_close.png"
-    pause 0.2
-    repeat
-image posty sad quiet:
-    "talksprites/posty/posty_sad_close.png"
-    xalign -0.05
-
-image posty concerned = WhileSpeaking(
-    "posty", 
-    "posty concerned talk", 
-    "posty concerned quiet"
-    )
-image posty concerned talk:
-    "talksprites/posty/posty_concerned_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_concerned_close.png"
-    pause 0.2
-    repeat
-image posty concerned quiet:
-    "talksprites/posty/posty_concerned_close.png"
-    xalign -0.05
-
-image posty confused = WhileSpeaking(
-    "posty", 
-    "posty confused talk", 
-    "posty confused quiet"
-    )
-image posty confused talk:
-    "talksprites/posty/posty_confused_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_confused_close.png"
-    pause 0.2
-    repeat
-image posty confused quiet:
-    "talksprites/posty/posty_confused_close.png"
-    xalign -0.05
-
-image posty zany = WhileSpeaking(
-    "posty", 
-    "posty zany talk", 
-    "posty zany quiet"
-    )
-image posty zany talk:
-    "talksprites/posty/posty_zany_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_zany_close.png"
-    pause 0.2
-    repeat
-image posty zany quiet:
-    "talksprites/posty/posty_zany_close.png"
-    xalign -0.05
-
-image posty angry = WhileSpeaking(
-    "posty", 
-    "posty angry talk", 
-    "posty angry quiet"
-    )
-image posty angry talk:
-    "talksprites/posty/posty_angry_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_angry_close.png"
-    pause 0.2
-    repeat
-image posty angry quiet:
-    "talksprites/posty/posty_angry_close.png"
-    xalign -0.05
-
-image posty annoyed = WhileSpeaking(
-    "posty", 
-    "posty annoyed talk", 
-    "posty annoyed quiet"
-    )
-image posty annoyed talk:
-    "talksprites/posty/posty_annoyed_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_annoyed_close.png"
-    pause 0.2
-    repeat
-image posty annoyed quiet:
-    "talksprites/posty/posty_annoyed_close.png"
-    xalign -0.05
-
-image posty astonished = WhileSpeaking(
-    "posty", 
-    "posty astonished talk", 
-    "posty astonished quiet"
-    )
-image posty astonished talk:
-    "talksprites/posty/posty_astonished_close.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_astonished_open.png"
-    pause 0.2
-    repeat
-image posty astonished quiet:
-    "talksprites/posty/posty_astonished_close.png"
-    xalign -0.05
-
-image posty suspicious = WhileSpeaking(
-    "posty", 
-    "posty suspicious talk", 
-    "posty suspicious quiet"
-    )
-image posty suspicious talk:
-    "talksprites/posty/posty_suspicious_close.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_suspicious_open.png"
-    pause 0.2
-    repeat
-image posty suspicious quiet:
-    "talksprites/posty/posty_suspicious_close.png"
-    xalign -0.05
-
+# Animation system
 init python:
     class FBFAnimation():
         """Represent a frame-by-frame animation."""
@@ -225,7 +58,246 @@ init python:
             elif self.reset_after:
                 self.reset()
 
-define anims.posty.astonished = FBFAnimation(18, 24)
+### CHARACTERS ###
+
+define p = Character("Posty", 
+    callback=speaker("posty"), 
+    image="posty", 
+    who_color="#5581c1"
+    )
+
+image posty neutral = WhileSpeaking(
+    "posty", 
+    "posty neutral talk", 
+    "posty neutral quiet"
+    )
+image posty neutral talk:
+    "talksprites/posty/posty_neutral_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_neutral.png"
+    pause 0.2
+    repeat
+image posty neutral quiet:
+    "talksprites/posty/posty_neutral.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_neutral.png"
+        pause 2.0
+        "talksprites/posty/posty_neutral_blink.png"
+        pause 0.125
+        repeat
+
+image posty happy = WhileSpeaking(
+    "posty", 
+    "posty happy talk", 
+    "posty happy quiet"
+    )
+image posty happy talk:
+    "talksprites/posty/posty_happy_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_happy.png"
+    pause 0.2
+    repeat
+image posty happy quiet:
+    "talksprites/posty/posty_happy.png"
+    xalign -0.05
+
+image posty sad = WhileSpeaking(
+    "posty", 
+    "posty sad talk", 
+    "posty sad quiet"
+    )
+image posty sad talk:
+    "talksprites/posty/posty_sad_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_sad.png"
+    pause 0.2
+    repeat
+image posty sad quiet:
+    "talksprites/posty/posty_sad.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_sad.png"
+        pause 2.0
+        "talksprites/posty/posty_sad_blink.png"
+        pause 0.125
+        repeat
+
+image posty concerned = WhileSpeaking(
+    "posty", 
+    "posty concerned talk", 
+    "posty concerned quiet"
+    )
+image posty concerned talk:
+    "talksprites/posty/posty_concerned_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_concerned.png"
+    pause 0.2
+    repeat
+image posty concerned quiet:
+    "talksprites/posty/posty_concerned.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_concerned.png"
+        pause 2.0
+        "talksprites/posty/posty_concerned_blink.png"
+        pause 0.125
+        repeat
+
+image posty confused = WhileSpeaking(
+    "posty", 
+    "posty confused talk", 
+    "posty confused quiet"
+    )
+image posty confused talk:
+    "talksprites/posty/posty_confused_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_confused.png"
+    pause 0.2
+    repeat
+image posty confused quiet:
+    "talksprites/posty/posty_confused.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_confused.png"
+        pause 2.0
+        "talksprites/posty/posty_confused_blink.png"
+        pause 0.125
+        repeat
+
+image posty zany = WhileSpeaking(
+    "posty", 
+    "posty zany talk", 
+    "posty zany quiet"
+    )
+image posty zany talk:
+    "talksprites/posty/posty_zany_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_zany.png"
+    pause 0.2
+    repeat
+image posty zany quiet:
+    "talksprites/posty/posty_zany.png"
+    xalign -0.05
+
+define anims.posty.angry = FBFAnimation(22, 24)
+
+image posty angry = WhileSpeaking(
+    "posty", 
+    "posty angry talk", 
+    "posty angry quiet"
+    )
+image posty angry talk:
+    "talksprites/posty/posty_angry_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_angry.png"
+    pause 0.2
+    repeat
+image posty angry quiet:
+    "talksprites/posty/posty_angry.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_angry.png"
+        pause 2.0
+        "talksprites/posty/posty_angry_blink.png"
+        pause 0.125
+        "talksprites/posty/posty_angry.png"
+        pause 2.0
+
+        block:
+            function anims.posty.angry.reset
+            block:
+                "talksprites/posty/posty_angry_anim_[anims.posty.angry.frame].png"
+                function anims.posty.angry.advance
+                pause anims.posty.angry.wait
+                repeat anims.posty.angry.num_frames
+
+            repeat 2
+
+        repeat
+
+image posty annoyed = WhileSpeaking(
+    "posty", 
+    "posty annoyed talk", 
+    "posty annoyed quiet"
+    )
+image posty annoyed talk:
+    "talksprites/posty/posty_annoyed_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_annoyed.png"
+    pause 0.2
+    repeat
+image posty annoyed quiet:
+    "talksprites/posty/posty_annoyed.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_annoyed.png"
+        pause 2.0
+        "talksprites/posty/posty_annoyed_blink.png"
+        pause 0.125
+        repeat
+
+image posty astonished = WhileSpeaking(
+    "posty", 
+    "posty astonished talk", 
+    "posty astonished quiet"
+    )
+image posty astonished talk:
+    "talksprites/posty/posty_astonished.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_astonished_open.png"
+    pause 0.2
+    repeat
+image posty astonished quiet:
+    "talksprites/posty/posty_astonished.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_astonished.png"
+        pause 2.0
+        "talksprites/posty/posty_astonished_blink.png"
+        pause 0.125
+        repeat
+
+image posty suspicious = WhileSpeaking(
+    "posty", 
+    "posty suspicious talk", 
+    "posty suspicious quiet"
+    )
+image posty suspicious talk:
+    "talksprites/posty/posty_suspicious.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_suspicious_open.png"
+    pause 0.2
+    repeat
+image posty suspicious quiet:
+    "talksprites/posty/posty_suspicious.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_suspicious.png"
+        pause 2.0
+        "talksprites/posty/posty_suspicious_blink.png"
+        pause 0.125
+        repeat
+
+define anims.posty.astonished = FBFAnimation(17, 24)
 
 image posty astonished before:
     "talksprites/posty/posty_astonished_anim_1.png"
@@ -1735,6 +1807,8 @@ label .posty:
 
     p "Meee!!!"
     yd "Cool, you can at least talk."
+    p "By the way, my expressions have an idle blink animation, except for happy and zany."
+    yd "Now that's some attention to detail, if I do say so myself!"
     p "Well, what if I want to have an inner monologue?"
     p quiet "{i}How's this?{/i}"
     yd "I heard that"
@@ -1746,13 +1820,19 @@ label .posty:
     yd "Sounds like a plan!"
     p "So, this one's called neutral."
     p happy "Happy!"
+    yd quiet "..."
     p sad "Sad."
-    p angry "Angry..!"
+    yd quiet "..."
+    p angry "Angry..! Note how there's an idle animation!"
+    yd quiet "..."
     p annoyed "Annoyed."
+    yd quiet "..."
     p astonished "Astonished, if you remember."
     p astonished anim "And astonished comes with an animation, too."
     p confused "Confused?"
+    yd quiet "..."
     p concerned "Concerned..."
+    yd quiet "..."
     p neutral quiet "..."
     p suspicious "... suspicious..."
     yd "Suspicious indeed."
