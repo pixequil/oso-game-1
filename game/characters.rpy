@@ -716,8 +716,8 @@ image btnet talk:
     transform_anchor True
 
     block:
-        ease 2.0 rotate -3
-        ease 2.0 rotate  3
+        ease 1.25 rotate -2
+        ease 1.25 rotate  2
         repeat
 
 define bs = Character("Brand Soda", 
