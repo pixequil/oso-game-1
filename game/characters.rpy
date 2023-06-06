@@ -1613,6 +1613,32 @@ image pal quiet:
     xzoom 1.0
     xalign 1.0
 
+
+define rm = Character("Ripped Mitten",
+    callback=speaker("rm"), 
+    image="rm", 
+    who_color="#63DEC2"
+    )
+
+image rm = WhileSpeaking(
+    "rm", 
+    "rm talk", 
+    "rm quiet"
+    )
+image rm talk:
+    "talksprites/ripped_mitten_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/ripped_mitten_close.png"
+    pause 0.2
+    repeat
+image rm quiet:
+    "talksprites/ripped_mitten_idle.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
     
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
@@ -1753,6 +1779,12 @@ label .other:
     hide capsule
     show rcg
     rcg "Hello there, I'm Rose-Colored Glasses."
+    hide rcg
+    show rm
+    rm "Oh hi, I'm Ripped Mitten."
+    p "What's wrong with your camera?"
+    rm "I don't know."
+    hide rm
     jump chartest
 
 label .toasty:
