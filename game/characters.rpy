@@ -22,16 +22,29 @@ init python:
     def WhileSpeaking(name, speaking_d, done_d=Null()):
         return DynamicDisplayable(curried_while_speaking(name, speaking_d, done_d))
   
+    # Create a channel for speaking sounds
+    renpy.music.register_channel("speak", tight=True, file_prefix="sound/voices/")
+
     # This callback maintains the speaking variable.
-    def speaker_callback(name, event, **kwargs):
+    def speaker_callback(name, event, sound_file="snd-txt1.mp3", interact=True, **kwargs):
         global speaking
-       
+        
+        # Responsible for talking animations
         if event == "show":
             speaking = name
         # elif event == "slow_done":
         #     speaking = None
         elif event == "end":
             speaking = None
+
+        # Do a boopy voice
+        if not interact:
+            return
+
+        if event == "show_done":
+            renpy.sound.play(sound_file, loop=True, channel="speak")
+        elif event == "slow_done":
+            renpy.sound.stop(channel="speak", fadeout=0.05)
   
     # Curried form of the same.
     speaker = renpy.curry(speaker_callback)
@@ -58,36 +71,10 @@ init python:
             elif self.reset_after:
                 self.reset()
 
-# Dialogue Sounds
-
-#normal voice
-init python:
-    import functools
-    def boopy_voice(event, interact=True, **kwargs):
-        if not interact:
-            return
-
-        if event == "show_done":
-            renpy.sound.play("sound/snd-txt1.mp3", loop=True)
-        elif event == "slow_done":
-            renpy.sound.stop()
-
-#yellow diamond voice
-init python:
-    import functools
-    def yd_voice(event, interact=True, **kwargs):
-        if not interact:
-            return
-
-        if event == "show_done":
-            renpy.sound.play("sound/snd-floweytalk1.mp3", loop=True)
-        elif event == "slow_done":
-            renpy.sound.stop()
-
 ### CHARACTERS ###
 
 define p = Character("Posty", 
-    callback=boopy_voice,
+    callback=speaker("posty", sound_file="snd-txt1.mp3"),
     image="posty", 
     who_color="#5581c1"
     )
@@ -759,7 +746,7 @@ image toasty turned2 quiet:
 
 
 define yd = Character("Yellow Diamond", 
-    callback=yd_voice, 
+    callback=speaker("yd", sound_file="snd-floweytalk1.mp3"), 
     image="yd", 
     who_color="#ffff00"
     )
