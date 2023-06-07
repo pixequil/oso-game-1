@@ -58,10 +58,36 @@ init python:
             elif self.reset_after:
                 self.reset()
 
+# Dialogue Sounds
+
+#normal voice
+init python:
+    import functools
+    def boopy_voice(event, interact=True, **kwargs):
+        if not interact:
+            return
+
+        if event == "show_done":
+            renpy.sound.play("sound/snd-txt1.mp3", loop=True)
+        elif event == "slow_done":
+            renpy.sound.stop()
+
+#yellow diamond voice
+init python:
+    import functools
+    def yd_voice(event, interact=True, **kwargs):
+        if not interact:
+            return
+
+        if event == "show_done":
+            renpy.sound.play("sound/snd-floweytalk1.mp3", loop=True)
+        elif event == "slow_done":
+            renpy.sound.stop()
+
 ### CHARACTERS ###
 
 define p = Character("Posty", 
-    callback=speaker("posty"), 
+    callback=boopy_voice,
     image="posty", 
     who_color="#5581c1"
     )
@@ -733,7 +759,7 @@ image toasty turned2 quiet:
 
 
 define yd = Character("Yellow Diamond", 
-    callback=speaker("yd"), 
+    callback=yd_voice, 
     image="yd", 
     who_color="#ffff00"
     )
