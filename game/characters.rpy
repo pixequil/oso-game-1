@@ -26,7 +26,7 @@ init python:
     renpy.music.register_channel("speak", tight=True, file_prefix="sound/voices/")
 
     # This callback maintains the speaking variable.
-    def speaker_callback(name, event, sound_file="snd-txt1.mp3", interact=True, **kwargs):
+    def speaker_callback(name, event, sound_files=["snd-txt1.mp3"], interact=True, **kwargs):
         global speaking
         
         # Responsible for talking animations
@@ -42,7 +42,7 @@ init python:
             return
 
         if event == "show_done":
-            renpy.sound.play(sound_file, loop=True, channel="speak")
+            renpy.sound.play(renpy.random.choice(sound_files), loop=True, channel="speak")
         elif event == "slow_done":
             renpy.sound.stop(channel="speak", fadeout=0.05)
   
@@ -74,7 +74,7 @@ init python:
 ### CHARACTERS ###
 
 define p = Character("Posty", 
-    callback=speaker("posty", sound_file="undertalevoicetest_posty_2_fix.wav"),
+    callback=speaker("posty", sound_files=["undertalevoicetest_posty_2_fix.wav"]),
     image="posty", 
     who_color="#5581c1"
     )
@@ -746,7 +746,7 @@ image toasty turned2 quiet:
 
 
 define yd = Character("Yellow Diamond", 
-    callback=speaker("yd", sound_file="yd_voice.wav"), 
+    callback=speaker("yd", sound_files=["yd_voice.wav"]), 
     image="yd", 
     who_color="#ffff00"
     )
