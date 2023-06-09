@@ -74,7 +74,7 @@ init python:
 ### CHARACTERS ###
 
 define p = Character("Posty", 
-    callback=speaker("posty", sound_file="snd-txt1.mp3"),
+    callback=speaker("posty", sound_file="undertalevoicetest_posty_2.wav"),
     image="posty", 
     who_color="#5581c1"
     )
@@ -746,7 +746,7 @@ image toasty turned2 quiet:
 
 
 define yd = Character("Yellow Diamond", 
-    callback=speaker("yd", sound_file="snd-floweytalk1.mp3"), 
+    callback=speaker("yd", sound_file="yd_voice.wav"), 
     image="yd", 
     who_color="#ffff00"
     )
