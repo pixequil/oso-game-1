@@ -74,7 +74,7 @@ init python:
 ### CHARACTERS ###
 
 define p = Character("Posty", 
-    callback=speaker("posty", sound_file="undertalevoicetest_posty_2.wav"),
+    callback=speaker("posty", sound_file="undertalevoicetest_posty_2_fix.wav"),
     image="posty", 
     who_color="#5581c1"
     )
