@@ -1038,34 +1038,6 @@ image redtile quiet:
     xalign 1.0
     yalign 1.7
 
-
-define dolly = Character("Dolly", 
-    callback=speaker("dolly"), 
-    image="dolly", 
-    who_color="#e3d3ab"
-    )
-
-image dolly = WhileSpeaking(
-    "dolly", 
-    "dolly talk", 
-    "dolly quiet"
-    )
-image dolly talk:
-    "talksprites/dolly_open.png"
-    zoom 2.0
-    xzoom -1.0
-    xalign 1.3
-    pause 0.2
-    "talksprites/dolly_close.png"
-    pause 0.2
-    repeat
-image dolly quiet:
-    "talksprites/dolly_idle.png"
-    zoom 2.0
-    xzoom -1.0
-    xalign 1.3
-
-
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1571,21 +1543,20 @@ image cb quiet:
     xzoom -1.0
     xalign 1.0
     
-
 define dolly = Character("Dolly",
-    callback=speaker("dolly"), 
-    image="dolly", 
-    who_color="#D5B589"
+    callback=speaker("dolly"),
+    image="dolly",
+    who_color="#e3d3ab"
     )
 
 image dolly = WhileSpeaking(
-    "dolly", 
-    "dolly talk", 
+    "dolly",
+    "dolly talk",
     "dolly quiet"
     )
 image dolly talk:
     "talksprites/dolly_open.png"
-    zoom 1.6
+    zoom 1.8
     xzoom -1.0
     xalign 1.1
     pause 0.2
@@ -1594,7 +1565,7 @@ image dolly talk:
     repeat
 image dolly quiet:
     "talksprites/dolly_idle.png"
-    zoom 1.6
+    zoom 1.8
     xzoom -1.0
     xalign 1.1
 
@@ -1799,7 +1770,8 @@ label .other:
     dolly "Hey, it's me Dolly, and I can program your whole game and make the art for you for only fifty easy payments of $999.99."
     dolly "That means you pay me $999.99 fifty seperate times."
     p annoyed "I can tell you're really invested in helping me..."
-    dolly "Thank you! (and btw did you notice my idle sprite back there)"
+    p confused "Wait why did you show up twice?"
+    dolly "shhhhhhhh don't worry about it"
     hide dolly
     show posty neutral
     show pal
