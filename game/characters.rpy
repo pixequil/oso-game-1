@@ -987,6 +987,30 @@ define miso = Character("Miso Soup",
     who_color="#ab9d67"
     )
 
+image miso = WhileSpeaking(
+    "miso", 
+    "miso talk", 
+    "miso quiet"
+    )
+image miso talk:
+    "talksprites/miso_soup_talk_open.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    yalign 1.25
+    pause 0.2
+    "talksprites/miso_soup_talk_close.png"
+    pause 0.2
+    repeat
+image miso quiet:
+    "talksprites/miso_soup_talk_close.png"
+    zoom 1.2
+    xzoom -1.0
+    xalign 1.0
+    yalign 1.25
+
+
+
 define notepad = Character("Notepad",
     callback=speaker("notepad"), 
     image="notepad", 
@@ -1713,6 +1737,9 @@ label .other:
     p "What's wrong with your camera?"
     rm "I don't know."
     hide rm
+    show miso
+    miso "I'm Miso Soup. I wish I had more soup though."
+    hide miso
     jump chartest
 
 label .toasty:
