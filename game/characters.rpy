@@ -1131,6 +1131,31 @@ image ahiss quiet:
     xzoom -1.0
 
 
+define pal = Character("Palettette@", 
+    callback=speaker("palettette"), 
+    image="palettette", 
+    who_color="#d68c7b"
+    )
+
+image palettette = WhileSpeaking(
+    "palettette", 
+    "palettette talk", 
+    "palettette quiet"
+    )
+image palettette talk:
+    "talksprites/palettette_open.png"
+    zoom 1.5
+    xalign 1.0
+    pause 0.2
+    "talksprites/palettette_close.png"
+    pause 0.2
+    repeat
+image palettette quiet:
+    "talksprites/palettette_close.png"
+    zoom 1.5
+    xalign 1.0
+
+
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1169,6 +1194,9 @@ label .other:
     btnet "Hi, I'm B.T. Net!"
     p "Hello, B.T. Net!"
     hide btnet
+    show palettette
+    pal "Hi hello how are you"
+    hide palettette
     show ahiss
     ahiss "Hiss!"
     p "ok"
