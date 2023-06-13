@@ -22,10 +22,55 @@ label museum_war:
             jump .ahiss
         "Palettette@":
             jump .pal
-        "Main Exhibit\nRose-Colored Glasses & Blue-Colored Glasses":
-            jump .painting
+        "Main Exhibit\nRose-Colored Glasses & Blue-Colored Glasses" if scanter_green == False:
+            jump .painting1
+        "Main Exhibit" if (scanter_green == True) and (quest.painting_war == False):
+            jump .painting2
+        "Rose-Colored Glasses & Blue-Colored Glasses" if scanter_green:
+            jump .glasses2
         "Return to the entrance.":
             jump museum_entrance
+
+label .painting1:
+    scene bg museum_war
+    show painting_war
+    show rcg
+    show bcg
+    if saw.glasses:
+        show posty neutral
+        p "_" # revisiting the glasses while painting is still gray
+        jump museum_war
+    else:
+        show posty neutral
+        p "_" # posty attempts to greet the glasses but they are too busy arguing over the painting
+        rcg "_"
+        bcg "_"
+        p "_" # posty gives up and leaves
+        jump museum_war
+
+label .painting2:
+    scene bg museum_war
+    show painting_war green
+    show posty neutral
+    p "_" # posty beholds the painting and decides to take it since no one's around to block it.
+    show painting_war green at center
+    "You got an {b}art piece{/b}!" # describe war painting
+    $ item.painting_war = True
+    $ quest.painting_war = True
+    $ paintings += 1
+    hide painting_war
+    p "_" # posty decides to quickly leave.
+    jump museum_war
+
+label .glasses2:
+    scene bg museum_war
+    show rcg
+    show bcg
+    show posty neutral
+    rcg "_" # they've found something new to argue about. some things never change
+    bcg "_"
+    p "_"
+    jump museum_war
 
 label .pal:
     scene bg museum_war

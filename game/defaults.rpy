@@ -4,6 +4,7 @@
 default quest.retainer = False
 default quest.painting_blue = False
 default quest.bs = False
+default quest.painting_war = False
 
 # ITEMS
 default item.butterfly_package = False
@@ -14,6 +15,7 @@ default item.painting_blue = False
 default item.heavier = False
 default item.imaginary_lighter = False
 default item.battery = False
+default item.painting_war = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
