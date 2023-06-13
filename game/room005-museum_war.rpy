@@ -38,11 +38,11 @@ label .painting1:
     show bcg
     if saw.glasses:
         show posty neutral
-        p "_" # revisiting the glasses while painting is still gray
+        p "_" #210 revisiting the glasses while painting is still gray
         jump museum_war
     else:
         show posty neutral
-        p "_" # posty attempts to greet the glasses but they are too busy arguing over the painting
+        p "_" #209 posty attempts to greet the glasses but they are too busy arguing over the painting
         rcg "_"
         bcg "_"
         p "_" # posty gives up and leaves
@@ -53,9 +53,9 @@ label .painting2:
     scene bg museum_war
     show painting_war green
     show posty neutral
-    p "_" # posty beholds the painting and decides to take it since no one's around to block it.
+    p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
     show painting_war green at center
-    "You got an {b}art piece{/b}!" # describe war painting
+    "You got an {b}art piece{/b}!" #212 describe war painting
     $ item.painting_war = True
     $ quest.painting_war = True
     $ paintings += 1
@@ -68,7 +68,7 @@ label .glasses2:
     show rcg
     show bcg
     show posty neutral
-    rcg "_" # they've found something new to argue about. some things never change
+    rcg "_" #213 they've found something new to argue about. some things never change
     bcg "_"
     p "_"
     jump museum_war
@@ -83,7 +83,7 @@ label .pal:
     else:
         jump .pal1
 
-label .pal1:
+label .pal1: #205
     show posty neutral
     pal "_" # palettette introduces herself, explaining her backstory and discussing the scanter and offering to demonstrate.
     p "_"
@@ -96,7 +96,7 @@ label .pal1:
         pal "_" # palettette explains that her battery rolled into ahiss's territory and asks posty to get it back
         jump museum_war
 
-label .pal2:
+label .pal2: #206
     show posty neutral
     pal "_" # palettette asks if you managed to get the battery
     if item.battery:
@@ -109,7 +109,7 @@ label .pal2:
         p "_" # posty says that she hasnt asked yet. there can be a brief interaction here
         jump museum_war
 
-label .pal_battery:
+label .pal_battery: #207
     show battery center
     "You handed over the {b}battery{/b}!"
     $ item.battery = False
@@ -141,7 +141,7 @@ label .pal_battery:
 
 label .pal3:
     show posty neutral
-    p "_" # revisiting palettette. avoid mentioning whether posty took the painting.
+    p "_" #208 revisiting palettette. avoid mentioning whether posty took the painting.
     pal "_"
     jump museum_war
 
