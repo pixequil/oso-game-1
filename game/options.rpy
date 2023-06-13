@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "0.0.0"
+define config.version = "0.0.1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -151,6 +151,12 @@ define config.save_directory = "OpenSourceObjects-game-1"
 ## The icon displayed on the taskbar or dock.
 
 define config.window_icon = "gui/window_icon.png"
+
+## Typewriter Text #############################################################
+##
+## Speed of text appearing letter-by-letter
+
+define config.default_text_cps = 30
 
 
 ## Build configuration #########################################################

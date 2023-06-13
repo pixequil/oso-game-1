@@ -3,6 +3,9 @@ image bg dome_top:
     zoom 1.5
     yalign 0.2
 
+image bg dome:
+    "dbgs/Dome_dialogue_bg.png"
+
 # TODO: #24 dome conversation bg
 
 label dome:

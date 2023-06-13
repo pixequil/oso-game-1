@@ -1,15 +1,24 @@
 image bg mainstreet_top:
     "map-bgs/mainstreet_top.png"
 
+image bg mainstreet:
+    "dbgs/mainstreet_dialogue_bg.png"
+
 image butterfly_package:
     "items/butterfly_package.png"
     zoom 0.5
     truecenter
 
+image ladle_full:
+    "items/ladle_full.png"
+    xalign 0.5
+    yalign 0.5
+    zoom 0.6
+
 label firstscene:
 
     scene black
-    ""
+    p "..."
     p "And this is going to..."
     
     show bg mainstreet # TODO: #23 main street conversation bg
@@ -183,15 +192,22 @@ label .yd_bs_happy:
 
 label .miso:
     scene bg mainstreet
-    show posty neutral
     show miso # TODO: #45 Miso Soup talksprite
 
-    if (item.ladle_empty == False) and (miso_took == False):
+    if party_bs:
+        show posty neutral
+        show bs follow behind posty
+        p "_" # todo: #110 should be short! Brand Soda does not want to Miso for whatever reason. (this prevents there from needing to be 3 unique conversations)
+        jump mainstreet
+    
+    elif (item.ladle_empty == False) and (miso_took == False):
+        show posty neutral
         p "_" # TODO: #46 miso soup conversation before youve taken any soup
         miso "_"
         jump mainstreet
     
     elif item.ladle_empty and (miso_took == False):
+        show posty neutral
         p "_" # TODO: #47 you take soup from Miso Soup 
         miso "_"
         $ item.ladle_empty = False
@@ -202,31 +218,46 @@ label .miso:
         miso "_"
         jump mainstreet
 
-    elif miso_took and (quest.painting_blue == False):
+    elif miso_took and (quest_painting_blue == False):
+        show posty neutral
         p "_" #TODO: #49 miso soup conversation after you've taken soup
         miso "_"
         jump mainstreet
 
-    elif quest_painting_blue:
+    elif miso_took and quest_painting_blue:
+        show posty neutral
         p "_" # todo: #50 miso soup conversation after splashing miso soup on painting
         miso "_"
         jump mainstreet
 
     else:
+        show posty neutral
         p "Players should not see this text."
 
 label .btnet:
     scene bg mainstreet
-    show posty neutral
     show btnet
-    if item.butterfly_package:
+        
+    if party_bs:
+        show posty neutral
+        show bs follow behind posty
+        p "_" # todo: #109 
+
+        jump mainstreet
+
+    elif item.butterfly_package:
+        show posty neutral
         p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
         btnet "_"
 
         jump mainstreet
+
     else:
+        show posty neutral
         p "_" # TODO: #54 talking to B.T. Net after a successful delivery! (game is in win state)
         btnet "_"
 
         jump mainstreet
 
+label .tooly:
+    "this scene is not available yet." # when implemeting Tooly, remember to leave room for Brand Soda interactions.

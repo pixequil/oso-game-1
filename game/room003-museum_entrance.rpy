@@ -27,8 +27,27 @@ label .first_time:
     scene bg museum_entrance
     show posty neutral
     show cameron
-    p "_" # TODO: #28 Security Cameron welcomes Posty to the museum when she first arrives. He talks about an incident where some Miso Soup character spilled some Miso Soup in one of the gates in the Blue Exhibit, just barely missing a painting. Says the Miso Soup character swears they wear a Plastic Wrap when in the museum but he knows they took the wrap off to commit this crime.
-    cameron "_"
+    p "Well, this place is cute. Maybe I can—"
+    cameron "Welcome to the Art Museum!" 
+    p happy "—Oh! Thanks!"
+    cameron "The name's Security Cameron. Nice to meet you."
+    p "I'm Posty. Nice to meet you too!" 
+    cameron "Feel free to peruse one of our many current exhibits, all of which are free of soup because no soup incidents or attacks occur here on my watch!" 
+    p suspicious quiet "..."
+    p -quiet "...What?"
+    cameron "Alright, you caught me. We suffered soup-related losses in a soup attack earlier today."
+    p concerned "... What's a soup attack?" 
+    cameron "Some shady good-for-nothing Miso Soup character spilled some of their contents on the gate in the Blue Exhibit. If they had splashed two inches to the left, one of our paintings would've been a goner."
+    cameron "This kid swears they wear a Plastic Wrap when they're in the museum, but I know the truth. They removed the wrap. They're a no-good vandal."
+    cameron "I swear on my life as this fair museum's Head Security Guard, I will bring justice to that Miso Soup fiend."
+    p "...How do you know they took off the wrap?"
+    cameron "Because there was once no soup in the exhibit, and then there was. What else could have happened?"
+    cameron "Also I'm never wrong."
+    cameron "Also I'm really cool and everyone loves me."
+    p neutral quiet "..."
+    cameron "Anyway."
+    cameron "Enjoy your time at the museum. Have a souptacular— I mean spectacular day. Ugh!!!" 
+    p -quiet "...See ya."
     $ saw.museum = True
     jump museum_entrance
 

@@ -6,9 +6,9 @@ Taking the OSO game's first chapter to the finish line!
 2. Install [git](https://git-scm.com/download/win)
 3. Install your preferred text editor, such as [VSCode](https://code.visualstudio.com/) (Optional: install GitHub plugins)
 4. Clone this repository (using `git clone https://github.com/pixequil/oso-game-1.git`) inside your Ren'Py working directory
-5. The game should appear in your list of Ren'Py projects! Click **Launch Project** with oso-game-1 selected.
-6. When editing code, you can click inside the launched Ren'py game and do the command `shift + R` to 'reload'. From then on, the game will usually auto-reload itself when it senses that you've saved changes to the code. You can also manually reload using the command. This is useful for testing changes to visual stuff (like text formatting and image placement) but if you changed anything related to variables, you'll have to restart the game from the main menu.
-7. In a Ren'Py game, you can hold `ctrl` to 'skip' through non-decision-related dialogue. This is useful for testing routes without having to watch every scene leading up to the part you're testing.
+5. The game should appear in your list of Ren'Py projects! Select `oso-game-1` and then click **Launch Project**.
+6. When editing code, you can click inside the launched Ren'py game and push `Shift + R` to "reload". From then on, the game will usually auto-reload itself when it senses that you've saved changes to the code. You can also manually reload using the command. This is useful for testing changes to visual stuff (like text formatting and image placement) but if you changed anything related to variables, you'll have to restart the game from the main menu.
+7. In a Ren'Py game, you can hold `CTRL` to "skip" through non-decision-related dialogue. This is useful for testing routes without having to watch every scene leading up to the part you're testing.
 
 # Credits
 _(Don't remove the blank bullets)_
@@ -38,12 +38,14 @@ _(Don't remove the blank bullets)_
 
 ### Item Descriptions
 * Martysh12
-* Jurta
 * Compital
 
 ### Dialogue
 * BumpBob Looly
+* FunnyBoy044
 * Satomi
+* Jurta
+* Multi
 
 ### Original Writers
 * Steppie Berry
@@ -84,6 +86,14 @@ _(Don't remove the blank bullets)_
 ### Talk Sprites
 * Martysh12
 * A Jar of Copper Salts
+* 4DJumpman256
+* CosmiKirby
+* Fluffystar_XD
+* gomigg
+* NovaInterstellations
+* multi
+* Tempøral Løser
+* VAPORTUESGAYTOR <3
 * 
 * A.R.S.O.N.
 * APigeonWithCoffee
@@ -116,10 +126,12 @@ _(Don't remove the blank bullets)_
 * Анимации Жени (Eugene's Animations)
 
 ### Conversation Backgrounds
-* 
+* foolcrum - Main Street
+* Rand0m00 - The Dome
 
 ### Props
 * Martysh12
+* Faye's_odd.5450
 * 
 * B.w.m.p.i.i
 * betamaj
