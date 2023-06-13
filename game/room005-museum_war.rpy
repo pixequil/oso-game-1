@@ -46,6 +46,7 @@ label .painting1:
         rcg "_"
         bcg "_"
         p "_" # posty gives up and leaves
+        $ saw.glasses = True
         jump museum_war
 
 label .painting2:
@@ -114,22 +115,25 @@ label .pal_battery:
     $ item.battery = False
     hide battery
     pal "_" # now that she has the battery, palettette demonstrates it on the painting near the glasses.
-    scene bg museum_war with pushleft
+    scene bg museum_war
     show painting_war # war painting and a green-filtered version of it
-    show bcg
-    show rcg
+    show bcg at right
+    show rcg at left
+    with pushleft
     bcg "_" # bcg and rcg continue arguing
     rcg "_"
     show painting_war green with vpunch
+    ""
     $ scanter_green = True
     bcg "_" # bcg and rcg lose interest in the painting and leave
     rcg "_"
     hide rcg with moveoutright
     bcg "_" # bcg parting remark maybe?
     hide bcg with moveoutright
-    scene bg museum_war with pushright
+    scene bg museum_war
     show palettette
     show posty neutral
+    with pushright
     pal "_" # palettette talks about how cool the scanter is or something
     p quiet "_" # posty silently thinks to herself that she really really wants that painting.
     p -quiet "_" # posty says goodbye to palettette

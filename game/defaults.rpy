@@ -28,6 +28,7 @@ default saw.bluetile = False
 default saw.war = False
 default saw.ahiss = False
 default saw.pal = False
+default saw.glasses = False
 
 # VARIOUS FLAGS
 default win_flag = False
