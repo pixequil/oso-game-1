@@ -27,6 +27,75 @@ label museum_war:
         "Return to the entrance.":
             jump museum_entrance
 
+label .pal:
+    scene bg museum_war
+    show palettette
+    if scanter_green:
+        jump .pal3
+    elif saw.pal:
+        jump .pal2
+    else:
+        jump .pal1
+
+label .pal1:
+    show posty neutral
+    pal "_" # palettette introduces herself, explaining her backstory and discussing the scanter and offering to demonstrate.
+    p "_"
+    if item.battery:
+        pal "_" # palettette asks like "wait, is that MY battery? you got it for me?" or something
+        p "_" # posty acts like she totally grabbed the battery out of wanting to give it to palettette even though this is a lie
+        jump .pal_battery
+    else:
+        $ saw.pal = True
+        pal "_" # palettette explains that her battery rolled into ahiss's territory and asks posty to get it back
+        jump museum_war
+
+label .pal2:
+    show posty neutral
+    pal "_" # palettette asks if you managed to get the battery
+    if item.battery:
+        p "_" # posty presents the battery
+        jump .pal_battery
+    elif battery_asked:
+        p "_" # posty explains that ahiss won't hand it over, and there can be an ensuing conversation, potentially offering a hint.
+        jump museum_war
+    else:
+        p "_" # posty says that she hasnt asked yet. there can be a brief interaction here
+        jump museum_war
+
+label .pal_battery:
+    show battery center
+    "You handed over the {b}battery{/b}!"
+    $ item.battery = False
+    hide battery
+    pal "_" # now that she has the battery, palettette demonstrates it on the painting near the glasses.
+    scene bg museum_war with pushleft
+    show painting_war # war painting and a green-filtered version of it
+    show bcg
+    show rcg
+    bcg "_" # bcg and rcg continue arguing
+    rcg "_"
+    show painting_war green with vpunch
+    $ scanter_green = True
+    bcg "_" # bcg and rcg lose interest in the painting and leave
+    rcg "_"
+    hide rcg with moveoutright
+    bcg "_" # bcg parting remark maybe?
+    hide bcg with moveoutright
+    scene bg museum_war with pushright
+    show palettette
+    show posty neutral
+    pal "_" # palettette talks about how cool the scanter is or something
+    p quiet "_" # posty silently thinks to herself that she really really wants that painting.
+    p -quiet "_" # posty says goodbye to palettette
+    jump museum_war
+
+label .pal3:
+    show posty neutral
+    p "_" # revisiting palettette. avoid mentioning whether posty took the painting.
+    pal "_"
+    jump museum_war
+
 label .ahiss:
     scene bg museum_war
     show champurrlain #166
