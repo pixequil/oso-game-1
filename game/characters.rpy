@@ -1156,6 +1156,60 @@ image palettette quiet:
     xalign 1.0
 
 
+define rcg = Character("Rose-Colored Glasses", 
+    callback=speaker("rcg"), 
+    image="rcg", 
+    who_color="#ff80a6"
+    )
+
+image rcg = WhileSpeaking(
+    "rcg", 
+    "rcg talk", 
+    "rcg quiet"
+    )
+image rcg talk:
+    "talksprites/rcg_open.png"
+    zoom 1.5
+    xalign 0.6
+    pause 0.2
+    "talksprites/rcg_close.png"
+    pause 0.2
+    repeat
+image rcg quiet:
+    "talksprites/rcg_close.png"
+    zoom 1.5
+    xalign 0.6
+
+
+define bcg = Character("Blue-Colored Glasses", 
+    callback=speaker("bcg"), 
+    image="bcg", 
+    who_color="#aed6e3"
+    )
+
+image bcg = WhileSpeaking(
+    "bcg", 
+    "bcg talk", 
+    "bcg quiet"
+    )
+image bcg talk:
+    "talksprites/bcg_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.06
+    yalign 1.15
+    pause 0.2
+    "talksprites/bcg_close.png"
+    pause 0.2
+    repeat
+image bcg quiet:
+    "talksprites/bcg_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.06
+    yalign 1.15
+
+
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1194,6 +1248,12 @@ label .other:
     btnet "Hi, I'm B.T. Net!"
     p "Hello, B.T. Net!"
     hide btnet
+    show rcg
+    show bcg
+    rcg "I'm Rose-Colored Glasses!"
+    bcg "And I'm Blue-Colored Glasses."
+    hide rcg
+    hide bcg
     show palettette
     pal "Hi hello how are you"
     hide palettette
