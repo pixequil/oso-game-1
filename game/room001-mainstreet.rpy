@@ -1,5 +1,5 @@
 image bg mainstreet_top:
-    "bgs/mainstreet_top.png"
+    "map-bgs/mainstreet_top.png"
 
 image bg mainstreet:
     "dbgs/mainstreet_dialogue_bg.png"
@@ -22,7 +22,7 @@ label firstscene:
     p "And this is going to..."
     
     show bg mainstreet # TODO: #23 main street conversation bg
-    $ renpy.transition(dissolve, layer="master")
+    $ renpy.transition(dissolve, layer="master") #prevents interruption of the text window
     show posty neutral
     show btnet 
 
@@ -51,7 +51,7 @@ label firstscene:
     p "I bet {b}{color=#c0d4e7}Crayon Box{/color}{/b} is gonna use this in a challenge or something!"
 
     show toasty turned2
-    $ renpy.transition(moveinbottom, layer="master")
+    $ renpy.transition(moveinbottom, layer="master") #prevents interruption of the text window
     p "I can't believe I get to be involved in Open Source Objects!!!"
     t "La la la, just minding my own business..." 
     t annoyed "Oh. {i}You're{/i} here. Didn't see ya."
@@ -173,7 +173,7 @@ label .yd_bs_money:
     $ money += 1
     $ quest.bs = True
     show cash_bundle_1
-    $ renpy.transition(irisout, layer="master")
+    $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
     "{b}{color=#df7dff}Brand Soda{/color}{/b} gave you {b}some money{/b}!"
     hide cash_bundle_1
     call money_get

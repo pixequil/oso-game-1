@@ -64,7 +64,18 @@ label .easels:
 
 label .cameron:
     scene bg museum_entrance
-    show posty neutral
     show cameron
-    p "_" # TODO: #31 talking to Security Cameron again
-    jump museum_entrance
+    if item.ladle_full:
+        show posty neutral
+        p "_" #129 posty tells herself she should avoid security cameron if she's carrying the ladle full of soup
+        jump museum_entrance
+
+    elif quest.painting_blue:
+        show posty neutral
+        p "_" #128 talking to security cameron after splashing soup on the painting
+        jump museum_entrance
+        
+    else:
+        show posty neutral
+        p "_" # TODO: #31 talking to Security Cameron again
+        jump museum_entrance

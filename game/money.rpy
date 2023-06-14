@@ -18,7 +18,7 @@ label dolly:
     show dolly
     if party_bs:
         jump .dbs
-    elif dolly_first == False:
+    elif saw.dolly == False:
         jump .dfirst
     else:
         jump .drepeat
