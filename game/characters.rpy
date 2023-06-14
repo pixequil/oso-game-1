@@ -1760,9 +1760,9 @@ label .other:
     show pal
     pal "Howdy, it's me, Palettette@!"
     hide pal
-    show bluetile happy
-    bluetile happy "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
-    bluetile happy "Happy..."
+    show bluetile giddy
+    bluetile "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
+    bluetile "Happy..."
     bluetile scared "Scared..."
     bluetile annoyed "And annoyed."
     hide bluetile annoyed
