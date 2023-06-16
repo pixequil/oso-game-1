@@ -1570,6 +1570,33 @@ image dolly quiet:
     xalign 1.1
 
 
+define tooly = Character("Tooly",
+    callback=speaker("tooly"),
+    image="tooly",
+    who_color="9e4234"
+    )
+
+image tooly = WhileSpeaking(
+    "tooly",
+    "tooly talk",
+    "tooly quiet"
+    )
+image tooly talk:
+    "talksprites/tooly_open.png"
+    zoom 1.2
+    xzoom 1.0
+    xalign 1.1
+    pause 0.2
+    "talksprites/tooly_close.png"
+    pause 0.2
+    repeat
+image tooly quiet:
+    "talksprites/tooly_close.png"
+    zoom 1.2
+    xzoom 1.0
+    xalign 1.1
+
+
 
 define pal = Character("Palettette",
     callback=speaker("pal"), 
@@ -1804,6 +1831,11 @@ label .other:
     p "What even is a darude?"
     jb "It's a way of life."
     hide jb
+    show tooly
+    tooly "Hey there pal! My name's Tooly!"
+    p "Hi Tooly! /pos"
+    tooly "Ewwww, get out of here with your modern slang."
+    hide toooly
     jump chartest
 
 label .toasty:
