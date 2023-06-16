@@ -1036,7 +1036,6 @@ image redtile quiet:
     xalign 1.0
     yalign 1.7
 
-
 define bluetile = Character("Blue Tile", 
     callback=speaker("bluetile"), 
     image="bluetile", 
@@ -1310,7 +1309,6 @@ image bcg quiet:
     xalign 1.06
     yalign 1.15
 
-
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1580,6 +1578,32 @@ image cb quiet:
     zoom 1.5
     xzoom -1.0
     xalign 1.0
+    
+define tooly = Character("Tooly",
+    callback=speaker("tooly"),
+    image="tooly",
+    who_color="9e4234"
+    )
+
+image tooly = WhileSpeaking(
+    "tooly",
+    "tooly talk",
+    "tooly quiet"
+    )
+image tooly talk:
+    "talksprites/tooly_open.png"
+    zoom 1.2
+    xzoom 1.0
+    xalign 1.1
+    pause 0.2
+    "talksprites/tooly_close.png"
+    pause 0.2
+    repeat
+image tooly quiet:
+    "talksprites/tooly_close.png"
+    zoom 1.2
+    xzoom 1.0
+    xalign 1.1
 
 
 
@@ -1608,6 +1632,33 @@ image rm quiet:
     zoom 1.2
     xzoom -1.0
     xalign 1.0
+
+define jb = Character("Jukebox",
+    callback=speaker("jb"), 
+    image="jb", 
+    who_color="#482C40"
+    )
+
+image jb = WhileSpeaking(
+    "jb", 
+    "jb talk", 
+    "jb quiet"
+    )
+image jb talk:
+    "talksprites/jukebox_open.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/jukebox_close.png"
+    pause 0.2
+    repeat
+image jb quiet:
+    "talksprites/jukebox_close.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+
     
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
@@ -1754,7 +1805,8 @@ label .other:
     dolly "Hey, it's me Dolly, and I can program your whole game and make the art for you for only fifty easy payments of $999.99."
     dolly "That means you pay me $999.99 fifty seperate times."
     p annoyed "I can tell you're really invested in helping me..."
-    dolly "Thank you! (and btw did you notice my idle sprite back there)"
+    p confused "Wait why did you show up twice?"
+    dolly "shhhhhhhh don't worry about it"
     hide dolly
     show posty neutral
     show pal
@@ -1780,6 +1832,18 @@ label .other:
     p "What's wrong with your camera?"
     rm "I don't know."
     hide rm
+    show jb
+    jb "Yooooooo! It's me, Jukebox!"
+    jb "I have all the latest hits like Last Night, Someone you Loved, and Darude Sandstorm!"
+    p "Ew. No."
+    p "What even is a darude?"
+    jb "It's a way of life."
+    hide jb
+    show tooly
+    tooly "Hey there pal! My name's Tooly!"
+    p "Hi Tooly! /pos"
+    tooly "Ewwww, get out of here with your modern slang."
+    hide toooly
     jump chartest
 
 label .toasty:
