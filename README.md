@@ -80,7 +80,6 @@ _(Don't remove the blank bullets)_
 * alexlion0511
 * aples
 * brnzen
-* glowingscramble
 * iroha/AZ
 * zeekybluu
 
@@ -104,6 +103,7 @@ _(Don't remove the blank bullets)_
 * Duckling
 * enden 
 * Enturos
+* glowingscramble
 * Melody Love
 * meme cat
 * Pacifist Player
