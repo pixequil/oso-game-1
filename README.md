@@ -30,6 +30,9 @@ _(Don't remove the blank bullets)_
 ## Programmers
 * Martysh12
 * A Jar of Copper Salts
+* FunnyBoy044
+* Satomi
+* XKZ
 
 ## Outline Adaptation
 * Satomi
@@ -128,7 +131,12 @@ _(Don't remove the blank bullets)_
 
 ### Conversation Backgrounds
 * foolcrum - Main Street
+* Faye's_odd.5450 - Music Store
+* nexty - Shady Back Alley
+* Melecie - Art Museum Entrance
+* Captain - Janitor's Closet
 * Rand0m00 - The Dome
+* Birchboom - The Park
 
 ### Props
 * Martysh12

@@ -886,8 +886,8 @@ image sgummy = WhileSpeaking(
 image sgummy talk:
     "talksprites/sourgummy_open.png"
     zoom 1.2
-    xzoom -1.0
     xalign 0.75
+    yalign 1.5
     pause 0.2
     "talksprites/sourgummy_close.png"
     pause 0.2
@@ -895,8 +895,8 @@ image sgummy talk:
 image sgummy quiet:
     "talksprites/sourgummy_close.png"
     zoom 1.2
-    xzoom -1.0
     xalign 0.75
+    yalign 1.5
 
 
 define retainer = Character("Retainer", 
@@ -913,7 +913,6 @@ image retainer sad = WhileSpeaking(
 image retainer sad talk:
     "talksprites/retainer_sad_open.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
     pause 0.2
     "talksprites/retainer_sad_close.png"
@@ -922,7 +921,6 @@ image retainer sad talk:
 image retainer sad quiet:
     "talksprites/retainer_sad_close.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
 
 image retainer happy = WhileSpeaking(
@@ -933,7 +931,6 @@ image retainer happy = WhileSpeaking(
 image retainer happy talk:
     "talksprites/retainer_happy_open.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
     pause 0.2
     "talksprites/retainer_happy_close.png"
@@ -942,7 +939,6 @@ image retainer happy talk:
 image retainer happy quiet:
     "talksprites/retainer_happy_close.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
 
 image retainer crying = WhileSpeaking(
@@ -1295,7 +1291,6 @@ image bcg = WhileSpeaking(
 image bcg talk:
     "talksprites/bcg_open.png"
     zoom 1.0
-    xzoom -1.0
     xalign 1.06
     yalign 1.15
     pause 0.2
@@ -1305,7 +1300,6 @@ image bcg talk:
 image bcg quiet:
     "talksprites/bcg_close.png"
     zoom 1.0
-    xzoom -1.0
     xalign 1.06
     yalign 1.15
 
@@ -1565,16 +1559,16 @@ image cb = WhileSpeaking(
     "cb quiet"
     )
 image cb talk:
-    "talksprites/crayonbox_open.png"
+    "talksprites/crayon_box_open.png"
     zoom 1.5
     xzoom -1.0
     xalign 1.0
     pause 0.2
-    "talksprites/crayonbox_close.png"
+    "talksprites/crayon_box_close.png"
     pause 0.2
     repeat
 image cb quiet:
-    "talksprites/crayonbox_close.png"
+    "talksprites/crayon_box_close.png"
     zoom 1.5
     xzoom -1.0
     xalign 1.0
@@ -1693,37 +1687,50 @@ label .other:
     hide btnet
     show rcg
     show bcg
-    rcg "I'm Rose-Colored Glasses!"
+    rcg "Hello there, I'm Rose-Colored Glasses!"
     bcg "And I'm Blue-Colored Glasses."
     hide rcg
     hide bcg
     show palettette
-    pal "Hi hello how are you"
+    pal "Howdy, it's me, Palettette@!"
+    p "Hi hello how are you"
     hide palettette
     show ahiss
+    ahiss "Good afternoon, darling. My name is Ahiss the Cat."
     ahiss "Hiss!"
     p "ok"
     hide ahiss
     show buff
     buff "I'm buff. I mean, I'm Buff."
     hide buff
-    show capsule pain
-    capsule "Ah I'm in pain!"
+    show capsule happy
+    capsule "Hello! It's me, Capsule. I'm feeling happy."
+    capsule pain "Ah! I'm in pain!"
+    p "Pain from what?"
+    capsule "Existential dread."
     capsule happy "Just kidding!"
     hide capsule
-    show bluetile annoyed
-    bluetile "Grr, I'm Blue Tile."
-    bluetile giddy "Yay though!"
-    bluetile scared "Aah!"
+    show bluetile giddy
+    bluetile "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
+    bluetile annoyed "Grr... (annoyed)"
+    bluetile giddy "Yay though! (giddy)"
+    bluetile scared "Aah! (scared)"
     p "Ok."
     hide bluetile
     show dolly
     p "Hi Dolly. This is what you look like when you're not speaking. Also I just wanna test where the text wraps just out of curiosity."
     dolly "That's right. And this is what I look like when I {i}am{/i} speaking."
     p "Damn!"
+    dolly "And also..."
+    dolly "I can program your whole game and make the art for you for only fifty easy payments of $999.99."
+    dolly "That means you pay me $999.99 fifty seperate times."
+    p annoyed "I can tell you're really invested in helping me..."
+    dolly "shhhhhhhh don't worry about it"
     hide dolly
+    show posty neutral
     show redtile
     redtile "Hi I'm Red Tile."
+    p "sup"
     hide redtile
     show retainer sad
     retainer "I'm Retainer, and I'm sad."
@@ -1789,44 +1796,9 @@ label .other:
     show marble
     marble "My name is Marble Bust, and I'm personally starting to doubt that one person seriously drew all these assets."
     hide marble
-    show ahiss
-    ahiss "Good afternoon, darling. My name is Ahiss the Cat."
-    hide ahiss
-    show bcg
-    bcg "Uhh, hi, I'm Blue-Colored Glasses."
-    hide bcg
-    show buff
-    buff "I'm Buff!"
-    hide buff
     show cb
     cb "Heya, kiddo! It's me Crayon Box, host of Open Source Objects!"
     hide cb
-    show dolly
-    dolly "Hey, it's me Dolly, and I can program your whole game and make the art for you for only fifty easy payments of $999.99."
-    dolly "That means you pay me $999.99 fifty seperate times."
-    p annoyed "I can tell you're really invested in helping me..."
-    p confused "Wait why did you show up twice?"
-    dolly "shhhhhhhh don't worry about it"
-    hide dolly
-    show posty neutral
-    show pal
-    pal "Howdy, it's me, Palettette@!"
-    hide pal
-    show bluetile giddy
-    bluetile "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
-    bluetile "Happy..."
-    bluetile scared "Scared..."
-    bluetile annoyed "And annoyed."
-    hide bluetile annoyed
-    show capsule happy
-    capsule happy "Hello! It's me, Capsule. I'm feeling happy."
-    capsule pain "And now I'm in pain..."
-    p "Pain from what?"
-    capsule "Existential dread."
-    hide capsule
-    show rcg
-    rcg "Hello there, I'm Rose-Colored Glasses."
-    hide rcg
     show rm
     rm "Oh hi, I'm Ripped Mitten."
     p "What's wrong with your camera?"
