@@ -25,6 +25,7 @@ default item.chips = False
 default item.napkin = False
 default item.notice = False
 default item.spraypaint = False
+default item.scrapmetal = False
 default item.scrap_trophy = False
 default item.makeshift_trophy = False
 
