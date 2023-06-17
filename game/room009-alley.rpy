@@ -24,12 +24,35 @@ label .tag:
     show tag
     if tag_trade:
         jump .tag3
-    elif saw.tag:
+    elif item.notice:
         jump .tag2
     else:
         jump .tag1
 
+label .tag1:
+    show posty neutral
+    tag "_" #262 tag explains their deal
+    jump alley
 
+label .tag2: #263
+    show posty neutral
+    tag "_" # tag sees your notice of reprimand and therefore thinks you're extremely cool, considering you to be a kindred spirit. they give you a can of gold spray paint.
+    show spraypaint #260
+    $ item.spraypaint = True
+    $ tag_trade = True
+    "You got the {b}glittery gold spray paint{/b}!" #261
+    hide spraypaint
+    if item.scrap_trophy:
+        call trophy
+        tag "_" # tag comments on your use of the spray paint
+        jump alley
+    else:
+        p "_" # some kind of thank-you
+        jump alley
+
+label .tag3:
+    show posty neutral
+    tag "_" #264 revisiting tag after receiving the spray paint. don't mention what the spray paint may or may not have been used for.
 
 label .stick:
     scene bg alley

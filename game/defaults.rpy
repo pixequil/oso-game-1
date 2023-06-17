@@ -23,6 +23,8 @@ default item.painting_food = False
 default item.chips = False
 default item.napkin = False
 default item.notice = False
+default item.spraypaint = False
+default item.scrap_trophy = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
@@ -53,6 +55,7 @@ default deed_burned = False
 default scanter_green = False
 default food_switch = False
 default gave_chips = False
+default tag_trade = False
 
 # VARIOUS COUNTERS
 default money = 0
