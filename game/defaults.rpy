@@ -5,6 +5,7 @@ default quest.retainer = False
 default quest.painting_blue = False
 default quest.bs = False
 default quest.painting_war = False
+default quest.painting_food = False
 
 # ITEMS
 default item.butterfly_package = False
@@ -16,6 +17,7 @@ default item.heavier = False
 default item.imaginary_lighter = False
 default item.battery = False
 default item.painting_war = False
+default item.painting_food = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
@@ -29,6 +31,7 @@ default saw.war = False
 default saw.ahiss = False
 default saw.pal = False
 default saw.glasses = False
+default saw.food = False
 
 # VARIOUS FLAGS
 default win_flag = False
