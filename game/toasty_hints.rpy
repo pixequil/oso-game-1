@@ -105,7 +105,7 @@ label toasty_hints:
     elif paintings == 3:
         show posty neutral
         show toasty neutral
-        t "hint for if you've taken three paintings" #229
+        t "hint for if you've taken three paintings (assemble them)" #229
         return
 
     elif paintings == 2:
