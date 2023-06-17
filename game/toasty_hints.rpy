@@ -26,7 +26,7 @@ label toasty_hints:
     elif scanter_green and (quest.painting_war == False):
         show posty neutral
         show toasty neutral
-        t "hint for if Palettette has turned the painting green"
+        t "hint for if Palettette has turned the painting green" #222
         return
     
     elif item.battery:
@@ -80,7 +80,7 @@ label toasty_hints:
     elif paintings == 2:
         show posty neutral
         show toasty neutral
-        t "hint for if you've taken two paintings"
+        t "hint for if you've taken two paintings" #221
         return
 
     elif paintings == 1:
