@@ -887,7 +887,7 @@ image sgummy talk:
     "talksprites/sourgummy_open.png"
     zoom 1.2
     xalign 0.75
-    yalign 1.25
+    yalign 1.5
     pause 0.2
     "talksprites/sourgummy_close.png"
     pause 0.2
@@ -896,7 +896,7 @@ image sgummy quiet:
     "talksprites/sourgummy_close.png"
     zoom 1.2
     xalign 0.75
-    yalign 1.25
+    yalign 1.5
 
 
 define retainer = Character("Retainer", 
@@ -1227,7 +1227,7 @@ image ahiss quiet:
     xzoom -1.0
 
 
-define palettette = Character("Palettette@", 
+define pal = Character("Palettette@", 
     callback=speaker("palettette"), 
     image="palettette", 
     who_color="#d68c7b"
@@ -1267,7 +1267,6 @@ image rcg talk:
     "talksprites/rcg_open.png"
     zoom 1.5
     xalign 0.6
-    xzoom -1.0
     pause 0.2
     "talksprites/rcg_close.png"
     pause 0.2
@@ -1276,7 +1275,6 @@ image rcg quiet:
     "talksprites/rcg_close.png"
     zoom 1.5
     xalign 0.6
-    xzoom -1.0
 
 
 define bcg = Character("Blue-Colored Glasses", 
@@ -1694,7 +1692,7 @@ label .other:
     hide rcg
     hide bcg
     show palettette
-    palettette "Howdy, it's me, Palettette@!"
+    pal "Howdy, it's me, Palettette@!"
     p "Hi hello how are you"
     hide palettette
     show ahiss
