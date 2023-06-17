@@ -114,7 +114,7 @@ label toasty_hints:
         t "hint for if you have the spray paint but nothing to decorate with it (see dolly)" #265
         return
 
-    elif quest.paintings and (money == 1) and (quest.bs == False):
+    elif quest.paintings and (quest.bs == False):
         show posty neutral
         show toasty neutral
         t "hint for if you have the spray paint but nothing to decorate with it (talk to bs)" #265
