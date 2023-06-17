@@ -1365,7 +1365,7 @@ image tag quiet:
 
 
 
-define stickshift = Character("Stick Shift",
+define stick = Character("Stick Shift",
     callback=speaker("stickshift"), 
     image="stickshift", 
     who_color="#434343"
@@ -1770,7 +1770,7 @@ label .other:
     tag "it's subversive."
     hide tag
     show stickshift
-    stickshift "Hi, my name is Stick Shift."
+    stick "Hi, my name is Stick Shift."
     hide stickshift
     show auto bothered
     auto bothered "Huh? Oh, I'm Automotone."
