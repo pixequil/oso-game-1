@@ -6,6 +6,7 @@ default quest.painting_blue = False
 default quest.bs = False
 default quest.painting_war = False
 default quest.painting_food = False
+default quest.money_food = False
 
 # ITEMS
 default item.butterfly_package = False

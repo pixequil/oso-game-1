@@ -8,19 +8,25 @@ image bg museum_food_top:
     yalign 0.2
 
 label museum_food:
-    if saw.food == False:
-        jump .painting
     scene bg museum_food_top
     show posty neutral
 
     p "_" # todo: food exhibit imagemap #224
+
+    menu:
+        "Ripped Mitten & Unappetizing painting" if (quest.painting_food == False):
+            jump .painting
+        "Ripped Mitten" if quest.painting_food:
+            jump .rm
+
 
 label .painting: #228
     scene bg museum_food
     show painting_food
     show posty neutral
     show rm
-    rm "_" # something about the painting before walking away
+    p "_" # posty arrives, having felt drawn to this painting inexplicably
+    rm "_" # Ripped Mitten says a veiled complaint about the painting, like it doesn't belong here, and how nobody would miss it. then they leave.
     hide rm with moveoutright
     p "_" # posty beholds the main painting in the food exhibit and feels a compulsion to collect it.
     show painting_food at center
@@ -28,7 +34,6 @@ label .painting: #228
     $ item.painting_food = True
     $ quest.painting_food = True
     $ paintings += 1
-    $ saw.food = True
     hide painting_food
     if paintings == 1:
         p "this was the first painting (replace this text)" # posty says something and decides to look around the rest of the exhibit
