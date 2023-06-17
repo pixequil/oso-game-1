@@ -60,10 +60,10 @@ label .corndog:
     scene bg museum_food
     show corndog
     show posty neutral
-    p "_" # posty observes the corndog painting. it doesnt really call out to her, but it sure is huge. it doesn't seem to be supported by anything, just leaning on the wall. posty decides to look at the other paintings.
+    p "_" #231 posty observes the corndog painting. it doesnt really call out to her, but it sure is huge. it doesn't seem to be supported by anything, just leaning on the wall. posty decides to look at the other paintings.
     jump museum_food
 
-label .eating:
+label .eating: #233
     scene bg museum_food
     show eating
     show posty neutral
