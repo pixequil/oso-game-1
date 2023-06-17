@@ -30,6 +30,9 @@ _(Don't remove the blank bullets)_
 ## Programmers
 * Martysh12
 * A Jar of Copper Salts
+* FunnyBoy044
+* Satomi
+* XKZ
 
 ## Outline Adaptation
 * Satomi

@@ -1561,16 +1561,16 @@ image cb = WhileSpeaking(
     "cb quiet"
     )
 image cb talk:
-    "talksprites/crayonbox_open.png"
+    "talksprites/crayon_box_open.png"
     zoom 1.5
     xzoom -1.0
     xalign 1.0
     pause 0.2
-    "talksprites/crayonbox_close.png"
+    "talksprites/crayon_box_close.png"
     pause 0.2
     repeat
 image cb quiet:
-    "talksprites/crayonbox_close.png"
+    "talksprites/crayon_box_close.png"
     zoom 1.5
     xzoom -1.0
     xalign 1.0
@@ -1732,6 +1732,7 @@ label .other:
     show posty neutral
     show redtile
     redtile "Hi I'm Red Tile."
+    p "sup"
     hide redtile
     show retainer sad
     retainer "I'm Retainer, and I'm sad."
