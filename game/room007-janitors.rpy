@@ -15,7 +15,7 @@ transform lookatvend:
 
 transform getvend:
     xzoom -1.0
-    xalign 0.4
+    xalign 0.2
     yalign 1.0
 
 
@@ -34,17 +34,23 @@ label janitors:
         "Get outta here":
             jump museum_food
 
-label .vend:
+label .vend: #243
     scene bg janitors
     show posty neutral at lookatvend
-    p "_" # posty decides to get something from the vending machine.
-    show posty at getvend
-    show posty at lookatvend
+    p "_" # posty looks at the vending machine
+    show sb with moveinright
+    sb "_" # Squirt Bottle comes over and confronts posty about the vending machine
+    p "_" # posty explains that she wants a snack
+    sb "_" # Squirt Bottle refuses to let her get a snack
+    p "_" # posty threatens to rat out squirt bottle if she doesn't get a snack
+    sb "_" # squirt bottle reluctantly agrees. interaction doesn't need to be this exact amount of lines
+    show posty at getvend with move
+    show posty at lookatvend with move
     show generichips
     $ item.chips = True
     "You got the {b}Generi-Chips{/b}!" #240 describe
     hide generichips 
-    p "_" # posty says she hates them! so she won't eat them.
+    p "_" # posty expresses disgust for this brand of chips, but is fine with keeping them in case she needs them for something
     jump janitors
 
 label .sb1:
