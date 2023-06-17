@@ -38,6 +38,7 @@ label .tag2: #263
     show posty neutral
     tag "_" # tag sees your notice of reprimand and therefore thinks you're extremely cool, considering you to be a kindred spirit. they give you a can of gold spray paint.
     show spraypaint #260
+    $ item.notice = False
     $ item.spraypaint = True
     $ tag_trade = True
     "You got the {b}glittery gold spray paint{/b}!" #261
