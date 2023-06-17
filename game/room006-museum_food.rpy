@@ -18,6 +18,14 @@ label museum_food:
             jump .painting
         "Ripped Mitten" if quest.painting_food:
             jump .rm
+        "Corndog painting" if (food_switch == False):
+            jump .corndog
+        "Hidden passageway" if food_switch:
+            jump janitors
+        "Eating painting":
+            jump .eating
+        "Go back to the entrance.":
+            jump museum_entrance
 
 
 label .painting: #228
@@ -47,3 +55,38 @@ label .rm:
     show rm
     rm "_" #230 speaking to ripped mitten a second time, briefly
     jump museum_food
+
+label .corndog:
+    scene bg museum_food
+    show corndog
+    show posty neutral
+    p "_" # posty observes the corndog painting. it doesnt really call out to her, but it sure is huge. it doesn't seem to be supported by anything, just leaning on the wall. posty decides to look at the other paintings.
+    jump museum_food
+
+label .eating:
+    scene bg museum_food
+    show eating
+    show posty neutral
+    if food_switch == False:
+        p "_" # posty observes that the painting doesn't really belong here. these are paintings of food, not paintings of eating. she takes a look at the painting's placard, curious why it was included.
+        "The title of the painting is \"{i}Crisis of the Poplar Trees{/i}\". The rest of the text is too small to read at this distance." 
+        p "_" # posty remarks that that's hardly a fitting name for this painting either, and it sure as hell isnt fitting for a painting in the food exhibit.
+        label .eating_decide:
+        menu:
+            "Read more of the placard?"
+
+            "Yes.":
+                "You try to read more of the placard, but bonk your face on it by mistake!"
+                # play a sound here! like a click!!!
+                # and then a scene of the corndog painting disappearing, revealing the secret passageway.
+                $ food_switch = True
+                p "_" # something like "well that was weird. better back off"
+                jump museum_food
+            "No.":
+                p "_" # posty decides she is uninterested in reading more of the placard. she starts to walk away, but returns to the placard, still curious.
+                jump .eating_decide
+    else:
+        p "_" # posty returns to actually read the placard this time.
+        "The placard reads: \"{i}(something){/i}\". Weird!" # placard full text.
+        p "_" # some kind of remark
+        jump museum_food

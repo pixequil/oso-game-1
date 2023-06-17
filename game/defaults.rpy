@@ -44,6 +44,7 @@ default burger_extinguish = False
 default battery_asked = False
 default deed_burned = False
 default scanter_green = False
+default food_switch = False
 
 # VARIOUS COUNTERS
 default money = 0
