@@ -859,15 +859,15 @@ image bonbon = WhileSpeaking(
     "bonbon quiet"
     )
 image bonbon talk:
-    "talksprites/bonbon_fixed_open.png"
+    "talksprites/bonbon_open.png"
     zoom 1.2
     xalign 1.1
     pause 0.2
-    "talksprites/bonbon_fixed_close.png"
+    "talksprites/bonbon_close.png"
     pause 0.2
     repeat
 image bonbon quiet:
-    "talksprites/bonbon_fixed_close.png"
+    "talksprites/bonbon_close.png"
     zoom 1.2
     xalign 1.1
 
@@ -884,16 +884,16 @@ image sgummy = WhileSpeaking(
     "sgummy quiet"
     )
 image sgummy talk:
-    "talksprites/sourgummy_fixed_open.png"
+    "talksprites/sourgummy_open.png"
     zoom 1.2
     xalign 0.75
     yalign 1.25
     pause 0.2
-    "talksprites/sourgummy_fixed_close.png"
+    "talksprites/sourgummy_close.png"
     pause 0.2
     repeat
 image sgummy quiet:
-    "talksprites/sourgummy_fixed_close.png"
+    "talksprites/sourgummy_close.png"
     zoom 1.2
     xalign 0.75
     yalign 1.25
@@ -911,15 +911,15 @@ image retainer sad = WhileSpeaking(
     "retainer sad quiet"
     )
 image retainer sad talk:
-    "talksprites/retainer_fixed_sad_open.png"
+    "talksprites/retainer_sad_open.png"
     zoom 1.2
     xalign 1.0
     pause 0.2
-    "talksprites/retainer_fixed_sad_close.png"
+    "talksprites/retainer_sad_close.png"
     pause 0.2
     repeat
 image retainer sad quiet:
-    "talksprites/retainer_fixed_sad_close.png"
+    "talksprites/retainer_sad_close.png"
     zoom 1.2
     xalign 1.0
 
@@ -929,15 +929,15 @@ image retainer happy = WhileSpeaking(
     "retainer happy quiet"
     )
 image retainer happy talk:
-    "talksprites/retainer_fixed_happy_open.png"
+    "talksprites/retainer_happy_open.png"
     zoom 1.2
     xalign 1.0
     pause 0.2
-    "talksprites/retainer_fixed_happy_close.png"
+    "talksprites/retainer_happy_close.png"
     pause 0.2
     repeat
 image retainer happy quiet:
-    "talksprites/retainer_fixed_happy_close.png"
+    "talksprites/retainer_happy_close.png"
     zoom 1.2
     xalign 1.0
 
@@ -1187,15 +1187,15 @@ image buff = WhileSpeaking(
     "buff quiet"
     )
 image buff talk:
-    "talksprites/buff_fixed_open.png"
+    "talksprites/buff_open.png"
     zoom 1.6
     xalign 1.03
     pause 0.2
-    "talksprites/buff_fixed_close.png"
+    "talksprites/buff_close.png"
     pause 0.2
     repeat
 image buff quiet:
-    "talksprites/buff_fixed_close.png"
+    "talksprites/buff_close.png"
     zoom 1.6
     xalign 1.03
 
@@ -1291,16 +1291,16 @@ image bcg = WhileSpeaking(
     "bcg quiet"
     )
 image bcg talk:
-    "talksprites/bcg_fixed_open.png"
+    "talksprites/bcg_open.png"
     zoom 1.0
     xalign 1.06
     yalign 1.15
     pause 0.2
-    "talksprites/bcg_fixed_close.png"
+    "talksprites/bcg_close.png"
     pause 0.2
     repeat
 image bcg quiet:
-    "talksprites/bcg_fixed_close.png"
+    "talksprites/bcg_close.png"
     zoom 1.0
     xalign 1.06
     yalign 1.15
