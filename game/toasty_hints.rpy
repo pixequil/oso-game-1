@@ -77,6 +77,12 @@ label toasty_hints:
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
         return
 
+    elif paintings == 3:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you've taken three paintings" #229
+        return
+
     elif paintings == 2:
         show posty neutral
         show toasty neutral
