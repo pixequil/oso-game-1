@@ -31,7 +31,7 @@ label museum_entrance:
                 jump museum_food
             "Check out those easels?" if (paintings != 3):
                 jump .easels
-            "Easels:\nUse the three paintings as {color=#ffff00}{i}inspiration{/i}{/color}." if (paintings == 3):
+            "Easels:\nUse the three paintings as {color=#ffff00}{i}inspiration{/i}{/color}." if (paintings == 3) and (quest.paintings == False):
                 jump .inspiration
             "Talk to Security Cameron again.":
                 jump .cameron
