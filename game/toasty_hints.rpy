@@ -23,6 +23,12 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif food_switch and (quest.money_food == False) and (saw.janitors == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you opened the janitors closet but didnt go in" #234
+        return
+
     elif scanter_green and (quest.painting_war == False):
         show posty neutral
         show toasty neutral
