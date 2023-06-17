@@ -23,7 +23,7 @@ init python:
         return DynamicDisplayable(curried_while_speaking(name, speaking_d, done_d))
   
     # Create a channel for speaking sounds
-    renpy.music.register_channel("speak", tight=True, file_prefix="sound/voices/")
+    renpy.music.register_channel("speak", mixer="voice", tight=True, file_prefix="sound/voices/")
 
     # This callback maintains the speaking variable.
     def speaker_callback(name, event, sound_file="snd-txt1.mp3", interact=True, **kwargs):
