@@ -41,3 +41,9 @@ label .painting: #228
         p "that was easy (replace this text)" # posty remarks that it was easy to take this painting, if this isn't her first painting.
     jump museum_food
 
+label .rm:
+    scene bg museum_food
+    show posty neutral
+    show rm
+    rm "_" #230 speaking to ripped mitten a second time, briefly
+    jump museum_food
