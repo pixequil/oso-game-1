@@ -111,19 +111,19 @@ label toasty_hints:
     elif quest.paintings and (quest.moneys == False) and (money == 2):
         show posty neutral
         show toasty neutral
-        t "hint for if you have the spray paint but nothing to decorate with it (see dolly)"
+        t "hint for if you have the spray paint but nothing to decorate with it (see dolly)" #265
         return
 
     elif quest.paintings and (money == 1) and (quest.bs == False):
         show posty neutral
         show toasty neutral
-        t "hint for if you have the spray paint but nothing to decorate with it (talk to bs)"
+        t "hint for if you have the spray paint but nothing to decorate with it (talk to bs)" #265
         return
 
     elif quest.paintings and (money == 1):
         show posty neutral
         show toasty neutral
-        t "hint for if you have the spray paint but nothing to decorate with it (do food exhibit quest)"
+        t "hint for if you have the spray paint but nothing to decorate with it (do food exhibit quest)" #265
         return
 
     elif paintings == 3 and (quest.paintings == False):
