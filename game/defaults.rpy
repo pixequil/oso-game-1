@@ -7,6 +7,7 @@ default quest.bs = False
 default quest.painting_war = False
 default quest.painting_food = False
 default quest.money_food = False
+default quest.paintings = False
 
 # ITEMS
 default item.butterfly_package = False
@@ -21,6 +22,7 @@ default item.painting_war = False
 default item.painting_food = False
 default item.chips = False
 default item.napkin = False
+default item.notice = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED

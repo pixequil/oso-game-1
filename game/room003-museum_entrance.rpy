@@ -1,10 +1,23 @@
 # todo: #25 museum entrance conversation background
 
+image bg museum_entrance_top:
+    "map-bgs/museum_entrance_top.png"
+    zoom 1.15
+    yalign 0.2
+
+image bg museum_entrance:
+    "dbgs/museum_entrance_dbg.png"
+    xzoom -1.0
+
+transform posteaselpos:
+    xalign 0.5
+    yalign 1.0
+
 label museum_entrance:
     if saw.museum == False:
         jump .first_time
     else:
-        scene bg museum_entrance_top # TODO: #26 museum entrance imagemap (needs illustration)
+        scene bg museum_entrance_top # TODO: #26 museum entrance imagemap
         show posty neutral
 
         p "_"
@@ -16,12 +29,44 @@ label museum_entrance:
                 jump museum_war
             "Check out the Food Exhibit.":
                 jump museum_food
-            "Check out those easels?":
+            "Check out those easels?" if (paintings != 3):
                 jump .easels
+            "Easels:\nUse the three paintings as {color=#ffff00}{i}inspiration{/i}{/color}." if (paintings == 3):
+                jump .inspiration
             "Talk to Security Cameron again.":
                 jump .cameron
             "Leave.":
                 jump mainstreet
+
+label .inspiration:
+    scene bg museum_entrance
+    show posty neutral at posteaselpos
+    p "_" # posty feels a rush of inspiration, due to the three stolen paintings in her possession!
+    if item.napkin:
+        show badpainting
+        p "_" # ... and not this one, which isn't even a painting.
+        hide badpainting
+        p "_" # but yeah!
+    scene bg painting_combined # 253
+    "You ride the blast of creativity and combine your inspirations into a {b}new work of art{/b}!"
+    $ quest.paintings = True
+    scene bg museum_entrance
+    show painting_combined
+    show posty neutral
+    show cameron
+    cameron "_" # cameron is really mad, as he's finally noticed that you've been stealing paintings and have now irreparably combined them into this 'mess'
+    p "_" # posty asks if she's going to be kicked out
+    cameron "_" # reluctantly, cameron explains that he's already kicked someone out today, so he can't do it again. but he can confiscate the damaged art...
+    hide painting_combined
+    "{b}{color=#bdbfe2}Security Cameron{/color}{/b} took the {b}art piece{/b} from you!"
+    cameron "_" # ...and write you a notice of reprimand!
+    show notice #255
+    "You received the {b}notice of reprimand{/b}!" # describe #256
+    hide notice
+    $ item.notice = True
+    cameron "_" # he grumbles something like "enjoy the exhibitions"
+    p "_" # parting remark
+    jump museum_entrance
 
 label .first_time:
     scene bg museum_entrance
@@ -52,8 +97,8 @@ label .first_time:
     jump museum_entrance
 
 label .easels:
-    scene bg easels # TODO: #29 easels scene
-    show posty neutral
+    scene bg museum_entrance
+    show posty neutral at posteaselpos
 
     "There are three {b}easels{/b} here." # TODO: #30 rewrite easel narration
     p quiet "..."
@@ -65,7 +110,12 @@ label .easels:
 label .cameron:
     scene bg museum_entrance
     show cameron
-    if item.ladle_full:
+    if quest.paintings:
+        show posty neutral
+        p "_" # talking to security cameron after receiving the note of reprimand
+        jump museum_entrance
+    
+    elif item.ladle_full:
         show posty neutral
         p "_" #129 posty tells herself she should avoid security cameron if she's carrying the ladle full of soup
         jump museum_entrance
