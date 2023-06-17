@@ -37,6 +37,7 @@ default saw.glasses = False
 default saw.food = False
 default saw.janitors = False
 default saw.notepad = False
+default saw.marble = False
 
 # VARIOUS FLAGS
 default win_flag = False

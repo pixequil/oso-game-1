@@ -36,6 +36,59 @@ label museum_food:
         "Go back to the entrance.":
             jump museum_entrance
 
+label .marble:
+    scene bg museum_food
+    show marble
+    if quest.money_food:
+        jump .marble3
+    elif saw.marble:
+        jump .marble2
+    else:
+        jump .marble1
+
+label .marble1: #248
+    show posty neutral
+    $ saw.marble = True
+    marble "_" # Marble Bust explains her deal. A very discerning and respected (if a bit eccentric) art critic and collector (and a connoisseur of the arts). She is disappointed with all the artwork not only in this exhibition but also in the entire museum - nothing there seems fit for her personal collection.
+    p "_" # posty is like ok
+    if item.napkin:
+        jump .marble_napkin
+    else:
+        marble "_" # marble bust tells posty to leave her alone while she searches for the ultimate work of art
+        jump museum_food
+
+label .marble2: #248
+    show posty neutral
+    if item.napkin:
+        jump .marble_napkin
+    else:
+        marble "_" # marble bust reminds posty to leave her alone while she searches for the ultimate work of art
+        jump museum_food
+
+label .marble_napkin: 
+    marble "_" # marble bust stops posty, asking what she's holding.
+    p "_" # "this?"
+    show badpainting
+    marble "_" # marble bust thinks this is the highest form of art. simply must have it for her collection. offers to pay handsomely.
+    p "_" #posty pretends to not want to hand it over, but agrees to.
+    "You handed over the {b}priceless, one-of-a-kind highbrow painting{/b}!"
+    $ item.napkin = False
+    hide badpainting
+    $ money += 1
+    $ quest.money_food = True
+    show cash_bundle_1
+    $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
+    "{b}{color=#bdbb9a}Marble Bust{/color}{/b} gave you {b}some money{/b}!"
+    hide cash_bundle_1
+    call money_get
+    p "_" # some kind of parting remark
+    jump museum_food
+
+label .marble3: #251
+    show posty neutral
+    marble "_" # revisiting marble bust
+    jump museum_food
+
 label .notepad:
     scene bg museum_food
     show notepad

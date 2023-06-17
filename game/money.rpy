@@ -4,6 +4,8 @@ image cash_bundle_1:
     yalign 0.55
     zoom 4.0
 
+# todo: cash bundle 2 #249
+
 label money_get:
     if money == 0:
         "A player should never see this text."
@@ -11,6 +13,11 @@ label money_get:
         show cash_bundle_1
         "You now have {b}some money{/b}!"
         hide cash_bundle_1
+        return
+    elif money == 2:
+        show cash_bundle_2
+        "You now have {b}a lot of money{/b}!"
+        hide cash_bundle_2
         return
 
 label dolly:
@@ -51,5 +58,9 @@ label .money_check:
     elif money == 1:
         show cash_bundle_1
         p "i have some money" # todo: #39 posty has "some" money
+        jump mainstreet
+    elif money == 2:
+        show cash_bundle_2
+        p "i have a lot of money" # todo: #250 posty has "a lot of" money
         jump mainstreet
 
