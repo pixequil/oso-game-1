@@ -23,6 +23,12 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif item.napkin:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you got the napkin painting" #252
+        return
+
     elif item.chips:
         show posty neutral
         show toasty neutral
