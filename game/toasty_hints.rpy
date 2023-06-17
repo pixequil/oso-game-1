@@ -108,7 +108,25 @@ label toasty_hints:
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
         return
 
-    elif paintings == 3:
+    elif quest.paintings and (quest.moneys == False) and (money == 2):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the spray paint but nothing to decorate with it (see dolly)"
+        return
+
+    elif quest.paintings and (money == 1) and (quest.bs == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the spray paint but nothing to decorate with it (talk to bs)"
+        return
+
+    elif quest.paintings and (money == 1):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the spray paint but nothing to decorate with it (do food exhibit quest)"
+        return
+
+    elif paintings == 3 and (quest.paintings == False):
         show posty neutral
         show toasty neutral
         t "hint for if you've taken three paintings (assemble them)" #229

@@ -8,6 +8,7 @@ default quest.painting_war = False
 default quest.painting_food = False
 default quest.money_food = False
 default quest.paintings = False
+default quest.moneys = False
 
 # ITEMS
 default item.butterfly_package = False
