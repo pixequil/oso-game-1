@@ -23,6 +23,12 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif scanter_green and (quest.painting_war == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if Palettette has turned the painting green"
+        return
+    
     elif item.battery:
         show posty neutral
         show toasty neutral
@@ -69,6 +75,12 @@ label toasty_hints:
         show posty neutral
         show toasty neutral
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
+        return
+
+    elif paintings == 2:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you've taken two paintings"
         return
 
     elif paintings == 1:
