@@ -23,6 +23,19 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif item.chips:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you got the chips" #242
+        return
+
+
+    elif saw.janitors and (quest.money_food == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you went in the janitors closet but didnt get chips" #241
+        return
+
     elif food_switch and (quest.money_food == False) and (saw.janitors == False):
         show posty neutral
         show toasty neutral
