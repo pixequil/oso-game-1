@@ -20,6 +20,7 @@ default item.battery = False
 default item.painting_war = False
 default item.painting_food = False
 default item.chips = False
+default item.napkin = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
@@ -35,6 +36,7 @@ default saw.pal = False
 default saw.glasses = False
 default saw.food = False
 default saw.janitors = False
+default saw.notepad = False
 
 # VARIOUS FLAGS
 default win_flag = False
@@ -47,6 +49,7 @@ default battery_asked = False
 default deed_burned = False
 default scanter_green = False
 default food_switch = False
+default gave_chips = False
 
 # VARIOUS COUNTERS
 default money = 0

@@ -7,6 +7,11 @@ image bg museum_food_top:
     zoom 1.15
     yalign 0.2
 
+image badpainting:
+    "items/badpainting.jpg"
+    zoom 0.1
+    yalign 0.5
+
 label museum_food:
     scene bg museum_food_top
     show posty neutral
@@ -18,6 +23,10 @@ label museum_food:
             jump .painting
         "Ripped Mitten" if quest.painting_food:
             jump .rm
+        "Notepad":
+            jump .notepad
+        "Marble Bust":
+            jump .marble
         "Corndog painting" if (food_switch == False):
             jump .corndog
         "Hidden passageway" if food_switch:
@@ -27,6 +36,56 @@ label museum_food:
         "Go back to the entrance.":
             jump museum_entrance
 
+label .notepad:
+    scene bg museum_food
+    show notepad
+    if gave_chips:
+        jump .notepad3
+    elif saw.notepad:
+        jump .notepad2
+    else:
+        jump .notepad1
+
+label .notepad1: #244
+    show posty neutral
+    $ saw.notepad = True
+    notepad "_" # notepad explains their whole deal. A starving artist (emphasis on “starving”)/doodler who has had no luck in convincing any curators to buy their art for any price. They’re extremely upset and hungry, and will trade their art for food at this point.
+    if item.chips:
+        jump .notepad_chips
+    else:
+        p "_" # posty apologizes, not having any food for them.
+        notepad "_" # notepad tells her to let them know if they find any for them
+        jump museum_food
+
+label .notepad2: #244
+    show posty neutral
+    notepad "_" # notepad asks posty if she has any food for them now.
+    if item.chips:
+        jump .notepad_chips
+    else:
+        p "_" # posty apologizes, as she still doesn't.
+        notepad "_" # notepad reminds her to let them know if they find any for them
+        jump museum_food
+
+label .notepad_chips: #246
+    p "_" # posty does indeed have some chips for notepad!
+    show generichips
+    "You handed over the {b}Generi-Chips{/b}!"
+    $ item.chips = False
+    $ gave_chips = True
+    hide generichips
+    notepad "_" # notepad is grateful, and gives you a piece of their art in return
+    show badpainting
+    "You got the {b}napkin \"painting\"{/b}!" #245 describe napkin painting
+    $ item.napkin = True
+    hide badpainting
+    p "_" # posty pretends to think it's cool and makes up an excuse to stop talking to notepad.
+    jump museum_food
+
+label .notepad3: #247
+    show posty neutral
+    notepad "_" # revisiting notepad
+    jump museum_food
 
 label .painting: #228
     scene bg museum_food
@@ -90,3 +149,4 @@ label .eating: #233
         "The placard reads: \"{i}(something){/i}\". Weird!" # placard full text.
         p "_" # some kind of remark
         jump museum_food
+
