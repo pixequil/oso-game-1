@@ -19,6 +19,7 @@ default item.imaginary_lighter = False
 default item.battery = False
 default item.painting_war = False
 default item.painting_food = False
+default item.chips = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
@@ -33,6 +34,7 @@ default saw.ahiss = False
 default saw.pal = False
 default saw.glasses = False
 default saw.food = False
+default saw.janitors = False
 
 # VARIOUS FLAGS
 default win_flag = False
