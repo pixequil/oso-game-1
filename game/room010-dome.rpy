@@ -1,5 +1,5 @@
 image bg dome_top:
-    "bgs/dome_top.png"
+    "map-bgs/dome_top.png"
     zoom 1.5
     yalign 0.2
 

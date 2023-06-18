@@ -22,188 +22,34 @@ init python:
     def WhileSpeaking(name, speaking_d, done_d=Null()):
         return DynamicDisplayable(curried_while_speaking(name, speaking_d, done_d))
   
+    # Create a channel for speaking sounds
+    renpy.music.register_channel("speak", mixer="voice", tight=True, file_prefix="sound/voices/")
+
     # This callback maintains the speaking variable.
-    def speaker_callback(name, event, **kwargs):
+    def speaker_callback(name, event, sound_file="snd-txt1.mp3", interact=True, **kwargs):
         global speaking
-       
+        
+        # Responsible for talking animations
         if event == "show":
             speaking = name
         # elif event == "slow_done":
         #     speaking = None
         elif event == "end":
             speaking = None
+
+        # Do a boopy voice
+        if not interact:
+            return
+
+        if event == "show_done":
+            renpy.sound.play(sound_file, loop=True, channel="speak")
+        elif event == "slow_done":
+            renpy.sound.stop(channel="speak", fadeout=0.05)
   
     # Curried form of the same.
     speaker = renpy.curry(speaker_callback)
 
-### CHARACTERS ###
-
-define p = Character("Posty", 
-    callback=speaker("posty"), 
-    image="posty", 
-    who_color="#5581c1"
-    )
-
-image posty neutral = WhileSpeaking(
-    "posty", 
-    "posty neutral talk", 
-    "posty neutral quiet"
-    )
-image posty neutral talk:
-    "talksprites/posty/posty_neutral_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_neutral_close.png"
-    pause 0.2
-    repeat
-image posty neutral quiet:
-    "talksprites/posty/posty_neutral_close.png"
-    xalign -0.05
-
-image posty happy = WhileSpeaking(
-    "posty", 
-    "posty happy talk", 
-    "posty happy quiet"
-    )
-image posty happy talk:
-    "talksprites/posty/posty_happy_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_happy_close.png"
-    pause 0.2
-    repeat
-image posty happy quiet:
-    "talksprites/posty/posty_happy_close.png"
-    xalign -0.05
-
-image posty sad = WhileSpeaking(
-    "posty", 
-    "posty sad talk", 
-    "posty sad quiet"
-    )
-image posty sad talk:
-    "talksprites/posty/posty_sad_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_sad_close.png"
-    pause 0.2
-    repeat
-image posty sad quiet:
-    "talksprites/posty/posty_sad_close.png"
-    xalign -0.05
-
-image posty concerned = WhileSpeaking(
-    "posty", 
-    "posty concerned talk", 
-    "posty concerned quiet"
-    )
-image posty concerned talk:
-    "talksprites/posty/posty_concerned_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_concerned_close.png"
-    pause 0.2
-    repeat
-image posty concerned quiet:
-    "talksprites/posty/posty_concerned_close.png"
-    xalign -0.05
-
-image posty confused = WhileSpeaking(
-    "posty", 
-    "posty confused talk", 
-    "posty confused quiet"
-    )
-image posty confused talk:
-    "talksprites/posty/posty_confused_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_confused_close.png"
-    pause 0.2
-    repeat
-image posty confused quiet:
-    "talksprites/posty/posty_confused_close.png"
-    xalign -0.05
-
-image posty zany = WhileSpeaking(
-    "posty", 
-    "posty zany talk", 
-    "posty zany quiet"
-    )
-image posty zany talk:
-    "talksprites/posty/posty_zany_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_zany_close.png"
-    pause 0.2
-    repeat
-image posty zany quiet:
-    "talksprites/posty/posty_zany_close.png"
-    xalign -0.05
-
-image posty angry = WhileSpeaking(
-    "posty", 
-    "posty angry talk", 
-    "posty angry quiet"
-    )
-image posty angry talk:
-    "talksprites/posty/posty_angry_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_angry_close.png"
-    pause 0.2
-    repeat
-image posty angry quiet:
-    "talksprites/posty/posty_angry_close.png"
-    xalign -0.05
-
-image posty annoyed = WhileSpeaking(
-    "posty", 
-    "posty annoyed talk", 
-    "posty annoyed quiet"
-    )
-image posty annoyed talk:
-    "talksprites/posty/posty_annoyed_open.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_annoyed_close.png"
-    pause 0.2
-    repeat
-image posty annoyed quiet:
-    "talksprites/posty/posty_annoyed_close.png"
-    xalign -0.05
-
-image posty astonished = WhileSpeaking(
-    "posty", 
-    "posty astonished talk", 
-    "posty astonished quiet"
-    )
-image posty astonished talk:
-    "talksprites/posty/posty_astonished_close.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_astonished_open.png"
-    pause 0.2
-    repeat
-image posty astonished quiet:
-    "talksprites/posty/posty_astonished_close.png"
-    xalign -0.05
-
-image posty suspicious = WhileSpeaking(
-    "posty", 
-    "posty suspicious talk", 
-    "posty suspicious quiet"
-    )
-image posty suspicious talk:
-    "talksprites/posty/posty_suspicious_close.png"
-    xalign -0.05
-    pause 0.2
-    "talksprites/posty/posty_suspicious_open.png"
-    pause 0.2
-    repeat
-image posty suspicious quiet:
-    "talksprites/posty/posty_suspicious_close.png"
-    xalign -0.05
-
+# Animation system
 init python:
     class FBFAnimation():
         """Represent a frame-by-frame animation."""
@@ -225,7 +71,246 @@ init python:
             elif self.reset_after:
                 self.reset()
 
-define anims.posty.astonished = FBFAnimation(18, 24)
+### CHARACTERS ###
+
+define p = Character("Posty", 
+    callback=speaker("posty", sound_file="undertalevoicetest_posty_2_fix.wav"),
+    image="posty", 
+    who_color="#5581c1"
+    )
+
+image posty neutral = WhileSpeaking(
+    "posty", 
+    "posty neutral talk", 
+    "posty neutral quiet"
+    )
+image posty neutral talk:
+    "talksprites/posty/posty_neutral_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_neutral.png"
+    pause 0.2
+    repeat
+image posty neutral quiet:
+    "talksprites/posty/posty_neutral.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_neutral.png"
+        pause 2.0
+        "talksprites/posty/posty_neutral_blink.png"
+        pause 0.125
+        repeat
+
+image posty happy = WhileSpeaking(
+    "posty", 
+    "posty happy talk", 
+    "posty happy quiet"
+    )
+image posty happy talk:
+    "talksprites/posty/posty_happy_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_happy.png"
+    pause 0.2
+    repeat
+image posty happy quiet:
+    "talksprites/posty/posty_happy.png"
+    xalign -0.05
+
+image posty sad = WhileSpeaking(
+    "posty", 
+    "posty sad talk", 
+    "posty sad quiet"
+    )
+image posty sad talk:
+    "talksprites/posty/posty_sad_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_sad.png"
+    pause 0.2
+    repeat
+image posty sad quiet:
+    "talksprites/posty/posty_sad.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_sad.png"
+        pause 2.0
+        "talksprites/posty/posty_sad_blink.png"
+        pause 0.125
+        repeat
+
+image posty concerned = WhileSpeaking(
+    "posty", 
+    "posty concerned talk", 
+    "posty concerned quiet"
+    )
+image posty concerned talk:
+    "talksprites/posty/posty_concerned_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_concerned.png"
+    pause 0.2
+    repeat
+image posty concerned quiet:
+    "talksprites/posty/posty_concerned.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_concerned.png"
+        pause 2.0
+        "talksprites/posty/posty_concerned_blink.png"
+        pause 0.125
+        repeat
+
+image posty confused = WhileSpeaking(
+    "posty", 
+    "posty confused talk", 
+    "posty confused quiet"
+    )
+image posty confused talk:
+    "talksprites/posty/posty_confused_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_confused.png"
+    pause 0.2
+    repeat
+image posty confused quiet:
+    "talksprites/posty/posty_confused.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_confused.png"
+        pause 2.0
+        "talksprites/posty/posty_confused_blink.png"
+        pause 0.125
+        repeat
+
+image posty zany = WhileSpeaking(
+    "posty", 
+    "posty zany talk", 
+    "posty zany quiet"
+    )
+image posty zany talk:
+    "talksprites/posty/posty_zany_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_zany.png"
+    pause 0.2
+    repeat
+image posty zany quiet:
+    "talksprites/posty/posty_zany.png"
+    xalign -0.05
+
+define anims.posty.angry = FBFAnimation(22, 24)
+
+image posty angry = WhileSpeaking(
+    "posty", 
+    "posty angry talk", 
+    "posty angry quiet"
+    )
+image posty angry talk:
+    "talksprites/posty/posty_angry_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_angry.png"
+    pause 0.2
+    repeat
+image posty angry quiet:
+    "talksprites/posty/posty_angry.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_angry.png"
+        pause 2.0
+        "talksprites/posty/posty_angry_blink.png"
+        pause 0.125
+        "talksprites/posty/posty_angry.png"
+        pause 2.0
+
+        block:
+            function anims.posty.angry.reset
+            block:
+                "talksprites/posty/posty_angry_anim_[anims.posty.angry.frame].png"
+                function anims.posty.angry.advance
+                pause anims.posty.angry.wait
+                repeat anims.posty.angry.num_frames
+
+            repeat 2
+
+        repeat
+
+image posty annoyed = WhileSpeaking(
+    "posty", 
+    "posty annoyed talk", 
+    "posty annoyed quiet"
+    )
+image posty annoyed talk:
+    "talksprites/posty/posty_annoyed_open.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_annoyed.png"
+    pause 0.2
+    repeat
+image posty annoyed quiet:
+    "talksprites/posty/posty_annoyed.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_annoyed.png"
+        pause 2.0
+        "talksprites/posty/posty_annoyed_blink.png"
+        pause 0.125
+        repeat
+
+image posty astonished = WhileSpeaking(
+    "posty", 
+    "posty astonished talk", 
+    "posty astonished quiet"
+    )
+image posty astonished talk:
+    "talksprites/posty/posty_astonished.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_astonished_open.png"
+    pause 0.2
+    repeat
+image posty astonished quiet:
+    "talksprites/posty/posty_astonished.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_astonished.png"
+        pause 2.0
+        "talksprites/posty/posty_astonished_blink.png"
+        pause 0.125
+        repeat
+
+image posty suspicious = WhileSpeaking(
+    "posty", 
+    "posty suspicious talk", 
+    "posty suspicious quiet"
+    )
+image posty suspicious talk:
+    "talksprites/posty/posty_suspicious.png"
+    xalign -0.05
+    pause 0.2
+    "talksprites/posty/posty_suspicious_open.png"
+    pause 0.2
+    repeat
+image posty suspicious quiet:
+    "talksprites/posty/posty_suspicious.png"
+    xalign -0.05
+
+    block:
+        "talksprites/posty/posty_suspicious.png"
+        pause 2.0
+        "talksprites/posty/posty_suspicious_blink.png"
+        pause 0.125
+        repeat
+
+define anims.posty.astonished = FBFAnimation(17, 24)
 
 image posty astonished before:
     "talksprites/posty/posty_astonished_anim_1.png"
@@ -661,7 +746,7 @@ image toasty turned2 quiet:
 
 
 define yd = Character("Yellow Diamond", 
-    callback=speaker("yd"), 
+    callback=speaker("yd", sound_file="yd_voice.wav"), 
     image="yd", 
     who_color="#ffff00"
     )
@@ -697,7 +782,7 @@ image btnet = WhileSpeaking(
     "btnet",
     "btnet talk",
     "btnet quiet"
-)
+    )
 
 image btnet quiet:
     "talksprites/btnet.png"
@@ -716,9 +801,10 @@ image btnet talk:
     transform_anchor True
 
     block:
-        ease 2.0 rotate -3
-        ease 2.0 rotate  3
+        ease 1.25 rotate -2
+        ease 1.25 rotate  2
         repeat
+
 
 define bs = Character("Brand Soda", 
     callback=speaker("bs"), 
@@ -733,7 +819,6 @@ image bs = WhileSpeaking(
     )
 image bs talk:
     "talksprites/brandsoda_open.png"
-#    zoom 0.9
     xalign 1.0
     pause 0.2
     "talksprites/brandsoda_close.png"
@@ -741,7 +826,6 @@ image bs talk:
     repeat
 image bs quiet:
     "talksprites/brandsoda_close.png"
-#    zoom 0.9
     xalign 1.0
 
 image bs follow = WhileSpeaking(
@@ -752,7 +836,6 @@ image bs follow = WhileSpeaking(
 image bs follow talk:
     "talksprites/brandsoda_open.png"
     xzoom -1.0
-#    zoom 0.9
     xalign 0.35
     pause 0.2
     "talksprites/brandsoda_close.png"
@@ -761,7 +844,6 @@ image bs follow talk:
 image bs follow quiet:
     "talksprites/brandsoda_close.png"
     xzoom -1.0
-#    zoom 0.9
     xalign 0.35
 
 
@@ -804,8 +886,8 @@ image sgummy = WhileSpeaking(
 image sgummy talk:
     "talksprites/sourgummy_open.png"
     zoom 1.2
-    xzoom -1.0
     xalign 0.75
+    yalign 1.5
     pause 0.2
     "talksprites/sourgummy_close.png"
     pause 0.2
@@ -813,8 +895,8 @@ image sgummy talk:
 image sgummy quiet:
     "talksprites/sourgummy_close.png"
     zoom 1.2
-    xzoom -1.0
     xalign 0.75
+    yalign 1.5
 
 
 define retainer = Character("Retainer", 
@@ -831,7 +913,6 @@ image retainer sad = WhileSpeaking(
 image retainer sad talk:
     "talksprites/retainer_sad_open.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
     pause 0.2
     "talksprites/retainer_sad_close.png"
@@ -840,7 +921,6 @@ image retainer sad talk:
 image retainer sad quiet:
     "talksprites/retainer_sad_close.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
 
 image retainer happy = WhileSpeaking(
@@ -851,7 +931,6 @@ image retainer happy = WhileSpeaking(
 image retainer happy talk:
     "talksprites/retainer_happy_open.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
     pause 0.2
     "talksprites/retainer_happy_close.png"
@@ -860,7 +939,6 @@ image retainer happy talk:
 image retainer happy quiet:
     "talksprites/retainer_happy_close.png"
     zoom 1.2
-    xzoom -1.0
     xalign 1.0
 
 image retainer crying = WhileSpeaking(
@@ -896,7 +974,7 @@ image cameron = WhileSpeaking(
     "cameron",
     "cameron talk",
     "cameron quiet"
-)
+    )
 
 image cameron quiet:
     "talksprites/security_cameron.png"
@@ -927,6 +1005,7 @@ image cameron talk:
 
         repeat
 
+
 define redtile = Character("Red Tile", 
     callback=speaker("redtile"), 
     image="redtile", 
@@ -952,6 +1031,78 @@ image redtile quiet:
     zoom 1.2
     xalign 1.0
     yalign 1.7
+
+define bluetile = Character("Blue Tile", 
+    callback=speaker("bluetile"), 
+    image="bluetile", 
+    who_color="#2469ff"
+    )
+
+image bluetile annoyed = WhileSpeaking(
+    "bluetile", 
+    "bluetile annoyed talk", 
+    "bluetile annoyed quiet"
+    )
+image bluetile annoyed talk:
+    "talksprites/bluetile_annoyed_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+    pause 0.2
+    "talksprites/bluetile_annoyed_close.png"
+    pause 0.2
+    repeat
+image bluetile annoyed quiet:
+    "talksprites/bluetile_annoyed_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+
+image bluetile giddy = WhileSpeaking(
+    "bluetile", 
+    "bluetile giddy talk", 
+    "bluetile giddy quiet"
+    )
+image bluetile giddy talk:
+    "talksprites/bluetile_giddy_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+    pause 0.2
+    "talksprites/bluetile_giddy_close.png"
+    pause 0.2
+    repeat
+image bluetile giddy quiet:
+    "talksprites/bluetile_giddy_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+
+image bluetile scared = WhileSpeaking(
+    "bluetile", 
+    "bluetile scared talk", 
+    "bluetile scared quiet"
+    )
+image bluetile scared talk:
+    "talksprites/bluetile_scared_open.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
+    pause 0.2
+    "talksprites/bluetile_scared_close.png"
+    pause 0.2
+    repeat
+image bluetile scared quiet:
+    "talksprites/bluetile_scared_close.png"
+    zoom 1.3
+    xzoom -1.0
+    xalign 1.05
+    yalign 2.0
 
 
 define dolly = Character("Dolly", 
@@ -979,8 +1130,7 @@ image dolly quiet:
     zoom 2.0
     xzoom -1.0
     xalign 1.3
-
-
+    
 define miso = Character("Miso Soup",
     callback=speaker("miso"), 
     image="miso", 
@@ -1009,7 +1159,176 @@ image miso quiet:
     xalign 1.0
     yalign 1.25
 
+define capsule = Character("Capsule", 
+    callback=speaker("capsule"), 
+    image="capsule", 
+    who_color="#fb9609"
+    )
 
+image capsule pain = WhileSpeaking(
+    "capsule", 
+    "capsule pain talk", 
+    "capsule pain quiet"
+    )
+image capsule pain talk:
+    "talksprites/capsule_pain_open.png"
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_pain_close.png"
+    pause 0.2
+    repeat
+image capsule pain quiet:
+    "talksprites/capsule_pain_close.png"
+    xzoom -1.0
+    xalign 1.0
+
+image capsule happy = WhileSpeaking(
+    "capsule", 
+    "capsule happy talk", 
+    "capsule happy quiet"
+    )
+image capsule happy talk:
+    "talksprites/capsule_happy_open.png"
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/capsule_happy_close.png"
+    pause 0.2
+    repeat
+image capsule happy quiet:
+    "talksprites/capsule_happy_close.png"
+    xzoom -1.0
+    xalign 1.0
+
+
+define buff = Character("Buff", 
+    callback=speaker("buff"), 
+    image="buff", 
+    who_color="#b5bed6"
+    )
+
+image buff = WhileSpeaking(
+    "buff", 
+    "buff talk", 
+    "buff quiet"
+    )
+image buff talk:
+    "talksprites/buff_open.png"
+    zoom 1.6
+    xalign 1.03
+    pause 0.2
+    "talksprites/buff_close.png"
+    pause 0.2
+    repeat
+image buff quiet:
+    "talksprites/buff_close.png"
+    zoom 1.6
+    xalign 1.03
+
+
+define ahiss = Character("Ahiss the Cat", 
+    callback=speaker("ahiss"), 
+    image="ahiss", 
+    who_color="#f19c79"
+    )
+
+image ahiss = WhileSpeaking(
+    "ahiss", 
+    "ahiss talk", 
+    "ahiss quiet"
+    )
+image ahiss talk:
+    "talksprites/ahiss_open.png"
+    zoom 1.5
+    xalign 1.0
+    xzoom -1.0
+    pause 0.2
+    "talksprites/ahiss_close.png"
+    pause 0.2
+    repeat
+image ahiss quiet:
+    "talksprites/ahiss_close.png"
+    zoom 1.5
+    xalign 1.0
+    xzoom -1.0
+
+
+define pal = Character("Palettette@", 
+    callback=speaker("palettette"), 
+    image="palettette", 
+    who_color="#d68c7b"
+    )
+
+image palettette = WhileSpeaking(
+    "palettette", 
+    "palettette talk", 
+    "palettette quiet"
+    )
+image palettette talk:
+    "talksprites/palettette_open.png"
+    zoom 1.5
+    xalign 1.0
+    pause 0.2
+    "talksprites/palettette_close.png"
+    pause 0.2
+    repeat
+image palettette quiet:
+    "talksprites/palettette_close.png"
+    zoom 1.5
+    xalign 1.0
+
+
+define rcg = Character("Rose-Colored Glasses", 
+    callback=speaker("rcg"), 
+    image="rcg", 
+    who_color="#ff80a6"
+    )
+
+image rcg = WhileSpeaking(
+    "rcg", 
+    "rcg talk", 
+    "rcg quiet"
+    )
+image rcg talk:
+    "talksprites/rcg_open.png"
+    zoom 1.5
+    xalign 0.6
+    pause 0.2
+    "talksprites/rcg_close.png"
+    pause 0.2
+    repeat
+image rcg quiet:
+    "talksprites/rcg_close.png"
+    zoom 1.5
+    xalign 0.6
+
+
+define bcg = Character("Blue-Colored Glasses", 
+    callback=speaker("bcg"), 
+    image="bcg", 
+    who_color="#aed6e3"
+    )
+
+image bcg = WhileSpeaking(
+    "bcg", 
+    "bcg talk", 
+    "bcg quiet"
+    )
+image bcg talk:
+    "talksprites/bcg_open.png"
+    zoom 1.0
+    xalign 1.06
+    yalign 1.15
+    pause 0.2
+    "talksprites/bcg_close.png"
+    pause 0.2
+    repeat
+image bcg quiet:
+    "talksprites/bcg_close.png"
+    zoom 1.0
+    xalign 1.06
+    yalign 1.15
 
 define notepad = Character("Notepad",
     callback=speaker("notepad"), 
@@ -1142,159 +1461,6 @@ image auto sad quiet:
     xzoom -1.0
     xalign 1.0
 
-#bluetile
-
-define bluetile = Character("Blue Tile",
-    callback=speaker("bluetile"), 
-    image="bluetile", 
-    who_color="#2469FF"
-    )
-
-image bluetile annoyed= WhileSpeaking(
-    "bluetile", 
-    "bluetile annoyed talk", 
-    "bluetile annoyed quiet",
-    )
-image bluetile annoyed talk:
-    "talksprites/bluetile_annoyed_open.png"
-    zoom 1.1
-    xzoom -1.0
-    yalign 1.4
-    xalign 1.0
-    pause 0.2
-    "talksprites/bluetile_annoyed_close.png"
-    pause 0.2
-    repeat
-image bluetile annoyed quiet:
-    "talksprites/bluetile_annoyed_close.png"
-    zoom 1.1
-    xzoom -1.0
-    yalign 1.4
-    xalign 1.0
-
-
-image bluetile happy= WhileSpeaking(
-    "bluetile", 
-    "bluetile happy talk", 
-    "bluetile happy quiet",
-    )
-image bluetile happy talk:
-    "talksprites/bluetile_giddy_open.png"
-    zoom 1.1
-    xzoom -1.0
-    yalign 1.4
-    xalign 1.0
-    pause 0.2
-    "talksprites/bluetile_giddy_close.png"
-    pause 0.2
-    repeat
-image bluetile happy quiet:
-    "talksprites/bluetile_giddy_close.png"
-    zoom 1.1
-    xzoom -1.0
-    yalign 1.4
-    xalign 1.0
-
-
-image bluetile scared= WhileSpeaking(
-    "bluetile", 
-    "bluetile scared talk", 
-    "bluetile scared quiet",
-    )
-image bluetile scared talk:
-    "talksprites/bluetile_scared_open.png"
-    zoom 1.1
-    xzoom -1.0
-    yalign 1.4
-    xalign 1.0
-    pause 0.2
-    "talksprites/bluetile_scared_close.png"
-    pause 0.2
-    repeat
-image bluetile scared quiet:
-    "talksprites/bluetile_scared_close.png"
-    zoom 1.1
-    xzoom -1.0
-    yalign 1.4
-    xalign 1.0
-
-#capsule
-
-define capsule = Character("Capsule",
-    callback=speaker("capsule"), 
-    image="capsule", 
-    who_color="#FB8904"
-    )
-
-image capsule happy= WhileSpeaking(
-    "capsule", 
-    "capsule happy talk", 
-    "capsule happy quiet",
-    )
-image capsule happy talk:
-    "talksprites/capsule_happy_open.png"
-    zoom 1.0
-    xzoom -1.0
-    xalign 1.0
-    pause 0.2
-    "talksprites/capsule_happy_close.png"
-    pause 0.2
-    repeat
-image capsule happy quiet:
-    "talksprites/capsule_happy_close.png"
-    zoom 1.0
-    xzoom -1.0
-    xalign 1.0
-
-
-image capsule pain= WhileSpeaking(
-    "capsule", 
-    "capsule pain talk", 
-    "capsule pain quiet",
-    )
-image capsule pain talk:
-    "talksprites/capsule_pain_open.png"
-    zoom 1.0
-    xzoom -1.0
-    xalign 1.0
-    pause 0.2
-    "talksprites/capsule_pain_close.png"
-    pause 0.2
-    repeat
-image capsule pain quiet:
-    "talksprites/capsule_pain_close.png"
-    zoom 1.0
-    xzoom -1.0
-    xalign 1.0
-
-#rcg
-
-define rcg = Character("Rose-Colored Glasses",
-    callback=speaker("rcg"), 
-    image="rcg", 
-    who_color="#FF5295"
-    )
-
-image rcg = WhileSpeaking(
-    "rcg", 
-    "rcg talk", 
-    "rcg quiet"
-    )
-image rcg talk:
-    "talksprites/rcg_open.png"
-    zoom 1.2
-    xzoom -1.0
-    xalign 0.95
-    pause 0.2
-    "talksprites/rcg_close.png"
-    pause 0.2
-    repeat
-image rcg quiet:
-    "talksprites/rcg_close.png"
-    zoom 1.2
-    xzoom -1.0
-    xalign 0.95
-
 
 
 define tb = Character("Ticket Booth",
@@ -1402,88 +1568,6 @@ image marble quiet:
 
 
 
-define ahiss = Character("Ahiss the Cat",
-    callback=speaker("ahiss"), 
-    image="ahiss", 
-    who_color="#F19C79"
-    )
-
-image ahiss = WhileSpeaking(
-    "ahiss", 
-    "ahiss talk", 
-    "ahiss quiet"
-    )
-image ahiss talk:
-    "talksprites/ahiss_open.png"
-    zoom 1.5
-    xzoom 1.0
-    xalign 1.0
-    pause 0.2
-    "talksprites/ahiss_close.png"
-    pause 0.2
-    repeat
-image ahiss quiet:
-    "talksprites/ahiss_close.png"
-    zoom 1.5
-    xzoom 1.0
-    xalign 1.0
-
-
-
-define bcg = Character("Blue-Colored Glasses",
-    callback=speaker("bcg"), 
-    image="bcg", 
-    who_color="#AED6E3"
-    )
-
-image bcg = WhileSpeaking(
-    "bcg", 
-    "bcg talk", 
-    "bcg quiet"
-    )
-image bcg talk:
-    "talksprites/bcg_open.png"
-    zoom 1.0
-    xzoom -1.0
-    xalign 0.9
-    pause 0.2
-    "talksprites/bcg_close.png"
-    pause 0.2
-    repeat
-image bcg quiet:
-    "talksprites/bcg_close.png"
-    zoom 1.0
-    xzoom -1.0
-    xalign 0.9
-
-define buff = Character("Buff",
-    callback=speaker("buff"), 
-    image="buff", 
-    who_color="#314A93"
-    )
-
-image buff = WhileSpeaking(
-    "buff", 
-    "buff talk", 
-    "buff quiet"
-    )
-image buff talk:
-    "talksprites/buff_open.png"
-    zoom 1.5
-    xzoom 1.0
-    xalign 1.0
-    pause 0.2
-    "talksprites/buff_close.png"
-    pause 0.2
-    repeat
-image buff quiet:
-    "talksprites/buff_close.png"
-    zoom 1.5
-    xzoom 1.0
-    xalign 1.0
-
-
-
 define cb = Character("Crayon Box",
     callback=speaker("cb"), 
     image="cb", 
@@ -1496,74 +1580,46 @@ image cb = WhileSpeaking(
     "cb quiet"
     )
 image cb talk:
-    "talksprites/crayonbox_open.png"
+    "talksprites/crayon_box_open.png"
     zoom 1.5
     xzoom -1.0
     xalign 1.0
     pause 0.2
-    "talksprites/crayonbox_close.png"
+    "talksprites/crayon_box_close.png"
     pause 0.2
     repeat
 image cb quiet:
-    "talksprites/crayonbox_close.png"
+    "talksprites/crayon_box_close.png"
     zoom 1.5
     xzoom -1.0
     xalign 1.0
     
-
-define dolly = Character("Dolly",
-    callback=speaker("dolly"), 
-    image="dolly", 
-    who_color="#D5B589"
+define tooly = Character("Tooly",
+    callback=speaker("tooly"),
+    image="tooly",
+    who_color="9e4234"
     )
 
-image dolly = WhileSpeaking(
-    "dolly", 
-    "dolly talk", 
-    "dolly quiet"
+image tooly = WhileSpeaking(
+    "tooly",
+    "tooly talk",
+    "tooly quiet"
     )
-image dolly talk:
-    "talksprites/dolly_open.png"
-    zoom 1.6
-    xzoom -1.0
+image tooly talk:
+    "talksprites/tooly_open.png"
+    zoom 1.2
+    xzoom 1.0
     xalign 1.1
     pause 0.2
-    "talksprites/dolly_close.png"
+    "talksprites/tooly_close.png"
     pause 0.2
     repeat
-image dolly quiet:
-    "talksprites/dolly_idle.png"
-    zoom 1.6
-    xzoom -1.0
+image tooly quiet:
+    "talksprites/tooly_close.png"
+    zoom 1.2
+    xzoom 1.0
     xalign 1.1
 
-
-
-define pal = Character("Palettette",
-    callback=speaker("pal"), 
-    image="pal", 
-    who_color="#D3907B"
-    )
-
-image pal = WhileSpeaking(
-    "pal", 
-    "pal talk", 
-    "pal quiet"
-    )
-image pal talk:
-    "talksprites/palettette_open.png"
-    zoom 1.5
-    xzoom 1.0
-    xalign 1.0
-    pause 0.2
-    "talksprites/palettette_close.png"
-    pause 0.2
-    repeat
-image pal quiet:
-    "talksprites/palettette_close.png"
-    zoom 1.5
-    xzoom 1.0
-    xalign 1.0
 
 
 define rm = Character("Ripped Mitten",
@@ -1591,6 +1647,33 @@ image rm quiet:
     zoom 1.2
     xzoom -1.0
     xalign 1.0
+
+define jb = Character("Jukebox",
+    callback=speaker("jb"), 
+    image="jb", 
+    who_color="#482C40"
+    )
+
+image jb = WhileSpeaking(
+    "jb", 
+    "jb talk", 
+    "jb quiet"
+    )
+image jb talk:
+    "talksprites/jukebox_open.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/jukebox_close.png"
+    pause 0.2
+    repeat
+image jb quiet:
+    "talksprites/jukebox_close.png"
+    zoom 1.3
+    xzoom 1.0
+    xalign 1.0
+
     
 
 # Non-canonical scene for testing stuff. Players should never see this in the final game.
@@ -1623,13 +1706,52 @@ label .other:
     btnet "Hi, I'm B.T. Net!"
     p "Hello, B.T. Net!"
     hide btnet
+    show rcg
+    show bcg
+    rcg "Hello there, I'm Rose-Colored Glasses!"
+    bcg "And I'm Blue-Colored Glasses."
+    hide rcg
+    hide bcg
+    show palettette
+    pal "Howdy, it's me, Palettette@!"
+    p "Hi hello how are you"
+    hide palettette
+    show ahiss
+    ahiss "Good afternoon, darling. My name is Ahiss the Cat."
+    ahiss "Hiss!"
+    p "ok"
+    hide ahiss
+    show buff
+    buff "I'm buff. I mean, I'm Buff."
+    hide buff
+    show capsule happy
+    capsule "Hello! It's me, Capsule. I'm feeling happy."
+    capsule pain "Ah! I'm in pain!"
+    p "Pain from what?"
+    capsule "Existential dread."
+    capsule happy "Just kidding!"
+    hide capsule
+    show bluetile giddy
+    bluetile "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
+    bluetile annoyed "Grr... (annoyed)"
+    bluetile giddy "Yay though! (giddy)"
+    bluetile scared "Aah! (scared)"
+    p "Ok."
+    hide bluetile
     show dolly
     p "Hi Dolly. This is what you look like when you're not speaking. Also I just wanna test where the text wraps just out of curiosity."
     dolly "That's right. And this is what I look like when I {i}am{/i} speaking."
     p "Damn!"
+    dolly "And also..."
+    dolly "I can program your whole game and make the art for you for only fifty easy payments of $999.99."
+    dolly "That means you pay me $999.99 fifty seperate times."
+    p annoyed "I can tell you're really invested in helping me..."
+    dolly "shhhhhhhh don't worry about it"
     hide dolly
+    show posty neutral
     show redtile
     redtile "Hi I'm Red Tile."
+    p "sup"
     hide redtile
     show retainer sad
     retainer "I'm Retainer, and I'm sad."
@@ -1695,43 +1817,9 @@ label .other:
     show marble
     marble "My name is Marble Bust, and I'm personally starting to doubt that one person seriously drew all these assets."
     hide marble
-    show ahiss
-    ahiss "Good afternoon, darling. My name is Ahiss the Cat."
-    hide ahiss
-    show bcg
-    bcg "Uhh, hi, I'm Blue-Colored Glasses."
-    hide bcg
-    show buff
-    buff "I'm Buff!"
-    hide buff
     show cb
     cb "Heya, kiddo! It's me Crayon Box, host of Open Source Objects!"
     hide cb
-    show dolly
-    dolly "Hey, it's me Dolly, and I can program your whole game and make the art for you for only fifty easy payments of $999.99."
-    dolly "That means you pay me $999.99 fifty seperate times."
-    p annoyed "I can tell you're really invested in helping me..."
-    dolly "Thank you! (and btw did you notice my idle sprite back there)"
-    hide dolly
-    show posty neutral
-    show pal
-    pal "Howdy, it's me, Palettette@!"
-    hide pal
-    show bluetile happy
-    bluetile happy "Heyyyyy, it's me Blue Tile! I have three sets of sprites!"
-    bluetile happy "Happy..."
-    bluetile scared "Scared..."
-    bluetile annoyed "And annoyed."
-    hide bluetile annoyed
-    show capsule happy
-    capsule happy "Hello! It's me, Capsule. I'm feeling happy."
-    capsule pain "And now I'm in pain..."
-    p "Pain from what?"
-    capsule "Existential dread."
-    hide capsule
-    show rcg
-    rcg "Hello there, I'm Rose-Colored Glasses."
-    hide rcg
     show rm
     rm "Oh hi, I'm Ripped Mitten."
     p "What's wrong with your camera?"
@@ -1740,6 +1828,18 @@ label .other:
     show miso
     miso "I'm Miso Soup. I wish I had more soup though."
     hide miso
+    show jb
+    jb "Yooooooo! It's me, Jukebox!"
+    jb "I have all the latest hits like Last Night, Someone you Loved, and Darude Sandstorm!"
+    p "Ew. No."
+    p "What even is a darude?"
+    jb "It's a way of life."
+    hide jb
+    show tooly
+    tooly "Hey there pal! My name's Tooly!"
+    p "Hi Tooly! /pos"
+    tooly "Ewwww, get out of here with your modern slang."
+    hide tooly
     jump chartest
 
 label .toasty:
@@ -1794,6 +1894,8 @@ label .posty:
 
     p "Meee!!!"
     yd "Cool, you can at least talk."
+    p "By the way, my expressions have an idle blink animation, except for happy and zany."
+    yd "Now that's some attention to detail, if I do say so myself!"
     p "Well, what if I want to have an inner monologue?"
     p quiet "{i}How's this?{/i}"
     yd "I heard that"
@@ -1805,13 +1907,19 @@ label .posty:
     yd "Sounds like a plan!"
     p "So, this one's called neutral."
     p happy "Happy!"
+    yd quiet "..."
     p sad "Sad."
-    p angry "Angry..!"
+    yd quiet "..."
+    p angry "Angry..! Note how there's an idle animation!"
+    yd quiet "..."
     p annoyed "Annoyed."
+    yd quiet "..."
     p astonished "Astonished, if you remember."
     p astonished anim "And astonished comes with an animation, too."
     p confused "Confused?"
+    yd quiet "..."
     p concerned "Concerned..."
+    yd quiet "..."
     p neutral quiet "..."
     p suspicious "... suspicious..."
     yd "Suspicious indeed."
