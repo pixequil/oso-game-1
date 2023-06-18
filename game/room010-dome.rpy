@@ -15,7 +15,7 @@ label dome:
     menu:
         "Talk to Crayon Box" if item.butterfly_package:
             jump .cb
-        "Talk to Retainer" if (quest.retainer = False):
+        "Talk to Retainer" if (quest.retainer == False):
             jump .retainer
         "Talk to Bon-Bon & Sour Gummy":
             jump .sweets
@@ -45,9 +45,9 @@ label .cb_give: #284
     hide cb with moveoutright
     show posty astonished before
     cb "Gather 'round, contestants! The fourth challenge is about to start!"
-    cb "I had the contents of today's challenge{nw}"
+    cb "I had the contents of today's challenge"
     show posty astonished anim
-    cb "I had the contents of today's challenge{fast} specially delivered!"
+    cb "I had the contents of today's challenge{fast} {i}specially{/i}{w=0.3} delivered!"
     p "_" # posty is freaking out. crayon box is talking about ME???
     "You successfully finished your work for today!"
     p "_" # posty says something that could imply she wants to take a nap in the park
@@ -67,10 +67,11 @@ label .retainer:
 label .retainer_give:
     scene bg dome
     show posty neutral
-    show retainer sad
+    show retainer sad behind posty
     p "_" 
     retainer "_" # retainer is still sad. write the conversation assuming it's possible posty has or hasnt talked to retainer before.
     p "_" # posty has an idea of what to give him though!'
+    show retainer happy
     show makeshift_trophy
     "You handed over the {b}makeshift trophy{/b}!"
     $ item.makeshift_trophy = False

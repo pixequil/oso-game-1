@@ -10,6 +10,8 @@ label trophy:
     show spraypaint
     show scraptrophy
     #279 add a quick animation for using the spray paint on the trophy. just moving them around and making the screen flash should be sufficient
+    hide spraypaint
+    hide scraptrophy
     show makeshift_trophy
     "You used the {b}glittery gold spray paint{/b} on the {b}scrap trophy{/b}, making it into a {b}makeshift trophy{/b}!"
     $ item.spraypaint = False
