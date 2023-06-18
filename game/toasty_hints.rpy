@@ -23,6 +23,12 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif quest.retainer:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you made retainer leave but didnt talk to crayon box" #292
+        return
+
     elif item.makeshift_trophy:
         show posty neutral
         show toasty neutral
