@@ -49,7 +49,7 @@ label .bench:
 label .win:
     scene bg park
     show posty neutral
-    p "_" # posty, finished with her work for the day, finally decides to take a nap on the bench!
+    p "_" #290 posty, finished with her work for the day, finally decides to take a nap on the bench!
     menu:
         "End the game?"
 
