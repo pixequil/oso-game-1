@@ -93,6 +93,7 @@ _(Don't remove the blank bullets)_
 * CosmiKirby
 * Fluffystar_XD
 * gomigg
+* APotato/HriHof
 * NovaInterstellations
 * Mewbie
 * multi
