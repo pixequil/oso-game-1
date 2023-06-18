@@ -23,6 +23,12 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif item.makeshift_trophy:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the makeshift trophy (give it to retainer)" #281
+        return
+    
     elif item.notice:
         show posty neutral
         show toasty neutral
