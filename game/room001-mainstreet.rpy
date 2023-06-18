@@ -126,7 +126,7 @@ label .go:
         "Shady Back Alley":
             jump alley 
         "Park":
-            jump park #
+            jump park 
         "The Dome":
             jump dome
 

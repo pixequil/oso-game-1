@@ -9,7 +9,7 @@ label toasty_hints:
     if win_flag:
         show posty neutral
         show toasty neutral
-        t "you won; no need to have a hint" # toasty explains you dont need hints because you won. or something. replace later
+        t "you won; no need to have a hint" # they have some kind of conversation about how posty actually managed to deliver the package, and how it was quite difficult. posty muses that she could use a nap in the park
         return
 
     elif party_bs:

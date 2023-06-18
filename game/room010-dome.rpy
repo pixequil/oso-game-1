@@ -50,7 +50,7 @@ label .cb_give: #284
     cb "I had the contents of today's challenge{fast} specially delivered!"
     p "_" # posty is freaking out. crayon box is talking about ME???
     "You successfully finished your work for today!"
-    p "_" # posty says something that could imply she wants to take a break in the park
+    p "_" # posty says something that could imply she wants to take a nap in the park
     jump dome
 
 label .retainer:
