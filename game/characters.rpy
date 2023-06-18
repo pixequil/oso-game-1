@@ -23,7 +23,7 @@ init python:
         return DynamicDisplayable(curried_while_speaking(name, speaking_d, done_d))
   
     # Create a channel for speaking sounds
-    renpy.music.register_channel("speak", tight=True, file_prefix="sound/voices/")
+    renpy.music.register_channel("speak", mixer="voice", tight=True, file_prefix="sound/voices/")
 
     # This callback maintains the speaking variable.
     def speaker_callback(name, event, sound_file="snd-txt1.mp3", interact=True, **kwargs):
@@ -1233,7 +1233,7 @@ image ahiss quiet:
     xzoom -1.0
 
 
-define palettette = Character("Palettette@", 
+define pal = Character("Palettette@", 
     callback=speaker("palettette"), 
     image="palettette", 
     who_color="#d68c7b"
@@ -1273,7 +1273,6 @@ image rcg talk:
     "talksprites/rcg_open.png"
     zoom 1.5
     xalign 0.6
-    xzoom -1.0
     pause 0.2
     "talksprites/rcg_close.png"
     pause 0.2
@@ -1282,7 +1281,6 @@ image rcg quiet:
     "talksprites/rcg_close.png"
     zoom 1.5
     xalign 0.6
-    xzoom -1.0
 
 
 define bcg = Character("Blue-Colored Glasses", 
@@ -1700,7 +1698,7 @@ label .other:
     hide rcg
     hide bcg
     show palettette
-    palettette "Howdy, it's me, Palettette@!"
+    pal "Howdy, it's me, Palettette@!"
     p "Hi hello how are you"
     hide palettette
     show ahiss
