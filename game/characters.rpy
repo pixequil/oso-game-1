@@ -1406,18 +1406,18 @@ image auto bothered= WhileSpeaking(
     )
 image auto bothered talk:
     "talksprites/automotone_bothered_open.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
     pause 0.2
     "talksprites/automotone_bothered_close.png"
     pause 0.2
     repeat
 image auto bothered quiet:
     "talksprites/automotone_bothered_close.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
 
 
 image auto sad= WhileSpeaking(
@@ -1427,18 +1427,18 @@ image auto sad= WhileSpeaking(
 )
 image auto sad talk:
     "talksprites/automotone_sad_open.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
     pause 0.2
     "talksprites/automotone_sad_close.png"
     pause 0.2
     repeat
 image auto sad quiet:
     "talksprites/automotone_sad_close.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
 
 
 
