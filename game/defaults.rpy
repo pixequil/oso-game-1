@@ -44,6 +44,7 @@ default saw.food = False
 default saw.janitors = False
 default saw.notepad = False
 default saw.marble = False
+default saw.tooly = False
 
 # VARIOUS FLAGS
 default win_flag = False
@@ -58,6 +59,7 @@ default scanter_green = False
 default food_switch = False
 default gave_chips = False
 default tag_trade = False
+default trophy_crafted = False
 
 # VARIOUS COUNTERS
 default money = 0
