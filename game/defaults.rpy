@@ -1,7 +1,6 @@
 # Flags and other trinkets
 
 # QUESTS
-default quest.retainer = False
 default quest.painting_blue = False
 default quest.bs = False
 default quest.painting_war = False
@@ -9,6 +8,7 @@ default quest.painting_food = False
 default quest.money_food = False
 default quest.paintings = False
 default quest.moneys = False
+default quest.retainer = False
 
 # ITEMS
 default item.butterfly_package = False

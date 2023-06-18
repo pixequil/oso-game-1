@@ -6,8 +6,6 @@ image bg dome_top:
 image bg dome:
     "dbgs/Dome_dialogue_bg.png"
 
-# TODO: #24 dome conversation bg
-
 label dome:
     scene bg dome_top with fade
     show posty neutral
@@ -15,9 +13,9 @@ label dome:
     p "_" # TODO: #20 dome imagemap
 
     menu:
-        "Talk to Crayon Box":
+        "Talk to Crayon Box" if item.butterfly_package:
             jump .cb
-        "Talk to Retainer":
+        "Talk to Retainer" if (quest.retainer = False):
             jump .retainer
         "Talk to Bon-Bon & Sour Gummy":
             jump .sweets
@@ -26,15 +24,38 @@ label dome:
 
 label .cb:
     if quest.retainer:
-        jump .cb_talk #
+        jump .cb_give
     else:
         "Seems like {b}{color=#fc809d}Retainer{/color}{/b} is in the way..."
         $ saw.retainerblock = True
         jump dome
 
+label .cb_give: #284
+    scene bg dome
+    show posty neutral
+    show cb
+    p "_" # posty finally arrives with the butterfly package
+    cb "_"
+    show butterfly_package
+    "You handed over the {b}Butterfly Package{/b}!"
+    $ item.butterfly_package = False
+    $ win_flag = True
+    hide butterfly_package
+    cb "_" # crayon box has to go start the challenge
+    hide cb with moveoutright
+    show posty astonished before
+    cb "Gather 'round, contestants! The fourth challenge is about to start!"
+    cb "I had the contents of today's challenge{nw}"
+    show posty astonished anim
+    cb "I had the contents of today's challenge{fast} specially delivered!"
+    p "_" # posty is freaking out. crayon box is talking about ME???
+    "You successfully finished your work for today!"
+    p "_" # posty says something that could imply she wants to take a break in the park
+    jump dome
+
 label .retainer:
     if item.makeshift_trophy:
-        jump .retainer_give #
+        jump .retainer_give 
     else:
         scene bg dome
         show posty neutral
@@ -43,14 +64,38 @@ label .retainer:
         retainer "_"
         jump dome
 
-label .sweets:
-    if quest.retainer:
-        jump .sweets_sawthat #
+label .retainer_give:
+    scene bg dome
+    show posty neutral
+    show retainer sad
+    p "_" 
+    retainer "_" # retainer is still sad. write the conversation assuming it's possible posty has or hasnt talked to retainer before.
+    p "_" # posty has an idea of what to give him though!'
+    show makeshift_trophy
+    "You handed over the {b}makeshift trophy{/b}!"
+    $ item.makeshift_trophy = False
+    $ quest.retainer = True
+    hide makeshift_trophy
+    retainer "_" # retainer accepts it and becomes happy! also, he decides it's time to finally go home.
+    hide retainer with moveoutleft
+    "{b}{color=#fc809d}Retainer{/color}{/b} got out of the way!"
+    if saw.retainerblock:
+        p "_" # "finally!"
     else:
-        scene bg dome
+        p "_" # "good thing i had that with me!"
+    jump dome
+
+label .sweets:
+    scene bg dome
+    show bonbon
+    show sgummy behind bonbon
+    if quest.retainer:
         show posty neutral
-        show bonbon
-        show sgummy behind bonbon
+        bonbon "_" #283 bonbon and sour gummy saw you give retainer that trophy
+        sgummy "_"
+        jump dome
+    else:
+        show posty neutral
         bonbon "What's the point in the dome? It sucks and needs to be destroyed."
         sgummy "How can you hate the dome. Look at how I can see my reflection, its round shape, and its durability. I wish that was me."
         bonbon "What!? Do you want to be a dome?"
