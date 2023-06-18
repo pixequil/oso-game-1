@@ -54,6 +54,7 @@ label .tag2: #263
 label .tag3:
     show posty neutral
     tag "_" #264 revisiting tag after receiving the spray paint. don't mention what the spray paint may or may not have been used for.
+    jump alley
 
 label .stick:
     scene bg alley
