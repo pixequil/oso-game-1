@@ -860,16 +860,16 @@ image bonbon = WhileSpeaking(
     )
 image bonbon talk:
     "talksprites/bonbon_open.png"
-    zoom 1.2
-    xalign 1.1
+    zoom 1.0
+    xalign 1.0
     pause 0.2
     "talksprites/bonbon_close.png"
     pause 0.2
     repeat
 image bonbon quiet:
     "talksprites/bonbon_close.png"
-    zoom 1.2
-    xalign 1.1
+    zoom 1.0
+    xalign 1.0
 
 
 define sgummy = Character("Sour Gummy", 
@@ -885,18 +885,20 @@ image sgummy = WhileSpeaking(
     )
 image sgummy talk:
     "talksprites/sourgummy_open.png"
-    zoom 1.2
+    zoom 1.0
+    xzoom -1.0
     xalign 0.75
-    yalign 1.25
+    yalign 1.0
     pause 0.2
     "talksprites/sourgummy_close.png"
     pause 0.2
     repeat
 image sgummy quiet:
     "talksprites/sourgummy_close.png"
-    zoom 1.2
+    zoom 1.0
+    xzoom -1.0
     xalign 0.75
-    yalign 1.25
+    yalign 1.0
 
 
 define retainer = Character("Retainer", 
@@ -912,16 +914,18 @@ image retainer sad = WhileSpeaking(
     )
 image retainer sad talk:
     "talksprites/retainer_sad_open.png"
-    zoom 1.2
-    xalign 1.0
+    zoom 1.0
+    xalign 0.95
+    xzoom -1.0
     pause 0.2
     "talksprites/retainer_sad_close.png"
     pause 0.2
     repeat
 image retainer sad quiet:
     "talksprites/retainer_sad_close.png"
-    zoom 1.2
-    xalign 1.0
+    zoom 1.0
+    xzoom -1.0
+    xalign 0.95
 
 image retainer happy = WhileSpeaking(
     "retainer", 
@@ -930,16 +934,18 @@ image retainer happy = WhileSpeaking(
     )
 image retainer happy talk:
     "talksprites/retainer_happy_open.png"
-    zoom 1.2
-    xalign 1.0
+    zoom 1.0
+    xalign 0.95
+    xzoom -1.0
     pause 0.2
     "talksprites/retainer_happy_close.png"
     pause 0.2
     repeat
 image retainer happy quiet:
     "talksprites/retainer_happy_close.png"
-    zoom 1.2
-    xalign 1.0
+    zoom 1.0
+    xzoom -1.0
+    xalign 0.95
 
 image retainer crying = WhileSpeaking(
     "retainer", 
@@ -948,9 +954,9 @@ image retainer crying = WhileSpeaking(
     )
 image retainer crying talk:
     "talksprites/retainer_crying.png"
-    zoom 1.2
+    zoom 1.0
     xzoom -1.0
-    xalign 1.0
+    xalign 0.95
     yalign 1.05
     pause 0.2
     "talksprites/retainer_crying.png"
@@ -959,9 +965,9 @@ image retainer crying talk:
     repeat
 image retainer crying quiet:
     "talksprites/retainer_crying.png"
-    zoom 1.2
+    zoom 1.0
     xzoom -1.0
-    xalign 1.0
+    xalign 0.95
 
 
 define cameron = Character("Security Cameron",
@@ -1380,7 +1386,7 @@ image stickshift = WhileSpeaking(
     )
 image stickshift talk:
     "talksprites/stickshift_open.png"
-    zoom 1.3
+    zoom 1.2
     xzoom 1.0
     xalign 1.0
     pause 0.2
@@ -1389,7 +1395,7 @@ image stickshift talk:
     repeat
 image stickshift quiet:
     "talksprites/stickshift_close.png"
-    zoom 1.3
+    zoom 1.2
     xzoom 1.0
     xalign 1.0
 
@@ -1506,7 +1512,7 @@ image sb = WhileSpeaking(
     )
 image sb talk:
     "talksprites/squirtbottle_open.png"
-    zoom 1.4
+    zoom 1.3
     xzoom 1.0
     xalign 1.0
     pause 0.2
@@ -1515,7 +1521,7 @@ image sb talk:
     repeat
 image sb quiet:
     "talksprites/squirtbottle_close.png"
-    zoom 1.4
+    zoom 1.3
     xzoom 1.0
     xalign 1.0
 
@@ -1590,7 +1596,7 @@ image tooly talk:
     "talksprites/tooly_open.png"
     zoom 1.2
     xzoom 1.0
-    xalign 1.1
+    xalign 0.95
     pause 0.2
     "talksprites/tooly_close.png"
     pause 0.2
@@ -1599,7 +1605,7 @@ image tooly quiet:
     "talksprites/tooly_close.png"
     zoom 1.2
     xzoom 1.0
-    xalign 1.1
+    xalign 0.95
 
 
 
@@ -1642,7 +1648,7 @@ image jb = WhileSpeaking(
     )
 image jb talk:
     "talksprites/jukebox_open.png"
-    zoom 1.3
+    zoom 1.4
     xzoom 1.0
     xalign 1.0
     pause 0.2
@@ -1651,7 +1657,7 @@ image jb talk:
     repeat
 image jb quiet:
     "talksprites/jukebox_close.png"
-    zoom 1.3
+    zoom 1.4
     xzoom 1.0
     xalign 1.0
 
