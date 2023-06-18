@@ -860,16 +860,16 @@ image bonbon = WhileSpeaking(
     )
 image bonbon talk:
     "talksprites/bonbon_open.png"
-    zoom 1.0
-    xalign 1.0
+    zoom 1.2
+    xalign 1.1
     pause 0.2
     "talksprites/bonbon_close.png"
     pause 0.2
     repeat
 image bonbon quiet:
     "talksprites/bonbon_close.png"
-    zoom 1.0
-    xalign 1.0
+    zoom 1.2
+    xalign 1.1
 
 
 define sgummy = Character("Sour Gummy", 
@@ -885,20 +885,20 @@ image sgummy = WhileSpeaking(
     )
 image sgummy talk:
     "talksprites/sourgummy_open.png"
-    zoom 1.0
+    zoom 1.15
     xzoom -1.0
     xalign 0.75
-    yalign 1.0
+    yalign 1.18
     pause 0.2
     "talksprites/sourgummy_close.png"
     pause 0.2
     repeat
 image sgummy quiet:
     "talksprites/sourgummy_close.png"
-    zoom 1.0
+    zoom 1.15
     xzoom -1.0
     xalign 0.75
-    yalign 1.0
+    yalign 1.18
 
 
 define retainer = Character("Retainer", 
@@ -1592,18 +1592,19 @@ image tooly = WhileSpeaking(
     )
 image tooly talk:
     "talksprites/tooly_open.png"
-    zoom 1.2
-    xzoom 1.0
-    xalign 0.95
+    zoom 1.5
+    xalign 1.08
+    ycenter 0.55 
     pause 0.2
     "talksprites/tooly_close.png"
+    ycenter 0.6
     pause 0.2
     repeat
 image tooly quiet:
     "talksprites/tooly_close.png"
-    zoom 1.2
-    xzoom 1.0
-    xalign 0.95
+    zoom 1.5
+    xalign 1.08
+    ycenter 0.6 
 
 
 
@@ -1646,18 +1647,16 @@ image jb = WhileSpeaking(
     )
 image jb talk:
     "talksprites/jukebox_open.png"
-    zoom 1.4
-    xzoom 1.0
-    xalign 1.0
+    zoom 1.9
+    xalign 1.1
     pause 0.2
     "talksprites/jukebox_close.png"
     pause 0.2
     repeat
 image jb quiet:
     "talksprites/jukebox_close.png"
-    zoom 1.4
-    xzoom 1.0
-    xalign 1.0
+    zoom 1.9
+    xalign 1.1
 
     
 
