@@ -995,7 +995,7 @@ image miso = WhileSpeaking(
 image miso talk:
     "talksprites/miso_soup_talk_open.png"
     zoom 1.2
-    xzoom -1.0
+    xzoom 1.0
     xalign 1.0
     yalign 1.25
     pause 0.2
@@ -1005,7 +1005,7 @@ image miso talk:
 image miso quiet:
     "talksprites/miso_soup_talk_close.png"
     zoom 1.2
-    xzoom -1.0
+    xzoom 1.0
     xalign 1.0
     yalign 1.25
 
