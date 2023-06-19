@@ -45,6 +45,7 @@ default saw.janitors = False
 default saw.notepad = False
 default saw.marble = False
 default saw.tooly = False
+default saw.tb = False
 
 # VARIOUS FLAGS
 default win_flag = False

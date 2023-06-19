@@ -114,6 +114,8 @@ label .talk:
             jump .yd
         "Yellow Diamond & Brand Soda" if quest.bs:
             jump .yd
+        "Ticket Booth":
+            jump .tb
         
 
 label .go:
@@ -129,6 +131,26 @@ label .go:
             jump park 
         "The Dome":
             jump dome
+
+label .tb:
+    scene bg mainstreet
+    if party_bs:
+        show posty neutral
+        show bs follow behind posty
+        show tb shy
+        p "_" # ticket booth is too shy to speak to such a large group
+        jump mainstreet
+    if saw.tb:
+        show posty neutral
+        show tb neutral
+        p "_" # talking to ticket booth a second time
+        jump mainstreet
+    else:
+        show posty neutral
+        show tb shy
+        p "_" # talking to ticket booth for the first time
+        $ saw.tb = True
+        jump mainstreet
 
 label .brandsoda:
 
