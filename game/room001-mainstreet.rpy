@@ -122,7 +122,7 @@ label .go:
 
     menu:
         "Music Store":
-            jump musicstore #
+            jump musicstore 
         "Art Museum":
             jump museum_entrance 
         "Shady Back Alley":
@@ -132,7 +132,7 @@ label .go:
         "The Dome":
             jump dome
 
-label .tb:
+label .tb: #293
     scene bg mainstreet
     if party_bs:
         show posty neutral
