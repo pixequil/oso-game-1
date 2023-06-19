@@ -15,6 +15,13 @@ image ladle_full:
     yalign 0.5
     zoom 0.6
 
+image scraptrophy:
+    "items/scraptrophy.png"
+    xalign 0.5
+    yalign 0.5
+    zoom 5.0
+    rotate 45
+
 label firstscene:
 
     scene black
@@ -102,26 +109,48 @@ label .talk:
             call toasty_hints
             jump mainstreet
         "Tooly":
-            jump .tooly #
+            jump .tooly 
         "Yellow Diamond" if quest.bs == False:
             jump .yd
         "Yellow Diamond & Brand Soda" if quest.bs:
             jump .yd
+        "Ticket Booth":
+            jump .tb
         
 
 label .go:
 
     menu:
         "Music Store":
-            jump musicstore #
+            jump musicstore 
         "Art Museum":
             jump museum_entrance 
         "Shady Back Alley":
-            jump alley #
+            jump alley 
         "Park":
-            jump park #
+            jump park 
         "The Dome":
             jump dome
+
+label .tb: #293
+    scene bg mainstreet
+    if party_bs:
+        show posty neutral
+        show bs follow behind posty
+        show tb shy
+        p "_" # ticket booth is too shy to speak to such a large group
+        jump mainstreet
+    if saw.tb:
+        show posty neutral
+        show tb neutral
+        p "_" # talking to ticket booth a second time
+        jump mainstreet
+    else:
+        show posty neutral
+        show tb shy
+        p "_" # talking to ticket booth for the first time
+        $ saw.tb = True
+        jump mainstreet
 
 label .brandsoda:
 
@@ -259,5 +288,62 @@ label .btnet:
 
         jump mainstreet
 
-label .tooly:
-    "this scene is not available yet." # when implemeting Tooly, remember to leave room for Brand Soda interactions.
+label .tooly: # when implemeting Tooly, remember to leave room for Brand Soda interactions.
+    scene bg mainstreet
+    show tooly
+
+    if party_bs:
+        show posty neutral
+        show bs follow behind posty
+        p "_" #275 talking to tooly with brand soda
+        jump mainstreet
+
+    if trophy_crafted:
+        jump .tooly3
+    elif saw.tooly:
+        jump .tooly2
+    else:
+        jump .tooly1
+
+label .tooly1: #276
+    show posty neutral
+    p "_" # introduce tooly. A toolbox, and a rough but jovial metalworker. She is always equipped with sorts of metalworking equipment and runs a small workshop in front of the closed store on the east side of the street.
+    tooly "_" # she offers to craft stuff if you ever bring her some raw materials
+    if item.scrapmetal:
+        jump .tooly_scrap
+    else:
+        p "_" # posty says goodbye
+
+label .tooly2: #276
+    show posty neutral
+    tooly "_" # tooly reminds posty that she can craft stuff if you ever bring her some raw materials
+    if item.scrapmetal:
+        jump .tooly_scrap
+    else:
+        p "_" #posty says goodbye
+
+label .tooly_scrap: #277
+    p "_" # "oh, something like this?"
+    show scrapmetal
+    "You handed over the {b}scrap metal{/b}!"
+    $ item.scrapmetal = False
+    hide scrapmetal
+    tooly "_" # tooly immediately knows what to do with this
+    $ trophy_crafted = True
+    show scraptrophy
+    "Tooly crafted a {b}scrap trophy{/b}!"
+    $ item.scrap_trophy = True
+    hide scraptrophy
+    if item.spraypaint:
+        call trophy
+        tooly "_" # tooly comments on your use of the spray paint
+        jump mainstreet
+    else:
+        p "_" # some kind of thank-you
+        jump mainstreet
+
+label .tooly3:
+    show posty neutral
+    tooly "_" #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
+    jump mainstreet
+

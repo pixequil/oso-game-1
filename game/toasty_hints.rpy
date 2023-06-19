@@ -9,7 +9,7 @@ label toasty_hints:
     if win_flag:
         show posty neutral
         show toasty neutral
-        t "you won; no need to have a hint" # toasty explains you dont need hints because you won. or something. replace later
+        t "you won; no need to have a hint" # they have some kind of conversation about how posty actually managed to deliver the package, and how it was quite difficult. posty muses that she could use a nap in the park
         return
 
     elif party_bs:
@@ -23,6 +23,55 @@ label toasty_hints:
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
+    elif quest.retainer:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you made retainer leave but didnt talk to crayon box" #292
+        return
+
+    elif item.makeshift_trophy:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the makeshift trophy (give it to retainer)" #281
+        return
+    
+    elif item.notice:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you got the notice of reprimand" #257
+        return
+
+    elif item.napkin:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you got the napkin painting" #252
+        return
+
+    elif item.chips:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you got the chips" #242
+        return
+
+
+    elif saw.janitors and (quest.money_food == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you went in the janitors closet but didnt get chips" #241
+        return
+
+    elif food_switch and (quest.money_food == False) and (saw.janitors == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you opened the janitors closet but didnt go in" #234
+        return
+
+    elif scanter_green and (quest.painting_war == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if Palettette has turned the painting green" #222
+        return
+    
     elif item.battery:
         show posty neutral
         show toasty neutral
@@ -69,6 +118,36 @@ label toasty_hints:
         show posty neutral
         show toasty neutral
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
+        return
+
+    elif quest.paintings and (quest.moneys == False) and (money == 2):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the spray paint but nothing to decorate with it (see dolly)" #265
+        return
+
+    elif quest.paintings and (quest.bs == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the spray paint but nothing to decorate with it (talk to bs)" #265
+        return
+
+    elif quest.paintings and (money == 1):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you have the spray paint but nothing to decorate with it (do food exhibit quest)" #265
+        return
+
+    elif paintings == 3 and (quest.paintings == False):
+        show posty neutral
+        show toasty neutral
+        t "hint for if you've taken three paintings (assemble them)" #229
+        return
+
+    elif paintings == 2:
+        show posty neutral
+        show toasty neutral
+        t "hint for if you've taken two paintings" #221
         return
 
     elif paintings == 1:

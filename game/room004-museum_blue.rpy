@@ -87,7 +87,7 @@ label .rt:
         p "_" #118 red tile offers to distract blue tile in exchange for the money (and because they want that painting harmed)
         label .rt_money:
             menu:
-                "Offer cash." if (money > 0):
+                "Offer cash." if (money > 0) and (quest.moneys == False):
                     p "_" # red tile refuses the regular cash.
                     jump .rt_money
                 "Offer red cash.":

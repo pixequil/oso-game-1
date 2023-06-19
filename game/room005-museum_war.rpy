@@ -1,5 +1,7 @@
 # todo: war exhibit conversation background #149
 
+# todo: war main exhibit painting #225
+
 image bg museum_war_top:
     "map-bgs/museum_war_top.png"
     zoom 1.15

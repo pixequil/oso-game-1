@@ -1392,7 +1392,7 @@ image tag quiet:
 
 
 
-define stickshift = Character("Stick Shift",
+define stick = Character("Stick Shift",
     callback=speaker("stickshift"), 
     image="stickshift", 
     who_color="#434343"
@@ -1433,18 +1433,18 @@ image auto bothered= WhileSpeaking(
     )
 image auto bothered talk:
     "talksprites/automotone_bothered_open.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
     pause 0.2
     "talksprites/automotone_bothered_close.png"
     pause 0.2
     repeat
 image auto bothered quiet:
     "talksprites/automotone_bothered_close.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
 
 
 image auto sad= WhileSpeaking(
@@ -1454,18 +1454,18 @@ image auto sad= WhileSpeaking(
 )
 image auto sad talk:
     "talksprites/automotone_sad_open.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
     pause 0.2
     "talksprites/automotone_sad_close.png"
     pause 0.2
     repeat
 image auto sad quiet:
     "talksprites/automotone_sad_close.png"
-    zoom 1.3
+    zoom 1.6
     xzoom -1.0
-    xalign 1.0
+    xalign 1.1
 
 
 
@@ -1796,7 +1796,7 @@ label .other:
     tag "it's subversive."
     hide tag
     show stickshift
-    stickshift "Hi, my name is Stick Shift."
+    stick "Hi, my name is Stick Shift."
     hide stickshift
     show auto bothered
     auto bothered "Huh? Oh, I'm Automotone."

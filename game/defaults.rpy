@@ -1,10 +1,14 @@
 # Flags and other trinkets
 
 # QUESTS
-default quest.retainer = False
 default quest.painting_blue = False
 default quest.bs = False
 default quest.painting_war = False
+default quest.painting_food = False
+default quest.money_food = False
+default quest.paintings = False
+default quest.moneys = False
+default quest.retainer = False
 
 # ITEMS
 default item.butterfly_package = False
@@ -16,6 +20,13 @@ default item.heavier = False
 default item.imaginary_lighter = False
 default item.battery = False
 default item.painting_war = False
+default item.painting_food = False
+default item.chips = False
+default item.napkin = False
+default item.notice = False
+default item.spraypaint = False
+default item.scrapmetal = False
+default item.scrap_trophy = False
 default item.makeshift_trophy = False
 
 # PLACES/CHARACTERS VISITED
@@ -29,6 +40,13 @@ default saw.war = False
 default saw.ahiss = False
 default saw.pal = False
 default saw.glasses = False
+default saw.food = False
+default saw.janitors = False
+default saw.notepad = False
+default saw.marble = False
+default saw.tooly = False
+default saw.tb = False
+default saw.jb = False
 
 # VARIOUS FLAGS
 default win_flag = False
@@ -40,6 +58,10 @@ default burger_extinguish = False
 default battery_asked = False
 default deed_burned = False
 default scanter_green = False
+default food_switch = False
+default gave_chips = False
+default tag_trade = False
+default trophy_crafted = False
 
 # VARIOUS COUNTERS
 default money = 0
