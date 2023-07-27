@@ -22,6 +22,11 @@ image scraptrophy:
     zoom 5.0
     rotate 45
 
+image cash_bundle_1:
+    "items/cash_bundle_1.png"
+    truecenter
+    zoom 1.5
+
 label firstscene:
 
     scene black
@@ -80,8 +85,15 @@ label mainstreet:
 
     scene bg mainstreet_top with fade
     show posty neutral
+    p  "__"
+    jump mainmenu
 
-    p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
+label mainmenu:
+
+    scene bg mainstreet_top
+    show posty neutral
+
+    # TODO: #9 replace this choice tree with an imagemap that scrolls
 
     menu:
         "Talk to someone.":
@@ -116,6 +128,8 @@ label .talk:
             jump .yd
         "Ticket Booth":
             jump .tb
+        "Back":
+            jump mainmenu
         
 
 label .go:
@@ -131,6 +145,8 @@ label .go:
             jump park 
         "The Dome":
             jump dome
+        "Back":
+            jump mainmenu
 
 label .tb: #293
     scene bg mainstreet

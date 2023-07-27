@@ -7,6 +7,59 @@ image bg museum_war_top:
     zoom 1.15
     yalign 0.2
 
+image heavier:
+    "items/Heavier.png"
+    truecenter
+    zoom 2.5
+
+image burger fire:
+    "items/big_fire_painting_1.png"
+    xalign 0.45
+    yalign 0.5
+
+image burger out:
+    "items/big_fire_painting_2.png"
+    xalign 0.45
+    yalign 0.5
+
+image imaginary_lighter:
+    "items/Imaginary_Lighter.png"
+    truecenter
+    zoom 2.0
+
+image battery_center:
+    "items/batteries.png"
+    truecenter
+    zoom 1.5
+
+image battery_floor:
+    "items/batteries.png"
+    yalign 1.0
+    zoom 1.5
+
+image champurrlain:
+    "items/Champurrlain_painting.png"
+    xalign 0.44
+    yalign 0.3
+    zoom 1.5
+
+image deed:
+    "items/imaginary_deed.png"
+    xalign 0.44
+    yalign 0.5
+    zoom 1.5
+
+image painting_war:
+    "items/war_Exhibit_photo_original.png"
+    truecenter
+    zoom 0.4
+
+image painting_war green:
+    "items/war_Exhibit_photo_green.png"
+    truecenter
+    zoom 0.4
+
+
 label museum_war:
     if saw.war == False:
         jump .capsulefirst
@@ -56,7 +109,6 @@ label .painting2:
     show painting_war green
     show posty neutral
     p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
-    show painting_war green at center
     "You got an {b}art piece{/b}!" #212 describe war painting
     $ item.painting_war = True
     $ quest.painting_war = True
@@ -112,7 +164,7 @@ label .pal2: #206
         jump museum_war
 
 label .pal_battery: #207
-    show battery center
+    show battery_center
     "You handed over the {b}battery{/b}!"
     $ item.battery = False
     hide battery
@@ -152,7 +204,7 @@ label .ahiss:
     show champurrlain #166
     if deed_burned:
         jump .ahiss3
-    show battery floor #168
+    show battery_floor #168
     show ahiss
     if saw.ahiss == False:
         $ saw.ahiss = True
@@ -211,7 +263,8 @@ label .ahiss_deed: #173
             p "_" # posty takes the battery since it belongs to palettette.
         else:
             p "_" # posty notices the battery on the ground and takes it now that she's close to it, on impulse.
-        show battery center
+        hide battery_floor
+        show battery_center
         "You got the {b}battery{/b}!"
         $ item.battery = True
         hide battery
@@ -252,6 +305,7 @@ label .buff:
     p "__" # posty prods buff for another fact about the painting, that is now changed.
     buff "_" # buff makes up a new fact that contradicts the previous fact.
     p "_" # posty calls them out on the contradiction, causing them to give posty an imaginary lighter.
+    hide burger out
     show imaginary_lighter #158
     $ item.imaginary_lighter = True
     "You got the {b}imaginary lighter{/b}!{p}description" #159 the imaginary lighter can be used to add fire to imaginary things.
