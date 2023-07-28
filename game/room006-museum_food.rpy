@@ -12,6 +12,22 @@ image badpainting:
     zoom 0.1
     yalign 0.5
 
+image painting_food_floor:
+    "items/Brussel_Sprouts.png"
+    xalign 0.5
+    yalign 1.0
+    zoom 0.75
+
+image painting_food:
+    "items/Brussel_Sprouts.png"
+    truecenter
+    zoom 0.75
+
+image eating:
+    "items/personeatingfoodpainting.png"
+    truecenter
+    zoom 1.75
+
 label museum_food:
     scene bg museum_food_top
     show posty neutral
@@ -76,10 +92,10 @@ label .marble_napkin:
     hide badpainting
     $ money += 1
     $ quest.money_food = True
-    show cash_bundle_1
+    show cash_bundle_2 at truecenter
     $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
     "{b}{color=#bdbb9a}Marble Bust{/color}{/b} gave you {b}some money{/b}!"
-    hide cash_bundle_1
+    hide cash_bundle_2
     call money_get
     p "_" # some kind of parting remark
     jump museum_food
@@ -122,7 +138,7 @@ label .notepad2: #244
 
 label .notepad_chips: #246
     p "_" # posty does indeed have some chips for notepad!
-    show generichips
+    show generichips at truecenter
     "You handed over the {b}Generi-Chips{/b}!"
     $ item.chips = False
     $ gave_chips = True
@@ -142,14 +158,15 @@ label .notepad3: #247
 
 label .painting: #228
     scene bg museum_food
-    show painting_food
+    show painting_food_floor
     show posty neutral
     show rm
     p "_" # posty arrives, having felt drawn to this painting inexplicably
     rm "_" # Ripped Mitten says a veiled complaint about the painting, like it doesn't belong here, and how nobody would miss it. then they leave.
     hide rm with moveoutright
     p "_" # posty beholds the main painting in the food exhibit and feels a compulsion to collect it.
-    show painting_food at center
+    hide painting_food_floor
+    show painting_food
     "You got an {b}art piece{/b}!" #227 describe food painting
     $ item.painting_food = True
     $ quest.painting_food = True

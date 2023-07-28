@@ -10,12 +10,12 @@ label money_get:
     if money == 0:
         "A player should never see this text."
     elif money == 1:
-        show cash_bundle_1
+        show cash_bundle_1 at truecenter
         "You now have {b}some money{/b}!"
         hide cash_bundle_1
         return
     elif money == 2:
-        show cash_bundle_2
+        show cash_bundle_2 at truecenter
         "You now have {b}a lot of money{/b}!"
         hide cash_bundle_2
         return
@@ -56,23 +56,25 @@ label .money_check:
             p "i have nothing" # todo: #38 posty has no money
             jump mainstreet
     elif money == 1:
-        show cash_bundle_1
-        p "i have some money" # todo: #39 posty has "some" money. this is not enough money for Dolly; Dolly wants "a lot of" money.
+        show cash_bundle_1 at truecenter
+        p "i have some money" # todo: #39 posty has "some" money. 
+        dolly "bad" #this is not enough money for Dolly; Dolly wants "a lot of" money.
         jump mainstreet
     elif money == 2: #250
-        show cash_bundle_2
+        show cash_bundle_2 at truecenter
         p "i have a lot of money" #  posty has "a lot of" money
-        dolly "_" # dolly thinks this is sufficient for the loot box, although she pretends briefly that it's not, to mess with Posty. 
+        dolly "good" # dolly thinks this is sufficient for the loot box, although she pretends briefly that it's not, to mess with Posty. 
+        hide cash_bundle_2
         "{b}{color=#e3d3ab}Dolly{/color}{/b} took all your {b}money{/b}!"
         if item.red_cash:
             "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}."
         dolly "_" # "much appreciated!"
         p "_" # "... so, the loot box?"
         dolly "_" # "right!"
-        show lootbox #266
+        show lootbox at truecenter #266
         "..." #268 insert gratuitous lootbox opening animation, reminiscent of predatory gacha games
         hide lootbox
-        show scrapmetal #269
+        show scrapmetal at truecenter #269
         $ item.scrapmetal = True
         $ quest.moneys = True
         "You got some {b}scrap metal{/b} from the loot box!" #270

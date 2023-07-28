@@ -22,6 +22,10 @@ image scraptrophy:
     zoom 5.0
     rotate 45
 
+image scrapmetal:
+    "items/scrapmetal.png"
+    zoom 1.3
+
 image cash_bundle_1:
     "items/cash_bundle_1.png"
     truecenter
@@ -340,7 +344,7 @@ label .tooly2: #276
 
 label .tooly_scrap: #277
     p "_" # "oh, something like this?"
-    show scrapmetal
+    show scrapmetal at truecenter
     "You handed over the {b}scrap metal{/b}!"
     $ item.scrapmetal = False
     hide scrapmetal
