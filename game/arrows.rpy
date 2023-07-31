@@ -1,17 +1,17 @@
 image arrow:
     "arrow.png"
-
-image arrow half:
-    "arrow"
     alpha 0.4
 
-transform dn:
+image arrow dn:
+    "arrow"
     rotate 180
 
-transform rt:
+image arrow rt:
+    "arrow"
     rotate 90
 
-transform lt:
+image arrow lt:
+    "arrow"
     rotate 270
 
 transform black:
