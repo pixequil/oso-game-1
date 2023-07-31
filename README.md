@@ -77,6 +77,7 @@ _(Don't remove the blank bullets)_
 * Nune
 * Rand0m_Anon
 * RoastedToastedTea
+* Satomi
 * ThatBlueSquare.
 * TheSeanimator
 * Z Animations Studio
