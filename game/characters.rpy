@@ -901,6 +901,138 @@ image sgummy quiet:
     yalign 1.18
 
 
+define binoc = Character("Binoculars", 
+    callback=speaker("binoc"), 
+    image="binoc", 
+    who_color="#2c2c31"
+    )
+
+image binoc cynical = WhileSpeaking(
+    "binoc", 
+    "binoc cynical talk", 
+    "binoc cynical quiet"
+    )
+
+image binoc cynical talk:
+    "talksprites/binoculars_exp1_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/binoculars_exp1_close.png"
+    pause 0.2
+    repeat
+image binoc cynical quiet:
+    "talksprites/binoculars_exp1_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+image binoc smug = WhileSpeaking(
+    "binoc", 
+    "binoc smug talk", 
+    "binoc smug quiet"
+    )
+
+image binoc smug talk:
+    "talksprites/binoculars_exp2_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/binoculars_exp2_close.png"
+    pause 0.2
+    repeat
+image binoc smug quiet:
+    "talksprites/binoculars_exp2_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+image binoc neutral = WhileSpeaking(
+    "binoc", 
+    "binoc neutral talk", 
+    "binoc neutral quiet"
+    )
+
+image binoc neutral talk:
+    "talksprites/binoculars_exp3_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/binoculars_exp3_close.png"
+    pause 0.2
+    repeat
+image binoc neutral quiet:
+    "talksprites/binoculars_exp3_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+image binoc concerned = WhileSpeaking(
+    "binoc", 
+    "binoc concerned talk", 
+    "binoc concerned quiet"
+    )
+
+image binoc concerned talk:
+    "talksprites/binoculars_exp4_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/binoculars_exp4_close.png"
+    pause 0.2
+    repeat
+image binoc concerned quiet:
+    "talksprites/binoculars_exp4_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+image binoc happy = WhileSpeaking(
+    "binoc", 
+    "binoc happy talk", 
+    "binoc happy quiet"
+    )
+
+image binoc happy talk:
+    "talksprites/binoculars_exp5_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/binoculars_exp5_close.png"
+    pause 0.2
+    repeat
+image binoc happy quiet:
+    "talksprites/binoculars_exp5_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
+image binoc neutral2 = WhileSpeaking(
+    "binoc", 
+    "binoc neutral2 talk", 
+    "binoc neutral2 quiet"
+    )
+
+image binoc neutral2 talk:
+    "talksprites/binoculars_exp6_open.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/binoculars_exp6_close.png"
+    pause 0.2
+    repeat
+image binoc neutral2 quiet:
+    "talksprites/binoculars_exp6_close.png"
+    zoom 1.0
+    xzoom -1.0
+    xalign 1.0
+
 define retainer = Character("Retainer", 
     callback=speaker("retainer"), 
     image="retainer", 
@@ -1110,6 +1242,32 @@ image bluetile scared quiet:
     xalign 1.05
     yalign 2.0
 
+define neon = Character("Neon Lights", 
+    callback=speaker("neon"), 
+    image="neon", 
+    who_color="#96cac2"
+    )
+
+image neon = WhileSpeaking(
+    "neon", 
+    "neon talk", 
+    "neon quiet"
+    )
+image neon talk:
+    "talksprites/neonlights_talk_open.png"
+    zoom 1.2
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/neonlights_talk_close.png"
+    pause 0.2
+    repeat
+image neon quiet:
+    "talksprites/neonlights_talk_close.png"
+    zoom 1.2
+    xzoom 1.0
+    xalign 1.0
+
 
 define dolly = Character("Dolly", 
     callback=speaker("dolly"), 
@@ -1164,6 +1322,32 @@ image miso quiet:
     xzoom 1.0
     xalign 1.0
     yalign 1.25
+
+define sheet = Character("Sheet",
+    callback=speaker("sheet"), 
+    image="sheet", 
+    who_color="fffefe"
+    )
+
+image sheet = WhileSpeaking(
+    "sheet", 
+    "sheet talk", 
+    "sheet quiet"
+    )
+image sheet talk:
+    "talksprites/sheet_talk_open.png"
+    zoom 1.0
+    xzoom 1.0
+    xalign 1.0
+    pause 0.2
+    "talksprites/sheet_talk_close.png"
+    pause 0.2
+    repeat
+image sheet quiet:
+    "talksprites/sheet_talk_close.png"
+    zoom 1.0
+    xzoom 1.0
+    xalign 1.0
 
 define capsule = Character("Capsule", 
     callback=speaker("capsule"), 
@@ -1613,9 +1797,9 @@ image tooly = WhileSpeaking(
     )
 image tooly talk:
     "talksprites/tooly_open.png"
-    zoom 1.5
-    xalign 1.08
-    ycenter 0.55 
+    zoom 1.25
+    xalign 0.9
+    ycenter 0.59 
     pause 0.2
     "talksprites/tooly_close.png"
     ycenter 0.6
@@ -1623,8 +1807,8 @@ image tooly talk:
     repeat
 image tooly quiet:
     "talksprites/tooly_close.png"
-    zoom 1.5
-    xalign 1.08
+    zoom 1.25
+    xalign 0.9
     ycenter 0.6 
 
 
@@ -1845,6 +2029,25 @@ label .other:
     p "Hi Tooly! /pos"
     tooly "Ewwww, get out of here with your modern slang."
     hide tooly
+    show neon
+    neon "Yooooo, it's me! Neon Lights"
+    p "I like bright lights personally."
+    hide neon
+    show binoc happy 
+    binoc "Hi Posty. I'm Binoculars!"
+    binoc "Now impressively, I was given six different emotions for my sprites."
+    binoc "There's these sprites (happy)..."
+    binoc cynical "These sprites (cynical)..."
+    binoc neutral "These sprites (neutral)..."
+    binoc smug "These sprites (smug)..."
+    binoc concerned "These sprites (concerned)..."
+    binoc neutral2 "And these sprites (neutral2)."
+    p "Wow, that's a lot of effort."
+    hide binoc
+    show sheet
+    sheet "I'm Sheet! I'm the last character here!"
+    p "Time to go back to the menu!"
+    hide sheet
     jump chartest
 
 label .toasty:
