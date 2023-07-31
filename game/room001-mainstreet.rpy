@@ -29,8 +29,9 @@ screen mainstreet_nav():
         arrowkeys True
         xinitial 0.0
         yinitial 0.0 # todo: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
-        
         add "bg mainstreet_top"
+
+        # arrows
         imagebutton: # park arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -55,6 +56,11 @@ screen mainstreet_nav():
             idle "arrow half" at rt
             hover "arrow"
             action Jump("dome")
+
+        # doors
+
+        # people
+
 
 label firstscene:
 
