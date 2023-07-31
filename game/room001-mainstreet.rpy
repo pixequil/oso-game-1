@@ -37,27 +37,43 @@ screen mainstreet_nav():
             yanchor 0.5
             xpos 1406
             ypos 640
-            idle "arrow half" at dn
-            hover "arrow"
+            idle "arrow dn"
+            hover "pnav dn"
             action Jump("park")
         imagebutton: # alley arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
             xpos 1739
             ypos 80
-            idle "arrow half"
-            hover "arrow"
+            idle "arrow up"
+            hover "pnav up"
             action Jump("alley")
         imagebutton: # dome arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
             xpos 2920
-            ypos 316
-            idle "arrow half" at rt
-            hover "arrow"
+            ypos 350
+            idle "arrow rt"
+            hover "pnav rt"
             action Jump("dome")
 
         # doors
+        imagebutton: # museum door
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 1320
+            ypos 230
+            idle "pnav i"
+            hover "pnav up"
+            action Jump("museum_entrance")
+        imagebutton: # music door
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 932
+            ypos 235
+            idle "pnav i"
+            hover "pnav up"
+            action Jump("musicstore")
 
         # people
 
