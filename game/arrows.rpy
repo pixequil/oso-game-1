@@ -1,17 +1,17 @@
-image arrow:
+image arrow up:
     "arrow.png"
     alpha 0.4
 
 image arrow dn:
-    "arrow"
+    "arrow up"
     rotate 180
 
 image arrow rt:
-    "arrow"
+    "arrow up"
     rotate 90
 
 image arrow lt:
-    "arrow"
+    "arrow up"
     rotate 270
 
 transform black:
@@ -31,7 +31,7 @@ image pnav rt:
     pause 0.1
     ypos 0
     repeat
-image pnav:
+image pnav dn:
     "minisprites/pnav dn.png"
     pause 0.1
     ypos 4
