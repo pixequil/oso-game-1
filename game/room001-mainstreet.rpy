@@ -38,6 +38,12 @@ screen mainstreet_nav():
             xpos 1406
             ypos 640
             idle "arrow dn"
+        imagebutton: # park arrow posty
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 1406
+            ypos 640
+            idle "pnav dn i"
             hover "pnav dn"
             action Jump("park")
         imagebutton: # alley arrow
@@ -46,6 +52,12 @@ screen mainstreet_nav():
             xpos 1739
             ypos 80
             idle "arrow up"
+        imagebutton: # alley arrow posty
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 1739
+            ypos 80
+            idle "pnav up i"
             hover "pnav up"
             action Jump("alley")
         imagebutton: # dome arrow
@@ -54,6 +66,12 @@ screen mainstreet_nav():
             xpos 2920
             ypos 350
             idle "arrow rt"
+        imagebutton: # dome arrow posty
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 2920
+            ypos 350
+            idle "pnav rt i"
             hover "pnav rt"
             action Jump("dome")
 
@@ -62,16 +80,16 @@ screen mainstreet_nav():
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
             xpos 1320
-            ypos 230
-            idle "pnav i"
+            ypos 198
+            idle "pnav up i"
             hover "pnav up"
             action Jump("museum_entrance")
         imagebutton: # music door
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
             xpos 932
-            ypos 235
-            idle "pnav i"
+            ypos 203
+            idle "pnav up i"
             hover "pnav up"
             action Jump("musicstore")
 

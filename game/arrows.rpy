@@ -46,7 +46,17 @@ image pnav lt:
     pause 0.1
     ypos 0
     repeat
-image pnav i:
+image pnav up i:
+    "minisprites/pnav up.png"
+    alpha 0.0
+image pnav rt i:
+    "minisprites/pnav rt.png"
+    alpha 0.0
+image pnav dn i:
     "minisprites/pnav dn.png"
+    alpha 0.0
+image pnav lt i:
+    "minisprites/pnav rt.png"
+    xzoom -1.0
     alpha 0.0
 
