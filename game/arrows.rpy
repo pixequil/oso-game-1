@@ -17,3 +17,33 @@ transform lt:
 transform black:
     matrixcolor TintMatrix("000")
 
+image pnav up:
+    "minisprites/pnav up.png"
+    pause 0.1
+    ypos 4
+    pause 0.1
+    ypos 0
+    repeat
+image pnav rt:
+    "minisprites/pnav rt.png"
+    pause 0.1
+    ypos 4
+    pause 0.1
+    ypos 0
+    repeat
+image pnav dn:
+    "minisprites/pnav dn.png"
+    pause 0.1
+    ypos 4
+    pause 0.1
+    ypos 0
+    repeat
+image pnav lt:
+    "minisprites/pnav rt.png"
+    xzoom -1.0
+    pause 0.1
+    ypos 4
+    pause 0.1
+    ypos 0
+    repeat
+
