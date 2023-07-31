@@ -84,10 +84,12 @@ label mainstreet:
             edgescroll (300, 2000)
 
             add "bg mainstreet_top"
+            textbutton "BTNet":
+                action Jump("mainstreet.btnet")
 
     call screen mainstreet_nav
 
-label mainstreet_fallback:
+label .mainstreet_fallback:
 
     scene bg mainstreet_top with fade
     show posty neutral
@@ -126,8 +128,7 @@ label .talk:
         "Yellow Diamond & Brand Soda" if quest.bs:
             jump .yd
         "Ticket Booth":
-            jump .tb
-        
+            jump .tb       
 
 label .go:
 
