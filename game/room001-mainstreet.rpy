@@ -79,13 +79,39 @@ label firstscene:
 label mainstreet:
 
     screen mainstreet_nav():
-
         viewport:
-            edgescroll (300, 2000)
-
+            child_size (3000, 720) # without redundifying the size here, ren'py will not allow scrolling
+            edgescroll (300, 2000) # (bounds, speed) these are good values for horizontal scrolling, but this may need to be reduced for rooms with vertical scrolling.
+            arrowkeys True
+            xinitial 0.0
+            yinitial 0.0 # todo: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
+            
             add "bg mainstreet_top"
-            textbutton "BTNet":
-                action Jump("mainstreet.btnet")
+            imagebutton: # park arrow
+                xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+                yanchor 0.5
+                xpos 1406
+                ypos 640
+                idle "arrow half" at dn
+                hover "arrow"
+                action Jump("park")
+            imagebutton: # alley arrow
+                xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+                yanchor 0.5
+                xpos 1739
+                ypos 80
+                idle "arrow half"
+                hover "arrow"
+                action Jump("alley")
+            imagebutton: # dome arrow
+                xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+                yanchor 0.5
+                xpos 2920
+                ypos 316
+                idle "arrow half" at rt
+                hover "arrow"
+                action Jump("dome")
+            
 
     call screen mainstreet_nav
 
