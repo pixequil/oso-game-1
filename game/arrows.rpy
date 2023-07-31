@@ -5,6 +5,9 @@ image arrow half:
     "arrow"
     alpha 0.4
 
+transform invis:
+    alpha 0.0
+
 transform dn:
     rotate 180
 
