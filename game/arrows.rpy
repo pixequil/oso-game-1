@@ -5,9 +5,6 @@ image arrow half:
     "arrow"
     alpha 0.4
 
-transform invis:
-    alpha 0.0
-
 transform dn:
     rotate 180
 
@@ -49,4 +46,7 @@ image pnav lt:
     pause 0.1
     ypos 0
     repeat
+image pnav i:
+    "minisprites/pnav dn.png"
+    alpha 0.0
 
