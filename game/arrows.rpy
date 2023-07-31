@@ -1,6 +1,6 @@
 image arrow up:
     "arrow.png"
-    alpha 0.4
+    alpha 0.2
 
 image arrow dn:
     "arrow up"
