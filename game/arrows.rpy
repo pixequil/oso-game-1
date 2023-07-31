@@ -31,7 +31,7 @@ image pnav rt:
     pause 0.1
     ypos 0
     repeat
-image pnav dn:
+image pnav:
     "minisprites/pnav dn.png"
     pause 0.1
     ypos 4
