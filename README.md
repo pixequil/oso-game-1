@@ -49,6 +49,7 @@ _(Don't remove the blank bullets)_
 * Satomi
 * Jurta
 * Multi
+* XKZ
 
 ### Original Writers
 * Steppie Berry

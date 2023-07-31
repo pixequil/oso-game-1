@@ -31,6 +31,9 @@ screen mainstreet_nav():
         yinitial 0.0 # todo: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
         add "bg mainstreet_top"
 
+        textbutton "Enable Brand Soda":
+            action SetVariable("party_bs",True)
+
         # arrows
         imagebutton: # park arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
@@ -45,7 +48,7 @@ screen mainstreet_nav():
             ypos 640
             idle "pnav dn i"
             hover "pnav dn"
-            action Jump("park")
+            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("park"))
         imagebutton: # alley arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -59,7 +62,7 @@ screen mainstreet_nav():
             ypos 80
             idle "pnav up i"
             hover "pnav up"
-            action Jump("alley")
+            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("alley"))
         imagebutton: # dome arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -73,7 +76,7 @@ screen mainstreet_nav():
             ypos 350
             idle "pnav rt i"
             hover "pnav rt"
-            action Jump("dome")
+            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("dome"))
 
         # doors
         imagebutton: # museum door
@@ -83,7 +86,7 @@ screen mainstreet_nav():
             ypos 198
             idle "pnav up i"
             hover "pnav up"
-            action Jump("museum_entrance")
+            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("museum_entrance"))
         imagebutton: # music door
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -91,7 +94,7 @@ screen mainstreet_nav():
             ypos 203
             idle "pnav up i"
             hover "pnav up"
-            action Jump("musicstore")
+            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("musicstore"))
 
         # people
 
@@ -170,7 +173,6 @@ label .mainstreet_fallback:
                 jump mainstreet
             else:
                 jump .go
-
 label .talk:
 
     menu:
@@ -193,7 +195,6 @@ label .talk:
             jump .yd
         "Ticket Booth":
             jump .tb       
-
 label .go:
 
     menu:
