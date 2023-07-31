@@ -78,6 +78,17 @@ label firstscene:
 
 label mainstreet:
 
+    screen mainstreet_nav():
+
+        viewport:
+            edgescroll (300, 2000)
+
+            add "bg mainstreet_top"
+
+    call screen mainstreet_nav
+
+label mainstreet_fallback:
+
     scene bg mainstreet_top with fade
     show posty neutral
 
