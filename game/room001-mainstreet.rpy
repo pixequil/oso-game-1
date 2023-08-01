@@ -30,7 +30,7 @@ screen mainstreet_nav():
         edgescroll (300, 2000) # (bounds, speed) these are good values for horizontal scrolling, but this may need to be reduced for rooms with vertical scrolling.
         arrowkeys True
         xinitial 0.0
-        yinitial 0.0 # todo: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
+        yinitial 0.0 # todo #315: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
         add "bg mainstreet_top"
 
         textbutton "Show Hitboxes":
