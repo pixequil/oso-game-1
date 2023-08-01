@@ -138,8 +138,24 @@ screen mainstreet_nav():
             idle "nav_miso"
             hover "nav_miso p"
             action Jump("mainstreet.miso")
-        # tooly
+        imagebutton: # tooly
+            xpos 1919
+            ypos 177
+            idle "nav_tooly"
+            hover "nav_tooly p"
+            action Jump("mainstreet.tooly")
         # tb
+
+image nav_tooly = Composite(
+    (240,280),
+    (0,0), "hitbox",
+    (45,00), "minisprites/Tooly_OSO.png"
+)
+image nav_tooly p = Composite(
+    (240,280),
+    (0,0), "nav_tooly",
+    (45,0), "pnav up"
+)
 
 image nav_miso = Composite(
     (260,210),
@@ -526,6 +542,7 @@ label .tooly1: #276
         jump .tooly_scrap
     else:
         p "_" # posty says goodbye
+        jump mainstreet
 
 label .tooly2: #276
     show posty neutral
@@ -534,6 +551,7 @@ label .tooly2: #276
         jump .tooly_scrap
     else:
         p "_" #posty says goodbye
+        jump mainstreet
 
 label .tooly_scrap: #277
     p "_" # "oh, something like this?"
