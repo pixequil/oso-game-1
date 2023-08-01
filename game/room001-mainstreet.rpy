@@ -114,6 +114,23 @@ screen mainstreet_nav():
             idle "nav_yd"
             hover "nav_yd p"
             action Jump("mainstreet.yd")
+        imagebutton: # toasty
+            xpos 480
+            ypos 150
+            idle "nav_t"
+            hover "nav_t p"
+            action Jump("mainstreet.toasty")
+
+image nav_t = Composite(
+    (200,200),
+    (0,0), "hitbox",
+    (100,20), "minisprites/toasty.png"
+)
+image nav_t p = Composite(
+    (200,200),
+    (0,0), "nav_t",
+    (0,0), "pnav rt"
+)
 
 image nav_yd = ConditionSwitch(
     "quest.bs == False","nav_yd lonely",
@@ -265,6 +282,10 @@ label .go:
             jump park 
         "The Dome":
             jump dome
+
+label .toasty:
+    call toasty_hints
+    jump mainstreet
 
 label .tb: #293
     scene bg mainstreet
