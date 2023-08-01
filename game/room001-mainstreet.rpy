@@ -22,6 +22,8 @@ image scraptrophy:
     zoom 5.0
     rotate 45
 
+default party_leave = "\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""
+
 screen mainstreet_nav():
     viewport:
         child_size (3000, 720) # without redundifying the size here, ren'py will not allow scrolling
@@ -48,7 +50,7 @@ screen mainstreet_nav():
             ypos 640
             idle "pnav dn i"
             hover "pnav dn"
-            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("park"))
+            action If(party_bs,Notify(party_leave),Jump("park"))
         imagebutton: # alley arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -62,7 +64,7 @@ screen mainstreet_nav():
             ypos 80
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("alley"))
+            action If(party_bs,Notify(party_leave),Jump("alley"))
         imagebutton: # dome arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -76,7 +78,7 @@ screen mainstreet_nav():
             ypos 350
             idle "pnav rt i"
             hover "pnav rt"
-            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("dome"))
+            action If(party_bs,Notify(party_leave),Jump("dome"))
 
         # doors
         imagebutton: # museum door
@@ -86,7 +88,7 @@ screen mainstreet_nav():
             ypos 198
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("museum_entrance"))
+            action If(party_bs,Notify(party_leave),Jump("museum_entrance"))
         imagebutton: # music door
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -94,7 +96,7 @@ screen mainstreet_nav():
             ypos 203
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify("\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""),Jump("musicstore"))
+            action If(party_bs,Notify(party_leave),Jump("musicstore"))
 
         # people
 
