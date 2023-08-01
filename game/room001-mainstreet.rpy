@@ -22,7 +22,7 @@ image scraptrophy:
     zoom 5.0
     rotate 45
 
-default party_leave = "\"Ah sorry, we can't leave this place: 95% of the town has a restraining order against me for my promotional activities.\""
+default party_leave = "\"Ah sorry, we can't leave this place; 95% of the town has a restraining order against me for my promotional activities.\""
 
 screen mainstreet_nav():
     viewport:
