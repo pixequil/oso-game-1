@@ -99,6 +99,31 @@ screen mainstreet_nav():
             action If(party_bs,Notify(party_leave),Jump("musicstore"))
 
         # people
+        showif (party_bs == False) and (quest.bs == False):
+            imagebutton:
+                xanchor 0.5
+                yanchor 0.5
+                xpos 2456
+                ypos 300
+                idle "nav_bs"
+                hover "nav_bs p"
+                action Jump("mainstreet.brandsoda")
+
+image nav_bs = Composite(
+    (200, 200),
+    (90, 40), "nav_bs base"
+)
+image nav_bs base:
+    "minisprites/Brand_Soda.png"
+    xanchor 0.0
+    yanchor 0.0
+    zoom 0.75
+image nav_bs p = Composite(
+    (200, 200),
+    (0, 0), "nav_bs",
+    (-20, 20), "pnav rt"
+)
+
 
 
 label firstscene:
