@@ -33,8 +33,8 @@ screen mainstreet_nav():
         yinitial 0.0 # todo #315: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
         add "bg mainstreet_top"
 
-        textbutton "Show Hitboxes":
-            action ToggleVariable("devmode",True,False)
+        # textbutton "Show Hitboxes":
+        #     action ToggleVariable("devmode",True,False)
 
         # arrows
         imagebutton: # park arrow
