@@ -144,7 +144,23 @@ screen mainstreet_nav():
             idle "nav_tooly"
             hover "nav_tooly p"
             action Jump("mainstreet.tooly")
-        # tb
+        imagebutton: # tb
+            xpos 130
+            ypos 110
+            idle "nav_tb"
+            hover "nav_tb p"
+            action Jump("mainstreet.tb")
+
+image nav_tb = Composite(
+    (200,280),
+    (0,0), "hitbox",
+    (45,20), "minisprites/ticketbooth.png"
+)
+image nav_tb p = Composite(
+    (200,280),
+    (0,0), "nav_tb",
+    (45,20), "pnav up"
+)
 
 image nav_tooly = Composite(
     (240,280),
