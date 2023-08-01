@@ -22,6 +22,247 @@ image scraptrophy:
     zoom 5.0
     rotate 45
 
+default party_leave = "\"Ah sorry, we can't leave this place; 95% of the town has a restraining order against me for my promotional activities.\""
+
+screen mainstreet_nav():
+    viewport:
+        child_size (3000, 720) # without redundifying the size here, ren'py will not allow scrolling
+        edgescroll (300, 2000) # (bounds, speed) these are good values for horizontal scrolling, but this may need to be reduced for rooms with vertical scrolling.
+        arrowkeys True
+        xinitial 0.0
+        yinitial 0.0 # todo #315: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
+        add "bg mainstreet_top"
+
+        # textbutton "Show Hitboxes":
+        #     action ToggleVariable("devmode",True,False)
+
+        # arrows
+        imagebutton: # park arrow
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 1406
+            ypos 640
+            idle "arrow dn"
+        imagebutton: # park arrow posty
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 1406
+            ypos 640
+            idle "pnav dn i"
+            hover "pnav dn"
+            action If(party_bs,Notify(party_leave),Jump("park"))
+        imagebutton: # alley arrow
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 1739
+            ypos 80
+            idle "arrow up"
+        imagebutton: # alley arrow posty
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 1739
+            ypos 80
+            idle "pnav up i"
+            hover "pnav up"
+            action If(party_bs,Notify(party_leave),Jump("alley"))
+        imagebutton: # dome arrow
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 2920
+            ypos 320
+            idle "arrow rt"
+        imagebutton: # dome arrow posty
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 2920
+            ypos 350
+            idle "pnav rt i"
+            hover "pnav rt"
+            action If(party_bs,Notify(party_leave),Jump("dome"))
+
+        # doors
+        imagebutton: # museum door
+            xanchor 0.5 # these make it so the xpos ypos are the center
+            yanchor 0.5
+            xpos 1320
+            ypos 198
+            idle "pnav up i"
+            hover "pnav up"
+            action If(party_bs,Notify(party_leave),Jump("museum_entrance"))
+        imagebutton: # music door
+            xanchor 0.5 # these make it so the xpos ypos are the center
+            yanchor 0.5
+            xpos 932
+            ypos 203
+            idle "pnav up i"
+            hover "pnav up"
+            action If(party_bs,Notify(party_leave),Jump("musicstore"))
+
+        # people
+        showif (party_bs == False) and (quest.bs == False): # bs alone
+            imagebutton:
+                xanchor 0.5 # these make it so the xpos ypos are the center
+                yanchor 0.5
+                xpos 2456
+                ypos 300
+                idle "nav_bs"
+                hover "nav_bs p"
+                action Jump("mainstreet.brandsoda")
+        imagebutton: # yd
+            xpos 1021
+            ypos 139
+            idle "nav_yd"
+            hover "nav_yd p"
+            action Jump("mainstreet.yd")
+        imagebutton: # toasty
+            xpos 535
+            ypos 170
+            idle "nav_t"
+            hover "nav_t p"
+            action Jump("mainstreet.toasty")
+        imagebutton: # btnet
+            xpos 480
+            ypos 430
+            idle "nav_bt"
+            hover "nav_bt p"
+            action Jump("mainstreet.btnet")
+        imagebutton: # dolly
+            xpos 2500
+            ypos 30
+            idle "nav_dolly"
+            hover "nav_dolly p"
+            action Jump("dolly")
+        imagebutton: # miso
+            xpos 1410
+            ypos 119
+            idle "nav_miso"
+            hover "nav_miso p"
+            action Jump("mainstreet.miso")
+        imagebutton: # tooly
+            xpos 1919
+            ypos 177
+            idle "nav_tooly"
+            hover "nav_tooly p"
+            action Jump("mainstreet.tooly")
+        imagebutton: # tb
+            xpos 130
+            ypos 110
+            idle "nav_tb"
+            hover "nav_tb p"
+            action Jump("mainstreet.tb")
+
+image nav_tb = Composite(
+    (200,280),
+    (0,0), "hitbox",
+    (45,20), "minisprites/ticketbooth.png"
+)
+image nav_tb p = Composite(
+    (200,280),
+    (0,0), "nav_tb",
+    (45,20), "pnav up"
+)
+
+image nav_tooly = Composite(
+    (240,280),
+    (0,0), "hitbox",
+    (45,00), "minisprites/Tooly_OSO.png"
+)
+image nav_tooly p = Composite(
+    (240,280),
+    (0,0), "nav_tooly",
+    (45,0), "pnav up"
+)
+
+image nav_miso = Composite(
+    (260,210),
+    (0,0), "hitbox",
+    (40,60), "nav_miso base"
+)
+image nav_miso base:
+    "minisprites/miso_soup_big_minisprite.png"
+    xanchor 0.0
+    yanchor 0.0
+    zoom 0.3
+image nav_miso p = Composite(
+    (260,210),
+    (0,0), "nav_miso",
+    (75,40), "pnav lt"
+)
+
+image nav_dolly = Composite(
+    (240,280),
+    (0,0), "hitbox",
+    (55,00), "minisprites/dolly.png"
+)
+image nav_dolly p = Composite(
+    (240,280),
+    (0,0), "nav_dolly",
+    (45,0), "pnav up"
+)
+
+image nav_bt = Composite(
+    (240,200),
+    (0,0), "hitbox",
+    (130,30), "minisprites/ButterflyNet_overworld.png"
+)
+image nav_bt p = Composite(
+    (240,200),
+    (0,0), "nav_bt",
+    (15,45), "pnav rt"
+)
+
+image nav_t = Composite(
+    (220,160),
+    (0,0), "hitbox",
+    (100,20), "minisprites/toasty.png"
+)
+image nav_t p = Composite(
+    (220,160),
+    (0,0), "nav_t",
+    (0,0), "pnav rt"
+)
+
+image nav_yd = ConditionSwitch(
+    "quest.bs == False","nav_yd lonely",
+    "quest.bs == True","nav_yd friend"
+)
+image nav_yd p = Composite(
+    (200,200),
+    (0,0), "nav_yd",
+    (30,0), "pnav up"
+)
+image nav_yd lonely = Composite(
+    (200,200),
+    (0,0), "hitbox",
+    (0,0), "nav_yd base"
+)
+image nav_yd friend = Composite(
+    (200,200),
+    (0,0), "nav_yd lonely",
+    (100,15), "nav_bs base"
+)
+image nav_yd base:
+    "minisprites/yellowdiamond0001.png"
+    xzoom -1.0
+
+image nav_bs = Composite(
+    (200,200),
+    (0,0), "hitbox",
+    (90,40), "nav_bs base"
+)
+image nav_bs base:
+    "minisprites/Brand_Soda.png"
+    xanchor 0.0
+    yanchor 0.0
+    zoom 0.75
+image nav_bs p = Composite(
+    (200,200),
+    (0,0), "nav_bs",
+    (-20,20), "pnav rt"
+)
+
+
+
 label firstscene:
 
     scene black
@@ -77,6 +318,9 @@ label firstscene:
     p "Welp. Better get going!"
 
 label mainstreet:
+    call screen mainstreet_nav
+
+label .mainstreet_fallback:
 
     scene bg mainstreet_top with fade
     show posty neutral
@@ -93,7 +337,6 @@ label mainstreet:
                 jump mainstreet
             else:
                 jump .go
-
 label .talk:
 
     menu:
@@ -115,9 +358,7 @@ label .talk:
         "Yellow Diamond & Brand Soda" if quest.bs:
             jump .yd
         "Ticket Booth":
-            jump .tb
-        
-
+            jump .tb       
 label .go:
 
     menu:
@@ -131,6 +372,10 @@ label .go:
             jump park 
         "The Dome":
             jump dome
+
+label .toasty:
+    call toasty_hints
+    jump mainstreet
 
 label .tb: #293
     scene bg mainstreet
@@ -313,6 +558,7 @@ label .tooly1: #276
         jump .tooly_scrap
     else:
         p "_" # posty says goodbye
+        jump mainstreet
 
 label .tooly2: #276
     show posty neutral
@@ -321,6 +567,7 @@ label .tooly2: #276
         jump .tooly_scrap
     else:
         p "_" #posty says goodbye
+        jump mainstreet
 
 label .tooly_scrap: #277
     p "_" # "oh, something like this?"
