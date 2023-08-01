@@ -82,7 +82,7 @@ screen mainstreet_nav():
 
         # doors
         imagebutton: # museum door
-            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            xanchor 0.5 # these make it so the xpos ypos are the center
             yanchor 0.5
             xpos 1320
             ypos 198
@@ -90,7 +90,7 @@ screen mainstreet_nav():
             hover "pnav up"
             action If(party_bs,Notify(party_leave),Jump("museum_entrance"))
         imagebutton: # music door
-            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            xanchor 0.5 # these make it so the xpos ypos are the center
             yanchor 0.5
             xpos 932
             ypos 203
@@ -99,19 +99,40 @@ screen mainstreet_nav():
             action If(party_bs,Notify(party_leave),Jump("musicstore"))
 
         # people
-        showif (party_bs == False) and (quest.bs == False):
+        showif (party_bs == False) and (quest.bs == False): # bs alone
             imagebutton:
-                xanchor 0.5
+                xanchor 0.5 # these make it so the xpos ypos are the center
                 yanchor 0.5
                 xpos 2456
                 ypos 300
                 idle "nav_bs"
                 hover "nav_bs p"
                 action Jump("mainstreet.brandsoda")
+        imagebutton: # yd
+            xpos 1021
+            ypos 139
+            idle "nav_yd"
+            hover "nav_yd p"
+            action Jump("mainstreet.yd")
+
+image nav_yd = Composite(
+    (200,200),
+    (0,0), "hitbox",
+    (0,0), "nav_yd base"
+)
+image nav_yd p = Composite(
+    (200,200),
+    (0,0), "nav_yd",
+    (30,0), "pnav up"
+)
+image nav_yd base:
+    "minisprites/yellowdiamond0001.png"
+    xzoom -1.0
 
 image nav_bs = Composite(
-    (200, 200),
-    (90, 40), "nav_bs base"
+    (200,200),
+    (0,0), "hitbox",
+    (90,40), "nav_bs base"
 )
 image nav_bs base:
     "minisprites/Brand_Soda.png"
@@ -119,9 +140,9 @@ image nav_bs base:
     yanchor 0.0
     zoom 0.75
 image nav_bs p = Composite(
-    (200, 200),
-    (0, 0), "nav_bs",
-    (-20, 20), "pnav rt"
+    (200,200),
+    (0,0), "nav_bs",
+    (-20,20), "pnav rt"
 )
 
 
