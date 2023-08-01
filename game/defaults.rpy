@@ -1,6 +1,6 @@
 # Flags and other trinkets
 
-default devmode = False
+default devmode = True
 
 # QUESTS
 default quest.painting_blue = False
