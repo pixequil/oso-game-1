@@ -115,15 +115,24 @@ screen mainstreet_nav():
             hover "nav_yd p"
             action Jump("mainstreet.yd")
 
-image nav_yd = Composite(
-    (200,200),
-    (0,0), "hitbox",
-    (0,0), "nav_yd base"
+image nav_yd = ConditionSwitch(
+    "quest.bs == False","nav_yd lonely",
+    "quest.bs == True","nav_yd friend"
 )
 image nav_yd p = Composite(
     (200,200),
     (0,0), "nav_yd",
     (30,0), "pnav up"
+)
+image nav_yd lonely = Composite(
+    (200,200),
+    (0,0), "hitbox",
+    (0,0), "nav_yd base"
+)
+image nav_yd friend = Composite(
+    (200,200),
+    (0,0), "nav_yd lonely",
+    (100,15), "nav_bs base"
 )
 image nav_yd base:
     "minisprites/yellowdiamond0001.png"
