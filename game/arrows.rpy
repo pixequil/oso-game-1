@@ -103,3 +103,5 @@ transform hop:
     pause 0.1
     yoffset 0
     repeat
+
+image hitbox = Solid("#ff00003c")
