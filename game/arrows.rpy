@@ -104,4 +104,9 @@ transform hop:
     yoffset 0
     repeat
 
-image hitbox = Solid("#ff00003c")
+image hitbox = ConditionSwitch(
+    "devmode == False","hitboxf",
+    "devmode == True","hitboxt"
+)
+image hitboxt = Solid("#ff00003c")
+image hitboxf = Solid("#ff000000")
