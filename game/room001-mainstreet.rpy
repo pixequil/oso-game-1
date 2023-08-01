@@ -115,19 +115,36 @@ screen mainstreet_nav():
             hover "nav_yd p"
             action Jump("mainstreet.yd")
         imagebutton: # toasty
-            xpos 540
+            xpos 535
             ypos 170
             idle "nav_t"
             hover "nav_t p"
             action Jump("mainstreet.toasty")
+        imagebutton: # btnet
+            xpos 480
+            ypos 430
+            idle "nav_bt"
+            hover "nav_bt p"
+            action Jump("mainstreet.btnet")
+
+image nav_bt = Composite(
+    (240,200),
+    (0,0), "hitbox",
+    (130,30), "minisprites/ButterflyNet_overworld.png"
+)
+image nav_bt p = Composite(
+    (240,200),
+    (0,0), "nav_bt",
+    (15,45), "pnav rt"
+)
 
 image nav_t = Composite(
-    (200,200),
+    (220,160),
     (0,0), "hitbox",
     (100,20), "minisprites/toasty.png"
 )
 image nav_t p = Composite(
-    (200,200),
+    (220,160),
     (0,0), "nav_t",
     (0,0), "pnav rt"
 )
