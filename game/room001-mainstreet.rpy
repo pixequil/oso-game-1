@@ -126,6 +126,23 @@ screen mainstreet_nav():
             idle "nav_bt"
             hover "nav_bt p"
             action Jump("mainstreet.btnet")
+        imagebutton: # dolly
+            xpos 2500
+            ypos 30
+            idle "nav_dolly"
+            hover "nav_dolly p"
+            action Jump("dolly")
+
+image nav_dolly = Composite(
+    (240,280),
+    (0,0), "hitbox",
+    (55,00), "minisprites/dolly.png"
+)
+image nav_dolly p = Composite(
+    (240,280),
+    (0,0), "nav_dolly",
+    (45,0), "pnav up"
+)
 
 image nav_bt = Composite(
     (240,200),
