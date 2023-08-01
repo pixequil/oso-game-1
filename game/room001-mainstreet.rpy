@@ -69,7 +69,7 @@ screen mainstreet_nav():
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
             xpos 2920
-            ypos 350
+            ypos 320
             idle "arrow rt"
         imagebutton: # dome arrow posty
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
