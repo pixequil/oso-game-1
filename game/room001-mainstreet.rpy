@@ -132,6 +132,30 @@ screen mainstreet_nav():
             idle "nav_dolly"
             hover "nav_dolly p"
             action Jump("dolly")
+        imagebutton: # miso
+            xpos 1410
+            ypos 119
+            idle "nav_miso"
+            hover "nav_miso p"
+            action Jump("mainstreet.miso")
+        # tooly
+        # tb
+
+image nav_miso = Composite(
+    (260,210),
+    (0,0), "hitbox",
+    (40,60), "nav_miso base"
+)
+image nav_miso base:
+    "minisprites/miso_soup_big_minisprite.png"
+    xanchor 0.0
+    yanchor 0.0
+    zoom 0.3
+image nav_miso p = Composite(
+    (260,210),
+    (0,0), "nav_miso",
+    (75,40), "pnav lt"
+)
 
 image nav_dolly = Composite(
     (240,280),
