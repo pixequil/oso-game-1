@@ -115,8 +115,8 @@ screen mainstreet_nav():
             hover "nav_yd p"
             action Jump("mainstreet.yd")
         imagebutton: # toasty
-            xpos 480
-            ypos 150
+            xpos 540
+            ypos 170
             idle "nav_t"
             hover "nav_t p"
             action Jump("mainstreet.toasty")
