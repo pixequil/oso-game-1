@@ -33,8 +33,13 @@ screen mainstreet_nav():
         yinitial 0.0 # todo #315: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
         add "bg mainstreet_top"
 
-        # textbutton "Show Hitboxes":
-        #     action ToggleVariable("devmode",True,False)
+        imagebutton:
+            idle "nothing mainstreet"
+            mouse "posty"
+            action NullAction()
+
+        textbutton "Show Hitboxes":
+            action ToggleVariable("devmode",True,False)
 
         # arrows
         imagebutton: # park arrow
@@ -51,6 +56,7 @@ screen mainstreet_nav():
             idle "pnav dn i"
             hover "pnav dn"
             action If(party_bs,Notify(party_leave),Jump("park"))
+            mouse "hidden"
         imagebutton: # alley arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -65,6 +71,7 @@ screen mainstreet_nav():
             idle "pnav up i"
             hover "pnav up"
             action If(party_bs,Notify(party_leave),Jump("alley"))
+            mouse "hidden"
         imagebutton: # dome arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -79,6 +86,7 @@ screen mainstreet_nav():
             idle "pnav rt i"
             hover "pnav rt"
             action If(party_bs,Notify(party_leave),Jump("dome"))
+            mouse "hidden"
 
         # doors
         imagebutton: # museum door
@@ -89,6 +97,7 @@ screen mainstreet_nav():
             idle "pnav up i"
             hover "pnav up"
             action If(party_bs,Notify(party_leave),Jump("museum_entrance"))
+            mouse "hidden"
         imagebutton: # music door
             xanchor 0.5 # these make it so the xpos ypos are the center
             yanchor 0.5
@@ -97,6 +106,7 @@ screen mainstreet_nav():
             idle "pnav up i"
             hover "pnav up"
             action If(party_bs,Notify(party_leave),Jump("musicstore"))
+            mouse "hidden"
 
         # people
         showif (party_bs == False) and (quest.bs == False): # bs alone
@@ -108,75 +118,83 @@ screen mainstreet_nav():
                 idle "nav_bs"
                 hover "nav_bs p"
                 action Jump("mainstreet.brandsoda")
+                mouse "hidden"
         imagebutton: # yd
             xpos 1021
             ypos 139
             idle "nav_yd"
             hover "nav_yd p"
             action Jump("mainstreet.yd")
+            mouse "hidden"
         imagebutton: # toasty
             xpos 535
             ypos 170
             idle "nav_t"
             hover "nav_t p"
             action Jump("mainstreet.toasty")
+            mouse "hidden"
         imagebutton: # btnet
             xpos 480
             ypos 430
             idle "nav_bt"
             hover "nav_bt p"
             action Jump("mainstreet.btnet")
+            mouse "hidden"
         imagebutton: # dolly
             xpos 2500
             ypos 30
             idle "nav_dolly"
             hover "nav_dolly p"
             action Jump("dolly")
+            mouse "hidden"
         imagebutton: # miso
-            xpos 1410
-            ypos 119
+            xpos 1440
+            ypos 159
             idle "nav_miso"
             hover "nav_miso p"
             action Jump("mainstreet.miso")
+            mouse "hidden"
         imagebutton: # tooly
             xpos 1919
             ypos 177
             idle "nav_tooly"
             hover "nav_tooly p"
             action Jump("mainstreet.tooly")
+            mouse "hidden"
         imagebutton: # tb
             xpos 130
             ypos 110
             idle "nav_tb"
             hover "nav_tb p"
             action Jump("mainstreet.tb")
+            mouse "hidden"
 
 image nav_tb = Composite(
-    (200,280),
+    (200,200),
     (0,0), "hitbox",
     (45,20), "minisprites/ticketbooth.png"
 )
 image nav_tb p = Composite(
-    (200,280),
+    (200,200),
     (0,0), "nav_tb",
     (45,20), "pnav up"
 )
 
 image nav_tooly = Composite(
-    (240,280),
+    (240,180),
     (0,0), "hitbox",
     (45,00), "minisprites/Tooly_OSO.png"
 )
 image nav_tooly p = Composite(
-    (240,280),
+    (240,180),
     (0,0), "nav_tooly",
     (45,0), "pnav up"
 )
 
 image nav_miso = Composite(
-    (260,210),
+    (230,140),
     (0,0), "hitbox",
-    (40,60), "nav_miso base"
+    (10,10), "nav_miso base"
 )
 image nav_miso base:
     "minisprites/miso_soup_big_minisprite.png"
@@ -184,18 +202,18 @@ image nav_miso base:
     yanchor 0.0
     zoom 0.3
 image nav_miso p = Composite(
-    (260,210),
+    (230,140),
     (0,0), "nav_miso",
-    (75,40), "pnav lt"
+    (45,0), "pnav lt"
 )
 
 image nav_dolly = Composite(
-    (240,280),
+    (240,140),
     (0,0), "hitbox",
     (55,00), "minisprites/dolly.png"
 )
 image nav_dolly p = Composite(
-    (240,280),
+    (240,140),
     (0,0), "nav_dolly",
     (45,0), "pnav up"
 )
@@ -212,12 +230,12 @@ image nav_bt p = Composite(
 )
 
 image nav_t = Composite(
-    (220,160),
+    (220,130),
     (0,0), "hitbox",
     (100,20), "minisprites/toasty.png"
 )
 image nav_t p = Composite(
-    (220,160),
+    (220,130),
     (0,0), "nav_t",
     (0,0), "pnav rt"
 )
@@ -227,17 +245,17 @@ image nav_yd = ConditionSwitch(
     "quest.bs == True","nav_yd friend"
 )
 image nav_yd p = Composite(
-    (200,200),
+    (200,150),
     (0,0), "nav_yd",
     (30,0), "pnav up"
 )
 image nav_yd lonely = Composite(
-    (200,200),
+    (200,150),
     (0,0), "hitbox",
     (0,0), "nav_yd base"
 )
 image nav_yd friend = Composite(
-    (200,200),
+    (200,150),
     (0,0), "nav_yd lonely",
     (100,15), "nav_bs base"
 )
@@ -246,7 +264,7 @@ image nav_yd base:
     xzoom -1.0
 
 image nav_bs = Composite(
-    (200,200),
+    (160,200),
     (0,0), "hitbox",
     (90,40), "nav_bs base"
 )
@@ -256,7 +274,7 @@ image nav_bs base:
     yanchor 0.0
     zoom 0.75
 image nav_bs p = Composite(
-    (200,200),
+    (160,200),
     (0,0), "nav_bs",
     (-20,20), "pnav rt"
 )

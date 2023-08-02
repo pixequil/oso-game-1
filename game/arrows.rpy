@@ -110,3 +110,44 @@ image hitbox = ConditionSwitch(
 )
 image hitboxt = Solid("#ff00003c")
 image hitboxf = Solid("#ff000000")
+
+image nothing = Solid("#00000000")
+image nothing mainstreet = Composite(
+    (3000,720),
+    (0,0), "nothing"
+)
+
+# define config.mouse_displayable = MouseDisplayable(
+#     "mouse posty", 0, 0
+# )
+
+# image mouse posty = ConditionSwitch(
+#     "party_bs == False","pnav cursor 1x.png",
+#     "party_bs == True","pnav cursor bs.png"
+# )
+
+image mouse posty = ConditionSwitch(
+    "party_bs == False","mouse posty base",
+    "party_bs == True","mouse posty bs"
+)
+
+image mouse posty base:
+    "pnav cursor.png"
+
+image mouse posty bs = Composite(
+    (0,0),
+    (0,0), "mouse posty base",
+    (60,0), "bsnav"
+)
+
+image mouse posty hidden:
+    "mouse posty"
+    alpha 0.0
+
+define config.mouse_displayable = MouseDisplayable(
+    "windows-cursor.png", 0, 0
+).add(
+    "posty", "mouse posty", 0, 0
+).add(
+    "hidden", "mouse posty hidden", 0, 0
+)
