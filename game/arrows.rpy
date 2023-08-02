@@ -117,6 +117,15 @@ image nothing mainstreet = Composite(
     (0,0), "nothing"
 )
 
+# define config.mouse_displayable = MouseDisplayable(
+#     "mouse posty", 0, 0
+# )
+
+# image mouse posty = ConditionSwitch(
+#     "party_bs == False","pnav cursor 1x.png",
+#     "party_bs == True","pnav cursor bs.png"
+# )
+
 image mouse posty = ConditionSwitch(
     "party_bs == False","mouse posty base",
     "party_bs == True","mouse posty bs"
