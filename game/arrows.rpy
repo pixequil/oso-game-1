@@ -111,6 +111,11 @@ image hitbox = ConditionSwitch(
 image hitboxt = Solid("#ff00003c")
 image hitboxf = Solid("#ff000000")
 
+image nothing = Solid("#00000000")
+image nothing mainstreet = Composite(
+    (3000,720),
+    (0,0), "nothing"
+)
 
 image mouse posty = ConditionSwitch(
     "party_bs == False","mouse posty base",
@@ -131,7 +136,9 @@ image mouse posty hidden:
     alpha 0.0
 
 define config.mouse_displayable = MouseDisplayable(
-    "mouse posty", 0, 0
+    "windows-cursor.png", 0, 0
 ).add(
-    "hidden", "mouse posty hidden", 28, 42
+    "posty", "mouse posty", 0, 0
+).add(
+    "hidden", "mouse posty hidden", 0, 0
 )
