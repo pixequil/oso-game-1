@@ -49,6 +49,7 @@ _(Don't remove the blank bullets)_
 * Satomi
 * Jurta
 * Multi
+* XKZ
 
 ### Original Writers
 * Steppie Berry
@@ -77,6 +78,7 @@ _(Don't remove the blank bullets)_
 * Nune
 * Rand0m_Anon
 * RoastedToastedTea
+* Satomi
 * ThatBlueSquare.
 * TheSeanimator
 * Z Animations Studio
