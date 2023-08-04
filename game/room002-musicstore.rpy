@@ -55,11 +55,11 @@ label .sheet:
     show sheet
     if (saw.sheet == False):
         show posty neutral
-        sheet "Welcome to the music store!" #309 neon lights first conversation
+        sheet "Welcome to the music store!" #309 sheet first conversation
         $ saw.sheet = True
     else:
         show posty neutral
-        sheet "Oh hi again." #310 neon lights repeat greeting
+        sheet "Oh hi again." #310 sheet repeat greeting
     menu:
         "Talk to Sheet.":
             jump .sheet_talk
