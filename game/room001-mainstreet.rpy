@@ -326,58 +326,58 @@ label .go_museum:
     $ last.mainx = 0.4
     jump museum_entrance
 
-label .mainstreet_fallback:
+# label .mainstreet_fallback:
 
-    scene bg mainstreet_top with fade
-    show posty neutral
+#     scene bg mainstreet_top with fade
+#     show posty neutral
 
-    p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
+#     p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
 
-    menu:
-        "Talk to someone.":
-            jump .talk
-        "Go somewhere.":
-            if party_bs:
-                show bs follow behind posty
-                bs "_" #TODO: #11 thing for Brand Soda to say to prevent you from leaving main street
-                jump mainstreet
-            else:
-                jump .go
-label .talk:
+#     menu:
+#         "Talk to someone.":
+#             jump .talk
+#         "Go somewhere.":
+#             if party_bs:
+#                 show bs follow behind posty
+#                 bs "_" #TODO: #11 thing for Brand Soda to say to prevent you from leaving main street
+#                 jump mainstreet
+#             else:
+#                 jump .go
+# label .talk:
 
-    menu:
-        "B.T. Net":
-            jump .btnet 
-        "Dolly":
-            jump dolly # in money.rpy
-        "Miso Soup":
-            jump .miso
-        "Brand Soda" if (party_bs == False) and (quest.bs == False):
-            jump .brandsoda
-        "Toasty":
-            call toasty_hints
-            jump mainstreet
-        "Tooly":
-            jump .tooly 
-        "Yellow Diamond" if quest.bs == False:
-            jump .yd
-        "Yellow Diamond & Brand Soda" if quest.bs:
-            jump .yd
-        "Ticket Booth":
-            jump .tb       
-label .go:
+#     menu:
+#         "B.T. Net":
+#             jump .btnet 
+#         "Dolly":
+#             jump dolly # in money.rpy
+#         "Miso Soup":
+#             jump .miso
+#         "Brand Soda" if (party_bs == False) and (quest.bs == False):
+#             jump .brandsoda
+#         "Toasty":
+#             call toasty_hints
+#             jump mainstreet
+#         "Tooly":
+#             jump .tooly 
+#         "Yellow Diamond" if quest.bs == False:
+#             jump .yd
+#         "Yellow Diamond & Brand Soda" if quest.bs:
+#             jump .yd
+#         "Ticket Booth":
+#             jump .tb       
+# label .go:
 
-    menu:
-        "Music Store":
-            jump musicstore 
-        "Art Museum":
-            jump museum_entrance 
-        "Shady Back Alley":
-            jump alley 
-        "Park":
-            jump park 
-        "The Dome":
-            jump dome
+#     menu:
+#         "Music Store":
+#             jump musicstore 
+#         "Art Museum":
+#             jump museum_entrance 
+#         "Shady Back Alley":
+#             jump alley 
+#         "Park":
+#             jump park 
+#         "The Dome":
+#             jump dome
 
 label .toasty:
     $ last.mainx = 0.0
