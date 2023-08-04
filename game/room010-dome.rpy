@@ -7,6 +7,7 @@ image bg dome:
     "dbgs/Dome_dialogue_bg.png"
 
 label dome:
+    $ last.mainx = 1.0
     scene bg dome_top with fade
     show posty neutral
 

@@ -7,6 +7,7 @@ image bg park:
     "dbgs/park_dbg.jpg"
 
 label park:
+    $ last.mainx = 0.45
     scene bg park_top
     show posty neutral
     p "_" #285 park imagemap

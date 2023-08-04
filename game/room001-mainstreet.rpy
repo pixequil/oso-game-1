@@ -90,7 +90,7 @@ screen mainstreet_nav():
             ypos 198
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify(party_leave),Jump("museum_entrance"))
+            action If(party_bs,Notify(party_leave),Jump("mainstreet.go_museum"))
         imagebutton: # music door
             xanchor 0.5 # these make it so the xpos ypos are the center
             yanchor 0.5
@@ -321,6 +321,10 @@ label firstscene:
 
 label mainstreet:
     call screen mainstreet_nav
+
+label .go_museum:
+    $ last.mainx = 0.4
+    jump museum_entrance
 
 label .mainstreet_fallback:
 
