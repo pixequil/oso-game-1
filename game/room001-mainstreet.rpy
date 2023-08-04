@@ -23,14 +23,16 @@ image scraptrophy:
     rotate 45
 
 default party_leave = "\"Ah sorry, we can't leave this place; 95% of the town has a restraining order against me for my promotional activities.\""
+default last.mainx = 0.0
+default last.mainy = 0.0
 
 screen mainstreet_nav():
     viewport:
         child_size (3000, 720) # without redundifying the size here, ren'py will not allow scrolling
         edgescroll (300, 2000) # (bounds, speed) these are good values for horizontal scrolling, but this may need to be reduced for rooms with vertical scrolling.
         arrowkeys True
-        xinitial 0.0
-        yinitial 0.0 # todo #315: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
+        xinitial last.mainx
+        yinitial last.mainy
         add "bg mainstreet_top"
 
         # textbutton "Show Hitboxes":
@@ -374,10 +376,12 @@ label .go:
             jump dome
 
 label .toasty:
+    $ last.mainx = 0.0
     call toasty_hints
     jump mainstreet
 
 label .tb: #293
+    $ last.mainx = 0.0
     scene bg mainstreet
     if party_bs:
         show posty neutral
@@ -399,6 +403,7 @@ label .tb: #293
 
 label .brandsoda:
 
+    $ last.mainx = 1.0
     scene bg mainstreet
     show posty neutral
     show bs behind posty
@@ -418,6 +423,7 @@ label .brandsoda:
     jump mainstreet
 
 label .yd:
+    $ last.mainx = 0.25
     scene bg mainstreet
     show posty neutral
     show yd
@@ -465,6 +471,7 @@ label .yd_bs_happy:
     jump mainstreet
 
 label .miso:
+    $ last.mainx = 0.5
     scene bg mainstreet
     show miso # TODO: #45 Miso Soup talksprite
 
@@ -509,6 +516,7 @@ label .miso:
         p "Players should not see this text."
 
 label .btnet:
+    $ last.mainx = 0.0
     scene bg mainstreet
     show btnet
         
@@ -533,7 +541,8 @@ label .btnet:
 
         jump mainstreet
 
-label .tooly: # when implemeting Tooly, remember to leave room for Brand Soda interactions.
+label .tooly:
+    $ last.mainx = 0.83
     scene bg mainstreet
     show tooly
 

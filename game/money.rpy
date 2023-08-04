@@ -21,6 +21,7 @@ label money_get:
         return
 
 label dolly:
+    $ last.mainx = 1.0
     scene bg mainstreet
     show dolly
     if party_bs:
