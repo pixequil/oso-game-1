@@ -7,6 +7,7 @@ image bg alley:
     "dbgs/alley_dbg.png"
 
 label alley:
+    $ last.mainx = 0.65
     scene bg alley_top
     show posty neutral
     p "_" #258 alley imagemap

@@ -7,6 +7,7 @@ image bg music:
     "dbgs/music_store_dbg.png"
 
 label musicstore:
+    $ last.mainx = 0.15
     scene bg music_top
     show posty neutral
     p "_" #294 music store imagemap

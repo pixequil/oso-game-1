@@ -23,14 +23,16 @@ image scraptrophy:
     rotate 45
 
 default party_leave = "\"Ah sorry, we can't leave this place; 95% of the town has a restraining order against me for my promotional activities.\""
+default last.mainx = 0.0
+default last.mainy = 0.0
 
 screen mainstreet_nav():
     viewport:
         child_size (3000, 720) # without redundifying the size here, ren'py will not allow scrolling
         edgescroll (300, 2000) # (bounds, speed) these are good values for horizontal scrolling, but this may need to be reduced for rooms with vertical scrolling.
         arrowkeys True
-        xinitial 0.0
-        yinitial 0.0 # todo #315: change these to variables that can be set by conversations or locations, so when returning to this screen it's centered on those instead of arbitrarily back on the left side here. preferably set those upon interacting initially, to reduce redundant code
+        xinitial last.mainx
+        yinitial last.mainy
         add "bg mainstreet_top"
 
         # textbutton "Show Hitboxes":
@@ -88,7 +90,7 @@ screen mainstreet_nav():
             ypos 198
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify(party_leave),Jump("museum_entrance"))
+            action If(party_bs,Notify(party_leave),Jump("mainstreet.go_museum"))
         imagebutton: # music door
             xanchor 0.5 # these make it so the xpos ypos are the center
             yanchor 0.5
@@ -320,64 +322,70 @@ label firstscene:
 label mainstreet:
     call screen mainstreet_nav
 
-label .mainstreet_fallback:
+label .go_museum:
+    $ last.mainx = 0.4
+    jump museum_entrance
 
-    scene bg mainstreet_top with fade
-    show posty neutral
+# label .mainstreet_fallback:
 
-    p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
+#     scene bg mainstreet_top with fade
+#     show posty neutral
 
-    menu:
-        "Talk to someone.":
-            jump .talk
-        "Go somewhere.":
-            if party_bs:
-                show bs follow behind posty
-                bs "_" #TODO: #11 thing for Brand Soda to say to prevent you from leaving main street
-                jump mainstreet
-            else:
-                jump .go
-label .talk:
+#     p "__" # TODO: #9 replace this choice tree with an imagemap that scrolls
 
-    menu:
-        "B.T. Net":
-            jump .btnet 
-        "Dolly":
-            jump dolly # in money.rpy
-        "Miso Soup":
-            jump .miso
-        "Brand Soda" if (party_bs == False) and (quest.bs == False):
-            jump .brandsoda
-        "Toasty":
-            call toasty_hints
-            jump mainstreet
-        "Tooly":
-            jump .tooly 
-        "Yellow Diamond" if quest.bs == False:
-            jump .yd
-        "Yellow Diamond & Brand Soda" if quest.bs:
-            jump .yd
-        "Ticket Booth":
-            jump .tb       
-label .go:
+#     menu:
+#         "Talk to someone.":
+#             jump .talk
+#         "Go somewhere.":
+#             if party_bs:
+#                 show bs follow behind posty
+#                 bs "_" #TODO: #11 thing for Brand Soda to say to prevent you from leaving main street
+#                 jump mainstreet
+#             else:
+#                 jump .go
+# label .talk:
 
-    menu:
-        "Music Store":
-            jump musicstore 
-        "Art Museum":
-            jump museum_entrance 
-        "Shady Back Alley":
-            jump alley 
-        "Park":
-            jump park 
-        "The Dome":
-            jump dome
+#     menu:
+#         "B.T. Net":
+#             jump .btnet 
+#         "Dolly":
+#             jump dolly # in money.rpy
+#         "Miso Soup":
+#             jump .miso
+#         "Brand Soda" if (party_bs == False) and (quest.bs == False):
+#             jump .brandsoda
+#         "Toasty":
+#             call toasty_hints
+#             jump mainstreet
+#         "Tooly":
+#             jump .tooly 
+#         "Yellow Diamond" if quest.bs == False:
+#             jump .yd
+#         "Yellow Diamond & Brand Soda" if quest.bs:
+#             jump .yd
+#         "Ticket Booth":
+#             jump .tb       
+# label .go:
+
+#     menu:
+#         "Music Store":
+#             jump musicstore 
+#         "Art Museum":
+#             jump museum_entrance 
+#         "Shady Back Alley":
+#             jump alley 
+#         "Park":
+#             jump park 
+#         "The Dome":
+#             jump dome
 
 label .toasty:
+    $ last.mainx = 0.0
     call toasty_hints
     jump mainstreet
 
 label .tb: #293
+    $ last.mainx = 0.0
     scene bg mainstreet
     if party_bs:
         show posty neutral
@@ -399,6 +407,7 @@ label .tb: #293
 
 label .brandsoda:
 
+    $ last.mainx = 1.0
     scene bg mainstreet
     show posty neutral
     show bs behind posty
@@ -418,6 +427,7 @@ label .brandsoda:
     jump mainstreet
 
 label .yd:
+    $ last.mainx = 0.25
     scene bg mainstreet
     show posty neutral
     show yd
@@ -465,6 +475,7 @@ label .yd_bs_happy:
     jump mainstreet
 
 label .miso:
+    $ last.mainx = 0.5
     scene bg mainstreet
     show miso # TODO: #45 Miso Soup talksprite
 
@@ -509,6 +520,7 @@ label .miso:
         p "Players should not see this text."
 
 label .btnet:
+    $ last.mainx = 0.0
     scene bg mainstreet
     show btnet
         
@@ -533,7 +545,8 @@ label .btnet:
 
         jump mainstreet
 
-label .tooly: # when implemeting Tooly, remember to leave room for Brand Soda interactions.
+label .tooly:
+    $ last.mainx = 0.83
     scene bg mainstreet
     show tooly
 
