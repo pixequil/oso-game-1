@@ -773,7 +773,7 @@ image yd quiet:
 
 
 define btnet = Character("B.T. Net",
-    callback=speaker("btnet"),
+    callback=speaker("btnet", sound_file="bt_net_voice.wav"), 
     image="btnet", 
     who_color="#ff8aa7"
     )
@@ -807,7 +807,7 @@ image btnet talk:
 
 
 define bs = Character("Brand Soda", 
-    callback=speaker("bs"), 
+    callback=speaker("bs", sound_file="bs_voice.wav"), 
     image="bs", 
     who_color="#df7dff"
     )
@@ -848,7 +848,7 @@ image bs follow quiet:
 
 
 define bonbon = Character("Bon-Bon", 
-    callback=speaker("bonbon"), 
+    callback=speaker("bonbon", sound_file="game_voice_6.wav"), 
     image="bonbon", 
     who_color="#65a9d2"
     )
@@ -1034,7 +1034,7 @@ image binoc neutral2 quiet:
     xalign 1.0
 
 define retainer = Character("Retainer", 
-    callback=speaker("retainer"), 
+    callback=speaker("retainer", sound_file="retainer_voice_2.wav"), 
     image="retainer", 
     who_color="#fc809d"
     )
@@ -1243,7 +1243,7 @@ image bluetile scared quiet:
     yalign 2.0
 
 define neon = Character("Neon Lights", 
-    callback=speaker("neon"), 
+    callback=speaker("neon"),
     image="neon", 
     who_color="#96cac2"
     )
@@ -1270,7 +1270,7 @@ image neon quiet:
 
 
 define dolly = Character("Dolly", 
-    callback=speaker("dolly"), 
+    callback=speaker("dolly", sound_file="game_voice_5.wav"), 
     image="dolly", 
     who_color="#e3d3ab"
     )
@@ -1418,7 +1418,7 @@ image buff quiet:
 
 
 define ahiss = Character("Ahiss the Cat", 
-    callback=speaker("ahiss"), 
+    callback=speaker("ahiss", sound_file="ahiss_voice.wav"),
     image="ahiss", 
     who_color="#f19c79"
     )
@@ -1445,7 +1445,7 @@ image ahiss quiet:
 
 
 define pal = Character("Palettette@", 
-    callback=speaker("palettette"), 
+    callback=speaker("palettette", sound_file="pal_voice.wav"), 
     image="palettette", 
     who_color="#d68c7b"
     )
@@ -1577,7 +1577,7 @@ image tag quiet:
 
 
 define stick = Character("Stick Shift",
-    callback=speaker("stickshift"), 
+    callback=speaker("stickshift"),
     image="stickshift", 
     who_color="#434343"
     )
@@ -1605,7 +1605,7 @@ image stickshift quiet:
 
 
 define auto = Character("Automotone",
-    callback=speaker("auto"), 
+    callback=speaker("auto", sound_file="automotone_voice.wav"),
     image="auto", 
     who_color="#00DAFF"
     )
@@ -1703,7 +1703,7 @@ image tb shy quiet:
 
 
 define sb = Character("Squirt Bottle",
-    callback=speaker("sb"), 
+    callback=speaker("sb", sound_file="game_voice_9.wav"), 
     image="sb", 
     who_color="#eb4034"
     )
@@ -1731,7 +1731,7 @@ image sb quiet:
 
 
 define marble = Character("Marble Bust",
-    callback=speaker("marble"), 
+    callback=speaker("marble", sound_file="game_voice_7.wav"), 
     image="marble", 
     who_color="#bdbb9a"
     )
@@ -1759,7 +1759,7 @@ image marble quiet:
 
 
 define cb = Character("Crayon Box",
-    callback=speaker("cb"), 
+    callback=speaker("cb", sound_file="crayon_box_voice.wav"), 
     image="cb", 
     who_color="#AED6E3"
     )
@@ -1814,7 +1814,7 @@ image tooly quiet:
 
 
 define rm = Character("Ripped Mitten",
-    callback=speaker("rm"), 
+    callback=speaker("rm", sound_file="game_voice_1.wav"),
     image="rm", 
     who_color="#63DEC2"
     )
@@ -1840,7 +1840,7 @@ image rm quiet:
     xalign 1.0
 
 define jb = Character("Jukebox",
-    callback=speaker("jb"), 
+    callback=speaker("jb", sound_file="game_voice_1.wav"),
     image="jb", 
     who_color="#482C40"
     )
