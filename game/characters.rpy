@@ -848,7 +848,7 @@ image bs follow quiet:
 
 
 define bonbon = Character("Bon-Bon", 
-    callback=speaker("bonbon", sound_file="game_voice_6.wav"), 
+    callback=speaker("bonbon", sound_file="bonbon_voice.wav"), 
     image="bonbon", 
     who_color="#65a9d2"
     )
@@ -1103,7 +1103,7 @@ image retainer crying quiet:
 
 
 define cameron = Character("Security Cameron",
-    callback=speaker("cameron"), 
+    callback=speaker("cameron", sound_file="cam_voice.wav"), 
     image="cameron", 
     who_color="#bdbfe2"
     )
@@ -1270,7 +1270,7 @@ image neon quiet:
 
 
 define dolly = Character("Dolly", 
-    callback=speaker("dolly", sound_file="game_voice_5.wav"), 
+    callback=speaker("dolly", sound_file="dolly_voice.wav"), 
     image="dolly", 
     who_color="#e3d3ab"
     )
@@ -1703,7 +1703,7 @@ image tb shy quiet:
 
 
 define sb = Character("Squirt Bottle",
-    callback=speaker("sb", sound_file="game_voice_9.wav"), 
+    callback=speaker("sb", sound_file="squirt_voice.wav"), 
     image="sb", 
     who_color="#eb4034"
     )
@@ -1731,7 +1731,7 @@ image sb quiet:
 
 
 define marble = Character("Marble Bust",
-    callback=speaker("marble", sound_file="game_voice_7.wav"), 
+    callback=speaker("marble", sound_file="marble_voice.wav"), 
     image="marble", 
     who_color="#bdbb9a"
     )
