@@ -31,24 +31,8 @@ label .nl:
     else:
         show posty neutral
         neon "Oh hi again." #306 neon lights repeat greeting
-    menu:
-        "Talk to Neon Lights.":
-            jump .nltalk
-        "(hints)":
-            jump .nlhints
-        "Bye!":
-            jump musicstore
-
-
-label .nltalk:
     p "__" #307 neon lights conversation
-    neon "___" 
-    jump .nl
-
-label .nlhints:
-    p "__" #308 neon lights hints conversation
-    neon "___" 
-    jump .nl
+    jump musicstore
 
 label .sheet:
     show bg music
@@ -60,23 +44,8 @@ label .sheet:
     else:
         show posty neutral
         sheet "Oh hi again." #310 sheet repeat greeting
-    menu:
-        "Talk to Sheet.":
-            jump .sheet_talk
-        "(hints)":
-            jump .sheet_hints
-        "Bye!":
-            jump musicstore
-
-label .sheet_talk:
     p "__" #311 sheet conversation
-    sheet "___" 
-    jump .sheet
-
-label .sheet_hints:
-    p "__" #312 sheet hints conversation
-    sheet "___" 
-    jump .sheet
+    jump musicstore
 
 label .jb:
     scene bg music
