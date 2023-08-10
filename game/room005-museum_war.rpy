@@ -307,7 +307,6 @@ label .buff:
     p "__" # posty prods buff for another fact about the painting, that is now changed.
     buff "_" # buff makes up a new fact that contradicts the previous fact.
     p "_" # posty calls them out on the contradiction, causing them to give posty an imaginary lighter.
-    hide burger out
     show imaginary_lighter #158
     $ item.imaginary_lighter = True
     "You got the {b}imaginary lighter{/b}!{p}description" #159 the imaginary lighter can be used to add fire to imaginary things.
