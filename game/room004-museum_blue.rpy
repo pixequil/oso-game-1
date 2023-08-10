@@ -67,8 +67,6 @@ label museum_blue:
                 jump .painting
             "Red Tile & Blue Tile" if bt_distracted:
                 jump .rt
-            "Go to War Exhibit":
-                jump museum_war
             "Return to the entrance.":
                 jump museum_entrance
 
