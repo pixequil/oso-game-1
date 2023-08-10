@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "2.0.0 alpha"
+define config.version = "2.0.0-alpha"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
