@@ -8,6 +8,12 @@ image bg janitors_top:
 image bg janitors:
     "dbgs/janitors_dbg.png"
 
+image generichips:
+    "items/generi-chips.png"
+    xalign 0.1
+    yalign 0.5
+    zoom 0.8
+
 transform lookatvend:
     xzoom -1.0
     xalign 0.6

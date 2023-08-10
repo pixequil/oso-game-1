@@ -9,6 +9,11 @@ image bg museum_entrance:
     "dbgs/museum_entrance_dbg.png"
     xzoom -1.0
 
+image notice:
+    "items/notice.png"
+    truecenter
+    zoom 0.5
+
 transform posteaselpos:
     xalign 0.5
     yalign 1.0

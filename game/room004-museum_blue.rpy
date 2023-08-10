@@ -5,17 +5,49 @@
 # todo: image museum_blue_p_opened
 # todo: image museum_blue_p_missing
 
+image bg museum_blue_top:
+    "map-bgs/museum_blue_top_default.png"
+    zoom 1.0
+
 image redcash:
     "items/redcash.png"
     xalign 0.5
     yalign 0.5
     zoom 3.0
 
+image cash_bundle_1:
+    "items/cash_bundle_1.png"
+    truecenter
+    zoom 1.5
+
+image painting_blue:
+    "items/blue_exhibit_main_painting.png"
+    truecenter
+    zoom 0.5
+
 image ladle_empty:
     "items/ladle_empty.png"
     xalign 0.5
     yalign 0.5
     zoom 0.6
+
+image ladle_full:
+    "items/ladle_full.png"
+    xalign 0.4
+    yalign 0.5
+    zoom 0.6
+
+image rusty_gate:
+    "items/rusty_gate.png"
+    xalign 0.75
+    yalign 0.6
+    zoom 1.25
+
+image rusty_gate_broken:
+    "items/rusty_gate_broken.png"
+    xalign 0.75
+    yalign 0.6
+    zoom 1.25
 
 label museum_blue:
     if saw.blue == False:
@@ -88,9 +120,12 @@ label .rt:
         label .rt_money:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
+                    show cash_bundle_1
                     p "_" # red tile refuses the regular cash.
+                    hide cash_bundle_1
                     jump .rt_money
                 "Offer red cash.":
+                    show redcash
                     p "_" # red tile takes the red cash.
                     $ item.red_cash = False
                     $ bt_distracted = True
@@ -136,9 +171,15 @@ label .painting_ladle:
     if bt_distracted:
         show bg museum_blue_p_rusty
         show posty neutral
+        show ladle_full
+        show rusty_gate
         p "_" #121 scene where posty, alone, splashes miso soup on the painting and takes the painting on impulse now that the bars are rusted away. blue tile shows up, too late, and is upset about it.
+        hide ladle_full
+        hide rusty_gate
+        show rusty_gate_broken
         "You repeat Red Tile's crime, splashing more miso soup on the painting!"
         show bg museum_blue_p_opened
+        hide rusty_gate_broken
         p "__" # posty takes the painting.
         show bg museum_blue_p_missing
         show painting_blue #122 blue exhibit main painting on display

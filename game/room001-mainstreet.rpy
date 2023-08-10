@@ -22,6 +22,16 @@ image scraptrophy:
     zoom 5.0
     rotate 45
 
+
+image scrapmetal:
+    "items/scrapmetal.png"
+    zoom 1.3
+
+image cash_bundle_1:
+    "items/cash_bundle_1.png"
+    truecenter
+    zoom 1.5
+
 default party_leave = "\"Ah sorry, we can't leave this place; 95% of the town has a restraining order against me for my promotional activities.\""
 default last.mainx = 0.0
 default last.mainy = 0.0
@@ -262,6 +272,7 @@ image nav_bs p = Composite(
     (0,0), "nav_bs",
     (-20,20), "pnav rt"
 )
+
 
 
 
@@ -584,7 +595,7 @@ label .tooly2: #276
 
 label .tooly_scrap: #277
     p "_" # "oh, something like this?"
-    show scrapmetal
+    show scrapmetal at truecenter
     "You handed over the {b}scrap metal{/b}!"
     $ item.scrapmetal = False
     hide scrapmetal
