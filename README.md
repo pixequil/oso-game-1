@@ -47,6 +47,7 @@ _(Don't remove the blank bullets)_
 ### Dialogue
 * BumpBob Looly
 * FunnyBoy044
+* Loggybears
 * Satomi
 * Jurta
 * Multi
