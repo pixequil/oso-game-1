@@ -132,5 +132,16 @@ label .cameron:
         
     else:
         show posty neutral
-        p "_" # TODO: #31 talking to Security Cameron again
+        p "Hey man."
+        cameron "Hey."
+        cameron "..."
+        cameron "Did you need something?"
+        p "Oh. No. Just… checking in. Seeing what's up."
+        cameron "'What's up'? My blood pressures what's up!"
+        cameron "Just kidding I don't think I have that."
+        p "..."
+        p "Right."
+        cameron "Just come back to me if something broth-ers you. I mean bothers you."
+        cameron "Bye."
+        p "Bye."
         jump museum_entrance
