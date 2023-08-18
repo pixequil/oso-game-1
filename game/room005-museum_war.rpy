@@ -325,21 +325,21 @@ label .buff2:
 
 label .capsulefirst:
     scene bg museum_war
-    show posty neutral # !! interaction needs directing!!
+    show posty neutral 
     show capsule pain
     capsule "Hey! You there, do you mind helping me out with a favor?"
     p "Huh?"
     capsule "I need your help to carry this heavy item off of my hands!"
-    p "Oh sure! No problem!"
+    p happy "Oh sure! No problem!"
     show capsule happy
     show heavier 
     $ saw.war = True
     $ item.heavier = True
     "You got the {b}heavier{/b}!{p}This thing can remove a lot of fire from an area. It just requires a bit of elbow grease to get it working." 
     hide heavier
-    p "Oh wow! This sure is heavy... what even is this?"
+    p concerned "Oh wow! This sure is heavy... what even is this?"
     capsule "It's the opposite of a lighter. Instead of adding fire to things, it removes fire from things. It's also heavy."
-    p "..."
+    p confused quiet "..."
     jump museum_war
 
 label .capsule:
