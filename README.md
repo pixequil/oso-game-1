@@ -42,6 +42,7 @@ _(Don't remove the blank bullets)_
 ### Item Descriptions
 * Martysh12
 * Compital
+* XKZ
 
 ### Dialogue
 * BumpBob Looly
@@ -49,6 +50,7 @@ _(Don't remove the blank bullets)_
 * Satomi
 * Jurta
 * Multi
+* xbeo
 * XKZ
 
 ### Original Writers
