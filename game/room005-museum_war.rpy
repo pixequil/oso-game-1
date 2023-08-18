@@ -325,15 +325,21 @@ label .buff2:
 
 label .capsulefirst:
     scene bg museum_war
-    show posty neutral
+    show posty neutral # !! interaction needs directing!!
     show capsule pain
-    p "_" # Capsule stops Posty at the entrance to the war exhibit, asking if she's strong and begging her to take this "heavier" off her hands. #153
-    show heavier #151 
+    capsule "Hey! You there, do you mind helping me out with a favor?"
+    p "Huh?"
+    capsule "I need your help to carry this heavy item off of my hands!"
+    p "Oh sure! No problem!"
+    show capsule happy
+    show heavier 
     $ saw.war = True
     $ item.heavier = True
-    "You got the {b}heavier{/b}!{p}description" #152
+    "You got the {b}heavier{/b}!{p}This thing can remove a lot of fire from an area. It just requires a bit of elbow grease to get it working." 
     hide heavier
-    capsule happy "_" # capsule is thankful. Posty asks what a heavier even is, and Capsule explains what it is. It's the opposite of a lighter. Instead of adding fire to things, it removes fire from things. It's also heavy.
+    p "Oh wow! This sure is heavy... what even is this?"
+    capsule "It's the opposite of a lighter. Instead of adding fire to things, it removes fire from things. It's also heavy."
+    p "..."
     jump museum_war
 
 label .capsule:
