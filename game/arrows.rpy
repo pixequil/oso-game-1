@@ -127,18 +127,18 @@ image nothing mainstreet = Composite(
 # )
 
 image mouse posty = ConditionSwitch(
+    "party_bs == True","mouse posty bs",
     "party_bs == False","mouse posty base",
-    "party_bs == True","mouse posty bs"
 )
 
 image mouse posty base:
-    "pnav cursor.png"
+    "pnav cursor 1x.png"
+    size (32, 32)
 
-image mouse posty bs = Composite(
-    (0,0),
-    (0,0), "mouse posty base",
-    (60,0), "bsnav"
-)
+
+image mouse posty bs:
+    "pnav cursor bs.png"
+    size (32, 32)
 
 image mouse posty hidden:
     "mouse posty"
@@ -148,6 +148,8 @@ define config.mouse_displayable = MouseDisplayable(
     "windows-cursor.png", 0, 0
 ).add(
     "posty", "mouse posty", 0, 0
+).add(
+    "bs", "mouse posty bs", 0, 0
 ).add(
     "hidden", "mouse posty hidden", 0, 0
 )

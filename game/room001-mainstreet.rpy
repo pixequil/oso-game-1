@@ -35,7 +35,11 @@ screen mainstreet_nav():
 
         imagebutton:
             idle "nothing mainstreet"
-            mouse "posty"
+            if (party_bs == False): 
+                mouse "posty"
+            
+            if (party_bs == True):
+                mouse "bs"
             action NullAction()
 
         textbutton "Show Hitboxes":
