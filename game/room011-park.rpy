@@ -44,7 +44,9 @@ label .bench:
     else:
         scene bg park
         show posty neutral
-        p "_" #288 posty considers taking a break on the bench. she decides not to. not until she's delivered her package. but boy is she looking forward to it
+        p "{i}..Maybe I could take a small break on the bench?{/i}"
+        p angry "{i}No! I wont until I deliver this package!{/i}"
+        p happy "{i}But boy am I looking forward to it!{/i}"
         jump park
 
 label .win:
