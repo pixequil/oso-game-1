@@ -1,6 +1,8 @@
 # oso-game-1
 Taking the OSO game's first chapter to the finish line!
 
+The game is playable in-browser at [this link](https://opensourceobjects.itch.io/oso-game-1) with the password `butterflies`
+
 ## Development
 1. Install [Ren'Py 8.1.0 prerelease](https://www.renpy.org/release/8.1.0)
 2. Install [git](https://git-scm.com/download/win)
