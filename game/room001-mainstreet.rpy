@@ -400,9 +400,15 @@ label .tb: #293
     scene bg mainstreet
     if party_bs:
         show posty neutral
-        show bs follow behind posty
         show tb shy
-        p "_" # ticket booth is too shy to speak to such a large group
+        show bs follow behind posty with moveinleft 
+        bs "Yooooooo, what up!"
+        tb shy "Ummmmm...hi..."
+        tb shy "I'm sorry, I don't do well in mobs."
+        bs "Well thankfully for you, I do! I can market the whole theater for you and bring thousands of people over here to watch your movies!"
+        tb shy "I'm...uh..."
+        tb shy "I'm not interested, sorry!"
+        bs "Oh, well screw you then."
         jump mainstreet
     if saw.tb:
         show posty neutral
@@ -423,17 +429,36 @@ label .brandsoda:
     show posty neutral
     show bs behind posty
 
-    p "_" # TODO: #12 conversation where Brand Soda decides to follow you
-    bs "_"
+    bs "Yo, Posty! How’s my favorite mailbox?"
+    p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
+    bs "Dope. Who’s it for?"
+    p "The OSO Dome."
+    bs "WOAH! That...is...big! Something like that is bound to draw a lot of attention…"
+    bs "Do you have any idea how overwhelming that could be?"
+    p "It kinda slipped past me..."
+    p "Hey speaking of attention, how's that gig at the comedy club?"
+    bs "They banned me after one act, can you believe it? Called me a hack fraud."
+    bs "ME! THE NEXT BIG THING!"
+    p "What did you do to get banned?"
+    bs "I called the audience freaks and geeks for about ten minutes."
+    bs "The whole street banned me actually."
+    bs "Even if I took one step on the pavement there, they'd call the police on me for trespassing."
+    bs "And other streets caught wind and now I can't promote myself anywhere else other than here."
+    p "Dang...that sucks dude."
+    bs "If I had a marketing agent or something, I could get enough attention on me to get back into those venues..."
+    bs "Hey, I have an idea! What if you took me around town and we can get some marketing for me?"
+    p "Oh, I don't know...I've got a lot on my plate right n-"
 
     show bs follow with move:
         xalign 0.35
     
-    bs "__"
+    bs "Nope, it's already decided. I'm here now!"
+
     $ party_bs = True
     "{b}{color=#df7dff}Brand Soda{/color}{/b} joined your party!"
 
-    p "_"
+    p "Alright, I guess."
+    bs "Sweet! Let's get us some marketing!"
 
     jump mainstreet
 
@@ -453,7 +478,7 @@ label .yd:
         jump mainstreet
 
 label .yd_bs_money:
-    show bs follow behind posty
+    show bs follow behind posty with moveinleft
     p "_" # TODO: #16 conversation where posty convinces yd to support Brand Soda. Brand Soda, grateful, gives Posty some money as thanks.
     yd "_"
     bs "_"
@@ -492,8 +517,16 @@ label .miso:
 
     if party_bs:
         show posty neutral
-        show bs follow behind posty
-        p "_" # todo: #110 should be short! Brand Soda does not want to Miso for whatever reason. (this prevents there from needing to be 3 unique conversations)
+        show bs follow behind posty with moveinleft
+        p "This guy seems like they'd be willing to invest in you."
+        bs "Ehhhhh...I don't know..."
+        bs "I've heard of this guy's parents. They're elitist art snobs."
+        bs "If I wanna be the next big thing and appeal to everyone, I can't just go to these big shots first."
+        bs "What if they don't like me and tell their friends how much I suck?"
+        bs "Let's pick someone less risky around here."
+        p "OK..."
+        miso "What are you guys talking about?"
+        p "Nothing!"
         jump mainstreet
     
     elif (item.ladle_empty == False) and (miso_took == False):
@@ -537,8 +570,19 @@ label .btnet:
         
     if party_bs:
         show posty neutral
-        show bs follow behind posty
-        p "_" # todo: #109 
+        show bs follow behind posty with moveinleft
+        bs "Hello kind sir! I'm ready to sign any brand deals, contracts, or ambassadorships you put in front of me at a moment's notice!"
+        btnet "Pardon?"
+        p "We're looking for someone to market them."
+        btnet "Aside from maybe a job at the museum, I'm afraid there's nothing I can do."
+        p "Maybe you could give an object-on-the-street interview about them?"
+        bs "Yeah, old man, give your honest thoughts!"
+        btnet "Ummmmmm..."
+        btnet "They make bad first impressions, expect rewards too quickly, has delusions of grandeur..."
+        btnet "Smells flat..."
+        bs "We're leaving."
+        p "Talk to you later!"
+         # todo: #109 
 
         jump mainstreet
 
@@ -563,8 +607,9 @@ label .tooly:
 
     if party_bs:
         show posty neutral
-        show bs follow behind posty
-        p "_" #275 talking to tooly with brand soda
+        show bs follow behind posty with moveinleft
+        bs "Excuse me sir! Would you like to-"
+        tooly "I don't deal with all these newfandangled social experiments! Beat it!"
         jump mainstreet
 
     if trophy_crafted:

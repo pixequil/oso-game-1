@@ -16,8 +16,18 @@ label toasty_hints:
         show posty neutral
         show toasty neutral
         show bs follow behind posty with moveinleft
-        bs "_"
-        t "hint for if Brand Soda is following you" # TODO: #13 brand soda hint (talk to yd or "someone who wants to advertise")
+        bs "Hello!"
+        t smug "Who is this you brought along to follow you?"
+        bs "Lady, I'm gonna be the next big thing!"
+        p happy "We're looking for someone who wants to advertise them."
+        t annoyed "Well that surely isn't me; I don't care."
+        show posty neutral
+        bs "Oh..."
+        t smug2 "Try talking to somebody else around here. No one loiters around Main Street unless they've got a few dollars to burn."
+        bs "Oh, that sounds like a good idea!"
+        t smug5 "Good idea? Aimlessly walking around and talking to strangers?"
+        show toasty pointandlaugh talk
+        p angry quiet "..."
         return
 
     # above this line are urgent hints, that should be prioritized

@@ -33,8 +33,15 @@ label dolly:
 
 label .dbs:
     show posty neutral
-    show bs follow behind posty
-    p "_" #todo: #111 Dolly quickly rejects Brand Soda, saying they've already spoken.
+    p "I don't think this'll work, but let's try it anyway." #todo: #111 Dolly quickly rejects Brand Soda, saying they've already spoken.
+    show bs follow behind posty with moveinleft
+    bs "Heyyyyyyy Dolly! What do you say about-"
+    dolly "No."
+    p "Just no?"
+    dolly "This dork's already tried to market himself to me as the mascot for my stand."
+    dolly "Monthly sales went down 85%% because of him."
+    bs "Come on, give me another chance!"
+    dolly "Nothing doing. Find some other sucker to market you."
     jump mainstreet
 
 label .dfirst:
