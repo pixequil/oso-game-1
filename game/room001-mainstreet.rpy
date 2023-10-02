@@ -514,13 +514,13 @@ label .miso:
         miso "_"
         jump mainstreet
 
-    elif miso_took and (quest_painting_blue == False):
+    elif miso_took and (quest.painting_blue == False):
         show posty neutral
         p "_" #TODO: #49 miso soup conversation after you've taken soup
         miso "_"
         jump mainstreet
 
-    elif miso_took and quest_painting_blue:
+    elif miso_took and quest.painting_blue:
         show posty neutral
         p "_" # todo: #50 miso soup conversation after splashing miso soup on painting
         miso "_"
