@@ -121,8 +121,8 @@ label .cameron:
         jump museum_entrance
     
     elif item.ladle_full:
-        show posty neutral
-        p "_" #129 posty tells herself she should avoid security cameron if she's carrying the ladle full of soup
+        show posty neutral quiet
+        p "{i}I should probably avoid {b}Security Cameron{/b} if I have this ladle. Don't want him to think I would spill the soup on a painting!{/i}" # this text will be a notification in the final version of this room's nav screen
         jump museum_entrance
 
     elif quest.painting_blue:
