@@ -56,6 +56,11 @@ _(Don't remove the blank bullets)_
 * BumpBob Looly
 * FunnyBoy044
 
+## Audio
+
+### Character Noises
+* Fanimator
+
 ## Artists
 
 ### Mini Sprites

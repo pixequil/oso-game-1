@@ -364,7 +364,7 @@ define anims.toasty.toast = FBFAnimation(5, 25, reset_after=True, reset_frame=0)
 define states.toasty = ToastyStates()
 
 define t = Character("Toasty",
-    callback=speaker("toasty"), 
+    callback=speaker("toasty", sound_file="toasty.wav"), 
     image="toasty", 
     who_color="#d64d66"
     )
