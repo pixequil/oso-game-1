@@ -23,7 +23,7 @@ label toasty_hints:
         t annoyed "Well that surely isn't me; I don't care."
         show posty neutral
         bs "Oh..."
-        t smug2 "Try talking to somebody else around here. No one loiters around Main Street unless they've got a few dollars to burn."
+        t smug2 "Try talking to somebody else around here. No one loiters around Main Street unless they're trying to reach for the stars."
         bs "Oh, that sounds like a good idea!"
         t smug5 "Good idea? Aimlessly walking around and talking to strangers?"
         show toasty pointandlaugh talk
@@ -169,7 +169,18 @@ label toasty_hints:
     elif quest.bs:
         show posty neutral
         show toasty neutral
-        t "hint for if you finished Brand Soda quest" # TODO: #18 hint for after brand soda quest (go in the museum)
+        t "You deal with that Brand Soda guy yet?"
+        p "Yeah. Yellow Diamond's gonna be their manager, to some degree."
+        t "Oh good. Now what?"
+        p "I'm not sure. I got some money out of it."
+        t smug2 "Try spending it all in one place."
+        p annoyed "Very funny."
+        t "Ok, seriously though, try going somewhere else. You spent so much time wandering around the street with Brand Soda."
+        t "Maybe you should go to that art museum. It sounds interesting!"
+        t "You could the next big painting and get a fat paycheck from it!"
+        t "Then you could spend your money at two places!"
+        t pointandlaugh "And be twice as broke!"
+
         return
 
     elif saw.retainerblock:

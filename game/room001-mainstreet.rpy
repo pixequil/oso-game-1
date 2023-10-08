@@ -472,23 +472,81 @@ label .yd:
     elif quest.bs:
         jump .yd_bs_happy
     else:
-        p "_" # TODO: #15 conversation where yd implies they want to get into advertising
-        yd "_"
+        yd "HIIIIIIIIIII!"
+        p suspicious "Uhh...hi."
+        yd "Can we be best friends?"
+        p neutral "I don't know, kid. I'm too busy."
+        yd "That's OK!"
+        p "Where are your parents?"
+        yd "Is that a type of vegetable?"
+        p "Never mind."
+        p "What are you doing out by yourself?"
+        yd "I'm an entrée-prenur!"
+        p suspicious "For what?"
+        yd "Flying lessons for people who don't know how to fly! It'll be the best thing yet!"
+        yd "But I need a best fwiend to help me out with the buies-ness and give advice!"
+        p "You mean business?"
+        yd "Buies-ness is French!"
+        yd "But I won't just take anybody to be my best friend! I have very special spec-sip-uh-kay-shuns!"
+        yd "Number 1: They should have a lot of charisma."
+        yd "Not too dry or trying too hard to be cool. Just enough to make me laugh!"
+        yd "Number B: They should have a lot of bouis-ness experience. Flying can be pretty technical for people to understand!"
+        yd "And Number C..."
+        yd "They should feel like you wanna share nachos with them."
+        yd "I really like nachos."
+        yd "But I haven't found anyone yet!"
+        p neutral "Well if I find anyone to help your business take off, I'll let you know."
+        yd "Hehehe flying pun! Thanks mail girl!"
 
         jump mainstreet
 
 label .yd_bs_money:
     show bs follow behind posty with moveinleft
-    p "_" # TODO: #16 conversation where posty convinces yd to support Brand Soda. Brand Soda, grateful, gives Posty some money as thanks.
-    yd "_"
-    bs "_"
+    yd "Hi Maily!"
+    p "Posty."
+    yd "Hi Posty! Hi Soday!"
+    p happy "Hi Yellow Diamond. Say guess what, I have this friend you might be interested in!"
+    bs "Hello strange child! Are you in need of a comedian, spokesperson, or hypeman?"
+    yd "No!"
+    bs "Oh ok then."
+    yd "I just need a best friend to promote my flying lessons start-up! But I haven't found anyone yet! I'm sad!"
+    bs "PR work, huh?"
+    p happy "It's your angle, man! Go for it!"
+    bs "Say, um, yellow diamondy boy, what would you need for this best friend role?"
+    yd "I need them to market my business oppurtunity! They would be the face of the company while I do all the important stuff!"
+    bs "Hey, I can be that!"
+    yd "They need to be very charismatic! Are you charismatic?"
+    bs "I have tons of charisma coming out of my butt!"
+    yd "HAHAHA! You're funny!"
+    yd "Are you smart at buahs-ness?"
+    bs "Oh totally! I have experience all over the city!"
+    bs "In fact, the city thinks I'm too forward thinking for the citizens of this town."
+    bs "So now, I'm stuck on this street without a single penny or crumb to my name..."
+    yd "Oh no!"
+    bs "Yes, it's quite tragic..."
+    bs "But you know, now I have all the time in the world and am completely available except on Tuesdays!"
+    bs "Say, is it possible that this gig could be famous?"
+    yd "Exactly! I am very confident it could go national!"
+    bs "National marketing...wow..."
+    p "Oh yeah, trust me! This yellow guy's a real visionary!"
+    bs "Oh sign me up! I am totally in on this!"
+    yd "Yay!"
+    yd "Oh, one more thing! Very important!"
+    yd "Do you like nachos?"
+    bs "Pffftt...I'm a nachoholic!"
+    bs "I like to put everything on them!"
+    yd "Wowzers! Me too!"
+    yd "Is this a beginning of a beautiful friendship?"
+    bs "Oh, more than that! We became best buds!"
+    yd "YAYYYYYY!"
 
     show bs with move:
         xalign 0.65
     $ party_bs = False
     "{b}{color=#df7dff}Brand Soda{/color}{/b} left your party!"
 
-    bs "_"
+    bs "Posty! Thanks to you, I'm employed! I can't thank you enough!"
+    bs "Just to show you I'm not the heartless celebrity that everyone thinks I am, here's a bonus for helping me find a marketing agent and way back into the spotlight!"
 
     $ money += 1
     $ quest.bs = True
@@ -498,16 +556,23 @@ label .yd_bs_money:
     hide cash_bundle_1
     call money_get
 
-    bs "_"
+    p happy "Wow, thanks Brand Soda!"
+    bs "I'll never forget you!"
+    bs "So kid, what is this buisness oppurtunity you were starting again?"
     jump mainstreet
 
 label .yd_bs_happy:
+    show posty happy
     show bs behind yd:
         xalign 0.65
         yalign 1.0
-    p "_" # TODO: #17 conversation with the now-satisfied yd and bs
-    yd "_"
-    bs "_"
+    yd "Hi Posty!"
+    bs "Sup Posty, me and Yellow Diamond here are just working out the kinks of our business."
+    p happy "Well, I'll leave you to it!"
+    bs "So Yellow Diamond, how do we teach people with legs to fly?"
+    bs "Doesn't that sound impossible?"
+    yd "It's easy! You have to believe in it really hard!"
+    bs "I can't help but feel I've been duped..."
     jump mainstreet
 
 label .miso:
