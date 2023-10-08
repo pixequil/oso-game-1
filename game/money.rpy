@@ -33,11 +33,11 @@ label dolly:
 
 label .dbs:
     show posty neutral
-    p "I don't think this'll work, but let's try it anyway." #todo: #111 Dolly quickly rejects Brand Soda, saying they've already spoken.
+    p neutral "I don't think this'll work, but let's try it anyway."
     show bs follow behind posty with moveinleft
     bs "Heyyyyyyy Dolly! What do you say about-"
     dolly "No."
-    p "Just no?"
+    p sad "Just no?"
     dolly "This dork's already tried to market himself to me as the mascot for my stand."
     dolly "Monthly sales went down 85%% because of him."
     bs "Come on, give me another chance!"

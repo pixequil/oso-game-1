@@ -432,10 +432,10 @@ label .brandsoda:
     bs "Yo, Posty! How’s my favorite mailbox?"
     p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
     bs "Dope. Who’s it for?"
-    p "The OSO Dome."
+    p happy "The OSO Dome."
     bs "WOAH! That...is...big! Something like that is bound to draw a lot of attention…"
     bs "Do you have any idea how overwhelming that could be?"
-    p "It kinda slipped past me..."
+    p concerned "It kinda slipped past me..."
     p "Hey speaking of attention, how's that gig at the comedy club?"
     bs "They banned me after one act, can you believe it? Called me a hack fraud."
     bs "ME! THE NEXT BIG THING!"
@@ -444,7 +444,7 @@ label .brandsoda:
     bs "The whole street banned me actually."
     bs "Even if I took one step on the pavement there, they'd call the police on me for trespassing."
     bs "And other streets caught wind and now I can't promote myself anywhere else other than here."
-    p "Dang...that sucks dude."
+    p concerned "Dang...that sucks dude."
     bs "If I had a marketing agent or something, I could get enough attention on me to get back into those venues..."
     bs "Hey, I have an idea! What if you took me around town and we can get some marketing for me?"
     p "Oh, I don't know...I've got a lot on my plate right n-"
@@ -457,7 +457,7 @@ label .brandsoda:
     $ party_bs = True
     "{b}{color=#df7dff}Brand Soda{/color}{/b} joined your party!"
 
-    p "Alright, I guess."
+    p neutral "Alright, I guess."
     bs "Sweet! Let's get us some marketing!"
 
     jump mainstreet
@@ -583,15 +583,15 @@ label .miso:
     if party_bs:
         show posty neutral
         show bs follow behind posty with moveinleft
-        p "This guy seems like they'd be willing to invest in you."
+        p happy "This guy seems like they'd be willing to invest in you."
         bs "Ehhhhh...I don't know..."
         bs "I've heard of this guy's parents. They're elitist art snobs."
         bs "If I wanna be the next big thing and appeal to everyone, I can't just go to these big shots first."
         bs "What if they don't like me and tell their friends how much I suck?"
         bs "Let's pick someone less risky around here."
-        p "OK..."
+        p neutral "OK..."
         miso "What are you guys talking about?"
-        p "Nothing!"
+        p confused " AHHHH! Nothing!"
         jump mainstreet
     
     elif (item.ladle_empty == False) and (miso_took == False):
@@ -634,19 +634,19 @@ label .btnet:
     show btnet
         
     if party_bs:
-        show posty neutral
+        show posty happy
         show bs follow behind posty with moveinleft
         bs "Hello kind sir! I'm ready to sign any brand deals, contracts, or ambassadorships you put in front of me at a moment's notice!"
         btnet "Pardon?"
-        p "We're looking for someone to market them."
+        p happy "We're looking for someone to market them."
         btnet "Aside from maybe a job at the museum, I'm afraid there's nothing I can do."
-        p "Maybe you could give an object-on-the-street interview about them?"
+        p happy "Maybe you could give an object-on-the-street interview about them?"
         bs "Yeah, old man, give your honest thoughts!"
         btnet "Ummmmmm..."
         btnet "They make bad first impressions, expect rewards too quickly, has delusions of grandeur..."
         btnet "Smells flat..."
         bs "We're leaving."
-        p "Talk to you later!"
+        p happy "Talk to you later!"
          # todo: #109 
 
         jump mainstreet
