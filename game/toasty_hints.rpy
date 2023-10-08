@@ -177,7 +177,7 @@ label toasty_hints:
         p annoyed "Very funny."
         t "Ok, seriously though, try going somewhere else. You spent so much time wandering around the street with Brand Soda."
         t "Maybe you should go to that art museum. It sounds interesting!"
-        t "You could the next big painting and get a fat paycheck from it!"
+        t "You could make the next big painting and get a fat paycheck from it!"
         t "Then you could spend your money at two places!"
         t pointandlaugh "And be twice as broke!"
 

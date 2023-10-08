@@ -472,7 +472,7 @@ label .yd:
     elif quest.bs:
         jump .yd_bs_happy
     else:
-        yd "HIIIIIIIIIII!"
+        yd "Hiiiiiiii!"
         p suspicious "Uhh...hi."
         yd "Can we be best friends?"
         p neutral "I don't know, kid. I'm too busy."
@@ -504,15 +504,15 @@ label .yd_bs_money:
     show bs follow behind posty with moveinleft
     yd "Hi Maily!"
     p "Posty."
-    yd "Hi Posty! Hi Soday!"
-    p happy "Hi Yellow Diamond. Say guess what, I have this friend you might be interested in!"
+    yd "Hi Posty!"
+    p happy "Hi Yellow Diamond. Say guess what, I have this friend, Brand Soda, you might be interested in!"
     bs "Hello strange child! Are you in need of a comedian, spokesperson, or hypeman?"
     yd "No!"
     bs "Oh ok then."
     yd "I just need a best friend to promote my flying lessons start-up! But I haven't found anyone yet! I'm sad!"
     bs "PR work, huh?"
     p happy "It's your angle, man! Go for it!"
-    bs "Say, um, yellow diamondy boy, what would you need for this best friend role?"
+    bs "Say, um, yellow diamondy boy, what would you need for this \"best friend\" role?"
     yd "I need them to market my business oppurtunity! They would be the face of the company while I do all the important stuff!"
     bs "Hey, I can be that!"
     yd "They need to be very charismatic! Are you charismatic?"
@@ -558,7 +558,7 @@ label .yd_bs_money:
 
     p happy "Wow, thanks Brand Soda!"
     bs "I'll never forget you!"
-    bs "So kid, what is this buisness oppurtunity you were starting again?"
+    bs "So kid, what is this \"buisness oppurtunity\" you were starting again?"
     jump mainstreet
 
 label .yd_bs_happy:
@@ -647,8 +647,6 @@ label .btnet:
         btnet "Smells flat..."
         bs "We're leaving."
         p happy "Talk to you later!"
-         # todo: #109 
-
         jump mainstreet
 
     elif item.butterfly_package:
@@ -674,7 +672,7 @@ label .tooly:
         show posty neutral
         show bs follow behind posty with moveinleft
         bs "Excuse me sir! Would you like to-"
-        tooly "I don't deal with all these newfandangled social experiments! Beat it!"
+        tooly "I don't deal with all these newfangled social experiments! Beat it!"
         jump mainstreet
 
     if trophy_crafted:
