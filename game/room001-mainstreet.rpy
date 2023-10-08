@@ -471,6 +471,19 @@ label .yd:
         jump .yd_bs_money
     elif quest.bs:
         jump .yd_bs_happy
+    elif saw.yd:
+        yd "Hiiiiiiii!"
+        p neutral "Hi again. Hey what are your qualifications for a best friend again to promote your flying lessons?"
+        yd "Oh yeah! Uhhhhhhh..."
+        yd "Number 1: They should have a lot of charisma."
+        yd "Not too dry or trying too hard to be cool. Just enough to make me laugh!"
+        yd "Number B: They should have a lot of bouis-ness experience. Flying can be pretty technical for people to understand!"
+        yd "And Number C..."
+        yd "They should feel like you wanna share nachos with them."
+        yd "I really like nachos."
+        yd "But I haven't found anyone yet!"   
+        p neutral "Don't worry, I'm still looking for someone! You'll be the first to know!"
+        jump mainstreet    
     else:
         yd "Hiiiiiiii!"
         p suspicious "Uhh...hi."
@@ -497,6 +510,7 @@ label .yd:
         yd "But I haven't found anyone yet!"
         p neutral "Well if I find anyone to help your business take off, I'll let you know."
         yd "Hehehe flying pun! Thanks mail girl!"
+        $ saw.yd = True
 
         jump mainstreet
 
