@@ -407,14 +407,24 @@ label .tb: #293
     if saw.tb:
         show posty neutral
         show tb neutral
-        p "_" # talking to ticket booth a second time
+        p "Hi again!" # talking to ticket booth a second time
+        tb "Oh, hello!"
+        tb ""
+        p "Isn't working in front of a theater a bit of a strange "
         jump mainstreet
     else:
         show posty neutral
         show tb shy
-        p "_" # talking to ticket booth for the first time
+        p "Hi!" # talking to ticket booth for the first time
+        tb "H-hi!"
+        tb "What movie are y-you interested in seeing?"
+        p "Oh, no movies for now. I'm delivering something important for work."
         $ saw.tb = True
         jump mainstreet
+
+#A tall Ticket Booth at the movie theatre. Posty will say she needs to focus on the delivery
+# job if you try talking to them. Is very happy to interact with Posty since most people just
+# stop by to get the tickets.
 
 label .brandsoda:
 
@@ -498,26 +508,42 @@ label .miso:
     
     elif (item.ladle_empty == False) and (miso_took == False):
         show posty neutral
-        p "_" # TODO: #46 miso soup conversation before youve taken any soup
-        miso "_"
+        p "Hello!"
+        miso " {i}Ohhh, my family is gonna kill me... {/i}"
+        p concerned "Is there a problem?"
+        miso "Huh? Oh hi, didn't see you there!"
+        miso "You betcha there's a problem! I just got banned from the musuem!"
+        miso "The security guard in there said I spilled my soup on one of the security gates and almost ruined one of the paintings!"
+        miso "But I didn't do it! I always bring plastic wrap to protect the soup from spilling! Honest!"
+        miso "I tried telling him I didn't do it, but he wrote me a notice of reprimand anyway and kicked me out! That guy is so strict!"
+        p "Dang, that sucks..."
+        miso "Oh, it gets worse!"
+        miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
+        p "I'm sorry, there's nothing I can really do to help right now."
+        p "If I can find a way to make it up, I'll let you know."
+        miso "Thanks for trying, I guess."
         jump mainstreet
-    
+
     elif item.ladle_empty and (miso_took == False):
-        show posty neutral
-        p "_" # TODO: #47 you take soup from Miso Soup 
-        miso "_"
+        show posty sad
+        p sad "I'm so sorry for this." 
+        miso "What are you about t-"
         $ item.ladle_empty = False
         $ item.ladle_full = True
         $ miso_took = True
         show ladle_full
-        "You filled the {b}ladle{/b} with {b}miso soup{/b}!" # TODO: #48 describe soup-filled ladle
-        miso "_"
+        "You filled the {b}ladle{/b} with {b}miso soup{/b}!"
+        "Filled with miso soup, hell to clean up properly. Perfect sabotage."
+        miso "My soup!"
         jump mainstreet
 
     elif miso_took and (quest.painting_blue == False):
         show posty neutral
-        p "_" #TODO: #49 miso soup conversation after you've taken soup
-        miso "_"
+        p sad "Again, I'm so sorry for taking some of your soup."
+        miso "What did you even do that for?"
+        p concerned "I need it for something. It's kind of hard to explain right now."
+        p "I'll make it up to you when I finish what I have to do!"
+        miso "I sure hope so! This has been the weirdest day ever!"
         jump mainstreet
 
     elif miso_took and quest.painting_blue:
@@ -543,17 +569,24 @@ label .btnet:
         jump mainstreet
 
     elif item.butterfly_package:
-        show posty neutral
-        p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
-        btnet "_"
-
+        show posty happy
+        p happy "Hello again!"
+        btnet "How's your progress on the delievery?"
+        p happy "I ran into a few slip-ups, but I think I can handle it!"
+        btnet "If it ever gets too difficult, I can always pass it on to someone else, like your friend Toasty or-"
+        p astonished "No it's ok! I've got it!"
+        p "I'll let you know when it's delivered!"
+        btnet "Ok Posty, good luck!"
         jump mainstreet
 
     else:
         show posty neutral
-        p "_" # TODO: #54 talking to B.T. Net after a successful delivery! (game is in win state)
-        btnet "_"
-
+        p happy "I delievered the package! Crayon Box was impressed with the butterflies!"
+        btnet "Excellent work, Posty! I knew you could do it!"
+        p happy "Do you need me to deliever any other packages today?"
+        btnet "Nah. I don't want to overwork you, especially after this important order for OSO!"
+        btnet "Go take a nap! You've earned it!"
+        p happy "Thanks B.T.! Talk to you later!"
         jump mainstreet
 
 label .tooly:
