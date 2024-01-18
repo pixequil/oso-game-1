@@ -462,6 +462,16 @@ label .brandsoda:
 
     jump mainstreet
 
+label .yd_quals:
+    yd "Number 1: They should have a lot of charisma."
+    yd "Not too dry or trying too hard to be cool. Just enough to make me laugh!"
+    yd "Number B: They should have a lot of bouis-ness experience. Flying can be pretty technical for people to understand!"
+    yd "And Number C..."
+    yd "They should feel like you wanna share nachos with them."
+    yd "I really like nachos."
+    yd "But I haven't found anyone yet!"
+    return
+
 label .yd:
     $ last.mainx = 0.25
     scene bg mainstreet
@@ -475,13 +485,7 @@ label .yd:
         yd "Hiiiiiiii!"
         p neutral "Hi again. Hey what are your qualifications for a best friend again to promote your flying lessons?"
         yd "Oh yeah! Uhhhhhhh..."
-        yd "Number 1: They should have a lot of charisma."
-        yd "Not too dry or trying too hard to be cool. Just enough to make me laugh!"
-        yd "Number B: They should have a lot of bouis-ness experience. Flying can be pretty technical for people to understand!"
-        yd "And Number C..."
-        yd "They should feel like you wanna share nachos with them."
-        yd "I really like nachos."
-        yd "But I haven't found anyone yet!"   
+        call .yd_quals
         p neutral "Don't worry, I'm still looking for someone! You'll be the first to know!"
         jump mainstreet    
     else:
@@ -501,13 +505,7 @@ label .yd:
         p "You mean business?"
         yd "Buies-ness is French!"
         yd "But I won't just take anybody to be my best friend! I have very special spec-sip-uh-kay-shuns!"
-        yd "Number 1: They should have a lot of charisma."
-        yd "Not too dry or trying too hard to be cool. Just enough to make me laugh!"
-        yd "Number B: They should have a lot of bouis-ness experience. Flying can be pretty technical for people to understand!"
-        yd "And Number C..."
-        yd "They should feel like you wanna share nachos with them."
-        yd "I really like nachos."
-        yd "But I haven't found anyone yet!"
+        call .yd_quals
         p neutral "Well if I find anyone to help your business take off, I'll let you know."
         yd "Hehehe flying pun! Thanks mail girl!"
         $ saw.yd = True
