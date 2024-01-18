@@ -137,18 +137,46 @@ label .notepad2: #244
         jump museum_food
 
 label .notepad_chips: #246
-    p "_" # posty does indeed have some chips for notepad!
+   p concerned "Oh my, are you alright?"
+notepad "Can't you tell?! I am rock bottom here."
+notepad "I have turned my whole damn life upside down for the chance of exhibitions and I can't even find a bite to eat!!"
+notepad "Many times I pleaded and begged the curators to buy my life's work, many times they rejected me..."
+p sad "Damn that sucks"
+notepad "Not even half of it: I even reduced my prices all the way down to $2 for everything I ever made."
+notepad "You know what they said? No!"
+notepad "I am at my wits end: starving in the middle of the food exhibit."
+notepad "I should've stayed back home, then I wouldn't have ended up here."
+notepad "Time after time I put so much heart into this, only to be thrown out like a stray cup."
+notepad : I don't know why I bother."
+p concerned "You want a snack?"
+notepad "What?"
+p "I got a bunch of chips if you wan-"
+notepad "OOOHH PLEASE GIVE IT TO ME THANK YOU SO MUCH!!!"
+p "You need it more than I do, you gone crazy."
     show generichips at truecenter
     "You handed over the {b}Generi-Chips{/b}!"
     $ item.chips = False
     $ gave_chips = True
     hide generichips
-    notepad "_" # notepad is grateful, and gives you a piece of their art in return
+   notepad "My god this tastes soooo amazing."
+   notepad "First meal in a week, you are my shining saviour."
+   p happy "Glad to be of help!"
+np "For assisting me in my direst hour, you shall have my greatest work."
+np "It distills my essence into a small package you can carry around as a reminder."
+p astonished "Aw shucks, that is too much!"
     show badpainting
-    "You got the {b}napkin \"painting\"{/b}!" #245 describe napkin painting
+    "You got the {b}napkin \"painting\"{/b}! If art is in the eye of the beholder, then this piece of litter blinds you. " 
     $ item.napkin = True
     hide badpainting
-    p "_" # posty pretends to think it's cool and makes up an excuse to stop talking to notepad.
+p confused "Oohhheheh it looks... avant garde."
+notepad "This is for feeding me, only the best!"
+p happy "Hehe no biggie!"
+p suspicious "(Did they pick up some trash to fool me? Why would anyone even consider this?)"
+p neutral "(Eh whatever, I guess I'll find a rubbish bin to properly dispose it in later)"
+p concerned "Ahahaha ohh I am soo sorry, I have a meeting in 30 minutes!"
+p concerned "I can't hang around any longer sadly..."
+notepad "It is a shame I can't see your enjoyment for any longer."
+p happy "See you around I guess!"
     jump museum_food
 
 label .notepad3: #247
