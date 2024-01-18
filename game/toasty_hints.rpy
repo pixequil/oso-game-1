@@ -27,6 +27,7 @@ label toasty_hints:
         bs "Oh, that sounds like a good idea!"
         t smug5 "Good idea? Aimlessly walking around and talking to strangers?"
         show toasty pointandlaugh talk
+        t "Gyahahahaha! Loool!"
         p angry quiet "..."
         return
 
