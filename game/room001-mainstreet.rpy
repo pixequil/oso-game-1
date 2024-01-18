@@ -409,8 +409,11 @@ label .tb: #293
         show tb neutral
         p "Hi again!" # talking to ticket booth a second time
         tb "Oh, hello!"
-        tb ""
-        p "Isn't working in front of a theater a bit of a strange "
+        tb "Heh heh..."
+        p "Isn't working in front of a theater a bit of a strange career choice for you?"
+        tb "I don't know...it pays wells."
+        tb "Though what I really want to do is work on Broadway."
+        p happy "Good luck with that!"
         jump mainstreet
     else:
         show posty neutral
@@ -419,6 +422,7 @@ label .tb: #293
         tb "H-hi!"
         tb "What movie are y-you interested in seeing?"
         p "Oh, no movies for now. I'm delivering something important for work."
+        tb "Ok! Come again!"
         $ saw.tb = True
         jump mainstreet
 
