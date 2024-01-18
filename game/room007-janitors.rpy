@@ -54,7 +54,8 @@ label .vend: #243
     show posty at lookatvend with move
     show generichips
     $ item.chips = True
-    "You got the {b}Generi-Chips{/b}!" #240 describe
+    "You got the {b}Generi-Chips{/b}!" 
+    "Generi-Chips: it has some nutrients."
     hide generichips 
     p "_" # posty expresses disgust for this brand of chips, but is fine with keeping them in case she needs them for something
     jump janitors
