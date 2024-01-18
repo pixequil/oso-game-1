@@ -593,9 +593,9 @@ label .miso:
     show miso # TODO: #45 Miso Soup talksprite
 
     if party_bs:
-        show posty neutral
+        show posty happy
         show bs follow behind posty with moveinleft
-        p happy "This guy seems like they'd be willing to invest in you."
+        p "This guy seems like they'd be willing to invest in you."
         bs "Ehhhhh...I don't know..."
         bs "I've heard of this guy's parents. They're elitist art snobs."
         bs "If I wanna be the next big thing and appeal to everyone, I can't just go to these big shots first."
