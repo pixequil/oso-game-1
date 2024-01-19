@@ -502,7 +502,7 @@ label .yd_bs_happy:
 label .miso:
     $ last.mainx = 0.5
     scene bg mainstreet
-    show miso # TODO: #45 Miso Soup talksprite
+    show miso
 
     if party_bs:
         show posty neutral
@@ -612,46 +612,97 @@ label .tooly:
         jump .tooly1
 
 label .tooly1: #276
-    show posty neutral
-    p "_" # introduce tooly. A toolbox, and a rough but jovial metalworker. She is always equipped with sorts of metalworking equipment and runs a small workshop in front of the closed store on the east side of the street.
-    tooly "_" # she offers to craft stuff if you ever bring her some raw materials
+    show posty happy
+    # introduce tooly. A toolbox, and a rough but jovial metalworker. 
+    # She is always equipped with sorts of metalworking equipment 
+    #runs a small workshop in front of the closed store on the east side of the street.
+    # she offers to craft stuff if you ever bring her some raw materials
+    tooly "Howdy stranger! The name's Tooly! Welcome to my shop!"
+    p happy "Hello! I never noticed this place before!" 
+    tooly "I just opened it!" 
+    p happy "Neat! What do you do here!"
+    tooly "Oh, I store nukes!"
+    show posty concerned
+    tooly "We have weapons of mass destruction of all shapes and sizes."
+    tooly "We actually have a few deactiviated ones. Don't touch them, they're sensitive."
+    p concerned "Uhhhhhhh..." 
+    tooly "Hahaha! I'm just messing with you!" 
+    tooly "This is a metalworking shop. Been working professionally for the past twenty years!" 
+    tooly "I've got plenty of experience so if you wanted anything special crafted, I can do it pretty easily!"
+    p happy "Cool!"
+    tooly "It would cost you though."
+    tooly "Raw materials aren't cheap."
+    p concerned "Oh, I'm kinda broke."
+    p concerned "Would it be cheaper if I just loaned you the raw materials myself?" 
+    tooly "Hmmmm..."
+    tooly "You seem like a nice enough guy, so tell you what!"
+    tooly "Just for being my first customer of the day, if you personally bring me the raw materials to craft anything, I'll do your first job completely free!"
+    p happy "Awesome!"
+    $ saw.tooly = True
     if item.scrapmetal:
         jump .tooly_scrap
     else:
-        p "_" # posty says goodbye
+        p "See you later, Tooly!" # posty says goodbye
+        tooly "Later, gator."
         jump mainstreet
 
 label .tooly2: #276
-    show posty neutral
-    tooly "_" # tooly reminds posty that she can craft stuff if you ever bring her some raw materials
+    show posty happy
+    p "Hey Tooly!"
+    tooly "Hey customer!" # tooly reminds posty that she can craft stuff if you ever bring her some raw materials
+    p "Can you remind me of our deal again?"
+    tooly "Wasn't expecting you to have dementia, but..."
+    tooly "Just for being my first customer of the day, if you personally bring me the raw materials to craft anything, I'll do your first job completely free!"
+    p "Awesome!"
     if item.scrapmetal:
         jump .tooly_scrap
     else:
-        p "_" #posty says goodbye
+        p "See you later, Tooly!" #posty says goodbye
+        tooly "Later, gator."
         jump mainstreet
 
-label .tooly_scrap: #277
-    p "_" # "oh, something like this?"
+label .tooly_scrap: #
+    show posty happy
     show scrapmetal at truecenter
+    p "Will this work as raw materials?"
+    tooly "Looks great! Hand it over!"
     "You handed over the {b}scrap metal{/b}!"
     $ item.scrapmetal = False
     hide scrapmetal
-    tooly "_" # tooly immediately knows what to do with this
+    p "Can you craft this into a trophy please?"
+    tooly "Sounds good! I know exactly what to how it! Can I get the name for this project?"
+    p "Posty."
+    tooly "Alright, Posty! Give me one minute!"
     $ trophy_crafted = True
     show scraptrophy
     "Tooly crafted a {b}scrap trophy{/b}!"
     $ item.scrap_trophy = True
     hide scraptrophy
+    p "Wow, it looks like a real trophy!"
+    tooly "Yeah, the craftsmanship is good...but I don't know."
+    tooly "It's missing something. It needs the perfect finishing touch."
     if item.spraypaint:
         call trophy
-        tooly "_" # tooly comments on your use of the spray paint
+        tooly "Now that's a gold trophy!"
+        tooly "You might be able to trick somebody into thinking this is real gold!"
         jump mainstreet
     else:
-        p "_" # some kind of thank-you
+        p "This looks perfect! Thank you so much!"
+        tooly "Hehe! Any time Posty."
+        tooly "Catch you later!"
         jump mainstreet
 
 label .tooly3:
+    show posty happy
+    p "Hey Tooly! How's business?"
+    tooly "Deader than disco." #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
+    tooly "Constantly."
+    p neutral "You're better off not knowing."
+    tooly "Hmmm... sounds illegal."
+    show posty astonished
+    tooly "I'm going to have to report this as a concerned citizen."
+    tooly "PFFFT! Nah!"
     show posty neutral
-    tooly "_" #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
+    tooly "Catch you later Posty!"
     jump mainstreet
 
