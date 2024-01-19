@@ -16,17 +16,34 @@ label toasty_hints:
         show posty neutral
         show toasty neutral
         show bs follow behind posty with moveinleft
-        bs "_"
-        t "hint for if Brand Soda is following you" # TODO: #13 brand soda hint (talk to yd or "someone who wants to advertise")
+        bs "Hello!"
+        t smug "Who is this you brought along to follow you?"
+        bs "Lady, I'm gonna be the next big thing!"
+        p happy "We're looking for someone who wants to advertise them."
+        t annoyed "Well that surely isn't me; I don't care."
+        show posty neutral
+        bs "Oh..."
+        t smug2 "Try talking to somebody else around here. No one loiters around Main Street unless they're trying to reach for the stars."
+        bs "Oh, that sounds like a good idea!"
+        t smug5 "Good idea? Aimlessly walking around and talking to strangers?"
+        show toasty pointandlaugh talk
+        t "Gyahahahaha! Loool!"
+        p angry quiet "..."
         return
 
     # above this line are urgent hints, that should be prioritized
     # below this line are hints displayed in roughly reverse walkthrough order
 
     elif quest.retainer:
-        show posty neutral
+        show posty happy
         show toasty neutral
-        t "hint for if you made retainer leave but didnt talk to crayon box" #292
+        p "Oof I glad I made Retainer happy again, I can't wait to take a nap."
+        t pointandlaugh "Ohohoho what do we have here: thinking of turning truant for the treacherous mistress known as sleep?"
+        p annoyed "Stop speaking like a Victorian; you don't appear to have anything better to do."
+        t smug "I concede that I am not the shiniest appliance in this messy kitchen we call life, but I don't recall you having a keen interest in lepidopterology."
+        p suspicious "Lepidoptrolowhat? Is that even a word or are you trying to get one up on me?"
+        t crossedarms "Hmph: if you were even a hundredth as diligent and scholarly as me, you would've realized that lepidopterists would kill to even touch the {b}package{/b} you hold right now."
+        t smug "Who knows, if you are careless enough, maybe even little old me may take a swipe of it!"
         return
 
     elif item.makeshift_trophy:
@@ -159,7 +176,18 @@ label toasty_hints:
     elif quest.bs:
         show posty neutral
         show toasty neutral
-        t "hint for if you finished Brand Soda quest" # TODO: #18 hint for after brand soda quest (go in the museum)
+        t "You deal with that Brand Soda guy yet?"
+        p "Yeah. Yellow Diamond's gonna be their manager, to some degree."
+        t "Oh good. Now what?"
+        p "I'm not sure. I got some money out of it."
+        t smug2 "Try spending it all in one place."
+        p annoyed "Very funny."
+        t "Ok, seriously though, try going somewhere else. You spent so much time wandering around the street with Brand Soda."
+        t "Maybe you should go to that art museum. It sounds interesting!"
+        t "You could make the next big painting and get a fat paycheck from it!"
+        t "Then you could spend your money at two places!"
+        t pointandlaugh "And be twice as broke!"
+
         return
 
     elif saw.retainerblock:
