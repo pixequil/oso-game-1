@@ -35,9 +35,15 @@ label toasty_hints:
     # below this line are hints displayed in roughly reverse walkthrough order
 
     elif quest.retainer:
-        show posty neutral
+        show posty happy
         show toasty neutral
-        t "hint for if you made retainer leave but didnt talk to crayon box" #292
+        p "Oof I glad I made Retainer happy again, I can't wait to take a nap."
+        t pointandlaugh "Ohohoho what do we have here: thinking of turning truant for the treacherous mistress known as sleep?"
+        p annoyed "Stop speaking like a Victorian; you don't appear to have anything better to do."
+        t smug "I concede that I am not the shiniest appliance in this messy kitchen we call life, but I don't recall you having a keen interest in lepidopterology."
+        p suspicious "Lepidoptrolowhat? Is that even a word or are you trying to get one up on me?"
+        t crossedarms "Hmph: if you were even a hundredth as diligent and scholarly as me, you would've realized that lepidopterists would kill to even touch the {b}package{/b} you hold right now."
+        t smug "Who knows, if you are careless enough, maybe even little old me may take a swipe of it!"
         return
 
     elif item.makeshift_trophy:
