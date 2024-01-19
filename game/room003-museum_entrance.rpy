@@ -117,7 +117,7 @@ label .cameron:
     show cameron
     if quest.paintings:
         show posty neutral
-        p "_" # talking to security cameron after receiving the note of reprimand
+        p "_" #254 talking to security cameron after receiving the note of reprimand
         jump museum_entrance
     
     elif item.ladle_full:
