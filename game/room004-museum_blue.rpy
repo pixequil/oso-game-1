@@ -150,22 +150,22 @@ label .painting:
             p "_" # posty says bye
             jump museum_blue
 
-elif quest.painting_blue:
-show bg museum_blue_p_missing
-show posty concerned
-show bluetile scared
-p "What is wrong, feeling blue?"
-bt scared "It's the painting, it is gone!"
-p sad "Oh whaat nooo, you know where it went?"
-bt "God dammit no! I WOULDN'T BE LOOKING AROUND FOR IT IF I HAD IT!"
-p confused "Damn calm down dude, think where you last seen it and work backwards from there."
-p "That is what I do when I lose my extremely valuable possessions."
-bt annoyed "Ooohh it is that maroon loser who took my precious painting : that cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!
-p concerned "language"
-bt annoyed "I was always accommodating to his wishes and desires about the place; hell I was considering adding a red piece to even it out."
-bt "But the scarlet boor just went and declared war on me! That won't stand on my watch."
-p "anyway good luck with the painting"
-jump museum_blue
+    elif quest.painting_blue:
+        show bg museum_blue_p_missing
+        show posty concerned
+        show bluetile scared
+        p "What is wrong, feeling blue?"
+        bt scared "It's the painting, it is gone!"
+        p sad "Oh whaat nooo, you know where it went?"
+        bt "God dammit no! I WOULDN'T BE LOOKING AROUND FOR IT IF I HAD IT!"
+        p confused "Damn calm down dude, think where you last seen it and work backwards from there."
+        p "That is what I do when I lose my extremely valuable possessions."
+        bt annoyed "Ooohh it is that maroon loser who took my precious painting : that cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!
+        p concerned "language"
+        bt annoyed "I was always accommodating to his wishes and desires about the place; hell I was considering adding a red piece to even it out."
+        bt "But the scarlet boor just went and declared war on me! That won't stand on my watch."
+        p "anyway good luck with the painting"
+        jump museum_blue
 
     elif saw.bluetile and (item.ladle_full == False):
         show bg museum_blue_p_rusty
