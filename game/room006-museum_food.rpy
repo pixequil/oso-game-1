@@ -147,7 +147,7 @@ label .notepad_chips: #246
         notepad "I am at my wits end: starving in the middle of the food exhibit."
         notepad "I should've stayed back home, then I wouldn't have ended up here."
         notepad "Time after time I put so much heart into this, only to be thrown out like a stray cup."
-        notepad : I don't know why I bother."
+        notepad : "I don't know why I bother."
         p concerned "You want a snack?"
         notepad "What?"
         p "I got a bunch of chips if you wan-"
