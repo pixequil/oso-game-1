@@ -27,7 +27,7 @@ label toasty_hints:
         show posty happy
         show toasty neutral
         p "Oof I glad I made Retainer happy again, I can't wait to take a nap."
-        t pointandlaugh "Ohohoho what do we have here : thinking of turning truant for the treacherous mistress known as sleep?"
+        t pointandlaugh "Ohohoho what do we have here: thinking of turning truant for the treacherous mistress known as sleep?"
         p annoyed "Stop speaking like a Victorian; you don't appear to have anything better to do."
         t smug "I concede that I am not the shiniest appliance in this messy kitchen we call life, but I don't recall you having a keen interest in lepidopterology."
         p suspicious "Lepidoptrolowhat? Is that even a word or are you trying to get one up on me?"
