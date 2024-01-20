@@ -298,7 +298,11 @@ screen navigation():
 
             if main_menu:
 
-                textbutton _("Start") action Start()
+                #textbutton _("Start") action Start()
+                imagebutton:
+                    idle "gui/menu_buttons/start_idle.png"
+                    hover "gui/menu_buttons/start_hover.png"
+                    action Start()
 
             else:
 
@@ -306,9 +310,17 @@ screen navigation():
 
                 textbutton _("Save") action ShowMenu("save")
 
-            textbutton _("Load") action ShowMenu("load")
+            #textbutton _("Load") action ShowMenu("load")
+            imagebutton:
+                idle "gui/menu_buttons/load_idle.png"
+                hover "gui/menu_buttons/load_hover.png"
+                action ShowMenu("load")
 
-            textbutton _("Preferences") action ShowMenu("preferences")
+            #textbutton _("Preferences") action ShowMenu("preferences")
+            imagebutton:
+                idle "gui/menu_buttons/preferences_idle.png"
+                hover "gui/menu_buttons/preferences_hover.png"
+                action ShowMenu("preferences")
 
             if _in_replay:
 
@@ -318,20 +330,32 @@ screen navigation():
 
                 textbutton _("Main Menu") action MainMenu()
 
-            textbutton _("About") action ShowMenu("about")
+            #textbutton _("About") action ShowMenu("about")
+            imagebutton:
+                idle "gui/menu_buttons/about_idle.png"
+                hover "gui/menu_buttons/about_hover.png"
+                action ShowMenu("about")
 
-            textbutton _("Watch the show!") action OpenURL("https://www.youtube.com/playlist?list=PLxQjvGipjO7kx8qRRVeZ2CNrRWQ7AZWw7")
+            #textbutton _("Watch the show!") action OpenURL("https://www.youtube.com/playlist?list=PLxQjvGipjO7kx8qRRVeZ2CNrRWQ7AZWw7")
 
             if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
                 ## Help isn't necessary or relevant to mobile devices.
-                textbutton _("Help") action ShowMenu("help")
+                #textbutton _("Help") action ShowMenu("help")
+                imagebutton:
+                    idle "gui/menu_buttons/help_idle.png"
+                    hover "gui/menu_buttons/help_hover.png"
+                    action ShowMenu("help")
 
             if renpy.variant("pc"):
 
                 ## The quit button is banned on iOS and unnecessary on Android and
                 ## Web.
-                textbutton _("Quit") action Quit(confirm=not main_menu)
+                #textbutton _("Quit") action Quit(confirm=not main_menu)
+                imagebutton:
+                    idle "gui/menu_buttons/quit_idle.png"
+                    hover "gui/menu_buttons/quit_hover.png"
+                    action Quit()
     else:
         vbox:
             style_prefix "navigation"
@@ -339,7 +363,7 @@ screen navigation():
             xpos gui.navigation_xpos
             yalign 0.5
 
-            spacing gui.navigation_spacing
+            spacing gui.hnavigation_spacing
 
             textbutton _("History") action ShowMenu("history")
 
