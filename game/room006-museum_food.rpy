@@ -147,27 +147,27 @@ label .notepad_chips: #246
         notepad "I am at my wits end: starving in the middle of the food exhibit."
         notepad "I should've stayed back home, then I wouldn't have ended up here."
         notepad "Time after time I put so much heart into this, only to be thrown out like a stray cup."
-        notepad : "I don't know why I bother."
+        notepad "I don't know why I bother."
         p concerned "You want a snack?"
         notepad "What?"
         p "I got a bunch of chips if you wan-"
         notepad "OOOHH PLEASE GIVE IT TO ME THANK YOU SO MUCH!!!"
         p "You need it more than I do, you gone crazy."
-    show generichips at truecenter
+        show generichips at truecenter
         "You handed over the {b}Generi-Chips{/b}!"
-    $ item.chips = False
-    $ gave_chips = True
-    hide generichips
+        $ item.chips = False
+        $ gave_chips = True
+        hide generichips
         notepad "My god this tastes soooo amazing."
         notepad "First meal in a week, you are my shining saviour."
         p happy "Glad to be of help!"
         notepad "For assisting me in my direst hour, you shall have my greatest work."
         notepad "It distills my essence into a small package you can carry around as a reminder."
         p astonished "Aw shucks, that is too much!"
-    show badpainting
-        "You got the {b}napkin \"painting\"{/b}! If art is in the eye of the beholder, then this piece of litter blinds you. " 
-    $ item.napkin = True
-    hide badpainting
+        show badpainting
+        "You got the {b}napkin \"painting\"{/b}! : if this was in the eye of the beholder, then they would be blind." #245 describe napkin painting
+        $ item.napkin = True
+        hide badpainting
         p confused "Oohhheheh it looks... avant garde."
         notepad "This is for feeding me, only the best!"
         p happy "Hehe no biggie!"
@@ -177,8 +177,7 @@ label .notepad_chips: #246
         p concerned "I can't hang around any longer sadly..."
         notepad "It is a shame I can't see your enjoyment for any longer."
         p happy "See you around I guess!"
-    jump museum_food
-
+        jump museum_food
 label .notepad3: #247
     show posty neutral
     notepad "_" # revisiting notepad
