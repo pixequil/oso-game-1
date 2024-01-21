@@ -27,11 +27,6 @@ image scrapmetal:
     "items/scrapmetal.png"
     zoom 1.3
 
-image cash_bundle_1:
-    "items/cash_bundle_1.png"
-    truecenter
-    zoom 1.5
-
 default party_leave = "\"Ah sorry, we can't leave this place; 95% of the town has a restraining order against me for my promotional activities.\""
 default last.mainx = 0.0
 default last.mainy = 0.0
