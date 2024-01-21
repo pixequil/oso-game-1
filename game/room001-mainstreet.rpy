@@ -734,7 +734,16 @@ label .tooly_scrap: #277
         jump mainstreet
 
 label .tooly3:
+    show posty happy
+    p "Hey Tooly! How's business?"
+    tooly "Deader than disco."
+    tooly "Hey, what are you using that fake gold trophy for anyway?"
+    p neutral "You're better off not knowing."
+    tooly "Hmmm... sounds illegal."
+    show posty astonished
+    tooly "I'm going to have to report this as a concerned citizen."
+    tooly "PFFFT! Nah!"
     show posty neutral
-    tooly "_" #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
+    tooly "Catch you later Posty!"
     jump mainstreet
 

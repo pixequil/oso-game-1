@@ -9,9 +9,11 @@ label start:
 
     show posty happy
 
-    p "You've created a new Ren'Py game."
+    p "Hello."
 
-    p "Once you add a story, pictures, and music, you can release it to the world!"
+    p "This is a story of determination, focus and a lot of shenanigans"
+
+    p happy "I hope you enjoy this venture from the OSO team!"
 
     menu:
 
