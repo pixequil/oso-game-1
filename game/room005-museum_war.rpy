@@ -7,6 +7,11 @@ image bg museum_war_top:
     zoom 1.15
     yalign 0.2
 
+image bg war_conversation:
+    "map-bgs/war_conversation.png"
+    zoom 1.15
+    yalign 0.2
+
 image heavier:
     "items/Heavier.png"
     truecenter
@@ -87,25 +92,28 @@ label museum_war:
             jump museum_entrance
 
 label .painting1:
-    scene bg museum_war
+    scene bg war_conversation
     show painting_war
     show rcg
     show bcg
     if saw.glasses:
         show posty neutral
-        p "_" #210 revisiting the glasses while painting is still gray
+        "The two still seemed to be fighting."
         jump museum_war
     else:
         show posty neutral
-        p "_" #209 posty attempts to greet the glasses but they are too busy arguing over the painting
-        rcg "_"
-        bcg "_"
-        p "_" # posty gives up and leaves
+        p "uh excu-"
+        rcg "This art piece clearly shows the victory of the Redoinks!!"
+        bcg "No{w} - The positioning obviously implies the victory of the Blouououous."
+        bcg "They are so wounded and depressed, having to fight in a war n' all, yknow?"
+        rcg "What do you mean!?! The determination in their eyes say it all! You always see the gloomy parts of EVERYTHING!"
+        bcg "You always see the hopeful parts, even when it isn't intended!"
+        p "{i}They look busy. I should probably leave.{/i}"
         $ saw.glasses = True
         jump museum_war
 
 label .painting2:
-    scene bg museum_war
+    scene bg war_conversation
     show painting_war green
     show posty neutral
     p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
@@ -120,7 +128,7 @@ label .painting2:
     jump museum_war
 
 label .glasses2:
-    scene bg museum_war
+    scene bg war_conversation
     show rcg
     show bcg
     show posty neutral
@@ -130,7 +138,7 @@ label .glasses2:
     jump museum_war
 
 label .pal:
-    scene bg museum_war
+    scene bg war_conversation
     show palettette
     if scanter_green:
         jump .pal3
@@ -171,7 +179,7 @@ label .pal_battery: #207
     $ item.battery = False
     hide battery
     pal "_" # now that she has the battery, palettette demonstrates it on the painting near the glasses.
-    scene bg museum_war
+    scene bg war_conversation
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
@@ -186,7 +194,7 @@ label .pal_battery: #207
     hide rcg with moveoutright
     bcg "_" # bcg parting remark maybe?
     hide bcg with moveoutright
-    scene bg museum_war
+    scene bg war_conversation
     show palettette
     show posty neutral
     with pushright
