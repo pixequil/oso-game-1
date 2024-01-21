@@ -1,8 +1,7 @@
 image cash_bundle_1:
-    "items/cash_bundle.png"
-    xalign 0.5
-    yalign 0.55
-    zoom 4.0
+    "items/cash_bundle_1.png"
+    truecenter
+    zoom 1.5
 
 # todo: cash bundle 2 #249
 
