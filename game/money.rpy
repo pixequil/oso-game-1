@@ -1,8 +1,17 @@
 image cash_bundle_1:
-    "items/cash_bundle.png"
-    xalign 0.5
-    yalign 0.55
-    zoom 4.0
+    "items/cash_bundle_1.png"
+    truecenter
+    zoom 1.5
+
+image cash_bundle_2:
+    "items/cash_bundle_2.png"
+    truecenter
+    zoom 1
+
+image cash_bundle_3:
+    "items/cash_bundle_3.png"
+    truecenter
+    zoom 1.3
 
 # todo: cash bundle 2 #249
 
@@ -16,8 +25,13 @@ label money_get:
         return
     elif money == 2:
         show cash_bundle_2 at truecenter
-        "You now have {b}a lot of money{/b}!"
+        "You now have {b}some money{/b}!"
         hide cash_bundle_2
+        return
+    elif money == 3:
+        show cash_bundle_3 at truecenter
+        "You now have {b}a lot of money{/b}!"
+        hide cash_bundle_3
         return
 
 label dolly:
@@ -65,14 +79,19 @@ label .money_check:
             jump mainstreet
     elif money == 1:
         show cash_bundle_1 at truecenter
-        p "i have some money" # todo: #39 posty has "some" money. 
+        p "i have some money" # todo: #39 posty has "some" money.
         dolly "bad" #this is not enough money for Dolly; Dolly wants "a lot of" money.
         jump mainstreet
-    elif money == 2: #250
+    elif money == 2:
         show cash_bundle_2 at truecenter
+        p "i have some money" # todo: #39 posty has "some" money.
+        dolly "bad" #this is not enough money for Dolly; Dolly wants "a lot of" money.
+        jump mainstreet
+    elif money == 3: #250
+        show cash_bundle_3 at truecenter
         p "i have a lot of money" #  posty has "a lot of" money
         dolly "good" # dolly thinks this is sufficient for the loot box, although she pretends briefly that it's not, to mess with Posty. 
-        hide cash_bundle_2
+        hide cash_bundle_3
         "{b}{color=#e3d3ab}Dolly{/color}{/b} took all your {b}money{/b}!"
         if item.red_cash:
             "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}."
@@ -88,4 +107,3 @@ label .money_check:
         "You got some {b}scrap metal{/b} from the loot box!" #270
         p "_" # this disappoints and upsets posty, but Dolly will offer no refunds.
         jump mainstreet
-
