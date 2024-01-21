@@ -104,12 +104,15 @@ label .first_time:
 label .easels:
     scene bg museum_entrance
     show posty neutral at posteaselpos
-
-    "There are three {b}easels{/b} here." # TODO: #30 rewrite easel narration
-    p quiet "..."
-    "You feel ...{w} something."
-    "The germinating seeds of inspiration?"
-    "Maybe you can make a work of art here, if you collect enough {color=#ffff00}inspiration{/color}."
+    p "Hmmm...a few blank easels. Must be for on-site painters."
+    p astonished "Woah! What the?"
+    p astonished "I feel... {w}something."
+    p concerned "Could this be..."
+    p astonished "THE GERMINATING SEEDS OF INSPIRATION!?"
+    p astonished "I have to create something!"
+    p suspicious "But what?"
+    "Maybe you should take a walk around the museum. You know, for {color=#ffff00}inspiration.{/color}"
+    p happy "Good idea disembodied voice!"
     jump museum_entrance
 
 label .cameron:
