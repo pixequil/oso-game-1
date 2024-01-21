@@ -1558,6 +1558,31 @@ define bubble.expand_area = {
     "thought" : (0, 0, 0, 0),
 }
 
+## Music screen ###############################################################
+##
+## This screen is for the jukebox in the game's Music Store!
+##
+
+init python:
+    jbox = MusicRoom(fadeout=1.0)
+
+    jbox.add("sound/music/Example Song 1.mp3", always_unlocked =True)
+    jbox.add("sound/music/Example Song 2.mp3", always_unlocked =True)
+    jbox.add("sound/music/Example Song 3.mp3", always_unlocked =True)
+
+screen juke_box():
+    tag menu
+    frame:
+        has vbox:
+            textbutton "''BRANCHLESS''\n by Michael Huang" action jbox.Play("sound/music/Example Song 1.mp3")
+            textbutton "''SEASON COMING TO AN END''\n by Michael Huang" action jbox.Play("sound/music/Example Song 2.mp3")
+            textbutton "''STREETLIGHT''\n by Michael Huang" action jbox.Play("sound/music/Example Song 3.mp3")
+
+            textbutton "Return to the Music Store (THIS DOES NOT WORK RIGHT NOW)" action ShowMenu()
+
+#label juke_box_label:
+    #call screen juke_box
+    #return
 
 
 ################################################################################

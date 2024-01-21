@@ -6,7 +6,15 @@ image bg music_top:
 image bg music:
     "dbgs/music_store_dbg.png"
 
+image bg musicplayer:
+    "gui/frame.png"
+
 label musicstore:
+    if musicroomplayer:
+        hide screen juke_box
+        stop music fadeout 3.0
+
+
     $ last.mainx = 0.15
     scene bg music_top
     show posty neutral
@@ -72,6 +80,7 @@ label .sheet:
     jump musicstore
 
 label .jb:
+
     scene bg music
     show jb
     show posty neutral
@@ -87,7 +96,7 @@ label .jb:
         p "Great idea."
         $ saw.jb = True
     else:
-        jb "Let's listen to some music!"   
+        jb "Let's listen to some music!"
     menu:
         "Talk to Jukebox.":
             jump .talk
@@ -110,5 +119,7 @@ label .talk:
     jump .jb
 
 label .tunes:
-    "This feature is not yet available." #298 jukebox music player
+    $ musicroomplayer = True
+    show screen juke_box
+    # "This feature is not yet available." #298 jukebox music player
     jump .jb
