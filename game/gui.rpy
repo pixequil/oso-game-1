@@ -101,13 +101,13 @@ define gui.textbox_height = 185
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = 0.95
 
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 240
-define gui.name_ypos = 0
+define gui.name_xpos = 400
+define gui.name_ypos = -5
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -130,11 +130,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 268
-define gui.dialogue_ypos = 50
+define gui.dialogue_xpos = 408
+define gui.dialogue_ypos = 40
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 744
+define gui.dialogue_width = 544
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -248,7 +248,7 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 40
+define gui.navigation_xpos = 60
 
 ## The vertical position of the skip indicator.
 define gui.skip_ypos = 10
@@ -260,7 +260,8 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 4
+define gui.navigation_spacing = 20
+define gui.hnavigation_spacing = 5
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 10

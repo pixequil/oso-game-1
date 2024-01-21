@@ -281,11 +281,11 @@ label firstscene:
     scene black
     p "..."
     p "And this is going to..."
-    
+
     show bg mainstreet # TODO: #23 main street conversation bg
     $ renpy.transition(dissolve, layer="master") #prevents interruption of the text window
     show posty neutral
-    show btnet 
+    show btnet
 
     extend " {b}{color=#c0d4e7}Crayon Box{/color}{/b}, at {i}1189 Brick Ave{/i}, right?"
     btnet "That's right!"
@@ -314,7 +314,7 @@ label firstscene:
     show toasty turned2
     $ renpy.transition(moveinbottom, layer="master") #prevents interruption of the text window
     p "I can't believe I get to be involved in Open Source Objects!!!"
-    t "La la la, just minding my own business..." 
+    t "La la la, just minding my own business..."
     t annoyed "Oh. {i}You're{/i} here. Didn't see ya."
     p neutral "Hi Toasty."
     t smug "Guess you got another job, huh."
@@ -358,7 +358,7 @@ label .go_museum:
 
 #     menu:
 #         "B.T. Net":
-#             jump .btnet 
+#             jump .btnet
 #         "Dolly":
 #             jump dolly # in money.rpy
 #         "Miso Soup":
@@ -369,24 +369,24 @@ label .go_museum:
 #             call toasty_hints
 #             jump mainstreet
 #         "Tooly":
-#             jump .tooly 
+#             jump .tooly
 #         "Yellow Diamond" if quest.bs == False:
 #             jump .yd
 #         "Yellow Diamond & Brand Soda" if quest.bs:
 #             jump .yd
 #         "Ticket Booth":
-#             jump .tb       
+#             jump .tb
 # label .go:
 
 #     menu:
 #         "Music Store":
-#             jump musicstore 
+#             jump musicstore
 #         "Art Museum":
-#             jump museum_entrance 
+#             jump museum_entrance
 #         "Shady Back Alley":
-#             jump alley 
+#             jump alley
 #         "Park":
-#             jump park 
+#             jump park
 #         "The Dome":
 #             jump dome
 
@@ -401,7 +401,7 @@ label .tb: #293
     if party_bs:
         show posty neutral
         show tb shy
-        show bs follow behind posty with moveinleft 
+        show bs follow behind posty with moveinleft
         bs "Yooooooo, what up!"
         tb shy "Ummmmm...hi..."
         tb shy "I'm sorry, I don't do well in mobs."
@@ -451,7 +451,7 @@ label .brandsoda:
 
     show bs follow with move:
         xalign 0.35
-    
+
     bs "Nope, it's already decided. I'm here now!"
 
     $ party_bs = True
@@ -487,7 +487,7 @@ label .yd:
         yd "Oh yeah! Uhhhhhhh..."
         call .yd_quals
         p neutral "Don't worry, I'm still looking for someone! You'll be the first to know!"
-        jump mainstreet    
+        jump mainstreet
     else:
         yd "Hiiiiiiii!"
         p suspicious "Uhh...hi."
@@ -605,16 +605,16 @@ label .miso:
         miso "What are you guys talking about?"
         p confused " AHHHH! Nothing!"
         jump mainstreet
-    
+
     elif (item.ladle_empty == False) and (miso_took == False):
         show posty neutral
         p "_" # TODO: #46 miso soup conversation before youve taken any soup
         miso "_"
         jump mainstreet
-    
+
     elif item.ladle_empty and (miso_took == False):
         show posty neutral
-        p "_" # TODO: #47 you take soup from Miso Soup 
+        p "_" # TODO: #47 you take soup from Miso Soup
         miso "_"
         $ item.ladle_empty = False
         $ item.ladle_full = True
@@ -644,7 +644,7 @@ label .btnet:
     $ last.mainx = 0.0
     scene bg mainstreet
     show btnet
-        
+
     if party_bs:
         show posty happy
         show bs follow behind posty with moveinleft
@@ -737,4 +737,3 @@ label .tooly3:
     show posty neutral
     tooly "_" #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
     jump mainstreet
-
