@@ -417,7 +417,7 @@ label .tb: #293
         tb "Oh, hello!"
         tb "Heh heh..."
         p "Isn't working in front of a theater a bit of a strange career choice for you?"
-        tb "I don't know...it pays wells."
+        tb "I don't know...it pays well."
         tb "Though what I really want to do is work on Broadway."
         p happy "Good luck with that!"
         jump mainstreet
