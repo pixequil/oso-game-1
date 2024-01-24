@@ -1,8 +1,17 @@
 image cash_bundle_1:
-    "items/cash_bundle.png"
-    xalign 0.5
-    yalign 0.55
-    zoom 4.0
+    "items/cash_bundle_1.png"
+    truecenter
+    zoom 1.5
+
+image cash_bundle_2:
+    "items/cash_bundle_2.png"
+    truecenter
+    zoom 1
+
+image cash_bundle_3:
+    "items/cash_bundle_3.png"
+    truecenter
+    zoom 1.3
 
 # todo: cash bundle 2 #249
 
@@ -16,8 +25,13 @@ label money_get:
         return
     elif money == 2:
         show cash_bundle_2 at truecenter
-        "You now have {b}a lot of money{/b}!"
+        "You now have {b}some money{/b}!"
         hide cash_bundle_2
+        return
+    elif money == 3:
+        show cash_bundle_3 at truecenter
+        "You now have {b}a lot of money{/b}!"
+        hide cash_bundle_3
         return
 
 label dolly:
@@ -113,8 +127,16 @@ label .money_check:
         dolly "I want A LOT of money, Posty. Double what you have now."
         p happy "Ok, I'll be back later." #this is not enough money for Dolly; Dolly wants "a lot of" money.
         jump mainstreet
-    elif money == 2: #250
+    elif money == 2:
         show cash_bundle_2 at truecenter
+        hide lootbox
+        p happy "I have some money. Is this enough for anything?" # todo: #39 posty has "some" money. 
+        dolly "Only my pocket lint."
+        dolly "I want A LOT of money, Posty. Double what you have now."
+        p happy "Ok, I'll be back later." #this is not enough money for Dolly; Dolly wants "a lot of" money.
+        jump mainstreet
+    elif money == 3: #250
+        show cash_bundle_3 at truecenter
         p happy "I've got plenty of money. Here you go." #  posty has "a lot of" money
         dolly "Hmmm, sorry. You're still short."
         p astonished "What?!?"
@@ -138,4 +160,3 @@ label .money_check:
         p annoyed "Oh. Wow."
         dolly "Thank you! Come again! No refunds!" # this disappoints and upsets posty, but Dolly will offer no refunds.
         jump mainstreet
-
