@@ -99,7 +99,7 @@ label .talk:
     show posty neutral
     p "What is it you do again?"
     jb "I can play any music you give me!"
-    jb "Whether its the music in this game or some original music of my own, I can play it and swap out the music in this store!"
+    jb "Whether it's the music in this game or some original music of my own, I can play it and swap out the music in this store!"
     show posty confused
     jb "I even have some remixed OSO tracks!"
     p confused "The music in this what?"
