@@ -7,9 +7,8 @@ image bg museum_war_top:
     zoom 1.15
     yalign 0.2
 
-image bg war_conversation:
-    "map-bgs/war_conversation.png"
-    zoom 1.15
+image bg museum_war:
+    "dbgs/museum_war_dbg.png"
     yalign 0.2
 
 image heavier:
@@ -92,7 +91,7 @@ label museum_war:
             jump museum_entrance
 
 label .painting1:
-    scene bg war_conversation
+    scene bg museum_war
     show painting_war
     show rcg
     show bcg
@@ -113,7 +112,7 @@ label .painting1:
         jump museum_war
 
 label .painting2:
-    scene bg war_conversation
+    scene bg museum_war
     show painting_war green
     show posty neutral
     p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
@@ -128,7 +127,7 @@ label .painting2:
     jump museum_war
 
 label .glasses2:
-    scene bg war_conversation
+    scene bg museum_war
     show rcg
     show bcg
     show posty neutral
@@ -138,7 +137,7 @@ label .glasses2:
     jump museum_war
 
 label .pal:
-    scene bg war_conversation
+    scene bg museum_war
     show palettette
     if scanter_green:
         jump .pal3
@@ -179,7 +178,7 @@ label .pal_battery: #207
     $ item.battery = False
     hide battery
     pal "_" # now that she has the battery, palettette demonstrates it on the painting near the glasses.
-    scene bg war_conversation
+    scene bg museum_war
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
@@ -194,7 +193,7 @@ label .pal_battery: #207
     hide rcg with moveoutright
     bcg "_" # bcg parting remark maybe?
     hide bcg with moveoutright
-    scene bg war_conversation
+    scene bg museum_war
     show palettette
     show posty neutral
     with pushright
