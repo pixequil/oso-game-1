@@ -123,7 +123,7 @@ label .money_check:
         hide cash_bundle_2
         "{b}{color=#e3d3ab}Dolly{/color}{/b} took all your {b}money{/b}!"
         if item.red_cash:
-            "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}. Anyway though!"
+            "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}."
         dolly "Your patronage is appreciated." # "much appreciated!"
         p suspicious "So, the loot box!" # "... so, the loot box?"
         dolly "Oh yes, of course!"
