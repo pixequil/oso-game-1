@@ -771,7 +771,7 @@ label .tooly2: #276
     p "Hey Tooly!"
     tooly "Hey customer!" # tooly reminds posty that she can craft stuff if you ever bring her some raw materials
     p "Can you remind me of our deal again?"
-    tooly "Wasn't expecting you to have dementia, but..."
+    tooly "Wasn't expecting you to forget so easily, but..."
     tooly "Just for being my first customer of the day, if you personally bring me the raw materials to craft anything, I'll do your first job completely free!"
     p "Awesome!"
     if item.scrapmetal:
