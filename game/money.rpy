@@ -89,6 +89,7 @@ label .money_check:
     if money == 0:
         if item.red_cash:
             show redcash
+            hide lootbox
             p happy "I have some red cash if that will work."
             dolly "Oooh, sorry. There's no market anymore in red dollars."
             show posty concerned
