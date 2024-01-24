@@ -48,8 +48,15 @@ label toasty_hints:
 
     elif item.makeshift_trophy:
         show posty neutral
-        show toasty neutral
-        t "hint for if you have the makeshift trophy (give it to retainer)" #281
+        show toasty enthused 
+        t "You have a nice trophy with ya, what you going to do with it?"
+        p "Dunno, probably put it on a shelf at home; pretend to be a winner and show it off."
+        t smug "Well it would severely clash with the decor, especially with the grey curtains and general lack of furniture."
+        p annoyed "Rude. Also how did you find my address-"
+        t crossedarms "Keep your petty questions for later! You said this thing made you feel like a winner, right?"
+        p suspicious "Yeah"
+        t "Well I think there is someone who would like that feeling, someone down on their luck..."
+        t enthused "A big hulking trophy would bring their spirits right up!"
         return
     
     elif item.notice:
