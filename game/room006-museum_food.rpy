@@ -116,9 +116,19 @@ label .notepad:
         jump .notepad1
 
 label .notepad1: #244
-    show posty neutral
+    show posty concerned
     $ saw.notepad = True
-    notepad "_" # notepad explains their whole deal. A starving artist (emphasis on “starving”)/doodler who has had no luck in convincing any curators to buy their art for any price. They’re extremely upset and hungry, and will trade their art for food at this point.
+    p "Oh my, are you alright?"
+    notepad "Can't you tell?! I am rock bottom here."
+    notepad "I have turned my whole damn life upside down for the chance of exhibitions and I can't even find a bite to eat!!"
+    notepad "Many times I pleaded and begged the curators to buy my life's work, many times they rejected me..."
+    p sad "Damn that sucks."
+    notepad "Not even half of it: I even reduced my prices all the way down to $2 for everything I ever made."
+    notepad "You know what they said? No!"
+    notepad "I am at my wits end: starving in the middle of the food exhibit."
+    notepad "I should've stayed back home, then I wouldn't have ended up here."
+    notepad "Time after time I put so much heart into this, only to be thrown out like a stray cup."
+    notepad "I don't know why I bother."
     if item.chips:
         jump .notepad_chips
     else:
@@ -137,17 +147,6 @@ label .notepad2: #244
         jump museum_food
 
 label .notepad_chips: #246
-        p concerned "Oh my, are you alright?"
-        notepad "Can't you tell?! I am rock bottom here."
-        notepad "I have turned my whole damn life upside down for the chance of exhibitions and I can't even find a bite to eat!!"
-        notepad "Many times I pleaded and begged the curators to buy my life's work, many times they rejected me..."
-        p sad "Damn that sucks"
-        notepad "Not even half of it: I even reduced my prices all the way down to $2 for everything I ever made."
-        notepad "You know what they said? No!"
-        notepad "I am at my wits end: starving in the middle of the food exhibit."
-        notepad "I should've stayed back home, then I wouldn't have ended up here."
-        notepad "Time after time I put so much heart into this, only to be thrown out like a stray cup."
-        notepad "I don't know why I bother."
         p concerned "You want a snack?"
         notepad "What?"
         p "I got a bunch of chips if you wan-"
