@@ -634,7 +634,7 @@ label .miso:
         miso "Oh, it gets worse!"
         miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
         miso "This guy in an alley even told me I was cool for having the notice of reprimand!"
-        miso "I dont want weird guys from alleys to think I'm cool!!"
+        miso "I dont want weird guys from alleys to think I'm cool!"
         p "I'm sorry, there's nothing I can really do to help right now."
         p "If I can find a way to make it up, I'll let you know."
         miso "Thanks for trying, I guess."
