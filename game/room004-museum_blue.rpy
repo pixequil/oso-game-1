@@ -152,9 +152,19 @@ label .painting:
 
     elif quest.painting_blue:
         show bg museum_blue_p_missing
-        show posty neutral
+        show posty concerned
         show bluetile scared
-        p "_" # blue tile after the painting is stolen (still doesn't know posty did it)
+        p "What is wrong, feeling blue?"
+        bluetile scared "It's the painting, it is gone!"
+        p sad "Oh whaat nooo, you know where it went?"
+        bluetile "God dammit no! I WOULDN'T BE LOOKING AROUND FOR IT IF I HAD IT!"
+        p confused "Damn calm down dude, think where you last seen it and work backwards from there."
+        p "That is what I do when I lose my extremely valuable possessions."
+        bluetile annoyed "Ooohh it is that maroon loser who took my precious painting : that cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!"
+        p concerned "language"
+        bluetile annoyed "I was always accommodating to his wishes and desires about the place; hell I was considering adding a red piece to even it out."
+        bluetile "But the scarlet boor just went and declared war on me! That won't stand on my watch."
+        p "anyway good luck with the painting"
         jump museum_blue
 
     elif saw.bluetile and (item.ladle_full == False):
