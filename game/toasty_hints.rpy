@@ -150,7 +150,7 @@ label toasty_hints:
         t "Or even dying after from a box that had lethal arsenic powder inside of it."
         show posty angry
         t smug2 "Either way, I want you to know I'm happy for you."
-        posty annoyed "I'm very reassured."
+        p annoyed "I'm very reassured."
 #hint:if you have spray paint but nothing to decorate(see dolly) #265
         return
 
