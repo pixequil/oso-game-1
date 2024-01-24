@@ -607,9 +607,27 @@ label .miso:
         jump mainstreet
     
     elif (item.ladle_empty == False) and (miso_took == False):
-        show posty neutral
-        p "_" # TODO: #46 miso soup conversation before youve taken any soup
-        miso "_"
+        if saw.miso:
+            show posty neutral
+            p "Still worried about uhh all that?"
+            miso "I feel like you didn't pay attention..."
+        else:
+            show posty neutral
+            $ saw.miso = True
+            p "Hello!"
+            miso " {i}Ohhh, my family is gonna kill me... {/i}"
+            p concerned "Is there a problem?"
+            miso "Huh? Oh hi, didn't see you there!"
+            miso "You betcha there's a problem! I just got banned from the musuem!"
+            miso "The security guard in there said I spilled my soup on one of the security gates and almost ruined one of the paintings!"
+            miso "But I didn't do it! I always bring plastic wrap to protect the soup from spilling! Honest!"
+            miso "I tried telling him I didn't do it, but he wrote me a notice of reprimand anyway and kicked me out! That guy is so strict!"
+            p "Dang, that sucks..."
+            miso "Oh, it gets worse!"
+            miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
+            p "I'm sorry, there's nothing I can really do to help right now."
+            p "If I can find a way to make it up, I'll let you know."
+            miso "Thanks for trying, I guess."
         jump mainstreet
     
     elif item.ladle_empty and (miso_took == False):
