@@ -48,8 +48,15 @@ label toasty_hints:
 
     elif item.makeshift_trophy:
         show posty neutral
-        show toasty neutral
-        t "hint for if you have the makeshift trophy (give it to retainer)" #281
+        show toasty enthused 
+        t "You have a nice trophy with ya, what you going to do with it?"
+        p "Dunno, probably put it on a shelf at home; pretend to be a winner and show it off."
+        t smug "Well it would severely clash with the decor, especially with the grey curtains and general lack of furniture."
+        p annoyed "Rude. Also how did you find my address-"
+        t crossedarms "Keep your petty questions for later! You said this thing made you feel like a winner, right?"
+        p suspicious "Yeah"
+        t "Well I think there is someone who would like that feeling, someone down on their luck..."
+        t enthused "A big hulking trophy would bring their spirits right up!"
         return
     
     elif item.notice:
@@ -139,20 +146,46 @@ label toasty_hints:
 
     elif quest.paintings and (quest.moneys == False) and (money == 2):
         show posty neutral
-        show toasty neutral
-        t "hint for if you have the spray paint but nothing to decorate with it (see dolly)" #265
+        show toasty neutral2
+        t "What'cha got there?"
+        p "Gold spray paint."
+        t smug3 "Taking up a life of crime, Posty?"
+        p concerned "No, I'm just holding onto it. I'm not sure what to do with it though."
+        t crossedarms "It looks like you've got enough money to spend on a loot box from Dolly's."
+        t "If you're lucky, you could get the perfect thing to spray paint."
+        t "Granted, I've heard stories of people going broke from the insurance costs of a new car."
+        t "Or even dying after from a box that had lethal arsenic powder inside of it."
+        show posty angry
+        t smug2 "Either way, I want you to know I'm happy for you."
+        p annoyed "I'm very reassured."
+#hint:if you have spray paint but nothing to decorate(see dolly) #265
         return
 
     elif quest.paintings and (quest.bs == False):
         show posty neutral
-        show toasty neutral
-        t "hint for if you have the spray paint but nothing to decorate with it (talk to bs)" #265
+        show toasty neutral2
+        t "What'cha got there?"
+        p "Gold spray paint."
+        t smug3 "Turning into an graffiti artist, Posty?"
+        p concerned "No, I'm just holding onto it. I'm not sure what to do with it though."
+        t smug2 "You could get ideas from people on the street. That soda can guy's always in need for a commission."
+        t laugh "They're so self-absorbed that you'd never run out of work!"
+        t laugh "Hope you like drawing a soda can for the rest of your life!"
+#hint:if you have spray paint but nothing to decorate(talk to bs)" #265
         return
 
     elif quest.paintings and (money == 1):
         show posty neutral
-        show toasty neutral
-        t "hint for if you have the spray paint but nothing to decorate with it (do food exhibit quest)" #265
+        show toasty neutral2
+        t "What'cha got there?"
+        p "Gold spray paint."
+        t smug3 "Wanting to get into mural art, Posty?"
+        p concerned "No, I'm just holding onto it. I'm not sure what to do with it though."
+        t enthused "Maybe you need to get some inspiration."
+        p happy "Like in the art museum?"
+        show posty angry
+        t smug2 "I was actually thinking about you ruminating in a hole in the ground, but that works too."
+#hint:if you have the spray paint but nothing to decorate with it (do food exhibit quest)" #265
         return
 
     elif paintings == 3 and (quest.paintings == False):
