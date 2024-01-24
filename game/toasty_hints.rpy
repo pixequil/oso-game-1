@@ -55,12 +55,13 @@ label toasty_hints:
     elif item.notice:
         show posty concerned
         show toasty smug
-        t "Posty, is that what I think I see?"
+        t "Posty! Is that what I think I see?"
         p "Yeah, it's a notice of reprimand from the art museum."
         t pointandlaugh "HA HA HA!"
-        t enthused "Oh, tsk tsk. Posty!"
-        t enthused "Don't you know those things are only given to the worst of people? The lowest forms of life? The raffiest of the riffraff? "
-        p annoyed "I think I get the picture, Toasty."
+        t smug2 "Oh, tsk tsk. Posty!"
+        t smug5 "Don't you know those things are only given to the worst of people? The lowest forms of life? The raffiest of the riffraff? "
+        p annoyed "I get the picture, Toasty."
+        t neutral2 "I don't know how you could be so cruel..."
         t turned2 "In fact, I shouldn't even speak to scoundrelous scum such as you."
         p angry "C'mon Toasty! I need your help! What do I do with this notice?"
         t turned "Blah blah blah, I'm not listening to you..."
