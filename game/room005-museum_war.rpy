@@ -7,6 +7,10 @@ image bg museum_war_top:
     zoom 1.15
     yalign 0.2
 
+image bg museum_war:
+    "dbgs/museum_war_dbg.png"
+    yalign 0.2
+
 image heavier:
     "items/Heavier.png"
     truecenter
@@ -93,14 +97,17 @@ label .painting1:
     show bcg
     if saw.glasses:
         show posty neutral
-        p "_" #210 revisiting the glasses while painting is still gray
+        "The two still seemed to be fighting."
         jump museum_war
     else:
         show posty neutral
-        p "_" #209 posty attempts to greet the glasses but they are too busy arguing over the painting
-        rcg "_"
-        bcg "_"
-        p "_" # posty gives up and leaves
+        p "uh excu-"
+        rcg "This art piece clearly shows the victory of the Redoinks!!"
+        bcg "No{w} - The positioning obviously implies the victory of the Blouououous."
+        bcg "They are so wounded and depressed, having to fight in a war n' all, yknow?"
+        rcg "What do you mean!?! The determination in their eyes say it all! You always see the gloomy parts of EVERYTHING!"
+        bcg "You always see the hopeful parts, even when it isn't intended!"
+        p "{i}They look busy. I should probably leave.{/i}"
         $ saw.glasses = True
         jump museum_war
 

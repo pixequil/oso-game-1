@@ -33,7 +33,6 @@ label .nl:
         neon "All I need is a record and a player and I'm set for life!"
         neon "Hopefully you will find it as stellar as I do: it wouldn't hurt to find a fellow aficionado to talk with!"
         neon "What can I help you find?"
-
         $ saw.nl = True
     else:
         show posty neutral
@@ -41,10 +40,10 @@ label .nl:
     p "Nothing at the moment."
     neon "Ok..."
     neon "Nothing. Of course. Just like I do every day I stand in front of this stupid stand for 8 stupid hours talking to these stupid-"
-    p "Excuse me?"
+    p concerned "Excuse me?"
     neon "...I said as long as you're still browsing, you can talk to Jukebox in the corner and play some music."
     neon "Maybe you'll like one of them enough to purchase one."
-    p "Sounds cool. I'll be sure to check it out."
+    p happy "Sounds cool. I'll be sure to check it out."
     jump musicstore
 
 label .sheet:
@@ -62,8 +61,8 @@ label .sheet:
     else:
         show posty neutral
         sheet "Nice to see ya again! How may I help you?"
-        p "Asking again probably wouldn't hurt."
-    p "You wouldn't happen to know how to deliever a package safely, would you?"
+        p quiet "Asking again probably wouldn't hurt."
+    p neutral "You wouldn't happen to know how to deliever a package safely, would you?"
     sheet "Nope."
     p "Yeah, that checks."
     sheet "To be honest, there's not much to do here other than listen to music."
@@ -74,7 +73,7 @@ label .sheet:
 label .jb:
     scene bg music
     show jb
-    show posty neutral
+    show posty happy
     if (saw.jb == False):
         jb "Sup, I'm Jukebox (Juke for short)."
         p "Hello, Jukebox! I'm Posty!"
@@ -100,12 +99,12 @@ label .talk:
     show posty neutral
     p "What is it you do again?"
     jb "I can play any music you give me!"
-    jb "Whether its the music in this game or some original music of my own, I can play it and swap out the music in this store!"
+    jb "Whether it's the music in this game or some original music of my own, I can play it and swap out the music in this store!"
     show posty confused
     jb "I even have some remixed OSO tracks!"
     p confused "The music in this what?"
     jb "The music in this store."
-    p neutral"Oh OK. Sorry for mishearing you."
+    p neutral "Oh OK. Sorry for mishearing you."
     jb "That's OK, I get that all the time."
     jump .jb
 
