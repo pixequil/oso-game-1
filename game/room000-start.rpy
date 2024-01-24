@@ -13,7 +13,7 @@ label start:
 
     p "This is a story of determination, focus and a lot of shenanigans"
 
-    p happy "I hope you enjoy this venture from the OSO team!"
+    p happy "I hope you enjoy this WIP adventure from the OSO team!"
 
     menu:
 
