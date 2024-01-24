@@ -816,7 +816,7 @@ label .tooly3:
     show posty happy
     p "Hey Tooly! How's business?"
     tooly "Deader than disco." #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
-    tooly "Hey, what are you using that fake trophy for anyway?"
+    tooly "Hey, what are you using that epic trophy for anyway?"
     p neutral "You're better off not knowing."
     tooly "Hmmm... sounds illegal."
     show posty astonished
