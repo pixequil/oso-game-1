@@ -755,7 +755,7 @@ label .tooly1: #276
     p concerned "Oh, I'm kinda broke."
     p concerned "Would it be cheaper if I just loaned you the raw materials myself?" 
     tooly "Hmmmm..."
-    tooly "You seem like a nice enough guy, so tell you what!"
+    tooly "You seem like a nice enough girl, so tell you what!"
     tooly "Just for being my first customer of the day, if you personally bring me the raw materials to craft anything, I'll do your first job completely free!"
     p happy "Awesome!"
     $ saw.tooly = True
