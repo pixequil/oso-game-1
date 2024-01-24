@@ -75,14 +75,14 @@ label toasty_hints:
     elif item.battery:
         show posty neutral
         show toasty neutral
-        p happy: "Duh duh dum, dum diddly dum-"
-        t enthused: "Hello my most perfidious postbox."
-        p annoyed: "not again _coughs_ so what you need?"
-        t crossedarms: "I was just wondering what you have in your hand?"
-        p suspicious: "Just a battery."
-        t angry: "That's it? I thought it would be something more valuable."
-        p concerned: "I dunno, something intrigues me about it."
-        t smug: "Could it be its satisfying weight, finely crafted out of the earth's treasures?"
+        p happy "Duh duh dum, dum diddly dum-"
+        t enthused "Hello my most perfidious postbox."
+        p annoyed "not again _coughs_ so what you need?"
+        t crossedarms "I was just wondering what you have in your hand?"
+        p suspicious "Just a battery."
+        t angry "That's it? I thought it would be something more valuable."
+        p concerned "I dunno, something intrigues me about it."
+        t smug "Could it be its satisfying weight, finely crafted out of the earth's treasures?"
         t "Maybe its cold metal gives tingles as though a hidden memory is unlocked from your steely heart."
         p confused "Why you being so fancy with the descriptions?"
         t enthused "Oh! I can put my curiosities to rest-"
