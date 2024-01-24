@@ -621,8 +621,8 @@ label .miso:
         jump mainstreet
     
     elif (item.ladle_empty == False) and (miso_took == False):
-        show posty neutral
-        p "Hello!"
+        show posty happy
+        p happy "Hello!"
         miso " {i}Ohhh, my family is gonna kill me... {/i}"
         p concerned "Is there a problem?"
         miso "Huh? Oh hi, didn't see you there!"
@@ -633,6 +633,8 @@ label .miso:
         p "Dang, that sucks..."
         miso "Oh, it gets worse!"
         miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
+        miso "This guy in an alley even told me I was cool for having the notice of reprimand!"
+        miso "I dont want weird guys from alleys to think I'm cool!"
         p "I'm sorry, there's nothing I can really do to help right now."
         p "If I can find a way to make it up, I'll let you know."
         miso "Thanks for trying, I guess."
