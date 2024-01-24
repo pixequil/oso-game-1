@@ -819,10 +819,10 @@ label .tooly3:
     tooly "Hey, what are you using that epic trophy for anyway?"
     p neutral "You're better off not knowing."
     tooly "Hmmm... sounds illegal."
-    show posty astonished
+    p astonished "..!"
     tooly "I'm going to have to report this as a concerned citizen."
     tooly "PFFFT! Nah!"
-    show posty neutral
+    p neutral "..."
     tooly "Catch you later Posty!"
     jump mainstreet
 
