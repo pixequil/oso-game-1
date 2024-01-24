@@ -98,7 +98,7 @@ label .money_check:
             hide lootbox
             jump mainstreet
         else:
-            p concerned "Ooh, uh, I'm afraid I don't have any money."
+            p concerned "I'm afraid I don't have any money."
             p concerned "Can we barter?"
             dolly "No."
             dolly "Come back when you have a penny to your name, Posty." # todo: #38 posty has no 
