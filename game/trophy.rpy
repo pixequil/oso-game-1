@@ -6,9 +6,9 @@ image makeshift_trophy:
     rotate 45
 
 label trophy:
+    show spraypaint at truecenter
     p "Oh! Like this?" #280 "oh, i know what to use this for!"
     tooly "Perfect!"
-    show spraypaint
     show scraptrophy
     #279 add a quick animation for using the spray paint on the trophy. just moving them around and making the screen flash should be sufficient
     hide spraypaint
