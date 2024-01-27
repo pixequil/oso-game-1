@@ -145,7 +145,7 @@ label .rt:
                     show posty concerned
                     p "I have this red bill I found on the floor." # red tile takes the red cash.
                     redtile "Hey! I must've dropped this on the way in!"
-                    redtile "This is worth to me than any plain old dollar bill!"
+                    redtile "This is worth more to me than any plain old dollar bill!"
                     redtile "Thanks, Posty! You got yourself a deal. Gimme a second to get started!"
                     redtile "Hey, Bluey!"
                     hide redtile moveoutright
