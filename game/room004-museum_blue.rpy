@@ -187,7 +187,7 @@ label .painting:
         bluetile annoyed "Ooohh, it's that maroon loser who took my precious painting. That cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!"
         bluetile  "I was always accommodating to their wishes and desires! I was even considering going to a red exhibit down the street to even it out!"
         bluetile "But that scarlet boor just went and declared war on me! That won't stand on my watch."
-        p "Anyway good luck with the painting"
+        p "Um, good luck with that."
         jump museum_blue
 
     elif saw.bluetile and (item.ladle_full == False):
