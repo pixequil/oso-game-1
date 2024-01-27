@@ -119,16 +119,16 @@ label .rt:
         show redtile 
         p "Hey Red, mind if I ask you a favour!" #118
         redtile "Sure, whatcha want me to do?"
-        p concerned "I attempted to \"add\" some colour to the exhibition, but Bluey here stopped me."
+        p concerned "I attempted to \"add\" some colour to the exhibition, but Blue Tile stopped me."
         redtile "Ah of course, Blue would never let his precious little pieces get harmed."
-        p suspicious "Well, I noticed that the guy gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple of remarks."
-        redtile "No way."
-        p astonished "Come on, you can get revenge for the Red Exhibit, just some small talk!"
-        redtile "When it comes to the colour blue, it is never small talk."
+        p suspicious "Well, I noticed that he gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple remarks about the color blue for me."
+        redtile "No way. I risked too much as is."
+        p astonished "Come on, you can get revenge on Blue Tile, just some small talk!"
+        redtile "When it comes to the colour blue, there is never just small talk."
         redtile "That guy can be so hung up on that it is annoying."
-        redtile "One more hour of him whining and I am leaving."
+        redtile "One more hour of him talking and I am going to lose it!"
         p concerned "What would it take?"
-        redtile "Maybe some cash... If I have to deal with him, atleast I should be fairly compensated for my sacrifice."
+        redtile "Maybe some cash. If I have to deal with him, at least I should be fairly compensated for my sacrifice."
         label .rt_money:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
