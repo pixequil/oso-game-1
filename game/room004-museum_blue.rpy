@@ -148,7 +148,7 @@ label .rt:
                     redtile "This is worth more to me than any plain old dollar bill!"
                     redtile "Thanks, Posty! You got yourself a deal. Gimme a second to get started!"
                     redtile "Hey, Bluey!"
-                    hide redtile moveoutright
+                    hide redtile with moveoutright
                     "Red Tile draws Blue Tile's attention away from the painting and asks him about his favorite shades of blue. They look absolutely bored."
                     "Now's your chance to use that soup and get that painting!"
                     $ item.red_cash = False
