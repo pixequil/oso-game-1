@@ -220,7 +220,7 @@ label .painting_ladle:
         hide painting_blue
         p happy "Ohohoho, I'm closer to true creativity!"
         p astonished "Uh oh, here comes Bluey!"
-        hide posty with moveoutleft
+        hide posty with moveoutright
         show bluetile behind posty
         $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
         $ item.ladle_full = False
