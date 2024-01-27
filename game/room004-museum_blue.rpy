@@ -116,7 +116,19 @@ label .rt:
 
     elif item.ladle_full and miso_blocked:
         show posty neutral
-        p "_" #118 red tile offers to distract blue tile in exchange for the money (and because they want that painting harmed)
+        show redtile 
+        p "Hey Red, mind if I ask you a favour!" #118
+        redtile "Sure, whatcha want me to do?"
+        p concerned "I attempted to 'add' some colour to the exhibition, but Bluey here stopped me."
+        redtile "Ah of course, Blue would never let his precious little pieces get harmed."
+        p suspicious "Well, I noticed that the guy gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple of remarks."
+        redtile "No way."
+        p astonished "Come on, you can get revenge for the Red Exhibit, just some small talk!"
+        redtile "When it comes to the colour blue, it is never small talk."
+        redtile "That guy can be so hung up on that it is annoying."
+        redtile "One more hour of him whining and I am leaving."
+        p concerned "What would it take?"
+        redtile "Maybe some cash... If I have to deal with him, atleast I should be fairly compensated for my sacrifice."
         label .rt_money:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
@@ -182,28 +194,39 @@ label .painting_ladle:
         show bg museum_blue_p_rusty
         show posty neutral
         show ladle_full
-        show rusty_gate
-        p "_" #121 scene where posty, alone, splashes miso soup on the painting and takes the painting on impulse now that the bars are rusted away. blue tile shows up, too late, and is upset about it.
+        p concerned "Aighty, here it goes!" #121
         hide ladle_full
-        hide rusty_gate
-        show rusty_gate_broken
-        "You repeat Red Tile's crime, splashing more miso soup on the painting!"
         show bg museum_blue_p_opened
-        hide rusty_gate_broken
-        p "__" # posty takes the painting.
+        "You repeat Red Tile's crime, splashing more miso soup on the painting!"
+        p angry "Drat, I missed."
+        p annoyed "All I hit was this gate that has rusted open-"
+        p astonished quiet "!!"
+        p happy "I just got an idea.."
         show bg museum_blue_p_missing
-        show painting_blue #122 blue exhibit main painting on display
-        "You got an {b}art piece{/b}!" #127 describe blue painting
+        show painting_blue #122
+        "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour." #127
+        hide painting_blue
+        p happy "Ohohoho I can't wait to see Bluey's face!"
+        hide posty with moveoutleft
+        show bluetile behind posty
+        $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
         $ item.ladle_full = False
         $ item.painting_blue = True
         $ quest.painting_blue = True
         $ bt_distracted = False
         $ paintings += 1
-        hide painting_blue
-        show bluetile scared behind posty
-        $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
-        bluetile "_" # blue tile freaks out
-        p "_" # posty decides to quickly leave.
+        bluetile annoyed "I swear I have never seen a more unqualified person in my life; he can't appreciate their subtle nuances-"
+        bluetile annoyed quiet "..."
+        bluetile scared "Where did the painting go?"
+        bluetile scared "This exhibit has been... vandalized"
+        bluetile scared "My piece, gone."
+        bluetile annoyed "Who did this?"
+        bluetile annoyed "Who dared to lay their fingertips on this masterpiece??"
+        bluetile annoyed "I'll find that thief and stuff them with so much legalese they will be speaking it."
+        bluetile annoyed "DO YOU KNOW WHO I AM?!"
+        bluetile annoyed "I HAVE A WHOLE BOOK OF LAWYERS READY TO LITIGATE YOUR EXISTENCE, CAN YOU HEAR ME?!"
+        bluetile annoyed "I swear if that piece doesn't comeback here with thirty minutes I'll send the dogs out."
+        bluetile annoyed "Aaaaaaaaaaaaaarggh"
         jump museum_blue
 
     else:
