@@ -119,7 +119,7 @@ label .rt:
         show redtile 
         p "Hey Red, mind if I ask you a favour!" #118
         redtile "Sure, whatcha want me to do?"
-        p concerned "I attempted to 'add' some colour to the exhibition, but Bluey here stopped me."
+        p concerned "I attempted to \"add\" some colour to the exhibition, but Bluey here stopped me."
         redtile "Ah of course, Blue would never let his precious little pieces get harmed."
         p suspicious "Well, I noticed that the guy gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple of remarks."
         redtile "No way."
