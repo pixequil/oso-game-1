@@ -123,7 +123,7 @@ label .rt:
         redtile "Ah of course, Blue would never let his precious little pieces get harmed."
         p suspicious "Well, I noticed that he gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple remarks about the color blue for me."
         redtile "No way."
-        p astonished "Come on, you can get revenge on Blue Tile, just some small talk!"
+        p astonished "Come on, you can get revenge on Blue Tile! Just some small talk!"
         redtile "When it comes to the colour blue, there is never just small talk."
         redtile "That guy can be so hung up on that it is annoying."
         redtile "One more hour of him talking and I am going to lose it!"
@@ -210,7 +210,7 @@ label .painting_ladle:
         hide ladle_full
         show bg museum_blue_p_opened
         "You repeat Red Tile's crime, splashing more miso soup on the painting!"
-        p angry "Drat, I missed."
+        p angry "Drat, I missed!"
         p annoyed "All I hit was this gate that has rusted open-"
         p astonished quiet "!!"
         p happy "I just got an idea.."
