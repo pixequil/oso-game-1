@@ -232,14 +232,14 @@ label .painting_ladle:
         bluetile annoyed quiet "..."
         bluetile scared "Where did the painting go?"
         bluetile scared "This exhibit has been... vandalized!"
-        bluetile scared "My piece, gone!"
-        bluetile annoyed "Who did this?"
-        bluetile annoyed "Who dared to lay their fingertips on this masterpiece??"
-        bluetile annoyed "I'll find that thief and stuff them with so much legalese they will be speaking it."
-        bluetile annoyed "DO YOU KNOW WHO I AM?!"
-        bluetile annoyed "I HAVE A WHOLE BOOK OF LAWYERS READY TO LITIGATE YOUR EXISTENCE, CAN YOU HEAR ME?!"
-        bluetile annoyed "I swear if that piece doesn't comeback here with thirty minutes I'll send the dogs out."
-        bluetile annoyed "Aaaaaaaaaaaaaarggh"
+        bluetile scared "My favorite piece, gone!"
+        bluetile scared "Who did this?!"
+        bluetile scared "Who dared to lay their fingertips on this masterpiece?!"
+        bluetile scared "I'll find that thief and stuff them with so much legalese they will be speaking it."
+        bluetile scared "DO YOU KNOW WHO I AM?!"
+        bluetile scared "I HAVE A WHOLE BOOK OF LAWYERS READY TO LITIGATE YOUR EXISTENCE, CAN YOU HEAR ME?!"
+        bluetile annoyed "I swear if that piece doesn't come back here with thirty minutes, I'll send the dogs out."
+        bluetile annoyed "Aaaaaaaaaaaaaarggh!"
         jump museum_blue
 
     else:
