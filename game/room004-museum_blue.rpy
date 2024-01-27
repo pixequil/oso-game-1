@@ -217,6 +217,7 @@ label .painting_ladle:
         show bg museum_blue_p_missing
         show painting_blue #122
         "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour." #127
+        "You now have some {color=#ffff00}{i}inspiration{/i}{/color}!"
         hide painting_blue
         p happy "Ohohoho I can't wait to see Bluey's face!"
         hide posty with moveoutleft
@@ -230,8 +231,8 @@ label .painting_ladle:
         bluetile annoyed "I swear I have never seen a more unqualified person in my life; he can't appreciate their subtle nuances-"
         bluetile annoyed quiet "..."
         bluetile scared "Where did the painting go?"
-        bluetile scared "This exhibit has been... vandalized"
-        bluetile scared "My piece, gone."
+        bluetile scared "This exhibit has been... vandalized!"
+        bluetile scared "My piece, gone!"
         bluetile annoyed "Who did this?"
         bluetile annoyed "Who dared to lay their fingertips on this masterpiece??"
         bluetile annoyed "I'll find that thief and stuff them with so much legalese they will be speaking it."
