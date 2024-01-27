@@ -228,7 +228,7 @@ label .painting_ladle:
         $ quest.painting_blue = True
         $ bt_distracted = False
         $ paintings += 1
-        bluetile annoyed "I swear I have never seen a more unqualified person in my life; he can't appreciate their subtle nuances-"
+        bluetile annoyed "I swear I have never seen a more unqualified person in my life; they can't appreciate the subtle nuances-"
         bluetile annoyed quiet "..."
         bluetile scared "Where did the painting go?"
         bluetile scared "This exhibit has been... vandalized!"
