@@ -219,7 +219,8 @@ label .painting_ladle:
         "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour." #127
         "You now have some {color=#ffff00}{i}inspiration{/i}{/color}!"
         hide painting_blue
-        p happy "Ohohoho I can't wait to see Bluey's face!"
+        p happy "Ohohoho, I'm closer to true creativity!"
+        p astonished "Uh oh, here comes Bluey!"
         hide posty with moveoutleft
         show bluetile behind posty
         $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
