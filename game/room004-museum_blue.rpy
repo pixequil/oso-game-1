@@ -125,7 +125,7 @@ label .rt:
         redtile "No way."
         p astonished "Come on, you can get revenge on Blue Tile! Just some small talk!"
         redtile "When it comes to the colour blue, there is never just small talk."
-        redtile "That guy can be so hung up on that it is annoying."
+        redtile "That guy can be so hung up on that, it's annoying."
         redtile "One more hour of him talking and I am going to lose it!"
         redtile "Besides, I've risked too much as is."
         p concerned "What would it take?"
