@@ -210,10 +210,10 @@ label .painting_ladle:
         hide ladle_full
         show bg museum_blue_p_opened
         "You repeat Red Tile's crime, splashing more miso soup on the painting!"
-        p angry "Drat, I missed!"
+        p angry "Drat, I missed! Curse you weak arms!"
         p annoyed "All I hit was this gate that has rusted open-"
         p astonished quiet "!!"
-        p happy "I just got an idea.."
+        p happy "I just got an idea..."
         show bg museum_blue_p_missing
         show painting_blue #122
         "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour." #127
