@@ -178,17 +178,16 @@ label .painting:
         show bg museum_blue_p_missing
         show posty concerned
         show bluetile scared
-        p "What is wrong, feeling blue?"
-        bluetile scared "It's the painting, it is gone!"
-        p sad "Oh whaat nooo, you know where it went?"
-        bluetile "God dammit no! I WOULDN'T BE LOOKING AROUND FOR IT IF I HAD IT!"
-        p confused "Damn calm down dude, think where you last seen it and work backwards from there."
-        p "That is what I do when I lose my extremely valuable possessions."
-        bluetile annoyed "Ooohh it is that maroon loser who took my precious painting : that cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!"
-        p concerned "language"
-        bluetile annoyed "I was always accommodating to his wishes and desires about the place; hell I was considering adding a red piece to even it out."
-        bluetile "But the scarlet boor just went and declared war on me! That won't stand on my watch."
-        p "anyway good luck with the painting"
+        p "What's wrong? Feeling blue?"
+        bluetile "It's the painting of Crayon Box! It's gone!"
+        p sad "Oh whaaat? Noooooo! You know where it went?"
+        bluetile "I WOULDN'T BE LOOKING AROUND FOR IT IF I KNEW, POSTY!"
+        p concerned "Calm down, blue dude! Think about where you last saw it and work backwards from there."
+        p "That's what I do when I lose my valuable possessions."
+        bluetile annoyed "Ooohh, it's that maroon loser who took my precious painting. That cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!"
+        bluetile  "I was always accommodating to their wishes and desires! I was even considering going to a red exhibit down the street to even it out!"
+        bluetile "But that scarlet boor just went and declared war on me! That won't stand on my watch."
+        p "Anyway good luck with the painting"
         jump museum_blue
 
     elif saw.bluetile and (item.ladle_full == False):
