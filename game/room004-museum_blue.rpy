@@ -134,12 +134,23 @@ label .rt:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
                     show cash_bundle_1
-                    p "_" # red tile refuses the regular cash.
+                    show posty concerned
+                    p "Will $20 in cash do?" # red tile refuses the regular cash.
+                    redtile "You would need to offer me way more money than that. You got anything else?"
+                    p "Let me check. Sorry, I've never bribed anybody before."
                     hide cash_bundle_1
                     jump .rt_money
                 "Offer red cash.":
                     show redcash
-                    p "_" # red tile takes the red cash.
+                    show posty concerned
+                    p "I have this red bill I found on the floor." # red tile takes the red cash.
+                    redtile "Hey! I must've dropped this on the way in!"
+                    redtile "This is worth to me than any plain old dollar bill!"
+                    redtile "Thanks, Posty! You got yourself a deal. Gimme a second to get started!"
+                    redtile "Hey, Bluey!"
+                    hide redtile moveoutright
+                    "Red Tile draws Blue Tile's attention away from the painting and asks him about his favorite shades of blue. They look absolutely bored."
+                    "Now's your chance to use that soup and get that painting!"
                     $ item.red_cash = False
                     $ bt_distracted = True
                     jump museum_blue
