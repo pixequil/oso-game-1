@@ -116,17 +116,41 @@ label .rt:
 
     elif item.ladle_full and miso_blocked:
         show posty neutral
-        p "_" #118 red tile offers to distract blue tile in exchange for the money (and because they want that painting harmed)
+        show redtile 
+        p "Hey Red, mind if I ask you a favour!" #118
+        redtile "Sure, whatcha want me to do?"
+        p concerned "I attempted to \"add\" some colour to the exhibition, but Blue Tile stopped me."
+        redtile "Ah of course, Blue would never let his precious little pieces get harmed."
+        p suspicious "Well, I noticed that he gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple remarks about the color blue for me."
+        redtile "No way."
+        p astonished "Come on, you can get revenge on Blue Tile! Just some small talk!"
+        redtile "When it comes to the colour blue, there is never just small talk."
+        redtile "That guy can be so hung up on that, it's annoying."
+        redtile "One more hour of him talking and I am going to lose it!"
+        redtile "Besides, I've risked too much as is."
+        p concerned "What would it take?"
+        redtile "Maybe some cash. If I have to deal with him, at least I should be fairly compensated for my sacrifice."
         label .rt_money:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
                     show cash_bundle_1
-                    p "_" # red tile refuses the regular cash.
+                    show posty concerned
+                    p "Will $20 in cash do?" # red tile refuses the regular cash.
+                    redtile "You would need to offer me way more money than that. You got anything else?"
+                    p "Let me check. Sorry, I've never bribed anybody before."
                     hide cash_bundle_1
                     jump .rt_money
                 "Offer red cash.":
                     show redcash
-                    p "_" # red tile takes the red cash.
+                    show posty concerned
+                    p "I have this red bill I found on the floor." # red tile takes the red cash.
+                    redtile "Hey! I must've dropped this on the way in!"
+                    redtile "This is worth more to me than any plain old dollar bill!"
+                    redtile "Thanks, Posty! You got yourself a deal. Gimme a second to get started!"
+                    redtile "Hey, Bluey!"
+                    hide redtile with moveoutright
+                    "Red Tile draws Blue Tile's attention away from the painting and asks him about his favorite shades of blue. They look absolutely bored."
+                    "Now's your chance to use that soup and get that painting!"
                     $ item.red_cash = False
                     $ bt_distracted = True
                     jump museum_blue
@@ -154,17 +178,16 @@ label .painting:
         show bg museum_blue_p_missing
         show posty concerned
         show bluetile scared
-        p "What is wrong, feeling blue?"
-        bluetile scared "It's the painting, it is gone!"
-        p sad "Oh whaat nooo, you know where it went?"
-        bluetile "God dammit no! I WOULDN'T BE LOOKING AROUND FOR IT IF I HAD IT!"
-        p confused "Damn calm down dude, think where you last seen it and work backwards from there."
-        p "That is what I do when I lose my extremely valuable possessions."
-        bluetile annoyed "Ooohh it is that maroon loser who took my precious painting : that cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!"
-        p concerned "language"
-        bluetile annoyed "I was always accommodating to his wishes and desires about the place; hell I was considering adding a red piece to even it out."
-        bluetile "But the scarlet boor just went and declared war on me! That won't stand on my watch."
-        p "anyway good luck with the painting"
+        p "What's wrong? Feeling blue?"
+        bluetile "It's the painting of Crayon Box! It's gone!"
+        p sad "Oh whaaat? Noooooo! You know where it went?"
+        bluetile "I WOULDN'T BE LOOKING AROUND FOR IT IF I KNEW, POSTY!"
+        p concerned "Calm down, blue dude! Think about where you last saw it and work backwards from there."
+        p "That's what I do when I lose my valuable possessions."
+        bluetile annoyed "Ooohh, it's that maroon loser who took my precious painting. That cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!"
+        bluetile  "I was always accommodating to their wishes and desires! I was even considering going to a red exhibit down the street to even it out!"
+        bluetile "But that scarlet boor just went and declared war on me! That won't stand on my watch."
+        p "Um, good luck with that."
         jump museum_blue
 
     elif saw.bluetile and (item.ladle_full == False):
@@ -182,28 +205,41 @@ label .painting_ladle:
         show bg museum_blue_p_rusty
         show posty neutral
         show ladle_full
-        show rusty_gate
-        p "_" #121 scene where posty, alone, splashes miso soup on the painting and takes the painting on impulse now that the bars are rusted away. blue tile shows up, too late, and is upset about it.
+        p concerned "Aighty, here it goes!" #121
         hide ladle_full
-        hide rusty_gate
-        show rusty_gate_broken
-        "You repeat Red Tile's crime, splashing more miso soup on the painting!"
         show bg museum_blue_p_opened
-        hide rusty_gate_broken
-        p "__" # posty takes the painting.
+        "You repeat Red Tile's crime, splashing more miso soup on the painting!"
+        p angry "Drat, I missed! Curse you weak arms!"
+        p annoyed "All I hit was this gate that has rusted open-"
+        p astonished quiet "!!"
+        p happy "I just got an idea..."
         show bg museum_blue_p_missing
-        show painting_blue #122 blue exhibit main painting on display
-        "You got an {b}art piece{/b}!" #127 describe blue painting
+        show painting_blue #122
+        "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour." #127
+        "You now have some {color=#ffff00}{i}inspiration{/i}{/color}!"
+        hide painting_blue
+        p happy "Ohohoho, I'm closer to true creativity!"
+        p astonished "Uh oh, here comes Bluey!"
+        hide posty with moveoutright
+        show bluetile behind posty
+        $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
         $ item.ladle_full = False
         $ item.painting_blue = True
         $ quest.painting_blue = True
         $ bt_distracted = False
         $ paintings += 1
-        hide painting_blue
-        show bluetile scared behind posty
-        $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
-        bluetile "_" # blue tile freaks out
-        p "_" # posty decides to quickly leave.
+        bluetile annoyed "I swear I have never seen a more unqualified person in my life; they can't appreciate the subtle nuances-"
+        bluetile annoyed quiet "..."
+        bluetile scared "Where did the painting go?"
+        bluetile scared "This exhibit has been... vandalized!"
+        bluetile scared "My favorite piece, gone!"
+        bluetile scared "Who did this?!"
+        bluetile scared "Who dared to lay their fingertips on this masterpiece?!"
+        bluetile scared "I'll find that thief and stuff them with so much legalese, they will be speaking it!"
+        bluetile scared "DO YOU KNOW WHO I AM?!"
+        bluetile scared "I HAVE A WHOLE BOOK OF LAWYERS READY TO LITIGATE YOUR EXISTENCE, CAN YOU HEAR ME?!"
+        bluetile annoyed "I swear if that piece doesn't come back here with thirty minutes, I'll send the dogs out."
+        bluetile annoyed "Aaaaaaaaaaaaaarggh!"
         jump museum_blue
 
     else:
