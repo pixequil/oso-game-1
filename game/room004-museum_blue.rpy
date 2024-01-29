@@ -89,7 +89,28 @@ label .rt:
 
     if quest.painting_blue:
         show posty neutral
-        p "_" #126 red tile after you steal the painting
+        redtile "How it'd go?"
+        p happy "Perfect! I missed the painting and completely melted the fence."
+        redtile "That sounds like you failed."
+        p "Well actually, you know how Blue Tile is always obsessed with the blue exhibit?"
+        redtile "Uh huh."
+        p "And how he goes absolutely ballistic if you even touch them wrong?"
+        redtile "Yeah, what about it?"
+        p happy "I got one of them."
+        $ renpy.transition(hpunch, layer="master")
+        redtile "WHAT?!"
+        p "I have one of the blue paintings."
+        redtile "Y-You have one of them?! One of the things that gets Bluey in a twist?"
+        p suspicious "Why did you think I paid you to argue with the guy? I ain't exactly invisible, so I needed a distraction."
+        redtile "I thought you were going to splash the paintings a bit or flip them upside down, not straight up rob the place!"
+        p happy "As Piquante once said: good artists copy, great artists steal!"
+        redtile "He didn't mean {i}literally{/i} stealing anything! It was a metaphor for making your ideas your own-"
+        p "Yeah yeah, \"the opposite of a fait accompli is to make.\" I got it!"
+        redtile "You're a criminal, Posty! But so am I. I'm sure we can agree not to rat each other out?"
+        p "Oh totally!"
+        redtile "Great. Thanks again by the way!"
+        redtile "Y'know, for helping me with my revenge."
+        p "Enjoy the cash!" #126
         jump museum_blue
 
     if saw.redtile == False:
@@ -142,7 +163,18 @@ label .rt:
 
     elif item.ladle_empty:
         show posty neutral
-        p "_" # todo: #44 short conversation with red tile
+        p "Hey, Red Tile."
+        redtile "Just call me Red. Have you gotten rid of that ladle yet?"
+        p "No, but I should be able to keep it a secret as long as I've got it hidden."
+        redtile "Ok, well be careful. I don't want the security guard or Blue figuring out I tried to vandalize this painting."
+        redtile "Even though it deserves it. It's a mockery to the medium itself!"
+        redtile "Even a small trace of dark red would create a more appealing contrast than just light blue and dark blue."
+        p "You know, if I wanted to, I could do what you did again and take the painting for myself."
+        p astonished "I really want that painting. It sings to me..."
+        redtile "You're not saying you're gonna risk your own life to deface an art piece, are you?"
+        p "No..."
+        p "And on that note, I need to go."
+        # todo: #44 short conversation with red tile
         jump museum_blue
 
     elif bt_distracted:
@@ -199,8 +231,23 @@ label .rt:
                     jump museum_blue
 
     elif item.ladle_full:
-        show posty neutral
-        p "_" #130 red tile refuses to use the ladle a second time, urging posty to do it
+        show posty astonished
+        show redtile
+        redtile "What are you still doing with that ladle, Posty?"
+        p "I filled it with miso soup again!"
+        redtile "What? What happened to \"get it as far away from here as you can?\""
+        p "It's complicated! Look, you have to take this ladle back!"
+        show ladle_full
+        p "You need to splash the soup on the painting! You have to do it for me!"
+        redtile "Posty, I gotta go on living!"
+        p "Just throw it! Throw it when no one's looking!"
+        redtile "You throw it when no one's looking!"
+        p "I can't! I'm not sneaky! They'll send me to jail and I can't afford bail on a post office salary! Please, you gotta do it for me, I'm begging you!"
+        redtile "Nothing doing! I can't be seen with the ladle! I'm trying to lay low! It has to be you!"
+        p concerned "OK, I guess I'll do it myself."
+        p angry "But I get arrested for this..."
+        extend "I'll be really upset with you."
+        hide ladle_full
         jump museum_blue
 
 
@@ -333,11 +380,17 @@ label .painting_ladle:
 
 label .painting_ladle_blocked:
     show bg museum_blue_p_rusty
-    show posty neutral
+    show posty concerned
     show bluetile scared
     $ miso_blocked = True
-    "You attempt to repeat Red Tile's crime, splashing more miso soup on the painting."
-    p "_" #116 blue tile stops you from splashing miso soup on the painting when you try to.
+    "You attempt to repeat Red Tile's crime, unsheathing the ladle filled with miso soup and preparing to toss it at the painting."
+    p concerned "Alrighty, here it goes!" #116
+    bluetile "HEY!! What do you think you're doing?!"
+    p quiet "... "
+    extend neutral "Nothing."
+    bluetile annoyed "Liar! I will not let you do {i}anything{/i} to ruin this glorious painting!"
+    bluetile "This is everything I live for! And you are not gonna take it away so easily!!"
+    bluetile "So scram you vandal!"
     jump museum_blue
 
 
