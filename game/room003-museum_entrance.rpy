@@ -155,8 +155,9 @@ label .cameron:
         cameron "Kidding, kidding. Not that much of a deterrent to be honest, what with the little kiddies turning it into a game."
         cameron "Back at my last job, I would've punted you and that salty saboteur out the door faster than you can say \"paintbrush\"!"
         cameron "Enough rambling, really need to keep my eye open to ensure history doesn't get anymore messed with..."
+        cameron "or covered in soup..."
         cameron "or burnt..."
-        cameron "or covered in soup."
+        cameron "or ... {i}un{/i}burnt..."
         jump museum_entrance
     
     elif item.ladle_full:
