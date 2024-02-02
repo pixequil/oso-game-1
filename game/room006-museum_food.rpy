@@ -94,7 +94,7 @@ label .marble_napkin:
     "You handed over the {b}priceless, one-of-a-kind highbrow painting{/b}!"
     $ item.napkin = False
     hide badpainting
-    $ money += 1
+    $ money += 2
     $ quest.money_food = True
     show cash_bundle_2 at truecenter
     $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
