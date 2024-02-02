@@ -245,7 +245,7 @@ label .rt:
         p "I can't! I'm not sneaky! They'll send me to jail and I can't afford bail on a post office salary! Please, you gotta do it for me, I'm begging you!"
         redtile "Nothing doing! I can't be seen with the ladle! I'm trying to lay low! It has to be you!"
         p concerned "OK, I guess I'll do it myself."
-        p angry "But I get arrested for this..."
+        p angry "But if I get arrested for this..."
         extend "I'll be really upset with you."
         hide ladle_full
         jump museum_blue
