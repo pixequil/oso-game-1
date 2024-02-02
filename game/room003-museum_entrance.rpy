@@ -123,9 +123,9 @@ label .first_time:
     p neutral quiet "..."
     cameron "Anyway."
     cameron "Please visit our current exhibits on the color blue, war, and food respectively! You may gain an hidden appreciation for each subject in a way you never had before!"
-    p "Sounds cool. I like art."
+    p -quiet "Sounds cool. I like art."
     cameron "Enjoy your time at the museum. Have a souptacular— I mean spectacular day. Ugh!!!" 
-    p -quiet "...See ya."
+    p "...See ya."
     $ saw.museum = True
     jump museum_entrance
 
