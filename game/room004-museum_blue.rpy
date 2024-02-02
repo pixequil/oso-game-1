@@ -256,8 +256,8 @@ label .painting:
         bluetile annoyed "Ooohh, it's that maroon loser who took my precious painting. That cultural ignoramus was never open to anything that didn't rhyme with zred or mrimson!"
         bluetile  "I was always accommodating to their wishes and desires! I was even considering going to a red exhibit down the street to even it out!"
         bluetile "But that scarlet boor just went and declared war on me! That won't stand on my watch."
-        p quiet "{i}Gosh, he's angry! You almost feel bad. {/i}"
-        extend quiet "{i}Almost.{/i}"
+        "{i}Gosh, he's angry! You almost feel bad. {/i}"
+        extend "{i}Almost.{/i}"
         p talk "Um, good luck with your search."
         jump museum_blue
 
