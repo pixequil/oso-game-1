@@ -2,13 +2,44 @@
 
 # todo: war main exhibit painting #225
 
-image bg museum_war_top:
-    "map-bgs/museum_war_top.png"
-    zoom 1.15
-    yalign 0.2
+image bg war_ex_1:
+    "map-bgs/war_exhibit_1_default.png"
+    zoom 1.1
+    yalign 1
 
-image bg museum_war:
-    "dbgs/museum_war_dbg.png"
+image bg war_ex_2:
+    "map-bgs/war_exhibit_3_batteries_gotten.png"
+    zoom 1.1
+    yalign 1
+
+image bg war_ex_blue:
+    "map-bgs/war_exhibit_4_blue_painting.png"
+    zoom 1.1
+    yalign 1
+
+image bg war_ex_red:
+    "map-bgs/war_exhibit_5_red_painting.png"
+    zoom 1.1
+    yalign 1
+
+image bg war_ex_green:
+    "map-bgs/war_exhibit_6_green_painting.png"
+    zoom 1.1
+    yalign 1
+
+image bg war_ex_invert:
+    "map-bgs/war_exhibit_7_inverted_painting.png"
+    zoom 1.1
+    yalign 1
+
+image bg war_ex_no:
+    "map-bgs/war_exhibit_8_no_painting.png"
+    zoom 1.1
+    yalign 1
+
+image bg war_conversation:
+    "map-bgs/war_conversation.png"
+    zoom 1.15
     yalign 0.2
 
 image heavier:
@@ -52,6 +83,7 @@ image deed:
     xalign 0.44
     yalign 0.5
     zoom 1.5
+    alpha 0.8
 
 image painting_war:
     "items/war_Exhibit_photo_original.png"
@@ -67,7 +99,15 @@ image painting_war green:
 label museum_war:
     if saw.war == False:
         jump .capsulefirst
-    scene bg museum_war_top
+    if item.battery == True and deed_burned == True:
+        scene bg war_ex_2
+    elif scanter_green == True:
+        scene bg war_ex_green
+    elif item.painting_war == True:
+        scene bg war_ex_no
+    else:
+        scene bg war_ex_1
+
     show posty neutral
 
     p "_" # todo: war exhibit imagemap #150 #169
@@ -91,7 +131,7 @@ label museum_war:
             jump museum_entrance
 
 label .painting1:
-    scene bg museum_war
+    scene bg war_conversation
     show painting_war
     show rcg
     show bcg
@@ -112,7 +152,7 @@ label .painting1:
         jump museum_war
 
 label .painting2:
-    scene bg museum_war
+    scene bg war_conversation
     show painting_war green
     show posty neutral
     p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
@@ -127,7 +167,7 @@ label .painting2:
     jump museum_war
 
 label .glasses2:
-    scene bg museum_war
+    scene bg war_conversation
     show rcg
     show bcg
     show posty neutral
@@ -137,7 +177,7 @@ label .glasses2:
     jump museum_war
 
 label .pal:
-    scene bg museum_war
+    scene bg war_conversation
     show palettette
     if scanter_green:
         jump .pal3
@@ -178,7 +218,7 @@ label .pal_battery: #207
     $ item.battery = False
     hide battery
     pal "_" # now that she has the battery, palettette demonstrates it on the painting near the glasses.
-    scene bg museum_war
+    scene bg war_conversation
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
@@ -193,7 +233,7 @@ label .pal_battery: #207
     hide rcg with moveoutright
     bcg "_" # bcg parting remark maybe?
     hide bcg with moveoutright
-    scene bg museum_war
+    scene bg war_conversation
     show palettette
     show posty neutral
     with pushright
@@ -209,7 +249,7 @@ label .pal3:
     jump museum_war
 
 label .ahiss:
-    scene bg museum_war
+    scene bg war_conversation
     show champurrlain #166
     if deed_burned:
         jump .ahiss3
@@ -299,7 +339,7 @@ label .ahiss3:
 label .buff:
     if burger_extinguish == True:
         jump .buff2
-    scene bg museum_war
+    scene bg war_conversation
     show burger fire # full-size fire burger painting (and fire-free version) #156
     show posty neutral
     show buff
@@ -323,7 +363,7 @@ label .buff:
     jump museum_war
 
 label .buff2:
-    scene bg museum_war
+    scene bg war_conversation
     show burger out
     show posty neutral
     show buff
@@ -331,7 +371,7 @@ label .buff2:
     jump museum_war
 
 label .capsulefirst:
-    scene bg museum_war
+    scene bg war_conversation
     show posty neutral 
     show capsule pain
     capsule "Hey! You there, do you mind helping me out with a favor?"
@@ -350,9 +390,9 @@ label .capsulefirst:
     jump museum_war
 
 label .capsule:
-    scene bg museum_war
+    scene bg war_conversation
     show posty neutral
     show capsule happy
     p "_" # Capsule re-explains what the heavier does, in case you forgot. #155 
     jump museum_war
-    
+
