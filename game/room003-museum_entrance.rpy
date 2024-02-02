@@ -80,7 +80,7 @@ label .inspiration:
     cameron "Well, I already kicked someone out today, and if I did it again, it would look bad."
     cameron "So no."
     cameron "But I WILL be confiscating this..."
-     # cameron is really mad, as he's finally noticed that you've been stealing paintings
+    # cameron is really mad, as he's finally noticed that you've been stealing paintings
     # have now  into this 'mess'
     # posty asks if she's going to be kicked out
     # reluctantly, cameron explains that he's already kicked someone out today,
