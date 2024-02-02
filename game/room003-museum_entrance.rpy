@@ -171,9 +171,9 @@ label .cameron:
         cameron "While I'm standing here? I doubt that."
         p "No seriously! It's gone!"
         cameron "Really?"
-        hide cameron
+        hide cameron with moveoutright
         p "I hope this gets suspicion off of me."
-        show cameron
+        show cameron with moveinright
         cameron "Someone did steal a painting! It must've been the same soup scoundrel from earlier! They might still be here!"
         cameron "No one is allowed off the premises!"
         cameron "Except you, Posty!"
