@@ -2,7 +2,7 @@
 
 image bg janitors_top:
     "map-bgs/janitors_top.png"
-    zoom 1.15
+    zoom 1.45
     yalign 0.2
 
 image bg janitors:
