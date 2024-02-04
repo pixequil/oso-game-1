@@ -282,7 +282,7 @@ label firstscene:
     p "..."
     p "And this is going to..."
     
-    show bg mainstreet # TODO: #23 main street conversation bg
+    show bg mainstreet
     $ renpy.transition(dissolve, layer="master") #prevents interruption of the text window
     show posty neutral
     show btnet 
