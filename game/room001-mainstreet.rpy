@@ -443,9 +443,9 @@ label .brandsoda:
     show posty neutral
     show bs behind posty
 
-    bs "Yo, Posty! How’s my favorite mailbox?"
+    bs "Yo, Posty! How\'s my favorite mailbox?"
     p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
-    bs "Dope. Who’s it for?"
+    bs "Dope. Who\'s it for?"
     p happy "The OSO Dome."
     bs "WOAH! That...is...big! Something like that is bound to draw a lot of attention…"
     bs "Do you have any idea how overwhelming that could be?"
