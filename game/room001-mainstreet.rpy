@@ -395,7 +395,7 @@ label .toasty:
     call toasty_hints
     jump mainstreet
 
-label .tb: #293
+label .tb:
     $ last.mainx = 0.0
     scene bg mainstreet
     if party_bs:
