@@ -52,7 +52,15 @@ label .bench:
 label .win:
     scene bg park
     show posty neutral
-    p "_" #290 posty, finished with her work for the day, finally decides to take a nap on the bench!
+    "It had been a long and busy day."
+    p happy "It sure was!"
+    "What was supposed to be a simple delivery of some butterflies became a hectic blur of tasks, people and talking as she met with a wide variety of people throughout the city."
+    "Some people lived lives that were beyond her comprehension; artists, connoisseurs, wannabe marketers, lords even!"
+    p astonished "I didn't even know they were still around!"
+    "Well, 'lords'."
+    "As the weight of sleep gradually settled, she felt a sense of satisfaction."
+    "Another job well done!"
+    p happy "zzzzzz"
     menu:
         "End the game?"
 
