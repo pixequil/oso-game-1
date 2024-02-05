@@ -85,7 +85,7 @@ label .marble2: #248
     jump museum_food
 
 label .marble_napkin: 
-    marble "Hold on. What is that your holding?"
+    marble "Hold on. What is that you're holding?"
     p "This?"
     show badpainting
     marble "Why.. This is the greatest artwork I have ever seen! I simple must have it for my collection!! I will pay handsomely!"
