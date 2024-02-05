@@ -68,7 +68,7 @@ label .marble:
     label .marble1: #248
     show posty neutral
     $ saw.marble = True
-    marble "As an art critic and collector, I am severely disappointed with these so-called 'artworks'! Everything here is so bland."
+    marble "As an art critic and collector, I am severely disappointed with these so-called \"artworks\"! Everything here is so bland."
     p "..Okaay?"
     if item.napkin:
         jump .marble_napkin
