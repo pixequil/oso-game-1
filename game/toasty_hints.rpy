@@ -134,7 +134,30 @@ label toasty_hints:
     elif miso_blocked and (quest.painting_blue == False):
         show posty neutral
         show toasty neutral
-        t "hint for if blue tile doesn't let you spill soup on the painting" #117
+        p "Hey Toasty?"
+        t "What?"
+        p "I need some help, could you lend a hand?"
+        t smug "No."
+        p angry "And why not?"
+        t crossedarms "Busy."
+        p "Doing what?"
+        t pointandlaugh "Not helping you."
+        p "I will give you a papercut with one of these envelopes if you don\'t help me."
+        t "HAH! I\'d like to see you try."
+        show ladle_full
+        p "Ok, how about I pour this miso soup on you?"
+        t neutral "...Why do you just have a ladle of miso soup? Are you going to eat that or something?"
+        p suspicious "No, look, I\'m only telling you this because you\'re enough of an idiot to support it, but I need to dump this on a painting, and someone is in my way."
+        t enthused "Ooh~ defiling stuff? Count me in!"
+        p angry "Absolutely not, you\'d just get us caught by insulting me."
+        t smug2 "Touche, either way, whatcha gonna do about it?"
+        p concerned "I\'m… not sure. You\'re good with these things, that\'s why I came to you."
+        t enthused "Well, if someone is in your way, couldn\'t you just get them… out of your way?"
+        p angry "If it was that simple I would\'ve done it already."
+        t laugh "Maybe you could just kill them and go to prison so I wouldn\'t have to talk to you again."
+        p annoyed "Gee, thanks. Any ACTUAL suggestions?"
+        t smug "If you aren\'t willing to do it, find someone else who is!"
+        p angry "I\'M NOT GONNA KILL TH- ugh, you\'re useless."
         return
 
     elif item.ladle_full:
