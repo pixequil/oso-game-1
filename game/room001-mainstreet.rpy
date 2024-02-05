@@ -658,8 +658,8 @@ label .miso:
         jump mainstreet
 
     elif miso_took and (quest.painting_blue == False):
-        show posty neutral
-        p sad "Again, I'm so sorry for taking some of your soup."
+        show posty sad
+        p "Again, I'm so sorry for taking some of your soup."
         miso "What did you even do that for?"
         p concerned "I need it for something. It's kind of hard to explain right now."
         p "I'll make it up to you when I finish what I have to do!"
