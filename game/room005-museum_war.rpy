@@ -182,16 +182,16 @@ label .pal1:
     pal "So, what's your deal?"
     p concerned "I'm supposed to be delivering this package, but I got all sidetracked..."
     pal "Bummer! Anyway, now that I've heard about you, I get to tell you about me!"
-    p "Uh..."
     pal "So, I used to live in Cincinatti, you know, but since I'm an artist, haha, times got tough."
-    pal "I got kicked out! How cruel is that! All because it's apparently \"bad\" to dispose of leftover oil paints in the toilet..."
+    pal "I got kicked out! How cruel is that! All because it's apparently \"against policy\" to dispose of leftover oil paints in the toilet..."
     show posty annoyed
     pal "But like, what else are toilets for, right?"
-    pal "So yeah anyway though I had to leave."
-    pal "And I was on the bus out here to where I could crash at a friend's place, when I realized..."
+    pal "So yeah, anyway though, I had to leave Cincinatti, and I took a bus out here!"
+    pal "And I was crashing at a friend's place, when I realized..."
     pal "I forgot my CD player at my old place!"
     pal "I'm so sad... that was like, my favorite thing ever. There's no better way to listen to music, you know!"
-    pal "Anyway, I'm also a tech wiz. Could you tell?"
+    p neutral "I didn't even think people {i}had{/i} CD players anymore."
+    pal "Oh, I made my own with spare parts! I'm a real tech wiz! Couldn't you tell?"
     p neutral "Uhh..."
     pal "This thing in my hand! I made it myself! Wanna know what it does?"
     p suspicious "Sure..?"
@@ -209,7 +209,7 @@ label .pal1:
     pal "I'd show it off, but, I lost the battery. Still, pretty cool thingy for me to hold!"
     if item.battery:
         pal "... Hey wait a sec. Is that my battery? You went and found it for me?? You're so sweet!!!"
-        p zany "Huh-oh yup I totally grabbed it to give to you."
+        p zany "Huh-oh yup! I totally grabbed it to give to you."
         p "Definitely not lying."
         jump .pal_battery
     else:
@@ -253,7 +253,7 @@ label .pal_battery:
     "You handed over the {b}battery{/b}!"
     $ item.battery = False
     hide battery
-    pal "Alrighty now it's time to show off the scanter!"
+    pal "Alrighty! Now it's time to show off the scanter!"
     pal "Let me aim it like soo..."
     p happy "I can't wait to see it in action!"
     scene bg museum_war_flipped
@@ -261,13 +261,13 @@ label .pal_battery:
     show bcg at right
     show rcg at left
     with pushleft
-    bcg "...quit being so naive: the Redoinks are clearly fleeing in mass disarray!"
-    rcg "Well that is what a military novice like yourself would say: I see the Blouououous using their cowardly retreat tactic."
+    bcg "...quit being so naive! The Redoinks are clearly fleeing in mass disarray!"
+    rcg "Well, that is what a military novice like yourself would say! I see the Blouououous using their cowardly retreat tactic."
     bcg "A military novice would be able to properly identify the state of the battle! Does that triumphant victory really look like \"cowardly retreat\" to you?"
     show painting_war green with vpunch
     ""
     $ scanter_green = True
-    bcg "... On the other hand, perhaps it's a depiction of the internal conflicts within the tragic nation of Greeners."
+    bcg "... On the other hand, perhaps it's a depiction of the internal conflicts within the tragic nation of the Greeners."
     rcg "To think they'd have the gall to display such a controversial piece."
     rcg "Let's get out of here!"
     hide rcg with moveoutright
@@ -275,7 +275,7 @@ label .pal_battery:
     hide bcg with moveoutright
     scene bg museum_war
     show palettette
-    show posty neutral
+    show posty astonished
     with pushright
     pal "Holy moly it works!"
     p quiet "{i}Oh my god I really want that painting, it would be such a vibe...{/i}"
