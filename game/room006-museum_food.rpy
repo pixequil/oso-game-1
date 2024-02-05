@@ -69,10 +69,13 @@ label .marble:
     show posty neutral
     $ saw.marble = True
     marble "As an art critic and collector, I am severely disappointed with these so-called \"artworks\"! Everything here is so bland."
-    p suspicious "..Okaay?"
+    p suspicious "..Okaay? Who are you?"
+    marble "I am Marble Bust. My personal collection of fine art is one of the most respected in the art world! My name means something in this town!"
+    marble "And as I said, this entire exhibit is lacking when it comes to wowing me! In fact, this entire museum has been rather upsetting. Nothing in here would fit for my collection!"
     if item.napkin:
         jump .marble_napkin
     else:
+        p neutral "I don't know. I saw this one piece that-{nw}"
         marble "You clearly don't understand true art! Leave at once while I search for {b}the ultimate work of art{/b}!"
         jump museum_food
 
@@ -104,8 +107,12 @@ label .marble_napkin:
     p "Farewell!"
     jump museum_food
 
-label .marble3: #251
+label .marble3:
     show posty neutral
+    p "What are you going to do with your painting?"
+    marble "I will hang it up proudly in my home proudly!"
+    marble "The craft! The mediums! The deeper themes! You must tell me how you created this piece!"
+    p "Oh, it's a complex forgotten art. You wouldn't get it. I'm sorry, but I'm busy right now."
     marble "Thank you for this masterpiece!"
     jump museum_food
 
