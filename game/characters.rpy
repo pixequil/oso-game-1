@@ -1892,6 +1892,19 @@ label .type:
     p "This is a longer sample of text. The quick brown fox jumped over the lazy dog. Five quacking zephyrs judge my vow. Sphinx of black quartz wait I messed up. The vow judgement part was meant to go with the sphinx of black quartz, right? Oh this is definitely too long. Pack it up! Aaand now we're pushing it for sure."
     p "How about {b}bold{/b}? Or {i}italic{/i}? Maybe {b}{i}both at once???{/i}{/b}"
     "Abcdefg" "idk"
+    p astonished "Who was that???! Anyway, take me to {b}the war exhibit!{/b}"
+    scene bg museum_war_flipped
+    show painting_war
+    show rcg
+    show bcg
+    show posty neutral
+    p "uh excu-"
+    rcg "This art piece clearly shows the victory of the Redoinks!!"
+    bcg "No{w} - The positioning obviously implies the victory of the Blouououous."
+    bcg "They are so wounded and depressed, having to fight in a war n' all, yknow?"
+    rcg "What do you mean!?! The determination in their eyes say it all! You always see the gloomy parts of EVERYTHING!"
+    bcg "You always see the hopeful parts, even when it isn't intended!"
+    p "{i}They look busy. I should probably leave.{/i}"
     jump chartest
 
 label .other:
