@@ -149,7 +149,7 @@ label .notepad1:
         p "Will do, will do."
         jump museum_food
 
-label .notepad2: #244
+label .notepad2:
     show posty neutral
     notepad "Oh hey, it's you again! Do you have any food on you now?" # notepad asks posty if she has any food for them now.
     if item.chips:
@@ -159,32 +159,30 @@ label .notepad2: #244
         notepad "Oh well. Let me know if you find any. I would appreciate it!" # notepad reminds her to let them know if they find any for them
         jump museum_food
 
-label .notepad_chips: #246
-        p concerned "You want a snack?"
-        notepad "What?"
-        p "I got a bunch of chips if you wan-"
+label .notepad_chips:
+        p "It isn't much, but I got a bunch of chips if you wan-"
         notepad "OOOHH PLEASE GIVE IT TO ME THANK YOU SO MUCH!!!"
-        p "You need it more than I do, you gone crazy."
+        p "You need it more than I do."
         show generichips at truecenter
         "You handed over the {b}Generi-Chips{/b}!"
         $ item.chips = False
         $ gave_chips = True
         hide generichips
-        notepad "My god this tastes soooo amazing."
-        notepad "First meal in a week, you are my shining saviour."
+        notepad "This tastes soooo amazing!"
+        notepad "First meal in a week, you are my shining saviour!"
         p happy "Glad to be of help!"
         notepad "For assisting me in my direst hour, you shall have my greatest work."
         notepad "It distills my essence into a small package you can carry around as a reminder."
         p astonished "Aw shucks, that is too much!"
         show badpainting
-        "You got the {b}napkin \"painting\"{/b}! : if this was in the eye of the beholder, then they would be blind." #245 describe napkin painting
+        "You got the {b}napkin \"painting\"{/b}! If this was in the eye of the beholder, then they would go blind."
         $ item.napkin = True
         hide badpainting
         p confused "Oohhheheh it looks... avant garde."
         notepad "This is for feeding me, only the best!"
         p happy "Hehe no biggie!"
-        p suspicious "(Did they pick up some trash to fool me? Why would anyone even consider this?)"
-        p neutral "(Eh whatever, I guess I'll find a rubbish bin to properly dispose it in later)"
+        p suspicious quiet "(Did they pick up some trash to fool me? Why would anyone even consider this?)"
+        p neutral quiet "(Eh whatever, it's free.)"
         p concerned "Ahahaha ohh I am soo sorry, I have a meeting in 30 minutes!"
         p concerned "I can't hang around any longer sadly..."
         notepad "It is a shame I can't see your enjoyment for any longer."
@@ -195,40 +193,56 @@ label .notepad3: #247
     notepad "_" # revisiting notepad
     jump museum_food
 
-label .painting: #228
+label .painting:
     scene bg museum_food
     show painting_food_floor
     show posty neutral
     show rm
-    p "_" # posty arrives, having felt drawn to this painting inexplicably
-    rm "_" # Ripped Mitten says a veiled complaint about the painting, like it doesn't belong here, and how nobody would miss it. then they leave.
+    p "Um hi there!"
+    rm "Oh hello! I'm currently looking at..."
+    extend " whatever this is."
+    rm "This {i}thing{/i} feels so out of place here... Honestly, they could've used a better painting."
+    p happy "I'm sure someone would want it!"
+    rm "Doubt it."
     hide rm with moveoutright
-    p "_" # posty beholds the main painting in the food exhibit and feels a compulsion to collect it.
+    show posty astonished
+    "The odd painting suddenly and inexplicably calls out to you. You are filled with {color=#ffff00}{i}inspiration{/i}{/color}."
+    p astonished quiet "{i}...I need it.{/i}"
+    p happy quiet "{i}It's not like it'll be missed anyway!{/i}"
     hide painting_food_floor
     show painting_food
-    "You got an {b}art piece{/b}!" #227 describe food painting
+    "You got an {b}art piece{/b}! A strange painting depicting... brussel sprouts?" #227 describe food painting
     $ item.painting_food = True
     $ quest.painting_food = True
     $ paintings += 1
     hide painting_food
     if paintings == 1:
-        p "this was the first painting (replace this text)" # posty says something and decides to look around the rest of the exhibit
+        p happy "Hehheheehehe! Oh I want to find more!"
     else:
-        p "that was easy (replace this text)" # posty remarks that it was easy to take this painting, if this isn't her first painting.
+        p happy "That was easy! I'm not complaining though!"
     jump museum_food
 
 label .rm:
     scene bg museum_food
     show posty neutral
     show rm
-    rm "_" #230 speaking to ripped mitten a second time, briefly
+    rm "Oh hey, what's up?"
+    p "Nothing much, how about you?"
+    rm "Eh, it could be better. I wanted to get a picture in front of a painting, but I think something's wrong with my camera."
+    rm "All my photos are just a black screen! I'm not sure what to do."
+    p concerned "Aw man!"
+    p suspicious "You sure you don't have your lens cap on the lens?"
+    rm "I hope not! Ha! That would be too easy to fix! I'm sure I'll figure it out eventually though."
     jump museum_food
 
 label .corndog:
     scene bg museum_food
     show corndog
-    show posty neutral
-    p "_" #231 posty observes the corndog painting. it doesnt really call out to her, but it sure is huge. it doesn't seem to be supported by anything, just leaning on the wall. posty decides to look at the other paintings.
+    show posty happy
+    p "Ooooh corndog!"
+    p suspicious "I don't see why it has to take up this much space. Guess it seems tasty?"
+    p "It doesn't even look like it's held up on the wall... Weird."
+    p "Oh well, time to look elsewhere."
     jump museum_food
 
 label .eating: #233
