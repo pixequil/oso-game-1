@@ -110,7 +110,7 @@ label .rt:
         p "Oh totally!"
         redtile "Great. Thanks again by the way!"
         redtile "Y'know, for helping me with my revenge."
-        p "Enjoy the cash!" #126
+        p "Enjoy the cash!"
         jump museum_blue
 
     if saw.redtile == False:
@@ -174,7 +174,6 @@ label .rt:
         redtile "You're not saying you're gonna risk your own life to deface an art piece, are you?"
         p "No..."
         p "And on that note, I need to go."
-        # todo: #44 short conversation with red tile
         jump museum_blue
 
     elif bt_distracted:
@@ -182,7 +181,7 @@ label .rt:
         show bluetile scared behind redtile:
             xzoom -1.0
             xpos 0.75
-        bluetile "How could you say such a thing?! " #119
+        bluetile "How could you say such a thing?!"
         extend annoyed "Your mere presence ruins the beauty of this exhibit!"
         redtile "Can't you see how horrible this is? The blue is just sooo outdated! Doesn't even look good."
         bluetile scared "Take that back! Please take that back!"
@@ -192,7 +191,7 @@ label .rt:
     elif item.ladle_full and miso_blocked:
         show posty neutral
         show redtile 
-        p "Hey Red, mind if I ask you a favour!" #118
+        p "Hey Red, mind if I ask you a favour!"
         redtile "Sure, whatcha want me to do?"
         p concerned "I attempted to \"add\" some colour to the exhibition, but Blue Tile stopped me."
         redtile "Ah of course, Blue would never let his precious little pieces get harmed."
@@ -338,7 +337,7 @@ label .painting_ladle:
         show bg museum_blue_p_rusty
         show posty concerned
         show ladle_full
-        p concerned "Alrighty, here it goes!" #121
+        p concerned "Alrighty, here it goes!"
         hide ladle_full
         show bg museum_blue_p_opened
         "You repeat Red Tile's crime, splashing more miso soup on the painting!"
@@ -347,8 +346,8 @@ label .painting_ladle:
         p astonished quiet "!!"
         p happy "I just got an idea..."
         show bg museum_blue_p_missing
-        show painting_blue #122
-        "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour." #127
+        show painting_blue
+        "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour."
         extend " You now feel some {color=#ffff00}{i}inspiration{/i}{/color}!"
         hide painting_blue
         p happy "Ohohoho, I'm closer to true creativity!"
@@ -384,7 +383,7 @@ label .painting_ladle_blocked:
     show bluetile scared
     $ miso_blocked = True
     "You attempt to repeat Red Tile's crime, unsheathing the ladle filled with miso soup and preparing to toss it at the painting."
-    p concerned "Alrighty, here it goes!" #116
+    p concerned "Alrighty, here it goes!"
     bluetile "HEY!! What do you think you're doing?!"
     p quiet "... "
     extend neutral "Nothing."

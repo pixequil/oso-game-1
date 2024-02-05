@@ -282,7 +282,7 @@ label firstscene:
     p "..."
     p "And this is going to..."
     
-    show bg mainstreet # TODO: #23 main street conversation bg
+    show bg mainstreet
     $ renpy.transition(dissolve, layer="master") #prevents interruption of the text window
     show posty neutral
     show btnet 
@@ -395,7 +395,7 @@ label .toasty:
     call toasty_hints
     jump mainstreet
 
-label .tb: #293
+label .tb:
     $ last.mainx = 0.0
     scene bg mainstreet
     if party_bs:
@@ -443,9 +443,9 @@ label .brandsoda:
     show posty neutral
     show bs behind posty
 
-    bs "Yo, Posty! How’s my favorite mailbox?"
+    bs "Yo, Posty! How\'s my favorite mailbox?"
     p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
-    bs "Dope. Who’s it for?"
+    bs "Dope. Who\'s it for?"
     p happy "The OSO Dome."
     bs "WOAH! That...is...big! Something like that is bound to draw a lot of attention…"
     bs "Do you have any idea how overwhelming that could be?"
@@ -658,8 +658,8 @@ label .miso:
         jump mainstreet
 
     elif miso_took and (quest.painting_blue == False):
-        show posty neutral
-        p sad "Again, I'm so sorry for taking some of your soup."
+        show posty sad
+        p "Again, I'm so sorry for taking some of your soup."
         miso "What did you even do that for?"
         p concerned "I need it for something. It's kind of hard to explain right now."
         p "I'll make it up to you when I finish what I have to do!"
@@ -737,7 +737,7 @@ label .tooly:
     else:
         jump .tooly1
 
-label .tooly1: #276
+label .tooly1:
     show posty happy
     # introduce tooly. A toolbox, and a rough but jovial metalworker. 
     # She is always equipped with sorts of metalworking equipment 
@@ -821,7 +821,7 @@ label .tooly_scrap: #
 label .tooly3:
     show posty happy
     p "Hey Tooly! How's business?"
-    tooly "Deader than disco." #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
+    tooly "Deader than disco." # revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
     tooly "Hey, what are you using that epic trophy for anyway?"
     p neutral "You're better off not knowing."
     tooly "Hmmm... sounds illegal."

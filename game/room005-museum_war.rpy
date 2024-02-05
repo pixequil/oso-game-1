@@ -11,6 +11,11 @@ image bg museum_war:
     "dbgs/museum_war_dbg.png"
     yalign 0.2
 
+image bg museum_war_flipped:
+    "dbgs/museum_war_dbg.png"
+    yalign 0.2
+    xzoom -1.0
+
 image heavier:
     "items/Heavier.png"
     truecenter
@@ -91,7 +96,7 @@ label museum_war:
             jump museum_entrance
 
 label .painting1:
-    scene bg museum_war
+    scene bg museum_war_flipped
     show painting_war
     show rcg
     show bcg
@@ -112,7 +117,7 @@ label .painting1:
         jump museum_war
 
 label .painting2:
-    scene bg museum_war
+    scene bg museum_war_flipped
     show painting_war green
     show posty neutral
     p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
@@ -130,10 +135,30 @@ label .glasses2:
     scene bg museum_war
     show rcg
     show bcg
-    show posty neutral
-    rcg "_" #213 they've found something new to argue about. some things never change
-    bcg "_"
-    p "_"
+    show posty happy
+    p "Sooo what are you discussing?"
+    rcg "Oh perfect timing! I was just about to explain to this glaucous grumblewort about how the Reddoinki Renaissance is not only findable with enough determination,{nw}" 
+    rcg "but its various progenitors are actually hidden away behind one of the paintings no doubt with new pieces just to be appreciated!{nw}"
+    bcg "What a hopelessly naive statement to make, especially regarding the well documented disappearances of all 14 Great Doinkers in the Crimison Expedition of 1923!{nw}"
+    bcg "Honestly art hasn't progressed a single inch since those geniuses and their Blouououousian compatriots left this mortal plane...{nw}"
+    show posty concerned
+    bcg "Just a single one of their pieces makes this entire gallery frankly feel like a frivolous box of toys!{nw}"
+    bcg "I don't know why artists today don't give up at the mere thought of them.{nw}"
+    rcg "Woah woah that is extremely short sighted even for you!{nw}"
+    show posty confused
+    rcg "All we have to do to bring back those beautiful days is free those artists from their schlocky cells!{nw}"
+    rcg "I swear I heard a couple of noises from that misnomer of a painting at night...{nw}"
+    rcg "Crisis of the Populars? An ill befitting name for an ill befitting piece!{nw}"
+    rcg "It must be hiding something valuable, like a Doinker at work!{nw}"
+    bcg "Now now, you have been watching one too many of those speculative fictions!{nw}"
+    bcg "Not every gallery will have globe spanning schemes, sometimes it is just a pile of sad attempts.{nw}"
+    rcg "Ohohoho I would loveeee to elucidate you over a couple cakes; maybe it would be nice to have something sweet for once-{nw}"
+    bcg "And while we at it, I would like to bring you back to reality with something nonfiction-{nw}"
+    rcg "Are you implying that I am delusional?!{nw}"
+    bcg "I will never ever stoop as low as to even hint at your ability to read a lot into research.{nw}"
+    rcg "Well at least I am able to think outside the constraints of your inability to have fun.{nw}"
+    bcg "What is the point of having fun if it results in misinforming people like our observer here!{nw}"
+    p "Woah woah I am not getting involved with this!"
     jump museum_war
 
 label .pal:
@@ -146,60 +171,116 @@ label .pal:
     else:
         jump .pal1
 
-label .pal1: #205
-    show posty neutral
-    pal "_" # palettette introduces herself, explaining her backstory and discussing the scanter and offering to demonstrate.
-    p "_"
+label .pal1:
+    show posty happy
+    $ saw.pal = True
+    p "Greetings!"
+    pal "Hello! I'm Palettette@."
+    p confused "Wait, like, with the @?"
+    pal "Yep. Pretty cool, huh? Didn't think you could have that in a name, did ya?"
+    p neutral "I didn't."
+    pal "So, what's your deal?"
+    p concerned "I'm supposed to be delivering this package, but I got all sidetracked..."
+    pal "Bummer! Anyway, now that I've heard about you, I get to tell you about me!"
+    pal "So, I used to live in Cincinatti, you know, but since I'm an artist, haha, times got tough."
+    pal "I got kicked out! How cruel is that! All because it's apparently \"against policy\" to dispose of leftover oil paints in the toilet..."
+    show posty annoyed
+    pal "But like, what else are toilets for, right?"
+    pal "So yeah, anyway though, I had to leave Cincinatti, and I took a bus out here!"
+    pal "And I was crashing at a friend's place, when I realized..."
+    pal "I forgot my CD player at my old place!"
+    pal "I'm so sad... that was like, my favorite thing ever. There's no better way to listen to music, you know!"
+    p neutral "I didn't even think people {i}had{/i} CD players anymore."
+    pal "Oh, I made my own with spare parts! I'm a real tech wiz! Couldn't you tell?"
+    p neutral "Uhh..."
+    pal "This thing in my hand! I made it myself! Wanna know what it does?"
+    p suspicious "Sure..?"
+    pal "I call it...{w} the SCANTER!{w}\nPatent pending."
+    pal "It's a combination painter and scanner! Pretty cool, huh?"
+    p "How do you combine a painter and a scanner? Wait, what even is a painter anyway?"
+    pal "A painter paints! You don't know what a painter is?"
+    pal "You're in an art gallery!"
+    pal "All these paintings... look around you... made by painters!"
+    p concerned "Right..."
+    pal "So it's kinda like if a painter was a device instead of a living person that needs to be paid."
+    pal "It can't {i}make{/i} paintings yet though. Only change the style of existing ones."
+    p suspicious "So like an instagram filter?"
+    pal "Sure!"
+    pal "I'd show it off, but, I lost the battery. Still, pretty cool thingy for me to hold!"
     if item.battery:
-        pal "_" # palettette asks like "wait, is that MY battery? you got it for me?" or something
-        p "_" # posty acts like she totally grabbed the battery out of wanting to give it to palettette even though this is a lie
+        pal "... Hey wait a sec. Is that my battery? You went and found it for me?? You're so sweet!!!"
+        p zany "Huh-oh yup! I totally grabbed it to give to you."
+        p "Definitely not lying."
         jump .pal_battery
     else:
-        $ saw.pal = True
-        pal "_" # palettette explains that her battery rolled into ahiss's territory and asks posty to get it back
+        p neutral "What happened to the battery?"
+        pal "It rolled away!"
+        p "It did?"
+        pal "Yep!"
+        p suspicious "Why didn't you pick it up?"
+        pal "It rolled into another country."
+        p astonished anim "ANOTHER COUNTRY?!!"
+        show posty suspicious
+        pal "According to {b}that cat over there{/b}, yeah! They won't let me have it back, because of their little plot of land!"
+        pal "Actually, do you think you could bring me it? That'd be soo sweet!"
+        p "Sure..."
         jump museum_war
 
-label .pal2: #206
+label .pal2:
     show posty neutral
-    pal "_" # palettette asks if you managed to get the battery
+    pal "Heyy! Did you manage to get the battery?"
     if item.battery:
-        p "_" # posty presents the battery
+        p happy "Yeah! Here you go!"
         jump .pal_battery
     elif battery_asked:
-        p "_" # posty explains that ahiss won't hand it over, and there can be an ensuing conversation, potentially offering a hint.
+        p sad "Ahiss said they won't give it to me. Something about owning the land it rests on and stuff."
+        pal "Yeah, they're like that."
+        p "Well... I guess I better give up..."
+        pal "Oh, don't give up! I'm sure there's a way to convince them that their imaginary claim to land isn't real!"
+        pal "If words won't convince them, maybe you can, like, find something to prove it? A counter-deed perhaps!"
+        p suspicious "What's a counter-deed?"
+        pal "It's like a deed, but on the counter! Haha, get it?"
+        pal "You know, like... counters? Kitchen counters? For eating burgers on?"
+        p "Other food too, I hope?"
+        pal "Right, of course!"
         jump museum_war
     else:
-        p "_" # posty says that she hasnt asked yet. there can be a brief interaction here
+        p "Oops, I didn't try to get it yet."
         jump museum_war
 
-label .pal_battery: #207
+label .pal_battery:
     show battery_center
     "You handed over the {b}battery{/b}!"
     $ item.battery = False
     hide battery
-    pal "_" # now that she has the battery, palettette demonstrates it on the painting near the glasses.
-    scene bg museum_war
+    pal "Alrighty! Now it's time to show off the scanter!"
+    pal "Let me aim it like soo..."
+    p happy "I can't wait to see it in action!"
+    scene bg museum_war_flipped
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
     with pushleft
-    bcg "_" # bcg and rcg continue arguing
-    rcg "_"
+    bcg "...quit being so naive! The Redoinks are clearly fleeing in mass disarray!"
+    rcg "Well, that is what a military novice like yourself would say! I see the Blouououous using their cowardly retreat tactic."
+    bcg "A military novice would be able to properly identify the state of the battle! Does that triumphant victory really look like \"cowardly retreat\" to you?"
     show painting_war green with vpunch
     ""
     $ scanter_green = True
-    bcg "_" # bcg and rcg lose interest in the painting and leave
-    rcg "_"
+    bcg "... On the other hand, perhaps it's a depiction of the internal conflicts within the tragic nation of the Greeners."
+    rcg "To think they'd have the gall to display such a controversial piece."
+    rcg "Let's get out of here!"
     hide rcg with moveoutright
-    bcg "_" # bcg parting remark maybe?
+    bcg "Dreadful."
     hide bcg with moveoutright
     scene bg museum_war
     show palettette
-    show posty neutral
+    show posty astonished
     with pushright
-    pal "_" # palettette talks about how cool the scanter is or something
-    p quiet "_" # posty silently thinks to herself that she really really wants that painting.
-    p -quiet "_" # posty says goodbye to palettette
+    pal "Holy moly it works!"
+    p quiet "{i}Oh my god I really want that painting, it would be such a vibe...{/i}"
+    p happy "Glad to see it works! I gotta go quick now..."
+    pal "See ya around and thanks for the battery!"
     jump museum_war
 
 label .pal3:
