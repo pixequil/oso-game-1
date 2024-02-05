@@ -904,7 +904,7 @@ image sgummy quiet:
 define binoc = Character("Binoculars", 
     callback=speaker("binoc"), 
     image="binoc", 
-    who_color="#2c2c31"
+    who_color="#4a4a4f"
     )
 
 image binoc cynical = WhileSpeaking(
@@ -1656,7 +1656,7 @@ image auto sad quiet:
 define tb = Character("Ticket Booth",
     callback=speaker("tb"), 
     image="tb", 
-    who_color="#5D3266"
+    who_color="#825983"
     )
 
 image tb neutral= WhileSpeaking(
@@ -1842,7 +1842,7 @@ image rm quiet:
 define jb = Character("Jukebox",
     callback=speaker("jb", sound_file="game_voice_1.wav"),
     image="jb", 
-    who_color="#482C40"
+    who_color="#d84a7a"
     )
 
 image jb = WhileSpeaking(
