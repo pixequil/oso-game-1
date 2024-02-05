@@ -61,9 +61,6 @@ label .marble:
         jump .marble2
     else:
         jump .marble1
-
-    show posty neutral
-    $ saw.marble = True
     
     label .marble1:
     show posty neutral
