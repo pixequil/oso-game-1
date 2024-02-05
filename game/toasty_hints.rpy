@@ -89,11 +89,11 @@ label toasty_hints:
         t pointandlaugh "Lol, no!"
         t smug "Why'd you even get those anyway? I thought you hated them!"
         p annoyed "Argh! That's exactly why I'm trying to get rid of them!"
-        t "Hmph. Well, where'd you get those chips?"
+        t smug2 "Hmph. Well, where'd you get those chips?"
         p concerned "Uh...the museum?"
-        t "Have you asked somebody in the museum if they want them?"
+        t smug3 "Have you asked somebody in the museum if they want them?"
         p "...no, I don't think so."
-        t "I would say go in there and check, but to be honest, I think you're stuck with them."
+        t smug5 "I would say go in there and check, but to be honest, I think you're stuck with them."
         t pointandlaugh "Hah! You really are stupid, aren't you?"
         return
 
