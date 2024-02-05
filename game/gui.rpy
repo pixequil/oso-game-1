@@ -57,13 +57,23 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "OpenSans-Regular.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "OpenSans-SemiBold.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "OpenSans-Regular.ttf"
+
+init python:
+    config.font_replacement_map["OpenSans-Regular.ttf", False, True] = ("OpenSans-Italic.ttf", False, False)
+    config.font_replacement_map["OpenSans-Regular.ttf", True, False] = ("OpenSans-Bold.ttf", False, False)
+    config.font_replacement_map["OpenSans-Regular.ttf", True, True] = ("OpenSans-BoldItalic.ttf", False, False)
+
+    config.preload_fonts += ["OpenSans-Regular.ttf"]
+    config.preload_fonts += ["OpenSans-Italic.ttf"]
+    config.preload_fonts += ["OpenSans-Bold.ttf"]
+    config.preload_fonts += ["OpenSans-BoldItalic.ttf"]
 
 ## The size of normal dialogue text.
 define gui.text_size = 22

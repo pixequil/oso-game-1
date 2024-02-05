@@ -1882,8 +1882,17 @@ label chartest:
             jump .toasty
         "Other characters.":
             jump .other
+        "Typography.":
+            jump .type
         "End the game please.":
             return
+
+label .type:
+    p "Type!"
+    p "This is a longer sample of text. The quick brown fox jumped over the lazy dog. Five quacking zephyrs judge my vow. Sphinx of black quartz wait I messed up. The vow judgement part was meant to go with the sphinx of black quartz, right? Oh this is definitely too long. Pack it up! Aaand now we're pushing it for sure."
+    p "How about {b}bold{/b}? Or {i}italic{/i}? Maybe {b}{i}both at once???{/i}{/b}"
+    "Abcdefg" "idk"
+    jump chartest
 
 label .other:
 
