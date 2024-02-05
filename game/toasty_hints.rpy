@@ -155,7 +155,7 @@ label toasty_hints:
         t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
         return
 
-    elif quest.paintings and (quest.moneys == False) and (money == 2):
+    elif quest.paintings and (quest.moneys == False) and (money == 3):
         show posty neutral
         show toasty neutral2
         t "What'cha got there?"
