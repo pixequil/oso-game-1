@@ -153,7 +153,7 @@ label toasty_hints:
         t smug2 "Touche, either way, whatcha gonna do about it?"
         p concerned "I\'m… not sure. You\'re good with these things, that\'s why I came to you."
         t enthused "Well, if someone is in your way, couldn\'t you just get them… out of your way?"
-        p angry "If it was that simple I would\'ve done it already."
+        p angry "If it was that simple, I would\'ve done it already."
         t laugh "Maybe you could just kill them and go to prison so I wouldn\'t have to talk to you again."
         p annoyed "Gee, thanks. Any ACTUAL suggestions?"
         t smug "If you aren\'t willing to do it, find someone else who is!"
