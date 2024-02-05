@@ -737,7 +737,7 @@ label .tooly:
     else:
         jump .tooly1
 
-label .tooly1: #276
+label .tooly1:
     show posty happy
     # introduce tooly. A toolbox, and a rough but jovial metalworker. 
     # She is always equipped with sorts of metalworking equipment 
