@@ -204,7 +204,8 @@ label .pal1:
     pal "I'd show it off, but, I lost the battery. Still, pretty cool thingy for me to hold!"
     if item.battery:
         pal "... Hey wait a sec. Is that my battery? You went and found it for me?? You're so sweet!!!"
-        p sad "Uh haha yeah totally!"
+        p zany "Huh-oh yup I totally grabbed it to give to you."
+        p "Definitely not lying."
         jump .pal_battery
     else:
         p neutral "What happened to the battery?"
@@ -215,7 +216,7 @@ label .pal1:
         pal "It rolled into another country."
         p astonished anim "ANOTHER COUNTRY?!!"
         show posty suspicious
-        pal "According to that cat over there, yeah! They won't let me have it back, because of their little plot of land!"
+        pal "According to {b}that cat over there{/b}, yeah! They won't let me have it back, because of their little plot of land!"
         pal "Actually, do you think you could bring me it? That'd be soo sweet!"
         p "Sure..."
         jump museum_war
