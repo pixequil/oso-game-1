@@ -126,15 +126,15 @@ label .notepad:
     else:
         jump .notepad1
 
-label .notepad1: #244
+label .notepad1:
     show posty concerned
     $ saw.notepad = True
     p "Oh my, are you alright?"
     notepad "Can't you tell?! I am at rock bottom here."
-    notepad "I have turned my whole damn life upside down for the chance of exhibitions and I can't even find a bite to eat!!"
+    notepad "I have turned my whole life upside down for the chance of exhibitions and now I can't even afford a bite to eat!!"
     notepad "Many times I pleaded and begged the curators to buy my life's work, many times they rejected me..."
-    p sad "Damn that sucks."
-    notepad "Not even half of it: I even reduced my prices all the way down to $2 for everything I ever made."
+    p sad "Man that sucks."
+    notepad "Not even half of it. I reduced my prices all the way down to $2 for everything I ever made."
     notepad "You know what they said? No!"
     notepad "I am at my wits end: starving in the middle of the food exhibit."
     notepad "I should've stayed back home, then I wouldn't have ended up here."
@@ -143,8 +143,10 @@ label .notepad1: #244
     if item.chips:
         jump .notepad_chips
     else:
-        p "_" # posty apologizes, not having any food for them.
-        notepad "_" # notepad tells her to let them know if they find any for them
+        notepad "Hey dude, you have any food?"
+        p concerned "Sorry, I don't have a crumb on me."
+        notepad "If you find some, please give it to me: I can hear my stomach rumbles from here!"
+        p "Will do, will do."
         jump museum_food
 
 label .notepad2: #244
