@@ -130,10 +130,30 @@ label .glasses2:
     scene bg museum_war
     show rcg
     show bcg
-    show posty neutral
-    rcg "_" #213 they've found something new to argue about. some things never change
-    bcg "_"
-    p "_"
+    show posty happy
+    p "Sooo what are you discussing?"
+    rcg "Oh perfect timing! I was just about to explain to this glaucous grumblewort about how the Reddoinki Renaissance is not only findable with enough determination,{nw}" 
+    rcg "but its various progenitors are actually hidden away behind one of the paintings no doubt with new pieces just to be appreciated!{nw}"
+    bcg "What a hopelessly naive statement to make, especially regarding the well documented disappearances of all 14 Great Doinkers in the Crimison Expedition of 1923!{nw}"
+    bcg "Honestly art hasn't progressed a single inch since those geniuses and their Blouououousian compatriots left this mortal plane...{nw}"
+    show posty concerned
+    bcg "Just a single one of their pieces makes this entire gallery frankly feel like a frivolous box of toys!{nw}"
+    bcg "I don't know why artists today don't give up at the mere thought of them.{nw}"
+    rcg "Woah woah that is extremely short sighted even for you!{nw}"
+    show posty confused
+    rcg "All we have to do to bring back those beautiful days is free those artists from their schlocky cells!{nw}"
+    rcg "I swear I heard a couple of noises from that misnomer of a painting at night...{nw}"
+    rcg "Crisis of the Populars? An ill befitting name for an ill befitting piece!{nw}"
+    rcg "It must be hiding something valuable, like a Doinker at work!{nw}"
+    bcg "Now now, you have been watching one too many of those speculative fictions!{nw}"
+    bcg "Not every gallery will have globe spanning schemes, sometimes it is just a pile of sad attempts.{nw}"
+    rcg "Ohohoho I would loveeee to elucidate you over a couple cakes; maybe it would be nice to have something sweet for once-{nw}"
+    bcg "And while we at it, I would like to bring you back to reality with something nonfiction-{nw}"
+    rcg "Are you implying that I am delusional?!{nw}"
+    bcg "I will never ever stoop as low as to even hint at your ability to read a lot into research.{nw}"
+    rcg "Well at least I am able to think outside the constraints of your inability to have fun.{nw}"
+    bcg "What is the point of having fun if it results in misinforming people like our observer here!{nw}"
+    p "Woah woah I am not getting involved with this!"
     jump museum_war
 
 label .pal:
