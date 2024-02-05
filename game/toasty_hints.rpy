@@ -239,7 +239,8 @@ label toasty_hints:
         show toasty neutral
         p concerned "Hey Toasty."
         t smug "Hey loser."
-        t smug2 "Looks like you met Retainer." 
+        t smug2 "Looks like you met Retainer."
+        p "Wait, how did you-{nw}"
         t smug3 "Let me guess, was he bitter and in denial?"
         p "Pretty much..."
         t laugh "HA! Good thing I'm not wasting my time over there!"
@@ -252,8 +253,26 @@ label toasty_hints:
 
     elif item.butterfly_package:
         show posty neutral
-        show toasty neutral
-        t "hint for if you just started the game" # TODO: #6 game start hint (try delivering the butterflies)
+        if saw.lost:
+            show toasty angry
+            t "I SAID GO!!!"
+            p confused "SORRY!"
+        else:
+            show toasty turned2
+            $ saw.lost = True
+            t "You again? That was fast."
+            p "I guess I got turned around?"
+            t smug "You know, I'd tell you to get lost, but..."
+            show toasty pointandlaugh
+            extend "\nit looks like you don't know how!"
+            t smug3 "Look. Around here, we have a mantra:\n\"When in doubt, look around!\""
+            p suspicious "I don't think that rhymes."
+            t annoyed "Well, it was supposed to, but I reworded it in my head before saying it, so now it doesn't."
+            t "WHATEVER!"
+            t crossedarms "Basically, if you keep trying random stuff, something's bound to work."
+            p neutral "Okay."
+            t annoyed "So... go do it already."
+            p sad "Oh, right."
         return
 
     else:
