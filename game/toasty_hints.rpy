@@ -83,9 +83,18 @@ label toasty_hints:
         return
 
     elif item.chips:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you got the chips" #242
+        show posty happy
+        show toasty neutral     
+        p "You want some Generi-Chips?"
+        toasty pointandlaugh "Lol, no!"
+        toasty smug "Why'd you even get those anyway? I thought you hated them!"
+        p annoyed "Argh! That's exactly why I'm trying to get rid of them!"
+        toasty "Hmph. Well, where'd you get those chips?"
+        p concerned "Uh...the museum?"
+        toasty "Have you asked somebody in the museum if they want them?"
+        p "...no, I don't think so."
+        toasty "I would say go in there and check, but to be honest, I think you're stuck with them."
+        toasty pointandlaugh "Hah! You really are stupid, aren't you?"
         return
 
 
