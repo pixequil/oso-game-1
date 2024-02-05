@@ -65,7 +65,7 @@ label .marble:
     show posty neutral
     $ saw.marble = True
     
-    label .marble1: #248
+    label .marble1:
     show posty neutral
     $ saw.marble = True
     marble "As an art critic and collector, I am severely disappointed with these so-called \"artworks\"! Everything here is so bland."
@@ -76,7 +76,7 @@ label .marble:
         marble "You clearly don't understand true art! Leave at once while I search for {b}the ultimate work of art{/b}!"
         jump museum_food
 
-label .marble2: #248
+label .marble2:
     show posty neutral
     if item.napkin:
         jump .marble_napkin
@@ -90,7 +90,7 @@ label .marble_napkin:
     show badpainting
     marble "Why... This is the greatest artwork I have ever seen! I simply must have it for my collection!! I will pay handsomely!"
     p suspicious "{i}Really??{/i}"
-    p happy "hmm.. oh I'm not sure! I don't want to give away this wonderful piece of art, but alright!"
+    p happy "Oh, I'm not sure! I don't want to give away this wonderful piece of art, but alright!"
     "You handed over the {b}priceless, one-of-a-kind highbrow painting{/b}!"
     $ item.napkin = False
     hide badpainting
