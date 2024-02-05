@@ -1905,6 +1905,13 @@ label .type:
     rcg "What do you mean!?! The determination in their eyes say it all! You always see the gloomy parts of EVERYTHING!"
     bcg "You always see the hopeful parts, even when it isn't intended!"
     p "{i}They look busy. I should probably leave.{/i}"
+    scene bg mainstreet
+    show posty neutral
+    show toasty pointandlaugh
+    show bs follow behind posty with moveinleft
+    t "How'd you end up here!!!"
+    bs "And that's how the Blououous reunited with the wahtevefr the others were called"
+    p astonished anim "There's no place like home!"
     jump chartest
 
 label .other:
