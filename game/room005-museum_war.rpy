@@ -11,6 +11,11 @@ image bg museum_war:
     "dbgs/museum_war_dbg.png"
     yalign 0.2
 
+image bg museum_war_flipped:
+    "dbgs/museum_war_dbg.png"
+    yalign 0.2
+    xzoom -1.0
+
 image heavier:
     "items/Heavier.png"
     truecenter
@@ -91,7 +96,7 @@ label museum_war:
             jump museum_entrance
 
 label .painting1:
-    scene bg museum_war
+    scene bg museum_war_flipped
     show painting_war
     show rcg
     show bcg
@@ -112,7 +117,7 @@ label .painting1:
         jump museum_war
 
 label .painting2:
-    scene bg museum_war
+    scene bg museum_war_flipped
     show painting_war green
     show posty neutral
     p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
@@ -251,7 +256,7 @@ label .pal_battery:
     pal "Alrighty now it's time to show off the scanter!"
     pal "Let me aim it like soo..."
     p happy "I can't wait to see it in action!"
-    scene bg museum_war
+    scene bg museum_war_flipped
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
