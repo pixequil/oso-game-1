@@ -157,9 +157,9 @@ label toasty_hints:
         show ladle_empty
         t "The ladle."
         p "Dunno. A red guy gave it to me."
-        t quiet "..."
+        t laugh quiet "..."
         p angry "What!"
-        t "It's a ladle. You fill it up with things. Are you stupid?"
+        t -quiet "It's a ladle. You fill it up with things. Are you stupid?"
         p "That was very rude."
         return
 
