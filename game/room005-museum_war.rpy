@@ -221,17 +221,26 @@ label .pal1:
         p "Sure..."
         jump museum_war
 
-label .pal2: #206
+label .pal2:
     show posty neutral
-    pal "_" # palettette asks if you managed to get the battery
+    pal "Heyy! Did you manage to get the battery?"
     if item.battery:
-        p "_" # posty presents the battery
+        p happy "Yeah! Here you go!"
         jump .pal_battery
     elif battery_asked:
-        p "_" # posty explains that ahiss won't hand it over, and there can be an ensuing conversation, potentially offering a hint.
+        p sad "Ahiss said they won't give it to me. Something about owning the land it rests on and stuff."
+        pal "Yeah, they're like that."
+        p "Well... I guess I better give up..."
+        pal "Oh, don't give up! I'm sure there's a way to convince them that their imaginary claim to land isn't real!"
+        pal "If words won't convince them, maybe you can, like, find something to prove it? A counter-deed perhaps!"
+        p suspicious "What's a counter-deed?"
+        pal "It's like a deed, but on the counter! Haha, get it?"
+        pal "You know, like... counters? Kitchen counters? For eating burgers on?"
+        p "Other food too, I hope?"
+        pal "Right, of course!"
         jump museum_war
     else:
-        p "_" # posty says that she hasnt asked yet. there can be a brief interaction here
+        p "Oops, I didn't try to get it yet."
         jump museum_war
 
 label .pal_battery: #207
