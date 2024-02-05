@@ -158,6 +158,7 @@ label toasty_hints:
         p annoyed "Gee, thanks. Any ACTUAL suggestions?"
         t smug "If you aren\'t willing to do it, find someone else who is!"
         p angry "I\'M NOT GONNA KILL TH- ugh, you\'re useless."
+        t laugh "Happy to be, Posty!"
         return
 
     elif item.ladle_full:
