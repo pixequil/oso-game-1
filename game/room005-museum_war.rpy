@@ -193,7 +193,7 @@ label .pal1:
     pal "I call it...{w} the SCANTER!{w}\nPatent pending."
     pal "It's a combination painter and scanner! Pretty cool, huh?"
     p "How do you combine a painter and a scanner? Wait, what even is a painter anyway?"
-    pal "It paints. You don't know what a painter is?"
+    pal "A painter paints! You don't know what a painter is?"
     pal "You're in an art gallery!"
     pal "All these paintings... look around you... made by painters!"
     p concerned "Right..."
