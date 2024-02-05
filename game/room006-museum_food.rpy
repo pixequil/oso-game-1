@@ -130,7 +130,7 @@ label .notepad1: #244
     show posty concerned
     $ saw.notepad = True
     p "Oh my, are you alright?"
-    notepad "Can't you tell?! I am rock bottom here."
+    notepad "Can't you tell?! I am at rock bottom here."
     notepad "I have turned my whole damn life upside down for the chance of exhibitions and I can't even find a bite to eat!!"
     notepad "Many times I pleaded and begged the curators to buy my life's work, many times they rejected me..."
     p sad "Damn that sucks."
