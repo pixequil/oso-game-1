@@ -243,34 +243,39 @@ label .pal2:
         p "Oops, I didn't try to get it yet."
         jump museum_war
 
-label .pal_battery: #207
+label .pal_battery:
     show battery_center
     "You handed over the {b}battery{/b}!"
     $ item.battery = False
     hide battery
-    pal "_" # now that she has the battery, palettette demonstrates it on the painting near the glasses.
+    pal "Alrighty now it's time to show off the scanter!"
+    pal "Let me aim it like soo..."
+    p happy "I can't wait to see it in action!"
     scene bg museum_war
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
     with pushleft
-    bcg "_" # bcg and rcg continue arguing
-    rcg "_"
+    bcg "...quit being so naive: the Redoinks are clearly fleeing in mass disarray!"
+    rcg "Well that is what a military novice like yourself would say: I see the Blouououous using their cowardly retreat tactic."
+    bcg "A military novice would be able to properly identify the state of the battle! Does that triumphant victory really look like \"cowardly retreat\" to you?"
     show painting_war green with vpunch
     ""
     $ scanter_green = True
-    bcg "_" # bcg and rcg lose interest in the painting and leave
-    rcg "_"
+    bcg "... On the other hand, perhaps it's a depiction of the internal conflicts within the tragic nation of Greeners."
+    rcg "To think they'd have the gall to display such a controversial piece."
+    rcg "Let's get out of here!"
     hide rcg with moveoutright
-    bcg "_" # bcg parting remark maybe?
+    bcg "Dreadful."
     hide bcg with moveoutright
     scene bg museum_war
     show palettette
     show posty neutral
     with pushright
-    pal "_" # palettette talks about how cool the scanter is or something
-    p quiet "_" # posty silently thinks to herself that she really really wants that painting.
-    p -quiet "_" # posty says goodbye to palettette
+    pal "Holy moly it works!"
+    p quiet "{i}Oh my god I really want that painting, it would be such a vibe...{/i}"
+    p happy "Glad to see it works! I gotta go quick now..."
+    pal "See ya around and thanks for the battery!"
     jump museum_war
 
 label .pal3:
