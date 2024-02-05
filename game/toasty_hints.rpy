@@ -151,8 +151,16 @@ label toasty_hints:
 
     elif item.ladle_empty:
         show posty neutral
-        show toasty neutral
-        t "hint for if you have empty ladle" # todo: #52 empty ladle hint (use it on miso soup)
+        show toasty annoyed
+        t "Um... what are you doing with that?"
+        p "Doing with what?"
+        show ladle_empty
+        t "The ladle."
+        p "Dunno. A red guy gave it to me."
+        t quiet "..."
+        p angry "What!"
+        t "It's a ladle. You fill it up with things. Are you stupid?"
+        p "That was very rude."
         return
 
     elif quest.paintings and (quest.moneys == False) and (money == 3):
