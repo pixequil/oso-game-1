@@ -88,7 +88,7 @@ label .marble_napkin:
     marble "Hold on. What is that you're holding?"
     p "This?"
     show badpainting
-    marble "Why... This is the greatest artwork I have ever seen! I simple must have it for my collection!! I will pay handsomely!"
+    marble "Why... This is the greatest artwork I have ever seen! I simply must have it for my collection!! I will pay handsomely!"
     p suspicious "{i}really??{/i}"
     p happy "hmm.. oh I'm not sure! I don't want to give away this wonderful piece of art, but alright!"
     "You handed over the {b}priceless, one-of-a-kind highbrow painting{/b}!"
