@@ -86,15 +86,15 @@ label toasty_hints:
         show posty happy
         show toasty neutral     
         p "You want some Generi-Chips?"
-        toasty pointandlaugh "Lol, no!"
-        toasty smug "Why'd you even get those anyway? I thought you hated them!"
+        t pointandlaugh "Lol, no!"
+        t smug "Why'd you even get those anyway? I thought you hated them!"
         p annoyed "Argh! That's exactly why I'm trying to get rid of them!"
-        toasty "Hmph. Well, where'd you get those chips?"
+        t "Hmph. Well, where'd you get those chips?"
         p concerned "Uh...the museum?"
-        toasty "Have you asked somebody in the museum if they want them?"
+        t "Have you asked somebody in the museum if they want them?"
         p "...no, I don't think so."
-        toasty "I would say go in there and check, but to be honest, I think you're stuck with them."
-        toasty pointandlaugh "Hah! You really are stupid, aren't you?"
+        t "I would say go in there and check, but to be honest, I think you're stuck with them."
+        t pointandlaugh "Hah! You really are stupid, aren't you?"
         return
 
 
