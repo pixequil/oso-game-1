@@ -166,17 +166,58 @@ label .pal:
     else:
         jump .pal1
 
-label .pal1: #205
-    show posty neutral
-    pal "_" # palettette introduces herself, explaining her backstory and discussing the scanter and offering to demonstrate.
-    p "_"
+label .pal1:
+    show posty happy
+    $ saw.pal = True
+    p "Greetings!"
+    pal "Hello! I'm Palettette@."
+    p confused "Wait, like, with the @?"
+    pal "Yep. Pretty cool, huh? Didn't think you could have that in a name, did ya?"
+    p neutral "I didn't."
+    pal "So, what's your deal?"
+    p concerned "I'm supposed to be delivering this package, but I got all sidetracked..."
+    pal "Bummer! Anyway, now that I've heard about you, I get to tell you about me!"
+    p "Uh..."
+    pal "So, I used to live in Cincinatti, you know, but since I'm an artist, haha, times got tough."
+    pal "I got kicked out! How cruel is that! All because it's apparently \"bad\" to dispose of leftover oil paints in the toilet..."
+    show posty annoyed
+    pal "But like, what else are toilets for, right?"
+    pal "So yeah anyway though I had to leave."
+    pal "And I was on the bus out here to where I could crash at a friend's place, when I realized..."
+    pal "I forgot my CD player at my old place!"
+    pal "I'm so sad... that was like, my favorite thing ever. There's no better way to listen to music, you know!"
+    pal "Anyway, I'm also a tech wiz. Could you tell?"
+    p neutral "Uhh..."
+    pal "This thing in my hand! I made it myself! Wanna know what it does?"
+    p suspicious "Sure..?"
+    pal "I call it...{w} the SCANTER!{w}\nPatent pending."
+    pal "It's a combination painter and scanner! Pretty cool, huh?"
+    p "How do you combine a painter and a scanner? Wait, what even is a painter anyway?"
+    pal "It paints. You don't know what a painter is?"
+    pal "You're in an art gallery!"
+    pal "All these paintings... look around you... made by painters!"
+    p concerned "Right..."
+    pal "So it's kinda like if a painter was a device instead of a living person that needs to be paid."
+    pal "It can't {i}make{/i} paintings yet though. Only change the style of existing ones."
+    p suspicious "So like an instagram filter?"
+    pal "Sure!"
+    pal "I'd show it off, but, I lost the battery. Still, pretty cool thingy for me to hold!"
     if item.battery:
-        pal "_" # palettette asks like "wait, is that MY battery? you got it for me?" or something
-        p "_" # posty acts like she totally grabbed the battery out of wanting to give it to palettette even though this is a lie
+        pal "... Hey wait a sec. Is that my battery? You went and found it for me?? You're so sweet!!!"
+        p sad "Uh haha yeah totally!"
         jump .pal_battery
     else:
-        $ saw.pal = True
-        pal "_" # palettette explains that her battery rolled into ahiss's territory and asks posty to get it back
+        p neutral "What happened to the battery?"
+        pal "It rolled away!"
+        p "It did?"
+        pal "Yep!"
+        p suspicious "Why didn't you pick it up?"
+        pal "It rolled into another country."
+        p astonished anim "ANOTHER COUNTRY?!!"
+        show posty suspicious
+        pal "According to that cat over there, yeah! They won't let me have it back, because of their little plot of land!"
+        pal "Actually, do you think you could bring me it? That'd be soo sweet!"
+        p "Sure..."
         jump museum_war
 
 label .pal2: #206
