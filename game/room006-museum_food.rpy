@@ -143,7 +143,7 @@ label .notepad1:
     if item.chips:
         jump .notepad_chips
     else:
-        notepad "Hey dude, you have any food?"
+        notepad "Hey gal, you have any food?"
         p concerned "Sorry, I don't have a crumb on me."
         notepad "If you find some, please give it to me: I can hear my stomach rumbles from here!"
         p "Will do, will do."
