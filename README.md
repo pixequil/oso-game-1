@@ -49,6 +49,7 @@ _(Don't remove the blank bullets)_
 ### Dialogue
 * BumpBob Looly
 * FunnyBoy044
+* AnArtichoke
 * Loggybears
 * Fanimator
 * PenTick
