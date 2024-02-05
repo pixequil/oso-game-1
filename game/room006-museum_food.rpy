@@ -145,18 +145,18 @@ label .notepad1:
     else:
         notepad "Hey gal, you have any food?"
         p concerned "Sorry, I don't have a crumb on me."
-        notepad "If you find some, please give it to me: I can hear my stomach rumbles from here!"
+        notepad "If you find some, please give it to me! I can hear my stomach rumbles from here!"
         p "Will do, will do."
         jump museum_food
 
 label .notepad2: #244
     show posty neutral
-    notepad "_" # notepad asks posty if she has any food for them now.
+    notepad "Oh hey, it's you again! Do you have any food on you now?" # notepad asks posty if she has any food for them now.
     if item.chips:
         jump .notepad_chips
     else:
-        p "_" # posty apologizes, as she still doesn't.
-        notepad "_" # notepad reminds her to let them know if they find any for them
+        p "Sorry, I still got nothing." # posty apologizes, as she still doesn't.
+        notepad "Oh well. Let me know if you find any. I would appreciate it!" # notepad reminds her to let them know if they find any for them
         jump museum_food
 
 label .notepad_chips: #246
