@@ -24,6 +24,9 @@ transform getvend:
     xalign 0.2
     yalign 1.0
 
+transform flip: 
+    xzoom -1.0
+
 
 label janitors:
     if saw.janitors == False:
@@ -70,10 +73,26 @@ label .vend:
 label .sb1:
     scene bg janitors
     show posty neutral
-    show sb
+    show sb:
+        flip
+        right
     $ saw.janitors = True
-    sb "_" #236 Squirt Bottle confronts you about how you got in here
-    p "_"
+    p suspicious quiet "{i}What\'s this place?{/i}"
+    p neutral "...heya."
+    hide sb
+    show sb # resets sb so hes facing the correct way
+    $ renpy.transition(hpunch, layer="master")
+    sb "AHGDHSXJS- How d'ya get here!?"
+    p "Umm I don't know... Errrrm nice chairs?"
+    sb "You don't get to complement my chairs unless I invite you in. And I don't recall sending invitations."
+    p "Errrrrrr.."
+    sb "{i}sighh{/i}  Fine! you can stay here."
+    sb "Not because I am happy to do so, but because you would be too much of a pain to evict."
+    sb "Don't tell anyone about this."
+    p happy "Not a single word will come out about this sir!"
+    sb quiet "..."
+    sb -quiet "Don't be so formal, just call me Squeezy."
+    sb "Do whatever, I guess."
     jump janitors
 
 label .sb2:
