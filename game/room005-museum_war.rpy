@@ -330,45 +330,54 @@ label .ahiss2:
     ahiss "_" # ahiss chastises posty for forgetting. make sure the last line of the interaction is ahiss, so it transitions into the next block correctly.
     jump .ahiss_deed
 
-label .ahiss_deed: #173
+label .ahiss_deed:
     if item.imaginary_lighter == False:
         if saw.pal:
-            p "_" # posty asks if she can at least have that battery
-            ahiss "_" # ahiss is like no way
+            p sad "Well... anyway."
+            p "Do you think I could have that battery?"
+            ahiss "Absolutely not!"
             $ battery_asked = True
-        p "_" # posty is like "well i'll leave you be then" or something
+        p "Well, I'll leave you be, then."
         jump museum_war
     else:
-        p quiet "{i}_{/i}" # posty thinks to use the imaginary lighter on the deed.
+        p quiet "{i}Maybe I can use my {b}imaginary lighter{/b} on the imaginary deed!{/i}"
         show posty:
             xalign -0.05
         $ renpy.transition(move, layer="master") #prevents interruption of the text window
-        ahiss "_" # ahiss says something as posty approaches to incinerate the deed
+        ahiss "Are your ears clogged with fur? Or do you not even have ears at all? I said to stay out of my property!"
         hide deed
         $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
         "You {b}imaginary burned{/b} the {b}imaginary deed{/b}!"
         $ deed_burned = True
         $ item.imaginary_lighter = False
         if saw.pal:
-            p "_" # posty takes the battery since it belongs to palettette.
+            p happy "I'll take this, since it belongs to Palettette@!"
         else:
-            p "_" # posty notices the battery on the ground and takes it now that she's close to it, on impulse.
+            p neutral "Oh, look, a battery. Yoink!"
         hide battery_floor
         show battery_center
         "You got the {b}battery{/b}!"
         $ item.battery = True
         hide battery
         if battery_asked:
-            ahiss "_" # "i hope you're happy" or something
-            p "_"
-            ahiss "_" # ahiss finds a way to be smug about this situation in the end.
+            ahiss "Grr... hiss... I hope you're happy. You've destroyed my family legacy!"
+            p annoyed "Well, you wouldn't give me the battery."
+            ahiss "You'd incinerate my intergenerational fortune, just like that?"
+            ahiss "Go to a corner store, you freak!"
         else:
-            ahiss "_" # "that's what you wanted!??" or something
+            ahiss "Th- THAT'S ALL YOU WANTED?!!"
             if saw.pal:
-                p "_" # posty tells the truth: yes
+                p "Pretty much."
+                ahiss "Ugh, the... the nerve..."
             else:
-                p "_" # posty tells the truth: no
-            ahiss "_" # ahiss finds a way to be smug about this situation in the end.
+                p "No, I just kinda saw it and I was like I may as well take it."
+                p happy "You never know when you'll need stuff like this, right?"
+                ahiss "Tch... well, thanks for clearing out the trash laying around."
+                ahiss "Yes, yes. You, cleaning trash. It suits you! Ohohoho!~"
+        ahiss "Anyway... maybe this is good for me in the end."
+        ahiss "After all, maintaining our land here was starting to get boring."
+        ahiss "Now maybe I can go explore new avenues!"
+        ahiss "Literally."
         jump museum_war
 
 label .ahiss3:
@@ -388,17 +397,18 @@ label .buff:
     buff "Why thank you! I am a fanatic when it comes to these things!"
     buff "The food exhibit in particular is one of the oldest collection of pre OSO artwork in the world, some of them dating back thousands of years!"
     p astonished "Thousands of years?!"
-    buff "Indeed. Take this firey masterpiece here!"
+    buff "Indeed. Take this firey masterpiece here! \"Abandoned In The Grill\"!"
     "_" #157 describe the burger painting. There's a painting of the Hideous Burger Fire on the eastern wall, with the fire described as wanting to jump out of the page!
     buff "This painting shows the very last moments of the artist who had painted it."
     buff "If you listen closely, you can hear faint crackling and screams..."
-    p concerned "..."
+    p concerned quiet "..."
     buff "As though he is still burning alive in that August evening..."
-    p suspicious "(I may not know what watercolor is, but they are bluffing!)"
+    p suspicious -quiet "(I may not know what watercolor is, but they are bluffing!)"
     p "(Maybe I should try out this heavier thing, just in case...)"
     show burger out
     $ item.heavier = False
     $ burger_extinguish = True
+    "You used the {b}Heavier{/b} to un-light the painting on fire!"
     p happy "Wow you have a lot of knowledge about this exhibit!"
     p "Tell me more about this Abandoned in the Grill piece."
     buff "Why.. er certainly"
@@ -424,7 +434,7 @@ label .buff:
     buff "Con-science lighter, contradictory science lighter..."
     p annoyed "I see"
     jump museum_war
-    
+
 
 label .buff2:
     scene bg museum_war
