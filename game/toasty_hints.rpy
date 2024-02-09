@@ -8,8 +8,24 @@ label toasty_hints:
     
     if win_flag:
         show posty neutral
-        show toasty neutral
-        t "you won; no need to have a hint" # they have some kind of conversation about how posty actually managed to deliver the package, and how it was quite difficult. posty muses that she could use a nap in the park
+        show toasty smug5
+        p "Hey toasty, how\'s it going?"
+        t "It\'s good. The weather is nicer than usual."
+        p suspicious "I genuinely think that\'s the first time I\'ve managed to start a conversation with you without you insulting me almost immediately."
+        t smug3 "What can I say, I\'m in a good mood right now…"
+        t "Y\'know, you aren\'t half bad."
+        p "Oh? And what makes you say that?"
+        t laugh "Well, you seemed pretty committed to this one delivery, you even vandalized a painting for it!"
+        t "Blue tile couldn\'t stop crying about it afterwards, I would say the entire town thinks you\'re a villain now, but no one liked that painting to begin with… part of me kinda admires it."
+        p "The delivery?"
+        t annoyed "No you idiot. Your commitment to the delivery… and also the painting vandalization, but mostly the commitment."
+        p happy "Oh… well, I finally finished it! Got the package where it\'s meant to be."
+        t neutral2 "What\'re you gonna do now? Head back to the dusty street corner I know you live at, and nap while you wait for another package? Go on a nice walk in the park? Vandalize another painting?"
+        p "Hah… those all sound nice. I don\'t know what I\'m going to do, but at the end of the day, I\'m just glad to have that delivery over and done with."
+        t smug "You do sound relieved, too bad relaxing would get you confused for a normal mailbox and probably get an envelope or two thrown at you."
+        p "Hehe, I\'ll just have to find somewhere a mailbox wouldn\'t be then… I\'ll see you around toasty"
+        t enthused "See you around, get hit in the face with a package for me!"
+        p angry "Yeah, and how about you go take a swim!"
         return
 
     elif party_bs:
