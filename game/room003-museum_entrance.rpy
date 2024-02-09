@@ -64,20 +64,20 @@ label .inspiration:
     p astonished anim "!!!"
     p "IT IS FINISHED!"
     p "THIS IS TRULY MY MAGNUM OPUS!"
-    show cameron
+    show cameron with moveinright
     cameron "You! What have you done?"
     show posty happy
     p "Security Cameron! Gaze at my {w}{color=#e817d5}masterpiece!{/color}" 
     p "Isn't it gorgeous?"
     cameron "So you were the one stealing the paintings around the museum!"
     cameron "And now you've ruined them!"
-    cameron "You've irreparably hodge-podged them together into this...this...mess!"
+    cameron "You've irreparably hodge-podged them together into this... {w}this... {w}mess!"
     p "Of course you would disrespect this fine art and keep creative people like myself down."
     p "I'll have you know this is a mixed-media collage experimenting with color, balance, variety, emphasis, and..."
     show posty concerned
-    p "And...am I banned from the museum?"
+    p "And... am I banned from the museum?"
     cameron quiet "..."
-    cameron "Well, I already kicked someone out today, and if I did it again, it would look bad."
+    cameron "Well, I already kicked someone out today, and if I did it again, it would look bad on the museum."
     cameron "So no."
     cameron "But I WILL be confiscating this..."
     # cameron is really mad, as he's finally noticed that you've been stealing paintings
@@ -91,12 +91,13 @@ label .inspiration:
     show notice
     "You received the {b}notice of reprimand{/b}!"
     "The harshest piece of paper you've ever received."
-    "It reads: {i}Dear Posty, I found out that you have broke the rules of the museum, so I ask that you not do so a second time. Thanks. Security Cameron.{/i}!"
+    "It reads: {i}Dear Posty, I found out that you have broke the rules of the museum, so I ask that you not do so a second time. Thanks. Security Cameron{/i}"
     hide notice
     $ item.notice = True
     cameron "You got off lucky, punk."
-    cameron "Enjoy your time at the museum...or what's left of it."
-    p "Well I feel a little guilty now."
+    cameron "Enjoy your time at the museum... or what's left of it."
+    hide cameron with moveoutright
+    p "Well, I feel a little guilty now."
     jump museum_entrance
 
 label .first_time:

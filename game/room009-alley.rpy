@@ -35,10 +35,24 @@ label .tag1:
     tag "_" #262 tag explains their deal
     jump alley
 
-label .tag2: #263
+label .tag2:
     show posty neutral
-    tag "_" # tag sees your notice of reprimand and therefore thinks you're extremely cool, considering you to be a kindred spirit. they give you a can of gold spray paint.
-    show spraypaint at truecenter #260
+    tag "Hey."
+    p "Hi."
+    tag "What\'s..."
+    tag "...Woah, is that a notice of reprimand?!"
+    tag "Dude! That\'s so cool! That must mean you\'re a renegade rebel just like me!" 
+    p "I wouldn\'t say that exactly—"
+    tag "Sticking it to the man, showing the world who\'s boss, being an incendiary, fighting for the little guy, all that jazz! It\'s you and me against the world, buddy!"
+    tag "I\'m definitely not lonely or anything!"
+    p confused "Uh..."
+    tag "Anyway!!! All rabble-rousers like us gotta have something. You know what that is?"
+    p concerned quiet "{i}Please don\'t give me a knife, Toasty won\'t let me live it down{/i}"
+    tag "Spray paint!"
+    p neutral "Oh."
+    p happy "Oh!"
+    tag "You gotta leave your mark somehow, you know?"
+    show spraypaint at truecenter
     $ item.notice = False
     $ item.spraypaint = True
     $ tag_trade = True
@@ -46,10 +60,12 @@ label .tag2: #263
     hide spraypaint
     if item.scrap_trophy:
         call trophy
-        tag "_" # tag comments on your use of the spray paint
+        tag "Oh, hey, cool."
+        tag "I was expecting something more like tagging \"DARN THE MAN, SAVE THE EMPIRE\" but you know. A trophy is cool too."
         jump alley
     else:
-        p "_" # some kind of thank-you
+        p happy "Thanks, Tag!" 
+        tag "See ya later, firebrand."
         jump alley
 
 label .tag3:
