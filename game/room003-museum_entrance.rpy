@@ -46,14 +46,14 @@ label museum_entrance:
 label .inspiration:
     scene bg museum_entrance
     show posty astonished at posteaselpos
-    p "Oh {w}my {w}post office." # posty feels a rush of inspiration, due to the three stolen paintings in her possession! #344
+    p "Oh {w}my {w}post office."
     p "These paintings!"
     p happy "THEY MAKE ME FEEL SO INSPIRED!"
     if item.napkin:
         show badpainting
-        p suspicious "Except this one. This is just a drawing on a napkin." # ... and not this one, which isn't even a painting.
+        p suspicious "Except this one. This is just a drawing on a napkin."
         hide badpainting
-        p happy "BUT STILL! I FEEL CREATIVITY COMING OUT OF MY MAILSLOTS!" # but yeah!
+        p happy "BUT STILL! I FEEL CREATIVITY COMING OUT OF MY MAILSLOTS!"
     scene bg painting_combined
     p happy "LET'S DO THIS!"
     "You ride the blast of creativity and combine your inspirations into a {b}new work of art{/b}!"
@@ -80,14 +80,9 @@ label .inspiration:
     cameron "Well, I already kicked someone out today, and if I did it again, it would look bad on the museum."
     cameron "So no."
     cameron "But I WILL be confiscating this..."
-    # cameron is really mad, as he's finally noticed that you've been stealing paintings
-    # have now  into this 'mess'
-    # posty asks if she's going to be kicked out
-    # reluctantly, cameron explains that he's already kicked someone out today,
-    #so he can't do it again. but he can confiscate the damaged art...
     hide painting_combined
     "{b}{color=#bdbfe2}Security Cameron{/color}{/b} took the {b}art piece{/b} from you!"
-    cameron "And you will be recieving an official notice of reprimand!"  # ...and write you a notice of reprimand!
+    cameron "And you will be recieving an official notice of reprimand!"
     show notice
     "You received the {b}notice of reprimand{/b}!"
     "The harshest piece of paper you've ever received."
