@@ -39,7 +39,7 @@ label .tag2:
     show posty neutral
     tag "Hey."
     p "Hi."
-    tag "Whats..."
+    tag "What\'s..."
     tag "...Woah, is that a notice of reprimand?!"
     tag "Dude! That\'s so cool! That must mean you\'re a renegade rebel just like me!" 
     p "I wouldn\'t say that exactly—"
@@ -47,12 +47,12 @@ label .tag2:
     tag "I\'m definitely not lonely or anything!"
     p confused "Uh..."
     tag "Anyway!!! All rabble-rousers like us gotta have something. You know what that is?"
-    p concerned quiet "{i}Please don\'t give me a knife Toasty won\'t let me live it down{/i}"
+    p concerned quiet "{i}Please don\'t give me a knife, Toasty won\'t let me live it down{/i}"
     tag "Spray paint!"
     p neutral "Oh."
     p happy "Oh!"
     tag "You gotta leave your mark somehow, you know?"
-    show spraypaint at truecenter #260
+    show spraypaint at truecenter
     $ item.notice = False
     $ item.spraypaint = True
     $ tag_trade = True
