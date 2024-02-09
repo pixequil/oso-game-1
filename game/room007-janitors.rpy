@@ -40,25 +40,32 @@ label janitors:
         "Get outta here":
             jump museum_food
 
-label .vend: #243
+label .vend:
     scene bg janitors
     show posty neutral at lookatvend
-    p "_" # posty looks at the vending machine
+    p happy "Ooo a vending machine!"
     show sb with moveinright
-    sb "_" # Squirt Bottle comes over and confronts posty about the vending machine
-    p "_" # posty explains that she wants a snack
-    sb "_" # Squirt Bottle refuses to let her get a snack
-    p "_" # posty threatens to rat out squirt bottle if she doesn't get a snack
-    sb "_" # squirt bottle reluctantly agrees. interaction doesn't need to be this exact amount of lines
+    sb "Hey! Uh don't use that."
+    p suspicious "Why? You said I could do anything."
+    sb "Well- Not this."
+    p neutral "What if I were to,"
+    extend " say, I don't know..."
+    extend happy " rat you out?"
+    sb "NO!! Uhm- ugh!"
+    sb "...Fine."
+    p "Yay!"
     show posty at getvend with move
     show posty at lookatvend with move
     show generichips
     $ item.chips = True
     "You got the {b}Generi-Chips{/b}!" 
     "Generi-Chips: it has some nutrients."
-    hide generichips 
-    p "_" # posty expresses disgust for this brand of chips, but is fine with keeping them in case she needs them for something
+    hide generichips
+    p annoyed "Eww really? Generi-Chips??"
+    sb "It's better than nothing!"
+    p "Whatever, I'm keeping them in case I need it."
     jump janitors
+
 
 label .sb1:
     scene bg janitors
