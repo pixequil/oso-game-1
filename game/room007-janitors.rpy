@@ -99,5 +99,23 @@ label .sb2:
     scene bg janitors
     show posty neutral
     show sb
-    sb "_" #237 repeat conversation with Squirt Bottle
+    sb "Hey, what's your deal anyway?"
+    p concerned "Oh, I've been trying to deliver this package!"
+    sb "Wow, that's such a surprise. I'm truly in awe. I could've never possibly foreseen this."
+    p happy "Thank you!"
+    p neutral "Anyway, uh, it's taking a lot longer than I thought it would.."
+    p "But that's just the way things go sometimes, right?"
+    sb "I wouldn't know."
+    p "I should probably tell you what I'm delivering."
+    sb "You don't have to."
+    p happy "But I wanna!"
+    p "You ever have something that's so cool that you just {i}have{i} to tell somebody else?"
+    p "Like, a revelation so big you just can't keep yourself contained?"
+    sb "Hey, you better not have forgotten about our deal!"
+    p suspicious "Deal?"
+    sb "DUDE!"
+    p concerned "I'm kidding!"
+    p "..Probably."
+    sb "Probably?!?"
     jump janitors
+

@@ -53,6 +53,7 @@ _(Don't remove the blank bullets)_
 * Loggybears
 * Fanimator
 * PenTick
+* PlugBoy
 * Satomi
 * Jurta
 * Multi
