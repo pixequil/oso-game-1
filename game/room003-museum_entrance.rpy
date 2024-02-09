@@ -64,7 +64,7 @@ label .inspiration:
     p astonished anim "!!!"
     p "IT IS FINISHED!"
     p "THIS IS TRULY MY MAGNUM OPUS!"
-    show cameron
+    show cameron with moveinright
     cameron "You! What have you done?"
     show posty happy
     p "Security Cameron! Gaze at my {w}{color=#e817d5}masterpiece!{/color}" 
