@@ -467,6 +467,9 @@ label .capsule:
     scene bg museum_war
     show posty neutral
     show capsule happy
-    p "_" # Capsule re-explains what the heavier does, in case you forgot. #155 
+    if item.heavier:
+        p "_" # Capsule re-explains what the heavier does, in case you forgot. #155 
+    else:
+        p "_" # talking to capsule after using the heavier to extinguish the burger painting #387
     jump museum_war
     
