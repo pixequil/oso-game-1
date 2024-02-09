@@ -208,7 +208,7 @@ label .painting:
     p happy quiet "{i}It's not like it'll be missed anyway!{/i}"
     hide painting_food_floor
     show painting_food
-    "You got an {b}art piece{/b}! A strange painting depicting... brussel sprouts?" #227 describe food painting
+    "You got an {b}art piece{/b}! A strange painting depicting... brussel sprouts?"
     $ item.painting_food = True
     $ quest.painting_food = True
     $ paintings += 1
