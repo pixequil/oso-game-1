@@ -148,12 +148,12 @@ label .notepad1:
 
 label .notepad2:
     show posty neutral
-    notepad "Oh hey, it's you again! Do you have any food on you now?" # notepad asks posty if she has any food for them now.
+    notepad "Oh hey, it's you again! Do you have any food on you now?"
     if item.chips:
         jump .notepad_chips
     else:
-        p "Sorry, I still got nothing." # posty apologizes, as she still doesn't.
-        notepad "Oh well. Let me know if you find any. I would appreciate it!" # notepad reminds her to let them know if they find any for them
+        p "Sorry, I still got nothing."
+        notepad "Oh well. Let me know if you find any. I would appreciate it!"
         jump museum_food
 
 label .notepad_chips:
@@ -247,19 +247,20 @@ label .eating: #233
     show eating
     show posty neutral
     if food_switch == False:
-        p "_" # posty observes that the painting doesn't really belong here. these are paintings of food, not paintings of eating. she takes a look at the painting's placard, curious why it was included.
+        p suspicious "Huh what is that doing there? Among all the food based pieces, it doesn't look that appetizing to look at someone eating."
         "The title of the painting is \"{i}Crisis of the Poplar Trees{/i}\". The rest of the text is too small to read at this distance." 
-        p "_" # posty remarks that that's hardly a fitting name for this painting either, and it sure as hell isnt fitting for a painting in the food exhibit.
+        p "The only thing true about the title is that guy is clearly having a crisis about something!"
+        p "If I didn't know any better, I would've thought he was having some pizza psychosis..."
         label .eating_decide:
         menu:
             "Read more of the placard?"
 
             "Yes.":
                 "You try to read more of the placard, but bonk your face on it by mistake!"
-                # play a sound here! like a click!!!
+                #389 play a sound here! like a click!!!
                 # and then a scene of the corndog painting disappearing, revealing the secret passageway.
                 $ food_switch = True
-                p "_" # something like "well that was weird. better back off"
+                p confused "Well, that was weird. Wonder what that sound was!"
                 jump museum_food
             "No.":
                 p "_" # posty decides she is uninterested in reading more of the placard. she starts to walk away, but returns to the placard, still curious.
