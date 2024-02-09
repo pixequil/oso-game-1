@@ -56,7 +56,7 @@ label .tag2:
     $ item.notice = False
     $ item.spraypaint = True
     $ tag_trade = True
-    "You got the {b}glittery gold spray paint{/b}!" #261
+    "You got the {b}glittery gold spray paint{/b}! {w}If you want to make something desirable, try spraying it with glittery gold!"
     hide spraypaint
     if item.scrap_trophy:
         call trophy
