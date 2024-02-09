@@ -65,7 +65,7 @@ label .retainer:
         retainer "_"
         jump dome
 
-label .retainer_give:
+label .retainer_give: #282
     scene bg dome
     show posty neutral
     show retainer sad behind posty
