@@ -384,24 +384,47 @@ label .buff:
     show burger fire # full-size fire burger painting (and fire-free version) #156
     show posty neutral
     show buff
-    p "_" # Posty talks to Buff. #160
-    buff "_" # Loves history. Tells you all about history and the paintings and people in the room. Doesn't actually know anythving about history but Posty doesn't either so it's hard to call them out on it.
+    p happy "Ooh you seem to know a lot about art!"
+    buff "Why thank you! I am a fanatic when it comes to these things!"
+    buff "The food exhibit in particular is one of the oldest collection of pre OSO artwork in the world, some of them dating back thousands of years!"
+    p astonished "Thousands of years?!"
+    buff "Indeed. Take this firey masterpiece here!"
     "_" #157 describe the burger painting. There's a painting of the Hideous Burger Fire on the eastern wall, with the fire described as wanting to jump out of the page!
-    buff "__" # buff makes up some kind of fact about the painting.
-    p "_" # posty thinks to use the heavier on the painting, removing the fire.
+    buff "This painting shows the very last moments of the artist who had painted it."
+    buff "If you listen closely, you can hear faint crackling and screams..."
+    p concerned "..."
+    buff "As though he is still burning alive in that August evening..."
+    p suspicious "(I may not know what watercolor is, but they are bluffing!)"
+    p "(Maybe I should try out this heavier thing, just in case...)"
     show burger out
     $ item.heavier = False
     $ burger_extinguish = True
-    p "__" # posty prods buff for another fact about the painting, that is now changed.
-    buff "_" # buff makes up a new fact that contradicts the previous fact.
-    p "_" # posty calls them out on the contradiction, causing them to give posty an imaginary lighter.
+    p happy "Wow you have a lot of knowledge about this exhibit!"
+    p "Tell me more about this Abandoned in the Grill piece."
+    buff "Why.. er certainly"
+    buff "It is a misconception that this particular piece is called Abandoned in the Grill because the artist died in a fire..."
+    p suspicious "Oh?"
+    buff "Yeah yeah err it was because..."
+    p "Yes?"
+    buff "The artist was being torn from limb to limb by a... burger that became alive!"
+    buff "Yeahh yeah yea..."
+    p "But I just remember you telling me with absolute certainty you can hear faint crackling if you listen closely enough!"
+    buff "Ahhhuhuhuh... it was thematic!"
+    p annoyed "You are pulling my flap."
+    buff "You finally caught me..."
     show imaginary_lighter #158
     $ item.imaginary_lighter = True
     "You got the {b}imaginary lighter{/b}!{p}description" #159 the imaginary lighter can be used to add fire to imaginary things.
     hide imaginary_lighter
-    p "_" # posty is confused.
-    buff "_" # buff explains that imaginary things are a contradictory science, so they gave Posty a con-science lighter to make their conscience lighter after saying a contradiction outing themself as a liar. this all sounds very made-up, but, that's the nature of imaginary things.
+    p confused "Huh?"
+    buff "The imaginary and illusory don\'t follow our rules as much as they evade them."
+    buff "To make a lie requires the liar to know what looks true."
+    buff "You have caught me in a contradiction of my own making, you know this contradictory science like the back of your hand!"
+    buff "Making your conscience lighter in the end of it..."
+    buff "Con-science lighter, contradictory science lighter..."
+    p annoyed "I see"
     jump museum_war
+    
 
 label .buff2:
     scene bg museum_war
