@@ -6,6 +6,9 @@ image bg park_top:
 image bg park:
     "dbgs/park_dbg.jpg"
 
+transform flip: 
+    xzoom -1.0
+
 label park:
     $ last.mainx = 0.45
     scene bg park_top
@@ -57,7 +60,8 @@ label .auto:
     auto "I wish they would come back..."
     "{i}ring ring..!{/i}" #390
     auto bothered "Oh! It's Playing Cards! Hopefully she can pull this through. Excuse me."
-    hide auto with moveoutright
+    show auto:
+        flip
     auto "...hello"
     auto "...mhm"
     auto "..."
@@ -65,7 +69,7 @@ label .auto:
     auto "I see."
     auto "............"
     auto "Thanks, see you soon."
-    show auto with moveinright
+    show auto
     auto "..."
     p concerned "Well? Did you keep it?"
     auto "We lost the deal."
