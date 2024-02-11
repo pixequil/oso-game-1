@@ -47,6 +47,7 @@ _(Don't remove the blank bullets)_
 * XKZ
 
 ### Dialogue
+* strawanimations
 * BumpBob Looly
 * FunnyBoy044
 * AnArtichoke

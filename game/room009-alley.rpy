@@ -59,6 +59,7 @@ label .tag2:
     "You got the {b}glittery gold spray paint{/b}! {w}If you want to make something desirable, try spraying it with glittery gold!"
     hide spraypaint
     if item.scrap_trophy:
+        p "Hey, I know what I can do with this!"
         call trophy
         tag "Oh, hey, cool."
         tag "I was expecting something more like tagging \"DARN THE MAN, SAVE THE EMPIRE\" but you know. A trophy is cool too."
@@ -70,7 +71,18 @@ label .tag2:
 
 label .tag3:
     show posty neutral
-    tag "_" #264 revisiting tag after receiving the spray paint. don't mention what the spray paint may or may not have been used for.
+    p "So uh... have you been up to anything new lately?"
+    tag "I\'ve been experimenting with new colors lately, It\'s pretty fun! You should try it some time with me."
+    p happy "Sure! I\'d be down."
+    tag "I need to get more spray paint cans. My old ones are running dry!"
+    p "I can help you get some!"
+    tag "Really?! That means a lot to me that you're able to get me some more supplies!"
+    p "No problem, I\'m always willing to help out a fellow artist like yourself!"
+    p "Who\'s your inspiration to do graffiti art?"
+    tag "Oh! There\'s this guy named Graffiti, and he\'s so cool! He can shapeshift into letters and objects, he can even make his own tools and all that stuff! I look up to him a lot."
+    p "That\'s great! I\'m sure he\'d be proud of the kind of art you\'d make."
+    tag "Heh, thanks Posty."
+    p "Of course! You guys would be a great duo together!"
     jump alley
 
 label .stick:
