@@ -363,7 +363,7 @@ label .ahiss_deed:
             ahiss "Grr... hiss... I hope you're happy. You've destroyed my family legacy!"
             p annoyed "Well, you wouldn't give me the battery."
             ahiss "You'd incinerate my intergenerational fortune, just like that?"
-            ahiss "Go to a corner store, you freak!"
+            ahiss "You could've gone to a corner store, you freak!"
         else:
             ahiss "Th- THAT'S ALL YOU WANTED?!!"
             if saw.pal:
