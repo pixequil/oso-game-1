@@ -390,7 +390,7 @@ label .buff:
     if burger_extinguish == True:
         jump .buff2
     scene bg museum_war
-    show burger fire # full-size fire burger painting (and fire-free version) #156
+    show burger fire
     show posty neutral
     show buff
     p happy "Ooh you seem to know a lot about art!"
@@ -398,23 +398,22 @@ label .buff:
     buff "The food exhibit in particular is one of the oldest collection of pre OSO artwork in the world, some of them dating back thousands of years!"
     p astonished "Thousands of years?!"
     buff "Indeed. Take this firey masterpiece here! \"Abandoned In The Grill\"!"
-    "_" #157 describe the burger painting. There's a painting of the Hideous Burger Fire on the eastern wall, with the fire described as wanting to jump out of the page!
-    buff "This painting shows the very last moments of the artist who had painted it."
+    buff "This watercolor painting shows the very last moments of the artist who had painted it."
     buff "If you listen closely, you can hear faint crackling and screams..."
     p concerned quiet "..."
-    buff "As though he is still burning alive in that August evening..."
-    p suspicious -quiet "(I may not know what watercolor is, but they are bluffing!)"
+    buff "As though he is still burning alive on that August evening..."
+    p suspicious "(I may not know what watercolor is, but they are bluffing!)"
     p "(Maybe I should try out this heavier thing, just in case...)"
     show burger out
     $ item.heavier = False
     $ burger_extinguish = True
     "You used the {b}Heavier{/b} to un-light the painting on fire!"
-    p happy "Wow you have a lot of knowledge about this exhibit!"
+    p happy -quiet "Wow you have a lot of knowledge about this exhibit!"
     p "Tell me more about this Abandoned in the Grill piece."
-    buff "Why.. er certainly"
+    buff "Why.. er... certainly!"
     buff "It is a misconception that this particular piece is called Abandoned in the Grill because the artist died in a fire..."
     p suspicious "Oh?"
-    buff "Yeah yeah err it was because..."
+    buff "Yeah yeah, err, it was because..."
     p "Yes?"
     buff "The artist was being torn from limb to limb by a... burger that became alive!"
     buff "Yeahh yeah yea..."
@@ -429,10 +428,10 @@ label .buff:
     p confused "Huh?"
     buff "The imaginary and illusory don\'t follow our rules as much as they evade them."
     buff "To make a lie requires the liar to know what looks true."
-    buff "You have caught me in a contradiction of my own making, you know this contradictory science like the back of your hand!"
+    buff "You have caught me in a contradiction of my own making. You know this contradictory science like the back of your hand!"
     buff "Making your conscience lighter in the end of it..."
-    buff "Con-science lighter, contradictory science lighter..."
-    p annoyed "I see"
+    buff "Conscience lighter, contradictory science lighter..."
+    p annoyed "I see."
     jump museum_war
 
 
