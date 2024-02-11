@@ -382,8 +382,15 @@ label .ahiss_deed:
 
 label .ahiss3:
     show ahiss
-    show posty neutral with moveinleft
-    p "_" # revisiting ahiss after burning their deed and taking the battery #174
+    show posty happy with moveinleft
+    p "Hello regent, or should I say, hello fellow citizen!"
+    ahiss "I hope that silly trinket was worth the devastation you wrecked upon me."
+    ahiss "Ohhh, but prepare yourself soon for my glorious return!"
+    ahiss "For I shall arise as the rightful heir, throwing away those unnatural chains upon my destiny and seize what is MY DIVINE RIGHT-"
+    p "And a good day to you too!" 
+    hide posty with moveoutright
+    ahiss "My honour and lands shall be back in my hands soon; I just need to rally the troops again like the good old days..."
+    ahiss "You shall rue the day you crossed my path, glorified breadbox!" 
     jump museum_war
 
 label .buff:
