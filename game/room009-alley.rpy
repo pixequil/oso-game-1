@@ -59,6 +59,7 @@ label .tag2:
     "You got the {b}glittery gold spray paint{/b}!" #261
     hide spraypaint
     if item.scrap_trophy:
+        p "Hey, I know what I can do with this!"
         call trophy
         tag "Oh, hey, cool."
         tag "I was expecting something more like tagging \"DARN THE MAN, SAVE THE EMPIRE\" but you know. A trophy is cool too."
@@ -70,15 +71,15 @@ label .tag2:
 
 label .tag3:
     show posty neutral
-    p "So uh.. Have you been up to anything new lately?"
-    tag "Kind of.. I\'ve been experimenting with new colors lately, It\'s quite fun! You should try it some time with me."
-    p "Sure! I\'d be down to do so."
-    tag "I need to get more spray paint cans.. My old ones are running out of ink!"
-    p happy "I can help you get some!"
-    tag "Really?! I\'m happy you're able to get me some more supplies!"
-    p "No problem, I\'m always willing to help out someone like you!"
+    p "So uh... have you been up to anything new lately?"
+    tag "I\'ve been experimenting with new colors lately, It\'s pretty fun! You should try it some time with me."
+    p happy "Sure! I\'d be down."
+    tag "I need to get more spray paint cans. My old ones are running dry!"
+    p "I can help you get some!"
+    tag "Really?! That means a lot to me that you're able to get me some more supplies!"
+    p "No problem, I\'m always willing to help out a fellow artist like yourself!"
     p "Who\'s your inspiration to do graffiti art?"
-    tag "Oh! There\'s this guy named Graffiti, and he\'s so cool! He can shapeshift into letters and objects, he can even make objects and all that stuff! I look up to him a lot."
+    tag "Oh! There\'s this guy named Graffiti, and he\'s so cool! He can shapeshift into letters and objects, he can even make his own tools and all that stuff! I look up to him a lot."
     p "That\'s great! I\'m sure he\'d be proud of the kind of art you\'d make."
     tag "Heh, thanks Posty."
     p "Of course! You guys would be a great duo together!"
