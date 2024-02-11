@@ -59,7 +59,6 @@ label .tag2:
     "You got the {b}glittery gold spray paint{/b}!" #261
     hide spraypaint
     if item.scrap_trophy:
-        p "Hey, I know what I can do with this!"
         call trophy
         tag "Oh, hey, cool."
         tag "I was expecting something more like tagging \"DARN THE MAN, SAVE THE EMPIRE\" but you know. A trophy is cool too."
