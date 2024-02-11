@@ -62,15 +62,16 @@ label .retainer:
         show posty neutral
         show retainer sad
         p "What's wrong?"
-        retainer "Sigh, things hadn't been going well."
+        retainer "Sigh, things haven't been going well."
         retainer "Got eliminated from this show after only a couple of challenges, which was way earlier than expected."
         p "Ah shame, it happens sometimes."
-        retainer "It was supposed to be my breakthrough moment! When I start making friends and doing more in my life."
-        retainer "Instead I ended up here, without accolades to show for it."
-        retainer "I don't understand why I did this in the first place, no one cared I was gone."
-        p "..."
-        p "May I get past you?"
-        retainer "..."
+        show retainer crying with hpunch
+        retainer "It was supposed to be my breakthrough moment! When I started making friends and doing more in my life!"
+        retainer "Instead I ended up here, without accolades to show for it!"
+        retainer "I don't understand why I did this in the first place, no one cared I was gone!"
+        p concerned quiet "..."
+        p -quiet "May I get past you?"
+        retainer "AHHHHHHHHH!"
         p "Never mind."
         jump dome
 
