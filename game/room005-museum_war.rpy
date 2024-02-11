@@ -430,7 +430,7 @@ label .buff:
     buff "To make a lie requires the liar to know what looks true."
     buff "You have caught me in a contradiction of my own making. You know this contradictory science like the back of your hand!"
     buff "Making your conscience lighter in the end of it..."
-    buff "Conscience lighter, contradictory science lighter..."
+    buff "Con-science lighter, contradictory science lighter..."
     p annoyed "I see."
     jump museum_war
 
