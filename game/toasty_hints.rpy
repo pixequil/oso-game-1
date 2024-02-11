@@ -109,7 +109,7 @@ label toasty_hints:
         t annoyed "You saw a vending machine and you {b}didn\'t use it?!{/b} Why not dummy!?"
         p sad "Well… I thought it was some ordinary vending machine, so I didn\'t take some time to investigate it."
         t turned2 "That\'s a real loss for you, you could\'ve gotten a drink from there! Or at least give it to someone else who deserves it."
-        p neutral "Hm... I suppose, I\'ll get going now."
+        p neutral "Hm... I suppose. I\'ll get going now."
         show posty annoyed
         t pointandlaugh "Yeah whatever. Just go already and stop wasting my time!"
         p "Uggh, no drink for you then."
