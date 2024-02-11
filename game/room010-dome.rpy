@@ -1,14 +1,42 @@
 image bg dome_top:
     "map-bgs/dome_top.png"
-    zoom 1.5
-    yalign 0.2
 
 image bg dome:
     "dbgs/Dome_dialogue_bg.png"
 
+screen dome_nav():
+    viewport:
+        child_size (1280,720)
+        add "bg dome_top"
+
+        textbutton "Show Hitboxes":
+            action ToggleVariable("devmode",True,False)
+
+        # arrow
+        imagebutton: # main street arrow
+            xanchor 0.5 
+            yanchor 0.5
+            xpos 75
+            ypos 410
+            idle "arrow lt"
+        imagebutton: # main street arrow posty
+            xanchor 0.5 
+            yanchor 0.5
+            xpos 75
+            ypos 410+30
+            idle "pnav lt i"
+            hover "pnav lt"
+            action MouseMove(960,360),Jump("mainstreet") # mouse move is to prevent main street from automatically scrolliong. feels weird maybe?
+        
+
+
 label dome:
     $ last.mainx = 1.0
-    scene bg dome_top with fade
+    call screen dome_nav
+
+label dome_fallback:
+    $ last.mainx = 1.0
+    scene bg dome_top
     show posty neutral
 
     p "_" # TODO: #20 dome imagemap
