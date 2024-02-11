@@ -31,27 +31,27 @@ label .cb:
         $ saw.retainerblock = True
         jump dome
 
-label .cb_give: #284
+label .cb_give:
     scene bg dome
     show posty neutral
     show cb
-    p "_" # posty finally arrives with the butterfly package
-    cb "_"
+    p happy "Phew! Here you go ma'am!"
+    cb "Thank you so much!"
     show butterfly_package
     "You handed over the {b}Butterfly Package{/b}!"
     $ item.butterfly_package = False
     $ win_flag = True
     hide butterfly_package
-    cb "_" # crayon box has to go start the challenge
+    cb "Just in time! I'll need to go now."
     hide cb with moveoutright
     show posty astonished before
     cb "Gather 'round, contestants! The fourth challenge is about to start!"
     cb "I had the contents of today's challenge"
     show posty astonished anim
     cb "I had the contents of today's challenge{fast} {i}specially{/i}{w=0.3} delivered!"
-    p "_" # posty is freaking out. crayon box is talking about ME???
+    p astonished "Oh my god!! Crayon Box is talking about {i}ME{/i}?!? This is a dream come true!!"
     "You successfully finished your work for today!"
-    p "_" # posty says something that could imply she wants to take a nap in the park
+    p happy "Gosh!! I'm so tired from that! Perhaps some new scenery would help..."
     jump dome
 
 label .retainer:
@@ -61,11 +61,21 @@ label .retainer:
         scene bg dome
         show posty neutral
         show retainer sad
-        p "_" # TODO: #21 retainer is sad he got eliminated
-        retainer "_"
+        p "What's wrong?"
+        retainer "Sigh, things haven't been going well."
+        retainer "Got eliminated from this show after only a couple of challenges, which was way earlier than expected."
+        p "Ah shame, it happens sometimes."
+        show retainer crying with hpunch
+        retainer "It was supposed to be my breakthrough moment! When I started making friends and doing more in my life!"
+        retainer "Instead I ended up here, without accolades to show for it!"
+        retainer "I don't understand why I did this in the first place, no one cared I was gone!"
+        p concerned quiet "..."
+        p -quiet "May I get past you?"
+        retainer "AHHHHHHHHH!"
+        p "Never mind."
         jump dome
 
-label .retainer_give:
+label .retainer_give: #282
     scene bg dome
     show posty neutral
     show retainer sad behind posty

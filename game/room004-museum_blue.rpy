@@ -150,7 +150,6 @@ label .rt:
         redtile "I'm sure the security guard has it out for me though. Someone else took the blame, but I still have the evidence on me."
         redtile "I need to get rid of it before he sees it, but I can't risk drawing attention to myself."
         redtile "Actually, here! You take it!"
-        # Red Tile gives you the soup ladle, They’re very interested in getting rid of the incriminating evidence.
         $ item.ladle_empty = True
         show ladle_empty
         show posty concerned
@@ -209,7 +208,7 @@ label .rt:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
                     show cash_bundle_1
                     show posty concerned
-                    p "Will $20 in cash do?" # red tile refuses the regular cash.
+                    p "Will $20 in cash do?"
                     redtile "You would need to offer me way more money than that. You got anything else?"
                     p "Let me check. Sorry, I've never bribed anybody before."
                     hide cash_bundle_1
@@ -217,7 +216,7 @@ label .rt:
                 "Offer red cash.":
                     show redcash
                     show posty concerned
-                    p "I have this red bill I found on the floor." # red tile takes the red cash.
+                    p "I have this red bill I found on the floor."
                     redtile "Hey! I must've dropped this on the way in!"
                     redtile "This is worth more to me than any plain old dollar bill!"
                     redtile "Thanks, Posty! You got yourself a deal. Gimme a second to get started!"
