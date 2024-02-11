@@ -101,16 +101,18 @@ label toasty_hints:
     elif saw.janitors and (quest.money_food == False):
         show posty neutral
         show toasty smug
-        t "It\'s you, my good \'ol pal, post it note!"
+        t "It\'s you, my good \'ol pal, post-it note!"
         p annoyed "It\'s Posty, Toaster."
         t smug3 "Yeah I\'m just joking around! Learn to have some humor."
-        p "Yeah whatever. Anyways I saw this secret room with a vending machine in it or.. whatever."
-        t annoyed "You saw a vending machine and you {b}didn\'t use it?!{/b} Why not dummy!"
+        t angry "Wait, did you seriously call me Toaster?"
+        p "Yeah whatever. Anyways, I saw this secret room with a vending machine in it or... whatever."
+        t annoyed "You saw a vending machine and you {b}didn\'t use it?!{/b} Why not dummy!?"
         p sad "Well… I thought it was some ordinary vending machine, so I didn\'t take some time to investigate it."
-        t turned2 "That\'s a real loss for you, you could\'ve gotten a drink from there! Maybe if you were just tired or dehydrated.. Whatever it was!"
-        p neutral "Hm.. I suppose, I\'ll get going now."
+        t turned2 "That\'s a real loss for you, you could\'ve gotten a drink from there! Or at least give it to someone else who deserves it."
+        p neutral "Hm... I suppose, I\'ll get going now."
         show posty annoyed
         t pointandlaugh "Yeah whatever. Just go already and stop wasting my time!"
+        p "Uggh, no drink for you then."
         return
 
     elif food_switch and (quest.money_food == False) and (saw.janitors == False):
