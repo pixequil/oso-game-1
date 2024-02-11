@@ -9,7 +9,7 @@ label toasty_hints:
     if win_flag:
         show posty neutral
         show toasty neutral
-        t "you won; no need to have a hint" # they have some kind of conversation about how posty actually managed to deliver the package, and how it was quite difficult. posty muses that she could use a nap in the park
+        t "you won; no need to have a hint" # they have some kind of conversation about how posty actually managed to deliver the package, and how it was quite difficult. posty muses that she could use a nap in the park 374
         return
 
     elif party_bs:
@@ -79,7 +79,55 @@ label toasty_hints:
     elif item.napkin:
         show posty neutral
         show toasty neutral
-        t "hint for if you got the napkin painting" #252
+        show badpainting
+        p "Hey Toasty, check this out!"
+        t pointandlaugh "A napkin? How considerate!"
+        t "I just had a good chocolate donut!"
+        p concerned "Toasty don't-"
+        hide badpainting
+        "Toasty took the {b}napkin \"painting\"{/b}!"
+        p sad "That was a painting someone kindly given me!"
+        t annoyed "What, this tatty thing; a painting?"
+        t "Puhlease with the jokes."
+        p annoyed "Just look at it."
+        show badpainting
+        t smug "You call this a painting?!"
+        t "Honestly you better not make any enemies if this counts as a gift."
+        t "I almost feel sorry for you."
+        p "Ha. Ha. Ha."
+        t "So what landfill did you get this from?"
+        p "Some poor starving artist who hadn't eaten a crumb for months. They looked absolutely disheveled."
+        p "I got this avante garde piece-"
+        t laugh "Nice save!"
+        p "After giving them a bag of chips, you should've seen them pour out their gratitude."
+        p "This is how I got this thing."
+        t neutral "Damn, I feel bad now-"
+        show badpainting
+        "Toasty gave back the {b}napkin \"painting\"{/b}!"
+        hide badpainting
+        p "You feeling sorry for someone? That's character development I thought I'd never see!"
+        t laugh "Bad that you gave away a perfectly good bag of chips for this!"
+        t "It would benefit everyone if you never become an art critic, because your taste is objectively HORRIBLE!"
+        p angry "Wow. I am so disappointed."
+        t "Now if you excuse me, I need to organize a strategy meeting ASAP."
+        t turned "Alright, how to make this trash into treasure, Meisteroony?"
+        p annoyed quiet "..."
+        t "Well, who would pay a huge, huuuge amount for worthless scribbles?"
+        t "Well it would be anyone who needed to look all snooty and fancy!"
+        t "But how, Toaster the Moster? Surely their superior tastes would stall us from making millions via such low tactics?"
+        t "Well what if they want to be fooled?"
+        t "If it appears sufficiently advanced and esoteric, then they can simply ramble randomly about its various \"nuances.\""
+        t "As a wise guy once said, eye is in the art of the beholder or something deep like that!"
+        t "If I had an approximation of art, I would go towards the snootiest person in the area!"
+        t "They wouldn't let go of an opportunity to act high and mighty over lowly plebs about the \"beauties of maximal-detrius-desalination-debris murals in an abstract and expressive makeshift canvas in the modern era\", they would make entire reviews about it!"
+        t "Before we can say \"easel\", we will be super rich beyond our wildest dreams!!"
+        t "Ohohoho can't wait to see her look when I roll past her in a flexed out car with MY NAME ON IT!"
+        t "Ahhhhh, it would be a beautiful plan! Watching the blue block sadly walk around from the comfort of my sofa."
+        t "Now to get that napkin back and fufill all my dreams..."
+        t smug2 "I would looove to eat another waffle with triple syrup, but I have no napkin."
+        t "Can I borrow yours?"
+        p neutral -quiet "No."
+        t angry "DAMNIT THIS PLAN WAS SUPPOSED TO BE FOOLPROOF!"
         return
 
     elif item.chips:

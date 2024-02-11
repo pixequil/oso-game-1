@@ -330,45 +330,54 @@ label .ahiss2:
     ahiss "_" # ahiss chastises posty for forgetting. make sure the last line of the interaction is ahiss, so it transitions into the next block correctly.
     jump .ahiss_deed
 
-label .ahiss_deed: #173
+label .ahiss_deed:
     if item.imaginary_lighter == False:
         if saw.pal:
-            p "_" # posty asks if she can at least have that battery
-            ahiss "_" # ahiss is like no way
+            p sad "Well... anyway."
+            p "Do you think I could have that battery?"
+            ahiss "Absolutely not!"
             $ battery_asked = True
-        p "_" # posty is like "well i'll leave you be then" or something
+        p "Well, I'll leave you be, then."
         jump museum_war
     else:
-        p quiet "{i}_{/i}" # posty thinks to use the imaginary lighter on the deed.
+        p quiet "{i}Maybe I can use my {b}imaginary lighter{/b} on the imaginary deed!{/i}"
         show posty:
             xalign -0.05
         $ renpy.transition(move, layer="master") #prevents interruption of the text window
-        ahiss "_" # ahiss says something as posty approaches to incinerate the deed
+        ahiss "Are your ears clogged with fur? Or do you not even have ears at all? I said to stay out of my property!"
         hide deed
         $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
         "You {b}imaginary burned{/b} the {b}imaginary deed{/b}!"
         $ deed_burned = True
         $ item.imaginary_lighter = False
         if saw.pal:
-            p "_" # posty takes the battery since it belongs to palettette.
+            p happy "I'll take this, since it belongs to Palettette@!"
         else:
-            p "_" # posty notices the battery on the ground and takes it now that she's close to it, on impulse.
+            p neutral "Oh, look, a battery. Yoink!"
         hide battery_floor
         show battery_center
         "You got the {b}battery{/b}!"
         $ item.battery = True
         hide battery
         if battery_asked:
-            ahiss "_" # "i hope you're happy" or something
-            p "_"
-            ahiss "_" # ahiss finds a way to be smug about this situation in the end.
+            ahiss "Grr... hiss... I hope you're happy. You've destroyed my family legacy!"
+            p annoyed "Well, you wouldn't give me the battery."
+            ahiss "You'd incinerate my intergenerational fortune, just like that?"
+            ahiss "You could've gone to a corner store, you freak!"
         else:
-            ahiss "_" # "that's what you wanted!??" or something
+            ahiss "Th- THAT'S ALL YOU WANTED?!!"
             if saw.pal:
-                p "_" # posty tells the truth: yes
+                p "Pretty much."
+                ahiss "Ugh, the... the nerve..."
             else:
-                p "_" # posty tells the truth: no
-            ahiss "_" # ahiss finds a way to be smug about this situation in the end.
+                p "No, I just kinda saw it and I was like I may as well take it."
+                p happy "You never know when you'll need stuff like this, right?"
+                ahiss "Tch... well, thanks for clearing out the trash laying around."
+                ahiss "Yes, yes. You, cleaning trash. It suits you! Ohohoho!~"
+        ahiss "Anyway... maybe this is good for me in the end."
+        ahiss "After all, maintaining our land here was starting to get boring."
+        ahiss "Now maybe I can go explore new avenues!"
+        ahiss "Literally."
         jump museum_war
 
 label .ahiss3:
@@ -381,27 +390,50 @@ label .buff:
     if burger_extinguish == True:
         jump .buff2
     scene bg museum_war
-    show burger fire # full-size fire burger painting (and fire-free version) #156
+    show burger fire
     show posty neutral
     show buff
-    p "_" # Posty talks to Buff. #160
-    buff "_" # Loves history. Tells you all about history and the paintings and people in the room. Doesn't actually know anythving about history but Posty doesn't either so it's hard to call them out on it.
-    "_" #157 describe the burger painting. There's a painting of the Hideous Burger Fire on the eastern wall, with the fire described as wanting to jump out of the page!
-    buff "__" # buff makes up some kind of fact about the painting.
-    p "_" # posty thinks to use the heavier on the painting, removing the fire.
+    p happy "Ooh you seem to know a lot about art!"
+    buff "Why thank you! I am a fanatic when it comes to these things!"
+    buff "The food exhibit in particular is one of the oldest collection of pre OSO artwork in the world, some of them dating back thousands of years!"
+    p astonished "Thousands of years?!"
+    buff "Indeed. Take this firey masterpiece here! \"Abandoned In The Grill\"!"
+    buff "This watercolor painting shows the very last moments of the artist who had painted it."
+    buff "If you listen closely, you can hear faint crackling and screams..."
+    p concerned quiet "..."
+    buff "As though he is still burning alive on that August evening..."
+    p suspicious "(I may not know what watercolor is, but they are bluffing!)"
+    p "(Maybe I should try out this heavier thing, just in case...)"
     show burger out
     $ item.heavier = False
     $ burger_extinguish = True
-    p "__" # posty prods buff for another fact about the painting, that is now changed.
-    buff "_" # buff makes up a new fact that contradicts the previous fact.
-    p "_" # posty calls them out on the contradiction, causing them to give posty an imaginary lighter.
+    "You used the {b}Heavier{/b} to un-light the painting on fire!"
+    p happy -quiet "Wow you have a lot of knowledge about this exhibit!"
+    p "Tell me more about this Abandoned in the Grill piece."
+    buff "Why.. er... certainly!"
+    buff "It is a misconception that this particular piece is called Abandoned in the Grill because the artist died in a fire..."
+    p suspicious "Oh?"
+    buff "Yeah yeah, err, it was because..."
+    p "Yes?"
+    buff "The artist was being torn from limb to limb by a... burger that became alive!"
+    buff "Yeahh yeah yea..."
+    p "But I just remember you telling me with absolute certainty you can hear faint crackling if you listen closely enough!"
+    buff "Ahhhuhuhuh... it was thematic!"
+    p annoyed "You are pulling my flap."
+    buff "You finally caught me..."
     show imaginary_lighter #158
     $ item.imaginary_lighter = True
     "You got the {b}imaginary lighter{/b}!{p}description" #159 the imaginary lighter can be used to add fire to imaginary things.
     hide imaginary_lighter
-    p "_" # posty is confused.
-    buff "_" # buff explains that imaginary things are a contradictory science, so they gave Posty a con-science lighter to make their conscience lighter after saying a contradiction outing themself as a liar. this all sounds very made-up, but, that's the nature of imaginary things.
+    p confused "Huh?"
+    buff "The imaginary and illusory don\'t follow our rules as much as they evade them."
+    buff "To make a lie requires the liar to know what looks true."
+    buff "You have caught me in a contradiction of my own making. You know this contradictory science like the back of your hand!"
+    buff "Making your conscience lighter in the end of it..."
+    buff "Con-science lighter, contradictory science lighter..."
+    p annoyed "I see."
     jump museum_war
+
 
 label .buff2:
     scene bg museum_war
@@ -434,6 +466,9 @@ label .capsule:
     scene bg museum_war
     show posty neutral
     show capsule happy
-    p "_" # Capsule re-explains what the heavier does, in case you forgot. #155 
+    if item.heavier:
+        p "_" # Capsule re-explains what the heavier does, in case you forgot. #155 
+    else:
+        p "_" # talking to capsule after using the heavier to extinguish the burger painting #387
     jump museum_war
     

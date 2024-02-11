@@ -413,7 +413,7 @@ label .tb:
     if saw.tb:
         show posty neutral
         show tb neutral
-        p "Hi again!" # talking to ticket booth a second time
+        p "Hi again!"
         tb "Oh, hello!"
         tb "Heh heh..."
         p "Isn't working in front of a theater a bit of a strange career choice for you?"
@@ -424,7 +424,7 @@ label .tb:
     else:
         show posty neutral
         show tb shy
-        p "Hi!" # talking to ticket booth for the first time
+        p "Hi!"
         tb "H-hi!"
         tb "What movie are y-you interested in seeing?"
         p "Oh, no movies for now. I'm delivering something important for work."
@@ -432,9 +432,6 @@ label .tb:
         $ saw.tb = True
         jump mainstreet
 
-#A tall Ticket Booth at the movie theatre. Posty will say she needs to focus on the delivery
-# job if you try talking to them. Is very happy to interact with Posty since most people just
-# stop by to get the tickets.
 
 label .brandsoda:
 
@@ -739,10 +736,6 @@ label .tooly:
 
 label .tooly1:
     show posty happy
-    # introduce tooly. A toolbox, and a rough but jovial metalworker. 
-    # She is always equipped with sorts of metalworking equipment 
-    #runs a small workshop in front of the closed store on the east side of the street.
-    # she offers to craft stuff if you ever bring her some raw materials
     tooly "Howdy stranger! The name's Tooly! Welcome to my shop!"
     p happy "Hello! I never noticed this place before!" 
     tooly "I just opened it!" 
@@ -768,14 +761,14 @@ label .tooly1:
     if item.scrapmetal:
         jump .tooly_scrap
     else:
-        p "See you later, Tooly!" # posty says goodbye
+        p "See you later, Tooly!"
         tooly "Later, gator."
         jump mainstreet
 
-label .tooly2: #276
+label .tooly2:
     show posty happy
     p "Hey Tooly!"
-    tooly "Hey customer!" # tooly reminds posty that she can craft stuff if you ever bring her some raw materials
+    tooly "Hey customer!"
     p "Can you remind me of our deal again?"
     tooly "Wasn't expecting you to forget so easily, but..."
     tooly "Just for being my first customer of the day, if you personally bring me the raw materials to craft anything, I'll do your first job completely free!"
@@ -783,7 +776,7 @@ label .tooly2: #276
     if item.scrapmetal:
         jump .tooly_scrap
     else:
-        p "See you later, Tooly!" #posty says goodbye
+        p "See you later, Tooly!"
         tooly "Later, gator."
         jump mainstreet
 
@@ -821,7 +814,7 @@ label .tooly_scrap: #
 label .tooly3:
     show posty happy
     p "Hey Tooly! How's business?"
-    tooly "Deader than disco." # revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
+    tooly "Deader than disco."
     tooly "Hey, what are you using that epic trophy for anyway?"
     p neutral "You're better off not knowing."
     tooly "Hmmm... sounds illegal."
