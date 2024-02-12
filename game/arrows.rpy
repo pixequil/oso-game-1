@@ -2,11 +2,6 @@ image arrow up:
     "arrow.png"
     alpha 0.2
 
-image arrow up black:
-    "arrow.png"
-    alpha 0.2
-    black
-
 image arrow dn:
     "arrow up"
     rotate 180
@@ -18,6 +13,17 @@ image arrow rt:
 image arrow lt:
     "arrow up"
     rotate 270
+
+image arrow up black:
+    "arrow.png"
+    alpha 0.2
+    black
+
+image arrow dn black:
+    "arrow.png"
+    rotate 180
+    alpha 0.2
+    black
 
 transform black:
     matrixcolor TintMatrix("000")
