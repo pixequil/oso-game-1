@@ -1,26 +1,91 @@
 image bg alley_top:
     "map-bgs/alley_top.png"
-    zoom 1.8
-    yalign 0.2
 
 image bg alley:
     "dbgs/alley_dbg.png"
 
+default last.alleyy = 1.0
+
+screen alley_nav:
+    viewport:
+        child_size (1280,1200)
+        edgescroll (150, 2000)
+        add "bg alley_top"
+        yinitial last.alleyy
+
+        textbutton "Show Hitboxes":
+            action ToggleVariable("devmode",True,False)
+
+        imagebutton:
+            xanchor 0.5 
+            yanchor 0.5
+            xpos 635
+            ypos 1100
+            idle "arrow dn"
+        imagebutton:
+            xanchor 0.5
+            yanchor 0.5
+            xpos 635
+            ypos 1100
+            idle "pnav dn i"
+            hover "pnav dn"
+            action Jump("mainstreet")
+
+        imagebutton: # stick
+            pos (700, 600)
+            idle "nav_stick"
+            hover "nav_stick p"
+            action Jump("alley.stick")
+
+        imagebutton: # tag
+            pos (400, 400)
+            idle "nav_tag"
+            hover "nav_tag p"
+            action Jump("alley.tag")
+
+image nav_tag = Composite(
+    (240,280),
+    (0,0), "hitbox",
+    (100,0), "minisprites/Tag_overworld.png"
+)
+image nav_tag p = Composite(
+    (240,280),
+    (0,0), "nav_tag",
+    (120,20), "pnav up"
+)
+
+image nav_stick = Composite(
+    (220,160),
+    (0,0), "hitbox",
+    (100,0), "minisprites/stick_shift.png"
+)
+image nav_stick p = Composite(
+    (220,160),
+    (0,0), "nav_stick",
+    (0,10), "pnav rt"
+)
+
 label alley:
     $ last.mainx = 0.65
-    scene bg alley_top
-    show posty neutral
-    p "_" #258 alley imagemap
+    call screen alley_nav
 
-    menu:
-        "Tag":
-            jump .tag
-        "Stick Shift":
-            jump .stick
-        "Get outta here":
-            jump mainstreet
+
+# label alley:
+#     $ last.mainx = 0.65
+#     scene bg alley_top
+#     show posty neutral
+#     p "_" #258 alley imagemap
+
+#     menu:
+#         "Tag":
+#             jump .tag
+#         "Stick Shift":
+#             jump .stick
+#         "Get outta here":
+#             jump mainstreet
 
 label .tag:
+    $ last.alleyy = 0.2
     scene bg alley
     show tag
     if tag_trade:
@@ -85,6 +150,7 @@ label .tag3:
     jump alley
 
 label .stick:
+    $ last.alleyy = 0.6
     scene bg alley
     show posty neutral
     show stickshift

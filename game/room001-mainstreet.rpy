@@ -76,7 +76,7 @@ screen mainstreet_nav():
             ypos 80
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify(party_leave),Jump("alley"))
+            action If(party_bs,Notify(party_leave),MouseMove(640,480)),If(party_bs,Notify(party_leave),Jump("alley"))
         imagebutton: # dome arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -331,6 +331,7 @@ label firstscene:
     p "Welp. Better get going!"
 
 label mainstreet:
+    $ last.alleyy = 1.0
     call screen mainstreet_nav
 
 label .go_museum:

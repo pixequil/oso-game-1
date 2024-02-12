@@ -9,8 +9,8 @@ screen dome_nav():
         child_size (1280,720)
         add "bg dome_top"
 
-        textbutton "Show Hitboxes":
-            action ToggleVariable("devmode",True,False)
+        # textbutton "Show Hitboxes":
+        #     action ToggleVariable("devmode",True,False)
 
         # arrow
         imagebutton: # main street arrow
