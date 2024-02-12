@@ -1,7 +1,5 @@
 image bg park_top:
     "map-bgs/park_top.png"
-    zoom 1.3
-    yalign 0.2
 
 image bg park:
     "dbgs/park_dbg.jpg"
@@ -9,21 +7,105 @@ image bg park:
 transform flip: 
     xzoom -1.0
 
+screen park_nav:
+    viewport:
+        child_size (1280,720)
+        add "park_top"
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            xpos 658
+            ypos 80
+            idle "arrow up black"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            xpos 658
+            ypos 80
+            idle "pnav up i"
+            hover "pnav up"
+            action Jump("mainstreet")
+
+        imagebutton: # auto
+            pos (300, 30)
+            idle "nav_auto"
+            hover "nav_auto p"
+            action Jump("park.auto")
+        showif quest.retainer:
+            imagebutton:
+                pos (700,500)
+                idle "nav_retp"
+                hover "nav_retp p"
+                action Jump("park.retainer")
+        imagebutton: # bench left
+            pos (86, 300)
+            idle "nav_bench"
+            hover "nav_bench pl"
+            action Jump("park.bench")
+        imagebutton: # bench right
+            pos (965, 213)
+            idle "nav_bench"
+            hover "nav_bench pr"
+            action Jump("park.bench")
+
+image nav_bench = Composite(
+    (250,250),
+    (0,0), "hitbox",
+)
+image nav_bench pl = Composite(
+    (250,250),
+    (0,0), "nav_bench",
+    (0,20), "pnav rt"
+)
+image nav_bench pr = Composite(
+    (250,250),
+    (0,0), "nav_bench",
+    (80,20), "pnav lt"
+)
+
+image nav_retp = Composite(
+    (240,280),
+    (0,0), "hitbox",
+    (220-98,20), "minisprites/retainerhappy.png"
+)
+image nav_retp p = Composite(
+    (240,280),
+    (0,0), "nav_retp",
+    (0,0), "pnav rt"
+)
+
+image nav_auto = Composite(
+    (240,280),
+    (0,0), "hitbox",
+    (0,0), "minisprites/automatone.png"
+)
+image nav_auto p = Composite(
+    (240,280),
+    (0,0), "nav_auto",
+    (20,40), "pnav lt"
+)
+
+
 label park:
     $ last.mainx = 0.45
-    scene bg park_top
-    show posty neutral
-    p "_" #285 park imagemap
+    call screen park_nav
 
-    menu:
-        "Automotone":
-            jump .auto
-        "Retainer" if win_flag:
-            jump .retainer
-        "Take a break on one of the benches.":
-            jump .bench
-        "Back to main street.":
-            jump mainstreet
+# label park:
+#     $ last.mainx = 0.45
+#     scene bg park_top
+#     show posty neutral
+#     p "_" #285 park imagemap
+
+#     menu:
+#         "Automotone":
+#             jump .auto
+#         "Retainer" if win_flag:
+#             jump .retainer
+#         "Take a break on one of the benches.":
+#             jump .bench
+#         "Back to main street.":
+#             jump mainstreet
 
 label .auto:
     scene bg park

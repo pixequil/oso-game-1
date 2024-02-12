@@ -2,6 +2,11 @@ image arrow up:
     "arrow.png"
     alpha 0.2
 
+image arrow up black:
+    "arrow.png"
+    alpha 0.2
+    black
+
 image arrow dn:
     "arrow up"
     rotate 180

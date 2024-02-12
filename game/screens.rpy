@@ -247,6 +247,7 @@ screen quick_menu():
             not renpy.get_screen('mainstreet_nav'),
             not renpy.get_screen('dome_nav'),
             not renpy.get_screen('alley_nav'),
+            not renpy.get_screen('park_nav'),
         ]
     ):
 
