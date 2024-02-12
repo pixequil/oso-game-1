@@ -664,9 +664,19 @@ label .miso:
         jump mainstreet
 
     elif miso_took and quest.painting_blue:
-        show posty neutral
-        p "_" # todo: #50 miso soup conversation after splashing miso soup on painting
-        miso "_"
+        show posty sad
+        p "Hey, Miso Soup. I'm back."
+        miso "Oh no, it's you again! What more could go wrong today?"
+        p  "I know I messed up before, taking your soup and all."
+        p "But I want to make it up to you somehow."
+        miso "Make it up? How can you possibly do that?"
+        p "I have just the thing! It's something really special to me."
+        ""
+        p "My gratitude."
+        miso "What. How is that going to-"
+        p happy "Thanks for understanding! And thanks again for some of your soup!"
+        hide posty with moveoutleft
+        miso "Well, that was odd."
         jump mainstreet
 
     else:
