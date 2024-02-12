@@ -13,8 +13,8 @@ screen alley_nav:
         add "bg alley_top"
         yinitial last.alleyy
 
-        textbutton "Show Hitboxes":
-            action ToggleVariable("devmode",True,False)
+        # textbutton "Show Hitboxes":
+        #     action ToggleVariable("devmode",True,False)
 
         imagebutton:
             xanchor 0.5 
