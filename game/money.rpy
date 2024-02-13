@@ -40,6 +40,8 @@ label dolly:
     show dolly
     if party_bs:
         jump .dbs
+    elif quest.moneys:
+        jump .dlast
     elif saw.dolly == False:
         jump .dfirst
     else:
@@ -99,6 +101,11 @@ label .drepeat:
     p "Well..."
     jump .money_check
 
+label .dlast:
+    show posty neutral
+    p "_"
+    jump mainstreet
+
 label .money_check:
     if money == 0:
         if item.red_cash:
@@ -142,7 +149,7 @@ label .money_check:
         p astonished "What?!?"
         dolly "Haha, I'm just screwing with you. Of course you have enough." # dolly thinks this is sufficient for the loot box, although she pretends briefly that it's not, to mess with Posty. 
         show posty angry
-        hide cash_bundle_2
+        hide cash_bundle_3
         "{b}{color=#e3d3ab}Dolly{/color}{/b} took all your {b}money{/b}!"
         if item.red_cash:
             "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}."
@@ -150,13 +157,48 @@ label .money_check:
         p suspicious "So, the loot box!" # "... so, the loot box?"
         dolly "Oh yes, of course!"
         dolly "Let's see what you've won!" # "right!"
-        show lootbox at truecenter #266
-        "..." #268 insert gratuitous lootbox opening animation, reminiscent of predatory gacha games
-        hide lootbox
-        show scrapmetal at truecenter #269
+        show lootbox burst
+        play audio "sound/330563__andre_onate__kotsuzumi-roll-at-126.ogg"
+        "{w=0.9}{nw}"
+        play sound "sound/423518__neospica__loot-box-open.ogg"
+        show glowyglow behind lootbox
+        show confetti behind glowyglow
+        show brightscreen
         $ item.scrapmetal = True
         $ quest.moneys = True
         "You got some {b}scrap metal{/b} from the loot box!" #270
         p annoyed "Oh. Wow."
         dolly "Thank you! Come again! No refunds!" # this disappoints and upsets posty, but Dolly will offer no refunds.
         jump mainstreet
+    
+image lootbox:
+    "items/lootbox.png"
+    truecenter
+
+image lootbox burst:
+    "lootbox"
+    ease_cubic 0.1 zoom 0.9 rotate -2
+    easeout_back 0.5 zoom 0.2 rotate -120
+    easeout_quint 0.5 zoom 10 rotate -500
+    "items/scrapmetal.png"
+    easein_elastic 1.0 zoom 1.0 rotate 0
+
+image confetti:
+    "items/confetti.jpg"
+    truecenter
+    zoom 0.05
+    additive 1.0
+    easein_cubic 3.0 zoom 0.3 alpha 0.0
+
+image glowyglow:
+    "items/glow.png"
+    truecenter
+    additive 1.0
+    zoom 0.1
+    easein_quint 3.0 zoom 1.5 alpha 0.0
+
+image brightscreen:
+    "items/white.png"
+    additive 1.0
+    alpha 0.4
+    linear 0.5 alpha 0.0
