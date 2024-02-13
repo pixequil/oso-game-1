@@ -1,29 +1,105 @@
 image bg music_top:
     "map-bgs/music_top.png"
-    zoom 1.3
-    yalign 0.2
 
 image bg music:
     "dbgs/music_store_dbg.png"
 
+screen music_nav:
+    viewport:
+        child_size (1280,720)
+        add "music_top"
+
+        imagebutton:
+            xanchor 0.5 
+            yanchor 0.5
+            xpos 679
+            ypos 650
+            idle "arrow dn black"
+        imagebutton:
+            xanchor 0.5
+            yanchor 0.5
+            xpos 679
+            ypos 650
+            idle "pnav dn i"
+            hover "pnav dn"
+            action Jump("mainstreet")
+
+        imagebutton: # jb
+            pos (920, 0)
+            idle "nav_jb"
+            hover "nav_jb p"
+            action Jump("musicstore.jb")
+
+        imagebutton: # nl
+            pos (320, 50)
+            idle "nav_nl"
+            hover "nav_nl p"
+            action Jump("musicstore.nl")
+
+        imagebutton: # sheet
+            pos (800,350)
+            idle "nav_sheet"
+            hover "nav_sheet p"
+            action Jump("musicstore.sheet")
+
+
+
+image nav_sheet = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (150,20), "minisprites/sheet_ow_sprite.png",
+)
+image nav_sheet p = Composite(
+    (375,250),
+    (0,0), "nav_sheet",
+    (50,30), "pnav rt"
+)
+
+image nav_nl = Composite(
+    (375,250),
+    (0,0), "hitbox",
+    (150,20), "minisprites/neonlights_ow_sprite.png",
+    (0,80), "map-bgs/musicstoreforeground.png"
+)
+image nav_nl p = Composite(
+    (375,250),
+    (0,0), "nav_nl",
+    (150,30), "pnav up"
+)
+
+
+image nav_jb = Composite(
+    (250,250),
+    (0,0), "hitbox",
+)
+image nav_jb p = Composite(
+    (250,250),
+    (0,0), "nav_jb",
+    (40,30), "pnav up"
+)
+
 label musicstore:
     $ last.mainx = 0.15
-    scene bg music_top
-    show posty neutral
-    p "_" #294 music store imagemap
+    call screen music_nav
 
-    menu:
-        "Neon Lights":
-            jump .nl
-        "Sheet":
-            jump .sheet
-        "Jukebox":
-            jump .jb
-        "Leave.":
-            jump mainstreet
+# label musicstore:
+#     $ last.mainx = 0.15
+#     scene bg music_top
+#     show posty neutral
+#     p "_" #294 music store imagemap
+
+#     menu:
+#         "Neon Lights":
+#             jump .nl
+#         "Sheet":
+#             jump .sheet
+#         "Jukebox":
+#             jump .jb
+#         "Leave.":
+#             jump mainstreet
 
 label .nl:
-    show bg music
+    scene bg music
     show neon
     if (saw.nl == False):
         show posty neutral
@@ -47,7 +123,7 @@ label .nl:
     jump musicstore
 
 label .sheet:
-    show bg music
+    scene bg music
     show sheet
     if (saw.sheet == False):
         show posty neutral
