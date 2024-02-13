@@ -142,7 +142,7 @@ label .money_check:
         p astonished "What?!?"
         dolly "Haha, I'm just screwing with you. Of course you have enough." # dolly thinks this is sufficient for the loot box, although she pretends briefly that it's not, to mess with Posty. 
         show posty angry
-        hide cash_bundle_2
+        hide cash_bundle_3
         "{b}{color=#e3d3ab}Dolly{/color}{/b} took all your {b}money{/b}!"
         if item.red_cash:
             "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}."
