@@ -54,6 +54,7 @@ default saw.nl  = False
 default saw.yd  = False
 default saw.miso = False
 default saw.lost = False
+default saw.retainerpark = False
 
 # VARIOUS FLAGS
 default win_flag = False
