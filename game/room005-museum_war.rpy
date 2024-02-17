@@ -445,7 +445,8 @@ label .buff:
     buff "You finally caught me..."
     show imaginary_lighter #158
     $ item.imaginary_lighter = True
-    "You got the {b}imaginary lighter{/b}!{p}description" #159 the imaginary lighter can be used to add fire to imaginary things.
+    "You got the {b}imaginary lighter{/b}! It can be used to imaginary burn imaginary things!"
+    "Be careful while using this lighter so as to not burn your imaginary friends. Though if you have imaginary enemies then go ham!"
     hide imaginary_lighter
     p confused "Huh?"
     buff "The imaginary and illusory don\'t follow our rules as much as they evade them."

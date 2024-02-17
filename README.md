@@ -45,6 +45,7 @@ _(Don't remove the blank bullets)_
 * FluffyStar_XD
 * Martysh12
 * Compital
+* Crookie
 * XKZ
 
 ### Dialogue
