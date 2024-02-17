@@ -65,6 +65,7 @@ _(Don't remove the blank bullets)_
 * Jurta
 * Multi
 * xbeo
+* Guru
 * XKZ
 
 ### Original Writers

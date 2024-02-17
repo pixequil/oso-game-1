@@ -167,26 +167,53 @@ label .retainer:
         p "Never mind."
         jump dome
 
-label .retainer_give: #282
+label .retainer_give:
     scene bg dome
-    show posty neutral
+    show posty astonished
     show retainer sad behind posty
-    p "_" 
-    retainer "_" # retainer is still sad. write the conversation assuming it's possible posty has or hasnt talked to retainer before.
-    p "_" # posty has an idea of what to give him though!'
-    show retainer happy
+    p "Hey...Retainer, is it?" 
+    retainer "Hm? Yeah, that's me."
+    p happy "I...think I have a package for you!"
+    retainer "Oh! Really?"
+    p neutral "Lemme just..."
     show makeshift_trophy
     "You handed over the {b}makeshift trophy{/b}!"
+    p happy "Tadaaaaa!"
     $ item.makeshift_trophy = False
     $ quest.retainer = True
+    retainer "Oh my jawline! That's for me?!"
+    p "Yep! Think of it as a, uhh...a participation trophy!"
+    p quiet "{i}...please tell me he'll bite the bait.{/i}"
+    retainer "I..."
+    show retainer happy with hpunch
+    retainer "I love it!! {w}I knew Crayon Box appreciated my presence! Oh, I gotta put this on my shelf!"
     hide makeshift_trophy
-    retainer "_" # retainer accepts it and becomes happy! also, he decides it's time to finally go home.
+    p -quiet "I'm sure she was thinking of you!"
+    p quiet "{i}One man's trash...{/i}"
+    retainer "And she even put a label on it!"
+    p astonished -quiet "E-Eh? She did?"
+    retainer "Right here! She said I'm...'top-grade steel'! Crayon Box must think I showed off my greatest strengths."
+    p concerned "Ah, hehe...I'm sure she did!"
+    retainer "There's something else here, too..."
+    retainer sad "...'100\% recyclable'?"
+    p "Uhhhhh..."
+    p happy "...i-it probably means she thinks you're so versatile that you could be a contestant in just about any other show without changing anything at all!"
+    p quiet "{i}...woof, that was a horrible bluff. He wouldn't believe that in a million years!{/i}"
+    retainer quiet "..."
+    retainer happy -quiet "...hey, you're right! I bet I could be a knockout. And I'm perfect already!"
+    retainer "That settles it! Next time I see Crayon Box, I'll give her so much thanks for this trophy that she won't even know what hit her!"
+    p "{i}Uh oh, if he realizes Crayon Box is right over there, this could get bad..!{/i}"
+    p -quiet "Hold on! Don't you wanna bring this home with you first? Make sure it doesn't get damaged and all?"
+    retainer "Oh! Of course! This is my proudest achievement yet, I'm not gonna let anything happen to it!"
+    p quiet "{i}I'm sure with the passage of time, this situation's gonna seem funnier than it is pathetic and kinda sad...{/i}"
+    retainer "I gotta get this back home! Thanks a heap, Posty. If you see Crayon Box, tell her I said thanks for the trophy!"
+    p -quiet "Later, Retainer!"
     hide retainer with moveoutleft
     "{b}{color=#fc809d}Retainer{/color}{/b} got out of the way!"
     if saw.retainerblock:
-        p "_" # "finally!"
+        p "Whew! I thought he'd never leave!"
     else:
-        p "_" # "good thing i had that with me!"
+        p concerned "Pretty lucky of me to have that fake trophy, if I do say so myself!"
     jump dome
 
 label .sweets:
