@@ -76,7 +76,7 @@ screen mainstreet_nav():
             ypos 80
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify(party_leave),Jump("alley"))
+            action If(party_bs,Notify(party_leave),MouseMove(640,480)),If(party_bs,Notify(party_leave),Jump("alley"))
         imagebutton: # dome arrow
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
@@ -280,9 +280,8 @@ label firstscene:
 
     scene black
     p "..."
-    p "And this is going to..."
-
-    show bg mainstreet # TODO: #23 main street conversation bg
+    p "And this is going to..."   
+    show bg mainstreet
     $ renpy.transition(dissolve, layer="master") #prevents interruption of the text window
     show posty neutral
     show btnet
@@ -331,6 +330,7 @@ label firstscene:
     p "Welp. Better get going!"
 
 label mainstreet:
+    $ last.alleyy = 1.0
     call screen mainstreet_nav
 
 label .go_museum:
@@ -395,7 +395,7 @@ label .toasty:
     call toasty_hints
     jump mainstreet
 
-label .tb: #293
+label .tb:
     $ last.mainx = 0.0
     scene bg mainstreet
     if party_bs:
@@ -413,14 +413,25 @@ label .tb: #293
     if saw.tb:
         show posty neutral
         show tb neutral
-        p "_" # talking to ticket booth a second time
+        p "Hi again!"
+        tb "Oh, hello!"
+        tb "Heh heh..."
+        p "Isn't working in front of a theater a bit of a strange career choice for you?"
+        tb "I don't know...it pays well."
+        tb "Though what I really want to do is work on Broadway."
+        p happy "Good luck with that!"
         jump mainstreet
     else:
         show posty neutral
         show tb shy
-        p "_" # talking to ticket booth for the first time
+        p "Hi!"
+        tb "H-hi!"
+        tb "What movie are y-you interested in seeing?"
+        p "Oh, no movies for now. I'm delivering something important for work."
+        tb "Ok! Come again!"
         $ saw.tb = True
         jump mainstreet
+
 
 label .brandsoda:
 
@@ -429,9 +440,9 @@ label .brandsoda:
     show posty neutral
     show bs behind posty
 
-    bs "Yo, Posty! How’s my favorite mailbox?"
+    bs "Yo, Posty! How\'s my favorite mailbox?"
     p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
-    bs "Dope. Who’s it for?"
+    bs "Dope. Who\'s it for?"
     p happy "The OSO Dome."
     bs "WOAH! That...is...big! Something like that is bound to draw a lot of attention…"
     bs "Do you have any idea how overwhelming that could be?"
@@ -590,7 +601,7 @@ label .yd_bs_happy:
 label .miso:
     $ last.mainx = 0.5
     scene bg mainstreet
-    show miso # TODO: #45 Miso Soup talksprite
+    show miso
 
     if party_bs:
         show posty happy
@@ -607,33 +618,65 @@ label .miso:
         jump mainstreet
 
     elif (item.ladle_empty == False) and (miso_took == False):
-        show posty neutral
-        p "_" # TODO: #46 miso soup conversation before youve taken any soup
-        miso "_"
+        if saw.miso:
+            show posty neutral
+            p "Still worried about uhh all that?"
+            miso "I feel like you didn't pay attention..."
+        else:
+            show posty neutral
+            $ saw.miso = True
+            p "Hello!"
+            miso " {i}Ohhh, my family is gonna kill me... {/i}"
+            p concerned "Is there a problem?"
+            miso "Huh? Oh hi, didn't see you there!"
+            miso "You betcha there's a problem! I just got banned from the musuem!"
+            miso "The security guard in there said I spilled my soup on one of the security gates and almost ruined one of the paintings!"
+            miso "But I didn't do it! I always bring plastic wrap to protect the soup from spilling! Honest!"
+            miso "I tried telling him I didn't do it, but he wrote me a notice of reprimand anyway and kicked me out! That guy is so strict!"
+            p "Dang, that sucks..."
+            miso "Oh, it gets worse!"
+            miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
+            p "I'm sorry, there's nothing I can really do to help right now."
+            p "If I can find a way to make it up, I'll let you know."
+            miso "Thanks for trying, I guess."
         jump mainstreet
 
     elif item.ladle_empty and (miso_took == False):
-        show posty neutral
-        p "_" # TODO: #47 you take soup from Miso Soup
-        miso "_"
+        show posty sad
+        p sad "I'm so sorry for this." 
+        miso "What are you about t-"
         $ item.ladle_empty = False
         $ item.ladle_full = True
         $ miso_took = True
         show ladle_full
-        "You filled the {b}ladle{/b} with {b}miso soup{/b}!" # TODO: #48 describe soup-filled ladle
-        miso "_"
+        "You filled the {b}ladle{/b} with {b}miso soup{/b}!"
+        "Filled with miso soup, hell to clean up properly. Perfect sabotage."
+        miso "My soup!"
         jump mainstreet
 
     elif miso_took and (quest.painting_blue == False):
-        show posty neutral
-        p "_" #TODO: #49 miso soup conversation after you've taken soup
-        miso "_"
+        show posty sad
+        p "Again, I'm so sorry for taking some of your soup."
+        miso "What did you even do that for?"
+        p concerned "I need it for something. It's kind of hard to explain right now."
+        p "I'll make it up to you when I finish what I have to do!"
+        miso "I sure hope so! This has been the weirdest day ever!"
         jump mainstreet
 
     elif miso_took and quest.painting_blue:
-        show posty neutral
-        p "_" # todo: #50 miso soup conversation after splashing miso soup on painting
-        miso "_"
+        show posty sad
+        p "Hey, Miso Soup. I'm back."
+        miso "Oh no, it's you again! What more could go wrong today?"
+        p  "I know I messed up before, taking your soup and all."
+        p "But I want to make it up to you somehow."
+        miso "Make it up? How can you possibly do that?"
+        p "I have just the thing! It's something really special to me."
+        ""
+        p "My gratitude."
+        miso "What. How is that going to-"
+        p happy "Thanks for understanding! And thanks again for some of your soup!"
+        hide posty with moveoutleft
+        miso "Well, that was odd."
         jump mainstreet
 
     else:
@@ -662,17 +705,24 @@ label .btnet:
         jump mainstreet
 
     elif item.butterfly_package:
-        show posty neutral
-        p "_" # TODO: #53 talking to B.T. Net (does not progress the plot)
-        btnet "_"
-
+        show posty happy
+        p happy "Hello again!"
+        btnet "How's your progress on the delievery?"
+        p happy "I ran into a few slip-ups, but I think I can handle it!"
+        btnet "If it ever gets too difficult, I can always pass it on to someone else, like your friend Toasty or-"
+        p astonished "No it's ok! I've got it!"
+        p "I'll let you know when it's delivered!"
+        btnet "Ok Posty, good luck!"
         jump mainstreet
 
     else:
         show posty neutral
-        p "_" # TODO: #54 talking to B.T. Net after a successful delivery! (game is in win state)
-        btnet "_"
-
+        p happy "I delievered the package! Crayon Box was impressed with the butterflies!"
+        btnet "Excellent work, Posty! I knew you could do it!"
+        p happy "Do you need me to deliever any other packages today?"
+        btnet "Nah. I don't want to overwork you, especially after this important order for OSO!"
+        btnet "Go take a nap! You've earned it!"
+        p happy "Thanks B.T.! Talk to you later!"
         jump mainstreet
 
 label .tooly:
@@ -694,46 +744,93 @@ label .tooly:
     else:
         jump .tooly1
 
-label .tooly1: #276
-    show posty neutral
-    p "_" # introduce tooly. A toolbox, and a rough but jovial metalworker. She is always equipped with sorts of metalworking equipment and runs a small workshop in front of the closed store on the east side of the street.
-    tooly "_" # she offers to craft stuff if you ever bring her some raw materials
+label .tooly1:
+    show posty happy
+    tooly "Howdy stranger! The name's Tooly! Welcome to my shop!"
+    p happy "Hello! I never noticed this place before!" 
+    tooly "I just opened it!" 
+    p happy "Neat! What do you do here!"
+    tooly "Oh, I store nukes!"
+    show posty concerned
+    tooly "We have weapons of mass destruction of all shapes and sizes."
+    tooly "We actually have a few deactiviated ones. Don't touch them, they're sensitive."
+    p concerned "Uhhhhhhh..." 
+    tooly "Hahaha! I'm just messing with you!" 
+    tooly "This is a metalworking shop. Been working professionally for the past twenty years!" 
+    tooly "I've got plenty of experience so if you wanted anything special crafted, I can do it pretty easily!"
+    p happy "Cool!"
+    tooly "It would cost you though."
+    tooly "Raw materials aren't cheap."
+    p concerned "Oh, I'm kinda broke."
+    p concerned "Would it be cheaper if I just loaned you the raw materials myself?" 
+    tooly "Hmmmm..."
+    tooly "You seem like a nice enough girl, so tell you what!"
+    tooly "Just for being my first customer of the day, if you personally bring me the raw materials to craft anything, I'll do your first job completely free!"
+    p happy "Awesome!"
+    $ saw.tooly = True
     if item.scrapmetal:
         jump .tooly_scrap
     else:
-        p "_" # posty says goodbye
+        p "See you later, Tooly!"
+        tooly "Later, gator."
         jump mainstreet
 
-label .tooly2: #276
-    show posty neutral
-    tooly "_" # tooly reminds posty that she can craft stuff if you ever bring her some raw materials
+label .tooly2:
+    show posty happy
+    p "Hey Tooly!"
+    tooly "Hey customer!"
+    p "Can you remind me of our deal again?"
+    tooly "Wasn't expecting you to forget so easily, but..."
+    tooly "Just for being my first customer of the day, if you personally bring me the raw materials to craft anything, I'll do your first job completely free!"
+    p "Awesome!"
     if item.scrapmetal:
         jump .tooly_scrap
     else:
-        p "_" #posty says goodbye
+        p "See you later, Tooly!"
+        tooly "Later, gator."
         jump mainstreet
 
-label .tooly_scrap: #277
-    p "_" # "oh, something like this?"
+label .tooly_scrap: #
+    show posty happy
     show scrapmetal at truecenter
+    p "Will this work as raw materials?"
+    tooly "Looks great! Hand it over!"
     "You handed over the {b}scrap metal{/b}!"
     $ item.scrapmetal = False
     hide scrapmetal
-    tooly "_" # tooly immediately knows what to do with this
+    p "Can you craft this into a trophy please?"
+    tooly "Sounds good! I know exactly what to how it! Can I get the name for this project?"
+    p "Posty."
+    tooly "Alright, Posty! Give me one minute!"
     $ trophy_crafted = True
     show scraptrophy
     "Tooly crafted a {b}scrap trophy{/b}!"
     $ item.scrap_trophy = True
     hide scraptrophy
+    p "Wow, it looks like a real trophy!"
+    tooly "Yeah, the craftsmanship is good...but I don't know."
+    tooly "It's missing something. It needs the perfect finishing touch."
     if item.spraypaint:
         call trophy
-        tooly "_" # tooly comments on your use of the spray paint
+        tooly "Now that's a gold trophy!"
+        tooly "You might be able to trick somebody into thinking this is real gold!"
         jump mainstreet
     else:
-        p "_" # some kind of thank-you
+        p "This looks perfect! Thank you so much!"
+        tooly "Hehe! Any time Posty."
+        tooly "Catch you later!"
         jump mainstreet
 
 label .tooly3:
-    show posty neutral
-    tooly "_" #278 revisiting tooly after receiving the scrap trophy. don't mention what the scrap trophy may or may not have been used for.
+    show posty happy
+    p "Hey Tooly! How's business?"
+    tooly "Deader than disco."
+    tooly "Hey, what are you using that epic trophy for anyway?"
+    p neutral "You're better off not knowing."
+    tooly "Hmmm... sounds illegal."
+    p astonished "..!"
+    tooly "I'm going to have to report this as a concerned citizen."
+    tooly "PFFFT! Nah!"
+    p neutral "..."
+    tooly "Catch you later Posty!"
     jump mainstreet

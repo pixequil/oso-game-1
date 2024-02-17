@@ -241,7 +241,16 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if quick_menu:
+    if all(
+        [
+            quick_menu,
+            not renpy.get_screen('mainstreet_nav'),
+            not renpy.get_screen('dome_nav'),
+            not renpy.get_screen('alley_nav'),
+            not renpy.get_screen('park_nav'),
+            not renpy.get_screen('music_nav'),
+        ]
+    ):
 
         hbox:
             style_prefix "quick"

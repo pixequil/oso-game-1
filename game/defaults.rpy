@@ -51,7 +51,9 @@ default saw.tb = False
 default saw.jb = False
 default saw.sheet  = False
 default saw.nl  = False
-default saw.yd = False
+default saw.yd  = False
+default saw.miso = False
+default saw.lost = False
 
 # VARIOUS FLAGS
 default win_flag = False
@@ -68,6 +70,7 @@ default gave_chips = False
 default tag_trade = False
 default trophy_crafted = False
 default musicroomplayer = False
+default vendingmachine_used = False
 
 # VARIOUS COUNTERS
 default money = 0

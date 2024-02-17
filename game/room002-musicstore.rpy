@@ -1,13 +1,82 @@
 image bg music_top:
     "map-bgs/music_top.png"
-    zoom 1.3
-    yalign 0.2
 
 image bg music:
     "dbgs/music_store_dbg.png"
+    
+screen music_nav:
+    viewport:
+        child_size (1280,720)
+        add "music_top"
 
-image bg musicplayer:
-    "gui/frame.png"
+        imagebutton:
+            xanchor 0.5 
+            yanchor 0.5
+            xpos 679
+            ypos 650
+            idle "arrow dn black"
+        imagebutton:
+            xanchor 0.5
+            yanchor 0.5
+            xpos 679
+            ypos 650
+            idle "pnav dn i"
+            hover "pnav dn"
+            action Jump("mainstreet")
+
+        imagebutton: # jb
+            pos (920, 0)
+            idle "nav_jb"
+            hover "nav_jb p"
+            action Jump("musicstore.jb")
+
+        imagebutton: # nl
+            pos (320, 50)
+            idle "nav_nl"
+            hover "nav_nl p"
+            action Jump("musicstore.nl")
+
+        imagebutton: # sheet
+            pos (800,350)
+            idle "nav_sheet"
+            hover "nav_sheet p"
+            action Jump("musicstore.sheet")
+
+
+
+image nav_sheet = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (150,20), "minisprites/sheet_ow_sprite.png",
+)
+image nav_sheet p = Composite(
+    (375,250),
+    (0,0), "nav_sheet",
+    (50,30), "pnav rt"
+)
+
+image nav_nl = Composite(
+    (375,250),
+    (0,0), "hitbox",
+    (150,20), "minisprites/neonlights_ow_sprite.png",
+    (0,80), "map-bgs/musicstoreforeground.png"
+)
+image nav_nl p = Composite(
+    (375,250),
+    (0,0), "nav_nl",
+    (150,30), "pnav up"
+)
+
+
+image nav_jb = Composite(
+    (250,250),
+    (0,0), "hitbox",
+)
+image nav_jb p = Composite(
+    (250,250),
+    (0,0), "nav_jb",
+    (40,30), "pnav up"
+)
 
 label musicstore:
     if musicroomplayer:
@@ -16,22 +85,26 @@ label musicstore:
 
 
     $ last.mainx = 0.15
-    scene bg music_top
-    show posty neutral
-    p "_" #294 music store imagemap
+    call screen music_nav
 
-    menu:
-        "Neon Lights":
-            jump .nl
-        "Sheet":
-            jump .sheet
-        "Jukebox":
-            jump .jb
-        "Leave.":
-            jump mainstreet
+# label musicstore:
+#     $ last.mainx = 0.15
+#     scene bg music_top
+#     show posty neutral
+#     p "_" #294 music store imagemap
+
+#     menu:
+#         "Neon Lights":
+#             jump .nl
+#         "Sheet":
+#             jump .sheet
+#         "Jukebox":
+#             jump .jb
+#         "Leave.":
+#             jump mainstreet
 
 label .nl:
-    show bg music
+    scene bg music
     show neon
     if (saw.nl == False):
         show posty neutral
@@ -41,7 +114,6 @@ label .nl:
         neon "All I need is a record and a player and I'm set for life!"
         neon "Hopefully you will find it as stellar as I do: it wouldn't hurt to find a fellow aficionado to talk with!"
         neon "What can I help you find?"
-
         $ saw.nl = True
     else:
         show posty neutral
@@ -49,14 +121,14 @@ label .nl:
     p "Nothing at the moment."
     neon "Ok..."
     neon "Nothing. Of course. Just like I do every day I stand in front of this stupid stand for 8 stupid hours talking to these stupid-"
-    p "Excuse me?"
+    p concerned "Excuse me?"
     neon "...I said as long as you're still browsing, you can talk to Jukebox in the corner and play some music."
     neon "Maybe you'll like one of them enough to purchase one."
-    p "Sounds cool. I'll be sure to check it out."
+    p happy "Sounds cool. I'll be sure to check it out."
     jump musicstore
 
 label .sheet:
-    show bg music
+    scene bg music
     show sheet
     if (saw.sheet == False):
         show posty neutral
@@ -70,8 +142,8 @@ label .sheet:
     else:
         show posty neutral
         sheet "Nice to see ya again! How may I help you?"
-        p "Asking again probably wouldn't hurt."
-    p "You wouldn't happen to know how to deliever a package safely, would you?"
+        p quiet "Asking again probably wouldn't hurt."
+    p neutral "You wouldn't happen to know how to deliever a package safely, would you?"
     sheet "Nope."
     p "Yeah, that checks."
     sheet "To be honest, there's not much to do here other than listen to music."
@@ -83,7 +155,7 @@ label .jb:
 
     scene bg music
     show jb
-    show posty neutral
+    show posty happy
     if (saw.jb == False):
         jb "Sup, I'm Jukebox (Juke for short)."
         p "Hello, Jukebox! I'm Posty!"
@@ -109,12 +181,12 @@ label .talk:
     show posty neutral
     p "What is it you do again?"
     jb "I can play any music you give me!"
-    jb "Whether its the music in this game or some original music of my own, I can play it and swap out the music in this store!"
+    jb "Whether it's the music in this game or some original music of my own, I can play it and swap out the music in this store!"
     show posty confused
     jb "I even have some remixed OSO tracks!"
     p confused "The music in this what?"
     jb "The music in this store."
-    p neutral"Oh OK. Sorry for mishearing you."
+    p neutral "Oh OK. Sorry for mishearing you."
     jb "That's OK, I get that all the time."
     jump .jb
 
