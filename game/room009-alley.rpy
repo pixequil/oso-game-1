@@ -154,5 +154,18 @@ label .stick:
     scene bg alley
     show posty neutral
     show stickshift
-    stick "_" #259 stickshift conversation
+    p "Hey... whatcha doing?"
+    stick "Just working on a piece of graffiti."
+    p suspicious "...That\'s it?"
+    stick "That\'s it."
+    p "You don\'t have some like, thing I have to fetch for you or some goal I have to complete for you so you can give me some item and help me on my journey?"
+    stick "Nah."
+    stick "Just making some art. No goal in mind."
+    stick "I\'m just doing it to do it. I\'m gonna finish this piece and I\'m not going to tell anyone about it, and I\'m going to go about my regular life ‘till I get the urge to do it again."
+    stick "It\'s just for me. It\'s fun."
+    p neutral "...Huh."
+    p "...Well, I\'ll let you get back to it, I guess."
+    stick "Good luck on your journey."
+    p "You too."
+    stick "Be good, stranger."
     jump alley
