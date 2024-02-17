@@ -120,7 +120,7 @@ label .painting2:
     scene bg museum_war_flipped
     show painting_war green
     show posty neutral
-    p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
+    p "This painting's cool.. it makes me feel inspired. Maybe nobody will notice if I.." 
     hide painting_war green # !! HIDING AND SHOWING THE PAINTING MOVES IT TO THE FRONT LAYER. changing its location should imply to the player that it is being 'taken'. this will probably make more sense once there are backgrounds, as the paintings will then feel more integrated.
     show painting_war green at center 
     "You got an {b}art piece{/b}! This painting looked a lot more meaningful and violent when it was in black and white. Now it just looks… green. and violent."
@@ -128,7 +128,8 @@ label .painting2:
     $ quest.painting_war = True
     $ paintings += 1
     hide painting_war
-    p "_" # posty decides to quickly leave.
+    p "{i}cough{/i} Oh no, where'd the painting go! I guess there's nothing to see here anymore, everyone!"
+    hide posty with moveoutright
     jump museum_war
 
 label .glasses2:
