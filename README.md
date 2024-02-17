@@ -50,6 +50,7 @@ _(Don't remove the blank bullets)_
 
 ### Dialogue
 * Lysander Phoenix (PenTick)
+* TotallyNotSomeone
 * OverbakedCracker
 * Miguel Refareal
 * strawanimations

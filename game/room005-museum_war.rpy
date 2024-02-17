@@ -518,6 +518,13 @@ label .capsule:
         p happy "Well, thanks for explaining it again."
         capsule "No problem!" 
     else:
-        p "_" # talking to capsule after using the heavier to extinguish the burger painting #387
+        p "You never told me it could put out fires on paintings."
+        capsule "Oh right I forgot to tell you about that part. To be honest, I didn\'t know how that even happens myself."
+        p "Gotta love how things work, right?"
+        capsule "Yeah i guess you do. Just don\'t cause any mayhem with that thing."
+        p "Alrighty!"
+        capsule "If anybody saw what you did to the painting, you\'d be in trouble."
+        p "Oh shoot… They won\'t notice, right?"
+        capsule "Ehhhh.. sure."
     jump museum_war
     
