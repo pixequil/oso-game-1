@@ -462,7 +462,13 @@ label .buff2:
     show burger out
     show posty neutral
     show buff
-    p "_" # revisiting buff and the fire-free burger painting #161
+    buff "Wait. You want more history?"
+    buff "Even after catching me in my previous blunder? "
+    buff "No. I know your tricks."
+    buff "As the great Applexander Hamilton once said, \"Fool me once, you\'re to blame. Fool me twice, it\'s a jester\'s game.\""
+    p quiet ". . ."
+    p suspicious -quiet "What?"
+    buff "I may have been outsmarted once, but I\'m smart enough to know that my efforts will be futile when it comes to you."
     jump museum_war
 
 label .capsulefirst:

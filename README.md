@@ -48,6 +48,7 @@ _(Don't remove the blank bullets)_
 * XKZ
 
 ### Dialogue
+* OverbakedCracker
 * Miguel Refareal
 * strawanimations
 * BumpBob Looly
