@@ -49,6 +49,7 @@ _(Don't remove the blank bullets)_
 * XKZ
 
 ### Dialogue
+* Lysander Phoenix (PenTick)
 * OverbakedCracker
 * Miguel Refareal
 * strawanimations

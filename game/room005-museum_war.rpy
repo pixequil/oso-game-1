@@ -511,7 +511,12 @@ label .capsule:
     show posty neutral
     show capsule happy
     if item.heavier:
-        p "_" # Capsule re-explains what the heavier does, in case you forgot. #155 
+        p confused "Hey! Uh... can you explain what the heavier does again?"
+        capsule "I'd be happy to!"
+        show heavier
+        capsule "Unlike a lighter, it removes fire! No need for water or fire extinguishers here!"
+        p happy "Well, thanks for explaining it again."
+        capsule "No problem!" 
     else:
         p "_" # talking to capsule after using the heavier to extinguish the burger painting #387
     jump museum_war
