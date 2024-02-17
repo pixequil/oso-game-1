@@ -382,12 +382,26 @@ label .ahiss_deed:
 
 label .ahiss3:
     show ahiss
-    show posty happy with moveinleft
-    p "Hello regent, or should I say, hello fellow citizen!"
+    show posty neutral with moveinleft
+    p "Hello, excuse me? Ahiss?"
+    ahiss "...Do I know you?"
+    p suspicious "I'm Posty?"
+    p "I may have had.. uh.. burnt your royal deed and stole a battery or something."
+    ahiss "Hm? What's this? My... memory... seems to be returning..."
+    p annoyed "Okay."
     ahiss "I hope that silly trinket was worth the devastation you wrecked upon me."
     ahiss "Ohhh, but prepare yourself soon for my glorious return!"
-    ahiss "For I shall arise as the rightful heir, throwing away those unnatural chains upon my destiny and seize what is MY DIVINE RIGHT-"
-    p "And a good day to you too!" 
+    ahiss "For I shall arise as the rightful heir, throwing away those unnatural chains upon my destiny and seize what is MY DIVINE RIGHT-{nw}"
+    p "Really, I didn't think it was that big of a-{nw}"
+    ahiss "That is enough out of you, thank you!"
+    ahiss "Leave and never come back!! I don't want to see your face ever again!"
+    p "I was just going to say-{nw}"
+    ahiss "I'm giving you one last chance before I call my royal guards to deal with you."
+    p "I don't see any royal guards."
+    ahiss "..."
+    show posty astonished with hpunch
+    ahiss "GET OUT! GO AWAY!"
+    p happy "And a good day to you too, regent, or should I say, fellow citizen!" 
     hide posty with moveoutright
     ahiss "My honour and lands shall be back in my hands soon; I just need to rally the troops again like the good old days..."
     ahiss "You shall rue the day you crossed my path, glorified breadbox!" 
