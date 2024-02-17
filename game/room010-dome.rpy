@@ -119,9 +119,9 @@ label .cb_give:
     scene bg dome
     show posty happy
     show cb
+    show butterfly_package
     p "Phew! Here you go ma'am!"
     cb "Thank you so much!"
-    show butterfly_package
     "You handed over the {b}Butterfly Package{/b}!"
     $ item.butterfly_package = False
     $ win_flag = True
