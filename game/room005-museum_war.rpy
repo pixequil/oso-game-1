@@ -306,16 +306,31 @@ label .ahiss:
 
 label .ahiss1:
     show posty neutral with moveinleft
-    p "_" # posty steps into ahiss's space for the first time #171
-    show deed #170
+    if saw.pal:
+        p happy "Aha! There\'s the batteries."
+    show posty astonished
     $ renpy.transition(hpunch, layer="master") #prevents interruption of the text window
-    ahiss "_" # ahiss interrupts her and tells her to back up, claiming that they own this plot of land and showing the imaginary deed.
+    ahiss "HALT! State your business immediately. I will not tolerate intruders upon my land."
     show posty quiet:
         xalign -0.3
     $ renpy.transition(move, layer="master") #prevents interruption of the text window
-    p "..!" # posty backs off.
-    ahiss "_" # ahiss explains more about themself. make sure the last line of the interaction is ahiss, so it transitions into the next block correctly.
-    show posty -quiet
+    p -quiet "Woah! I don\'t want any trouble. I\'m just…"
+    p suspicious "Hang on, your land?"
+    show deed #170
+    ahiss "The deed\'s right here, darling. This kingdom belongs to me. See it for yourself."
+    p neutral "I can\'t see it."
+    ahiss "Huh? Well, uh…IGNORANCE OF THE LAW IS NO EXCUSE! LEAVE AT ONCE!"
+    p astonished "AGH! Will do…"
+    ahiss "To yield even one morsel of this land\'s bounty to you, that would be an insult to the great Champurrlain and the flag they fought for."
+    p neutral "Hm? Who\'s Champurrlain?"
+    ahiss "Hmph, I suppose people do come to this museum to educate themselves… "
+    ahiss "Very well then. Champurrlain is none other than the cat you see in the painting before you, whom I happen to be a direct descendant of. "
+    p astonished "Really? I would\'ve never guessed. "
+    ahiss "Yes, yesss! A legendary war hero of unmatched brilliance, they practically invented the element of surprise. "
+    p annoyed "The element of surprise, you say…"
+    ahiss "What a battle it was, indeed. From the moment that Champurrlain\'s troops rode their invisible horses into battle, victory was imminent. "
+    ahiss "They readied their imperceptible cannons, cleverly struck down the opposition with a barrage of undetectable cannonballs, and planted their flag to claim the land. "
+    ahiss "That flag…nothing brings a tear to the eye quite like its majestic, ultraviolet hue."
     jump .ahiss_deed
 
 label .ahiss2:
@@ -341,7 +356,7 @@ label .ahiss_deed:
         p "Well, I'll leave you be, then."
         jump museum_war
     else:
-        p quiet "{i}Maybe I can use my {b}imaginary lighter{/b} on the imaginary deed!{/i}"
+        p neutral quiet "{i}Maybe I can use my {b}imaginary lighter{/b} on the imaginary deed!{/i}"
         show posty:
             xalign -0.05
         $ renpy.transition(move, layer="master") #prevents interruption of the text window
@@ -359,7 +374,7 @@ label .ahiss_deed:
         show battery_center
         "You got the {b}battery{/b}!"
         $ item.battery = True
-        hide battery
+        hide battery_center
         if battery_asked:
             ahiss "Grr... hiss... I hope you're happy. You've destroyed my family legacy!"
             p annoyed "Well, you wouldn't give me the battery."

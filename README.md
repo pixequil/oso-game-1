@@ -53,6 +53,7 @@ _(Don't remove the blank bullets)_
 * Miguel Refareal
 * strawanimations
 * BumpBob Looly
+* 4DJumpman256
 * FunnyBoy044
 * AnArtichoke
 * Loggybears
