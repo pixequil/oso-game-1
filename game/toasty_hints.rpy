@@ -350,7 +350,6 @@ label toasty_hints:
         show posty angry
         t smug2 "Either way, I want you to know I'm happy for you."
         p annoyed "I'm very reassured."
-#hint:if you have spray paint but nothing to decorate(see dolly) #265
         return
 
     elif quest.paintings and (quest.bs == False):
@@ -363,7 +362,6 @@ label toasty_hints:
         t smug2 "You could get ideas from people on the street. That soda can guy's always in need for a commission."
         t laugh "They're so self-absorbed that you'd never run out of work!"
         t laugh "Hope you like drawing a soda can for the rest of your life!"
-#hint:if you have spray paint but nothing to decorate(talk to bs)" #265
         return
 
     elif quest.paintings and (money == 1):
@@ -377,7 +375,6 @@ label toasty_hints:
         p happy "Like in the art museum?"
         show posty angry
         t smug2 "I was actually thinking about you ruminating in a hole in the ground, but that works too."
-#hint:if you have the spray paint but nothing to decorate with it (do food exhibit quest)" #265
         return
 
     elif paintings == 3 and (quest.paintings == False):
