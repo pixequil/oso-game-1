@@ -66,6 +66,7 @@ image nav_stick p = Composite(
 )
 
 label alley:
+    $ renpy.choice_for_skipping()
     $ last.mainx = 0.65
     call screen alley_nav
 

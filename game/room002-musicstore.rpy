@@ -79,6 +79,7 @@ image nav_jb p = Composite(
 )
 
 label musicstore:
+    $ renpy.choice_for_skipping()
     $ last.mainx = 0.15
     call screen music_nav
 

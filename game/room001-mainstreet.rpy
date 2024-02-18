@@ -331,6 +331,7 @@ label firstscene:
     p "Welp. Better get going!"
 
 label mainstreet:
+    $ renpy.choice_for_skipping()
     $ last.alleyy = 1.0
     call screen mainstreet_nav
 
