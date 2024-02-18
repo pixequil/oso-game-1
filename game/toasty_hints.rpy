@@ -183,9 +183,31 @@ label toasty_hints:
         return
 
     elif food_switch and (quest.money_food == False) and (saw.janitors == False):
-        show posty neutral
-        show toasty neutral
-        t "hint for if you opened the janitors closet but didnt go in" #234
+        show posty zany
+        show toasty smug2
+        p "Woaaaah I think I am seeing stars!"
+        p concerned "Owww my head hurts!"
+        t "What is up..."
+        t neutral "Girl are you alright?"
+        p "I bonked my head on the plaque next to the pizza-eating painting just now."
+        p sad "It hurts."
+        t "Damn..."
+        t pointandlaugh "Looks like I have an advantage against my hated blue rival!"
+        t smug "Looks like I need to do my planning in secret!"
+        p angry quiet "..."
+        t turned "What up Toastmeister!"
+        p -quiet "you still sticking with Toastmeister?"
+        t "The blue buffoon doesn't understand the significance of that painting!"
+        t "and no we aren't just talking about its culinary delights!"
+        p "ha ha ha"
+        t "If my detective skills are correct (and I have no reason to doubt my glorious abilities), she must have revealed a secret passageway!"
+        t "And without realizing, too!"
+        t "Ahh elementary my pop up Watson!"
+        t "To think she'd find a secret passage and just walk right past it!"
+        t "Well, if I was there, I surely wouldn't have made such a grave error."
+        t "Genius! You deserve a raise for such logic."
+        t "Phew I don't deserve such praise, now lets keep it away from prying ears!"
+        t neutral "Soooooo how is the weather my courier countercompanion?"
         return
 
     elif scanter_green and (quest.painting_war == False):
