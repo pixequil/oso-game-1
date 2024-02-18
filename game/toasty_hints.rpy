@@ -258,10 +258,15 @@ label toasty_hints:
         return
 
     elif item.imaginary_lighter:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you have the imaginary lighter" #163
-        return
+        if saw.ahiss:
+            show posty neutral
+            show toasty neutral
+            t "hint for if you have the imaginary lighter" #163
+            return
+        else:
+            show posty neutral
+            show toasty neutral
+            t "hint for if you have the imaginary lighter and havent talked to ahiss" #407
     
     elif item.heavier:
         show posty neutral
