@@ -42,6 +42,7 @@ _(Don't remove the blank bullets)_
 ## Writers
 
 ### Item Descriptions
+* The Lemon Demon
 * FluffyStar_XD
 * Martysh12
 * Compital

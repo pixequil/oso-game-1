@@ -432,9 +432,10 @@ label .buff:
     show buff
     p happy "Ooh you seem to know a lot about art!"
     buff "Why thank you! I am a fanatic when it comes to these things!"
-    buff "The food exhibit in particular is one of the oldest collection of pre OSO artwork in the world, some of them dating back thousands of years!"
+    buff "The war exhibit in particular is one of the oldest collection of pre OSO artwork in the world, some of them dating back thousands of years!"
     p astonished "Thousands of years?!"
     buff "Indeed. Take this firey masterpiece here! \"Abandoned In The Grill\"!"
+    "{i}It's a painting of a truly ugly burger on fire. The fire seems very realistic, being the only good thing about the painting.{/i}"
     buff "This watercolor painting shows the very last moments of the artist who had painted it."
     buff "If you listen closely, you can hear faint crackling and screams..."
     p concerned quiet "..."
