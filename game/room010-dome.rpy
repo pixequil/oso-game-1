@@ -219,11 +219,29 @@ label .retainer_give:
 label .sweets:
     scene bg dome
     show bonbon
-    show sgummy behind bonbon
+    show sgummy behind bonbon:
+        xzoom -1.0
+        xalign 0.7
     if quest.retainer:
         show posty neutral
-        bonbon "_" #283 bonbon and sour gummy saw you give retainer that trophy
-        sgummy "_"
+        bonbon "That was so sweet of her! Don't you agree?"
+        sgummy "No way, she was clearly trying to ward the poor guy away from the dome. Or even better it was the hosts that told her to give him a trophy made of fake gold so he won't annoy the entrance of the dome."
+        bonbon "But you have to admit! The retainer guy seemed genuinely happy! I hope he's back home safe and sound and away from… that."
+        sgummy "...Bon bon we're not having another conversation about how much you-{nw}"
+        bonbon "I have no idea why those poor objects would sign up to be locked into that thing! And competing against each other in a closed space too!! That's barbaric!"
+        sgummy "Yea I guess I can uh agree, I don't trust those host guys at all, but I gotta give them some.. cough.. credit, the dome is cool."
+        bonbon "It just IRRITATES me. I can't even water my plants in peace without looking at that thing! Trapping the people from real grass!"
+        sgummy "How'd you know huh? It's definitely real grass Bon bon, and I would know since I look around it daily, that doesn't look like plastic grass to me."
+        bonbon "Well… but it's still inhumane! It's like that one show my friends keep talking about! It also confuses me on how some of them need to be dragged out of the dome when they've been 'eliminated', why would you even want to stay there for any longer?"
+        bonbon "I-... I might be going on too much, I'm sorry, but that dome just needs to go!"
+        sgummy ".. I have to admit another thing, the dome's structure is actually done very well. They definitely didn't mix their centimeters and millimeters and the glass is durable." 
+        sgummy "I have got to meet the person who created this beautiful structure… not.. not that I like what it's being used for."
+        bonbon "It does look pretty.. I get where you're coming from! Wow, I never knew you were this mesmerized by the dome!"
+        sgummy "..I just.. really find the structure.. unique yet simple. Durable and big! It's all I ever want to be!"
+        bonbon "..So you want to be the dome?"
+        sgummy "UH- I wouldn't word it like that, sounds wrong. You know what, yea, I do want to be a dome. A dome with such a strong and big structure."
+        bonbon quiet "..."
+        bonbon -quiet "If that's what my good friend wants! Then I can't help but support it!"
         jump dome
     else:
         show posty neutral
