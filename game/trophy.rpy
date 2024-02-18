@@ -6,7 +6,7 @@ image makeshift_trophy:
     rotate 45
 
 label trophy:
-    p "Oh! I know what to do with this!" #280 "oh, i know what to use this for!"
+    p "Oh! I know what to do with this!"
     show spraypaint
     show scraptrophy
     #279 add a quick animation for using the spray paint on the trophy. just moving them around and making the screen flash should be sufficient

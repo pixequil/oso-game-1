@@ -62,13 +62,6 @@ label .dbs:
 
 label .dfirst:
     show posty suspicious
-    # TODO: #35
-    #initial dolly conversation; 
-    #transition seamlessly into money checking tree. 
-    #Dolly is a Shifty businesswoman with a shoddy street storefront 
-    #and whatever she offers to sell you a “loot box”
-    #full of what can surely be wonderful riches, 
-    #provided you can give her "a lot of money".
     p suspicious "What's this?"
     dolly "Ah! About time you made it to my stand!"
     dolly "I am Dolly, the sole proprietor of this fine establishment."
@@ -95,7 +88,7 @@ label .dfirst:
 label .drepeat:
     show posty neutral
     p "Hi, Dolly!"
-    dolly "Ah, Posty! Rich yet?" # TODO: #36 repeat dolly conversation; transition seamlessly into money checking tree
+    dolly "Ah, Posty! Rich yet?"
     show lootbox at truecenter with moveinbottom
     dolly "The random loot box is calling your name!"
     p "Well..."
@@ -114,7 +107,7 @@ label .money_check:
             p happy "I have some red cash if that will work."
             dolly "Oooh, sorry. There's no market anymore in red dollars."
             show posty concerned
-            dolly "How about some real money?"# TODO: #37 Posty offers the red cash since she lacks real money
+            dolly "How about some real money?"
             p concerned "Sorry, I got nothing."
             dolly "Come back when you have actual cash, Posty."
             hide lootbox
@@ -123,40 +116,40 @@ label .money_check:
             p concerned "I'm afraid I don't have any money."
             p concerned "Can we barter?"
             dolly "No."
-            dolly "Come back when you have a penny to your name, Posty." # todo: #38 posty has no 
+            dolly "Come back when you have a penny to your name, Posty."
             hide lootbox
             jump mainstreet
     elif money == 1:
         show cash_bundle_1 at truecenter
         hide lootbox
-        p happy "I have some money. Is this enough for anything?" # todo: #39 posty has "some" money. 
+        p happy "I have some money. Is this enough for anything?"
         dolly "Only my pocket lint."
         dolly "I want A LOT of money, Posty. Double what you have now."
-        p happy "Ok, I'll be back later." #this is not enough money for Dolly; Dolly wants "a lot of" money.
+        p happy "Ok, I'll be back later."
         jump mainstreet
     elif money == 2:
         show cash_bundle_2 at truecenter
         hide lootbox
-        p happy "I have some money. Is this enough for anything?" # todo: #39 posty has "some" money. 
+        p happy "I have some money. Is this enough for anything?" 
         dolly "Only my pocket lint."
         dolly "I want A LOT of money, Posty. Double what you have now."
-        p happy "Ok, I'll be back later." #this is not enough money for Dolly; Dolly wants "a lot of" money.
+        p happy "Ok, I'll be back later."
         jump mainstreet
-    elif money == 3: #250
+    elif money == 3:
         show cash_bundle_3 at truecenter
-        p happy "I've got plenty of money. Here you go." #  posty has "a lot of" money
+        p happy "I've got plenty of money. Here you go."
         dolly "Hmmm, sorry. You're still short."
         p astonished "What?!?"
-        dolly "Haha, I'm just screwing with you. Of course you have enough." # dolly thinks this is sufficient for the loot box, although she pretends briefly that it's not, to mess with Posty. 
+        dolly "Haha, I'm just screwing with you. Of course you have enough."
         show posty angry
         hide cash_bundle_3
         "{b}{color=#e3d3ab}Dolly{/color}{/b} took all your {b}money{/b}!"
         if item.red_cash:
             "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}."
-        dolly "Your patronage is appreciated." # "much appreciated!"
-        p suspicious "So, the loot box!" # "... so, the loot box?"
+        dolly "Your patronage is appreciated." 
+        p suspicious "So, the loot box!"
         dolly "Oh yes, of course!"
-        dolly "Let's see what you've won!" # "right!"
+        dolly "Let's see what you've won!"
         show lootbox burst
         play audio "sound/330563__andre_onate__kotsuzumi-roll-at-126.ogg"
         "{w=0.9}{nw}"
@@ -166,9 +159,10 @@ label .money_check:
         show brightscreen
         $ item.scrapmetal = True
         $ quest.moneys = True
-        "You got some {b}scrap metal{/b} from the loot box!" #270
+        "You got some {b}scrap metal{/b} from the loot box!"
+        "{i}To the average person this may be just a bunch of metal shapes but for a skilled worker, it is a canvas ready to be molded into glorious masterpieces! Or for whoever is willing to pay really.{/i}"
         p annoyed "Oh. Wow."
-        dolly "Thank you! Come again! No refunds!" # this disappoints and upsets posty, but Dolly will offer no refunds.
+        dolly "Thank you! Come again! No refunds!"
         jump mainstreet
     
 image lootbox:
