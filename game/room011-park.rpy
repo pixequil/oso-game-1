@@ -32,7 +32,7 @@ screen park_nav:
             idle "nav_auto"
             hover "nav_auto p"
             action Jump("park.auto")
-        showif quest.retainer:
+        showif quest.retainer and (saw.retainerpark == False):
             imagebutton:
                 pos (700,500)
                 idle "nav_retp"
@@ -172,7 +172,7 @@ label .retainer:
     show posty neutral
     retainer "Hey uh... Thanks again for the trophy! "
     extend "It isn't as good as winning, but I'm happy that someone cares about me.."
-    p happy "No problem man! Glad your feeling better!"
+    p happy "No problem man! Glad you're feeling better!"
     retainer "Well, I better get going. It was nice meeting you! Goodbye!!"
     p "You too, bye!"
     hide retainer with moveoutleft
