@@ -16,8 +16,8 @@ The game is playable in-browser at [this link](https://opensourceobjects.itch.io
 _(Don't remove the blank bullets)_
 
 ## Game Managers
-* FunnyBoy044
-* Satomi
+* FunnyBoy044 (creative)
+* Satomi (production)
 
 ## Path Designer
 * Olivia/timepavement
