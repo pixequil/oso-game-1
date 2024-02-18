@@ -269,9 +269,36 @@ label toasty_hints:
             t "hint for if you have the imaginary lighter and havent talked to ahiss" #407
     
     elif item.heavier:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you have the heavier" #162
+        show toasty crossedarms
+        show posty concerned
+        t "What's up-"
+        p " So. Heavy."
+        t neutral "Posty are you alright?"
+        show heavier
+        p "I have been carrying this heavier."
+        t annoyed "What the hell is a heavier?"
+        p "It apparently {i}(pant){/i} sucks fire in."
+        t "Really? You have really sunk in your lies."
+        p "I {i}(pant){/i} swear. It hurts..."
+        t smug "Yadda yadda we get it, you are weak"
+        t "Let me handle it."
+        "Toasty has the heavier!"
+        hide heavier
+        t annoyed "DAMN {i}(pant){/i} HOW DID {i}(pant){/i} YOU CARRY {i}(pant){/i} THIS?!"
+        p astonished "I don't know?! Probably willpower or {i}(pant){/i} something like that."
+        t "Well {i}(pant){/i} I need {i}(pant){/i} consultation pronto."
+        t turned "oh boy."
+        t "This is a pretty awkward situation {i}(pant){/i} I have gotten myself in {i}(pant){/i} ToastMaestro!"
+        t "Well Mailmouth did say {i}(pant){/i} this thing can suck fire up!"
+        t "So we need to find {i}(pant){/i} some fire {i}(pant){/i} to suck up!"
+        t "There was a {i}(pant){/i} painting {i}(pant){/i} that has {i}(pant){/i} some fire. {i}(pant){/i} in the gallery."
+        t "Yeah {i}(pant){/i} that'll work."
+        t "Let's give this {i}(pant){/i} back."
+        show heavier
+        t annoyed "Here {i}(pant){/i} you go."
+        "You have received the heavier!"
+        hide heavier
+        t "Don't do that to me ever again."
         return
 
     elif bt_distracted:
