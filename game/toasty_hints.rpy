@@ -196,7 +196,8 @@ label toasty_hints:
         t smug "Looks like I need to do my planning in secret!"
         p angry quiet "..."
         t turned "What up Toastmeister!"
-        p -quiet "you still sticking with Toastmeister?"
+        if toastmeister:
+            p -quiet "you still sticking with Toastmeister?"
         t "The blue buffoon doesn't understand the significance of that painting!"
         t "and no we aren't just talking about its culinary delights!"
         p "ha ha ha"
@@ -217,9 +218,43 @@ label toasty_hints:
         return
     
     elif item.battery:
-        show posty neutral
+        show posty happy
         show toasty neutral
-        t "hint for if you have the battery" #175
+        p "Duh duh dum, dum diddly dum-"
+        t enthused "Hello my most perfidious postbox."
+        p annoyed "not again {w}{i}\[cough]{/i} {w}so what you need?"
+        t crossedarms "I was just wondering what you have in your hand?"
+        show battery_center
+        p suspicious "Just a battery."
+        t angry "That's it? I thought it would be something more valuable."
+        p concerned "I dunno, something intrigues me about it."
+        t smug "Could it be its satisfying weight, finely crafted out of the earth's treasures?"
+        t "Maybe its cold metal gives tingles as though a hidden memory is unlocked from your steely heart."
+        p confused "Why you being so fancy with the descriptions?"
+        t enthused "Oh! I can put my curiosities to rest-"
+        p happy "Ahh you are finally giving me peace."
+        t smug "It must be the tasteful interspersion of Helvetica and Arial in \"PLEASE DON'T EAT, INGEST OR SWALLOW THIS\"; gives the message some much needed depth."
+        p concerned "you reading too much into this."
+        t pointandlaugh "How did such a nitwit like you get so tasteful?"
+        p annoyed quiet "..."
+        t neutral quiet"..."
+        t -quiet "Joking, joking."
+        t "Besides, why are you looking at it like that?"
+        p concerned -quiet "I don't know. I thought a good walk could help me with that."
+        t smug "Wellll-"
+        p confused "Well?"
+        t neutral"Give me a second, I have a call."
+        t turned "Looks like my cuboid companion has made a major misstep: wasting valuable energy on idle walking!"
+        p confused "...wait what?"
+        t "I know the quality of art has declined rapidly in the last decade of so but I don't recall being a battery exhibit back there."
+        t "Think Toast, who would lose such an item there?"
+        t "Maybe an artist, too engrossed in their crafts, dropped it behind..."
+        t "Yess you are such a genius Toastmeister, I will win this challenge in no time!"
+        p annoyed "really Toastmeister?"
+        $ toastmeister = True
+        t "All we have to do is make sure our friend doesn't eavesdrop and we golden!"
+        t "Err..hope to see you bye!"
+        t neutral"So whatcha going to do with the battery?"
         return
 
     elif item.imaginary_lighter:
