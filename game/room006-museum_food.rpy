@@ -185,9 +185,13 @@ label .notepad_chips:
         notepad "It is a shame I can't see your enjoyment for any longer."
         p happy "See you around I guess!"
         jump museum_food
-label .notepad3: #247
-    show posty neutral
-    notepad "_" # revisiting notepad
+label .notepad3:
+    show posty concerned
+    notepad "Oh, hey! Hey!! Over here, yeah, if you have any more chips or anything I can give you another masterpiece!"
+    p quiet "{i}Erm, I think I\'ll pass on another of what this guy considers a “masterpiece\'...{/i}"
+    p -quiet "Uh… I don\'t have anymore food on me, sorry."
+    notepad "Hmph. And here I thought you had true aesthetic instincts, but I guess you\'re just another pedestrian in denial. Sigh…"
+    p "Hey, I said sorry!"
     jump museum_food
 
 label .painting:
