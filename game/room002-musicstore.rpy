@@ -3,7 +3,7 @@ image bg music_top:
 
 image bg music:
     "dbgs/music_store_dbg.png"
-
+    
 screen music_nav:
     viewport:
         child_size (1280,720)
@@ -79,6 +79,11 @@ image nav_jb p = Composite(
 )
 
 label musicstore:
+    if musicroomplayer:
+        hide screen juke_box
+        stop music fadeout 3.0
+
+
     $ last.mainx = 0.15
     call screen music_nav
 
@@ -147,6 +152,7 @@ label .sheet:
     jump musicstore
 
 label .jb:
+
     scene bg music
     show jb
     show posty happy
@@ -162,7 +168,7 @@ label .jb:
         p "Great idea."
         $ saw.jb = True
     else:
-        jb "Let's listen to some music!"   
+        jb "Let's listen to some music!"
     menu:
         "Talk to Jukebox.":
             jump .talk
@@ -185,5 +191,7 @@ label .talk:
     jump .jb
 
 label .tunes:
-    "This feature is not yet available." #298 jukebox music player
+    $ musicroomplayer = True
+    show screen juke_box
+    # "This feature is not yet available." #298 jukebox music player
     jump .jb

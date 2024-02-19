@@ -70,6 +70,7 @@ default food_switch = False
 default gave_chips = False
 default tag_trade = False
 default trophy_crafted = False
+default musicroomplayer = False
 default vendingmachine_used = False
 
 # VARIOUS COUNTERS
