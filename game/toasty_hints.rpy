@@ -417,9 +417,18 @@ label toasty_hints:
         return
 
     elif paintings == 1:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you've taken one painting" #154
+        show posty annoyed
+        show toasty crossedarms
+        t "Well, well, well, look who decides to darken my doorstep once again."
+        p "You don\'t have a door. You just stand in the street all day."
+        t angry "At least I have a more interesting life than {i}you.{/i}"
+        p angry "Oh yeah? Have you ever stolen a painting before?"
+        t "Of— of course I have! Actually, I\'ve stolen {i}two{/i} paintings!"
+        t annoyed "Besides, painting stealing is lame and boring because museums are lame and boring."
+        t pointandlaugh "…But then again, I guess you\'d fit right in there, huh? Hahahah!"
+        t "Go back to hanging around those lame and boring museum exhibits! Because you\'re lame!"
+        p annoyed "And boring?"
+        t angry "Ugh! I wanted to say it."
         return
     
     elif quest.bs:
