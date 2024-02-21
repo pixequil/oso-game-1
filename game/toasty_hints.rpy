@@ -186,29 +186,31 @@ label toasty_hints:
         show posty zany
         show toasty smug2
         p "Woaaaah I think I am seeing stars!"
-        p concerned "Owww my head hurts!"
         t "What is up..."
-        t neutral "Girl are you alright?"
-        p "I bonked my head on the plaque next to the pizza-eating painting just now."
+        t neutral "Girl, are you alright?"
+        p concerned "I bonked my head on the plaque next to the pizza-eating painting just now."
         p sad "It hurts."
-        t "Damn..."
+        t "Darn..."
         t pointandlaugh "Looks like I have an advantage against my hated blue rival!"
-        t smug "Looks like I need to do my planning in secret!"
+        t smug "Excuse me, I need to do another planning session in secret!"
+        show toasty turned
         p angry quiet "..."
         t turned "What up Toastmeister!"
         if toastmeister:
-            p -quiet "you still sticking with Toastmeister?"
+            p -quiet "You still sticking with Toastmeister?"
         t "The blue buffoon doesn't understand the significance of that painting!"
-        t "and no we aren't just talking about its culinary delights!"
-        p "ha ha ha"
+        t "And no, we aren't just talking about its culinary delights!"
+        p -quiet "Ha ha ha. You know I can hear you-"
         t "If my detective skills are correct (and I have no reason to doubt my glorious abilities), she must have revealed a secret passageway!"
         t "And without realizing, too!"
-        t "Ahh elementary my pop up Watson!"
-        t "To think she'd find a secret passage and just walk right past it!"
-        t "Well, if I was there, I surely wouldn't have made such a grave error."
-        t "Genius! You deserve a raise for such logic."
-        t "Phew I don't deserve such praise, now lets keep it away from prying ears!"
-        t neutral "Soooooo how is the weather my courier countercompanion?"
+        t turned2 "Ahh, elementary my pop up Watson!"
+        t turned "To think she'd find a secret passage and just walk right past it!"
+        t turned2 "Well, if I was there, I surely wouldn't have made such a grave error."
+        t turned "Genius! You deserve a raise for such logic."
+        t turned2 "Oh, I don't deserve such praise, I need to at least thank my mother."
+        t "Now, lets keep it away from prying ears!"
+        t smug3 "Soooooo, how is the weather, my courier countercompanion?"
+        p "I'm walking away."
         return
 
     elif scanter_green and (quest.painting_war == False):
@@ -250,11 +252,11 @@ label toasty_hints:
         t "Think Toast, who would lose such an item there?"
         t "Maybe an artist, too engrossed in their crafts, dropped it behind..."
         t "Yess you are such a genius Toastmeister, I will win this challenge in no time!"
-        p annoyed "really Toastmeister?"
+        p annoyed "Really Toastmeister?"
         $ toastmeister = True
         t "All we have to do is make sure our friend doesn't eavesdrop and we golden!"
         t "Err..hope to see you bye!"
-        t neutral"So whatcha going to do with the battery?"
+        t neutral "So whatcha going to do with the battery?"
         return
 
     elif item.imaginary_lighter:
