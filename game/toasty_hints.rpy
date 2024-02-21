@@ -431,7 +431,7 @@ label toasty_hints:
         p angry "Oh yeah? Have you ever stolen a painting before?"
         t "Of— of course I have! Actually, I\'ve stolen {i}two{/i} paintings!"
         t annoyed "Besides, painting stealing is lame and boring because museums are lame and boring."
-        t pointandlaugh "…But then again, I guess you\'d fit right in there, huh? Hahahah!"
+        t pointandlaugh "But then again, I guess you\'d fit right in there, huh? Hahahah!"
         t "Go back to hanging around those lame and boring museum exhibits! Because you\'re lame!"
         p annoyed "And boring?"
         t angry "Ugh! I wanted to say it."
