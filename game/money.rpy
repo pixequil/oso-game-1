@@ -160,7 +160,7 @@ label .money_check:
         $ item.scrapmetal = True
         $ quest.moneys = True
         "You got some {b}scrap metal{/b} from the loot box!"
-        "{i}To the average person this may be just a bunch of metal shapes but for a skilled worker, it is a canvas ready to be molded into glorious masterpieces! Or for whoever is willing to pay really.{/i}"
+        "{i}To the average person, this may be just a bunch of metal shapes, but for a skilled worker (or for whoever is willing to pay really), it is a canvas ready to be molded into glorious masterpieces!{/i}"
         p annoyed "Oh. Wow."
         dolly "Thank you! Come again! No refunds!"
         jump mainstreet
