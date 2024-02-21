@@ -183,9 +183,34 @@ label toasty_hints:
         return
 
     elif food_switch and (quest.money_food == False) and (saw.janitors == False):
-        show posty neutral
-        show toasty neutral
-        t "hint for if you opened the janitors closet but didnt go in" #234
+        show posty zany
+        show toasty smug2
+        p "Woaaaah I think I am seeing stars!"
+        t "What is up..."
+        t neutral "Girl, are you alright?"
+        p concerned "I bonked my head on the plaque next to the pizza-eating painting just now."
+        p sad "It hurts."
+        t "Darn..."
+        t pointandlaugh "Looks like I have an advantage against my hated blue rival!"
+        t smug "Excuse me, I need to do another planning session in secret!"
+        show toasty turned
+        p angry quiet "..."
+        t turned "What up Toastmeister!"
+        if toastmeister:
+            p -quiet "You still sticking with Toastmeister?"
+        t "The blue buffoon doesn't understand the significance of that painting!"
+        t "And no, we aren't just talking about its culinary delights!"
+        p -quiet "Ha ha ha. You know I can hear you-"
+        t "If my detective skills are correct (and I have no reason to doubt my glorious abilities), she must have revealed a secret passageway!"
+        t "And without realizing, too!"
+        t turned2 "Ahh, elementary my pop up Watson!"
+        t turned "To think she'd find a secret passage and just walk right past it!"
+        t turned2 "Well, if I was there, I surely wouldn't have made such a grave error."
+        t turned "Genius! You deserve a raise for such logic."
+        t turned2 "Oh, I don't deserve such praise, I need to at least thank my mother."
+        t "Now, lets keep it away from prying ears!"
+        t smug3 "Soooooo, how is the weather, my courier countercompanion?"
+        p "I'm walking away."
         return
 
     elif scanter_green and (quest.painting_war == False):
@@ -195,21 +220,91 @@ label toasty_hints:
         return
     
     elif item.battery:
-        show posty neutral
+        show posty happy
         show toasty neutral
-        t "hint for if you have the battery" #175
+        p "Duh duh dum, dum diddly dum-"
+        t smug2 "Hello my most perfidious postbox."
+        p annoyed "Oh no, not again. {w}{i}\[cough]{/i} {w}So what do you need?"
+        t crossedarms "I was just wondering what you have in your hand."
+        show battery_center
+        p suspicious "Just a battery."
+        t angry "That's it? I thought it would be something more valuable."
+        p concerned "I dunno, something intrigues me about it."
+        t smug "Could it be its satisfying weight, finely crafted out of the earth's treasures of lithium and manganese?"
+        t smug3 "Maybe its cold metal gives tingles as though a hidden memory is unlocked from your steely heart."
+        p confused "Why are you being so fancy with the descriptions?"
+        t annoyed "Shut up, I'm talking here."
+        t smug5 "It must be the tasteful interspersion of Helvetica and Arial in the phrase \"PLEASE DON'T EAT, INGEST, OR SWALLOW THIS\"; gives the message some much needed depth."
+        p concerned "You're reading too much into this."
+        t pointandlaugh "How else could such a nitwit like you get so tasteful?"
+        p annoyed quiet "..."
+        t neutral quiet "..."
+        t -quiet "Joking, joking."
+        t "Besides, why'd you come to me about it?"
+        p concerned -quiet "I don't know. I thought a good walk could help me decide what to do with it."
+        t smug "Wellll-"
+        p suspicious "Well?"
+        t neutral"Give me a second, I have a call."
+        t turned "Looks like my cuboid companion has made a major misstep: wasting valuable energy on idle walking!"
+        p confused "...wait what?"
+        t "I know the quality of art has declined rapidly in the last decade or so, but I don't recall there being a battery exhibit inside."
+        t "Think Toasty, who would lose such an item there?"
+        t "Maybe an artist too engrossed in their crafts dropped it..."
+        t "Yes! You are such a genius, Toastmeister!"
+        p annoyed "Really? Toastmeister?"
+        $ toastmeister = True
+        t "All we have to do is make sure our friend doesn't eavesdrop and we're golden!"
+        t enthused "So whatcha going to do with the battery?"
+        hide posty with moveoutleft
+        hide battery_center
+        t neutral "Could I have sabotaged myself again?"
+        t turned2 "No! Of course not! You're too smart to do that!"
         return
 
     elif item.imaginary_lighter:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you have the imaginary lighter" #163
-        return
+        if saw.ahiss:
+            show posty neutral
+            show toasty neutral
+            t "hint for if you have the imaginary lighter" #163
+            return
+        else:
+            show posty neutral
+            show toasty neutral
+            t "hint for if you have the imaginary lighter and havent talked to ahiss" #407
     
     elif item.heavier:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you have the heavier" #162
+        show toasty crossedarms
+        show posty concerned
+        t "What's up-"
+        p "So. Heavy."
+        p sad "{i}(cough cough){/i}"
+        t neutral "Posty, are you alright?"
+        t neutral2 "Not that I care or anything, but you collapsing in front of me would be really weird."
+        show heavier
+        p "I have been carrying this heavier."
+        t annoyed "What the hell is a heavier?"
+        p "It apparently {i}(pant){/i} sucks fire in."
+        t "Really? You believe anything these days. Where'd you get this crap, the back alley? I've seen you walking around there!"
+        p "I {i}(pant){/i} swear. It hurts..."
+        t smug "Yadda yadda we get it, you are weak."
+        t "Let me handle it."
+        "Toasty took the {b}heavier!{/b}"
+        hide heavier
+        t angry "HOLY CRAP {i}(pant){/i} HOW DID {i}(pant){/i} YOU CARRY {i}(pant){/i} THIS?!"
+        p astonished "I don't know?! Probably willpower or something like that."
+        t "Well {i}(pant){/i} I need {i}(pant){/i} to consult someone pronto."
+        t turned "Oh boy."
+        t "This is a pretty awkward situation {i}(pant){/i} I have gotten myself in {i}(pant){/i} ToastMaestro!"
+        t "Well Mailmouth did say {i}(pant){/i} this thing can suck fire up!"
+        t "So we need to find {i}(pant){/i} some fire {i}(pant){/i} to suck up!"
+        t "There was a {i}(pant){/i} painting {i}(pant){/i} that has {i}(pant){/i} some fire {i}(pant){/i} in the gallery."
+        t "Yeah {i}(pant){/i} that'll work."
+        t "Let's give this {i}(pant){/i} back and maybe we'll get it back when it's filled with fire."
+        show heavier
+        t annoyed "Here {i}(pant){/i} you go."
+        "You have received the {b}heavier!{/b}"
+        hide heavier
+        t "Don't do that to me ever again."
         return
 
     elif bt_distracted:
@@ -288,7 +383,6 @@ label toasty_hints:
         show posty angry
         t smug2 "Either way, I want you to know I'm happy for you."
         p annoyed "I'm very reassured."
-#hint:if you have spray paint but nothing to decorate(see dolly) #265
         return
 
     elif quest.paintings and (quest.bs == False):
@@ -301,7 +395,6 @@ label toasty_hints:
         t smug2 "You could get ideas from people on the street. That soda can guy's always in need for a commission."
         t laugh "They're so self-absorbed that you'd never run out of work!"
         t laugh "Hope you like drawing a soda can for the rest of your life!"
-#hint:if you have spray paint but nothing to decorate(talk to bs)" #265
         return
 
     elif quest.paintings and (money == 1):
@@ -315,7 +408,6 @@ label toasty_hints:
         p happy "Like in the art museum?"
         show posty angry
         t smug2 "I was actually thinking about you ruminating in a hole in the ground, but that works too."
-#hint:if you have the spray paint but nothing to decorate with it (do food exhibit quest)" #265
         return
 
     elif paintings == 3 and (quest.paintings == False):
@@ -331,9 +423,18 @@ label toasty_hints:
         return
 
     elif paintings == 1:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you've taken one painting" #154
+        show posty annoyed
+        show toasty crossedarms
+        t "Well, well, well, look who decides to darken my doorstep once again."
+        p "You don\'t have a door. You just stand in the street all day."
+        t angry "At least I have a more interesting life than {i}you.{/i}"
+        p angry "Oh yeah? Have you ever stolen a painting before?"
+        t "Of— of course I have! Actually, I\'ve stolen {i}two{/i} paintings!"
+        t annoyed "Besides, painting stealing is lame and boring because museums are lame and boring."
+        t pointandlaugh "But then again, I guess you\'d fit right in there, huh? Hahahah!"
+        t "Go back to hanging around those lame and boring museum exhibits! Because you\'re lame!"
+        p annoyed "And boring?"
+        t angry "Ugh! I wanted to say it."
         return
     
     elif quest.bs:

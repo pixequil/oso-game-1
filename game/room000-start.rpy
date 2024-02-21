@@ -6,12 +6,9 @@ image bg room:
 label start:
 
     scene bg room
-
-    show posty happy
-
-    p "You've created a new Ren'Py game."
-
-    p "Once you add a story, pictures, and music, you can release it to the world!"
+    show posty sad
+    p "This game is currently in development, so it's missing much of its dialogue."
+    p happy "Technically, it's possible to complete it, though!"
 
     menu:
 

@@ -178,16 +178,20 @@ label .notepad_chips:
         p confused "Oohhheheh it looks... avant garde."
         notepad "This is for feeding me, only the best!"
         p happy "Hehe no biggie!"
-        p suspicious quiet "(Did they pick up some trash to fool me? Why would anyone even consider this?)"
-        p neutral quiet "(Eh whatever, it's free.)"
+        p suspicious quiet "{i}Did they pick up some trash to fool me? Why would anyone even consider this?{/i}"
+        p neutral quiet "{i}Eh whatever, it's free.{/i}"
         p concerned "Ahahaha ohh I am soo sorry, I have a meeting in 30 minutes!"
         p concerned "I can't hang around any longer sadly..."
         notepad "It is a shame I can't see your enjoyment for any longer."
         p happy "See you around I guess!"
         jump museum_food
-label .notepad3: #247
-    show posty neutral
-    notepad "_" # revisiting notepad
+label .notepad3:
+    show posty concerned
+    notepad "Oh, hey! Hey! Over here, yeah! If you have any more chips or anything, I can give you another masterpiece!"
+    p quiet "{i}Erm, I think I\'ll pass on another of what this guy considers a \"masterpiece\"...{/i}"
+    p -quiet "Uh...I don\'t have anymore food on me, sorry."
+    notepad "Hmph. And here I thought you had true aesthetic instincts, but I guess you\'re just another pedestrian in denial. Sigh…"
+    p "Hey, I said sorry!"
     jump museum_food
 
 label .painting:
