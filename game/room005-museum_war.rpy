@@ -403,7 +403,7 @@ label .ahiss_deed:
                 p happy "You never know when you'll need stuff like this, right?"
                 ahiss "Tch... well, thanks for clearing out the trash laying around."
                 ahiss "Yes, yes. You, cleaning trash. It suits you! Ohohoho!~"
-        ahiss "Maybe this is good for me in the end."
+        ahiss "... Maybe this is good for me in the end."
         ahiss "After all, maintaining our land here was starting to get boring."
         ahiss "Now maybe I can go explore new avenues!"
         ahiss "Literally."
