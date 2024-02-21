@@ -32,7 +32,7 @@ screen park_nav:
             idle "nav_auto"
             hover "nav_auto p"
             action Jump("park.auto")
-        showif quest.retainer:
+        showif quest.retainer and (saw.retainerpark == False):
             imagebutton:
                 pos (700,500)
                 idle "nav_retp"

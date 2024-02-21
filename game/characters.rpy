@@ -1785,7 +1785,7 @@ image cb quiet:
     xalign 1.0
     
 define tooly = Character("Tooly",
-    callback=speaker("tooly"),
+    callback=speaker("tooly", sound_file="tooly_voice.wav"),
     image="tooly",
     who_color="9e4234"
     )
