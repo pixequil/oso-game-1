@@ -28,13 +28,13 @@ screen entrance_nav():
                 hover "nav_easels p"
                 action Jump("museum_entrance.easels")
 
-        imagebutton: # park arrow
+        imagebutton: 
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
             xpos 640
             ypos 640
             idle "arrow dn"
-        imagebutton: # park arrow posty
+        imagebutton: 
             xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
             yanchor 0.5
             xpos 640
