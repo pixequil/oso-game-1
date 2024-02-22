@@ -250,6 +250,7 @@ screen quick_menu():
             not renpy.get_screen('park_nav'),
             not renpy.get_screen('music_nav'),
             not renpy.get_screen('entrance_nav'),
+            not renpy.get_screen('blue_nav'),
         ]
     ):
 
