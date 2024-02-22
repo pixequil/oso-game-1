@@ -2,8 +2,6 @@
 
 image bg museum_entrance_top:
     "map-bgs/museum_entrance_top.png"
-    zoom 1.15
-    yalign 0.2
 
 image bg museum_entrance:
     "dbgs/museum_entrance_dbg.png"
@@ -18,30 +16,153 @@ transform posteaselpos:
     xalign 0.5
     yalign 1.0
 
+screen entrance_nav():
+    viewport:
+        child_size (1280,720)
+        add "bg museum_entrance_top"
+
+        showif quest.paintings == False:
+            imagebutton: # easels
+                pos (355, 414)
+                idle "nav_easels"
+                hover "nav_easels p"
+                action Jump("museum_entrance.easels")
+
+        imagebutton: # park arrow
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 640
+            ypos 640
+            idle "arrow dn"
+        imagebutton: # park arrow posty
+            xanchor 0.5 # these make it so the xpos ypos are the center of the arrow
+            yanchor 0.5
+            xpos 640
+            ypos 640
+            idle "pnav dn i"
+            hover "pnav dn"
+            action Jump("mainstreet")
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (80, 300)
+            idle "arrow lt"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (80, 330)
+            idle "pnav lt i"
+            hover "pnav lt"
+            action Jump("museum_blue")
+            
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (430, 150)
+            idle "arrow up"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (430, 150)
+            idle "pnav up i"
+            hover "pnav up"
+            action Jump("museum_war")
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (850, 150)
+            idle "arrow up"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (850, 150)
+            idle "pnav up i"
+            hover "pnav up"
+            action Jump("museum_food")
+
+        imagebutton: # cameron
+            pos (501, 134)
+            idle "nav_cameron"
+            hover "nav_cameron p"
+            action Jump("museum_entrance.cameron")
+
+
+image nav_cameron = Composite(
+    (280,280),
+    (0,0), "hitbox",
+    (86,17), "minisprites/security_cameron_ow_sprite.png",
+)
+image nav_cameron p = Composite(
+    (280,280),
+    (0,0), "nav_cameron",
+    (86,90), "pnav up"
+)
+image nav_easels = Composite(
+    (570,200),
+    (0,0), "hitbox",
+)
+image nav_easels p = Composite(
+    (570,200),
+    (0,0), "nav_easels",
+    (370,-20), "pnav rt",
+    (420,115), "eblue",
+    (515,120), "ewar",
+    (485,38), "efood",
+)
+image eblue = ConditionSwitch(
+    "quest.painting_blue == True","pblue",
+    "quest.painting_blue == False","nothing"
+)
+image ewar = ConditionSwitch(
+    "quest.painting_war == True","pwar",
+    "quest.painting_war == False","nothing"
+)
+image efood = ConditionSwitch(
+    "quest.painting_food == True","pfood",
+    "quest.painting_food == False","nothing"
+)
+image pblue:
+    "minisprites/easel-blue.png"
+image pwar:
+    "minisprites/easel-war.png"
+image pfood:
+    "minisprites/easel-food.png"
+image nothing = Solid("#ff000000")
+
 label museum_entrance:
     if saw.museum == False:
         jump .first_time
     else:
-        scene bg museum_entrance_top # TODO: #26 museum entrance imagemap
-        show posty neutral
+        $ renpy.choice_for_skipping()
+        call screen entrance_nav
 
-        p "_"
 
-        menu:
-            "Check out the Blue Exhibit.":
-                jump museum_blue
-            "Check out the War Exhibit.":
-                jump museum_war
-            "Check out the Food Exhibit.":
-                jump museum_food
-            "Check out those easels?" if (paintings != 3):
-                jump .easels
-            "Easels:\nUse the three paintings as {color=#ffff00}{i}inspiration{/i}{/color}." if (paintings == 3) and (quest.paintings == False):
-                jump .inspiration
-            "Talk to Security Cameron again.":
-                jump .cameron
-            "Leave.":
-                jump mainstreet
+# label museum_entrance:
+#     if saw.museum == False:
+#         jump .first_time
+#     else:
+#         scene bg museum_entrance_top # TODO: #26 museum entrance imagemap
+#         show posty neutral
+
+#         p "_"
+
+#         menu:
+#             "Check out the Blue Exhibit.":
+#                 jump museum_blue
+#             "Check out the War Exhibit.":
+#                 jump museum_war
+#             "Check out the Food Exhibit.":
+#                 jump museum_food
+#             "Check out those easels?" if (paintings != 3):
+#                 jump .easels
+#             "Easels:\nUse the three paintings as {color=#ffff00}{i}inspiration{/i}{/color}." if (paintings == 3) and (quest.paintings == False):
+#                 jump .inspiration
+#             "Talk to Security Cameron again.":
+#                 jump .cameron
+#             "Leave.":
+#                 jump mainstreet
 
 label .inspiration:
     scene bg museum_entrance
@@ -126,16 +247,33 @@ label .first_time:
     jump museum_entrance
 
 label .easels:
+    if paintings == 3:
+        jump .inspiration
     scene bg museum_entrance
     show posty neutral at posteaselpos
-    p "Hmmm...a few blank easels. Must be for on-site painters."
-    p astonished "Woah! What the?"
-    p astonished "I feel... {w}something."
-    p concerned "Could this be..."
-    p astonished "THE GERMINATING SEEDS OF INSPIRATION!?"
-    p astonished "I have to create something!"
-    p suspicious "But what?"
-    "Maybe you should take a walk around the museum. You know, for {color=#ffff00}inspiration.{/color}"
+    if saw.easels:
+        p "Right, the easels. I was feeling inspired by these."
+        p "But what should I create?"
+    else:
+        p "Hmmm...a few blank easels. Must be for on-site painters."
+        p astonished "Woah! What the?"
+        p astonished "I feel... {w}something."
+        p concerned "Could this be..."
+        p astonished "THE GERMINATING SEEDS OF INSPIRATION!?"
+        p astonished "I have to create something!"
+        p suspicious "But what?"
+    if paintings == 0:
+        "Maybe you should take a walk around the museum. You know, for {color=#ffff00}inspiration{/color}."
+    elif paintings == 1:
+        "You've acquired {b}1{/b} painting, so you feel a little bit of {color=#ffff00}inspiration{/color}. Maybe you should look for more."
+    elif paintings == 2:
+        "You've acquired {b}2{/b} paintings, so you feel a some {color=#ffff00}inspiration{/color}. Maybe you should look for another."
+    else:
+        "{color=#f00}YOU BROKE THE GAME. CONTACT SATOMI IMMEDIATELY.{/color}"
+    if item.napkin:
+        show badpainting
+        "You also have this thing. This thing doesn't give you any {color=#ffff00}inspiration{/color} at all. You should find a way to get rid of it."
+        hide badpainting
     p happy "Good idea disembodied voice!"
     jump museum_entrance
 

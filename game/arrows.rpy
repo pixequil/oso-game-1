@@ -25,6 +25,12 @@ image arrow dn black:
     alpha 0.2
     black
 
+image arrow lt black:
+    "arrow.png"
+    rotate 270
+    alpha 0.2
+    black
+
 transform black:
     matrixcolor TintMatrix("000")
 
