@@ -2,10 +2,11 @@
 
 # todo: food main exhibit painting #226
 
-image bg museum_food_top:
-    "map-bgs/museum_food_top.png"
-    zoom 1.15
-    yalign 0.2
+image bg museum_food_nav:
+    "map-bgs/museum_food_nav.png"
+
+image bg museum_food:
+    "dbgs/museum_food_dbg.png"
 
 image badpainting:
     "items/badpainting.jpg"
@@ -25,32 +26,103 @@ image painting_food:
 
 image eating:
     "items/personeatingfoodpainting.png"
-    truecenter
+    xalign 0.5
+    yalign 0.4
     zoom 1.75
 
+screen food_nav():
+    viewport:
+        child_size (1280,720)
+        add "bg museum_food_nav"
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (270, 640)
+            idle "arrow dn black"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (270, 640)
+            idle "pnav dn i"
+            hover "pnav dn"
+            action Jump("museum_entrance")
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (323, 140)
+            idle "arrow up black"
+        showif (food_switch == False):
+            imagebutton:
+                pos (260,50)
+                idle "corndogpainting"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (323, 140)
+            idle "pnav up i"
+            hover "pnav up"
+            action If(food_switch,Jump("janitors"),Notify("It doesn't even look like it's held up on the wall... Weird."))
+
+        imagebutton:
+            pos (360,320)
+            idle "food_island"
+        imagebutton:
+            pos (400,370)
+            idle "poplars"
+        showif (food_switch == False):
+            imagebutton: 
+                xanchor 0.5
+                yanchor 0.5
+                pos (450, 450)
+                idle "pnav up i"
+                hover "pnav up"
+                action Play("sound","sound/51166__rutgermuller__switch_01a.ogg")
+        showif food_switch:
+            imagebutton: 
+                xanchor 0.5
+                yanchor 0.5
+                pos (450, 450)
+                idle "pnav up i"
+                hover "pnav up"
+                action Jump("museum_food.eating")
+
+image poplars:
+    "items/personeatingfoodpainting.png"
+    zoom 0.5
+image corndogpainting:
+    "items/corndogpainting.png"
+    zoom 1.5
+image food_island:
+    "map-bgs/museum_food_top_island.png"
+
 label museum_food:
-    scene bg museum_food_top
-    show posty neutral
+    $ renpy.choice_for_skipping()
+    call screen food_nav
 
-    p "_" # todo: food exhibit imagemap #224
+# label museum_food:
+#     scene bg museum_food_top
+#     show posty neutral
 
-    menu:
-        "Ripped Mitten & Unappetizing painting" if (quest.painting_food == False):
-            jump .painting
-        "Ripped Mitten" if quest.painting_food:
-            jump .rm
-        "Notepad":
-            jump .notepad
-        "Marble Bust":
-            jump .marble
-        "Corndog painting" if (food_switch == False):
-            jump .corndog
-        "Hidden passageway" if food_switch:
-            jump janitors
-        "Eating painting":
-            jump .eating
-        "Go back to the entrance.":
-            jump museum_entrance
+#     p "_" # todo: food exhibit imagemap #224
+
+#     menu:
+#         "Ripped Mitten & Unappetizing painting" if (quest.painting_food == False):
+#             jump .painting
+#         "Ripped Mitten" if quest.painting_food:
+#             jump .rm
+#         "Notepad":
+#             jump .notepad
+#         "Marble Bust":
+#             jump .marble
+#         "Corndog painting" if (food_switch == False):
+#             jump .corndog
+#         "Hidden passageway" if food_switch:
+#             jump janitors
+#         "Eating painting":
+#             jump .eating
+#         "Go back to the entrance.":
+#             jump museum_entrance
 
 label .marble:
     scene bg museum_food
@@ -236,21 +308,21 @@ label .rm:
     rm "I hope not! Ha! That would be too easy to fix! I'm sure I'll figure it out eventually though."
     jump museum_food
 
-label .corndog:
-    scene bg museum_food
-    show corndog
-    show posty happy
-    p "Ooooh corndog!"
-    p suspicious "I don't see why it has to take up this much space. Guess it seems tasty?"
-    p "It doesn't even look like it's held up on the wall... Weird."
-    p "Oh well, time to look elsewhere."
-    jump museum_food
+# label .corndog:
+#     scene bg museum_food
+#     show corndog
+#     show posty happy
+#     p "Ooooh corndog!"
+#     p suspicious "I don't see why it has to take up this much space. Guess it seems tasty?"
+#     p "It doesn't even look like it's held up on the wall... Weird."
+#     p "Oh well, time to look elsewhere."
+#     jump museum_food
 
 label .eating: #233
     scene bg museum_food
     show eating
-    show posty neutral
     if food_switch == False:
+        show posty suspicious
         p suspicious "Huh what is that doing there? Among all the food based pieces, it doesn't look that appetizing to look at someone eating."
         "The title of the painting is \"{i}Crisis of the Poplar Trees{/i}\". The rest of the text is too small to read at this distance." 
         p "The only thing true about the title is that guy is clearly having a crisis about something!"
@@ -270,6 +342,7 @@ label .eating: #233
                 p "_" # posty decides she is uninterested in reading more of the placard. she starts to walk away, but returns to the placard, still curious.
                 jump .eating_decide
     else:
+        show posty neutral
         p "_" # posty returns to actually read the placard this time.
         "The placard reads: \"{i}(something){/i}\". Weird!" # placard full text.
         p "_" # some kind of remark
