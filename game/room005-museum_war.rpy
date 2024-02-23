@@ -22,12 +22,12 @@ image heavier:
 image burger fire:
     "items/big_fire_painting_1.png"
     xalign 0.45
-    yalign 0.5
+    yalign 0.3
 
 image burger out:
     "items/big_fire_painting_2.png"
     xalign 0.45
-    yalign 0.5
+    yalign 0.3
 
 image imaginary_lighter:
     "items/Imaginary_Lighter.png"
@@ -47,7 +47,7 @@ image battery_floor:
 image champurrlain:
     "items/Champurrlain_painting.png"
     xalign 0.44
-    yalign 0.3
+    yalign 0.25
     zoom 1.5
 
 image deed:
@@ -58,12 +58,14 @@ image deed:
 
 image painting_war:
     "items/war_Exhibit_photo_original.png"
-    truecenter
+    xalign 0.5
+    yalign 0.3
     zoom 0.4
 
 image painting_war green:
     "items/war_Exhibit_photo_green.png"
-    truecenter
+    xalign 0.5
+    yalign 0.3
     zoom 0.4
 
 screen war_nav():
