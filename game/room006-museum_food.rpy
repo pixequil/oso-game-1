@@ -13,7 +13,7 @@ image badpainting:
     zoom 0.1
     yalign 0.5
 
-image painting_food_floor:
+image painting_food floor:
     "items/Brussel_Sprouts.png"
     xalign 0.5
     yalign 1.0
@@ -21,7 +21,8 @@ image painting_food_floor:
 
 image painting_food:
     "items/Brussel_Sprouts.png"
-    truecenter
+    xalign 0.5
+    yalign 0.3
     zoom 0.75
 
 image eating:
@@ -34,6 +35,31 @@ screen food_nav():
     viewport:
         child_size (1280,720)
         add "bg museum_food_nav"
+
+        showif (quest.painting_food == False):
+            imagebutton:
+                pos (970,40)
+                idle "brussels"
+            imagebutton:
+                pos (840,20)
+                idle "nav_rm"
+                hover "nav_rm p"
+                action Jump("museum_food.painting")
+
+        imagebutton:
+            pos (470,50)
+            idle "food_mini1"
+        imagebutton:
+            pos (630,55)
+            idle "nbspain"
+        imagebutton:
+            pos (800,50)
+            idle "food_mini3"
+        imagebutton:
+            pos (540,30)
+            idle "nav_np"
+            hover "nav_np p"
+            action Jump("museum_food.notepad")
 
         imagebutton: 
             xanchor 0.5
@@ -77,7 +103,7 @@ screen food_nav():
                 pos (450, 450)
                 idle "pnav up i"
                 hover "pnav up"
-                action Play("sound","sound/51166__rutgermuller__switch_01a.ogg")
+                action Play("sound","sound/51166__rutgermuller__switch_01a.ogg"),SetVariable("food_switch",True),With(vpunch)
         showif food_switch:
             imagebutton: 
                 xanchor 0.5
@@ -86,7 +112,81 @@ screen food_nav():
                 idle "pnav up i"
                 hover "pnav up"
                 action Jump("museum_food.eating")
+        imagebutton:
+            pos (800,365)
+            idle "food_mini2"
+        imagebutton:
+            pos (600,358)
+            idle "marbsp"
 
+        showif quest.painting_food:
+            imagebutton:
+                pos (840,470)
+                idle "nav_rm"
+                hover "nav_rm p"
+                action Jump("museum_food.rm")
+        imagebutton:
+            pos (520,350)
+            idle "nav_mb"
+            hover "nav_mb p"
+            action Jump("museum_food.marble")
+
+        imagebutton:
+            pos (560,560)
+            idle "applestand"
+
+image nav_np = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (160,80), "minisprites/notepad (1).png",
+)
+image nav_np p = Composite(
+    (250,250),
+    (0,0), "nav_np",
+    (50,70), "pnav rt"
+)
+
+image marbsp:
+    "talksprites/food_big2.png"
+    zoom 0.2
+image nbspain:
+    "talksprites/food_big3.png"
+    zoom 0.2
+
+image nav_mb = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (160,80), "minisprites/fffffffffffmarble_final.png",
+)
+image nav_mb p = Composite(
+    (250,250),
+    (0,0), "nav_mb",
+    (50,70), "pnav rt"
+)
+
+image nav_rm = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (160,80), "rmm",
+)
+image nav_rm p = Composite(
+    (250,250),
+    (0,0), "nav_rm",
+    (50,70), "pnav rt"
+)
+image rmm:
+    "minisprites/ripped_mitten_alpha.png"
+    zoom 0.7
+
+image applestand = Composite(
+    (300,300),
+    (0,46),"map-bgs/applestand.png",
+    (4,0),"items/OSO_stone_apple_prop.png"
+)
+
+image brussels:
+    "items/Brussel_Sprouts.png"
+    zoom 0.15
 image poplars:
     "items/personeatingfoodpainting.png"
     zoom 0.5
@@ -95,6 +195,20 @@ image corndogpainting:
     zoom 1.5
 image food_island:
     "map-bgs/museum_food_top_island.png"
+
+image food_big1:
+    "talksprites/food_big1.png"
+    xalign 0.5
+    yalign 0.3
+image food_big2:
+    "talksprites/food_big2.png"
+    xalign 0.5
+    yalign 0.3
+image food_big3:
+    "talksprites/food_big3.png"
+    xalign 0.5
+    yalign 0.3
+
 
 label museum_food:
     $ renpy.choice_for_skipping()
@@ -126,6 +240,7 @@ label museum_food:
 
 label .marble:
     scene bg museum_food
+    show food_big2
     show marble
     if quest.money_food:
         jump .marble3
@@ -187,6 +302,7 @@ label .marble3:
 
 label .notepad:
     scene bg museum_food
+    show food_big3
     show notepad
     if gave_chips:
         jump .notepad3
@@ -268,7 +384,7 @@ label .notepad3:
 
 label .painting:
     scene bg museum_food
-    show painting_food_floor
+    show painting_food
     show posty neutral
     show rm
     p "Um hi there!"
@@ -282,8 +398,8 @@ label .painting:
     "The odd painting suddenly and inexplicably calls out to you. You are filled with {color=#ffff00}{i}inspiration{/i}{/color}."
     p astonished quiet "{i}...I need it.{/i}"
     p happy quiet "{i}It's not like it'll be missed anyway!{/i}"
-    hide painting_food_floor
-    show painting_food
+    hide painting_food
+    show painting_food floor
     "You got an {b}art piece{/b}! A strange painting depicting... brussel sprouts?"
     $ item.painting_food = True
     $ quest.painting_food = True
@@ -297,6 +413,7 @@ label .painting:
 
 label .rm:
     scene bg museum_food
+    show food_big1
     show posty neutral
     show rm
     rm "Oh hey, what's up?"
@@ -321,30 +438,31 @@ label .rm:
 label .eating: #233
     scene bg museum_food
     show eating
-    if food_switch == False:
-        show posty suspicious
-        p suspicious "Huh what is that doing there? Among all the food based pieces, it doesn't look that appetizing to look at someone eating."
-        "The title of the painting is \"{i}Crisis of the Poplar Trees{/i}\". The rest of the text is too small to read at this distance." 
-        p "The only thing true about the title is that guy is clearly having a crisis about something!"
-        p "If I didn't know any better, I would've thought he was having some pizza psychosis..."
-        label .eating_decide:
-        menu:
-            "Read more of the placard?"
+    # if food_switch == False:
+    #     show posty suspicious
+    #     p suspicious "Huh what is that doing there? Among all the food based pieces, it doesn't look that appetizing to look at someone eating."
+    #     "The title of the painting is \"{i}Crisis of the Poplar Trees{/i}\". The rest of the text is too small to read at this distance." 
+    #     p "The only thing true about the title is that guy is clearly having a crisis about something!"
+    #     p "If I didn't know any better, I would've thought he was having some pizza psychosis..."
+    #     label .eating_decide:
+    #     menu:
+    #         "Read more of the placard?"
 
-            "Yes.":
-                "You try to read more of the placard, but bonk your face on it by mistake!"
-                #389 play a sound here! like a click!!!
-                # and then a scene of the corndog painting disappearing, revealing the secret passageway.
-                $ food_switch = True
-                p confused "Well, that was weird. Wonder what that sound was!"
-                jump museum_food
-            "No.":
-                p "_" # posty decides she is uninterested in reading more of the placard. she starts to walk away, but returns to the placard, still curious.
-                jump .eating_decide
-    else:
-        show posty neutral
-        p "_" # posty returns to actually read the placard this time.
-        "The placard reads: \"{i}(something){/i}\". Weird!" # placard full text.
-        p "_" # some kind of remark
-        jump museum_food
+    #         "Yes.":
+    #             "You try to read more of the placard, but bonk your face on it by mistake!"
+    #             #389 play a sound here! like a click!!!
+    #             # and then a scene of the corndog painting disappearing, revealing the secret passageway.
+    #             $ food_switch = True
+    #             p confused "Well, that was weird. Wonder what that sound was!"
+    #             jump museum_food
+    #         "No.":
+    #             p "_" # posty decides she is uninterested in reading more of the placard. she starts to walk away, but returns to the placard, still curious.
+    #             jump .eating_decide
+    # else:
+    show posty suspicious
+    p "Huh what is that doing there? Among all the food based pieces, it doesn't look that appetizing to look at someone eating."
+    "The placard reads: \"{i}Crisis of the Poplar Trees{/i}\"."
+    p "The only thing true about the title is that guy is clearly having a crisis about something!"
+    p "If I didn't know any better, I would've thought he was having some pizza psychosis..."
+    jump museum_food
 
