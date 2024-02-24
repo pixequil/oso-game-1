@@ -5,9 +5,22 @@
 # todo: image museum_blue_p_opened
 # todo: image museum_blue_p_missing
 
+
+image bg blue_red:
+    "dbgs/blue_red.png"
+
+image bg blue_talk:
+    "dbgs/blue_rusty.png"
+image bg blue_talk rusted:
+    "dbgs/blue_rusted.png"
+image bg blue_talk taken:
+    "dbgs/blue_taken.png"
+
 image bg museum_blue_top:
     "map-bgs/museum_blue_top_default.png"
-    zoom 1.0
+
+image bg museum_blue_top stolen:
+    "map-bgs/museum_blue_top_nopainting.png"
 
 image redcash:
     "items/redcash.png"
@@ -49,29 +62,114 @@ image rusty_gate_broken:
     yalign 0.6
     zoom 1.25
 
+screen blue_nav:
+    viewport:
+        child_size (1280,720)
+
+        showif quest.painting_blue == False:
+            add "museum_blue_top_default"
+        showif quest.painting_blue:
+            add "museum_blue_top_nopainting"
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (1200, 580)
+            idle "arrow rt black"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (1200, 550)
+            idle "pnav rt i"
+            hover "pnav rt"
+            action Jump("museum_entrance")
+
+        imagebutton: # redtile
+            pos (645, 450)
+            idle "nav_redtile"
+            hover "nav_redtile p"
+            action Jump("museum_blue.rt")
+        
+        imagebutton:
+            pos (520,40)
+            idle "nav_main"
+            hover "nav_main p"
+            action Jump("museum_blue.painting")
+
+image nav_main = Composite(
+    (280,280),
+    (0,0), "hitbox",
+    (160,40), "bluetile_tiny",
+)
+image nav_main p = Composite(
+    (280,280),
+    (0,0), "nav_main",
+    (80,0), "pnav up"
+)
+image bluetile_tiny = ConditionSwitch(
+    "quest.painting_blue == True","bluetile_scared",
+    "bt_distracted == True","nothing",
+    "True","bluetile_giddy"
+)
+image bluetile_giddy:
+    "minisprites/bluetile_giddy.png"
+    zoom 0.03
+image bluetile_angry:
+    "minisprites/bluetile_angry.png"
+    zoom 0.03
+image bluetile_scared:
+    "minisprites/bluetile_scared.png"
+    zoom 0.03
+
+image nav_redtile = Composite(
+    (280,280),
+    (0,0), "hitbox",
+    (160,40), "redtile_tiny",
+    (40,40), "bluetile_tiny2"
+)
+image nav_redtile p = Composite(
+    (280,280),
+    (0,0), "nav_redtile",
+    (100,0), "pnav up"
+)
+image redtile_tiny:
+    "minisprites/redtile.png"
+    zoom 0.13
+image bluetile_tiny2 = ConditionSwitch(
+    "bt_distracted == True","bluetile_angry",
+    "True","nothing"
+)
+
 label museum_blue:
     if saw.blue == False:
         jump .redcash
     else:
-        scene bg museum_blue_top # TODO: #33 blue exhibit imagemap (needs illustration)
-        show posty neutral
+        $ renpy.choice_for_skipping()
+        call screen blue_nav
 
-        p "_"
+# label museum_blue:
+#     if saw.blue == False:
+#         jump .redcash
+#     else:
+#         scene bg museum_blue_top # TODO: #33 blue exhibit imagemap (needs illustration)
+#         show posty neutral
 
-        menu:
-            "Main Exhibit & Blue Tile" if (bt_distracted == False):
-                jump .painting
-            "Red Tile" if (bt_distracted == False):
-                jump .rt
-            "Main Exhibit" if bt_distracted:
-                jump .painting
-            "Red Tile & Blue Tile" if bt_distracted:
-                jump .rt
-            "Return to the entrance.":
-                jump museum_entrance
+#         p "_"
+
+#         menu:
+#             "Main Exhibit & Blue Tile" if (bt_distracted == False):
+#                 jump .painting
+#             "Red Tile" if (bt_distracted == False):
+#                 jump .rt
+#             "Main Exhibit" if bt_distracted:
+#                 jump .painting
+#             "Red Tile & Blue Tile" if bt_distracted:
+#                 jump .rt
+#             "Return to the entrance.":
+#                 jump museum_entrance
 
 label .redcash:
-    scene bg museum_blue
+    scene bg blue_red
     show posty astonished
     p "Woah. They weren't kidding. This whole exhibit is just blue stuff. My eyes feel like they're-"
     p suspicious "Huh, what's this red thing doing here?" 
@@ -84,7 +182,7 @@ label .redcash:
     jump museum_blue
         
 label .rt:
-    scene bg museum_blue
+    scene bg blue_red
     show redtile
 
     if quest.painting_blue:
@@ -119,7 +217,10 @@ label .rt:
         redtile "What do you want from me? I was just about to make a remark about the incessant use of blue in this exhibit."
         p "Well-"
         redtile "Let me guess. You are confused about my very presence in this area."
-        p concerned "Yeah, but I assumed you were friends with Blue Tile and you went to check out the exhibit together."
+        if saw.bluetile == True:
+            p concerned "Yeah, but I assumed you were friends with Blue Tile and you went to check out the exhibit together."
+        else:
+            p concerned "Yeah, but I assumed you were friends with that guy over there and you went to check out the exhibit together."
         redtile "Uggh, not even close. Blue dragged me out here so he couldn't ramble on about this dumb, irritating, meaningless color to himself."
         redtile "As for the exhibit, if you knew anything about its long and complex history, you would know it represents the death of free artistic expression and pandering to the masses."
         p confused "What?"
@@ -251,7 +352,7 @@ label .rt:
 
 label .painting:
     if saw.bluetile == False:
-        show bg museum_blue_p_rusty
+        scene bg blue_talk
         show posty neutral
         show bluetile giddy
         $ saw.bluetile = True
@@ -288,7 +389,7 @@ label .painting:
             jump museum_blue
 
     elif quest.painting_blue:
-        show bg museum_blue_p_missing
+        scene bg blue_talk taken
         show posty concerned
         show bluetile scared
         bluetile "AUGH!! Where could it have gone?? Who could have taken it?!?"
@@ -307,7 +408,7 @@ label .painting:
         jump museum_blue
 
     elif saw.bluetile and (item.ladle_full == False):
-        show bg museum_blue_p_rusty
+        scene bg blue_talk
         show posty happy
         show bluetile giddy
         p "Hey again, Blue!"
@@ -333,18 +434,18 @@ label .painting:
 
 label .painting_ladle:
     if bt_distracted:
-        show bg museum_blue_p_rusty
+        scene bg blue_talk
         show posty concerned
         show ladle_full
         p concerned "Alrighty, here it goes!"
         hide ladle_full
-        show bg museum_blue_p_opened
+        show bg blue_talk rusted
         "You repeat Red Tile's crime, splashing more miso soup on the painting!"
         p angry "Drat, I missed! Curse you weak arms!"
         p annoyed "All I hit was this gate that has rusted open-"
         p astonished quiet "!!"
         p happy "I just got an idea..."
-        show bg museum_blue_p_missing
+        show bg blue_talk taken
         show painting_blue
         "You got an {b}art piece{/b}!{p}Whether you love it or hate it, there is no denying that it makes great use of the azure colour."
         extend " You now feel some {color=#ffff00}{i}inspiration{/i}{/color}!"
@@ -377,7 +478,7 @@ label .painting_ladle:
         jump .painting_ladle_blocked
 
 label .painting_ladle_blocked:
-    show bg museum_blue_p_rusty
+    scene bg blue_talk
     show posty concerned
     show bluetile scared
     $ miso_blocked = True

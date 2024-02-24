@@ -3,9 +3,7 @@
 # todo: war main exhibit painting #225
 
 image bg museum_war_top:
-    "map-bgs/museum_war_top.png"
-    zoom 1.15
-    yalign 0.2
+    "map-bgs/museum_war_nav.png"
 
 image bg museum_war:
     "dbgs/museum_war_dbg.png"
@@ -24,12 +22,12 @@ image heavier:
 image burger fire:
     "items/big_fire_painting_1.png"
     xalign 0.45
-    yalign 0.5
+    yalign 0.3
 
 image burger out:
     "items/big_fire_painting_2.png"
     xalign 0.45
-    yalign 0.5
+    yalign 0.3
 
 image imaginary_lighter:
     "items/Imaginary_Lighter.png"
@@ -49,7 +47,7 @@ image battery_floor:
 image champurrlain:
     "items/Champurrlain_painting.png"
     xalign 0.44
-    yalign 0.3
+    yalign 0.25
     zoom 1.5
 
 image deed:
@@ -60,40 +58,229 @@ image deed:
 
 image painting_war:
     "items/war_Exhibit_photo_original.png"
-    truecenter
+    xalign 0.5
+    yalign 0.3
     zoom 0.4
 
 image painting_war green:
     "items/war_Exhibit_photo_green.png"
-    truecenter
+    xalign 0.5
+    yalign 0.3
     zoom 0.4
+
+screen war_nav():
+    viewport:
+        child_size (1280,720)
+
+        add "bg museum_war_top"
+
+
+
+        imagebutton:
+            pos (550,10)
+            idle "war_painting_tiny"
+        showif scanter_green == False:
+            imagebutton:
+                pos (510,0)
+                idle "nav_controversy"
+                hover "nav_controversy p"
+                action Jump("museum_war.painting1")
+
+        showif scanter_green and (quest.painting_war == False):
+            imagebutton:
+                pos (510,0)
+                idle "nav_warting"
+                hover "nav_warting p"
+                action Jump("museum_war.painting2")
+
+        imagebutton:
+            pos (210,0)
+            idle "champurrlain_tiny"
+        imagebutton:
+            pos (200,130)
+            idle "dotted line"
+        showif deed_burned == False:
+            imagebutton:
+                pos (200,110)
+                idle "battery"
+        imagebutton:
+            pos (190,0)
+            idle "nav_ahiss"
+            hover "nav_ahiss p"
+            action Jump("museum_war.ahiss")
+
+        imagebutton:
+            pos (870,40)
+            idle "nav_pal"
+            hover "nav_pal p"
+            action Jump("museum_war.pal")
+
+        imagebutton:
+            pos (340,320)
+            idle "war_island"
+        showif burger_extinguish == False:
+            imagebutton:
+                pos (580,380)
+                idle "burger_fire"
+        showif burger_extinguish:
+            imagebutton:
+                pos (580,380)
+                idle "burger_out"
+
+        showif scanter_green:
+            imagebutton:
+                pos (760,380)
+                idle "nav_controversy"
+                hover "nav_controversy p"
+                action Jump("museum_war.glasses2")
+
+        imagebutton:
+            pos (500,350)
+            idle "nav_buff"
+            hover "nav_buff p"
+            action Jump("museum_war.buff")
+
+        imagebutton:
+            pos (190,410)
+            idle "nav_capsule"
+            hover "nav_capsule p"
+            action Jump("museum_war.capsule")
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (1011, 640)
+            idle "arrow dn"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (1011, 640)
+            idle "pnav dn i"
+            hover "pnav dn"
+            action Jump("museum_entrance")
+
+image nav_capsule = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (40,120), "minisprites/capsule.png",
+)
+image nav_capsule p = Composite(
+    (250,250),
+    (0,0), "nav_capsule",
+    (30,70), "pnav lt"
+)
+
+image nav_warting = Composite(
+    (250,250),
+    (0,0), "hitbox",
+)
+image nav_warting p = Composite(
+    (250,250),
+    (0,0), "nav_warting",
+    (60,20), "pnav up"
+)
+
+image nav_buff = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (140,90), "minisprites/buff.png",
+)
+image nav_buff p = Composite(
+    (250,250),
+    (0,0), "nav_buff",
+    (40,40), "pnav up"
+)
+
+image nav_controversy = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (30,80), "nav_rcg",
+    (140,80), "nav_bcg"
+)
+image nav_controversy p = Composite(
+    (250,250),
+    (0,0), "nav_controversy",
+    (60,20), "pnav up"
+)
+
+image nav_rcg:
+    "minisprites/rose-colored-glasses-angry-sprite.png"
+image nav_bcg:
+    "minisprites/bcg.png"
+    xzoom -0.7
+    yzoom 0.7
+
+image nav_pal = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (100,40), "minisprites/palettette.png",
+)
+image nav_pal p = Composite(
+    (250,250),
+    (0,0), "nav_pal",
+    (0,20), "pnav rt"
+)
+image war_painting_tiny = ConditionSwitch(
+    "quest.painting_war == True","nothing",
+    "scanter_green == True","war_painting_green",
+    "True","war_painting_original"
+)
+image war_painting_original:
+    "items/war_Exhibit_photo_original.png"
+    zoom 0.1
+image war_painting_green:
+    "items/war_Exhibit_photo_green.png"
+    zoom 0.1
+image nav_ahiss = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (70,40), "minisprites/ahiss_the_Cat_over.png",
+)
+image nav_ahiss p = Composite(
+    (250,250),
+    (0,0), "nav_ahiss",
+    (50,40), "pnav up"
+)
+
+image champurrlain_tiny:
+    "items/Champurrlain_painting.png"
+    zoom 0.35
+image war_island:
+    "map-bgs/museum_war_top_island.png"
 
 
 label museum_war:
     if saw.war == False:
         jump .capsulefirst
-    scene bg museum_war_top
-    show posty neutral
+    else:
+        $ renpy.choice_for_skipping()
+        call screen war_nav
 
-    p "_" # todo: war exhibit imagemap #150 #169
+# label museum_war:
+#     if saw.war == False:
+#         jump .capsulefirst
+#     scene bg museum_war_top
+#     show posty neutral
 
-    menu:
-        "Capsule":
-            jump .capsule
-        "Buff":
-            jump .buff
-        "Ahiss the Cat":
-            jump .ahiss
-        "Palettette@":
-            jump .pal
-        "Main Exhibit\nRose-Colored Glasses & Blue-Colored Glasses" if scanter_green == False:
-            jump .painting1
-        "Main Exhibit" if (scanter_green == True) and (quest.painting_war == False):
-            jump .painting2
-        "Rose-Colored Glasses & Blue-Colored Glasses" if scanter_green:
-            jump .glasses2
-        "Return to the entrance.":
-            jump museum_entrance
+#     p "_" # todo: war exhibit imagemap #150 #169
+
+#     menu:
+#         "Capsule":
+#             jump .capsule
+#         "Buff":
+#             jump .buff
+#         "Ahiss the Cat":
+#             jump .ahiss
+#         "Palettette@":
+#             jump .pal
+#         "Main Exhibit\nRose-Colored Glasses & Blue-Colored Glasses" if scanter_green == False:
+#             jump .painting1
+#         "Main Exhibit" if (scanter_green == True) and (quest.painting_war == False):
+#             jump .painting2
+#         "Rose-Colored Glasses & Blue-Colored Glasses" if scanter_green:
+#             jump .glasses2
+#         "Return to the entrance.":
+#             jump museum_entrance
 
 label .painting1:
     scene bg museum_war_flipped
@@ -135,6 +322,7 @@ label .painting2:
 
 label .glasses2:
     scene bg museum_war
+    show tapestry at truecenter
     show rcg
     show bcg
     show posty happy
@@ -504,6 +692,7 @@ label .buff2:
 
 label .capsulefirst:
     scene bg museum_war
+    show whatever painting at truecenter
     show posty neutral 
     show capsule pain
     capsule "Hey! You there, do you mind helping me out with a favor?"
@@ -523,6 +712,7 @@ label .capsulefirst:
 
 label .capsule:
     scene bg museum_war
+    show whatever painting at truecenter
     show posty neutral
     show capsule happy
     if item.heavier:

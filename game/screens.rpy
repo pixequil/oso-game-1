@@ -249,6 +249,11 @@ screen quick_menu():
             not renpy.get_screen('alley_nav'),
             not renpy.get_screen('park_nav'),
             not renpy.get_screen('music_nav'),
+            not renpy.get_screen('entrance_nav'),
+            not renpy.get_screen('blue_nav'),
+            not renpy.get_screen('war_nav'),
+            not renpy.get_screen('food_nav'),
+            not renpy.get_screen('janitor_nav')
         ]
     ):
 
