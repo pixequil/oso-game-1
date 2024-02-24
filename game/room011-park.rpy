@@ -141,8 +141,10 @@ label .auto:
     auto sad "Now, they straight up vanish and go on this reality show without even a letter!"
     auto  "Since then, business has been hectic to say the least."
     auto "I wish they would come back..."
+    play audio "sound/ringring.wav"
     "{i}ring ring..!{/i}" #390
     auto bothered "Oh! It's Playing Cards! Hopefully she can pull this through. Excuse me."
+    play audio "sound/ringring.wav"
     show auto:
         flip
     auto "...hello"
