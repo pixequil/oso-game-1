@@ -127,7 +127,7 @@ label .auto:
     auto bothered "A small technicality in the city's Charter of Rights and Liberties; grants the council the right to force people into doing everyone's work for them in case of an \"unforgivable crime.\""
     p "I didn't know they had such laws."
     auto "Yeah, that was the first time I've seen that loophole. I had to dig up old paperwork to prove that that section hadn't been enforced since this city was a swamp."
-    auto sad "Of course it didn't help the case when my frustrated fizz-in-the-brain client attempted to bribe the judge with \"endorsement coupons\" and an \"autograph\" in return for clemency."
+    auto sad "Of course it didn't help the case when my frustrating fizz-in-the-brain client attempted to bribe the judge with \"endorsement coupons\" and an \"autograph\" in return for clemency."
     p suspicious "Those antics sound awfully similar to a guy I know..." 
     p concerned "Seems like you have a lot on your plate."
     auto "And to top it all off, the only other three guys I have to help me are busy. Mop is sick with the flu, Playing Cards is desperately keeping her client happy, and Blob up and left!"
@@ -144,7 +144,6 @@ label .auto:
     play audio "sound/ringring.wav"
     "{i}ring ring..!{/i}" #390
     auto bothered "Oh! It's Playing Cards! Hopefully she can pull this through. Excuse me."
-    play audio "sound/ringring.wav"
     show auto:
         flip
     auto "...hello"
