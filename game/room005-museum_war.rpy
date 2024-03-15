@@ -289,17 +289,31 @@ label .painting1:
     show bcg
     if saw.glasses:
         show posty neutral
-        "The two still seemed to be fighting."
+        "The two still seem to be fighting."
+        show rcg:
+            xzoom -1.0
+            xpos 0.6
+        rcg "Is there something you need? We're in the middle of an important discussion."
+        bcg "Why don't we ask her?"
+        rcg "Good idea!"
+        show rcg:
+            xpos 0.8
+        rcg "Tell us? Does this painting show the victory of the Redoinks or the Blouououous?"
+        p concerned "It's in black and white. I can't tell which army is which."
+        rcg "You can figure it out through the context clues hidden in the painting!"
+        bcg "Expressions, tints and shades, knowledge of basic history!"
+        p "Um, I don't know. Sorry. I'm not qualified to interpret art."
+        bcg "Then please let us continue our debate without you."
         jump museum_war
     else:
         show posty neutral
-        p "uh excu-"
-        rcg "This art piece clearly shows the victory of the Redoinks!!"
-        bcg "No{w} - The positioning obviously implies the victory of the Blouououous."
+        p "Uh excu-{nw}"
+        rcg "This art piece clearly shows the victory of the Redoinks!"
+        bcg "No.{w} The positioning obviously implies the victory of the Blouououous."
         bcg "They are so wounded and depressed, having to fight in a war n' all, yknow?"
         rcg "What do you mean!?! The determination in their eyes say it all! You always see the gloomy parts of EVERYTHING!"
         bcg "You always see the hopeful parts, even when it isn't intended!"
-        p "{i}They look busy. I should probably leave.{/i}"
+        p quiet "{i}They look busy. I should probably leave.{/i}"
         $ saw.glasses = True
         jump museum_war
 
@@ -475,16 +489,22 @@ label .pal_battery:
 
 label .pal3:
     show posty neutral
-    p "_" #208 revisiting palettette. avoid mentioning whether posty took the painting.
-    pal "_"
+    pal "Hey Posty! What's up? You want to see how the scanter works again?"
+    p "Nah, I'm good."
+    pal "Well, that's a relief, because I don't have any paintings to use it on anymore."
+    pal "Don't worry though! Once I get this thing finished, it won't need pre-made paintings to do it\'s job."
+    p "A device that can make images on its own..."
+    p concerned "For some reason, the idea of that scares me."
+    pal "Nah, don't fret it. It's a one-of-a-kind device. You don't need to worry about it being misused!"
+    p happy "That's good to hear. Talk to you later."
     jump museum_war
 
 label .ahiss:
     scene bg museum_war
-    show champurrlain #166
+    show champurrlain
     if deed_burned:
         jump .ahiss3
-    show battery_floor #168
+    show battery_floor
     show ahiss
     if saw.ahiss == False:
         $ saw.ahiss = True
@@ -528,15 +548,15 @@ label .ahiss1:
 
 label .ahiss2:
     show posty neutral with moveinleft
-    p "_" # posty steps into ahiss's space again #172
+    ahiss "Didn't I say to leave?!?"
     show deed 
-    $ renpy.transition(hpunch, layer="master") #prevents interruption of the text window
-    ahiss "_" # ahiss interrupts her and reminds her to back up
+    $ renpy.transition(hpunch, layer="master")
+    ahiss "I mustn't explain what I\'ve already told you about what this deed entails! Now go!"
     show posty:
         xalign -0.3
-    $ renpy.transition(move, layer="master") #prevents interruption of the text window
-    p "_" # posty backs off and apologizes. it might be sarcastic if you want.
-    ahiss "_" # ahiss chastises posty for forgetting. make sure the last line of the interaction is ahiss, so it transitions into the next block correctly.
+    $ renpy.transition(move, layer="master")
+    p concerned "Oh, uh, Sorry.. I forgot I'm not supposed to be back here. I just wanted to revisit and see what you were doing…"
+    ahiss "Well I\'m doing nothing now that you're here! If you forget and revisit again, you will suffer the consequences! Now get going and don't come back!"
     jump .ahiss_deed
 
 label .ahiss_deed:
@@ -573,7 +593,7 @@ label .ahiss_deed:
             p neutral "Oh, look, a battery. Yoink!"
         hide battery_floor
         show battery_center
-        "You got the {b}battery{/b}!"
+        "You got the {b}battery{/b}!{w} A giant D battery meant to run large electrical devices."
         $ item.battery = True
         hide battery_center
         if battery_asked:

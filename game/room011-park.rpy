@@ -165,16 +165,16 @@ label .retainer:
     p "Oh hi again!"
     retainer "Hello! What are you doing here?"
     p happy "Just relaxing. "
-    extend astonished "Never knew it would take all day to deliver one package!!"
+    extend astonished "Never knew it would take all day to deliver one package!"
     show posty happy
     retainer "Heh.. I was heading home, but decided to come here."
     retainer "Y'know, to get some fresh air!"
     "...."
     show posty neutral
     retainer "Hey uh... Thanks again for the trophy! "
-    extend "It isn't as good as winning, but I'm happy that someone cares about me.."
+    extend "It isn't as good as winning, but I'm happy that someone cares about me..."
     p happy "No problem man! Glad you're feeling better!"
-    retainer "Well, I better get going. It was nice meeting you! Goodbye!!"
+    retainer "Well, I better get going. It was nice meeting you! Goodbye!"
     p "You too, bye!"
     hide retainer with moveoutleft
     $ saw.retainerpark = True

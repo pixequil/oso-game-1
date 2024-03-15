@@ -166,7 +166,7 @@ label .tag3:
     p "No problem, I\'m always willing to help out a fellow artist like yourself!"
     p "I\'m sure Graffiti \'d be proud of the kind of art you make."
     tag "Heh, thanks Posty."
-    p "Of course!"
+    p "Of course! You guys would be a great duo together!"
     jump alley
 
 label .stick:
