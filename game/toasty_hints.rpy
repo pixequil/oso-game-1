@@ -270,7 +270,18 @@ label toasty_hints:
         else:
             show posty neutral
             show toasty neutral
-            t "hint for if you have the imaginary lighter and havent talked to ahiss" #407
+            t annoyed "What's it now, blue box?"
+            p annoyed "It's Posty."
+            t annoyed "Well, do I look I care?"
+            t smug2 "So, what do you want?"
+            p "Somehow, I got this from some liar in the museum."
+            t annoyed "Uhh..."
+            t laugh "I think I may have underestimated your stupidity."
+            p concerned "Uhh, it's an imaginary lighter."
+            t annoyed "Well, your brain is as non-existent."
+            t smug "Like that deed from the cat from the museum."
+            t turned2 "Anyway, shoo."
+
     
     elif item.heavier:
         show toasty crossedarms
