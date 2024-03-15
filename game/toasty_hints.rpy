@@ -270,17 +270,17 @@ label toasty_hints:
         else:
             show posty neutral
             show toasty neutral
-            t annoyed "What's it now, blue box?"
-            p annoyed "It's Posty."
-            t annoyed "Well, do I look I care?"
-            t smug2 "So, what do you want?"
-            p "Somehow, I got this from some liar in the museum."
-            t annoyed "Uhh..."
-            t laugh "I think I may have underestimated your stupidity."
-            p concerned "Uhh, it's an imaginary lighter."
-            t annoyed "Well, your brain is as non-existent."
-            t smug "Like that deed from the cat from the museum."
-            t turned2 "Anyway, shoo."
+            t annoyed "what's it now... blue box"
+            p annoyed "it's posty..."
+            t angry "well do i look i care?"
+            t annoyed "so what do you want?"
+            p "somehow i got this"
+            t annoyed "uhh"
+            t laugh "i think may have underestimated your stupidity"
+            p concerned "uhh it's an imaginary lighter"
+            t annoyed "well your brain is as non-existent"
+            t smug "like that cat from the museum"
+            t turned2 "anyway shoo."
 
     
     elif item.heavier:
