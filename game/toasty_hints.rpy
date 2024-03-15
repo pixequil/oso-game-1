@@ -327,7 +327,6 @@ label toasty_hints:
             p concerned "Humans?"
             t smug "Oh y'know, like that cat from the museum, except more freakish."
             t turned2 "Anyway, I've got no business talking to you anymore. Shoo."
-
     
     elif item.heavier:
         show toasty crossedarms
