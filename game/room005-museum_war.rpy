@@ -296,7 +296,7 @@ label .painting1:
         rcg "Is there something you need? We're in the middle of an important discussion."
         bcg "Why don't we ask her?"
         rcg "Good idea!"
-        show rcg:
+        show rcg with move:
             xpos 0.8
         rcg "Tell us? Does this painting show the victory of the Redoinks or the Blouououous?"
         p concerned "It's in black and white. I can't tell which army is which."
