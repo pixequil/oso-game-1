@@ -97,7 +97,7 @@ label .drepeat:
 label .dlast:
     show posty annoyed
     show dolly
-    p "You ripped me off! I thought I was getting valuable!"
+    p "You ripped me off! I thought I was getting something valuable!"
     dolly "You did! You got a loot box! It's not my fault it had a common item in it."
     dolly "You want to buy another one?"
     p "No."
