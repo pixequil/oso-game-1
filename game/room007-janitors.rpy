@@ -41,7 +41,7 @@ screen janitor_nav():
             pos (323, 600)
             idle "pnav dn i"
             hover "pnav dn"
-            action Jump("museum_food")
+            action MouseMove(319, 255),Jump("museum_food")
 
         imagebutton:
             pos (250,200)

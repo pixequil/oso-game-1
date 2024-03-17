@@ -95,8 +95,14 @@ label .drepeat:
     jump .money_check
 
 label .dlast:
-    show posty neutral
-    p "_"
+    show posty annoyed
+    show dolly
+    p "You ripped me off! I thought I was getting something valuable!"
+    dolly "You did! You got a loot box! It's not my fault it had a common item in it."
+    dolly "You want to buy another one?"
+    p "No."
+    dolly "Are you sure? 99\% of gamblers quit before they win big."
+    p "I can live with that."
     jump mainstreet
 
 label .money_check:
