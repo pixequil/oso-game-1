@@ -360,7 +360,7 @@ label .notepad_chips:
         notepad "It distills my essence into a small package you can carry around as a reminder."
         p astonished "Aw shucks, that is too much!"
         show badpainting
-        "You got the {b}napkin \"painting\"{/b}! If this was in the eye of the beholder, then they would go blind."
+        "You got the {b}napkin \"painting\"{/b}!{w} If this was in the eye of the beholder, then they would go blind. It's not even painted."
         $ item.napkin = True
         hide badpainting
         p confused "Oohhheheh it looks... avant garde."

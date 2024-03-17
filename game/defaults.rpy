@@ -73,7 +73,9 @@ default tag_trade = False
 default trophy_crafted = False
 default vendingmachine_used = False
 default toastmeister = False
+default toastytwopaintings = False
 
 # VARIOUS COUNTERS
 default money = 0
 default paintings = 0
+default toastybtdistracted = 0

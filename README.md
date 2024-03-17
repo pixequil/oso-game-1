@@ -57,14 +57,20 @@ _(Don't remove the blank bullets)_
 * Miguel Refareal
 * strawanimations
 * BumpBob Looly
+* FluffyStar_XD
 * 4DJumpman256
 * FunnyBoy044
+* Purple Arin
 * AnArtichoke
 * Loggybears
+* mintykiwi
 * Fanimator
 * mattArtz
+* Paramilk
 * PenTick
 * PlugBoy
+* Crookie
+* m3xyuu
 * racher
 * Satomi
 * Ad00d1
