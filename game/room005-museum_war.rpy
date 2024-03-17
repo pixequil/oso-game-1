@@ -464,7 +464,7 @@ label .pal_battery:
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
-    with pushleft
+    with pushright
     bcg "...quit being so naive! The Redoinks are clearly fleeing in mass disarray!"
     rcg "Well, that is what a military novice like yourself would say! I see the Blouououous using their cowardly retreat tactic."
     bcg "A military novice would be able to properly identify the state of the battle! Does that triumphant victory really look like \"cowardly retreat\" to you?"
@@ -480,7 +480,7 @@ label .pal_battery:
     scene bg museum_war
     show palettette
     show posty astonished
-    with pushright
+    with pushleft
     pal "Holy moly it works!"
     p quiet "{i}Oh my god I really want that painting, it would be such a vibe...{/i}"
     p happy "Glad to see it works! I gotta go quick now..."
