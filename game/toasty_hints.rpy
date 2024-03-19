@@ -520,18 +520,24 @@ label toasty_hints:
         show posty neutral
         show toasty annoyed
         t "I swear Posty, wherever I go, there you are."
-        p "You don't go anywhere. I've haven't seen you leave this corner all day."
+        p "You don't go anywhere. I've haven\'t seen you leave this corner all day."
         t "I'm busy looking busy. What have you been doing?"
-        p happy "I've been stealing paintings. I have two of them!"
-        t "Booooo!"
-        p suspicious "Huh? I think it's an impressive feat. I don't understand where this booing is coming from."
-        t "I don't understand why you would steal only two paintings. You should've stolen three. I've stolen three paintings! Why not you?"
+        t neutral2 "Hey, where did you get those paintings?"
+        p suspicious "Why do you care?"
+        t smug3 "Because I remember seeing those in the museum, so I'm wondering how you got them."
+        show toasty smug4
+        p "Well, they are from the museum, but I got them through completely legal methods."
+        t smug "Even if that's true, that's an embarrassingly low amount of paintings you have."
+        p "What do you mean? I think it's an impressive feat."
+        t smug2 "You should've stolen three. I\'ve stolen three paintings! Why not you?"
         if toastytwopaintings:
             p "I thought you said you stole two paintings-{nw}"
-        t crossedarms "Everything good comes in threes! Three rings in a circus, three movies in a trilogy, three dimensions in a reality..."
-        t "Three neurons in a functioning brain."
-        show toasty pointandlaugh talk
-        p annoyed "Alright fine, I'll steal a third painting."
+        t enthused "Everyone knows that having three paintings means you are a true art connoisseur, only two must mean you don't care about the arts."
+        p "Well, how would I get another painting?"
+        t neutral "The museum has three main exhibits, so you can probably get a third painting from one of the exhibits, preferably one you haven't already “legally” taken a painting from."
+        t smug2 "Or you could buy online and skip the possibility of being arrested altoge-"
+        p "OK thanks, see you later."
+        t turned "He he he, good work Toasty. Posty's lack of patience will be her undoing."
         return
 
     elif paintings == 1:
