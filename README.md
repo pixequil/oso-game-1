@@ -224,6 +224,7 @@ _(Don't remove the blank bullets)_
 * REZURRECTA - ASTRUM_DEUS_P1
 * REZURRECTA - ZAKU
 * tetroid - Outro
+* mintykiwi - cdafafadRemake
 
 ## Previous Game Directors
 * FunnyBoy044
