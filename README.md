@@ -237,6 +237,9 @@ _(Don't remove the blank bullets)_
 * Maroue Reus “Dunkyl 🔣🔣”
 * Olivia/timepavement
 
+## Attribution
+* Phone ringing sound: https://commons.wikimedia.org/wiki/File:Automatic_telephone_Siemens_%26_Halske_-_ringing.webm
+
 ## Creator
 * Hexagon
 
