@@ -527,7 +527,7 @@ label toasty_hints:
         t smug3 "Because I remember seeing those in the museum, so I'm wondering how you got them."
         show toasty smug4
         p "Well, they are from the museum, but I got them through completely legal methods."
-        t smug1 "Even if that's true, that's an embarrassingly low amount of paintings you have."
+        t smug "Even if that's true, that's an embarrassingly low amount of paintings you have."
         p "What do you mean? I think it's an impressive feat."
         t smug2 "You should've stolen three. I\'ve stolen three paintings! Why not you?"
         if toastytwopaintings:
