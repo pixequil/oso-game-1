@@ -283,6 +283,7 @@ label firstscene:
     p "And this is going to..."
     
     show bg mainstreet
+    play music "sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg"
     $ renpy.transition(dissolve, layer="master") #prevents interruption of the text window
     show posty neutral
     show btnet 
@@ -333,6 +334,7 @@ label firstscene:
 label mainstreet:
     $ renpy.choice_for_skipping()
     $ last.alleyy = 1.0
+    play music "sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg" if_changed
     call screen mainstreet_nav
 
 label .go_museum:
