@@ -221,6 +221,8 @@ _(Don't remove the blank bullets)_
 
 ## Music
 * REZURRECTA - ZAKU
+* REZURRECTA - ASTRUM_DEUS_P1
+* A Jar of Copper Salts - citb
 
 ## Previous Game Directors
 * FunnyBoy044

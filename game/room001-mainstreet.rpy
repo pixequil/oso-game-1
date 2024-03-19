@@ -279,6 +279,7 @@ image nav_bs p = Composite(
 label firstscene:
 
     scene black
+    stop music fadeout 1.0
     p "..."
     p "And this is going to..."
     
