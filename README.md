@@ -220,9 +220,10 @@ _(Don't remove the blank bullets)_
 * wolfolotl
 
 ## Music
-* REZURRECTA - ZAKU
-* REZURRECTA - ASTRUM_DEUS_P1
 * A Jar of Copper Salts - citb
+* REZURRECTA - ASTRUM_DEUS_P1
+* REZURRECTA - ZAKU
+* tetroid - Outro
 
 ## Previous Game Directors
 * FunnyBoy044
