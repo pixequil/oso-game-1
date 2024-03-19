@@ -68,6 +68,7 @@ image nav_stick p = Composite(
 label alley:
     $ renpy.choice_for_skipping()
     $ last.mainx = 0.65
+    play music "sound/music/REZURRECTA - ZAKU.ogg" if_changed
     call screen alley_nav
 
 

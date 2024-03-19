@@ -219,6 +219,9 @@ _(Don't remove the blank bullets)_
 * WalkieGuy
 * wolfolotl
 
+## Music
+* REZURRECTA - ZAKU
+
 ## Previous Game Directors
 * FunnyBoy044
 * Steppie Berry
