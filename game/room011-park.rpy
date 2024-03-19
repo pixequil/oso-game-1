@@ -88,6 +88,7 @@ image nav_auto p = Composite(
 
 
 label park:
+    $ renpy.choice_for_skipping()
     $ last.mainx = 0.45
     call screen park_nav
 
@@ -171,7 +172,7 @@ label .retainer:
     "...."
     show posty neutral
     retainer "Hey uh... Thanks again for the trophy! "
-    extend "It isn't as good as winning, but I'm happy that someone cares about me."
+    extend "It isn't as good as winning, but I'm happy that someone cares about me..."
     p happy "No problem man! Glad you're feeling better!"
     p happy "Well, I better get going. I think I'm going to take a nap."
     retainer "It was nice meeting you! Goodbye!"

@@ -87,6 +87,7 @@ image nav_cb p = Composite(
 
 
 label dome:
+    $ renpy.choice_for_skipping()
     $ last.mainx = 1.0
     call screen dome_nav
 
@@ -119,9 +120,9 @@ label .cb_give:
     scene bg dome
     show posty happy
     show cb
+    show butterfly_package
     p "Phew! Here you go ma'am!"
     cb "Thank you so much!"
-    show butterfly_package
     "You handed over the {b}Butterfly Package{/b}!"
     $ item.butterfly_package = False
     $ win_flag = True
@@ -167,43 +168,92 @@ label .retainer:
         p "Never mind."
         jump dome
 
-label .retainer_give: #282
+label .retainer_give:
     scene bg dome
-    show posty neutral
+    show posty astonished
     show retainer sad behind posty
-    p "_" 
-    retainer "_" # retainer is still sad. write the conversation assuming it's possible posty has or hasnt talked to retainer before.
-    p "_" # posty has an idea of what to give him though!'
-    show retainer happy
+    p "Hey...Retainer, is it?" 
+    retainer "{i}sniff sniff{/i} Yeah, that's me."
+    p happy "I have a gift for you!"
+    retainer "Oh! Really?"
+    p neutral "Lemme just..."
     show makeshift_trophy
-    "You handed over the {b}makeshift trophy{/b}!"
+    "You handed over the {b}makeshift trophy{/b} to Retainer!"
+    p happy "Tadaaaaa!"
     $ item.makeshift_trophy = False
     $ quest.retainer = True
+    retainer "Oh my jawline! That's for me?!"
+    p "Yep! Think of it as a, uhh...a participation trophy!"
+    p quiet "{i}...please tell me he'll bite the bait.{/i}"
+    retainer "I..."
+    show retainer happy with hpunch
+    retainer "I love it! {w}I knew Crayon Box appreciated my presence! Oh, I gotta put this on my shelf!"
     hide makeshift_trophy
-    retainer "_" # retainer accepts it and becomes happy! also, he decides it's time to finally go home.
+    p -quiet "I'm sure she was thinking of you!"
+    p quiet "{i}One man's trash...{/i}"
+    retainer "And she even put a label on it!"
+    p astonished -quiet "E-Eh? She did?"
+    retainer "Right here! She said I'm...\"top-grade steel\"! Crayon Box must think I showed off my greatest strengths."
+    p concerned "Ah, hehe...I'm sure she did!"
+    retainer "There's something else here, too..."
+    retainer sad "...\"100\% recyclable\"?"
+    p "Uhhhhh..."
+    p happy "...i-it probably means she thinks you're so versatile that you could be a contestant in just about any other show without changing anything at all!"
+    p quiet "{i}...woof, that was a horrible bluff. He wouldn't believe that in a million years!{/i}"
+    retainer quiet "..."
+    retainer happy -quiet "...hey, you're right! I bet I could be a knockout. I'm perfect already!"
+    retainer "That settles it! Next time I see Crayon Box, I'll give her so much thanks for this trophy that she won't even know what hit her!"
+    p "{i}Uh oh, if he realizes Crayon Box is right over there, this could get bad...{/i}"
+    p -quiet "Hold on! Don't you wanna bring this home with you first? Make sure it doesn't get damaged and all?"
+    retainer "Oh! Of course! This is my proudest achievement yet! I'm not gonna let anything happen to it!"
+    p quiet "{i}I'm sure with the passage of time, this situation's gonna seem funnier than it is pathetic and kinda sad...{/i}"
+    retainer "I gotta get this back home! Thanks a heap, Posty. If you see Crayon Box, tell her I said thanks for the trophy!"
+    p -quiet "Later, Retainer!"
     hide retainer with moveoutleft
     "{b}{color=#fc809d}Retainer{/color}{/b} got out of the way!"
     if saw.retainerblock:
-        p "_" # "finally!"
+        p "Whew! I thought he'd never leave!"
     else:
-        p "_" # "good thing i had that with me!"
+        p concerned "Pretty lucky of me to have that fake trophy, if I do say so myself!"
     jump dome
 
 label .sweets:
     scene bg dome
     show bonbon
-    show sgummy behind bonbon
+    show sgummy behind bonbon:
+        xzoom -1.0
+        xalign 0.7
     if quest.retainer:
         show posty neutral
-        bonbon "_" #283 bonbon and sour gummy saw you give retainer that trophy
-        sgummy "_"
+        bonbon "That was so sweet of her! Don't you agree?"
+        sgummy "No way, she was clearly trying to ward the poor guy away from the dome for her selfish plan to talk to the host."
+        bonbon "But you have to admit! The retainer guy seemed genuinely happy! I hope he's back home safe and sound and away from… that."
+        sgummy "...Bon Bon, we're not having another conversation about how much you-{nw}"
+        bonbon "I have no idea why those poor people would sign up to be locked in that thing! And competing against each other too! That's barbaric!"
+        sgummy "Yea, I guess I can, uh, agree, I don't trust those host guys at all, but I gotta give them some... {i}cough{/i}... credit, the dome is cool."
+        bonbon "It just IRRITATES me. I can't even water my plants in peace without looking at that thing! Trapping them from real grass!"
+        sgummy "How do you know, huh? It's definitely real grass, Bon Bon. I would know since I look around it daily. That doesn't look like plastic grass to me."
+        bonbon "Well… it's still inhumane! I've seen how eliminated contestants walk out when they've been \"eliminated\". They clearly don't want to stay there for any longer!"
+        bonbon "I-... I might be going on too much, I'm sorry, but that dome just needs to go!"
+        sgummy "I have to admit another thing, the dome's structure is actually done very well. They definitely didn't mix their centimeters and millimeters, and the glass is durable." 
+        sgummy "I have got to meet the crew who created this beautiful structure… not that I like what it's being used for."
+        bonbon "It sure does look pretty... like a siren luring its victims!"
+        sgummy "I just really find the structure... unique yet simple. Durable and big! It's all I ever want to be!"
+        bonbon "So you still want to be the dome, huh?"
+        sgummy "UH- I wouldn't word it like that, sounds wrong. You know what, yea, I do want to be a dome. A dome with such a strong and big structure."
+        bonbon quiet "..."
+        bonbon -quiet "If that's what my good friend wants! Then I can't help but support it!"
+        sgummy "Really?"
+        bonbon "Of course! I'll supply the dynamite!"
+        sgummy "You can't build a dome with dynamite, silly."
+        bonbon "Oh, who said I'd be building anything?"
         jump dome
     else:
         show posty neutral
         bonbon "What's the point in the dome? It sucks and needs to be destroyed."
         sgummy "How can you hate the dome. Look at how I can see my reflection, its round shape, and its durability. I wish that was me."
         bonbon "What!? Do you want to be a dome?"
-        sgummy "Yes! Being a dome means I\'ll have everything ever wanted!"
+        sgummy "Yes! Being a dome means I\'ll have everything I\'ve ever wanted!"
         bonbon "You don\'t make any sense. You can\'t become a dome."
         sgummy "Why not?"
         bonbon "If you did then that means I\'ll have to destroy you too!"

@@ -16,8 +16,8 @@ The game is playable in-browser at [this link](https://opensourceobjects.itch.io
 _(Don't remove the blank bullets)_
 
 ## Game Managers
-* FunnyBoy044
-* Satomi
+* FunnyBoy044 (creative)
+* Satomi (production)
 
 ## Path Designer
 * Olivia/timepavement
@@ -42,24 +42,42 @@ _(Don't remove the blank bullets)_
 ## Writers
 
 ### Item Descriptions
+* The Lemon Demon
+* FluffyStar_XD
 * Martysh12
 * Compital
+* Crookie
 * XKZ
 
 ### Dialogue
+* Lysander Phoenix (PenTick)
+* Foxyee Alphalicious
+* TotallyNotSomeone
+* OverbakedCracker
+* Miguel Refareal
 * strawanimations
 * BumpBob Looly
+* FluffyStar_XD
+* 4DJumpman256
 * FunnyBoy044
+* Purple Arin
 * AnArtichoke
 * Loggybears
+* mintykiwi
 * Fanimator
+* mattArtz
+* Paramilk
 * PenTick
 * PlugBoy
+* Crookie
+* m3xyuu
+* racher
 * Satomi
 * Ad00d1
 * Jurta
 * Multi
 * xbeo
+* Guru
 * XKZ
 
 ### Original Writers

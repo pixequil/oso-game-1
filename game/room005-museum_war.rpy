@@ -3,9 +3,7 @@
 # todo: war main exhibit painting #225
 
 image bg museum_war_top:
-    "map-bgs/museum_war_top.png"
-    zoom 1.15
-    yalign 0.2
+    "map-bgs/museum_war_nav.png"
 
 image bg museum_war:
     "dbgs/museum_war_dbg.png"
@@ -24,12 +22,12 @@ image heavier:
 image burger fire:
     "items/big_fire_painting_1.png"
     xalign 0.45
-    yalign 0.5
+    yalign 0.3
 
 image burger out:
     "items/big_fire_painting_2.png"
     xalign 0.45
-    yalign 0.5
+    yalign 0.3
 
 image imaginary_lighter:
     "items/Imaginary_Lighter.png"
@@ -49,7 +47,7 @@ image battery_floor:
 image champurrlain:
     "items/Champurrlain_painting.png"
     xalign 0.44
-    yalign 0.3
+    yalign 0.25
     zoom 1.5
 
 image deed:
@@ -60,40 +58,229 @@ image deed:
 
 image painting_war:
     "items/war_Exhibit_photo_original.png"
-    truecenter
+    xalign 0.5
+    yalign 0.3
     zoom 0.4
 
 image painting_war green:
     "items/war_Exhibit_photo_green.png"
-    truecenter
+    xalign 0.5
+    yalign 0.3
     zoom 0.4
+
+screen war_nav():
+    viewport:
+        child_size (1280,720)
+
+        add "bg museum_war_top"
+
+
+
+        imagebutton:
+            pos (550,10)
+            idle "war_painting_tiny"
+        showif scanter_green == False:
+            imagebutton:
+                pos (510,0)
+                idle "nav_controversy"
+                hover "nav_controversy p"
+                action Jump("museum_war.painting1")
+
+        showif scanter_green and (quest.painting_war == False):
+            imagebutton:
+                pos (510,0)
+                idle "nav_warting"
+                hover "nav_warting p"
+                action Jump("museum_war.painting2")
+
+        imagebutton:
+            pos (210,0)
+            idle "champurrlain_tiny"
+        imagebutton:
+            pos (200,130)
+            idle "dotted line"
+        showif deed_burned == False:
+            imagebutton:
+                pos (200,110)
+                idle "battery"
+        imagebutton:
+            pos (190,0)
+            idle "nav_ahiss"
+            hover "nav_ahiss p"
+            action Jump("museum_war.ahiss")
+
+        imagebutton:
+            pos (870,40)
+            idle "nav_pal"
+            hover "nav_pal p"
+            action Jump("museum_war.pal")
+
+        imagebutton:
+            pos (340,320)
+            idle "war_island"
+        showif burger_extinguish == False:
+            imagebutton:
+                pos (580,380)
+                idle "burger_fire"
+        showif burger_extinguish:
+            imagebutton:
+                pos (580,380)
+                idle "burger_out"
+
+        showif scanter_green:
+            imagebutton:
+                pos (760,380)
+                idle "nav_controversy"
+                hover "nav_controversy p"
+                action Jump("museum_war.glasses2")
+
+        imagebutton:
+            pos (500,350)
+            idle "nav_buff"
+            hover "nav_buff p"
+            action Jump("museum_war.buff")
+
+        imagebutton:
+            pos (190,410)
+            idle "nav_capsule"
+            hover "nav_capsule p"
+            action Jump("museum_war.capsule")
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (1011, 640)
+            idle "arrow dn"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (1011, 640)
+            idle "pnav dn i"
+            hover "pnav dn"
+            action Jump("museum_entrance")
+
+image nav_capsule = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (40,120), "minisprites/capsule.png",
+)
+image nav_capsule p = Composite(
+    (250,250),
+    (0,0), "nav_capsule",
+    (30,70), "pnav lt"
+)
+
+image nav_warting = Composite(
+    (250,250),
+    (0,0), "hitbox",
+)
+image nav_warting p = Composite(
+    (250,250),
+    (0,0), "nav_warting",
+    (60,20), "pnav up"
+)
+
+image nav_buff = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (140,90), "minisprites/buff.png",
+)
+image nav_buff p = Composite(
+    (250,250),
+    (0,0), "nav_buff",
+    (40,40), "pnav up"
+)
+
+image nav_controversy = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (30,80), "nav_rcg",
+    (140,80), "nav_bcg"
+)
+image nav_controversy p = Composite(
+    (250,250),
+    (0,0), "nav_controversy",
+    (60,20), "pnav up"
+)
+
+image nav_rcg:
+    "minisprites/rose-colored-glasses-angry-sprite.png"
+image nav_bcg:
+    "minisprites/bcg.png"
+    xzoom -0.7
+    yzoom 0.7
+
+image nav_pal = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (100,40), "minisprites/palettette.png",
+)
+image nav_pal p = Composite(
+    (250,250),
+    (0,0), "nav_pal",
+    (0,20), "pnav rt"
+)
+image war_painting_tiny = ConditionSwitch(
+    "quest.painting_war == True","nothing",
+    "scanter_green == True","war_painting_green",
+    "True","war_painting_original"
+)
+image war_painting_original:
+    "items/war_Exhibit_photo_original.png"
+    zoom 0.1
+image war_painting_green:
+    "items/war_Exhibit_photo_green.png"
+    zoom 0.1
+image nav_ahiss = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (70,40), "minisprites/ahiss_the_Cat_over.png",
+)
+image nav_ahiss p = Composite(
+    (250,250),
+    (0,0), "nav_ahiss",
+    (50,40), "pnav up"
+)
+
+image champurrlain_tiny:
+    "items/Champurrlain_painting.png"
+    zoom 0.35
+image war_island:
+    "map-bgs/museum_war_top_island.png"
 
 
 label museum_war:
     if saw.war == False:
         jump .capsulefirst
-    scene bg museum_war_top
-    show posty neutral
+    else:
+        $ renpy.choice_for_skipping()
+        call screen war_nav
 
-    p "_" # todo: war exhibit imagemap #150 #169
+# label museum_war:
+#     if saw.war == False:
+#         jump .capsulefirst
+#     scene bg museum_war_top
+#     show posty neutral
 
-    menu:
-        "Capsule":
-            jump .capsule
-        "Buff":
-            jump .buff
-        "Ahiss the Cat":
-            jump .ahiss
-        "Palettette@":
-            jump .pal
-        "Main Exhibit\nRose-Colored Glasses & Blue-Colored Glasses" if scanter_green == False:
-            jump .painting1
-        "Main Exhibit" if (scanter_green == True) and (quest.painting_war == False):
-            jump .painting2
-        "Rose-Colored Glasses & Blue-Colored Glasses" if scanter_green:
-            jump .glasses2
-        "Return to the entrance.":
-            jump museum_entrance
+#     p "_" # todo: war exhibit imagemap #150 #169
+
+#     menu:
+#         "Capsule":
+#             jump .capsule
+#         "Buff":
+#             jump .buff
+#         "Ahiss the Cat":
+#             jump .ahiss
+#         "Palettette@":
+#             jump .pal
+#         "Main Exhibit\nRose-Colored Glasses & Blue-Colored Glasses" if scanter_green == False:
+#             jump .painting1
+#         "Main Exhibit" if (scanter_green == True) and (quest.painting_war == False):
+#             jump .painting2
+#         "Rose-Colored Glasses & Blue-Colored Glasses" if scanter_green:
+#             jump .glasses2
+#         "Return to the entrance.":
+#             jump museum_entrance
 
 label .painting1:
     scene bg museum_war_flipped
@@ -102,37 +289,54 @@ label .painting1:
     show bcg
     if saw.glasses:
         show posty neutral
-        "The two still seemed to be fighting."
+        "The two still seem to be fighting."
+        show rcg:
+            xzoom -1.0
+            xpos 0.6
+        rcg "Is there something you need? We're in the middle of an important discussion."
+        bcg "Why don't we ask her?"
+        rcg "Good idea!"
+        show rcg with move:
+            xpos 0.8
+        rcg "Tell us? Does this painting show the victory of the Redoinks or the Blouououous?"
+        p concerned "It's in black and white. I can't tell which army is which."
+        rcg "You can figure it out through the context clues hidden in the painting!"
+        bcg "Expressions, tints and shades, knowledge of basic history!"
+        p "Um, I don't know. Sorry. I'm not qualified to interpret art."
+        bcg "Then please let us continue our debate without you."
         jump museum_war
     else:
         show posty neutral
-        p "uh excu-"
-        rcg "This art piece clearly shows the victory of the Redoinks!!"
-        bcg "No{w} - The positioning obviously implies the victory of the Blouououous."
+        p "Uh excu-{nw}"
+        rcg "This art piece clearly shows the victory of the Redoinks!"
+        bcg "No.{w} The positioning obviously implies the victory of the Blouououous."
         bcg "They are so wounded and depressed, having to fight in a war n' all, yknow?"
         rcg "What do you mean!?! The determination in their eyes say it all! You always see the gloomy parts of EVERYTHING!"
         bcg "You always see the hopeful parts, even when it isn't intended!"
-        p "{i}They look busy. I should probably leave.{/i}"
+        p quiet "{i}They look busy. I should probably leave.{/i}"
         $ saw.glasses = True
         jump museum_war
 
 label .painting2:
     scene bg museum_war_flipped
     show painting_war green
-    show posty neutral
-    p "_" #211 posty beholds the painting and decides to take it since no one's around to block it.
+    show posty happy
+    p "This painting looks so cool! Maybe nobody will notice if I..." 
     hide painting_war green # !! HIDING AND SHOWING THE PAINTING MOVES IT TO THE FRONT LAYER. changing its location should imply to the player that it is being 'taken'. this will probably make more sense once there are backgrounds, as the paintings will then feel more integrated.
     show painting_war green at center 
-    "You got an {b}art piece{/b}!" #212 describe war painting
+    "You got an {b}art piece{/b}! This painting looked a lot more meaningful and violent when it was in black and white. Now it just looks green. And violent."
+    extend " It gives you a feeling of {color=#ffff00}{i}inspiration{/i}{/color}!"
     $ item.painting_war = True
     $ quest.painting_war = True
     $ paintings += 1
     hide painting_war
-    p "_" # posty decides to quickly leave.
+    p "{i}cough{/i} Oh no, where'd the painting go? I guess there's nothing to see here anymore, everyone!"
+    hide posty with moveoutright
     jump museum_war
 
 label .glasses2:
     scene bg museum_war
+    show tapestry at truecenter
     show rcg
     show bcg
     show posty happy
@@ -260,7 +464,7 @@ label .pal_battery:
     show painting_war # war painting and a green-filtered version of it
     show bcg at right
     show rcg at left
-    with pushleft
+    with pushright
     bcg "...quit being so naive! The Redoinks are clearly fleeing in mass disarray!"
     rcg "Well, that is what a military novice like yourself would say! I see the Blouououous using their cowardly retreat tactic."
     bcg "A military novice would be able to properly identify the state of the battle! Does that triumphant victory really look like \"cowardly retreat\" to you?"
@@ -276,7 +480,7 @@ label .pal_battery:
     scene bg museum_war
     show palettette
     show posty astonished
-    with pushright
+    with pushleft
     pal "Holy moly it works!"
     p quiet "{i}Oh my god I really want that painting, it would be such a vibe...{/i}"
     p happy "Glad to see it works! I gotta go quick now..."
@@ -285,16 +489,22 @@ label .pal_battery:
 
 label .pal3:
     show posty neutral
-    p "_" #208 revisiting palettette. avoid mentioning whether posty took the painting.
-    pal "_"
+    pal "Hey Posty! What's up? You want to see how the scanter works again?"
+    p "Nah, I'm good."
+    pal "Well, that's a relief, because I don't have any paintings to use it on anymore."
+    pal "Don't worry though! Once I get this thing finished, it won't need pre-made paintings to do it\'s job."
+    p "A device that can make images on its own..."
+    p concerned "For some reason, the idea of that scares me."
+    pal "Nah, don't fret it. It's a one-of-a-kind device. You don't need to worry about it being misused!"
+    p happy "That's good to hear. Talk to you later."
     jump museum_war
 
 label .ahiss:
     scene bg museum_war
-    show champurrlain #166
+    show champurrlain
     if deed_burned:
         jump .ahiss3
-    show battery_floor #168
+    show battery_floor
     show ahiss
     if saw.ahiss == False:
         $ saw.ahiss = True
@@ -305,46 +515,73 @@ label .ahiss:
 
 label .ahiss1:
     show posty neutral with moveinleft
-    p "_" # posty steps into ahiss's space for the first time #171
-    show deed #170
+    if saw.pal:
+        p happy "Aha! There\'s the batteries."
+    show posty astonished
     $ renpy.transition(hpunch, layer="master") #prevents interruption of the text window
-    ahiss "_" # ahiss interrupts her and tells her to back up, claiming that they own this plot of land and showing the imaginary deed.
+    ahiss "HALT! State your business immediately. I will not tolerate intruders upon my land."
     show posty quiet:
         xalign -0.3
     $ renpy.transition(move, layer="master") #prevents interruption of the text window
-    p "..!" # posty backs off.
-    ahiss "_" # ahiss explains more about themself. make sure the last line of the interaction is ahiss, so it transitions into the next block correctly.
-    show posty -quiet
+    p -quiet "Woah! I don\'t want any trouble. I\'m just…"
+    show posty netural:
+        xalign 0.0
+    $ renpy.transition(move, layer="master") #prevents interruption of the text window
+    p suspicious "Hang on, your land?"
+    show deed #170
+    ahiss "The deed\'s right here, darling. This kingdom belongs to me. See it for yourself."
+    p neutral "I can\'t see it."
+    ahiss "Huh? Well, IGNORANCE OF THE LAW IS NO EXCUSE! LEAVE AT ONCE!"
+    p astonished "AGH! Will do…"
+    ahiss "To yield even one morsel of this land\'s bounty to you, that would be an insult to the great Champurrlain and the flag they fought for."
+    p neutral "Hm? Who\'s Champurrlain?"
+    ahiss "Hmph, I suppose people do come to this museum to educate themselves… "
+    hide deed
+    ahiss "Very well then. Champurrlain is none other than the cat you see in the painting before you, whom I happen to be a direct descendant of. "
+    p astonished "Really? I would\'ve never guessed. "
+    ahiss "Yes, yesss! A legendary war hero of unmatched brilliance. They practically invented the element of surprise. "
+    p annoyed "The element of surprise, you say…"
+    ahiss "What a battle it was, indeed. From the moment that Champurrlain\'s troops rode their invisible horses into battle, victory was imminent. "
+    ahiss "They readied their imperceptible cannons, cleverly struck down the opposition with a barrage of undetectable cannonballs, and planted their flag to claim the land. "
+    ahiss "That flag...nothing brings a tear to the eye quite like its majestic, ultraviolet hue."
     jump .ahiss_deed
 
 label .ahiss2:
     show posty neutral with moveinleft
-    p "_" # posty steps into ahiss's space again #172
+    ahiss "Didn't I say to leave?!?"
     show deed 
-    $ renpy.transition(hpunch, layer="master") #prevents interruption of the text window
-    ahiss "_" # ahiss interrupts her and reminds her to back up
+    $ renpy.transition(hpunch, layer="master")
+    ahiss "I mustn't explain what I\'ve already told you about what this deed entails! Now go!"
     show posty:
         xalign -0.3
-    $ renpy.transition(move, layer="master") #prevents interruption of the text window
-    p "_" # posty backs off and apologizes. it might be sarcastic if you want.
-    ahiss "_" # ahiss chastises posty for forgetting. make sure the last line of the interaction is ahiss, so it transitions into the next block correctly.
+    $ renpy.transition(move, layer="master")
+    p concerned "Oh, uh, Sorry.. I forgot I'm not supposed to be back here. I just wanted to revisit and see what you were doing…"
+    ahiss "Well I\'m doing nothing now that you're here! If you forget and revisit again, you will suffer the consequences! Now get going and don't come back!"
     jump .ahiss_deed
 
 label .ahiss_deed:
     if item.imaginary_lighter == False:
         if saw.pal:
             p sad "Well... anyway."
-            p "Do you think I could have that battery?"
+            p "Do you think I could have that battery on the ground?"
             ahiss "Absolutely not!"
+            show deed
+            ahiss "As this deed clearly specifies, any property, including items that may or may not \"accidentally fall\" within our borders, as private property belonging to this land's owner, namely me."
+            p angry "What deed? You must be imagining it out of thin air."
+            p astonished "Oh."
+            ahiss "It's still a valid piece of documentation that certifies me as owner of this land."
+            p neutral "I guess."
             $ battery_asked = True
         p "Well, I'll leave you be, then."
         jump museum_war
     else:
-        p quiet "{i}Maybe I can use my {b}imaginary lighter{/b} on the imaginary deed!{/i}"
+        p neutral quiet "{i}Maybe I can use my {b}imaginary lighter{/b} on the imaginary deed!{/i}"
         show posty:
             xalign -0.05
         $ renpy.transition(move, layer="master") #prevents interruption of the text window
         ahiss "Are your ears clogged with fur? Or do you not even have ears at all? I said to stay out of my property!"
+        show deed
+        ahiss "This deed decrees you as a dastardly invader of this land!"
         hide deed
         $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
         "You {b}imaginary burned{/b} the {b}imaginary deed{/b}!"
@@ -356,9 +593,9 @@ label .ahiss_deed:
             p neutral "Oh, look, a battery. Yoink!"
         hide battery_floor
         show battery_center
-        "You got the {b}battery{/b}!"
+        "You got the {b}battery{/b}!{w} A giant D battery meant to run large electrical devices."
         $ item.battery = True
-        hide battery
+        hide battery_center
         if battery_asked:
             ahiss "Grr... hiss... I hope you're happy. You've destroyed my family legacy!"
             p annoyed "Well, you wouldn't give me the battery."
@@ -370,11 +607,11 @@ label .ahiss_deed:
                 p "Pretty much."
                 ahiss "Ugh, the... the nerve..."
             else:
-                p "No, I just kinda saw it and I was like I may as well take it."
+                p "No, I just kinda saw it and I was like \"I may as well take it.\""
                 p happy "You never know when you'll need stuff like this, right?"
                 ahiss "Tch... well, thanks for clearing out the trash laying around."
                 ahiss "Yes, yes. You, cleaning trash. It suits you! Ohohoho!~"
-        ahiss "Anyway... maybe this is good for me in the end."
+        ahiss "... Maybe this is good for me in the end."
         ahiss "After all, maintaining our land here was starting to get boring."
         ahiss "Now maybe I can go explore new avenues!"
         ahiss "Literally."
@@ -382,13 +619,28 @@ label .ahiss_deed:
 
 label .ahiss3:
     show ahiss
-    show posty happy with moveinleft
-    p "Hello regent, or should I say, hello fellow citizen!"
+    show posty neutral with moveinleft
+    p "Hello, excuse me? Ahiss?"
+    ahiss "...Do I know you?"
+    p suspicious "I'm Posty?"
+    p "I may have had.. uh.. burnt your royal deed and stole a battery or something off your land."
+    ahiss "Hm? Ah yes. I remember vividly now. You\'re that peasant that RUINED MY LIFE!"
+    ahiss "The pain and suffering you've done to our people. Me!"
+    p annoyed "Okay."
     ahiss "I hope that silly trinket was worth the devastation you wrecked upon me."
     ahiss "Ohhh, but prepare yourself soon for my glorious return!"
-    ahiss "For I shall arise as the rightful heir, throwing away those unnatural chains upon my destiny and seize what is MY DIVINE RIGHT-"
-    p "And a good day to you too!" 
-    hide posty with moveoutright
+    ahiss "For I shall arise as the rightful heir, throwing away those unnatural chains upon my destiny and seize what is MY DIVINE RIGHT-{nw}"
+    p "Really, I didn't think it was that big of a-{nw}"
+    ahiss "That is enough out of you, thank you!"
+    ahiss "Leave and never come back! I don't want to see your face ever again!"
+    p "I was just going to say-{nw}"
+    ahiss "I'm giving you one last chance before I call my royal guards to deal with you."
+    p "I don't see any royal guards."
+    ahiss "..."
+    show posty astonished with hpunch
+    ahiss "GET OUT! GO AWAY!"
+    p happy "And a good day to you too, regent, or should I say, fellow citizen!" 
+    hide posty with moveoutleft
     ahiss "My honour and lands shall be back in my hands soon; I just need to rally the troops again like the good old days..."
     ahiss "You shall rue the day you crossed my path, glorified breadbox!" 
     jump museum_war
@@ -400,17 +652,18 @@ label .buff:
     show burger fire
     show posty neutral
     show buff
-    p happy "Ooh you seem to know a lot about art!"
+    p happy "Ooh, hello! You look like you know a lot about art!"
     buff "Why thank you! I am a fanatic when it comes to these things!"
-    buff "The food exhibit in particular is one of the oldest collection of pre OSO artwork in the world, some of them dating back thousands of years!"
+    buff "The war exhibit in particular is one of the oldest collection of pre-OSO artwork in the world, some of them dating back thousands of years!"
     p astonished "Thousands of years?!"
-    buff "Indeed. Take this firey masterpiece here! \"Abandoned In The Grill\"!"
+    buff "Indeed. Take this firey masterpiece here! {i}\"Abandoned In The Grill\"!{/i}"
+    "{i}It's a painting of a truly ugly burger on fire. The fire seems very realistic, being the only good thing about the painting.{/i}"
     buff "This watercolor painting shows the very last moments of the artist who had painted it."
     buff "If you listen closely, you can hear faint crackling and screams..."
     p concerned quiet "..."
     buff "As though he is still burning alive on that August evening..."
-    p suspicious "(I may not know what watercolor is, but they are bluffing!)"
-    p "(Maybe I should try out this heavier thing, just in case...)"
+    p suspicious "{i}I may not know what watercolor is, but they are bluffing!{/i}"
+    p "{i}Maybe I should try out this heavier thing, just in case...{/i}"
     show burger out
     $ item.heavier = False
     $ burger_extinguish = True
@@ -430,7 +683,8 @@ label .buff:
     buff "You finally caught me..."
     show imaginary_lighter #158
     $ item.imaginary_lighter = True
-    "You got the {b}imaginary lighter{/b}!{p}description" #159 the imaginary lighter can be used to add fire to imaginary things.
+    "You got the {b}imaginary lighter{/b}!"
+    "Be careful so as to not burn your imaginary friends. Though if you have imaginary enemies, use this to set them and any of their imaginary things on fire! Go ham!"
     hide imaginary_lighter
     p confused "Huh?"
     buff "The imaginary and illusory don\'t follow our rules as much as they evade them."
@@ -438,7 +692,7 @@ label .buff:
     buff "You have caught me in a contradiction of my own making. You know this contradictory science like the back of your hand!"
     buff "Making your conscience lighter in the end of it..."
     buff "Con-science lighter, contradictory science lighter..."
-    p annoyed "I see."
+    p annoyed "I get it."
     jump museum_war
 
 
@@ -447,11 +701,18 @@ label .buff2:
     show burger out
     show posty neutral
     show buff
-    p "_" # revisiting buff and the fire-free burger painting #161
+    buff "Wait. You want more history?"
+    buff "Even after catching me in my previous blunder? "
+    buff "No. I know your tricks."
+    buff "As the great Applexander Hamilton once said, {i}\"Fool me once, you\'re to blame. Fool me twice, it\'s a jester\'s game.\" {/i}"
+    p quiet ". . ."
+    p suspicious -quiet "What?"
+    buff "I may have been outsmarted once, but I\'m smart enough to know that my efforts will be futile when it comes to you."
     jump museum_war
 
 label .capsulefirst:
     scene bg museum_war
+    show whatever painting at truecenter
     show posty neutral 
     show capsule pain
     capsule "Hey! You there, do you mind helping me out with a favor?"
@@ -471,11 +732,25 @@ label .capsulefirst:
 
 label .capsule:
     scene bg museum_war
+    show whatever painting at truecenter
     show posty neutral
     show capsule happy
     if item.heavier:
-        p "_" # Capsule re-explains what the heavier does, in case you forgot. #155 
+        p confused "Hey! Uh... can you explain what the heavier does again?"
+        capsule "I'd be happy to!"
+        show heavier
+        capsule "Unlike a lighter, it removes fire! No need for water or fire extinguishers here!"
+        p happy "Well, thanks for explaining it again."
+        capsule "No problem!" 
     else:
-        p "_" # talking to capsule after using the heavier to extinguish the burger painting #387
+        p "You never told me it could put out fires on paintings."
+        capsule "Oh right, I forgot to tell you about that part. To be honest, I don\'t know how that even happens myself."
+        capsule "Gotta love how things work, right?"
+        p "Yeah, I guess I do."
+        capsule "Just don\'t cause any mayhem with that thing!"
+        p happy "Alrighty!"
+        capsule "If anybody saw what you did to the painting, you\'d be in trouble."
+        p concerned "Oh shoot... They won\'t notice, right?"
+        capsule "Ehhhh... sure."
     jump museum_war
     

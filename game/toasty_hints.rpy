@@ -183,40 +183,214 @@ label toasty_hints:
         return
 
     elif food_switch and (quest.money_food == False) and (saw.janitors == False):
-        show posty neutral
-        show toasty neutral
-        t "hint for if you opened the janitors closet but didnt go in" #234
+        show posty zany
+        show toasty smug2
+        p "Woaaaah I think I am seeing stars!"
+        t "What is up..."
+        t neutral "Girl, are you alright?"
+        p concerned "I bonked my head on the plaque next to the pizza-eating painting just now."
+        p sad "It hurts."
+        t "Darn..."
+        t pointandlaugh "Looks like I have an advantage against my hated blue rival!"
+        t smug "Excuse me, I need to do another planning session in secret!"
+        show toasty turned
+        p angry quiet "..."
+        t turned "What up Toastmeister!"
+        if toastmeister:
+            p -quiet "You still sticking with Toastmeister?"
+        t "The blue buffoon doesn't understand the significance of that painting!"
+        t "And no, we aren't just talking about its culinary delights!"
+        p -quiet "Ha ha ha. You know I can hear you-"
+        t "If my detective skills are correct (and I have no reason to doubt my glorious abilities), she must have revealed a secret passageway!"
+        t "And without realizing, too!"
+        t turned2 "Ahh, elementary my pop up Watson!"
+        t turned "To think she'd find a secret passage and just walk right past it!"
+        t turned2 "Well, if I was there, I surely wouldn't have made such a grave error."
+        t turned "Genius! You deserve a raise for such logic."
+        t turned2 "Oh, I don't deserve such praise, I need to at least thank my mother."
+        t "Now, lets keep it away from prying ears!"
+        t smug3 "Soooooo, how is the weather, my courier countercompanion?"
+        p "I'm walking away."
         return
 
     elif scanter_green and (quest.painting_war == False):
         show posty neutral
-        show toasty neutral
-        t "hint for if Palettette has turned the painting green" #222
+        show toasty neutral2
+        t "Hey Posty."
+        p "Remember that boring painting about the blue army and the red army in the art gallery?"
+        t "From like... 5 minutes ago?"
+        p "Y\'know, the one that used to be black and white and really violent?" 
+        t "Yeah, what about it?"
+        p "Well let's just say, I don\'t think it\'s gonna get anymore visitors after... a certain green paint incident."
+        t "You threw green paint on a rare expensive painting? Important as an item of the era's culture and an artistic depiction of old history?"
+        t smug "I'd be extremely offended if I wasn't excited about you being thrown in jail."
+        t enthused "Is the painting that got damaged ok?"
+        p "Ehhhh, if you call recolored green \"ok\", then yeah."
+        t smug2 "Might as well check it out before the curators take it down."
+        p happy "Not before I get it first!"
         return
     
     elif item.battery:
-        show posty neutral
+        show posty happy
         show toasty neutral
-        t "hint for if you have the battery" #175
+        p "Duh duh dum, dum diddly dum-"
+        t smug2 "Hello my most perfidious postbox."
+        p annoyed "Oh no, not again. {w}{i}\[cough]{/i} {w}So what do you need?"
+        t crossedarms "I was just wondering what you have in your hand."
+        show battery_center
+        p suspicious "Just a battery."
+        t angry "That's it? I thought it would be something more valuable."
+        p concerned "I dunno, something intrigues me about it."
+        t smug "Could it be its satisfying weight, finely crafted out of the earth's treasures of lithium and manganese?"
+        t smug3 "Maybe its cold metal gives tingles as though a hidden memory is unlocked from your steely heart."
+        p confused "Why are you being so fancy with the descriptions?"
+        t annoyed "Shut up, I'm talking here."
+        t smug5 "It must be the tasteful interspersion of Helvetica and Arial in the phrase \"PLEASE DON'T EAT, INGEST, OR SWALLOW THIS\"; gives the message some much needed depth."
+        p concerned "You're reading too much into this."
+        t pointandlaugh "How else could such a nitwit like you get so tasteful?"
+        p annoyed quiet "..."
+        t neutral quiet "..."
+        t -quiet "Joking, joking."
+        t "Besides, why'd you come to me about it?"
+        p concerned -quiet "I don't know. I thought a good walk could help me decide what to do with it."
+        t smug "Wellll-"
+        p suspicious "Well?"
+        t neutral"Give me a second, I have a call."
+        t turned "Looks like my cuboid companion has made a major misstep: wasting valuable energy on idle walking!"
+        p confused "...wait what?"
+        t "I know the quality of art has declined rapidly in the last decade or so, but I don't recall there being a battery exhibit inside."
+        t "Think Toasty, who would lose such an item there?"
+        t "Maybe an artist too engrossed in their crafts dropped it..."
+        t "Yes! You are such a genius, Toastmeister!"
+        p annoyed "Really? Toastmeister?"
+        $ toastmeister = True
+        t "All we have to do is make sure our friend doesn't eavesdrop and we're golden!"
+        t enthused "So whatcha going to do with the battery?"
+        hide posty with moveoutleft
+        hide battery_center
+        t neutral "Could I have sabotaged myself again?"
+        t turned2 "No! Of course not! You're too smart to do that!"
         return
 
     elif item.imaginary_lighter:
         show posty neutral
-        show toasty neutral
-        t "hint for if you have the imaginary lighter" #163
-        return
+        show toasty annoyed
+        t "What's it now, blue box?"
+        p "It's Posty."
+        t "Well, do I look like care?"
+        t smug2 "So, what do you want?"
+        p concerned "I got this… thing. It makes fire."
+        p suspicious "You like fire, right?"
+        t smug "Maybe I do, why?"
+        t smug3 "Do you want to impress me with a gift? Even after all our petty squabbles?"
+        t smug5 "Aww, Posty, you\'re warming my dear, frigid heart…"
+        show toasty crossedarms
+        show imaginary_lighter
+        p annoyed "Whatever, Toasty. Just what do you think of this?"
+        t laugh "BWA HA HA HA!"
+        show posty concerned
+        t smug3 "I think I underestimated your stupidity. If you tried to roast this toast with THAT, it would turn back into bread!"
+        p "What? Just look-"
+        t smug "There\'s nothing in your hand, you absolute bag of hammers. I don't buy it. Do you really think you can show me air and I\'ll be impressed?"
+        if saw.ahiss:
+            t smug2 "You just can\'t leave me alone, can you?"
+            p "I was just saying hi?"
+            t "You hover and hover around me, like a crusty little dog begging for scraps."
+            p "I couldn't care less about you."
+            t smug "How many times have you sauntered up to this corner and started shooting the breeze?"
+            p "Uh…"
+            t smug3 "Don\'t start counting."
+            p suspicious "What's with the dog comparisons?"
+            t annoyed "I can\'t stand dogs… there\'s only one animal worse than them…"
+            p "Wait, you hate dogs? What's next on your list, baby bunnies?"
+            t smug "Ha! That was almost funny."
+            t annoyed "No, the animals I loathe most of all are cats! A nothing-special clod like you would be in good company with one of those beasts!"
+            t angry "They hiss and strut and prance, going \"Mine! Mine! Mine!\""
+            show posty concerned
+            t angry "They act like the whole world belongs to them, but they\'re really nothing special!"
+            t angry "They aren\'t even noteworthy enough to be good for nothing. At least you can try to use their pathetic little claws as a letter opener! But nothing special! Nothing cool! Just the boring, medial tasks ever devised!"
+            p "Wow, harsh."
+            t turned2 "I needed to blow off some steam there. Feel free to walk away from me."
+            p "I will."
+            return
+        else:
+            p "But it's not air! How come I can see it and you can't?"
+            t laugh "Maybe it's imaginary. Like your brain cells."
+            p concerned "That doesn't make any sense. I got it from a liar in the museum. They handed it right to me."
+            t enthused "Maybe you only got it, because you believe it to be real as a physical construct."
+            t "Perhaps whoever gave it to you was able to will it into existence as a contradiction to the laws of nature and science."
+            p "That doesn't make any sense unless both of us were completely insane."
+            t "Oh, you make this way too easy for yourself."
+            t smug5 "Alright everyone, Posty's gone crazy. She's coco bananas!"
+            p annoyed "Who are you talking to?"
+            t "For all we know, she's probably imagining us all as humans instead of objects!"
+            p concerned "Humans?"
+            t smug "Oh y'know, like that cat from the museum, except more freakish."
+            t turned2 "Anyway, I've got no business talking to you anymore. Shoo."
+            return
     
     elif item.heavier:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you have the heavier" #162
+        show toasty crossedarms
+        show posty concerned
+        t "What's up-"
+        p "So. Heavy."
+        p sad "{i}(cough cough){/i}"
+        t neutral "Posty, are you alright?"
+        t neutral2 "Not that I care or anything, but you collapsing in front of me would be really weird."
+        show heavier
+        p "I have been carrying this heavier."
+        t annoyed "What the hell is a heavier?"
+        p "It apparently {i}(pant){/i} sucks fire in."
+        t "Really? You believe anything these days. Where'd you get this crap, the back alley? I've seen you walking around there!"
+        p "I {i}(pant){/i} swear. It hurts..."
+        t smug "Yadda yadda we get it, you are weak."
+        t "Let me handle it."
+        "Toasty took the {b}heavier!{/b}"
+        hide heavier
+        t angry "HOLY CRAP {i}(pant){/i} HOW DID {i}(pant){/i} YOU CARRY {i}(pant){/i} THIS?!"
+        p astonished "I don't know?! Probably willpower or something like that."
+        t "Well {i}(pant){/i} I need {i}(pant){/i} to consult someone pronto."
+        t turned "Oh boy."
+        t "This is a pretty awkward situation {i}(pant){/i} I have gotten myself in {i}(pant){/i} ToastMaestro!"
+        t "Well Mailmouth did say {i}(pant){/i} this thing can suck fire up!"
+        t "So we need to find {i}(pant){/i} some fire {i}(pant){/i} to suck up!"
+        t "There was a {i}(pant){/i} painting {i}(pant){/i} that has {i}(pant){/i} some fire {i}(pant){/i} in the gallery."
+        t "Yeah {i}(pant){/i} that'll work."
+        t "Let's give this {i}(pant){/i} back and maybe we'll get it back when it's filled with fire."
+        show heavier
+        t annoyed "Here {i}(pant){/i} you go."
+        "You have received the {b}heavier!{/b}"
+        hide heavier
+        t "Don't do that to me ever again."
         return
 
     elif bt_distracted:
-        show posty neutral
-        show toasty neutral
-        t "hint for if blue tile is distracted and you can finally take the painting" #120
-        return
+        if toastybtdistracted == 0: 
+            show posty astonished
+            show toasty enthused
+            t "Woah Posty, what's the rush?"
+            p "This is hard to explain, but I may have bribed a guy to make an opening for me to steal a painting by distracting another guy and I sorta just walked away."
+            t neutral2 "Huh? Why?"
+            p sad "I don't know, I'm scared! What if I get caught?"
+            t angry "Posty, now is not the time to be getting cold feet! Seriously."
+            t "You could do any number of things while they\'re distracted!"
+            t "Why would you go through all this effort of smuggling soup into the museum just to do nothing? Aren\'t you going to do something with it?" 
+            t "You baffle me on new levels I never thought existed. Why did you just run away?!"
+            t "The painting you're stealing is unguarded. Are you scared? Just do whatever you want to do, stop waiting your time!"
+            $ toastybtdistracted += 1
+            return
+        if toastybtdistracted == 1:
+            show posty concerned
+            show toasty angry
+            t "You're still out here?"
+            t "Stop talking to me and go steal that painting! You\'re wasting your time!"
+            $ toastybtdistracted += 1
+            return
+        else:
+            show posty astonished
+            show toasty angry
+            t "Posty, seriously, if you\'re not going to do it, I'll snatch that soup from you and steal that painting myself!"
+            return
 
     elif miso_blocked and (quest.painting_blue == False):
         show posty neutral
@@ -288,7 +462,6 @@ label toasty_hints:
         show posty angry
         t smug2 "Either way, I want you to know I'm happy for you."
         p annoyed "I'm very reassured."
-#hint:if you have spray paint but nothing to decorate(see dolly) #265
         return
 
     elif quest.paintings and (quest.bs == False):
@@ -301,7 +474,6 @@ label toasty_hints:
         t smug2 "You could get ideas from people on the street. That soda can guy's always in need for a commission."
         t laugh "They're so self-absorbed that you'd never run out of work!"
         t laugh "Hope you like drawing a soda can for the rest of your life!"
-#hint:if you have spray paint but nothing to decorate(talk to bs)" #265
         return
 
     elif quest.paintings and (money == 1):
@@ -315,25 +487,67 @@ label toasty_hints:
         p happy "Like in the art museum?"
         show posty angry
         t smug2 "I was actually thinking about you ruminating in a hole in the ground, but that works too."
-#hint:if you have the spray paint but nothing to decorate with it (do food exhibit quest)" #265
         return
 
     elif paintings == 3 and (quest.paintings == False):
-        show posty neutral
-        show toasty neutral
-        t "hint for if you've taken three paintings (assemble them)" #229
+        show posty suspicious
+        show toasty angry
+        t "\"Make A Walkway! Take Them Away!\""
+        p "Whoa, Toasty what are you up to?"
+        t crossedarms "Isn\'t it obvious?"
+        t enthused "I\'m protesting." 
+        extend smug5 " Because I\'m a good object."
+        p "Debateable."
+        p "What is this protest about?"
+        t turned "The museum entrance is SWAMPED with blank easels. I want them gone! They\'re taking up precious legroom." 
+        p annoyed "That\'s what this is about? Legroom? Seriously?"
+        t enthused "Yep! If I yell loud enough, someone is bound to do something about those easels." 
+        t angry "\"Easels Be Gone, "
+        extend neutral2 "uh…"
+        extend angry "Something That Rhymes With Gone!\""
+        t neutral2 "What have you been doing?"
+        p concerned "I've stolen three paintings in like an hour."
+        t neutral "Why?"
+        p "They inspired me too much. I felt like taking them for my artistic journey."
+        t smug "More like a kleptomaniac journey."
+        t smug "Speaking of which, I used to steal paintings all of time. Four of them actually! Just one more than you!"
+        p annoyed "No, you haven't, Toasty. You're just saying that to annoy me."
+        t pointandlaugh "And it's clearly working!"
+        p annoyed "Whatever, I\'ll just leave you to… whatever this is."
         return
 
     elif paintings == 2:
         show posty neutral
-        show toasty neutral
-        t "hint for if you've taken two paintings" #221
+        show toasty annoyed
+        t "I swear Posty, wherever I go, there you are."
+        p "You don't go anywhere. I've haven't seen you leave this corner all day."
+        t "I'm busy looking busy. What have you been doing?"
+        p happy "I've been stealing paintings. I have two of them!"
+        t "Booooo!"
+        p suspicious "Huh? I think it's an impressive feat. I don't understand where this booing is coming from."
+        t "I don't understand why you would steal only two paintings. You should've stolen three. I've stolen three paintings! Why not you?"
+        if toastytwopaintings:
+            p "I thought you said you stole two paintings-{nw}"
+        t crossedarms "Everything good comes in threes! Three rings in a circus, three movies in a trilogy, three dimensions in a reality..."
+        t "Three neurons in a functioning brain."
+        show toasty pointandlaugh talk
+        p annoyed "Alright fine, I'll steal a third painting."
         return
 
     elif paintings == 1:
-        show posty neutral
-        show toasty neutral
-        t "hint for if you've taken one painting" #154
+        show posty annoyed
+        show toasty crossedarms
+        t "Well, well, well, look who decides to darken my doorstep once again."
+        p "You don\'t have a door. You just stand in the street all day."
+        t angry "At least I have a more interesting life than {i}you.{/i}"
+        p angry "Oh yeah? Have you ever stolen a painting before?"
+        t "Of— of course I have! Actually, I\'ve stolen {i}two{/i} paintings!"
+        $ toastytwopaintings = True
+        t annoyed "I don't do it anymore because painting stealing is lame and boring because museums are lame and boring."
+        t pointandlaugh "But then again, I guess you\'d fit right in there, huh? Hahahah!"
+        t "Go back to hanging around those lame and boring museum exhibits! Because you\'re lame!"
+        p annoyed "And boring?"
+        t angry "Ugh! I wanted to say it."
         return
     
     elif quest.bs:

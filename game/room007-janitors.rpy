@@ -2,8 +2,6 @@
 
 image bg janitors_top:
     "map-bgs/janitors_top.png"
-    zoom 1.15
-    yalign 0.2
 
 image bg janitors:
     "dbgs/janitors_dbg.png"
@@ -27,21 +25,68 @@ transform getvend:
 transform flip: 
     xzoom -1.0
 
+screen janitor_nav():
+    viewport:
+        child_size (1280,720)
+        add "bg janitors_top"
+
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (323, 600)
+            idle "arrow dn"
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (323, 600)
+            idle "pnav dn i"
+            hover "pnav dn"
+            action MouseMove(319, 255),Jump("museum_food")
+
+        imagebutton:
+            pos (250,200)
+            idle "nav_spray"
+            hover "nav_spray p"
+            action Jump("janitors.sb2")
+        imagebutton: 
+            xanchor 0.5
+            yanchor 0.5
+            pos (230, 150)
+            idle "pnav up i"
+            hover "pnav up"
+            action Jump("janitors.vend")
+
+image nav_spray = Composite(
+    (250,250),
+    (0,0), "hitbox",
+    (110,0), "minisprites/squirtbottle.png",
+)
+image nav_spray p = Composite(
+    (250,250),
+    (0,0), "nav_spray",
+    (60,30), "pnav up"
+)
 
 label janitors:
     if saw.janitors == False:
         jump .sb1
-    scene bg janitors_top
-    show posty neutral
-    p "_" #235 todo: janitors imagemap
+    $ renpy.choice_for_skipping()
+    call screen janitor_nav
 
-    menu:
-        "Squirt Bottle":
-            jump .sb2
-        "Vending machine":
-            jump .vend
-        "Get outta here":
-            jump museum_food
+# label janitors:
+#     if saw.janitors == False:
+#         jump .sb1
+#     scene bg janitors_top
+#     show posty neutral
+#     p "_" #235 todo: janitors imagemap
+
+#     menu:
+#         "Squirt Bottle":
+#             jump .sb2
+#         "Vending machine":
+#             jump .vend
+#         "Get outta here":
+#             jump museum_food
 
 label .vend:
     scene bg janitors
