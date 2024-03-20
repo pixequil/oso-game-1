@@ -221,12 +221,13 @@ _(Don't remove the blank bullets)_
 
 ## Music
 * A Jar of Copper Salts - citb
-* REZURRECTA - ASTRUM_DEUS_P1
+* REZURRECTA - ASTRUM DEUS P1
+* KrystalGhostz - Breakfast Beat
 * REZURRECTA - ZAKU
 * plebkingdom - Break
 * Nyakiye - 111
 * tetroid - Outro
-* mintykiwi - cdafafadRemake
+* mintykiwi - cdafafad
 
 ## Previous Game Directors
 * FunnyBoy044
