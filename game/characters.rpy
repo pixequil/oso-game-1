@@ -904,7 +904,7 @@ image sgummy quiet:
 define binoc = Character("Binoculars", 
     callback=speaker("binoc"), 
     image="binoc", 
-    who_color="#2c2c31"
+    who_color="#4a4a4f"
     )
 
 image binoc cynical = WhileSpeaking(
@@ -1656,7 +1656,7 @@ image auto sad quiet:
 define tb = Character("Ticket Booth",
     callback=speaker("tb"), 
     image="tb", 
-    who_color="#5D3266"
+    who_color="#825983"
     )
 
 image tb neutral= WhileSpeaking(
@@ -1842,7 +1842,7 @@ image rm quiet:
 define jb = Character("Jukebox",
     callback=speaker("jb", sound_file="game_voice_1.wav"),
     image="jb", 
-    who_color="#482C40"
+    who_color="#d84a7a"
     )
 
 image jb = WhileSpeaking(
@@ -1882,8 +1882,37 @@ label chartest:
             jump .toasty
         "Other characters.":
             jump .other
+        "Typography.":
+            jump .type
         "End the game please.":
             return
+
+label .type:
+    p "Type!"
+    p "This is a longer sample of text. The quick brown fox jumped over the lazy dog. Five quacking zephyrs judge my vow. Sphinx of black quartz wait I messed up. The vow judgement part was meant to go with the sphinx of black quartz, right? Oh this is definitely too long. Pack it up! Aaand now we're pushing it for sure."
+    p "How about {b}bold{/b}? Or {i}italic{/i}? Maybe {b}{i}both at once???{/i}{/b}"
+    "Abcdefg" "idk"
+    p astonished "Who was that???! Anyway, take me to {b}the war exhibit!{/b}"
+    scene bg museum_war_flipped
+    show painting_war
+    show rcg
+    show bcg
+    show posty neutral
+    p "uh excu-"
+    rcg "This art piece clearly shows the victory of the Redoinks!!"
+    bcg "No{w} - The positioning obviously implies the victory of the Blouououous."
+    bcg "They are so wounded and depressed, having to fight in a war n' all, yknow?"
+    rcg "What do you mean!?! The determination in their eyes say it all! You always see the gloomy parts of EVERYTHING!"
+    bcg "You always see the hopeful parts, even when it isn't intended!"
+    p "{i}They look busy. I should probably leave.{/i}"
+    scene bg mainstreet
+    show posty neutral
+    show toasty pointandlaugh
+    show bs follow behind posty with moveinleft
+    t "How'd you end up here!!!"
+    bs "And that's how the Blououous reunited with the wahtevefr the others were called"
+    p astonished anim "There's no place like home!"
+    jump chartest
 
 label .other:
 
