@@ -223,6 +223,8 @@ _(Don't remove the blank bullets)_
 * A Jar of Copper Salts - citb
 * REZURRECTA - ASTRUM_DEUS_P1
 * REZURRECTA - ZAKU
+* plebkingdom - Break
+* Nyakiye - 111
 * tetroid - Outro
 * mintykiwi - cdafafadRemake
 
