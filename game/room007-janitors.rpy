@@ -68,6 +68,7 @@ image nav_spray p = Composite(
 )
 
 label janitors:
+    play music "sound/music/hewd - For the Cake.ogg" if_changed
     if saw.janitors == False:
         jump .sb1
     $ renpy.choice_for_skipping()
