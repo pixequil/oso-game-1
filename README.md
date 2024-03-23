@@ -225,6 +225,7 @@ _(Don't remove the blank bullets)_
 * LuckyLootCrate - purple precipitation
 * PlugBoy - paths
 * TheSeanimator22 - Dinner at 7pm
+* Gavimator - the jungle
 * KrystalGhostz - Breakfast Beat
 * REZURRECTA - ZAKU
 * plebkingdom - Break
