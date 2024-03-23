@@ -230,8 +230,8 @@ _(Don't remove the blank bullets)_
 * REZURRECTA - ZAKU
 * plebkingdom - Break
 * Nyakiye - 111
-* tetroid - Outro
 * LuckyLootCrate - patience
+* tetroid - Outro
 * mintykiwi - cdafafad
 
 ## Previous Game Directors
