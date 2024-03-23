@@ -223,6 +223,7 @@ _(Don't remove the blank bullets)_
 * A Jar of Copper Salts - citb
 * REZURRECTA - ASTRUM DEUS P1
 * LuckyLootCrate - purple precipitation
+* PlugBoy - paths
 * TheSeanimator22 - Dinner at 7pm
 * KrystalGhostz - Breakfast Beat
 * REZURRECTA - ZAKU

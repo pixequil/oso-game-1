@@ -132,6 +132,7 @@ image pfood:
 image nothing = Solid("#ff000000")
 
 label museum_entrance:
+    play music "sound/music/PlugBoy - paths.ogg" if_changed
     if saw.museum == False:
         jump .first_time
     else:
