@@ -212,6 +212,7 @@ image food_big3:
 
 label museum_food:
     $ renpy.choice_for_skipping()
+    play music "sound/music/KrystalGhostz - Breakfast Beat.ogg" if_changed
     call screen food_nav
 
 # label museum_food:

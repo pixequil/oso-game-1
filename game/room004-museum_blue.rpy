@@ -141,6 +141,7 @@ image bluetile_tiny2 = ConditionSwitch(
 )
 
 label museum_blue:
+    play music "sound/music/TheSeanimator22 - Dinner at 7pm.ogg" if_changed
     if saw.blue == False:
         jump .redcash
     else:

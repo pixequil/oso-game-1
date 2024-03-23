@@ -108,7 +108,7 @@ screen mainstreet_nav():
             ypos 203
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify(party_leave),Jump("musicstore"))
+            action If(party_bs,Notify(party_leave),MouseMove(681, 612)),If(party_bs,Notify(party_leave),Jump("musicstore"))
 
         # people
         showif (party_bs == False) and (quest.bs == False): # bs alone
@@ -279,10 +279,12 @@ image nav_bs p = Composite(
 label firstscene:
 
     scene black
+    stop music fadeout 1.0
     p "..."
     p "And this is going to..."
     
     show bg mainstreet
+    play music "sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg"
     $ renpy.transition(dissolve, layer="master") #prevents interruption of the text window
     show posty neutral
     show btnet 
@@ -333,6 +335,7 @@ label firstscene:
 label mainstreet:
     $ renpy.choice_for_skipping()
     $ last.alleyy = 1.0
+    play music "sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg" if_changed
     call screen mainstreet_nav
 
 label .go_museum:

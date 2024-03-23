@@ -219,6 +219,22 @@ _(Don't remove the blank bullets)_
 * WalkieGuy
 * wolfolotl
 
+## Music
+* A Jar of Copper Salts - citb
+* REZURRECTA - ASTRUM DEUS P1
+* LuckyLootCrate - purple precipitation
+* PlugBoy - paths
+* TheSeanimator22 - Dinner at 7pm
+* Gavimator - the jungle
+* KrystalGhostz - Breakfast Beat
+* hewd - For the Cake
+* REZURRECTA - ZAKU
+* plebkingdom - Break
+* Nyakiye - 111
+* LuckyLootCrate - patience
+* tetroid - Outro
+* mintykiwi - cdafafad
+
 ## Previous Game Directors
 * FunnyBoy044
 * Steppie Berry

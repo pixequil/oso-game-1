@@ -89,6 +89,12 @@ image nav_cb p = Composite(
 label dome:
     $ renpy.choice_for_skipping()
     $ last.mainx = 1.0
+    if win_flag:
+        if renpy.music.get_playing() != "sound/music/Nyakiye - 111.ogg":
+            play music "sound/music/Nyakiye - 111 intro.ogg" if_changed
+            queue music "sound/music/Nyakiye - 111.ogg"
+    else:
+        play music "sound/music/plebkingdom - Break.ogg" if_changed
     call screen dome_nav
 
 # label dome_fallback:
@@ -123,6 +129,8 @@ label .cb_give:
     show butterfly_package
     p "Phew! Here you go ma'am!"
     cb "Thank you so much!"
+    play music "sound/music/Nyakiye - 111 intro.ogg" fadeout 0.5
+    queue music "sound/music/Nyakiye - 111.ogg"
     "You handed over the {b}Butterfly Package{/b}!"
     $ item.butterfly_package = False
     $ win_flag = True

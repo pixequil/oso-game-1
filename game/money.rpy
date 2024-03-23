@@ -155,6 +155,7 @@ label .money_check:
         dolly "Your patronage is appreciated." 
         p suspicious "So, the loot box!"
         dolly "Oh yes, of course!"
+        stop music fadeout 0.5
         dolly "Let's see what you've won!"
         show lootbox burst
         play audio "sound/330563__andre_onate__kotsuzumi-roll-at-126.ogg"
@@ -166,6 +167,7 @@ label .money_check:
         $ item.scrapmetal = True
         $ quest.moneys = True
         "You got some {b}scrap metal{/b} from the loot box!"
+        play music "sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg" fadein 1.0
         "{i}To the average person, this may be just a bunch of metal shapes, but for a skilled worker (or for whoever is willing to pay really), it is a canvas ready to be molded into glorious masterpieces!{/i}"
         p annoyed "Oh. Wow."
         dolly "Thank you! Come again! No refunds!"

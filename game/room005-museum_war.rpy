@@ -250,6 +250,9 @@ image war_island:
 
 
 label museum_war:
+    if renpy.music.get_playing() != "sound/music/Gavimator - the jungle.ogg":
+        play music "sound/music/Gavimator - the jungle intro.ogg" if_changed
+        queue music "sound/music/Gavimator - the jungle.ogg"
     if saw.war == False:
         jump .capsulefirst
     else:
