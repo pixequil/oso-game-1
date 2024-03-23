@@ -222,6 +222,7 @@ _(Don't remove the blank bullets)_
 ## Music
 * A Jar of Copper Salts - citb
 * REZURRECTA - ASTRUM DEUS P1
+* LuckyLootCrate - purple precipitation
 * KrystalGhostz - Breakfast Beat
 * REZURRECTA - ZAKU
 * plebkingdom - Break

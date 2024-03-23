@@ -108,7 +108,7 @@ screen mainstreet_nav():
             ypos 203
             idle "pnav up i"
             hover "pnav up"
-            action If(party_bs,Notify(party_leave),Jump("musicstore"))
+            action If(party_bs,Notify(party_leave),MouseMove(681, 612)),If(party_bs,Notify(party_leave),Jump("musicstore"))
 
         # people
         showif (party_bs == False) and (quest.bs == False): # bs alone

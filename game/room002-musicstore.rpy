@@ -81,6 +81,7 @@ image nav_jb p = Composite(
 label musicstore:
     $ renpy.choice_for_skipping()
     $ last.mainx = 0.15
+    play music "sound/music/LuckyLootCrate - purple precipitation.ogg" if_changed
     call screen music_nav
 
 # label musicstore:
