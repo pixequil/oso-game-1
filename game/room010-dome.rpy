@@ -90,7 +90,9 @@ label dome:
     $ renpy.choice_for_skipping()
     $ last.mainx = 1.0
     if win_flag:
-        play music "sound/music/Nyakiye - 111.ogg" if_changed
+        if renpy.music.get_playing() != "sound/music/Nyakiye - 111.ogg":
+            play music "sound/music/Nyakiye - 111 intro.ogg" if_changed
+            queue music "sound/music/Nyakiye - 111.ogg"
     else:
         play music "sound/music/plebkingdom - Break.ogg" if_changed
     call screen dome_nav
