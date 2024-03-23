@@ -229,6 +229,7 @@ _(Don't remove the blank bullets)_
 * plebkingdom - Break
 * Nyakiye - 111
 * tetroid - Outro
+* LuckyLootCrate - patience
 * mintykiwi - cdafafad
 
 ## Previous Game Directors
