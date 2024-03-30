@@ -106,7 +106,7 @@ label .nl:
         show posty neutral
         neon "Heya homegirl, welcome to the Music Store: the home of all things music!"
         neon "I am Neon Lights, the resident expert for all things tubular!"
-        neon "Whether you looking for slick tunes to veg out to or just wanna appreciate the history of your favourite artists, I know the A-Zs of it."
+        neon "Whether you're looking for slick tunes to veg out to or just wanna appreciate the history of your favourite artists, I know the A-Zs of it."
         neon "All I need is a record and a player and I'm set for life!"
         neon "Hopefully you will find it as stellar as I do: it wouldn't hurt to find a fellow aficionado to talk with!"
         neon "What can I help you find?"
@@ -139,11 +139,11 @@ label .sheet:
         show posty neutral
         sheet "Nice to see ya again! How may I help you?"
         p quiet "Asking again probably wouldn't hurt."
-    p neutral "You wouldn't happen to know how to deliever a package safely, would you?"
+    p neutral "You wouldn't happen to know how to deliver a package safely, would you?"
     sheet "Nope."
     p "Yeah, that checks."
     sheet "To be honest, there's not much to do here other than listen to music."
-    sheet "Unless you wanted to take a break and listen to music, you should probably finish delievering your package or something."
+    sheet "Unless you wanted to take a break and listen to music, you should probably finish delivering your package or something."
     p annoyed "OK mom."
     jump musicstore
 
@@ -157,7 +157,7 @@ label .jb:
         jb "Hey Posty, how's it going?"
         p "I'm doing well, but I've been contemplating what song could be my favorite."
         jb "Well lucky for you, I'm the go-to for any and all music, from vinyls to digital!"
-        jb "If you have a record you dream playing but you don't have the equipment, just give it to me and hear it in crisp detail!"
+        jb "If you have a record you dream of playing but don't have the equipment, just give it to me and hear it in crisp detail!"
         jb "I even have some tracks of my own that you could listen to!"
         jb "Let's hear them all and you can pick a favorite later."
         p "Great idea."
