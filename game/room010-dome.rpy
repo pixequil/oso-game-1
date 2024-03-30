@@ -251,7 +251,7 @@ label .sweets:
     else:
         show posty neutral
         bonbon "What's the point of the dome? It sucks and needs to be destroyed."
-        sgummy "How can you hate the dome? Look at how I can see my reflection, its round shape, and its durability. I wish that was me."
+        sgummy "How can you hate the dome. Look at how I can see my reflection, its round shape, and its durability. I wish that was me."
         bonbon "What!? Do you want to be a dome?"
         sgummy "Yes! Being a dome means I\'ll have everything I\'ve ever wanted!"
         bonbon "You don\'t make any sense. You can\'t become a dome."

@@ -366,7 +366,7 @@ label .painting:
         "As soon as you glance at the painting Blue Tile refered to, you are suddently captured with the feeling of {color=#ffff00}{i}inspiration{/i}{/color}."
         p astonished -anim "...Woahh..."
         bluetile "You said it!!! This entire exhibition makes me feel things like astonishment and awe and glory!"
-        bluetile "Ever since these beautiful masterpieces fell from the clear skies, I've always had to watch out for jealous vandals whom I won't name-"
+        bluetile "Ever since these beautiful masterpieces fell from the clear skies, I always had to watch out for jealous vandals whom I won't name-"
         extend annoyed "{i}coughs{/i} Red Tile {i}coughs{/i}"
         bluetile "who have a vendetta against this exquisite cultural array due to it being \"the wrong colour\"."
         p "Uh huh..."

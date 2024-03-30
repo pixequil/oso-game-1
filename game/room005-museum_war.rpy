@@ -410,7 +410,7 @@ label .pal1:
     pal "It can't {i}make{/i} paintings yet though. Only change the style of existing ones."
     p suspicious "So like an instagram filter?"
     pal "Sure!"
-    pal "I'd show it off, but I lost the battery. Still, pretty cool thingy for me to hold!"
+    pal "I'd show it off, but, I lost the battery. Still, pretty cool thingy for me to hold!"
     if item.battery:
         pal "... Hey wait a sec. Is that my battery? You went and found it for me?? You're so sweet!!!"
         p zany "Huh-oh yup! I totally grabbed it to give to you."

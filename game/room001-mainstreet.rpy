@@ -443,7 +443,7 @@ label .brandsoda:
     show bs behind posty
 
     bs "Yo, Posty! How\'s my favorite mailbox?"
-    p "Oh, hi Brand Soda. I'm busy delivering an important package right now."
+    p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
     bs "Dope. Who\'s it for?"
     p happy "The OSO Dome."
     bs "WOAH! That...is...big! Something like that is bound to draw a lot of attention…"
@@ -514,7 +514,7 @@ label .yd:
         yd "I'm an entrée-prenur!"
         p suspicious "For what?"
         yd "Flying lessons for people who don't know how to fly! It'll be the best thing yet!"
-        yd "But I need a best friend to help me out with the buies-ness and give advice!"
+        yd "But I need a best fwiend to help me out with the buies-ness and give advice!"
         p "You mean business?"
         yd "Buies-ness is French!"
         yd "But I won't just take anybody to be my best friend! I have very special spec-sip-uh-kay-shuns!"
