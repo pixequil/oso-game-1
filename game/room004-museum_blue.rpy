@@ -198,7 +198,7 @@ label .rt:
         $ renpy.transition(hpunch, layer="master")
         redtile "WHAT?!"
         p "I have one of the blue paintings."
-        redtile "Y-You have one of them?! One of the things that gets Bluey in a twist?"
+        redtile "Y- you have one of them?! One of the things that gets Bluey in a twist?"
         p suspicious "Why did you think I paid you to argue with the guy? I ain't exactly invisible, so I needed a distraction."
         redtile "I thought you were going to splash the paintings a bit or flip them upside down, not straight up rob the place!"
         p happy "As Piquante once said: good artists copy, great artists steal!"
@@ -359,7 +359,7 @@ label .painting:
         bluetile "Hello!!! Another lover of this exhibit! Yay!!!"
         bluetile "I'm Blue Tile! My friends call me Blue! That's my friend Red Tile! Who are you?"
         p "Name's Posty. What's going on?"
-        bluetile "This is the new blue exhibit they curated just a few days ago! This is the one of the happiest days in my life!"
+        bluetile "This is the new blue exhibit they curated just a few days ago! This is one of the happiest days of my life!"
         bluetile "This artwork in particular really speaks to me! It's a portrait of Crayon Box, the host of that Open Source Objects show in the dome! What about you?"
         p "Oh no, I'm just looking aro-"
         p astonished anim "!"
@@ -470,7 +470,7 @@ label .painting_ladle:
         bluetile scared "I'll find that thief and stuff them with so much legalese, they will be speaking it!"
         bluetile scared "DO YOU KNOW WHO I AM?!"
         bluetile scared "I HAVE A WHOLE BOOK OF LAWYERS READY TO LITIGATE YOUR EXISTENCE, CAN YOU HEAR ME?!"
-        bluetile annoyed "I swear if that piece doesn't come back here with thirty minutes, I'll send the dogs out."
+        bluetile annoyed "I swear if that piece doesn't come back here within thirty minutes, I'll send the dogs out."
         bluetile annoyed "Aaaaaaaaaaaaaarggh!"
         jump museum_blue
 
@@ -489,7 +489,7 @@ label .painting_ladle_blocked:
     extend neutral "Nothing."
     bluetile annoyed "Liar! I will not let you do {i}anything{/i} to ruin this glorious painting!"
     bluetile "This is everything I live for! And you are not gonna take it away so easily!!"
-    bluetile "So scram you vandal!"
+    bluetile "So scram, you vandal!"
     jump museum_blue
 
 

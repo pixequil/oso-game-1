@@ -232,7 +232,7 @@ label .sweets:
         bonbon "I have no idea why those poor people would sign up to be locked in that thing! And competing against each other too! That's barbaric!"
         sgummy "Yea, I guess I can, uh, agree, I don't trust those host guys at all, but I gotta give them some... {i}cough{/i}... credit, the dome is cool."
         bonbon "It just IRRITATES me. I can't even water my plants in peace without looking at that thing! Trapping them from real grass!"
-        sgummy "How do you know, huh? It's definitely real grass, Bon Bon. I would know since I look around it daily. That doesn't look like plastic grass to me."
+        sgummy "How do you know, huh? It's definitely real grass, Bon Bon. I would know since I look at it daily. That doesn't look like plastic grass to me."
         bonbon "Well… it's still inhumane! I've seen how eliminated contestants walk out when they've been \"eliminated\". They clearly don't want to stay there for any longer!"
         bonbon "I-... I might be going on too much, I'm sorry, but that dome just needs to go!"
         sgummy "I have to admit another thing, the dome's structure is actually done very well. They definitely didn't mix their centimeters and millimeters, and the glass is durable." 
@@ -250,14 +250,14 @@ label .sweets:
         jump dome
     else:
         show posty neutral
-        bonbon "What's the point in the dome? It sucks and needs to be destroyed."
+        bonbon "What's the point of the dome? It sucks and needs to be destroyed."
         sgummy "How can you hate the dome. Look at how I can see my reflection, its round shape, and its durability. I wish that was me."
         bonbon "What!? Do you want to be a dome?"
         sgummy "Yes! Being a dome means I\'ll have everything I\'ve ever wanted!"
         bonbon "You don\'t make any sense. You can\'t become a dome."
         sgummy "Why not?"
         bonbon "If you did then that means I\'ll have to destroy you too!"
-        sgummy "You wouldn\'t because nothing would hurt me!"
+        sgummy "You wouldn\'t because nothing could hurt me!"
         bonbon "I can!"
         sgummy "Yeah right!"
         jump dome

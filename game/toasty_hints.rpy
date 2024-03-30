@@ -62,7 +62,7 @@ label toasty_hints:
         t smug "I concede that I am not the shiniest appliance in this messy kitchen we call life, but I don't recall you having a keen interest in lepidopterology."
         p suspicious "Lepidoptrolowhat? Is that even a word or are you trying to get one up on me?"
         t crossedarms "Hmph: if you were even a hundredth as diligent and scholarly as me, you would've realized that lepidopterists would kill to even touch the {b}package{/b} you hold right now."
-        t smug "Who knows, if you are careless enough, maybe even little old me may take a swipe of it!"
+        t smug "Who knows, if you are careless enough, maybe even little old me may take a swipe at it!"
         return
 
     elif item.makeshift_trophy:
@@ -73,7 +73,7 @@ label toasty_hints:
         t smug "Well it would severely clash with the decor, especially with the grey curtains and general lack of furniture."
         p annoyed "Rude. Also how did you find my address-"
         t crossedarms "Keep your petty questions for later! You said this thing made you feel like a winner, right?"
-        p suspicious "Yeah"
+        p suspicious "Yeah?"
         t "Well I think there is someone who would like that feeling, someone down on their luck..."
         t enthused "A big hulking trophy would bring their spirits right up!"
         return
@@ -105,8 +105,8 @@ label toasty_hints:
         p concerned "Toasty don't-"
         hide badpainting
         "Toasty took the {b}napkin \"painting\"{/b}!"
-        p sad "That was a painting someone kindly given me!"
-        t annoyed "What, this tatty thing; a painting?"
+        p sad "That was a painting someone kindly gifted me!"
+        t annoyed "What, this tatty thing? A painting?"
         t "Puhlease with the jokes."
         p annoyed "Just look at it."
         show badpainting
@@ -118,8 +118,8 @@ label toasty_hints:
         p "Some poor starving artist who hadn't eaten a crumb for months. They looked absolutely disheveled."
         p "I got this avante garde piece-"
         t laugh "Nice save!"
-        p "After giving them a bag of chips, you should've seen them pour out their gratitude."
-        p "This is how I got this thing."
+        p "After giving them a bag of chips. You should've seen them pour out their gratitude."
+        p "That is how I got this thing."
         t neutral "Damn, I feel bad now-"
         show badpainting
         "Toasty gave back the {b}napkin \"painting\"{/b}!"
@@ -136,7 +136,7 @@ label toasty_hints:
         t "But how, Toaster the Moster? Surely their superior tastes would stall us from making millions via such low tactics?"
         t "Well what if they want to be fooled?"
         t "If it appears sufficiently advanced and esoteric, then they can simply ramble randomly about its various \"nuances.\""
-        t "As a wise guy once said, eye is in the art of the beholder or something deep like that!"
+        t "As a wise guy once said, 'Eye is in the art of the beholder' or something deep like that!"
         t "If I had an approximation of art, I would go towards the snootiest person in the area!"
         t "They wouldn't let go of an opportunity to act high and mighty over lowly plebs about the \"beauties of maximal-detrius-desalination-debris murals in an abstract and expressive makeshift canvas in the modern era\", they would make entire reviews about it!"
         t "Before we can say \"easel\", we will be super rich beyond our wildest dreams!!"
@@ -175,7 +175,7 @@ label toasty_hints:
         p "Yeah whatever. Anyways, I saw this secret room with a vending machine in it or... whatever."
         t annoyed "You saw a vending machine and you {b}didn\'t use it?!{/b} Why not dummy!?"
         p sad "Well… I thought it was some ordinary vending machine, so I didn\'t take some time to investigate it."
-        t turned2 "That\'s a real loss for you, you could\'ve gotten a drink from there! Or at least give it to someone else who deserves it."
+        t turned2 "That\'s a real loss for you, you could\'ve gotten a drink from there! Or at least given it to someone else who deserves it."
         p neutral "Hm... I suppose. I\'ll get going now."
         show posty annoyed
         t pointandlaugh "Yeah whatever. Just go already and stop wasting my time!"

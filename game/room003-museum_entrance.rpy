@@ -267,7 +267,7 @@ label .easels:
     elif paintings == 1:
         "You've acquired {b}1{/b} painting, so you feel a little bit of {color=#ffff00}inspiration{/color}. Maybe you should look for more."
     elif paintings == 2:
-        "You've acquired {b}2{/b} paintings, so you feel a some {color=#ffff00}inspiration{/color}. Maybe you should look for another."
+        "You've acquired {b}2{/b} paintings, so you feel some {color=#ffff00}inspiration{/color}. Maybe you should look for another."
     else:
         "{color=#f00}YOU BROKE THE GAME. CONTACT SATOMI IMMEDIATELY.{/color}"
     if item.napkin:
@@ -288,7 +288,7 @@ label .cameron:
         p astonished quiet "..."
         cameron "Kidding, kidding. Not that much of a deterrent to be honest, what with the little kiddies turning it into a game."
         cameron "Back at my last job, I would've punted you and that salty saboteur out the door faster than you can say \"paintbrush\"!"
-        cameron "Enough rambling, really need to keep my eye open to ensure history doesn't get anymore messed with..."
+        cameron "Enough rambling, really need to keep my eye open to ensure history doesn't get any more messed with..."
         cameron "or covered in soup..."
         cameron "or burnt..."
         cameron "or ... {i}un{/i}burnt..."
@@ -321,7 +321,7 @@ label .cameron:
         cameron "..."
         cameron "Did you need something?"
         p "Oh. No. Just… checking in. Seeing what's up."
-        cameron "'What's up? My blood pressure's what's up!"
+        cameron "'What's up?' My blood pressure's what's up!"
         cameron "Just kidding I don't think I have that."
         p "..."
         p "Right."
