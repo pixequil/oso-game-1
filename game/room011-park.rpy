@@ -90,6 +90,7 @@ image nav_auto p = Composite(
 label park:
     $ renpy.choice_for_skipping()
     $ last.mainx = 0.45
+    play music "sound/music/LuckyLootCrate - patience.ogg" if_changed
     call screen park_nav
 
 # label park:

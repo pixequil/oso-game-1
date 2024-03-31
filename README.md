@@ -219,6 +219,22 @@ _(Don't remove the blank bullets)_
 * WalkieGuy
 * wolfolotl
 
+## Music
+* A Jar of Copper Salts - citb (Main Menu Screen)
+* REZURRECTA - ASTRUM DEUS P1 (Main Street)
+* LuckyLootCrate - purple precipitation (Music Store)
+* PlugBoy - paths (Museum Entrance)
+* TheSeanimator22 - Dinner at 7pm (Blue Exhibit)
+* Gavimator - the jungle (War Exhibit)
+* KrystalGhostz - Breakfast Beat (Food Exhibit)
+* hewd - For the Cake (Janitor's Closet)
+* REZURRECTA - ZAKU (Alley)
+* plebkingdom - Break (Dome)
+* Nyakiye - 111 (Dome)
+* LuckyLootCrate - patience (Park)
+* tetroid - Outro
+* mintykiwi - cdafafad
+
 ## Previous Game Directors
 * FunnyBoy044
 * Steppie Berry
