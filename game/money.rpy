@@ -168,7 +168,7 @@ label .money_check:
         $ quest.moneys = True
         "You got some {b}scrap metal{/b} from the loot box!"
         play music "sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg" fadein 1.0
-        "{i}To the average person, this may be just a bunch of metal shapes, but for a skilled worker (or for whoever is willing to pay really), it is a canvas ready to be molded into glorious masterpieces!{/i}"
+        "{i}To the average person, this may be just a bunch of metal shapes, but for a skilled worker (or for whoever is willing to pay, really), it is a canvas ready to be molded into glorious masterpieces!{/i}"
         p annoyed "Oh. Wow."
         dolly "Thank you! Come again! No refunds!"
         jump mainstreet

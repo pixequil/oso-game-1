@@ -159,7 +159,7 @@ label .sb2:
     show sb
     p "So, what is this place?"
     sb "Well, if you must know, I've been the janitor for about twenty years. I know this building like the back of my hand."
-    sb "This job can be really hard sometimes, so I spent some time expanding this old janitor's closet my own personal paradise."
+    sb "This job can be really hard sometimes, so I spent some time expanding this old janitor's closet into my own personal paradise."
     sb " I can relax here whenever I want to! I even pushed in a vending machine for free food!"
     sb "As long as I hide a painting behind the passageway, no one notices or cares."
     p "So you engineered that switch with the placard?"

@@ -345,13 +345,13 @@ label .glasses2:
     show posty happy
     p "Sooo what are you discussing?"
     rcg "Oh perfect timing! I was just about to explain to this glaucous grumblewort about how the Reddoinki Renaissance is not only findable with enough determination,{nw}" 
-    rcg "but its various progenitors are actually hidden away behind one of the paintings no doubt with new pieces just to be appreciated!{nw}"
+    rcg "but its various progenitors are actually hidden away behind one of the paintings, no doubt with new pieces just to be appreciated!{nw}"
     bcg "What a hopelessly naive statement to make, especially regarding the well documented disappearances of all 14 Great Doinkers in the Crimison Expedition of 1923!{nw}"
     bcg "Honestly art hasn't progressed a single inch since those geniuses and their Blouououousian compatriots left this mortal plane...{nw}"
     show posty concerned
     bcg "Just a single one of their pieces makes this entire gallery frankly feel like a frivolous box of toys!{nw}"
     bcg "I don't know why artists today don't give up at the mere thought of them.{nw}"
-    rcg "Woah woah that is extremely short sighted even for you!{nw}"
+    rcg "Woah woah that is extremely short sighted, even for you!{nw}"
     show posty confused
     rcg "All we have to do to bring back those beautiful days is free those artists from their schlocky cells!{nw}"
     rcg "I swear I heard a couple of noises from that misnomer of a painting at night...{nw}"
@@ -360,7 +360,7 @@ label .glasses2:
     bcg "Now now, you have been watching one too many of those speculative fictions!{nw}"
     bcg "Not every gallery will have globe spanning schemes, sometimes it is just a pile of sad attempts.{nw}"
     rcg "Ohohoho I would loveeee to elucidate you over a couple cakes; maybe it would be nice to have something sweet for once-{nw}"
-    bcg "And while we at it, I would like to bring you back to reality with something nonfiction-{nw}"
+    bcg "And while we're at it, I would like to bring you back to reality with something nonfiction-{nw}"
     rcg "Are you implying that I am delusional?!{nw}"
     bcg "I will never ever stoop as low as to even hint at your ability to read a lot into research.{nw}"
     rcg "Well at least I am able to think outside the constraints of your inability to have fun.{nw}"
@@ -626,11 +626,11 @@ label .ahiss3:
     p "Hello, excuse me? Ahiss?"
     ahiss "...Do I know you?"
     p suspicious "I'm Posty?"
-    p "I may have had.. uh.. burnt your royal deed and stole a battery or something off your land."
+    p "I may have.. uh.. burnt your royal deed and stole a battery or something off your land."
     ahiss "Hm? Ah yes. I remember vividly now. You\'re that peasant that RUINED MY LIFE!"
     ahiss "The pain and suffering you've done to our people. Me!"
     p annoyed "Okay."
-    ahiss "I hope that silly trinket was worth the devastation you wrecked upon me."
+    ahiss "I hope that silly trinket was worth the devastation you wreacked upon me."
     ahiss "Ohhh, but prepare yourself soon for my glorious return!"
     ahiss "For I shall arise as the rightful heir, throwing away those unnatural chains upon my destiny and seize what is MY DIVINE RIGHT-{nw}"
     p "Really, I didn't think it was that big of a-{nw}"
@@ -657,7 +657,7 @@ label .buff:
     show buff
     p happy "Ooh, hello! You look like you know a lot about art!"
     buff "Why thank you! I am a fanatic when it comes to these things!"
-    buff "The war exhibit in particular is one of the oldest collection of pre-OSO artwork in the world, some of them dating back thousands of years!"
+    buff "The war exhibit in particular is one of the oldest collections of pre-OSO artwork in the world, some of them dating back thousands of years!"
     p astonished "Thousands of years?!"
     buff "Indeed. Take this firey masterpiece here! {i}\"Abandoned In The Grill\"!{/i}"
     "{i}It's a painting of a truly ugly burger on fire. The fire seems very realistic, being the only good thing about the painting.{/i}"
@@ -720,7 +720,7 @@ label .capsulefirst:
     show capsule pain
     capsule "Hey! You there, do you mind helping me out with a favor?"
     p "Huh?"
-    capsule "I need your help to carry this heavy item off of my hands!"
+    capsule "I need your help to carry this heavy item off my hands!"
     p happy "Oh sure! No problem!"
     show capsule happy
     show heavier 

@@ -564,7 +564,7 @@ label .yd_bs_money:
     bs "Pffftt...I'm a nachoholic!"
     bs "I like to put everything on them!"
     yd "Wowzers! Me too!"
-    yd "Is this a beginning of a beautiful friendship?"
+    yd "Is this the beginning of a beautiful friendship?"
     bs "Oh, more than that! We became best buds!"
     yd "YAYYYYYY!"
 
@@ -586,7 +586,7 @@ label .yd_bs_money:
 
     p happy "Wow, thanks Brand Soda!"
     bs "I'll never forget you!"
-    bs "So kid, what is this \"buisness oppurtunity\" you were starting again?"
+    bs "So kid, what is this \"business oppurtunity\" you were starting again?"
     jump mainstreet
 
 label .yd_bs_happy:
@@ -703,8 +703,8 @@ label .btnet:
         p happy "Maybe you could give an object-on-the-street interview about them?"
         bs "Yeah, old man, give your honest thoughts!"
         btnet "Ummmmmm..."
-        btnet "They make bad first impressions, expect rewards too quickly, has delusions of grandeur..."
-        btnet "Smells flat..."
+        btnet "They make bad first impressions, expect rewards too quickly, have delusions of grandeur..."
+        btnet "Smell flat..."
         bs "We're leaving."
         p happy "Talk to you later!"
         jump mainstreet
@@ -712,7 +712,7 @@ label .btnet:
     elif item.butterfly_package:
         show posty happy
         p happy "Hello again!"
-        btnet "How's your progress on the delievery?"
+        btnet "How's your progress on the delivery?"
         p happy "I ran into a few slip-ups, but I think I can handle it!"
         btnet "If it ever gets too difficult, I can always pass it on to someone else, like your friend Toasty or-"
         p astonished "No it's ok! I've got it!"
@@ -722,9 +722,9 @@ label .btnet:
 
     else:
         show posty neutral
-        p happy "I delievered the package! Crayon Box was impressed with the butterflies!"
+        p happy "I delivered the package! Crayon Box was impressed with the butterflies!"
         btnet "Excellent work, Posty! I knew you could do it!"
-        p happy "Do you need me to deliever any other packages today?"
+        p happy "Do you need me to deliver any other packages today?"
         btnet "Nah. I don't want to overwork you, especially after this important order for OSO!"
         btnet "Go take a nap! You've earned it!"
         p happy "Thanks B.T.! Talk to you later!"
@@ -754,7 +754,7 @@ label .tooly1:
     tooly "Howdy stranger! The name's Tooly! Welcome to my shop!"
     p happy "Hello! I never noticed this place before!" 
     tooly "I just opened it!" 
-    p happy "Neat! What do you do here!"
+    p happy "Neat! What do you do here?"
     tooly "Oh, I store nukes!"
     show posty concerned
     tooly "We have weapons of mass destruction of all shapes and sizes."

@@ -388,7 +388,7 @@ label .painting:
     show painting_food
     show posty neutral
     show rm
-    p "Um hi there!"
+    p "Um, hi there!"
     rm "Oh hello! I'm currently looking at..."
     extend " whatever this is."
     rm "This {i}thing{/i} feels so out of place here... Honestly, they could've used a better painting."
