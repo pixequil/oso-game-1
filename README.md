@@ -220,18 +220,18 @@ _(Don't remove the blank bullets)_
 * wolfolotl
 
 ## Music
-* A Jar of Copper Salts - citb
-* REZURRECTA - ASTRUM DEUS P1
-* LuckyLootCrate - purple precipitation
-* PlugBoy - paths
-* TheSeanimator22 - Dinner at 7pm
-* Gavimator - the jungle
-* KrystalGhostz - Breakfast Beat
-* hewd - For the Cake
-* REZURRECTA - ZAKU
-* plebkingdom - Break
-* Nyakiye - 111
-* LuckyLootCrate - patience
+* A Jar of Copper Salts - citb (Main Menu Screen)
+* REZURRECTA - ASTRUM DEUS P1 (Main Street)
+* LuckyLootCrate - purple precipitation (Music Store)
+* PlugBoy - paths (Museum Entrance)
+* TheSeanimator22 - Dinner at 7pm (Blue Exhibit)
+* Gavimator - the jungle (War Exhibit)
+* KrystalGhostz - Breakfast Beat (Food Exhibit)
+* hewd - For the Cake (Janitor's Closet)
+* REZURRECTA - ZAKU (Alley)
+* plebkingdom - Break (Dome)
+* Nyakiye - 111 (Dome)
+* LuckyLootCrate - patience (Park)
 * tetroid - Outro
 * mintykiwi - cdafafad
 
