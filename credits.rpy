@@ -1,0 +1,26 @@
+label credits:
+
+    scene bg park_top
+    "Thank you for playing!"
+    "Game Managers: FunnyBoy044 and Satomi"
+    "Path Designer: Olivia/timepavement"
+    "Puzzle Designers: Steppie Berry, DominicK, TawnyBarnOwl, Riley Cooke and Meow"
+    "Programmers: Martysh12, A Jar of Copper Salts, FunnyBoy044, Satomi and XKZ"
+    "Outline Adaptation: Satomi"
+    "Item Description Writers: Martysh12, Compital and XKZ"
+    "Dialogue Writers: BumpBob, Looly, FunnyBoy044, Loggybears, Fanimator, PenTick, Satomi, Jurta, Multi, xbeo and XKZ"
+    "Original Writers: Steppie Berry, BumpBob Looly and FunnyBoy044"
+    "Character Audio: Fanimator"
+    "Mini Sprite Artists: -shapester-, 4DJumpman25, Bryce B, Chorkey, Emi, FunnyBoy044, Giantonio Ortega, Green, JTRock, JustCherry!, Legoian, MsBonnieArt, Nolvri, Non Edible Taco , NotReallyA_CardFan,Nune, Rand0m_Anon, RoastedToastedTea, Satomi, ThatBlueSquare., TheSeanimator
+,Z Animations Studio, alexlion0511, aples, brnzen, iroha/AZ and zeekybluu"
+    "Talk Sprite Artists: Martysh12, A Jar of Copper Salts, 4DJumpman256, CosmiKirby, Fluffystar_XD, gomigg, APotato/HriHof, NovaInterstellations, Mewbie, multi, Tempøral Løser, VAPORTUESGAYTOR <3,A.R.S.O.N., APigeonWithCoffee, AxoElle, clouds26920, Duckling,enden, Enturos, glowingscramble, Melody Love, meme cat, Pacifist Player, Shairmane Ubaos, Smori3000, StephanieStar/Mimistarlish, This AU of Reality, Urie and Zero"
+    "Navigation Background Artists: Beyblady, Green, MoeYolk, Multi, Plugboy (Plug or Pixar), storyboy, uwo, Wafflemambooze and Анимации Жени (Eugene's Animations)"
+    "Conversation Background Artists: foolcrum (Main Street), Faye's_odd.5450 (Music Store), nexty (Shady Back Alley), Melecie (Art Museum Entrance), Captain (Janitor's Closet), Rand0m00 (The Dome) and Birchboom (The Park)"
+    "Prop Artists: XKZ, Martysh12, Faye's_odd.5450, B.w.m.p.i.i, betamaj, Frog!, FunnyBoy044, Mak1n' Bacon, skiddzy and SuperGoat527"
+    "Additional Character Designers: DominicK, FunnyBoy044, Olivia/timepavement, Satomi, Sequencer, Steppie Berry and Urie"
+    "Character Recommenders: Animation Dude, Blox9000, BumpBob Looly, De Golf!, Delta-Lemon, DominicK, FunnyBoy044, Green Eldin, InvisiCat, Meow, NubAnSkrub, Olivia/timepavement, Riley Cooke, Satomi, Sequencer, some_nerd/SDSH, Steppie Berry, Tradgore, Urie, WalkieGuy and wolfolotl"
+    "Previous Game Directors: FunnyBoy044, Steppie Berry, Sequencer and some_nerd/SDSH"
+    "Previous Programmers: Sequencer, som1sezhi, A Jar of Copper Salts and Meow"
+    "Previous Game Team: Neil's Shades, Steppie Berry, Maroue Reus “Dunkyl 🔣🔣” and Olivia/timepavement"
+    "Creator: Hexagon"
+    "Organizers: teearie, Yellow Pancake, wolfolotl, Maroue Reus “Dunkyl 🔣🔣”, wishfixers, Multi and Kyle Catchphrase"
