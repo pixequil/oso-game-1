@@ -146,12 +146,16 @@ image nav_np p = Composite(
     (50,70), "pnav rt"
 )
 
+image food_mini1:
+    "minisprites/food_mini1.png"
+    zoom 0.06
+
 image marbsp:
     "talksprites/food_big2.png"
     zoom 0.2
 image nbspain:
     "talksprites/food_big3.png"
-    zoom 0.2
+    zoom 0.1
 
 image nav_mb = Composite(
     (250,250),
@@ -198,16 +202,17 @@ image food_island:
 
 image food_big1:
     "talksprites/food_big1.png"
-    xalign 0.5
+    xalign 0.51
     yalign 0.3
 image food_big2:
     "talksprites/food_big2.png"
-    xalign 0.5
+    xalign 0.51
     yalign 0.3
 image food_big3:
     "talksprites/food_big3.png"
-    xalign 0.5
+    xalign 0.51
     yalign 0.3
+    zoom 0.6
 
 
 label museum_food:

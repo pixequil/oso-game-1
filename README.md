@@ -198,6 +198,12 @@ _(Don't remove the blank bullets)_
 * SuperGoat527
 * seaf0amm
 * Saury
+* Meow
+* scotiaa
+* Leader
+* Fizu poppu
+* Snek86
+* chroma!!
 
 ### Additional Character Designers
 * DominicK 
