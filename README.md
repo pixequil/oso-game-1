@@ -175,6 +175,9 @@ _(Don't remove the blank bullets)_
 * Rand0m00 - The Dome
 * Birchboom - The Park
 
+### Other Backgrounds
+* Plugboy - loading screen
+
 ### Props
 * Martysh12
 * Faye's_odd.5450
