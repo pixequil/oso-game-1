@@ -174,6 +174,7 @@ _(Don't remove the blank bullets)_
 * Captain - Janitor's Closet
 * Rand0m00 - The Dome
 * Birchboom - The Park
+* XKZ - Food exhibit
 
 ### Other Backgrounds
 * Plugboy - loading screen
