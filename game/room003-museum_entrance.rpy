@@ -7,6 +7,9 @@ image bg museum_entrance:
     "dbgs/museum_entrance_dbg.png"
     xzoom -1.0
 
+image bg painting_combined:
+    "postys-art-project.png"
+
 image notice:
     "items/notice.png"
     truecenter

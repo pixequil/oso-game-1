@@ -180,6 +180,7 @@ _(Don't remove the blank bullets)_
 ### Other Backgrounds
 * Plugboy - loading screen
 * MsBonnieArt - win screen
+* foolcrum - posty's "art project" insert-drawing
 
 ### Props
 * Martysh12
