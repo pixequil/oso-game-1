@@ -178,6 +178,7 @@ _(Don't remove the blank bullets)_
 
 ### Other Backgrounds
 * Plugboy - loading screen
+* MsBonnieArt - win screen
 
 ### Props
 * Martysh12

@@ -4,6 +4,9 @@ image bg park_top:
 image bg park:
     "dbgs/park_dbg.jpg"
 
+image win_art:
+    "winscreen.png"
+
 transform flip: 
     xzoom -1.0
 
@@ -210,6 +213,7 @@ label .win:
 
         "Yes, I'm finished.":
             show win_art #289
+            ""
             jump credits
         "No, not yet.":
             jump park
