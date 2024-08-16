@@ -52,9 +52,10 @@ image champurrlain:
 
 image deed:
     "items/imaginary_deed.png"
-    xalign 0.44
+    xalign 0.6
     yalign 0.5
     zoom 1.5
+    alpha 0.5
 
 image painting_war:
     "items/war_Exhibit_photo_original.png"
