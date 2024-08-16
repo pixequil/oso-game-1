@@ -9,6 +9,11 @@ image bg museum_war:
     "dbgs/museum_war_dbg.png"
     yalign 0.2
 
+image tapestry:
+    "talksprites/tapestry.png"
+    xalign 0.8
+    yalign 0.2
+
 image bg museum_war_flipped:
     "dbgs/museum_war_dbg.png"
     yalign 0.2
@@ -121,11 +126,11 @@ screen war_nav():
             idle "war_island"
         showif burger_extinguish == False:
             imagebutton:
-                pos (580,380)
+                pos (550,380)
                 idle "burger_fire"
         showif burger_extinguish:
             imagebutton:
-                pos (580,380)
+                pos (550,380)
                 idle "burger_out"
 
         showif scanter_green:
@@ -136,7 +141,7 @@ screen war_nav():
                 action Jump("museum_war.glasses2")
 
         imagebutton:
-            pos (500,350)
+            pos (470,350)
             idle "nav_buff"
             hover "nav_buff p"
             action Jump("museum_war.buff")
@@ -340,7 +345,7 @@ label .painting2:
 
 label .glasses2:
     scene bg museum_war
-    show tapestry at truecenter
+    show tapestry
     show rcg
     show bcg
     show posty happy

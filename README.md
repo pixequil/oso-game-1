@@ -195,6 +195,7 @@ _(Don't remove the blank bullets)_
 * Mak1n' Bacon
 * skiddzy
 * SuperGoat527
+* seaf0amm
 
 ### Additional Character Designers
 * DominicK 
