@@ -121,6 +121,8 @@ _(Don't remove the blank bullets)_
 * brnzen
 * iroha/AZ
 * zeekybluu
+* skokapus
+* Delango
 
 ### Talk Sprites
 * Martysh12

@@ -116,10 +116,10 @@ image bluetile_giddy:
     zoom 0.03
 image bluetile_angry:
     "minisprites/bluetile_angry.png"
-    zoom 0.03
+    zoom 0.8
 image bluetile_scared:
     "minisprites/bluetile_scared.png"
-    zoom 0.03
+    # zoom 0.03
 
 image nav_redtile = Composite(
     (280,280),
