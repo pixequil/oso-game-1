@@ -181,8 +181,9 @@ _(Don't remove the blank bullets)_
 
 ### Other Backgrounds
 * Plugboy - loading screen
-* MsBonnieArt - win screen
 * foolcrum - posty's "art project" insert-drawing
+* Plazicle - main menu
+* MsBonnieArt - win screen
 
 ### Props
 * Martysh12
