@@ -196,6 +196,7 @@ _(Don't remove the blank bullets)_
 * skiddzy
 * SuperGoat527
 * seaf0amm
+* Saury
 
 ### Additional Character Designers
 * DominicK 
