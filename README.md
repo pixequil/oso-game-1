@@ -175,6 +175,7 @@ _(Don't remove the blank bullets)_
 * Rand0m00 - The Dome
 * Birchboom - The Park
 * XKZ - Food exhibit
+* Fanimator - Blue exhibit
 
 ### Other Backgrounds
 * Plugboy - loading screen
