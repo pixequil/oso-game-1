@@ -7,6 +7,9 @@ image bg museum_entrance:
     "dbgs/museum_entrance_dbg.png"
     xzoom -1.0
 
+image bg painting_combined:
+    "postys-art-project.png"
+
 image notice:
     "items/notice.png"
     truecenter
@@ -322,11 +325,9 @@ label .cameron:
         cameron "..."
         cameron "Did you need something?"
         p "Oh. No. Just… checking in. Seeing what's up."
-        cameron "'What's up?' My blood pressure's what's up!"
-        cameron "Just kidding I don't think I have that."
-        p "..."
-        p "Right."
+        cameron "\"What's up?\" My blood pressure's what's up!"
+        cameron "Just kidding, I don't have that."
+        p suspicious quiet "..."
+        p -quiet "Right."
         cameron "Just come back to me if something broth-ers you. I mean bothers you."
-        cameron "Bye."
-        p "Bye."
         jump museum_entrance

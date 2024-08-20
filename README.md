@@ -121,6 +121,8 @@ _(Don't remove the blank bullets)_
 * brnzen
 * iroha/AZ
 * zeekybluu
+* skokapus
+* Delango
 
 ### Talk Sprites
 * Martysh12
@@ -174,6 +176,14 @@ _(Don't remove the blank bullets)_
 * Captain - Janitor's Closet
 * Rand0m00 - The Dome
 * Birchboom - The Park
+* XKZ - Food exhibit
+* Fanimator - Blue exhibit
+
+### Other Backgrounds
+* Plugboy - loading screen
+* foolcrum - posty's "art project" insert-drawing
+* Plazicle - main menu
+* MsBonnieArt - win screen
 
 ### Props
 * Martysh12
@@ -186,6 +196,14 @@ _(Don't remove the blank bullets)_
 * Mak1n' Bacon
 * skiddzy
 * SuperGoat527
+* seaf0amm
+* Saury
+* Meow
+* scotiaa
+* Leader
+* Fizu poppu
+* Snek86
+* chroma!!
 
 ### Additional Character Designers
 * DominicK 
