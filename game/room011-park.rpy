@@ -117,7 +117,7 @@ label .auto:
     show posty neutral
     show auto bothered
     auto "Oh god oh man oh god oh man how can I explain this?!" 
-    p "Oh, what seems to be the issue, sir?"
+    p "What seems to be the issue?"
     auto "My business is trying to make a contract and I am unable to make it-"
     p concerned "On time?"
     auto sad "At all!"
@@ -191,8 +191,8 @@ label .bench:
     else:
         scene bg park
         show posty neutral
-        p "{i}..Maybe I could take a small break on the bench?{/i}"
-        p angry "{i}No! I wont until I deliver this package!{/i}"
+        p "{i}...Maybe I could take a small break on the bench?{/i}"
+        p angry "{i}\"No! I won't until I deliver this package!\"{/i}"
         p happy "{i}But boy am I looking forward to it!{/i}"
         jump park
 

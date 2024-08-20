@@ -411,8 +411,8 @@ label .tb:
         tb shy "Ummmmm...hi..."
         tb shy "I'm sorry, I don't do well in mobs."
         bs "Well thankfully for you, I do! I can market the whole theater for you and bring thousands of people over here to watch your movies!"
-        tb shy "I'm...uh..."
-        tb shy "I'm not interested, sorry!"
+        tb shy "Thousands of people? Gathering in front of me? All at once?"
+        tb shy "Um, I'm not interested, sorry!"
         bs "Oh, well screw you then."
         jump mainstreet
     if saw.tb:
@@ -452,8 +452,8 @@ label .brandsoda:
     bs "WOAH! That...is...big! Something like that is bound to draw a lot of attention…"
     bs "Do you have any idea how overwhelming that could be?"
     p concerned "It kinda slipped past me..."
-    p "Hey speaking of attention, how's that gig at the comedy club?"
-    bs "They banned me after one act, can you believe it? Called me a hack fraud."
+    p "Hey, speaking of attention, how's that gig at the comedy club?"
+    bs "They banned me after one act! Can you believe it? Called me a hack fraud."
     bs "ME! THE NEXT BIG THING!"
     p "What did you do to get banned?"
     bs "I called the audience freaks and geeks for about ten minutes."
@@ -482,8 +482,7 @@ label .yd_quals:
     yd "Number 1: They should have a lot of charisma."
     yd "Not too dry or trying too hard to be cool. Just enough to make me laugh!"
     yd "Number B: They should have a lot of bouis-ness experience. Flying can be pretty technical for people to understand!"
-    yd "And Number C..."
-    yd "They should feel like you wanna share nachos with them."
+    yd "And Number C: They should feel like you wanna share nachos with them."
     yd "I really like nachos."
     yd "But I haven't found anyone yet!"
     return
@@ -499,7 +498,7 @@ label .yd:
         jump .yd_bs_happy
     elif saw.yd:
         yd "Hiiiiiiii!"
-        p neutral "Hi again. Hey what are your qualifications for a best friend again to promote your flying lessons?"
+        p neutral "Hi again. Hey, what are your qualifications for a best friend again to promote your flying lessons?"
         yd "Oh yeah! Uhhhhhhh..."
         call .yd_quals
         p neutral "Don't worry, I'm still looking for someone! You'll be the first to know!"
@@ -519,10 +518,10 @@ label .yd:
         yd "Flying lessons for people who don't know how to fly! It'll be the best thing yet!"
         yd "But I need a best fwiend to help me out with the buies-ness and give advice!"
         p "You mean business?"
-        yd "Buies-ness is French!"
+        yd "No, buies-ness! It's French!"
         yd "But I won't just take anybody to be my best friend! I have very special spec-sip-uh-kay-shuns!"
         call .yd_quals
-        p neutral "Well if I find anyone to help your business take off, I'll let you know."
+        p neutral "Well, if I find anyone to help your business take off, I'll let you know."
         yd "Hehehe flying pun! Thanks mail girl!"
         $ saw.yd = True
 
@@ -533,22 +532,21 @@ label .yd_bs_money:
     yd "Hi Maily!"
     p "Posty."
     yd "Hi Posty!"
-    p happy "Hi Yellow Diamond. Say guess what, I have this friend, Brand Soda, you might be interested in!"
+    p happy "Hi Yellow Diamond. Say, I have this friend, Brand Soda, you might be interested in!"
     bs "Hello strange child! Are you in need of a comedian, spokesperson, or hypeman?"
     yd "No!"
     bs "Oh ok then."
     yd "I just need a best friend to promote my flying lessons start-up! But I haven't found anyone yet! I'm sad!"
     bs "PR work, huh?"
     p happy "It's your angle, man! Go for it!"
-    bs "Say, um, yellow diamondy boy, what would you need for this \"best friend\" role?"
+    bs "Say, um, yellow diamondy boy, what would this \"best friend\" need to do?"
     yd "I need them to market my business oppurtunity! They would be the face of the company while I do all the important stuff!"
-    bs "Hey, I can be that!"
     yd "They need to be very charismatic! Are you charismatic?"
     bs "I have tons of charisma coming out of my butt!"
     yd "HAHAHA! You're funny!"
     yd "Are you smart at buahs-ness?"
     bs "Oh totally! I have experience all over the city!"
-    bs "In fact, the city thinks I'm too forward thinking for the citizens of this town."
+    bs "In fact, the city thinks I'm too forward thinking."
     bs "So now, I'm stuck on this street without a single penny or crumb to my name..."
     yd "Oh no!"
     bs "Yes, it's quite tragic..."
@@ -603,6 +601,17 @@ label .yd_bs_happy:
     bs "I can't help but feel I've been duped..."
     jump mainstreet
 
+label .misoproblems:
+    miso "I just got banned from the musuem!"
+    miso "The security guard in there said I spilled my soup on one of the security gates and almost ruined one of the paintings!"
+    miso "But I didn't do it! I always bring plastic wrap to protect the soup from spilling! Honest!"
+    miso "I tried telling him I didn't do it, but he wrote me a notice of reprimand anyway and kicked me out! That guy is so strict!"
+    p "Dang, that sucks..."
+    miso "Oh, it gets worse!"
+    miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
+    p "I'm sorry, there's nothing I can really do to help right now."
+    return
+
 label .miso:
     $ last.mainx = 0.5
     scene bg mainstreet
@@ -615,7 +624,7 @@ label .miso:
         bs "Ehhhhh...I don't know..."
         bs "I've heard of this guy's parents. They're elitist art snobs."
         bs "If I wanna be the next big thing and appeal to everyone, I can't just go to these big shots first."
-        bs "What if they don't like me and tell their friends how much I suck?"
+        bs "What if they don't like me and tell their rich friends how much I suck?"
         bs "Let's pick someone less risky around here."
         p neutral "OK..."
         miso "What are you guys talking about?"
@@ -624,9 +633,11 @@ label .miso:
     
     elif (item.ladle_empty == False) and (miso_took == False):
         if saw.miso:
-            show posty neutral
-            p "Still worried about uhh all that?"
-            miso "I feel like you didn't pay attention..."
+            show posty concerned
+            p "Still worried about, uhh, all that?"
+            miso "Yes! Didn't you pay attention?"
+            call .misoproblems
+            miso "Don't remind me..."
         else:
             show posty neutral
             $ saw.miso = True
@@ -634,14 +645,7 @@ label .miso:
             miso " {i}Ohhh, my family is gonna kill me... {/i}"
             p concerned "Is there a problem?"
             miso "Huh? Oh hi, didn't see you there!"
-            miso "You betcha there's a problem! I just got banned from the musuem!"
-            miso "The security guard in there said I spilled my soup on one of the security gates and almost ruined one of the paintings!"
-            miso "But I didn't do it! I always bring plastic wrap to protect the soup from spilling! Honest!"
-            miso "I tried telling him I didn't do it, but he wrote me a notice of reprimand anyway and kicked me out! That guy is so strict!"
-            p "Dang, that sucks..."
-            miso "Oh, it gets worse!"
-            miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
-            p "I'm sorry, there's nothing I can really do to help right now."
+            call .misoproblems
             p "If I can find a way to make it up, I'll let you know."
             miso "Thanks for trying, I guess."
         jump mainstreet
@@ -738,8 +742,8 @@ label .tooly:
     if party_bs:
         show posty neutral
         show bs follow behind posty with moveinleft
-        bs "Excuse me sir! Would you like to-"
-        tooly "I don't deal with all these newfangled social experiments! Beat it!"
+        bs "Excuse me miss! Would you like to-"
+        tooly "I don't deal with these newfangled social experiments! Beat it!"
         jump mainstreet
 
     if trophy_crafted:
