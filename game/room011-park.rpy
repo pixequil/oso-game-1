@@ -192,7 +192,7 @@ label .bench:
         scene bg park
         show posty neutral
         p "{i}...Maybe I could take a small break on the bench?{/i}"
-        p angry "{i}\"No! I won't until I deliver this package!\"{/i}"
+        p angry "{i}No! I won't until I deliver this package!{/i}"
         p happy "{i}But boy am I looking forward to it!{/i}"
         jump park
 
