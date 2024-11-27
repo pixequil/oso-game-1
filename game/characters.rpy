@@ -1145,7 +1145,7 @@ image cameron talk:
 
 
 define redtile = Character("Red Tile", 
-    callback=speaker("redtile"), 
+    callback=speaker("redtile", sound_file="red_tile_voice.wav"), 
     image="redtile", 
     who_color="#ff0000"
     )
@@ -1171,7 +1171,7 @@ image redtile quiet:
     yalign 1.7
 
 define bluetile = Character("Blue Tile", 
-    callback=speaker("bluetile"), 
+    callback=speaker("bluetile", sound_file="blue_tile_voice.wav"), 
     image="bluetile", 
     who_color="#2469ff"
     )
@@ -1296,7 +1296,7 @@ image dolly quiet:
     xalign 1.3
     
 define miso = Character("Miso Soup",
-    callback=speaker("miso"), 
+    callback=speaker("miso", sound_file="miso_voice.wav"), 
     image="miso", 
     who_color="#ab9d67"
     )
@@ -1324,7 +1324,7 @@ image miso quiet:
     yalign 1.25
 
 define sheet = Character("Sheet",
-    callback=speaker("sheet"), 
+    callback=speaker("sheet", sound_file="Sheet_Voice.wav"), 
     image="sheet", 
     who_color="fffefe"
     )
@@ -1350,7 +1350,7 @@ image sheet quiet:
     xalign 1.0
 
 define capsule = Character("Capsule", 
-    callback=speaker("capsule"), 
+    callback=speaker("capsule", sound_file="capsule_voice.wav"), 
     image="capsule", 
     who_color="#fb9609"
     )
@@ -1470,7 +1470,7 @@ image palettette quiet:
 
 
 define rcg = Character("Rose-Colored Glasses", 
-    callback=speaker("rcg"), 
+    callback=speaker("rcg", sound_file="rcg_voice.wav"), 
     image="rcg", 
     who_color="#ff80a6"
     )
@@ -1495,7 +1495,7 @@ image rcg quiet:
 
 
 define bcg = Character("Blue-Colored Glasses", 
-    callback=speaker("bcg"), 
+    callback=speaker("bcg", sound_file="bcg_voice.wav"), 
     image="bcg", 
     who_color="#aed6e3"
     )
@@ -1549,7 +1549,7 @@ image notepad quiet:
 
 
 define tag = Character("Tag",
-    callback=speaker("tag"), 
+    callback=speaker("tag", sound_file="tag_voice.wav"), 
     image="tag", 
     who_color="#ebeaef"
     )
@@ -1654,7 +1654,7 @@ image auto sad quiet:
 
 
 define tb = Character("Ticket Booth",
-    callback=speaker("tb"), 
+    callback=speaker("tb", sound_file="tb_voice.wav"), 
     image="tb", 
     who_color="#5D3266"
     )
