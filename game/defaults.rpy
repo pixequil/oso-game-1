@@ -36,6 +36,7 @@ default saw.retainerblock = False
 default saw.dolly = False
 default saw.museum = False
 default saw.rcash = False
+default saw.rdeal = False
 default saw.redtile = False
 default saw.bluetile = False
 default saw.war = False
