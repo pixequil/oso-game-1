@@ -96,6 +96,25 @@ screen blue_nav:
             hover "nav_main p"
             action Jump("museum_blue.painting")
 
+        showif saw.rcash == False:
+            imagebutton:
+                pos (200, 540)
+                idle "nav_rcash"
+                hover "nav_rcash p"
+                action Jump("museum_blue.redcash")
+
+image nav_rcash = Composite(
+    (150,150),
+    (0,0), "hitbox",
+    (50,50), "rcash_tiny",
+)
+image rcash_tiny:
+    "items/redcash.png"
+image nav_rcash p = Composite(
+    (280,280),
+    (0,0), "nav_rcash",
+    (80,0), "pnav lt"
+)
 image nav_main = Composite(
     (280,280),
     (0,0), "hitbox",
@@ -142,11 +161,11 @@ image bluetile_tiny2 = ConditionSwitch(
 
 label museum_blue:
     play music "sound/music/TheSeanimator22 - Dinner at 7pm.ogg" if_changed
-    if saw.blue == False:
-        jump .redcash
-    else:
-        $ renpy.choice_for_skipping()
-        call screen blue_nav
+    # if saw.blue == False:
+    #     jump .redcash
+    # else:
+    $ renpy.choice_for_skipping()
+    call screen blue_nav
 
 # label museum_blue:
 #     if saw.blue == False:
@@ -173,10 +192,10 @@ label .redcash:
     scene bg blue_red
     show posty astonished
     p "Woah. They weren't kidding. This whole exhibit is just blue stuff. My eyes feel like they're-"
+    show redcash
     p suspicious "Huh, what's this red thing doing here?" 
     p happy "Oh well. Yoink."
-    show redcash
-    $ saw.blue = True
+    $ saw.rcash = True
     $ item.red_cash = True
     "You got the {b}{color=#de474e}red cash{/color}{/b}!{p}It\'s money but it\'s red."
     p neutral "I wonder if anyone around here takes red cash."
@@ -290,19 +309,22 @@ label .rt:
     elif item.ladle_full and miso_blocked:
         show posty neutral
         show redtile 
-        p "Hey Red, mind if I ask you a favour!"
-        redtile "Sure, whatcha want me to do?"
-        p concerned "I attempted to \"add\" some colour to the exhibition, but Blue Tile stopped me."
-        redtile "Ah of course, Blue would never let his precious little pieces get harmed."
-        p suspicious "Well, I noticed that he gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple remarks about the color blue for me."
-        redtile "No way."
-        p astonished "Come on, you can get revenge for the red exhibit! Just some small talk!"
-        redtile "When it comes to Blue, there is never just small talk."
-        redtile "That guy can be so hung up on that, it's annoying."
-        redtile "One more hour of him talking and I am going to lose it!"
-        redtile "Besides, I've risked too much as is."
-        p concerned "What would it take?"
-        redtile "Maybe some cash. If I have to deal with him, at least I should be fairly compensated for my sacrifice."
+        if saw.rdeal:
+            redtile "Well? Where's my compensation?"
+        else:
+            p "Hey Red, mind if I ask you a favour!"
+            redtile "Sure, whatcha want me to do?"
+            p concerned "I attempted to \"add\" some colour to the exhibition, but Blue Tile stopped me."
+            redtile "Ah of course, Blue would never let his precious little pieces get harmed."
+            p suspicious "Well, I noticed that he gets really passionate when it comes to blue stuff, so I was hoping you could distract him with a couple remarks about the color blue for me."
+            redtile "No way."
+            p astonished "Come on, you can get revenge for the red exhibit! Just some small talk!"
+            redtile "When it comes to Blue, there is never just small talk."
+            redtile "That guy can be so hung up on that, it's annoying."
+            redtile "One more hour of him talking and I am going to lose it!"
+            redtile "Besides, I've risked too much as is."
+            p concerned "What would it take?"
+            redtile "Maybe some cash. If I have to deal with him, at least I should be fairly compensated for my sacrifice."
         label .rt_money:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
@@ -313,7 +335,7 @@ label .rt:
                     p "Let me check. Sorry, I've never bribed anybody before."
                     hide cash_bundle_1
                     jump .rt_money
-                "Offer red cash.":
+                "Offer red cash." if item.red_cash:
                     show redcash
                     show posty concerned
                     p "I have this red bill I found on the floor."
@@ -326,6 +348,9 @@ label .rt:
                     "Now's your chance to use that soup and get that painting!"
                     $ item.red_cash = False
                     $ bt_distracted = True
+                    jump museum_blue
+                "Never mind." if (item.red_cash == False):
+                    $ saw.rdeal = True
                     jump museum_blue
 
     elif item.ladle_full:
