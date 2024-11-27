@@ -96,6 +96,25 @@ screen blue_nav:
             hover "nav_main p"
             action Jump("museum_blue.painting")
 
+        showif saw.rcash == False:
+            imagebutton:
+                pos (200, 540)
+                idle "nav_rcash"
+                hover "nav_rcash p"
+                action Jump("museum_blue.redcash")
+
+image nav_rcash = Composite(
+    (150,150),
+    (0,0), "hitbox",
+    (50,50), "rcash_tiny",
+)
+image rcash_tiny:
+    "items/redcash.png"
+image nav_rcash p = Composite(
+    (280,280),
+    (0,0), "nav_rcash",
+    (80,0), "pnav lt"
+)
 image nav_main = Composite(
     (280,280),
     (0,0), "hitbox",
@@ -142,11 +161,11 @@ image bluetile_tiny2 = ConditionSwitch(
 
 label museum_blue:
     play music "sound/music/TheSeanimator22 - Dinner at 7pm.ogg" if_changed
-    if saw.blue == False:
-        jump .redcash
-    else:
-        $ renpy.choice_for_skipping()
-        call screen blue_nav
+    # if saw.blue == False:
+    #     jump .redcash
+    # else:
+    $ renpy.choice_for_skipping()
+    call screen blue_nav
 
 # label museum_blue:
 #     if saw.blue == False:
@@ -176,7 +195,7 @@ label .redcash:
     p suspicious "Huh, what's this red thing doing here?" 
     p happy "Oh well. Yoink."
     show redcash
-    $ saw.blue = True
+    $ saw.rcash = True
     $ item.red_cash = True
     "You got the {b}{color=#de474e}red cash{/color}{/b}!{p}It\'s money but it\'s red."
     p neutral "I wonder if anyone around here takes red cash."
