@@ -873,7 +873,7 @@ image bonbon quiet:
 
 
 define sgummy = Character("Sour Gummy", 
-    callback=speaker("sgummy"), 
+    callback=speaker("sgummy", sound_file="sour_gummy_voice.wav"), 
     image="sgummy", 
     who_color="#fd85ed"
     )
@@ -902,7 +902,7 @@ image sgummy quiet:
 
 
 define binoc = Character("Binoculars", 
-    callback=speaker("binoc"), 
+    callback=speaker("binoc", sound_file="binoculars_voice.wav"), 
     image="binoc", 
     who_color="#2c2c31"
     )
@@ -1243,7 +1243,7 @@ image bluetile scared quiet:
     yalign 2.0
 
 define neon = Character("Neon Lights", 
-    callback=speaker("neon"),
+    callback=speaker("neon", sound_file="neon_lights_voice.wav"),
     image="neon", 
     who_color="#96cac2"
     )
@@ -1393,7 +1393,7 @@ image capsule happy quiet:
 
 
 define buff = Character("Buff", 
-    callback=speaker("buff"), 
+    callback=speaker("buff", sound_file="buff_voice.wav"), 
     image="buff", 
     who_color="#b5bed6"
     )
@@ -1521,7 +1521,7 @@ image bcg quiet:
     yalign 1.15
 
 define notepad = Character("Notepad",
-    callback=speaker("notepad"), 
+    callback=speaker("notepad", sound_file="notepad_voice.wav"), 
     image="notepad", 
     who_color="#eff5f9"
     )
@@ -1577,7 +1577,7 @@ image tag quiet:
 
 
 define stick = Character("Stick Shift",
-    callback=speaker("stickshift"),
+    callback=speaker("stickshift", sound_file="stick_shift_voice.wav"),
     image="stickshift", 
     who_color="#434343"
     )
