@@ -242,8 +242,6 @@ label .win:
         "End the game?"
 
         "Yes, I'm finished.":
-            show win_art #289
-            ""
             jump credits
         "No, not yet.":
             jump park
