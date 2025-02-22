@@ -89,6 +89,9 @@ _(Don't remove the blank bullets)_
 
 ### Character Noises
 * Fanimator
+* FunnyBoy044
+* Satomi
+* BumpBob Looly
 
 ## Artists
 
