@@ -533,9 +533,6 @@ label .ahiss1:
         xalign -0.3
     $ renpy.transition(move, layer="master") #prevents interruption of the text window
     p -quiet "Woah! I don\'t want any trouble. I\'m just…"
-    show posty netural:
-        xalign 0.0
-    $ renpy.transition(move, layer="master") #prevents interruption of the text window
     p suspicious "Hang on, your land?"
     show deed #170
     ahiss "The deed\'s right here, darling. This kingdom belongs to me. See it for yourself."
