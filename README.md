@@ -253,8 +253,8 @@ _(Don't remove the blank bullets)_
 * plebkingdom - Break (Dome)
 * Nyakiye - 111 (Dome)
 * LuckyLootCrate - patience (Park)
-* tetroid - Outro
-* mintykiwi - cdafafad
+* tetroid - Outro (Credits)
+* mintykiwi - cdafafad (bonus track)
 
 ## Previous Game Directors
 * FunnyBoy044
