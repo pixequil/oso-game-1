@@ -39,7 +39,6 @@ default saw.rcash = False
 default saw.rdeal = False
 default saw.redtile = False
 default saw.bluetile = False
-default saw.war = False
 default saw.ahiss = False
 default saw.pal = False
 default saw.glasses = False
@@ -57,6 +56,8 @@ default saw.miso = False
 default saw.lost = False
 default saw.retainerpark = False
 default saw.easels = False
+default saw.capsule = False
+default saw.buff = False
 
 # VARIOUS FLAGS
 default win_flag = False

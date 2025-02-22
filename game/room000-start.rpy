@@ -5,16 +5,18 @@ image bg room:
 
 label start:
 
-    scene bg room
-    show posty sad
-    p "This game is currently in development, so it's missing much of its dialogue."
-    p happy "Technically, it's possible to complete it, though!"
+    jump firstscene
 
-    menu:
+    # scene bg room
+    # show posty sad
+    # p "This game is currently in development, so it's missing much of its dialogue."
+    # p happy "Technically, it's possible to complete it, though!"
 
-        "Start the game.":
-            jump firstscene
+    # menu:
+
+    #     "Start the game.":
+    #         jump firstscene
             
-        "Developer testing room.":
-            jump chartest
+    #     "Developer testing room.":
+    #         jump chartest
 
