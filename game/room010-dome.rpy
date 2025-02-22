@@ -4,6 +4,8 @@ image bg dome_top:
 image bg dome:
     "dbgs/Dome_dialogue_bg.png"
 
+default domedoor_text = "Seems like the door is locked now."
+
 screen dome_nav():
     viewport:
         child_size (1280,720)
@@ -50,6 +52,12 @@ screen dome_nav():
             idle "nav_sweets"
             hover "nav_sweets p"
             action Jump("dome.sweets")
+        showif (win_flag == True):
+            imagebutton: # trying to enter the dome now that cb is gone
+                pos (860, 378)
+                idle "nav_domedoor"
+                hover "nav_domedoor p"
+                action Notify(domedoor_text)
                 
 image nav_sweets = Composite(
     (240,280),
@@ -84,6 +92,16 @@ image nav_cb p = Composite(
     (0,0), "nav_cb",
     (40,20), "pnav up"
 )
+image nav_domedoor = Composite(
+    (240,280),
+    (0,0), "hitbox",
+)
+image nav_domedoor p = Composite(
+    (240,280),
+    (0,0), "nav_domedoor",
+    (40,20), "pnav rt"
+)
+
 
 
 label dome:
