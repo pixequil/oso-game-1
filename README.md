@@ -45,7 +45,7 @@ _(Don't remove the blank bullets)_
 * The Lemon Demon
 * FluffyStar_XD
 * Martysh12
-* Compital
+* PenTick
 * Crookie
 * XKZ
 
