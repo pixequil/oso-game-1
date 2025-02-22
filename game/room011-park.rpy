@@ -128,7 +128,7 @@ label park:
 #         "Back to main street.":
 #             jump mainstreet
 
-label .bin:
+label .bin: #424
     scene bg park
     if quest.retainer:
         show posty neutral
