@@ -382,14 +382,24 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
+            style "title_custom"
+
+            text "{b}Open Source Objects:\nThe Game{/b}":
+                size 40
+                
+
+        vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
 
             text "[config.version]":
                 style "main_menu_version"
 
+style title_custom:
+    xpos 300
+    yalign 0.0
+    yoffset 22
+    
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -404,8 +414,8 @@ style main_menu_frame:
     background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
-    xalign 1.0
-    xoffset -20
+    xalign 0.0
+    xoffset 20
     xmaximum 800
     yalign 1.0
     yoffset -20
@@ -418,6 +428,8 @@ style main_menu_title:
 
 style main_menu_version:
     properties gui.text_properties("version")
+    color "#565656"
+    size 15
 
 
 ## Game Menu screen ############################################################
