@@ -193,7 +193,10 @@ label .redcash:
     $ saw.rcash = True
     $ item.red_cash = True
     "You got the {b}{color=#de474e}red cash{/color}{/b}!{p}It\'s money but it\'s red."
-    p neutral "I wonder if anyone around here takes red cash."
+    p neutral "... This isn't real money."
+    if saw.dolly:
+        p "Dolly definitely won't take this."
+    p suspicious "Who even {i}would{/i} want this?"
     jump museum_blue
         
 label .rt:
