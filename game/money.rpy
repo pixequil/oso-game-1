@@ -1,19 +1,87 @@
-image cash_bundle_1:
-    "items/cash_bundle_1.png"
-    truecenter
-    zoom 1.5
+# image cash_bundle_1:
+#     "items/cash_bundle_1.png"
+#     truecenter
+#     zoom 1.5
 
-image cash_bundle_2:
-    "items/cash_bundle_2.png"
-    truecenter
-    zoom 1
+# image cash_bundle_2:
+#     "items/cash_bundle_2.png"
+#     truecenter
+#     zoom 1
 
-image cash_bundle_3:
-    "items/cash_bundle_3.png"
-    truecenter
-    zoom 1.3
+# image cash_bundle_3:
+#     "items/cash_bundle_3.png"
+#     truecenter
+#     zoom 1.3
 
-# todo: cash bundle 2 #249
+image cash_payment:
+    "items/cash_payment.png"
+
+image cash_loot:
+    "items/cash_loot.png"
+    zoom 0.5
+
+image cash_total = Composite(
+    (400,400),
+    (0,0), "cash_brandsoda",
+    (400-260,50), "cash_bust",
+    (150+20,100), "cash_alley",
+    (60+20,120), "cash_main",
+)
+
+image cash_brandsoda = ConditionSwitch(
+    "quest.bs == True", "cash_payment",
+    "quest.bs == False", "hitboxf"
+)
+image cash_bust = ConditionSwitch(
+    "quest.money_food == True", "cash_payment",
+    "quest.money_food == False", "hitboxf"
+)
+image cash_main = ConditionSwitch(
+    "item.cash_main == True", "cash_loot",
+    "item.cash_main == False", "hitboxf"
+)
+image cash_alley = ConditionSwitch(
+    "item.cash_alley == True", "cash_loot",
+    "item.cash_alley == False", "hitboxf"
+)
+
+screen moneytest_buttons:
+    vbox:
+        textbutton "Brand Soda":
+            action ToggleVariable("quest.bs")
+        textbutton "Marble Bust":
+            action ToggleVariable("quest.money_food")
+        textbutton "Main Street":
+            action ToggleVariable("item.cash_main")
+        textbutton "Alley":
+            action ToggleVariable("item.cash_alley")
+
+label moneytest:
+    scene bg room
+    stop music
+
+    "money test!"
+    show cash_payment at truecenter
+    "payment"
+    hide cash_payment
+    show cash_loot at truecenter
+    "loot"
+    hide cash_loot
+    show screen moneytest_buttons
+    show cash_brandsoda at truecenter
+    show cash_bust at left
+    show cash_main at right
+    show cash_alley at topright
+    "separately"
+    hide cash_brandsoda
+    hide cash_bust
+    hide cash_main
+    hide cash_alley
+    show cash_total at truecenter
+    "total"
+
+    return
+
 
 label money_get:
     if money == 0:
