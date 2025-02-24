@@ -157,12 +157,13 @@ screen mainstreet_nav():
             idle "nav_tb"
             hover "nav_tb p"
             action Jump("mainstreet.tb")
-        imagebutton: #main cash
-            xpos 132
-            ypos 480
-            idle "nav_maincash"
-            hover "nav_maincash p"
-            action Jump("mainstreet.cash")
+        showif (item.cash_main == False):
+            imagebutton: #main cash
+                xpos 132
+                ypos 480
+                idle "nav_maincash"
+                hover "nav_maincash p"
+                action Jump("mainstreet.cash")
 
 image nav_maincash = Composite(
     (150,150),
@@ -170,7 +171,7 @@ image nav_maincash = Composite(
     (50,50), "cash_loot_nav",
 )
 image nav_maincash p = Composite(
-    (280,280),
+    (150,150),
     (0,0), "nav_maincash",
     (80,0), "pnav lt"
 )
@@ -413,6 +414,7 @@ label .toasty:
     jump mainstreet
 
 label .cash:
+    $ last.mainx = 0.0
     scene bg mainstreet
     show posty happy
     show cash_loot at truecenter

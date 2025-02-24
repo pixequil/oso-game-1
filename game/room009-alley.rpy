@@ -43,6 +43,24 @@ screen alley_nav:
             hover "nav_tag p"
             action Jump("alley.tag")
 
+        showif (item.cash_alley == False):
+            imagebutton: # money
+                pos (606, 151)
+                idle "nav_alleycash"
+                hover "nav_alleycash p"
+                action Jump("alley.cash")
+
+image nav_alleycash = Composite(
+    (150,150),
+    (0,0), "hitbox",
+    (50,50), "cash_loot_nav",
+)
+image nav_alleycash p = Composite(
+    (150,150),
+    (0,0), "nav_alleycash",
+    (0,0), "pnav up"
+)
+
 image nav_tag = Composite(
     (240,280),
     (0,0), "hitbox",
@@ -85,6 +103,22 @@ label alley:
 #             jump .stick
 #         "Get outta here":
 #             jump mainstreet
+
+label .cash:
+    $ last.alleyy = 0.0
+    scene bg alley
+    show posty suspicious
+    show cash_loot at truecenter
+    p "Money in an alleyway..."
+    if saw.dolly:
+        p "Better grab it. Since I need it..."
+    else:
+        p concerned "Well... their fault for misplacing it. It's an alleyway, after all."
+    hide cash_loot
+    $ money += 1
+    $ item.cash_alley = True
+    call money_get
+    jump alley
 
 label .tag:
     $ last.alleyy = 0.2
