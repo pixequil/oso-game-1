@@ -19,6 +19,9 @@ image cash_payment:
 image cash_loot:
     "items/cash_loot.png"
     zoom 0.5
+image cash_loot_nav:
+    "cash_loot"
+    zoom 0.5
 
 image cash_total = Composite(
     (400,400),
@@ -149,7 +152,12 @@ label .dfirst:
     dolly "Or it could be filled with an everyday household object."
     dolly "It's all chance, honey! Buy one today and you can win practically anything."
     p happy "Alright, you've convinced me! How much?"
-    dolly "How much do you have?"
+    show posty astonished before
+    dolly "{b}{color=#ffff00}All of the money in the area{/color}{/b}."
+    p astonished anim "WHAT?!"
+    dolly "Well, all of the real money. I think I saw some fake money recently; don't waste my time with it."
+    dolly "But don't you want it?"
+    p sad "Yeah..."
     $ saw.dolly = True
     jump .money_check
 
@@ -158,8 +166,8 @@ label .drepeat:
     p "Hi, Dolly!"
     dolly "Ah, Posty! Rich yet?"
     show lootbox at truecenter with moveinbottom
-    dolly "The random loot box is calling your name!"
-    p "Well..."
+    dolly "The random loot box is calling your name! Don't you want it?"
+    p sad "Yeah..."
     jump .money_check
 
 label .dlast:
@@ -182,36 +190,72 @@ label .money_check:
             dolly "Oooh, sorry. There's no market anymore in red dollars."
             show posty concerned
             dolly "How about some real money?"
-            p concerned "Sorry, I got nothing."
+            p "Oh, right, I forgot."
+            p "Sorry, I got nothing."
             dolly "Come back when you have actual cash, Posty."
             hide lootbox
             jump mainstreet
         else:
-            p concerned "I'm afraid I don't have any money."
+            p concerned "But I'm afraid I don't have any money."
             p concerned "Can we barter?"
             dolly "No."
             dolly "Come back when you have a penny to your name, Posty."
             hide lootbox
             jump mainstreet
     elif money == 1:
-        show cash_bundle_1 at truecenter
+        show cash_total at truecenter
         hide lootbox
         p happy "I have some money. Is this enough for anything?"
         dolly "Only my pocket lint."
-        dolly "I want A LOT of money, Posty. Double what you have now."
+        p astonished "ONLY POCKET LINT?!"
+        p "THIS IS SO MUCH???"
+        dolly "I want {b}{color=#ffff00}all of the money in the area{/color}{/b}, Posty. More than double what you have now."
         p happy "Ok, I'll be back later."
         jump mainstreet
     elif money == 2:
-        show cash_bundle_2 at truecenter
+        show cash_total at truecenter
         hide lootbox
         p happy "I have some money. Is this enough for anything?" 
-        dolly "Only my pocket lint."
-        dolly "I want A LOT of money, Posty. Double what you have now."
+        dolly "I want {b}{color=#ffff00}all of the money in the area{/color}{/b}, Posty. This is, like, half that."
         p happy "Ok, I'll be back later."
         jump mainstreet
     elif money == 3:
-        show cash_bundle_3 at truecenter
-        p happy "I've got plenty of money. Here you go."
+        show cash total at truecenter
+        hide lootbox
+        p happy "I have all this money! Is this enough for anything?"
+        dolly "Wow, this is a lot of money!"
+        show posty astonished before
+        dolly "But it's not {b}{color=#ffff00}all of the money in the area{/color}{/b}."
+        p astonished anim "HOW?!"
+        dolly "I can smell it... there's still something left, and it's close by..."
+        if quest.bs == False:
+            dolly "OH! So, so, sooo close by. I think that purple guy next to me has it!"
+            p suspicious "You... want me to rob that guy?"
+            dolly "Heavens no, but there must be some way to get that idiot's life savings."
+            p angry quiet "..."
+        elif quest.money_food == False:
+            dolly "Oh, it's wafting out from the food exhibit."
+            p suspicious "Not the smell of food?"
+            dolly "No, I've spent my whole life eating food, so I'm desensitized to it."
+            p angry "Is that how that works?"
+        elif item.cash_main == False:
+            dolly "I think it must be somewhere on this very street!"
+            p suspicious "Like, on the ground?"
+            dolly "Yes, just like in the alleyway!"
+            p "Wait, you saw me get that? Why are you making me collect this stuff for you? Get it yourself!"
+            dolly "You sure? You won't get my lootbox if I'm the one who has to get up and go grab it."
+            p "Sure I will, I can just reach behind your stand while you're gone."
+            dolly "And that's why I'm staying here."
+            p angry "Touche."
+        elif item.cash_alley == False:
+            dolly "Might be coming from that alley over there..."
+            p suspicious "So you want me to go in there and rob someone?"
+            dolly "Heavens no! It's probably just laying around on the ground!"
+            p angry "Well, I guess it wouldn't be the first time."
+        jump mainstreet
+    elif money == 4:
+        show cash_total at truecenter
+        p happy "I've got all the money! Here you go."
         dolly "Hmmm, sorry. You're still short."
         p astonished "What?!?"
         dolly "Haha, I'm just screwing with you. Of course you have enough."
