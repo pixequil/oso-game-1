@@ -1,17 +1,3 @@
-# image cash_bundle_1:
-#     "items/cash_bundle_1.png"
-#     truecenter
-#     zoom 1.5
-
-# image cash_bundle_2:
-#     "items/cash_bundle_2.png"
-#     truecenter
-#     zoom 1
-
-# image cash_bundle_3:
-#     "items/cash_bundle_3.png"
-#     truecenter
-#     zoom 1.3
 
 image cash_payment:
     "items/cash_payment.png"
@@ -260,7 +246,7 @@ label .money_check:
         p astonished "What?!?"
         dolly "Haha, I'm just screwing with you. Of course you have enough."
         show posty angry
-        hide cash_bundle_3
+        hide cash_total
         "{b}{color=#e3d3ab}Dolly{/color}{/b} took all your {b}money{/b}!"
         if item.red_cash:
             "... except the worthless {b}{color=#ff0000}red cash{/color}{/b}."
