@@ -28,11 +28,6 @@ image redcash:
     yalign 0.5
     zoom 3.0
 
-image cash_bundle_1:
-    "items/cash_bundle_1.png"
-    truecenter
-    zoom 1.5
-
 image painting_blue:
     "items/blue_exhibit_main_painting.png"
     truecenter
