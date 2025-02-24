@@ -96,7 +96,13 @@ _(Don't remove the blank bullets)_
 ## Artists
 
 ### Mini Sprites
-* 
+* SilverSpewer
+* Urie
+* Enoki
+* Stray
+* monologueslog
+* multi
+* APotato/HriHof
 * -shapester-
 * 4DJumpman256
 * Bryce B.
@@ -140,7 +146,9 @@ _(Don't remove the blank bullets)_
 * multi
 * Tempøral Løser
 * VAPORTUESGAYTOR <3
-* 
+* Airy
+* Budd3rScotch
+* seaf0amm
 * A.R.S.O.N.
 * APigeonWithCoffee
 * AxoElle
@@ -160,7 +168,8 @@ _(Don't remove the blank bullets)_
 * Zero
 
 ### Navigation Backgrounds
-* 
+* Martysh12
+* Duckling
 * Beyblady
 * Green
 * MoeYolk
@@ -191,7 +200,6 @@ _(Don't remove the blank bullets)_
 ### Props
 * Martysh12
 * Faye's_odd.5450
-* 
 * B.w.m.p.i.i
 * betamaj
 * Frog!
@@ -207,6 +215,28 @@ _(Don't remove the blank bullets)_
 * Fizu poppu
 * Snek86
 * chroma!!
+* Vio!
+* XKZ
+* Eli
+* SillySussy
+* juul in schuul
+* DemiDude (Animator of the Universe)
+* RetroBoi128
+* FitzyLitzyXD
+* ToastIsOk
+* CrispBacon
+* Thotrike
+* Sparkle Spark
+* Jurta
+* Dafork_gaming
+* JellyCrab
+* swaggy9ine
+* YvanBFB Animations
+* F4n¡matør (or just Fanimator)
+* ARTTGOG
+* partyslime
+* nexty
+* FrameByFramer
 
 ### Additional Character Designers
 * DominicK 
