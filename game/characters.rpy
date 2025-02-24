@@ -1840,7 +1840,7 @@ image rm quiet:
     xalign 1.0
 
 define jb = Character("Jukebox",
-    callback=speaker("jb", sound_file="game_voice_1.wav"),
+    callback=speaker("jb", sound_file="game_voice_2.wav"),
     image="jb", 
     who_color="#482C40"
     )

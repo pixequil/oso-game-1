@@ -45,7 +45,7 @@ _(Don't remove the blank bullets)_
 * The Lemon Demon
 * FluffyStar_XD
 * Martysh12
-* Compital
+* PenTick
 * Crookie
 * XKZ
 
@@ -89,6 +89,9 @@ _(Don't remove the blank bullets)_
 
 ### Character Noises
 * Fanimator
+* FunnyBoy044
+* Satomi
+* BumpBob Looly
 
 ## Artists
 
@@ -250,8 +253,8 @@ _(Don't remove the blank bullets)_
 * plebkingdom - Break (Dome)
 * Nyakiye - 111 (Dome)
 * LuckyLootCrate - patience (Park)
-* tetroid - Outro
-* mintykiwi - cdafafad
+* tetroid - Outro (Credits)
+* mintykiwi - cdafafad (bonus track)
 
 ## Previous Game Directors
 * FunnyBoy044

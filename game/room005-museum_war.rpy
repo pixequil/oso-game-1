@@ -259,11 +259,8 @@ label museum_war:
     if renpy.music.get_playing() != "sound/music/Gavimator - the jungle.ogg":
         play music "sound/music/Gavimator - the jungle intro.ogg" if_changed
         queue music "sound/music/Gavimator - the jungle.ogg"
-    if saw.war == False:
-        jump .capsulefirst
-    else:
-        $ renpy.choice_for_skipping()
-        call screen war_nav
+    $ renpy.choice_for_skipping()
+    call screen war_nav
 
 # label museum_war:
 #     if saw.war == False:
@@ -533,9 +530,6 @@ label .ahiss1:
         xalign -0.3
     $ renpy.transition(move, layer="master") #prevents interruption of the text window
     p -quiet "Woah! I don\'t want any trouble. I\'m just…"
-    show posty netural:
-        xalign 0.0
-    $ renpy.transition(move, layer="master") #prevents interruption of the text window
     p suspicious "Hang on, your land?"
     show deed #170
     ahiss "The deed\'s right here, darling. This kingdom belongs to me. See it for yourself."
@@ -654,14 +648,24 @@ label .ahiss3:
     ahiss "You shall rue the day you crossed my path, glorified breadbox!" 
     jump museum_war
 
-label .buff:
-    if burger_extinguish == True:
-        jump .buff2
+label .buffsaw:
     scene bg museum_war
     show burger fire
     show posty neutral
     show buff
-    p happy "Ooh, hello! You look like you know a lot about art!"
+    jump .buffsawin # spaghetti! smelly!
+
+label .buff:
+    if burger_extinguish == True:
+        jump .buff2
+    elif saw.buff == True:
+        jump .buffsaw
+    scene bg museum_war
+    show burger fire
+    show posty happy
+    show buff
+    $ saw.buff = True
+    p "Ooh, hello! You look like you know a lot about art!"
     buff "Why thank you! I am a fanatic when it comes to these things!"
     buff "The war exhibit in particular is one of the oldest collections of pre-OSO artwork in the world, some of them dating back thousands of years!"
     p astonished "Thousands of years?!"
@@ -670,9 +674,14 @@ label .buff:
     buff "This watercolor painting shows the very last moments of the artist who had painted it."
     buff "If you listen closely, you can hear faint crackling and screams..."
     p concerned quiet "..."
+label .buffsawin: # for jumping to the middle of the conversation!
     buff "As though he is still burning alive on that August evening..."
     p suspicious "{i}I may not know what watercolor is, but they are bluffing!{/i}"
+    if (item.heavier == False):
+        p "{i}But it's not like I can do anything about this bluffing buff.{/i}"
+        jump museum_war
     p "{i}Maybe I should try out this heavier thing, just in case...{/i}"
+    play sound "sound/shoop.wav"
     show burger out
     $ item.heavier = False
     $ burger_extinguish = True
@@ -730,7 +739,7 @@ label .capsulefirst:
     p happy "Oh sure! No problem!"
     show capsule happy
     show heavier 
-    $ saw.war = True
+    $ saw.capsule = True
     $ item.heavier = True
     "You got the {b}heavier{/b}!{p}This thing can remove a lot of fire from an area. It just requires a bit of elbow grease to get it working." 
     hide heavier
@@ -740,6 +749,8 @@ label .capsulefirst:
     jump museum_war
 
 label .capsule:
+    if (saw.capsule == False):
+        jump .capsulefirst
     scene bg museum_war
     show whatever painting at truecenter
     show posty neutral
