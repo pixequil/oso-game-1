@@ -157,6 +157,23 @@ screen mainstreet_nav():
             idle "nav_tb"
             hover "nav_tb p"
             action Jump("mainstreet.tb")
+        imagebutton: #main cash
+            xpos 132
+            ypos 480
+            idle "nav_maincash"
+            hover "nav_maincash p"
+            action Jump("mainstreet.cash")
+
+image nav_maincash = Composite(
+    (150,150),
+    (0,0), "hitbox",
+    (50,50), "cash_loot_nav",
+)
+image nav_maincash p = Composite(
+    (280,280),
+    (0,0), "nav_maincash",
+    (80,0), "pnav lt"
+)
 
 image nav_tb = Composite(
     (200,280),
@@ -395,6 +412,21 @@ label .toasty:
     call toasty_hints
     jump mainstreet
 
+label .cash:
+    scene bg mainstreet
+    show posty happy
+    show cash_loot at truecenter
+    p "Oh look, there's money!"
+    if saw.dolly:
+        p "Better grab it!"
+    else:
+        p "Wonder what it's doing here! Oh well, I'll just take it."
+    hide cash_loot
+    $ money += 1
+    $ item.cash_main = True
+    call money_get
+    jump mainstreet
+
 label .tb:
     $ last.mainx = 0.0
     scene bg mainstreet
@@ -441,6 +473,10 @@ label .brandsoda:
     show bs behind posty
 
     bs "Yo, Posty! How\'s my favorite mailbox?"
+    if that_dork:
+        p quiet "{i}It's that dork Dolly was talking about... act natural.{/i}"
+        p astonished quiet "{i}WAIT, THIS IS MY FRIEND BRAND SODA! WTF!{/i}"
+    show posty astonished -quiet
     p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
     bs "Dope. Who\'s it for?"
     p happy "The OSO Dome."
@@ -571,10 +607,10 @@ label .yd_bs_money:
 
     $ money += 1
     $ quest.bs = True
-    show cash_bundle_1
+    show cash_brandsoda at truecenter
     $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
     "{b}{color=#df7dff}Brand Soda{/color}{/b} gave you {b}some money{/b}!"
-    hide cash_bundle_1
+    hide cash_brandsoda
     call money_get
 
     p happy "Wow, thanks Brand Soda!"

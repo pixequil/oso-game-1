@@ -87,23 +87,22 @@ label moneytest:
 
 
 label money_get:
+    "..."
+    show cash_total at truecenter
     if money == 0:
         "A player should never see this text."
     elif money == 1:
-        show cash_bundle_1 at truecenter
         "You now have {b}some money{/b}!"
-        hide cash_bundle_1
-        return
     elif money == 2:
-        show cash_bundle_2 at truecenter
-        "You now have {b}some money{/b}!"
-        hide cash_bundle_2
-        return
+        "You now have {b}some more money{/b}!"
     elif money == 3:
-        show cash_bundle_3 at truecenter
         "You now have {b}a lot of money{/b}!"
-        hide cash_bundle_3
-        return
+    elif money == 4:
+        "You now have {b}{color=#ffff00}all of the money in the area{/color}{/b}!"
+    if saw.dolly:
+        "Nice! You needed this for that lootbox!"
+    hide cash_total
+    return
 
 label dolly:
     $ last.mainx = 1.0
@@ -220,7 +219,7 @@ label .money_check:
         p happy "Ok, I'll be back later."
         jump mainstreet
     elif money == 3:
-        show cash total at truecenter
+        show cash_total at truecenter
         hide lootbox
         p happy "I have all this money! Is this enough for anything?"
         dolly "Wow, this is a lot of money!"
@@ -231,13 +230,14 @@ label .money_check:
         if quest.bs == False:
             dolly "OH! So, so, sooo close by. I think that purple guy next to me has it!"
             p suspicious "You... want me to rob that guy?"
-            dolly "Heavens no, but there must be some way to get that idiot's life savings."
-            p angry quiet "..."
+            dolly "Heavens no, but there must be some way to get that dork's life savings."
+            $ that_dork = True
+            p annoyed quiet "..."
         elif quest.money_food == False:
             dolly "Oh, it's wafting out from the food exhibit."
             p suspicious "Not the smell of food?"
             dolly "No, I've spent my whole life eating food, so I'm desensitized to it."
-            p angry "Is that how that works?"
+            p annoyed "Is that how that works?"
         elif item.cash_main == False:
             dolly "I think it must be somewhere on this very street!"
             p suspicious "Like, on the ground?"
@@ -246,12 +246,12 @@ label .money_check:
             dolly "You sure? You won't get my lootbox if I'm the one who has to get up and go grab it."
             p "Sure I will, I can just reach behind your stand while you're gone."
             dolly "And that's why I'm staying here."
-            p angry "Touche."
+            p annoyed "Touche."
         elif item.cash_alley == False:
             dolly "Might be coming from that alley over there..."
             p suspicious "So you want me to go in there and rob someone?"
             dolly "Heavens no! It's probably just laying around on the ground!"
-            p angry "Well, I guess it wouldn't be the first time."
+            p annoyed "Well, I guess it wouldn't be the first time."
         jump mainstreet
     elif money == 4:
         show cash_total at truecenter

@@ -78,6 +78,7 @@ default trophy_crafted = False
 default vendingmachine_used = False
 default toastmeister = False
 default toastytwopaintings = False
+default that_dork = False
 
 # VARIOUS COUNTERS
 default money = 0
