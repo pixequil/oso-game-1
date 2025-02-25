@@ -18,12 +18,12 @@ label credits:
     centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe Ga{/color}{/cps}{/size}{p=0.2}{nw}"
     centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe Gam{/color}{/cps}{/size}{p=0.2}{nw}"
     centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe Game{/color}{/cps}{/size}{p=0.55}{nw}"
-    centered "{size=50}{cps=0}{color=#ffae80}[cred2]{/color}{/cps}{/size}{p=[plen]}{nw}"
+    centered "{size=30}{cps=0}{color=#ffae80}[cred2]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#ffdf80}[cred3]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#f0ff80}[cred4]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#bfff80}[cred5]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#d4ff80}[cred6]{/color}{/cps}{/size}{p=[plen]}{nw}"
-    centered "{size=25}{cps=0}{color=#91ff80}[cred7]{/color}{/cps}{/size}{p=[plen]}{nw}"
+    centered "{size=30}{cps=0}{color=#91ff80}[cred7]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#80ff9f}[cred8]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#80ffce}[cred9]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#80ffff}[cred10]{/color}{/cps}{/size}{p=[plen]}{nw}"
@@ -42,7 +42,7 @@ label credits:
 default cred1 = "Open Source Objects: The Game"
 # unused
 
-default cred2 = "Creative Director: {b}FunnyBoy044{/b}\nProduction Director: {b}Satomi{/b}\n\nPath Designer: {b}Olivia/timepavement{/b}\nOutline Adaptation: {b}Satomi{/b}"
+default cred2 = "Creative Director\n{b}FunnyBoy044{/b}\n\nProduction Director\n{b}Satomi{/b}\n\n\n\nPath Designer\n{b}Olivia/timepavement{/b}\n\nOutline Adaptation\n{b}Satomi{/b}"
 
 default cred3 = "Puzzle Designers {b}\nSteppie Berry\nDominicK\nTawnyBarnOwl\nRiley Cooke\nMeow{/b}\n\nProgrammers {b}\nMartysh12\nA Jar of Copper Salts\nFunnyBoy044\nSatomi\nXKZ{/b}"
 
@@ -52,9 +52,9 @@ default cred5 = "Dialogue{b}\nXKZ{space=120}xbeo\nGuru{space=120}Jurta\nMulti{sp
 
 default cred6 = "Original Writers{b}\nSteppie Berry\nBumpBob Looly\nFunnyBoy044{/b}\n\n\n\nCharacter Noises{b}\nFanimator\nFunnyBoy044\nSatomi\nBumpBob Looly{/b}"
 
-default cred7 = "{size=+20}ARTISTS{/size}\n\nMini Sprites{b}\nEmi{space=120}Nune\nUrie {space=120}Enoki \nGreen{space=120}aples\nStray {space=120}Multi \nJTRock{space=120}Nolvri\nSatomi{space=120}brnzen\nChorkey{space=120}Legoian\nDelango{space=120}Bryce B.\niroha/AZ{space=120}skokapus\nRand0m_Anon{space=120}zeekybluu\n-shapester-{space=120}FunnyBoy044\nJustCherry!{space=120}MsBonnieArt\nSilverSpewer{space=120}monologueslog\n4DJumpman256{space=120}alexlion0511\nThatBlueSquare.{space=120}TheSeanimator\nGiantonio Ortega{space=120}APotato/HriHof\nZ Animations Studio{space=120}Non Edible Taco\nNotReallyA_CardFan{space=120}RoastedToastedTea{/b}"
+default cred7 = "{size=+20}ARTISTS{/size}\n\nMini Sprites{b}\nEmi{space=120}Urie{space=120}Nune\nEnoki{space=120}Stray{space=120}multi\nGreen{space=120}aples{space=120}JTRock\nNolvri{space=120}Satomi{space=120}brnzen\nChorkey{space=120}Legoian{space=120}Delango\nBryce B.{space=120}iroha/AZ{space=120}skokapus\nzeekybluu{space=120}-shapester-{space=120}FunnyBoy044\nJustCherry!{space=120}MsBonnieArt{space=120}Rand0m_Anon\nSilverSpewer{space=120}4DJumpman256{space=120}alexlion0511\nmonologueslog{space=120}TheSeanimator{space=120}APotato/HriHof\nNon Edible Taco{space=120}ThatBlueSquare.{space=120}Giantonio Ortega\nRoastedToastedTea{space=120}NotReallyA_CardFan\nZ Animations Studio{/b}"
 
-default cred8 = "Talk Sprites{b}\nAiry\nUrie{space=120}Zero\nmulti{space=120}enden\ngomigg{space=120}Mewbie\nAxoElle{space=120}Enturos\nDuckling{space=120}meme cat\nMartysh12{space=120}Smori3000\nCosmiKirby{space=120}A.R.S.O.N.\nBudd3rScotch{space=120}seaf0amm\nclouds26920{space=120}Melody Love\n4DJumpman256{space=120}Fluffystar_XD\nAPotato/HriHof{space=120}Tempøral Løser\nglowingscramble{space=120}Pacifist Player\nShairmane Ubaos{space=120}APigeonWithCoffee\nVAPORTUESGAYTOR <3{space=120}This AU of Reality\nNovaInterstellations{space=120}A Jar of Copper Salts\nStephanieStar/Mimistarlish{/b}"
+default cred8 = "Talk Sprites{b}\nAiry{space=120}Urie\nZero{space=120}multi\nenden{space=120}gomigg\nMewbie{space=120}AxoElle\nEnturos{space=120}seaf0amm\nDuckling{space=120}meme cat\nMartysh12{space=120}Smori3000\nCosmiKirby{space=120}A.R.S.O.N.\nclouds26920{space=120}Melody Love\n4DJumpman256{space=120}Budd3rScotch\nFluffystar_XD{space=120}APotato/HriHof\nTempøral Løser{space=120}glowingscramble\nPacifist Player{space=120}Shairmane Ubaos\nAPigeonWithCoffee{space=120}VAPORTUESGAYTOR <3\nThis AU of Reality{space=120}NovaInterstellations\nA Jar of Copper Salts{space=120}StephanieStar/Mimistarlish{/b}"
 
 default cred9 = "Navigation Backgrounds{b}\nBeyblady\nGreen\nMoeYolk\nMulti\nPlugboy (Plug or Pixar)\nstoryboy\nuwo\nWafflemambooze\nАнимации Жени (Eugene's Animations)\nMartysh12 \nDuckling {/b}"
 
@@ -72,4 +72,4 @@ default cred15 = "MUSIC\n\n{b}A Jar of Copper Salts {/b} -{i} citb {/i}{size=-10
 
 default cred16 = "Previous Game Directors {b}\nFunnyBoy044\nSteppie Berry\nSequencer\nsome_nerd/SDSH{/b}\n\nPrevious Programmers {b}\nSequencer\nsom1sezhi\nA Jar of Copper Salts\nMeow{/b}\n\nPrevious Game Team {b}\nNeil's Shades\nSteppie Berry\nMaroue Reus “Dunkyl 🔣🔣”\nOlivia/timepavement{/b}"
 
-default cred17 = "Creator: {b}Hexagon{/b}\n\nOrganizers {b}\nteearie\nYellow Pancake\nwolfolotl\nMaroue Reus “Dunkyl 🔣🔣”\nwishfixers\nMulti\nKyle Catchphrase{/b}"
+default cred17 = "Creator\n{b}Hexagon{/b}\n\nOrganizers {b}\nteearie\nYellow Pancake\nwolfolotl\nMaroue Reus “Dunkyl 🔣🔣”\nwishfixers\nMulti\nKyle Catchphrase{/b}"
