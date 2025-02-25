@@ -60,7 +60,7 @@ default saw.capsule = False
 default saw.buff = False
 
 # VARIOUS FLAGS
-default win_flag = True
+default win_flag = False
 default party_bs = False
 default miso_took = False
 default miso_blocked = False

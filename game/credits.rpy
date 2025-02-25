@@ -23,7 +23,7 @@ label credits:
     centered "{size=30}{cps=0}{color=#f0ff80}[cred4]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#bfff80}[cred5]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#d4ff80}[cred6]{/color}{/cps}{/size}{p=[plen]}{nw}"
-    centered "{size=20}{cps=0}{color=#91ff80}[cred7]{/color}{/cps}{/size}{p=[plen]}{nw}"
+    centered "{size=25}{cps=0}{color=#91ff80}[cred7]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#80ff9f}[cred8]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#80ffce}[cred9]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#80ffff}[cred10]{/color}{/cps}{/size}{p=[plen]}{nw}"
@@ -55,7 +55,6 @@ default cred6 = "Original Writers{b}\nSteppie Berry\nBumpBob Looly\nFunnyBoy044{
 default cred7 = "{size=+20}ARTISTS{/size}\n\nMini Sprites{b}\nEmi{space=120}Nune\nUrie {space=120}Enoki \nGreen{space=120}aples\nStray {space=120}Multi \nJTRock{space=120}Nolvri\nSatomi{space=120}brnzen\nChorkey{space=120}Legoian\nDelango{space=120}Bryce B.\niroha/AZ{space=120}skokapus\nRand0m_Anon{space=120}zeekybluu\n-shapester-{space=120}FunnyBoy044\nJustCherry!{space=120}MsBonnieArt\nSilverSpewer{space=120}monologueslog\n4DJumpman256{space=120}alexlion0511\nThatBlueSquare.{space=120}TheSeanimator\nGiantonio Ortega{space=120}APotato/HriHof\nZ Animations Studio{space=120}Non Edible Taco\nNotReallyA_CardFan{space=120}RoastedToastedTea{/b}"
 
 default cred8 = "Talk Sprites{b}\nAiry\nUrie{space=120}Zero\nmulti{space=120}enden\ngomigg{space=120}Mewbie\nAxoElle{space=120}Enturos\nDuckling{space=120}meme cat\nMartysh12{space=120}Smori3000\nCosmiKirby{space=120}A.R.S.O.N.\nBudd3rScotch{space=120}seaf0amm\nclouds26920{space=120}Melody Love\n4DJumpman256{space=120}Fluffystar_XD\nAPotato/HriHof{space=120}Tempøral Løser\nglowingscramble{space=120}Pacifist Player\nShairmane Ubaos{space=120}APigeonWithCoffee\nVAPORTUESGAYTOR <3{space=120}This AU of Reality\nNovaInterstellations{space=120}A Jar of Copper Salts\nStephanieStar/Mimistarlish{/b}"
-
 
 default cred9 = "Navigation Backgrounds{b}\nBeyblady\nGreen\nMoeYolk\nMulti\nPlugboy (Plug or Pixar)\nstoryboy\nuwo\nWafflemambooze\nАнимации Жени (Eugene's Animations)\nMartysh12 \nDuckling {/b}"
 
