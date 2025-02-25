@@ -30,6 +30,8 @@ default item.spraypaint = False
 default item.scrapmetal = False
 default item.scrap_trophy = False
 default item.makeshift_trophy = False
+default item.cash_main = False
+default item.cash_alley = False
 
 # PLACES/CHARACTERS VISITED
 default saw.retainerblock = False
@@ -76,6 +78,7 @@ default trophy_crafted = False
 default vendingmachine_used = False
 default toastmeister = False
 default toastytwopaintings = False
+default that_dork = False
 
 # VARIOUS COUNTERS
 default money = 0

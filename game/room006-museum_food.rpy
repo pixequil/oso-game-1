@@ -287,12 +287,12 @@ label .marble_napkin:
     "You handed over the {b}priceless, one-of-a-kind highbrow painting{/b}!"
     $ item.napkin = False
     hide badpainting
-    $ money += 2
+    $ money += 1
     $ quest.money_food = True
-    show cash_bundle_2 at truecenter
+    show cash_bust at truecenter
     $ renpy.transition(irisout, layer="master") #prevents interruption of the text window
     "{b}{color=#bdbb9a}Marble Bust{/color}{/b} gave you {b}some money{/b}!"
-    hide cash_bundle_2
+    hide cash_bust
     call money_get
     p "Farewell!"
     jump museum_food

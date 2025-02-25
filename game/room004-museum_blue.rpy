@@ -28,11 +28,6 @@ image redcash:
     yalign 0.5
     zoom 3.0
 
-image cash_bundle_1:
-    "items/cash_bundle_1.png"
-    truecenter
-    zoom 1.5
-
 image painting_blue:
     "items/blue_exhibit_main_painting.png"
     truecenter
@@ -191,14 +186,16 @@ label museum_blue:
 label .redcash:
     scene bg blue_red
     show posty astonished
-    p "Woah. They weren't kidding. This whole exhibit is just blue stuff. My eyes feel like they're-"
     show redcash
     p suspicious "Huh, what's this red thing doing here?" 
     p happy "Oh well. Yoink."
     $ saw.rcash = True
     $ item.red_cash = True
     "You got the {b}{color=#de474e}red cash{/color}{/b}!{p}It\'s money but it\'s red."
-    p neutral "I wonder if anyone around here takes red cash."
+    p neutral "... This isn't real money."
+    if saw.dolly:
+        p "Dolly definitely won't take this."
+    p suspicious "Who even {i}would{/i} want this?"
     jump museum_blue
         
 label .rt:
@@ -328,12 +325,12 @@ label .rt:
         label .rt_money:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
-                    show cash_bundle_1
+                    show cash_total
                     show posty concerned
-                    p "Will $20 in cash do?"
+                    p "Will this do?"
                     redtile "You would need to offer me way more money than that. You got anything else?"
                     p "Let me check. Sorry, I've never bribed anybody before."
-                    hide cash_bundle_1
+                    hide cash_total
                     jump .rt_money
                 "Offer red cash." if item.red_cash:
                     show redcash
