@@ -904,7 +904,7 @@ image sgummy quiet:
 define binoc = Character("Binoculars", 
     callback=speaker("binoc", sound_file="binoculars_voice.wav"), 
     image="binoc", 
-    who_color="#2c2c31"
+    who_color="#818198"
     )
 
 image binoc cynical = WhileSpeaking(

@@ -102,7 +102,7 @@ screen food_nav():
                 yanchor 0.5
                 pos (450, 450)
                 idle "pnav up i"
-                hover "pnav up"
+                hover "pnav up i"
                 action Play("sound","sound/51166__rutgermuller__switch_01a.ogg"),SetVariable("food_switch",True),With(vpunch)
         showif food_switch:
             imagebutton: 
@@ -135,6 +135,25 @@ screen food_nav():
             pos (560,560)
             idle "applestand"
 
+        imagebutton: # binoculars
+            pos (420, 70)
+            idle "nav_bin"
+            hover "nav_bin p"
+            action Jump("museum_food.bin")
+
+
+image nav_bin = Composite(
+    (240,280),
+    (60,0), "hitbox",
+    (0,0), "minisprites/bionoculars_minisprite.png"
+)
+image nav_bin p = Composite(
+    (240,280),
+    (0,0), "nav_bin",
+    (0,40), "pnav up"
+)
+
+
 image nav_np = Composite(
     (250,250),
     (0,0), "hitbox",
@@ -149,6 +168,11 @@ image nav_np p = Composite(
 image food_mini1:
     "minisprites/food_mini1.png"
     zoom 0.06
+image food_mini1_big:
+    "minisprites/food_mini1.png"
+    xalign 1.1
+    yalign 0.3
+    zoom 0.3
 
 image marbsp:
     "talksprites/food_big2.png"
@@ -197,6 +221,11 @@ image poplars:
 image corndogpainting:
     "items/corndogpainting.png"
     zoom 1.5
+image corndogpainting_binoc:
+    "items/corndogpainting.png"
+    zoom 6.0
+    yalign 0.65
+    xalign -0.6
 image food_island:
     "map-bgs/museum_food_top_island.png"
 
@@ -243,6 +272,92 @@ label museum_food:
 #             jump .eating
 #         "Go back to the entrance.":
 #             jump museum_entrance
+
+label .bin:
+    scene bg museum_food
+    show food_mini1_big
+    if food_switch:
+        if saw.binoc:
+            show binoc smug
+            show posty angry
+            if saw.binoc2 == False:
+                p "Don't say anything. DON'T SAY ANYTHING."
+                binoc "Who was right?"
+                p "I DON'T WANT TO HEAR IT."
+                binoc "Me, I was right."
+
+            if saw.janitors:
+                binoc cynical "So what's it like in there?"
+                p "I'm not telling."
+                if saw.binoc2:
+                    binoc concerned "Come on! It was my idea!"
+                    p "See for yourself!"
+                    binoc "Maybe later, okay? I don't want anyone seeing me go in."
+                    jump museum_food
+                else:
+                    binoc concerned "Be that way, then. I'll find out in due time."
+                    p "Looking forward to it."
+                    jump museum_food
+            else:
+                binoc cynical "Anyway, you should be the first to go in."
+                $ saw.binoc2 = True
+                p "Don't worry, I was planning on it."
+                p "Bye."
+            jump museum_food
+        else:
+            show binoc concerned
+            show posty neutral
+            binoc "I knew it! You're in on it!"
+            p astonished "What? In on what??"
+            binoc "The secret passageway!"
+            p annoyed "Oh, that? Yeah, I found it by bonking my head against a painting."
+            binoc "Why? That's such a weird thing to do."
+            p sad "Sh- shut up!"
+            jump museum_food
+    show corndogpainting_binoc
+    if saw.binoc:
+        show binoc smug
+        show posty angry
+        binoc "Any luck?"
+        p "This is stupid."
+        binoc "Words of someone who doesn't want to find a secret passageway."
+        p zany "Words of someone who doesn't want to bonk her head on a bunch of paintings!"
+        binoc "Is there a difference, really?"
+        p angry "Ugh!"
+        jump museum_food
+    else:
+        show binoc concerned
+        show posty neutral
+        binoc "Stop right there!"
+        p astonished "Huh???"
+        binoc "What do you know about the corndog painting?"
+        p "What corndog painting?"
+        binoc cynical "The one right behind you."
+        p confused "Huuuh?"
+        p annoyed "Oh. That."
+        p "Yeah, it's pretty suspicious, huh?"
+        binoc happy "Right you are."
+        binoc neutral2 "See, I thought I saw someone go through a secret passageway behind it earlier, but I wasn't sure. I was too far away to see."
+        p suspicious "You were? Aren't you a pair of binoculars? You should be able to see pretty far!"
+        binoc cynical "No, I'm backwards. See, big end on the back, small end on the front. So it's actually really hard for me to see stuff that isn't up close."
+        p concerned "Is that how it works..."
+        binoc smug "If you want to use me to see far away, though... you can bonk your face on mine."
+        p confused "Uhhhhh no thanks!"
+        show posty neutral
+        binoc neutral "Doesn't matter. We gotta solve the mystery of this secret passageway."
+        p "Any ideas?"
+        binoc "If I were making a secret passageway, I'd hide a switch in one of these paintings!"
+        p suspicious "So, what, you want me to go bonk my head against every painting in the room?"
+        binoc smug "Sure."
+        p angry "Oh my post office. You're serious."
+        binoc "Gotta bonk your head on something!"
+        p "I really don't!"
+        binoc "Then have fun not finding a secret passageway!"
+        p "Whatever."
+        $ saw.binoc = True
+        jump museum_food
+
+
 
 label .marble:
     scene bg museum_food
