@@ -253,7 +253,8 @@ screen quick_menu():
             not renpy.get_screen('blue_nav'),
             not renpy.get_screen('war_nav'),
             not renpy.get_screen('food_nav'),
-            not renpy.get_screen('janitor_nav')
+            not renpy.get_screen('janitor_nav'),
+            not renpy.get_screen('tunezzz')
         ]
     ):
 

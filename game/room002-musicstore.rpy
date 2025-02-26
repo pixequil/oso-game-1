@@ -81,7 +81,9 @@ image nav_jb p = Composite(
 label musicstore:
     $ renpy.choice_for_skipping()
     $ last.mainx = 0.15
+    $ jukesong = "None"
     play music "sound/music/LuckyLootCrate - purple precipitation.ogg" if_changed
+label .exitjb:
     call screen music_nav
 
 # label musicstore:
@@ -158,8 +160,7 @@ label .jb:
         jb "Hey Posty, how's it going?"
         p "I'm doing well, but I've been contemplating what song could be my favorite."
         jb "Well lucky for you, I'm the go-to for any and all music, from vinyls to digital!"
-        jb "If you have a record you dream of playing but don't have the equipment, just give it to me and hear it in crisp detail!"
-        jb "I even have some tracks of my own that you could listen to!"
+        jb "If you have a song you dream of hearing but don't have the equipment, just give me the name and I'll play it in crisp detail!"
         jb "Let's hear them all and you can pick a favorite later."
         p "Great idea."
         $ saw.jb = True
@@ -177,9 +178,7 @@ label .talk:
     show posty neutral
     p "What is it you do again?"
     jb "I can play any music you give me!"
-    jb "Whether it's the music in this game or some original music of my own, I can play it and swap out the music in this store!"
-    show posty confused
-    jb "I even have some remixed OSO tracks!"
+    jb "I can swap out the music in this store with any other track from this game!"
     p confused "The music in this what?"
     jb "The music in this store."
     p neutral "Oh OK. Sorry for mishearing you."
@@ -187,5 +186,79 @@ label .talk:
     jump .jb
 
 label .tunes:
-    "This feature is not yet available." #298 jukebox music player
+    $ renpy.choice_for_skipping()
+#    stop music fadeout 1.0
+    call screen tunezzz
     jump .jb
+
+screen tunezzz:
+    viewport:
+        child_size (1280,720)
+        add "jukebg"
+        add "jukebars"
+        use juke_vbox
+        
+image jukebg:
+    "images/jukebox_bg.png"
+image jukebars:
+    "images/jukebox_stripes.png"
+    huepulse
+
+screen juke_vbox:
+
+    vbox:
+        style "juke_vbox_style"
+
+        textbutton "{b}A Jar of Copper Salts{/b} - {i}citb{/i}":
+            action Play("music","sound/music/A Jar of Copper Salts - citb.ogg")
+        textbutton "{b}REZURRECTA{/b} - {i}ASTRUM DEUS P1{/i}":
+            action Play("music","sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg")
+        textbutton "{b}LuckyLootCrate{/b} - {i}purple precipitation{/i}":
+            action Play("music","sound/music/LuckyLootCrate - purple precipitation.ogg")
+        textbutton "{b}PlugBoy{/b} - {i}paths{/i}":
+            action Play("music","sound/music/PlugBoy - paths.ogg")
+        textbutton "{b}TheSeanimator22{/b} - {i}Dinner at 7pm{/i}":
+            action Play("music","sound/music/TheSeanimator22 - Dinner at 7pm.ogg")
+        textbutton "{b}Gavimator{/b} - {i}the jungle{/i}":
+            action Play("music","sound/music/Gavimator - the jungle.ogg"),Play("music","sound/music/Gavimator - the jungle intro.ogg"),Queue("music","sound/music/Gavimator - the jungle.ogg")
+            # first, plays the main song
+            # second, plays the song's intro, immediately cancelling the main song.
+            # as a result, the player does not hear the main song.
+            # however, the main song then gets queued, to play after the intro.
+            # so, why play the main song first and immediately skip it?
+            # the textbutton is programmed by the engine to display as active if its action condition is true.
+            # this includes a played song, but not a queued song.
+            # so, really, this is just so the button doesn't dismiss itself once the intro finishes playing.
+            # took me a good hour to figure out this simple solution, but it's so much better than my first attempt
+            # (which involved two new variables and a dummy button that replaced the existing button)
+            # (bleh!)
+            # anyway, that fix wasn't just spaghetti, it was also LESS FUNCTIONAL
+            # because it subtly took away your ability to restart a song, for ONLY THAT SONG
+        textbutton "{b}KrystalGhostz{/b} - {i}Breakfast Beat{/i}":
+            action Play("music","sound/music/KrystalGhostz - Breakfast Beat.ogg")
+        textbutton "{b}hewd{/b} - {i}For the Cake{/i}":
+            action Play("music","sound/music/hewd - For the Cake.ogg")
+        textbutton "{b}REZURRECTA{/b} - {i}ZAKU{/i}":
+            action Play("music","sound/music/REZURRECTA - ZAKU.ogg")
+        textbutton "{b}plebkingdom{/b} - {i}Break{/i}":
+            action Play("music","sound/music/plebkingdom - Break.ogg")
+        textbutton "{b}Nyakiye{/b} - {i}111{/i}":
+            action Play("music","sound/music/Nyakiye - 111.ogg"),Play("music","sound/music/Nyakiye - 111 intro.ogg"),Queue("music","sound/music/Nyakiye - 111.ogg")
+        textbutton "{b}LuckyLootCrate{/b} - {i}patience{/i}":
+            action Play("music","sound/music/LuckyLootCrate - patience.ogg")
+        textbutton "{b}tetroid{/b} - {i}Outro{/i}":
+            action Play("music","sound/music/tetroid - Outro quieter.ogg")
+        textbutton "{b}mintykiwi{/b} - {i}cdafafad{/i} {size=-5}(bonus track){/size}":
+            action Play("music","sound/music/mintykiwi - cdafafadRemake.ogg")
+
+        
+
+style juke_vbox_style:
+    xalign 0.5
+    yalign 0.4
+
+transform huepulse:
+    matrixcolor HueMatrix(360) * BrightnessMatrix(0.0)
+    easeout_cubic 1.5 matrixcolor HueMatrix(180) * BrightnessMatrix(0.4)
+    easein_cubic 1.5 matrixcolor HueMatrix(0) * BrightnessMatrix(0.0)
+    repeat
