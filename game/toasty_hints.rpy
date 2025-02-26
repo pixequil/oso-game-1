@@ -339,7 +339,7 @@ label toasty_hints:
         t neutral2 "Not that I care or anything, but you collapsing in front of me would be really weird."
         show heavier
         p "I have been carrying this heavier."
-        t annoyed "What the hell is a heavier?"
+        t annoyed "What the toast is a heavier?"
         p "It apparently {i}(pant){/i} sucks fire in."
         t "Really? You believe anything these days. Where'd you get this crap, the back alley? I've seen you walking around there!"
         p "I {i}(pant){/i} swear. It hurts..."
