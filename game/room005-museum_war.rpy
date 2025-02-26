@@ -74,6 +74,18 @@ image painting_war green:
     yalign 0.3
     zoom 0.4
 
+image painting_war red:
+    "items/war_Exhibit_photo_red.png"
+    xalign 0.5
+    yalign 0.3
+    zoom 0.4
+    
+image painting_war blue:
+    "items/war_Exhibit_photo_blue.png"
+    xalign 0.5
+    yalign 0.3
+    zoom 0.4
+
 screen war_nav():
     viewport:
         child_size (1280,720)
@@ -462,12 +474,74 @@ label .pal_battery:
     show battery_center
     "You handed over the {b}battery{/b}!"
     $ item.battery = False
-    hide battery
+    hide battery_center
     pal "Alrighty! Now it's time to show off the scanter!"
+    show posty neutral
+    pal "There, that black and white painting looks like the perfect target!"
     pal "Let me aim it like soo..."
     p happy "I can't wait to see it in action!"
+label .nogood2:
+    pal "What color should I change it to?"
+    menu:
+        "Red!":
+            jump .red
+        "Blue!":
+            jump .blue
+        "Green!":
+            jump .green
+label .nogood:
+    scene bg museum_war
+    show palettette
+    show posty annoyed
+    with pushleft
+    pal "Look at it go! My invention is incredible!"
+    p annoyed quiet "{i}Well... those two are still arguing. Just differently. I wonder if there's something I can do to make them stop!{/i}"
+    pal "Want me to do it again?"
+    p happy "Sure!"
+    pal "Okay, first, I'll revert the changes..."
+    show palettette with vpunch
+    pal "Kabam!"
+    p "Incredible!"
+    jump .nogood2
+label .blue:
     scene bg museum_war_flipped
-    show painting_war # war painting and a green-filtered version of it
+    show painting_war
+    show bcg at right
+    show rcg at left
+    with pushright
+    rcg "The redoinks, you can recognize them just from their chivalrous adamance."
+    bcg "From here, it looks like spineless timidity."
+    rcg "Well, they don't have spines, but that's no sign of a lack of courage! See, this one-"
+    bcg "That's a Blouououou. Not a Redoink. You can tell because she's chasing off that piteous Redoink over-"
+    show painting_war blue with vpunch
+    ""
+    rcg "I beg your pardon?"
+    rcg "That's a Blouououou. He's blue."
+    bcg "The valorous heroes are blue as well! It's the victory of the Blouououous, without a doubt!"
+    rcg "Victory over who, exactly? Not over the Redoinks, they're not depicted."
+    bcg "The Redoinks would never appear in such a victorious painting, having no record of victory whatsoever!"
+    rcg "You- this is heresy, look..."
+    jump .nogood
+label .red:
+    scene bg museum_war_flipped
+    show painting_war
+    show bcg at right
+    show rcg at left
+    with pushright
+    bcg "And I insist, it this is very clearly the victory of the Blouououous!"
+    rcg "No, no, amateur mistake, I've been telling you! That one, right there, is a fleeing Blouououou. You can tell, by examining his-"
+    show painting_war red with vpunch
+    ""
+    bcg "You were saying?"
+    rcg "I- oh, I concede, I had misread the face of this fleeing soldier, it's... it's actually..."
+    bcg "Hah! You were wrong! it's the victory of the Blouououous!"
+    rcg "I see no Blouououous here."
+    bcg "A-"
+    bcg "But, but you see..."
+    jump .nogood
+label .green:
+    scene bg museum_war_flipped
+    show painting_war
     show bcg at right
     show rcg at left
     with pushright
@@ -487,8 +561,7 @@ label .pal_battery:
     show palettette
     show posty astonished
     with pushleft
-    pal "Holy moly it works!"
-    p quiet "{i}Oh my god I really want that painting, it would be such a vibe...{/i}"
+    p quiet "{i}Oh my post office I really want that painting, it would be such a vibe...{/i}"
     p happy "Glad to see it works! I gotta go quick now..."
     pal "See ya around and thanks for the battery!"
     jump museum_war
