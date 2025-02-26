@@ -196,6 +196,7 @@ _(Don't remove the blank bullets)_
 * foolcrum - posty's "art project" insert-drawing
 * Plazicle - main menu
 * MsBonnieArt - win screen
+* Satomi - jukebox interface
 
 ### Props
 * Martysh12

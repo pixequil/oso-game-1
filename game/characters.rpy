@@ -1842,7 +1842,7 @@ image rm quiet:
 define jb = Character("Jukebox",
     callback=speaker("jb", sound_file="game_voice_2.wav"),
     image="jb", 
-    who_color="#482C40"
+    who_color="#aa3a6b"
     )
 
 image jb = WhileSpeaking(

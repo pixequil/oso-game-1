@@ -60,7 +60,7 @@ default cred9 = "Navigation Backgrounds{b}\nBeyblady\nGreen\nMoeYolk\nMulti\nPlu
 
 default cred10 = "Conversation Backgrounds{b}\nfoolcrum\nFaye's_odd.5450\nnexty\nMelecie\nCaptain\nRand0m00\nBirchboom\nXKZ\nFanimator\nCleft Key \nPlugboy (Plug or Pixar) \nloam / cerealfan112 {/b}"
 
-default cred11 = "Other Backgrounds{b}\nPlugboy\nfoolcrum\nPlazicle\nMsBonnieArt{/b}"
+default cred11 = "Other Backgrounds{b}\nPlugboy\nfoolcrum\nPlazicle\nMsBonnieArt\nSatomi{/b}"
 
 default cred12 = "Props{b}\nXKZ {space=120}Eli {space=120}Meow\nVio! {space=120}Frog!{space=120}Saury\nJurta {space=120}nexty {space=120}Leader\nSnek86{space=120}betamaj{space=120}skiddzy\nscotiaa{space=120}ARTTGOG {space=120}seaf0amm\nchroma!!{space=120}Thotrike {space=120}Martysh12\nToastIsOk {space=120}JellyCrab {space=120}Fizu poppu\nSillySussy {space=120}CrispBacon {space=120}swaggy9ine \npartyslime {space=120}B.w.m.p.i.i{space=120}FunnyBoy044\nRetroBoi128 {space=120}Mak1n' Bacon{space=120}SuperGoat527\nFitzyLitzyXD {space=120}Sparkle Spark {space=120}Dafork_gaming \nFrameByFramer {space=120}juul in schuul {space=120}Faye's_odd.5450\nYvanBFB Animations {space=120}F4n¡matør\nDemiDude (Animator of the Universe) {/b}"
 
