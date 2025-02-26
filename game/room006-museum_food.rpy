@@ -143,14 +143,14 @@ screen food_nav():
 
 
 image nav_bin = Composite(
-    (240,280),
+    (180,280),
     (60,0), "hitbox",
     (0,0), "minisprites/bionoculars_minisprite.png"
 )
 image nav_bin p = Composite(
-    (240,280),
+    (180,280),
     (0,0), "nav_bin",
-    (0,40), "pnav up"
+    (-30,0), "pnav up"
 )
 
 
