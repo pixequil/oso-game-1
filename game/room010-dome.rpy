@@ -160,7 +160,7 @@ label .cb_give:
     cb "I had the contents of today's challenge"
     show posty astonished anim
     cb "I had the contents of today's challenge{fast} {i}specially{/i}{w=0.3} delivered!"
-    p astonished "Oh my god!! Crayon Box is talking about {i}ME{/i}?!? This is a dream come true!!"
+    p astonished "Oh my post office!! Crayon Box is talking about {i}ME{/i}?!? This is a dream come true!!"
     "{i}You successfully finished your work for today!{/i}"
     p happy "Gosh!! I'm so tired from that! Perhaps some new scenery would help..."
     jump dome
