@@ -83,7 +83,7 @@ label musicstore:
     $ last.mainx = 0.15
     $ jukesong = "None"
     play music "sound/music/LuckyLootCrate - purple precipitation.ogg" if_changed
-label .exitjb:
+label .exit:
     call screen music_nav
 
 # label musicstore:
@@ -124,7 +124,7 @@ label .nl:
     neon "...I said as long as you're still browsing, you can talk to Jukebox in the corner and play some music."
     neon "Maybe you'll like one of them enough to purchase one."
     p happy "Sounds cool. I'll be sure to check it out."
-    jump musicstore
+    jump .exit
 
 label .sheet:
     scene bg music
@@ -148,12 +148,13 @@ label .sheet:
     sheet "To be honest, there's not much to do here other than listen to music."
     sheet "Unless you wanted to take a break and listen to music, you should probably finish delivering your package or something."
     p annoyed "OK mom."
-    jump musicstore
+    jump .exit
 
 label .jb:
     scene bg music
     show jb
     show posty happy
+label .jb_done_talking:
     if (saw.jb == False):
         jb "Sup, I'm Jukebox (Juke for short)."
         p "Hello, Jukebox! I'm Posty!"
@@ -166,13 +167,14 @@ label .jb:
         $ saw.jb = True
     else:
         jb "Let's listen to some music!"   
+label .jb_back:
     menu:
         "Talk to Jukebox.":
             jump .talk
         "Play some tunes!":
             jump .tunes
         "Bye!":
-            jump musicstore
+            jump .exit
 
 label .talk:
     show posty neutral
@@ -183,7 +185,7 @@ label .talk:
     jb "The music in this store."
     p neutral "Oh OK. Sorry for mishearing you."
     jb "That's OK, I get that all the time."
-    jump .jb
+    jump .jb_done_talking
 
 label .tunes:
     $ renpy.choice_for_skipping()
@@ -197,7 +199,19 @@ screen tunezzz:
         add "jukebg"
         add "jukebars"
         use juke_vbox
+
+        imagebutton:
+            xalign 0.5
+            yalign 0.965
+            idle "jukeback"
+            hover "jukeback h"
+            action Jump("musicstore.jb_back")
         
+image jukeback:
+    "images/jukebox back.png"
+image jukeback h:
+    "images/jukebox back hover.png"
+
 image jukebg:
     "images/jukebox_bg.png"
 image jukebars:
@@ -255,7 +269,7 @@ screen juke_vbox:
 
 style juke_vbox_style:
     xalign 0.5
-    yalign 0.4
+    yalign 0.3
 
 transform huepulse:
     matrixcolor HueMatrix(360) * BrightnessMatrix(0.0)
