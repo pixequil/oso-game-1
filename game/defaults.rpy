@@ -81,6 +81,8 @@ default vendingmachine_used = False
 default toastmeister = False
 default toastytwopaintings = False
 default that_dork = False
+default missedaspot = False
+default moolah = False
 
 # VARIOUS COUNTERS
 default money = 0

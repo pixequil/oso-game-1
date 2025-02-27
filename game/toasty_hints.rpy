@@ -448,7 +448,7 @@ label toasty_hints:
         p "That was very rude."
         return
 
-    elif quest.paintings and (quest.moneys == False) and (money == 3):
+    elif quest.paintings and (quest.moneys == False) and (money == 4):
         show posty neutral
         show toasty neutral2
         t "What'cha got there?"
@@ -476,7 +476,7 @@ label toasty_hints:
         t laugh "Hope you like drawing a soda can for the rest of your life!"
         return
 
-    elif quest.paintings and (money == 1):
+    elif quest.paintings and (quest.money_food == False):
         show posty neutral
         show toasty neutral2
         t "What'cha got there?"
@@ -486,8 +486,43 @@ label toasty_hints:
         t enthused "Maybe you need to get some inspiration."
         p happy "Like in the art museum?"
         show posty angry
-        t smug2 "I was actually thinking about you ruminating in a hole in the ground, but that works too."
+        t smug2 "I was actually thinking about you ruminating in a hole in the ground, but the museum works too."
+        p "I already did that."
+        t smug "Ruminated in a hole in the ground?"
+        p "Got inspired in the museum. And I got reprimanded, and now I have this gold spray paint."
+        t annoyed "Oh right."
+        t smug3 "Well, do you feel done in the museum?"
+        p suspicious "I guess there was that super sus hotdog painting..."
+        show posty angry
+        t pointandlaugh "Someone's hungry!!!"
+        p "Okay, whatever."
         return
+
+    elif quest.paintings and quest.bs and quest.money_food:
+        show posty neutral
+        show toasty crossedarms
+        if (moolah == False):
+            t "You sound like you're carrying a lot of gold! And not just that gold spray paint..."
+            t enthused "Moolah!!!"
+            p angry "Yeah, it's what happens when I'm nice to people. You should try it."
+            t smug "Or you could try to get richer."
+            p neutral "That's your first idea."
+            t "Yeah."
+            t smug2 "I mean, it'd be pretty easy."
+            $ moolah = True
+        t smug3 "You haven't noticed all the random money lying around on the ground? It's practically asking to be picked up!"
+        if (money > 2):
+            p "Actually, I have."
+            t annoyed "Well, you missed a spot."
+            if missedaspot:
+                p astonished "WHERE???"
+                if item.cash_main:
+                    t turned "I think I saw it in the alley?"
+                else:
+                    t angry "LITERALLY RIGHT BEHIND YOU!!!"
+                p "Oh."
+            $ missedaspot = True
+        p "Guess I'll have a look."
 
     elif paintings == 3 and (quest.paintings == False):
         show posty suspicious
