@@ -60,6 +60,8 @@ default saw.retainerpark = False
 default saw.easels = False
 default saw.capsule = False
 default saw.buff = False
+default saw.binoc = False
+default saw.binoc2 = False
 
 # VARIOUS FLAGS
 default win_flag = False

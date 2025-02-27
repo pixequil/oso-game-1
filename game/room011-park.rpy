@@ -51,11 +51,6 @@ screen park_nav:
             idle "nav_bench"
             hover "nav_bench pr"
             action Jump("park.bench")
-        imagebutton: # binoculars
-            pos (520, 410)
-            idle "nav_bin"
-            hover "nav_bin p"
-            action Jump("park.bin")
 
 image nav_bench = Composite(
     (250,250),
@@ -94,17 +89,6 @@ image nav_auto p = Composite(
     (20,40), "pnav lt"
 )
 
-image nav_bin = Composite(
-    (240,280),
-    (60,0), "hitbox",
-    (0,0), "minisprites/bionoculars_minisprite.png"
-)
-image nav_bin p = Composite(
-    (240,280),
-    (0,0), "nav_bin",
-    (0,40), "pnav up"
-)
-
 
 label park:
     $ renpy.choice_for_skipping()
@@ -127,20 +111,6 @@ label park:
 #             jump .bench
 #         "Back to main street.":
 #             jump mainstreet
-
-label .bin: #424
-    scene bg park
-    if quest.retainer:
-        show posty neutral
-        show binoc cynical
-        binoc "_" # talk to me later
-    else:
-        show posty happy
-        show binoc smug
-        binoc "_" # binoculars says something weird and totally out of pocket.
-        # make sure to use all of the binoculars expressions:
-        # happy cynical neutral smug concerned neutral2
-    jump park
 
 label .auto:
     scene bg park

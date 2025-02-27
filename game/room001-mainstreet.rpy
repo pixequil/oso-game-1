@@ -691,7 +691,7 @@ label .miso:
     elif item.ladle_empty and (miso_took == False):
         show posty sad
         p sad "I'm so sorry for this." 
-        miso "What are you about t-"
+        miso "What are you talking ab-"
         $ item.ladle_empty = False
         $ item.ladle_full = True
         $ miso_took = True

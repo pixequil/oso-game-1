@@ -130,7 +130,7 @@ label .vend:
 
 label .sb1:
     scene bg janitors
-    show posty neutral
+    show posty suspicious
     show sb:
         flip
         right
