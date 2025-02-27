@@ -9,11 +9,23 @@ label toasty_hints:
     if win_flag:
         show posty neutral
         show toasty smug5
+        if finalehint and (nicestart > 15):
+            t "Okay, okay, I get it, you love talking to me."
+            t "Now go get some rest. Those park benches look like a great spot."
+            return
         p "Hey Toasty, how\'s it going?"
         t "It\'s good. The weather is nicer than usual."
         p suspicious "I genuinely think that\'s the first time I\'ve managed to start a conversation with you without you insulting me almost immediately."
-        t smug3 "What can I say, I\'m in a good mood right now…"
-        t "Y\'know, you aren\'t half bad."
+        if (nicestart == 0):
+            t smug3 "What can I say, I\'m in a good mood right now…"
+        elif (nicestart == 1):
+            t smug3 "Nah, I think I did, like, once."
+        else:
+            t smug3 "No, I definitely have. Like [nicestart] times."
+            p suspicious "You were counting?"
+            t turned2 "No..."
+            p "Right..."
+        t smug3 "Y\'know, you aren\'t half bad."
         p "Oh? And what makes you say that?"
         t laugh "Well, you seemed pretty committed to this one delivery, you even vandalized a painting for it!"
         t "Blue Tile couldn\'t stop crying about it afterwards. I would say the entire town thinks you\'re a villain now, but no one liked that painting to begin with…"
@@ -23,18 +35,24 @@ label toasty_hints:
         t "And also the painting vandalization, but mostly the commitment."
         p "Oh…"
         p happy "Well, I finally finished it! Got the package where it\'s meant to be. And I got a shout out from Crayon Box herself!"
-        t neutral2 "What\'re you gonna do now? Head back to the dusty street corner I know you live at, and nap while you wait for another package? Go on a nice walk in the park? Vandalize another painting?"
+        if finalehint:
+            t neutral2 "What\'re you gonna do now? Head back to the dusty street corner I know you live at, and {b}{color=#FFFF00}nap{/color}{/b} while you wait for another package? Go on a nice walk {b}{color=#FFFF00}in the park{/color}{/b}? Vandalize another painting?"
+        else:
+            t neutral2 "What\'re you gonna do now? Head back to the dusty street corner I know you live at, and nap while you wait for another package? Go on a nice walk in the park? Vandalize another painting?"
         p "Hah… those all sound nice. I don\'t know what I\'m going to do, but at the end of the day, I\'m just glad to have that delivery over and done with."
         t smug "You do sound relieved, too bad relaxing would get you confused for a normal mailbox and you'd probably get an envelope or two thrown at you."
         p "Hehe, I\'ll just have to find somewhere a mailbox wouldn\'t be then… I\'ll see you around Toasty!"
         t enthused "See you around, get hit in the face with a package for me!"
         p annoyed "Yeah, and how about you go take a swim."
+        $ finalehint = True
+        $ nicestart += 1
         return
 
     elif party_bs:
         show posty neutral
         show toasty neutral
         show bs follow behind posty with moveinleft
+        $ nicestart += 1
         bs "Hello!"
         t smug "Who is this you brought along to follow you?"
         bs "Lady, I'm gonna be the next big thing!"
@@ -63,6 +81,9 @@ label toasty_hints:
         p suspicious "Lepidoptrolowhat? Is that even a word or are you trying to get one up on me?"
         t crossedarms "Hmph: if you were even a hundredth as diligent and scholarly as me, you would've realized that lepidopterists would kill to even touch the {b}package{/b} you hold right now."
         t smug "Who knows, if you are careless enough, maybe even little old me may take a swipe at it!"
+        p astonished "OH RIGHT, THE PACKAGE!!!"
+        p neutral "Sorry. Been a long day."
+        t enthused "Well, what are you waiting for, dummy!"
         return
 
     elif item.makeshift_trophy:
@@ -71,11 +92,27 @@ label toasty_hints:
         t "You have a nice trophy with ya, what you going to do with it?"
         p "Dunno, probably put it on a shelf at home; pretend to be a winner and show it off."
         t smug "Well it would severely clash with the decor, especially with the grey curtains and general lack of furniture."
-        p annoyed "Rude. Also how did you find my address-"
+        p annoyed "Rude. Also how did you know what my-"
         t crossedarms "Keep your petty questions for later! You said this thing made you feel like a winner, right?"
         p suspicious "Yeah?"
         t "Well I think there is someone who would like that feeling, someone down on their luck..."
         t enthused "A big hulking trophy would bring their spirits right up!"
+        return
+
+    elif item.scrapmetal:
+        show posty angry
+        show toasty pointandlaugh
+        t "SCRAP METAL!!!"
+        t "YOU SPENT ALL YOUR MONEY ON SCRAP METAL!!!"
+        t "AAAAHAHAHAHAHAHA!!!"
+        p "Guessing you had something to do with this?"
+        t "HAHAHAHAHAHA..."
+        t enthused "Aaahhh..."
+        t smug "No, I didn't."
+        p "Right."
+        t neutral "No, really."
+        p "Well what am I supposed to do with this?"
+        t "What do I look like, some kind of tool? Figure it out yourself!"
         return
     
     elif item.notice:
@@ -129,8 +166,11 @@ label toasty_hints:
         t "It would benefit everyone if you never become an art critic, because your taste is objectively HORRIBLE!"
         p angry "Wow. I am so disappointed."
         t "Now if you excuse me, I need to organize a strategy meeting ASAP."
-        t turned "Alright, how to make this trash into treasure, Meisteroony?"
-        p annoyed quiet "..."
+        t turned "Alright, how to make this trash into treasure, Toastmeister?"
+        if toastmeister:
+            p "You still sticking with Toastmeister?"
+        else:
+            p annoyed quiet "..."
         t "Well, who would pay a huge, huuuge amount for worthless scribbles?"
         t "Well it would be anyone who needed to look all snooty and fancy!"
         t "But how, Toaster the Moster? Surely their superior tastes would stall us from making millions via such low tactics?"
@@ -188,7 +228,7 @@ label toasty_hints:
         p "Woaaaah I think I am seeing stars!"
         t "What is up..."
         t neutral "Girl, are you alright?"
-        p concerned "I bonked my head on the plaque next to the pizza-eating painting just now."
+        p concerned "I bonked my head on the pizza-eating painting just now."
         p sad "It hurts."
         t "Darn..."
         t pointandlaugh "Looks like I have an advantage against my hated blue rival!"
@@ -216,13 +256,16 @@ label toasty_hints:
     elif scanter_green and (quest.painting_war == False):
         show posty neutral
         show toasty neutral2
+        $ nicestart += 1
         t "Hey Posty."
         p "Remember that boring painting about the blue army and the red army in the art gallery?"
         t "From like... 5 minutes ago?"
         p "Y\'know, the one that used to be black and white and really violent?" 
         t "Yeah, what about it?"
-        p "Well let's just say, I don\'t think it\'s gonna get anymore visitors after... a certain green paint incident."
+        p "Well let's just say, I don\'t think it\'s gonna get any more visitors after... a certain \"green\" incident."
         t "You threw green paint on a rare expensive painting? Important as an item of the era's culture and an artistic depiction of old history?"
+        p angry "Technically, it wasn't green {i}paint{/i}, but..."
+        p "Never mind, I just realized you don't care."
         t smug "I'd be extremely offended if I wasn't excited about you being thrown in jail."
         t enthused "Is the painting that got damaged ok?"
         p "Ehhhh, if you call recolored green \"ok\", then yeah."
@@ -266,8 +309,8 @@ label toasty_hints:
         $ toastmeister = True
         t "All we have to do is make sure our friend doesn't eavesdrop and we're golden!"
         t enthused "So whatcha going to do with the battery?"
-        hide posty with moveoutleft
         hide battery_center
+        hide posty with moveoutleft
         t neutral "Could I have sabotaged myself again?"
         t turned2 "No! Of course not! You're too smart to do that!"
         return
@@ -351,7 +394,8 @@ label toasty_hints:
         p astonished "I don't know?! Probably willpower or something like that."
         t "Well {i}(pant){/i} I need {i}(pant){/i} to consult someone pronto."
         t turned "Oh boy."
-        t "This is a pretty awkward situation {i}(pant){/i} I have gotten myself in {i}(pant){/i} ToastMaestro!"
+        t "This is a pretty awkward situation {i}(pant){/i} I have gotten myself in {i}(pant){/i} Toastmeister!"
+        $ toastmeister = True
         t "Well Mailmouth did say {i}(pant){/i} this thing can suck fire up!"
         t "So we need to find {i}(pant){/i} some fire {i}(pant){/i} to suck up!"
         t "There was a {i}(pant){/i} painting {i}(pant){/i} that has {i}(pant){/i} some fire {i}(pant){/i} in the gallery."
@@ -368,6 +412,7 @@ label toasty_hints:
         if toastybtdistracted == 0: 
             show posty astonished
             show toasty enthused
+            $ nicestart += 1
             t "Woah Posty, what's the rush?"
             p "This is hard to explain, but I may have bribed a guy to make an opening for me to steal a painting by distracting another guy and I sorta just walked away."
             t neutral2 "Huh? Why?"
@@ -427,7 +472,11 @@ label toasty_hints:
         show toasty smug2
         t "Oh, so you decided to use that ladle on something, hmm?"
         t laugh "What are you going to do with that soup, anyway? Start a food fight?"
-        t pointandlaugh "Hah! Just the thought of you getting everything rusty makes me chuckle!"
+        if rusty:
+            t pointandlaugh "Hah! Just the thought of you getting everything {b}{color=#FFFF00}rusty{/color}{/b} makes me chuckle!"
+        else:
+            t pointandlaugh "Hah! Just the thought of you getting everything rusty makes me chuckle!"
+        $ rusty = True
         t neutral quiet "..."
         t enthused "Actually, if you are, can I join?"
         p neutral "Uh, I'm not planning any fights, sorry."
@@ -479,6 +528,7 @@ label toasty_hints:
     elif quest.paintings and (quest.money_food == False):
         show posty neutral
         show toasty neutral2
+        $ nicestart += 1
         t "What'cha got there?"
         p "Gold spray paint."
         t smug3 "Wanting to get into mural art, Posty?"
@@ -502,6 +552,7 @@ label toasty_hints:
         show posty neutral
         show toasty crossedarms
         if (moolah == False):
+            $ nicestart += 1
             t "You sound like you're carrying a lot of gold! And not just that gold spray paint..."
             t enthused "Moolah!!!"
             p angry "Yeah, it's what happens when I'm nice to people. You should try it."
@@ -523,10 +574,12 @@ label toasty_hints:
                 p "Oh."
             $ missedaspot = True
         p "Guess I'll have a look."
+        return
 
     elif paintings == 3 and (quest.paintings == False):
         show posty suspicious
         show toasty angry
+        $ nicestart += 1
         t "\"Make A Walkway! Take Them Away!\""
         p "Whoa, Toasty what are you up to?"
         t crossedarms "Isn\'t it obvious?"
@@ -590,10 +643,21 @@ label toasty_hints:
         p annoyed "And boring?"
         t angry "Ugh! I wanted to say it."
         return
+
+    elif item.scrap_trophy:
+        show posty neutral
+        show toasty enthused
+        show scraptrophy
+        t "Your trophy sucks."
+        p angry "Can you be nice, like, ever?"
+        t "Seriously, who would want a trophy like that?"
+        t pointandlaugh "Hah! It should be in a museum!!!"
+        return
     
     elif quest.bs:
         show posty neutral
         show toasty neutral
+        $ nicestart += 1
         t "You deal with that Brand Soda guy yet?"
         p "Yeah. Yellow Diamond's gonna be their manager, to some degree."
         t "Oh good. Now what?"

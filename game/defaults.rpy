@@ -83,8 +83,11 @@ default toastytwopaintings = False
 default that_dork = False
 default missedaspot = False
 default moolah = False
+default rusty = False
+default finalehint = False
 
 # VARIOUS COUNTERS
 default money = 0
 default paintings = 0
 default toastybtdistracted = 0
+default nicestart = 0
