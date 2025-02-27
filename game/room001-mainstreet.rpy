@@ -427,6 +427,11 @@ label .cash:
     $ money += 1
     $ item.cash_main = True
     call money_get
+    if party_bs:
+        show bs follow behind posty with moveinleft
+        bs "Oh hey, what did you find?"
+        p "Don't worry about it!"
+        bs "Uhh... okay!"
     jump mainstreet
 
 label .tb:
