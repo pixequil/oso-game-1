@@ -692,7 +692,7 @@ label .miso:
         $ miso_took = True
         show ladle_full
         "You filled the {b}ladle{/b} with {b}miso soup{/b}!"
-        "Filled with miso soup, hell to clean up properly. Perfect sabotage."
+        "Filled with miso soup, miserable to clean up properly. Perfect sabotage."
         miso "My soup!"
         jump mainstreet
 
