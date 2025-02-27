@@ -319,7 +319,7 @@ label firstscene:
     hide butterfly_package
 
     btnet "Best of luck!"
-    p "Thanks! Not that I'll need it, since it's just a short walk west of here."
+    p "Thanks! Not that I'll need it, since it's just a short walk east of here."
     btnet "I'll leave you to it then."
     hide btnet with moveoutright
     p quiet "..."
