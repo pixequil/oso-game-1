@@ -361,7 +361,7 @@ label .rt:
         redtile "What? What happened to \"get it as far away from here as you can?\""
         p "It's complicated! Look, you have to take this ladle back!"
         show ladle_full
-        p "You need to splash the soup on the bars again! You have to do it for me!"
+        p "You need to splash the soup on the painting! You have to do it for me!"
         redtile "Posty, I gotta go on living!"
         p "Just throw it! Throw it when no one's looking!"
         redtile "You throw it when no one's looking!"
@@ -508,7 +508,7 @@ label .painting_ladle_blocked:
     show posty concerned
     show bluetile scared
     $ miso_blocked = True
-    "You attempt to repeat Red Tile's crime, unsheathing the ladle filled with miso soup and preparing to toss it on the painting's bars."
+    "You attempt to repeat Red Tile's crime, unsheathing the ladle filled with miso soup and preparing to toss it at the painting bars."
     p concerned "Alrighty, here it goes!"
     bluetile "HEY!! What do you think you're doing?!"
     p quiet "... "
