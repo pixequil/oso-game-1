@@ -342,14 +342,14 @@ label .bin:
         binoc cynical "No, I'm backwards. See, big end on the back, small end on the front. So it's actually really hard for me to see stuff that isn't up close."
         p concerned "Is that how it works..."
         binoc smug "If you want to use me to see far away, though... you can bonk your face on mine."
-        p confused "Uhhhhh no thanks!"
+        p confused "Uhhhhh, no thanks!"
         show posty neutral
         binoc neutral "Doesn't matter. We gotta solve the mystery of this secret passageway."
         p "Any ideas?"
         binoc "If I were making a secret passageway, I'd hide a switch in one of these paintings!"
         p suspicious "So, what, you want me to go bonk my head against every painting in the room?"
         binoc smug "Sure."
-        p angry "Oh my post office. You're serious."
+        p angry "Oh my post office. You're serious?"
         binoc "Gotta bonk your head on something!"
         p "I really don't!"
         binoc "Then have fun not finding a secret passageway!"
@@ -373,7 +373,7 @@ label .marble:
     label .marble1:
     show posty neutral
     $ saw.marble = True
-    marble "As an art critic and collector, I am severely disappointed with these so-called \"artworks\"! Everything here is so bland."
+    marble "As an art critic and collector, I am severely disappointed with these so-called \"artworks!\" Everything here is so bland."
     p suspicious "..Okaay? Who are you?"
     marble "I am Marble Bust. My personal collection of fine art is one of the most respected in the art world! My name means something in this town!"
     marble "And as I said, this entire exhibit is lacking when it comes to wowing me! In fact, this entire museum has been rather upsetting. Nothing in here would fit for my collection!"
@@ -396,10 +396,10 @@ label .marble_napkin:
     marble "Hold on. What is that you're holding?"
     p "This?"
     show badpainting
-    marble "Why... This is the greatest artwork I have ever seen! I simply must have it for my collection!! I will pay handsomely!"
-    p suspicious "{i}Really??{/i}"
+    marble "Why... This is... {b}{w}the ultimate work of art{/b}! I simply must have it for my collection! I will pay handsomely!"
+    p suspicious "Really?"
     p happy "Oh, I'm not sure! I don't want to give away this wonderful piece of art, but alright!"
-    "You handed over the {b}priceless, one-of-a-kind highbrow painting{/b}!"
+    "You handed over the {b}priceless, one-of-a-kind, highbrow painting{/b}!"
     $ item.napkin = False
     hide badpainting
     $ money += 1
@@ -415,7 +415,7 @@ label .marble_napkin:
 label .marble3:
     show posty neutral
     p "What are you going to do with your painting?"
-    marble "I will hang it up proudly in my home proudly!"
+    marble "I will hang it up in my home proudly!"
     marble "The craft! The mediums! The deeper themes! You must tell me how you created this piece!"
     p "Oh, it's a complex forgotten art. You wouldn't get it. I'm sorry, but I'm busy right now."
     marble "Thank you for this masterpiece!"
@@ -439,7 +439,7 @@ label .notepad1:
     notepad "Can't you tell?! I am at rock bottom here."
     notepad "I have turned my whole life upside down for the chance of exhibitions and now I can't even afford a bite to eat!!"
     notepad "Many times I pleaded and begged the curators to buy my life's work, many times they rejected me..."
-    p sad "Man that sucks."
+    p sad "Man, that sucks."
     notepad "Not even half of it. I reduced my prices all the way down to $2 for everything I ever made."
     notepad "You know what they said? No!"
     notepad "I am at my wits end: starving in the middle of the food exhibit."
@@ -456,7 +456,7 @@ label .notepad1:
         jump museum_food
 
 label .notepad2:
-    show posty neutral
+    show posty concerned
     notepad "Oh hey, it's you again! Do you have any food on you now?"
     if item.chips:
         jump .notepad_chips
@@ -466,7 +466,7 @@ label .notepad2:
         jump museum_food
 
 label .notepad_chips:
-        p "It isn't much, but I got a bunch of chips if you wan-"
+        p "It isn't much, but I have a bag of chips if you wan-"
         notepad "OOOHH PLEASE GIVE IT TO ME THANK YOU SO MUCH!!!"
         p "You need it more than I do."
         show generichips at truecenter
@@ -475,13 +475,13 @@ label .notepad_chips:
         $ gave_chips = True
         hide generichips
         notepad "This tastes soooo amazing!"
-        notepad "First meal in a week, you are my shining saviour!"
+        notepad "That was my first meal in a week! You are my shining saviour!"
         p happy "Glad to be of help!"
         notepad "For assisting me in my direst hour, you shall have my greatest work."
         notepad "It distills my essence into a small package you can carry around as a reminder."
         p astonished "Aw shucks, that is too much!"
         show badpainting
-        "You got the {b}napkin \"painting\"{/b}!{w} If this was in the eye of the beholder, then they would go blind. It's not even painted."
+        "You got the {b}napkin \"painting\"{/b}!{w} {p}If this was in the eye of the beholder, then they would go blind. It's not even painted."
         $ item.napkin = True
         hide badpainting
         p confused "Oohhheheh it looks... avant garde."
@@ -497,9 +497,9 @@ label .notepad_chips:
 label .notepad3:
     show posty concerned
     notepad "Oh, hey! Hey! Over here, yeah! If you have any more chips or anything, I can give you another masterpiece!"
-    p quiet "{i}Erm, I think I\'ll pass on another of what this guy considers a \"masterpiece\"...{/i}"
-    p -quiet "Uh...I don\'t have anymore food on me, sorry."
-    notepad "Hmph. And here I thought you had true aesthetic instincts, but I guess you\'re just another pedestrian in denial. Sigh…"
+    p quiet "{i}Erm, I think I\'ll pass on another of what this guy considers a \"masterpiece...{/i}\""
+    p -quiet "Uh...I don\'t have any more food on me, sorry."
+    notepad "Hmph. And here I thought you had true aesthetic instincts, but I guess you\'re just another pedestrian in denial. {i}Sigh…{/i}"
     p "Hey, I said sorry!"
     jump museum_food
 
@@ -542,7 +542,7 @@ label .rm:
     rm "Eh, it could be better. I wanted to get a picture in front of a painting, but I think something's wrong with my camera."
     rm "All my photos are just a black screen! I'm not sure what to do."
     p concerned "Aw man!"
-    p suspicious "You sure you don't have your lens cap on the lens?"
+    p suspicious "You sure you don't have your lens cap on?"
     rm "I hope not! Ha! That would be too easy to fix! I'm sure I'll figure it out eventually though."
     jump museum_food
 
@@ -581,7 +581,7 @@ label .eating: #233
     #             jump .eating_decide
     # else:
     show posty suspicious
-    p "Huh what is that doing there? Among all the food based pieces, it doesn't look that appetizing to look at someone eating."
+    p "Huh, what is that doing there? Among all the food based pieces, it doesn't look that appetizing to look at someone eating."
     "The placard reads: \"{i}Crisis of the Poplar Trees{/i}\"."
     p "The only thing true about the title is that guy is clearly having a crisis about something!"
     p "If I didn't know any better, I would've thought he was having some pizza psychosis..."

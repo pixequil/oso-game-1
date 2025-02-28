@@ -210,8 +210,8 @@ label .inspiration:
     cameron "And you will be recieving an official notice of reprimand!"
     show notice
     "You received the {b}notice of reprimand{/b}!"
-    "The harshest piece of paper you've ever received."
-    "It reads: {i}Dear Posty, I found out that you have broke the rules of the museum, so I ask that you not do so a second time. Thanks. Security Cameron{/i}"
+    extend "\nThe harshest piece of paper you've ever received."
+    "It reads: {i}\"Dear Posty, I found out that you have broke the rules of the museum, so I ask that you not do so a second time. Thanks. \n- Security Cameron\"{/i}"
     hide notice
     $ item.notice = True
     cameron "You got off lucky, punk."
@@ -239,7 +239,7 @@ label .first_time:
     cameron "I swear on my life as this fair museum's Head Security Guard, I will bring justice to that Miso Soup fiend."
     p "...How do you know they took off the wrap?"
     cameron "Because there was once no soup in the exhibit, and then there was. What else could have happened?"
-    cameron "Also I'm never wrong."
+    cameron "I'm never wrong!"
     cameron "Also I'm really cool and everyone loves me."
     p neutral quiet "..."
     cameron "Anyway."
@@ -325,7 +325,7 @@ label .cameron:
         cameron "..."
         cameron "Did you need something?"
         p "Oh. No. Just… checking in. Seeing what's up."
-        cameron "\"What's up?\" My blood pressure's what's up!"
+        cameron "{i}\"What's up?\"{/i} My blood pressure's what's up!"
         cameron "Just kidding, I don't have that."
         p suspicious quiet "..."
         p -quiet "Right."

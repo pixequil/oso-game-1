@@ -54,9 +54,9 @@ label toasty_hints:
         show bs follow behind posty with moveinleft
         $ nicestart += 1
         bs "Hello!"
-        t smug "Who is this you brought along to follow you?"
+        t smug "Who is this you brought along to follow you, Posty?"
         bs "Lady, I'm gonna be the next big thing!"
-        p happy "We're looking for someone who wants to advertise them."
+        p happy "We're looking for someone who wants to promote them."
         t annoyed "Well that surely isn't me; I don't care."
         show posty neutral
         bs "Oh..."
@@ -74,8 +74,8 @@ label toasty_hints:
     elif quest.retainer:
         show posty happy
         show toasty neutral
-        p "Oof I glad I made Retainer happy again, I can't wait to take a nap."
-        t pointandlaugh "Ohohoho what do we have here: thinking of turning truant for the treacherous mistress known as sleep?"
+        p "Oof, am I glad I made Retainer happy again. I can't wait to take a nap."
+        t pointandlaugh "Ohohoho, what do we have here? Thinking of turning truant for the treacherous mistress known as sleep?"
         p annoyed "Stop speaking like a Victorian; you don't appear to have anything better to do."
         t smug "I concede that I am not the shiniest appliance in this messy kitchen we call life, but I don't recall you having a keen interest in lepidopterology."
         p suspicious "Lepidoptrolowhat? Is that even a word or are you trying to get one up on me?"
@@ -88,15 +88,19 @@ label toasty_hints:
 
     elif item.makeshift_trophy:
         show posty neutral
-        show toasty enthused 
-        t "You have a nice trophy with ya, what you going to do with it?"
+        show toasty smug
+        t "You have a nice trophy with ya. Whatcha get it for, participation?"
+        p "No, just made it myself."
+        t enthused "What you going to do with it?"
         p "Dunno, probably put it on a shelf at home; pretend to be a winner and show it off."
-        t smug "Well it would severely clash with the decor, especially with the grey curtains and general lack of furniture."
+        t smug "Well, it would severely clash with the decor, especially with the grey curtains and general lack of furniture."
         p annoyed "Rude. Also how did you know what my-"
         t crossedarms "Keep your petty questions for later! You said this thing made you feel like a winner, right?"
         p suspicious "Yeah?"
-        t "Well I think there is someone who would like that feeling, someone down on their luck..."
+        t "Well, I think there is someone who would like that feeling, someone down on their luck..."
         t enthused "A big hulking trophy would bring their spirits right up!"
+        p "Who? You?"
+        t smug2 "Sister, my spirits are already up watching you wander around this street."
         return
 
     elif item.scrapmetal:
@@ -111,8 +115,8 @@ label toasty_hints:
         t smug "No, I didn't."
         p "Right."
         t neutral "No, really."
-        p "Well what am I supposed to do with this?"
-        t "What do I look like, some kind of tool? Figure it out yourself!"
+        p "Well, what am I supposed to do with this?"
+        t annoyed "What do I look like, a guide book? Figure it out yourself!"
         return
     
     elif item.notice:
@@ -139,16 +143,16 @@ label toasty_hints:
         p "Hey Toasty, check this out!"
         t pointandlaugh "A napkin? How considerate!"
         t "I just had a good chocolate donut!"
-        p concerned "Toasty don't-"
+        p concerned "Toasty, don't-"
         hide badpainting
-        "Toasty took the {b}napkin \"painting\"{/b}!"
+        "Toasty took the {b}napkin \"painting!\"{/b}"
         p sad "That was a painting someone kindly gifted me!"
         t annoyed "What, this tatty thing? A painting?"
         t "Puhlease with the jokes."
         p annoyed "Just look at it."
         show badpainting
         t smug "You call this a painting?!"
-        t "Honestly you better not make any enemies if this counts as a gift."
+        t "Honestly, you better not make any enemies if this counts as a gift."
         t "I almost feel sorry for you."
         p "Ha. Ha. Ha."
         t "So what landfill did you get this from?"
@@ -157,9 +161,10 @@ label toasty_hints:
         t laugh "Nice save!"
         p "After giving them a bag of chips. You should've seen them pour out their gratitude."
         p "That is how I got this thing."
-        t neutral "Damn, I feel bad now-"
+        p "Admittedly, it's not great, but it clearly meant a lot to them. They called it their \"greatest work!\""
+        t neutral "Well gee, I feel bad now."
         show badpainting
-        "Toasty gave back the {b}napkin \"painting\"{/b}!"
+        "Toasty gave back the {b}napkin \"painting!\"{/b}"
         hide badpainting
         p "You feeling sorry for someone? That's character development I thought I'd never see!"
         t laugh "Bad that you gave away a perfectly good bag of chips for this!"
@@ -172,15 +177,15 @@ label toasty_hints:
         else:
             p annoyed quiet "..."
         t "Well, who would pay a huge, huuuge amount for worthless scribbles?"
-        t "Well it would be anyone who needed to look all snooty and fancy!"
+        t "Well, it would be anyone who needed to look all snooty and fancy!"
         t "But how, Toaster the Moster? Surely their superior tastes would stall us from making millions via such low tactics?"
-        t "Well what if they want to be fooled?"
+        t "Well, what if they want to be fooled?"
         t "If it appears sufficiently advanced and esoteric, then they can simply ramble randomly about its various \"nuances.\""
-        t "As a wise guy once said, 'Eye is in the art of the beholder' or something deep like that!"
+        t "As a wise guy once said, \"Eye is in the art of the beholder\" or something deep like that!"
         t "If I had an approximation of art, I would go towards the snootiest person in the area!"
-        t "They wouldn't let go of an opportunity to act high and mighty over lowly plebs about the \"beauties of maximal-detrius-desalination-debris murals in an abstract and expressive makeshift canvas in the modern era\", they would make entire reviews about it!"
+        t "They wouldn't let go of an opportunity to act high and mighty over lowly plebs about the \"beauties of maximal-detrius-desalination-debris murals in an abstract and expressive makeshift canvas in the modern era,\" they would make entire reviews about it!"
         t "Before we can say \"easel\", we will be super rich beyond our wildest dreams!!"
-        t "Ohohoho can't wait to see her look when I roll past her in a flexed out car with MY NAME ON IT!"
+        t "Ohohoho, can't wait to see her look when I roll past her in a flexed out car with MY NAME ON IT!"
         t "Ahhhhh, it would be a beautiful plan! Watching the blue block sadly walk around from the comfort of my sofa."
         t "Now to get that napkin back and fufill all my dreams..."
         t smug2 "I would looove to eat another waffle with triple syrup, but I have no napkin."
@@ -263,12 +268,12 @@ label toasty_hints:
         p "Y\'know, the one that used to be black and white and really violent?" 
         t "Yeah, what about it?"
         p "Well let's just say, I don\'t think it\'s gonna get any more visitors after... a certain \"green\" incident."
-        t "You threw green paint on a rare expensive painting? Important as an item of the era's culture and an artistic depiction of old history?"
+        t "You threw green paint on a rare expensive painting? Important as an item of an era's culture and an artistic depiction of old history?"
         p angry "Technically, it wasn't green {i}paint{/i}, but..."
         p "Never mind, I just realized you don't care."
         t smug "I'd be extremely offended if I wasn't excited about you being thrown in jail."
         t enthused "Is the painting that got damaged ok?"
-        p "Ehhhh, if you call recolored green \"ok\", then yeah."
+        p "Ehhhh, if you call recolored green \"ok,\" then yeah."
         t smug2 "Might as well check it out before the curators take it down."
         p happy "Not before I get it first!"
         return
@@ -278,7 +283,7 @@ label toasty_hints:
         show toasty neutral
         p "Duh duh dum, dum diddly dum-"
         t smug2 "Hello my most perfidious postbox."
-        p annoyed "Oh no, not again. {w}{i}\[cough]{/i} {w}So what do you need?"
+        p annoyed "Oh no, not again. {w}{i}\(cough){/i} {w}So what do you need?"
         t crossedarms "I was just wondering what you have in your hand."
         show battery_center
         p suspicious "Just a battery."
@@ -288,7 +293,7 @@ label toasty_hints:
         t smug3 "Maybe its cold metal gives tingles as though a hidden memory is unlocked from your steely heart."
         p confused "Why are you being so fancy with the descriptions?"
         t annoyed "Shut up, I'm talking here."
-        t smug5 "It must be the tasteful interspersion of Helvetica and Arial in the phrase \"PLEASE DON'T EAT, INGEST, OR SWALLOW THIS\"; gives the message some much needed depth."
+        t smug5 "It must be the tasteful interspersion of Helvetica and Arial in the phrase \"PLEASE DON'T EAT, INGEST, OR SWALLOW THIS;\" gives the message some much needed depth."
         p concerned "You're reading too much into this."
         t pointandlaugh "How else could such a nitwit like you get so tasteful?"
         p annoyed quiet "..."
@@ -398,7 +403,7 @@ label toasty_hints:
         $ toastmeister = True
         t "Well Mailmouth did say {i}(pant){/i} this thing can suck fire up!"
         t "So we need to find {i}(pant){/i} some fire {i}(pant){/i} to suck up!"
-        t "There was a {i}(pant){/i} painting {i}(pant){/i} that has {i}(pant){/i} some fire {i}(pant){/i} in the gallery."
+        t "There was a {i}(pant){/i} painting {i}(pant){/i} that had {i}(pant){/i} some fire {i}(pant){/i} in the gallery."
         t "Yeah {i}(pant){/i} that'll work."
         t "Let's give this {i}(pant){/i} back and maybe we'll get it back when it's filled with fire."
         show heavier
@@ -421,7 +426,7 @@ label toasty_hints:
             t "You could do any number of things while they\'re distracted!"
             t "Why would you go through all this effort of smuggling soup into the museum just to do nothing? Aren\'t you going to do something with it?" 
             t "You baffle me on new levels I never thought existed. Why did you just run away?!"
-            t "The painting you're stealing is unguarded. Are you scared? Just do whatever you want to do, stop waiting your time!"
+            t "The painting you're stealing is unguarded! Just do whatever you want to do, stop waiting your time!"
             $ toastybtdistracted += 1
             return
         if toastybtdistracted == 1:
@@ -581,7 +586,7 @@ label toasty_hints:
         show toasty angry
         $ nicestart += 1
         t "\"Make A Walkway! Take Them Away!\""
-        p "Whoa, Toasty what are you up to?"
+        p "Whoa, Toasty, what are you up to?"
         t crossedarms "Isn\'t it obvious?"
         t enthused "I\'m protesting." 
         extend smug5 " Because I\'m a good object."
@@ -659,7 +664,7 @@ label toasty_hints:
         show toasty neutral
         $ nicestart += 1
         t "You deal with that Brand Soda guy yet?"
-        p "Yeah. Yellow Diamond's gonna be their manager, to some degree."
+        p "Yeah. We found some kid to be their manager, to some degree."
         t "Oh good. Now what?"
         p "I'm not sure. I got some money out of it."
         t smug2 "Try spending it all in one place."
@@ -705,7 +710,7 @@ label toasty_hints:
             extend "\nit looks like you don't know how!"
             t smug3 "Look. Around here, we have a mantra:\n\"When in doubt, look around!\""
             p suspicious "I don't think that rhymes."
-            t annoyed "Well, it was supposed to, but I reworded it in my head before saying it, so now it doesn't."
+            t annoyed "Well, it was supposed to, but I reworded it in my head before saying it and..."
             t "WHATEVER!"
             t crossedarms "Basically, if you keep trying random stuff, something's bound to work."
             p neutral "Okay."
