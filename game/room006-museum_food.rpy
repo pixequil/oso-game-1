@@ -349,7 +349,7 @@ label .bin:
         binoc "If I were making a secret passageway, I'd hide a switch in one of these paintings!"
         p suspicious "So, what, you want me to go bonk my head against every painting in the room?"
         binoc smug "Sure."
-        p angry "Oh my post office. You're serious?"
+        p angry "Oh my post office. You're serious."
         binoc "Gotta bonk your head on something!"
         p "I really don't!"
         binoc "Then have fun not finding a secret passageway!"
