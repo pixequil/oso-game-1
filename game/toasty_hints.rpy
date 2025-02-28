@@ -99,7 +99,8 @@ label toasty_hints:
         p suspicious "Yeah?"
         t "Well, I think there is someone who would like that feeling, someone down on their luck..."
         t enthused "A big hulking trophy would bring their spirits right up!"
-        p "Who? You?"
+        show toasty angry
+        p neutral "Who? You?"
         t smug2 "Sister, my spirits are already up watching you wander around this street."
         return
 
