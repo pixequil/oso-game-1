@@ -106,6 +106,7 @@ image nav_domedoor p = Composite(
 
 label dome:
     $ renpy.choice_for_skipping()
+    $ renpy.save_persistent()
     $ last.mainx = 1.0
     if win_flag:
         if renpy.music.get_playing() != "sound/music/Nyakiye - 111.ogg":

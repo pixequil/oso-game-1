@@ -272,6 +272,7 @@ label museum_war:
         play music "sound/music/Gavimator - the jungle intro.ogg" if_changed
         queue music "sound/music/Gavimator - the jungle.ogg"
     $ renpy.choice_for_skipping()
+    $ renpy.save_persistent()
     call screen war_nav
 
 # label museum_war:

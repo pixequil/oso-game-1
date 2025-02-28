@@ -160,6 +160,7 @@ label museum_blue:
     #     jump .redcash
     # else:
     $ renpy.choice_for_skipping()
+    $ renpy.save_persistent()
     call screen blue_nav
 
 # label museum_blue:

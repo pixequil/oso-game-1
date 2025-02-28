@@ -140,6 +140,7 @@ label museum_entrance:
         jump .first_time
     else:
         $ renpy.choice_for_skipping()
+        $ renpy.save_persistent()
         call screen entrance_nav
 
 

@@ -72,6 +72,7 @@ label janitors:
     if saw.janitors == False:
         jump .sb1
     $ renpy.choice_for_skipping()
+    $ renpy.save_persistent()
     call screen janitor_nav
 
 # label janitors:

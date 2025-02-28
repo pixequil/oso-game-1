@@ -3,7 +3,15 @@
 image bg room:
     "bgs/room.png"
 
+default persistent.cps = False
+
 label start:
+
+# default text speed is broken in this prerelease version, so this is my hackjob
+    if not persistent.cps:
+        $ preferences.text_cps = 120
+        $ persistent.cps = True
+        $ renpy.save_persistent()
 
     jump firstscene
 

@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "3.0.0-beta"
+define config.version = "3.0.1-beta"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -121,6 +121,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## number is the number of characters per second to type out.
 
 default preferences.text_cps = 0
+define config.default_music_volume = 0.75
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
