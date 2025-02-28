@@ -3,7 +3,6 @@
 image bg room:
     "bgs/room.png"
 
-default persistent.cps = False
 
 label start:
 

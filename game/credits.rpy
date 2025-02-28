@@ -35,6 +35,7 @@ label credits:
     centered "{size=30}{cps=0}{color=#ff80df}[cred16]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#ff80b0}[cred17]{/color}{/cps}{/size}{p=[plen]}{nw}"
     show win_art
+    $ persistent.win_art = True
     pause
     centered "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n{b}THE END{/b}"
     return

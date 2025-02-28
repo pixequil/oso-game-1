@@ -365,12 +365,16 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
     add gui.main_menu_background
+    if persistent.win_art:
+        add "win_art"
 
     ## This empty frame darkens the main menu.
     frame:
