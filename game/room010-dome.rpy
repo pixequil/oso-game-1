@@ -144,8 +144,10 @@ label .cb_give:
     scene bg dome
     show posty happy
     show cb
+    p "Phew! One package of butterflies for Crayon Box!"
+    cb "That's me!"
     show butterfly_package
-    p "Phew! Here you go ma'am!"
+    p "Here you go ma'am!"
     cb "Thank you so much!"
     play music "sound/music/Nyakiye - 111 intro.ogg" fadeout 0.5
     queue music "sound/music/Nyakiye - 111.ogg"
@@ -172,8 +174,10 @@ label .retainer:
         scene bg dome
         show posty concerned
         show retainer crying with hpunch
+        retainer "This show was supposed to be my breakthrough moment! When I started making friends and doing more in my life!"
+        retainer "Instead I ended up here, without any accolades to show for it!"
         retainer "AHHHHHHHHH!"
-        p "Never mind."
+        p "I'll never get past him, not with him like {i}this{/i}."
         jump dome
     else:
         scene bg dome
@@ -186,7 +190,7 @@ label .retainer:
         p "Ah shame, it happens sometimes."
         show retainer crying with hpunch
         retainer "It was supposed to be my breakthrough moment! When I started making friends and doing more in my life!"
-        retainer "Instead I ended up here, without accolades to show for it!"
+        retainer "Instead I ended up here, without any accolades to show for it!"
         retainer "I don't understand why I did this in the first place, no one cared I was gone!"
         p concerned quiet "..."
         p -quiet "May I get past you?"
@@ -219,16 +223,16 @@ label .retainer_give:
     p quiet "{i}One man's trash...{/i}"
     retainer "And she even put a label on it!"
     p astonished -quiet "E-Eh? She did?"
-    retainer "Right here! She said I'm...\"top-grade steel\"! Crayon Box must think I showed off my greatest strengths."
+    retainer "Right here! She said I'm...\"top-grade steel!\" Crayon Box must think I showed off my greatest strengths."
     p concerned "Ah, hehe...I'm sure she did!"
     retainer "There's something else here, too..."
-    retainer sad "...\"100\% recyclable\"?"
+    retainer sad "...\"100\% recyclable?\""
     p "Uhhhhh..."
     p happy "...i-it probably means she thinks you're so versatile that you could be a contestant in just about any other show without changing anything at all!"
     p quiet "{i}...woof, that was a horrible bluff. He wouldn't believe that in a million years!{/i}"
     retainer quiet "..."
     retainer happy -quiet "...hey, you're right! I bet I could be a knockout. I'm perfect already!"
-    retainer "That settles it! Next time I see Crayon Box, I'll give her so much thanks for this trophy that she won't even know what hit her!"
+    retainer "That settles it! Next time I see Crayon Box, I'll give her so many thanks for this trophy that she won't even know what hit her!"
     p "{i}Uh oh, if he realizes Crayon Box is right over there, this could get bad...{/i}"
     p -quiet "Hold on! Don't you wanna bring this home with you first? Make sure it doesn't get damaged and all?"
     retainer "Oh! Of course! This is my proudest achievement yet! I'm not gonna let anything happen to it!"
@@ -282,8 +286,8 @@ label .sweets:
         sgummy "Yes! Being a dome means I\'ll have everything I\'ve ever wanted!"
         bonbon "You don\'t make any sense. You can\'t become a dome."
         sgummy "Why not?"
-        bonbon "If you did then that means I\'ll have to destroy you too!"
+        bonbon "If you did, then that means I\'ll have to destroy you too!"
         sgummy "You wouldn\'t because nothing could hurt me!"
-        bonbon "I can!"
-        sgummy "Yeah right!"
+        bonbon "I could so!"
+        sgummy "Yeah, right!"
         jump dome

@@ -195,7 +195,10 @@ label .redcash:
     p neutral "... This isn't real money."
     if saw.dolly:
         p "Dolly definitely won't take this."
-    p suspicious "Who even {i}would{/i} want this?"
+        p suspicious "Who even {i}would{/i} take this?"
+    else:
+        p suspicious "Who walks around with fake money?"
+
     jump museum_blue
         
 label .rt:
@@ -248,7 +251,7 @@ label .rt:
         redtile "Another piece was a striking self portait, heightened by the calculated use of fire engine red alongside carmine, creating a beautiful abstraction."
         redtile "It was the height of art!"
         redtile "You want to know what happened to such a veritable storage of culture?"
-        redtile "It was dumped into some dusty archive for some crackpot \"blue period\"."
+        redtile "It was dumped into some dusty archive for some crackpot \"blue period.\""
         redtile "Countless examplars of colour use, condemned to permanent darkness because uncultured swinish rubes, who couldn't tell the difference between garnet and salmon pink, ate up this garish mess."
         redtile "I mean, it absolutely claws at my cultural soul to watch Blue Tile rave up and down about this every single day."
         redtile "Do you know how much of my life seeps away every time I hear that idiot acting like these paintings have the slightest etch of artistic integrity in them? It hurts!"
@@ -362,7 +365,7 @@ label .rt:
         redtile "Posty, I gotta go on living!"
         p "Just throw it! Throw it when no one's looking!"
         redtile "You throw it when no one's looking!"
-        p "I can't! I'm not sneaky! They'll send me to jail and I can't afford bail on a post office salary! Please, you gotta do it for me, I'm begging you!"
+        p "I can't! I'm not sneaky! They'll send me to jail and I can't afford bail on a mailbox salary! Please, you gotta do it for me, I'm begging you!"
         redtile "Nothing doing! I can't be seen with the ladle! I'm trying to lay low! It has to be you!"
         p concerned "OK, I guess I'll do it myself."
         p angry "But if I get arrested for this..."
@@ -388,12 +391,13 @@ label .painting:
         p astonished -anim "...Woahh..."
         bluetile "You said it!!! This entire exhibition makes me feel things like astonishment, awe, and glory!"
         bluetile "Ever since these beautiful masterpieces fell from the clear skies, I've always had to watch out for jealous vandals whom I won't name-"
-        extend annoyed "{i}coughs{/i} Red Tile {i}coughs{/i}"
-        bluetile "who have a vendetta against this exquisite cultural array due to it being \"the wrong colour\"."
+        extend annoyed " {i}coughs{/i} Red Tile {i}coughs{/i}"
+        bluetile "...who have a vendetta against this exquisite cultural array due to it being \"the wrong colour\"."
         p "Uh huh..."
         extend quiet "{i} If only those bars weren't in the way...{/i}"
         bluetile giddy "Personally, I don't have a particular favorite colour, I like all the colours of the rainbow: Blue, Zaffre, Periwinkle, Azure, Denim, Glaucous and Eclipse!"
-        bluetile annoyed "But that doesn't mean I shun other colours like \"Paint the Whole Gallery Red\" Tile, I just like these pieces because of the message and the meaning behind every stroke and every frame..."
+        bluetile annoyed "But that doesn't mean I shun other colours like \"Paint the Whole Gallery Red\" Tile,"
+        extend giddy " I just like these pieces because of the message and the meaning behind every stroke and every frame..."
         p talk "Yeah yeah..."
         extend quiet "{i} How would I even carry it?{/i}"
         bluetile giddy "I am so glad we can come to such total agreement about these pieces, not just because of colours. "
@@ -404,7 +408,7 @@ label .painting:
         else:
             bluetile scared "Are you doing OK?"
             show posty neutral
-            p "Huh- Oh! I'm sorry! I think dozed off there."
+            p "Huh- Oh! I'm sorry! I think I dozed off there."
             bluetile giddy "Oh, that's alright! I get it! I sometimes feel that way when I stand here for too long too!"
             p "I should probably go. Cya!"
             jump museum_blue
@@ -436,11 +440,12 @@ label .painting:
         bluetile "Hi Posty!"
         show posty concerned
         "You look away from the painting. You don't want to be caught in a trance again. You can sense the {color=#ffff00}{i}inspiration{/i}{/color} emanating from the framed piece."
-        p "So what's so great about this piece?"
+        "You can almost hear it begging you to release it from its caged shackles."
+        p "So what's so great about this exhibit?"
         bluetile "Isn't it obvious?"
         p suspicious "Well like, is it the imagery and subject matter people make with the color blue?"
         p "I mean, with this piece, Crayon Box is something of a pop art icon nowadays."
-        bluetile "Oh of course! What people create with the lightest tints of cyan and an analogous color palette is incredible!"
+        bluetile "Oh, of course! What people create with the lightest tints of cyan and an analogous color palette is incredible!"
         bluetile annoyed "My friend Red likes to think that all I am is a numbnuts obsessed with the color blue, like I'm its number one fan and sworn protector."
         p "Aren't you though?"
         bluetile giddy "Well yeah!"
@@ -462,7 +467,7 @@ label .painting_ladle:
         hide ladle_full
         show bg blue_talk rusted
         "You repeat Red Tile's crime, splashing more miso soup on the painting!"
-        p angry "Drat, I missed! Curse you weak arms!"
+        p angry "Drat, I missed! Curse you, weak arms!"
         p annoyed "All I hit was this gate that has rusted open-"
         p astonished quiet "!!"
         p happy "I just got an idea..."
@@ -472,7 +477,7 @@ label .painting_ladle:
         extend " You now feel some {color=#ffff00}{i}inspiration{/i}{/color}!"
         hide painting_blue
         p happy "Ohohoho, I'm closer to true creativity!"
-        p astonished "Uh oh, here comes Bluey!"
+        p astonished "Uh oh, here comes Blue!"
         hide posty with moveoutleft
         show bluetile annoyed with moveinright
         $ renpy.transition(moveinleft, layer="master") #prevents interruption of the text window
@@ -503,7 +508,7 @@ label .painting_ladle_blocked:
     show posty concerned
     show bluetile scared
     $ miso_blocked = True
-    "You attempt to repeat Red Tile's crime, unsheathing the ladle filled with miso soup and preparing to toss it at the painting."
+    "You attempt to repeat Red Tile's crime, unsheathing the ladle filled with miso soup and preparing to toss it at the painting bars."
     p concerned "Alrighty, here it goes!"
     bluetile "HEY!! What do you think you're doing?!"
     p quiet "... "

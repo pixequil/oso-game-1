@@ -62,6 +62,7 @@ default saw.capsule = False
 default saw.buff = False
 default saw.binoc = False
 default saw.binoc2 = False
+default saw.auto = False
 
 # VARIOUS FLAGS
 default win_flag = False
@@ -85,6 +86,7 @@ default missedaspot = False
 default moolah = False
 default rusty = False
 default finalehint = False
+default whatdoilooklike = False
 
 # VARIOUS COUNTERS
 default money = 0

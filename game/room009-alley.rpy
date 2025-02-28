@@ -113,7 +113,7 @@ label .cash:
     if saw.dolly:
         p "Better grab it. Since I need it..."
     else:
-        p concerned "Well... their fault for misplacing it. It's an alleyway, after all."
+        p happy "Well... their fault for misplacing it!"
     hide cash_loot
     $ money += 1
     $ item.cash_alley = True
@@ -178,7 +178,7 @@ label .tag2:
     $ item.notice = False
     $ item.spraypaint = True
     $ tag_trade = True
-    "You got the {b}glittery gold spray paint{/b}! {w}If you want to make something desirable, try spraying it with glittery gold!"
+    "You got the {b}glittery gold spray paint{/b}! {w}\nIf you want to make something desirable, try spraying it with glittery gold!"
     hide spraypaint
     if item.scrap_trophy:
         call trophy
@@ -186,7 +186,7 @@ label .tag2:
         tag "I was expecting something more like tagging \"DARN THE MAN, SAVE THE EMPIRE\" but you know. A trophy is cool too."
         jump alley
     else:
-        p happy "Thanks, Tag!" 
+        p happy "Thanks, dude!" 
         tag "See ya later, firebrand."
         jump alley
 
@@ -199,7 +199,7 @@ label .tag3:
     p "I can help you get some!"
     tag "Really?! That means a lot to me that you're able to get me some more supplies!"
     p "No problem, I\'m always willing to help out a fellow artist like yourself!"
-    p "I\'m sure Graffiti \'d be proud of the kind of art you make."
+    p "I\'m sure Graffiti\'d be proud of the kind of art you make."
     tag "Heh, thanks Posty."
     p "Of course! You guys would be a great duo together!"
     jump alley

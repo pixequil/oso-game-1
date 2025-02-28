@@ -102,7 +102,7 @@ label .vend:
         hide sb with moveoutright
         p happy "Tee hee!"
     else:
-        p "Ooo a vending machine!"
+        p "Ooo, a vending machine!"
         show sb with moveinright
         sb "Hey! Uh, don't use that."
         p suspicious "Why? You said I could do anything."
@@ -113,13 +113,13 @@ label .vend:
         extend happy " rat you out?"
         sb "NO!! Uhm- ugh!"
         sb "...fine."
-        p "Yay!"
+        p "Yay! Thanks Squeezy!"
         show posty at getvend with move
         show posty at lookatvend with move
         show generichips
         $ item.chips = True
         "You got the {b}Generi-Chips{/b}!" 
-        "Generi-Chips: it has some nutrients."
+        extend "{p}{i}Generi-Chips: it has some nutrients. {/i}"
         hide generichips
         p annoyed "Eww really? Generi-Chips??"
         sb "It's better than nothing!"
@@ -139,12 +139,13 @@ label .sb1:
     p neutral "...heya."
     hide sb
     show sb # resets sb so hes facing the correct way
+    show posty astonished
     $ renpy.transition(hpunch, layer="master")
     sb "AHGDHSXJS- How d'ya get here!?"
-    p "Umm I don't know... Errrrm nice chairs?"
-    sb "You don't get to complement my chairs unless I invite you in. And I don't recall sending invitations."
+    p "Umm, I don't know... Errrrm, nice brooms?"
+    sb "You don't get to complement my brooms unless I invite you in. And I don't recall sending invitations."
     p "Errrrrrr.."
-    sb "{i}sighh{/i}  Fine! You can stay here."
+    sb "{i}(sighh){/i}  Fine! You can stay here."
     sb "Not because I am happy to do so, but because you would be too much of a pain to evict."
     sb "You can do whatever you want, but don't tell anyone about this."
     p happy "Not a single word will come out about this, sir!"
@@ -180,7 +181,7 @@ label .sb2:
     sb "Hey, speaking of which, you better not have forgotten about our deal!"
     p suspicious "Deal?"
     sb "Don't tell anyone about this secret room!"
-    p concerned "I'm kidding! Of course I didn't forget!"
+    p concerned "I'm kidding, Squeezy! Of course I didn't forget!"
     p "...Probably."
     sb "Probably?!?"
     jump janitors

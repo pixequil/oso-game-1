@@ -342,7 +342,7 @@ label .painting2:
     p "This painting looks so cool! Maybe nobody will notice if I..." 
     hide painting_war green # !! HIDING AND SHOWING THE PAINTING MOVES IT TO THE FRONT LAYER. changing its location should imply to the player that it is being 'taken'. this will probably make more sense once there are backgrounds, as the paintings will then feel more integrated.
     show painting_war green at center 
-    "You got an {b}art piece{/b}! This painting looked a lot more meaningful and violent when it was in black and white. Now it just looks green. And violent."
+    "You got an {b}art piece{/b}! \nThis painting looked a lot more meaningful and violent when it was in black and white. Now it just looks green. And violent."
     extend " It gives you a feeling of {color=#ffff00}{i}inspiration{/i}{/color}!"
     $ item.painting_war = True
     $ quest.painting_war = True
@@ -631,7 +631,7 @@ label .ahiss2:
     show posty:
         xalign -0.3
     $ renpy.transition(move, layer="master")
-    p concerned "Oh, uh, Sorry.. I forgot I'm not supposed to be back here. I just wanted to revisit and see what you were doing…"
+    p concerned "Oh, uh, Sorry. I forgot I'm not supposed to be back here. I just wanted to revisit and see what you were doing…"
     ahiss "Well I\'m doing nothing now that you're here! If you forget and revisit again, you will suffer the consequences! Now get going and don't come back!"
     jump .ahiss_deed
 
@@ -742,7 +742,7 @@ label .buff:
     buff "Why thank you! I am a fanatic when it comes to these things!"
     buff "The war exhibit in particular is one of the oldest collections of pre-OSO artwork in the world, some of them dating back thousands of years!"
     p astonished "Thousands of years?!"
-    buff "Indeed. Take this firey masterpiece here! {i}\"Abandoned In The Grill\"!{/i}"
+    buff "Indeed. Take this firey masterpiece here! {i}\"Abandoned In The Grill.\"{/i}"
     "{i}It's a painting of a truly ugly burger on fire. The fire seems very realistic, being the only good thing about the painting.{/i}"
     buff "This watercolor painting shows the very last moments of the artist who had painted it."
     buff "If you listen closely, you can hear faint crackling and screams..."
@@ -759,7 +759,7 @@ label .buffsawin: # for jumping to the middle of the conversation!
     $ item.heavier = False
     $ burger_extinguish = True
     "You used the {b}Heavier{/b} to un-light the painting on fire!"
-    p happy -quiet "Wow you have a lot of knowledge about this exhibit!"
+    p happy -quiet "Wow, you have a lot of knowledge about this exhibit!"
     p "Tell me more about this Abandoned in the Grill piece."
     buff "Why.. er... certainly!"
     buff "It is a misconception that this particular piece is called Abandoned in the Grill because the artist died in a fire..."
@@ -775,7 +775,7 @@ label .buffsawin: # for jumping to the middle of the conversation!
     show imaginary_lighter #158
     $ item.imaginary_lighter = True
     "You got the {b}imaginary lighter{/b}!"
-    "Be careful so as to not burn your imaginary friends. Though if you have imaginary enemies, use this to set them and any of their imaginary things on fire! Go ham!"
+    extend "\nBe careful so as to not burn your imaginary friends. Though if you have imaginary enemies, use this to set them and any of their imaginary things on fire! Go ham!"
     hide imaginary_lighter
     p confused "Huh?"
     buff "The imaginary and illusory don\'t follow our rules as much as they evade them."

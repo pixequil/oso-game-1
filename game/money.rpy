@@ -124,7 +124,7 @@ label .dfirst:
     dolly "How's the delivery going, Posty?"
     p happy "It's going fine I suppo-"
     p astonished "Wait a minute, how do you know my name?"
-    dolly "I have connections to your higher-ups, darling."
+    dolly "I have connections, darling."
     p confused "Wha-"
     dolly "But anyway, what brings you here today?"
     p neutral "I guess I'm just browsing." 
@@ -193,7 +193,7 @@ label .money_check:
         p happy "I have some money. Is this enough for anything?"
         dolly "Only my pocket lint."
         p astonished "ONLY POCKET LINT?!"
-        p "THIS IS SO MUCH???"
+        p "THIS IS SO MUCH!!!"
         dolly "I want {b}{color=#ffff00}all of the money in the area{/color}{/b}, Posty. More than double what you have now."
         p happy "Ok, I'll be back later."
         jump mainstreet
@@ -266,7 +266,7 @@ label .money_check:
         $ quest.moneys = True
         "You got some {b}scrap metal{/b} from the loot box!"
         play music "sound/music/REZURRECTA - ASTRUM_DEUS_P1.ogg" fadein 1.0
-        "{i}To the average person, this may be just a bunch of metal shapes, but for a skilled worker (or for whoever is willing to pay, really), it is a canvas ready to be molded into glorious masterpieces!{/i}"
+        extend "\n{i}To the average person, this may be just a bunch of metal shapes, but for a skilled worker (or for whoever is willing to pay, really), it is a canvas ready to be molded into glorious masterpieces!{/i}"
         p annoyed "Oh. Wow."
         dolly "Thank you! Come again! No refunds!"
         jump mainstreet

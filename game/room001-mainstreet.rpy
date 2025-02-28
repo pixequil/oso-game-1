@@ -311,10 +311,10 @@ label firstscene:
     btnet "Yeah, it's my biggest job yet!"
     p -anim "And you want ME to deliver it??"
     btnet "Of course! I can always trust you for a swift and intact delivery, Posty."
-    p happy "I'll take care of it right away! I have no other deliveries today, so, consider it express with no extra charge!"
+    p happy "I'll take care of it right away! Consider it express with no extra charge!"
 
     show butterfly_package
-    "Received the {b}Butterfly Package{/b}!{p}There is something fluttering inside..!"
+    "Received the {b}Butterfly Package{/b}!{p}There is something fluttering inside..."
     $ item.butterfly_package = True
     hide butterfly_package
 
@@ -338,7 +338,7 @@ label firstscene:
     t smug5 "Well, I don't even care!"
     p "K."
     t pointandlaugh "I bet you'll trip and fall on your way there!"
-    p "I have to go deliver this now. See you later Toasty."
+    p "I have to go deliver this now. See you later, Toasty."
     t laugh "Hah, well, don't come crying to me if you need help with anything!"
 
     hide toasty with moveoutright
@@ -455,9 +455,10 @@ label .tb:
         p "Hi again!"
         tb "Oh, hello!"
         tb "Heh heh..."
-        p "Isn't working in front of a theater a bit of a strange career choice for you?"
+        tb shy "Sorry, I'm a little shy..."
+        p "Isn't working in front of a movie theater a strange career choice for you then?"
         tb "I don't know...it pays well."
-        tb "Though what I really want to do is work on Broadway."
+        tb neutral "Though what I really want to do is work on Broadway."
         p happy "Good luck with that!"
         jump mainstreet
     else:
@@ -478,11 +479,10 @@ label .brandsoda:
     scene bg mainstreet
     show posty neutral
     show bs behind posty
-
-    bs "Yo, Posty! How\'s my favorite mailbox?"
     if that_dork:
         p quiet "{i}It's that dork Dolly was talking about... act natural.{/i}"
-        p astonished quiet "{i}WAIT, THIS IS MY FRIEND BRAND SODA! WTF!{/i}"
+        p astonished quiet "{i}WAIT, THIS IS MY FRIEND BRAND SODA!{/i}"
+    bs "Yo, Posty! How\'s my favorite mailbox?"
     show posty astonished -quiet
     p "Oh, hi Brand Soda. I'm busy with delivering an important package right now."
     bs "Dope. Who\'s it for?"
@@ -500,7 +500,7 @@ label .brandsoda:
     bs "And other streets caught wind and now I can't promote myself anywhere else other than here."
     p concerned "Dang...that sucks dude."
     bs "If I had a marketing agent or something, I could get enough attention on me to get back into those venues..."
-    bs "Hey, I have an idea! What if you took me around town and we can get some marketing for me?"
+    bs "Hey, I have an idea! What if you took me around town and we can find someone to do some marketing for me?"
     p "Oh, I don't know...I've got a lot on my plate right n-"
 
     show bs follow with move:
@@ -520,7 +520,7 @@ label .yd_quals:
     yd "Number 1: They should have a lot of charisma."
     yd "Not too dry or trying too hard to be cool. Just enough to make me laugh!"
     yd "Number B: They should have a lot of bouis-ness experience. Flying can be pretty technical for people to understand!"
-    yd "And Number C: They should feel like you wanna share nachos with them."
+    yd "And Number C: They should like nachos."
     yd "I really like nachos."
     yd "But I haven't found anyone yet!"
     return
@@ -536,8 +536,8 @@ label .yd:
         jump .yd_bs_happy
     elif saw.yd:
         yd "Hiiiiiiii!"
-        p neutral "Hi again. Hey, what are your qualifications for a best friend again to promote your flying lessons?"
-        yd "Oh yeah! Uhhhhhhh..."
+        p neutral "Hi again. Hey, what are your qualifications for a best friend to promote your flying lessons again?"
+        yd "Huh? Oh yeah! Uhhhhhhh..."
         call .yd_quals
         p neutral "Don't worry, I'm still looking for someone! You'll be the first to know!"
         jump mainstreet    
@@ -553,14 +553,14 @@ label .yd:
         p "What are you doing out by yourself?"
         yd "I'm an entrée-prenur!"
         p suspicious "For what?"
-        yd "Flying lessons for people who don't know how to fly! It'll be the best thing yet!"
-        yd "But I need a best fwiend to help me out with the buies-ness and give advice!"
+        yd "Flying lessons for people who don't know how to fly! It'll be the best thing ever!"
+        yd "But I need a best fwiend to help me out with the buies-ness!"
         p "You mean business?"
         yd "No, buies-ness! It's French!"
         yd "But I won't just take anybody to be my best friend! I have very special spec-sip-uh-kay-shuns!"
         call .yd_quals
         p neutral "Well, if I find anyone to help your business take off, I'll let you know."
-        yd "Hehehe flying pun! Thanks mail girl!"
+        yd "Hehehe, flying pun! Thanks, mail girl!"
         $ saw.yd = True
 
         jump mainstreet
@@ -570,14 +570,14 @@ label .yd_bs_money:
     yd "Hi Maily!"
     p "Posty."
     yd "Hi Posty!"
-    p happy "Hi Yellow Diamond. Say, I have this friend, Brand Soda, you might be interested in!"
+    p happy "Say, I have this friend, Brand Soda, you might be interested in!"
     bs "Hello strange child! Are you in need of a comedian, spokesperson, or hypeman?"
     yd "No!"
     bs "Oh ok then."
     yd "I just need a best friend to promote my flying lessons start-up! But I haven't found anyone yet! I'm sad!"
     bs "PR work, huh?"
     p happy "It's your angle, man! Go for it!"
-    bs "Say, um, yellow diamondy boy, what would this \"best friend\" need to do?"
+    bs "Say, um, diamondy boy, what would this \"best friend\" need to do?"
     yd "I need them to market my business oppurtunity! They would be the face of the company while I do all the important stuff!"
     yd "They need to be very charismatic! Are you charismatic?"
     bs "I have tons of charisma coming out of my butt!"
@@ -589,7 +589,7 @@ label .yd_bs_money:
     yd "Oh no!"
     bs "Yes, it's quite tragic..."
     bs "But you know, now I have all the time in the world and am completely available except on Tuesdays!"
-    bs "Say, is it possible that this gig could be famous?"
+    bs "Say, is it possible that this gig could be popular?"
     yd "Exactly! I am very confident it could go national!"
     bs "National marketing...wow..."
     p "Oh yeah, trust me! This yellow guy's a real visionary!"
@@ -598,7 +598,7 @@ label .yd_bs_money:
     yd "Oh, one more thing! Very important!"
     yd "Do you like nachos?"
     bs "Pffftt...I'm a nachoholic!"
-    bs "I like to put everything on them!"
+    bs "I eat them all the time!"
     yd "Wowzers! Me too!"
     yd "Is this the beginning of a beautiful friendship?"
     bs "Oh, more than that! We became best buds!"
@@ -610,7 +610,7 @@ label .yd_bs_money:
     "{b}{color=#df7dff}Brand Soda{/color}{/b} left your party!"
 
     bs "Posty! Thanks to you, I'm employed! I can't thank you enough!"
-    bs "Just to show you I'm not the heartless celebrity that everyone thinks I am, here's a bonus for helping me find a marketing agent and way back into the spotlight!"
+    bs "Just to show you I'm not the heartless celebrity that everyone thinks I am, here's a bonus for helping me find a marketing agent and my way back into the spotlight!"
 
     $ money += 1
     $ quest.bs = True
@@ -644,8 +644,7 @@ label .misoproblems:
     miso "The security guard in there said I spilled my soup on one of the security gates and almost ruined one of the paintings!"
     miso "But I didn't do it! I always bring plastic wrap to protect the soup from spilling! Honest!"
     miso "I tried telling him I didn't do it, but he wrote me a notice of reprimand anyway and kicked me out! That guy is so strict!"
-    p "Dang, that sucks..."
-    miso "Oh, it gets worse!"
+    miso "And it gets worse!"
     miso "My parents are really big art connoisseurs! If they find out that I could've destroyed something priceless, they might kick me out of their fortune!"
     p "I'm sorry, there's nothing I can really do to help right now."
     return
@@ -748,7 +747,7 @@ label .btnet:
         btnet "They make bad first impressions, expect rewards too quickly, have delusions of grandeur..."
         btnet "Smell flat..."
         bs "We're leaving."
-        p happy "Talk to you later!"
+        p happy "Talk to you later, boss!"
         jump mainstreet
 
     elif item.butterfly_package:
@@ -757,13 +756,13 @@ label .btnet:
         btnet "How's your progress on the delivery?"
         p happy "I ran into a few slip-ups, but I think I can handle it!"
         btnet "If it ever gets too difficult, I can always pass it on to someone else, like your friend Toasty or-"
-        p astonished "No it's ok! I've got it!"
-        p "I'll let you know when it's delivered!"
-        btnet "Ok Posty, good luck!"
+        p astonished "No, it's ok! I've got it!"
+        p happy "I'll let you know when it's delivered!"
+        btnet "Ok, good luck Posty!"
         jump mainstreet
 
     else:
-        show posty neutral
+        show posty happy
         p happy "I delivered the package! Crayon Box was impressed with the butterflies!"
         btnet "Excellent work, Posty! I knew you could do it!"
         p happy "Do you need me to deliver any other packages today?"
@@ -806,7 +805,7 @@ label .tooly1:
     tooly "This is a metalworking shop. Been working professionally for the past twenty years!" 
     tooly "I've got plenty of experience so if you wanted anything special crafted, I can do it pretty easily!"
     p happy "Cool!"
-    tooly "Unforch, I can't sell you any raw materials today, since I'm fresh out."
+    tooly "Unfortunately, I can't sell you any raw materials today, since I'm fresh out."
     if money == 0:
         p concerned "That's okay, I'm kinda broke."
     p concerned "What if I brought you raw materials myself?" 
@@ -879,6 +878,6 @@ label .tooly3:
     tooly "I'm going to have to report this as a concerned citizen."
     tooly "PFFFT! Nah!"
     p neutral "..."
-    tooly "Catch you later Posty!"
+    tooly "Catch you later, Posty!"
     jump mainstreet
 

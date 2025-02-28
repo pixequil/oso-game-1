@@ -111,7 +111,7 @@ label .nl:
         neon "I am Neon Lights, the resident expert for all things tubular!"
         neon "Whether you're looking for slick tunes to veg out to or just wanna appreciate the history of your favourite artists, I know the A-Zs of it."
         neon "All I need is a record and a player and I'm set for life!"
-        neon "Hopefully you will find it as stellar as I do: it wouldn't hurt to find a fellow aficionado to talk with!"
+        neon "Hopefully, you will find it as stellar as I do! It wouldn't hurt to find a fellow aficionado to talk with!"
         neon "What can I help you find?"
         $ saw.nl = True
     else:
@@ -119,7 +119,7 @@ label .nl:
         neon "Hi again! What do you need?"
     p "Nothing at the moment."
     neon "Ok..."
-    neon "Nothing. Of course. Just like I do every day I stand in front of this stupid stand for 8 stupid hours talking to these stupid-"
+    neon "Nothing, of course. Just like I do every day when I stand in front of this stupid stand for eight stupid hours talking to these stupid-"
     p concerned "Excuse me?"
     neon "...I said as long as you're still browsing, you can talk to Jukebox in the corner and play some music."
     neon "Maybe you'll like one of them enough to purchase one."
@@ -131,7 +131,7 @@ label .sheet:
     show sheet
     if (saw.sheet == False):
         show posty neutral
-        sheet "Hi, welcome to the Music Store, the home for all things audio related."
+        sheet "Hi, welcome to the Music Store, the home for all things audio-related."
         sheet "My name is Music Sheet, Sheet for short."
         sheet "Not to brag, but I know every note, rest and staff of music here!"
         sheet "Whether you are confused by semidemihemiquavers or looking for recommendations that will take you way back to your childhood, I am the guy for you!"
@@ -147,7 +147,7 @@ label .sheet:
     p "Yeah, that checks."
     sheet "To be honest, there's not much to do here other than listen to music."
     sheet "Unless you wanted to take a break and listen to music, you should probably finish delivering your package or something."
-    p annoyed "OK mom."
+    p annoyed "OK, mom."
     jump .exit
 
 label .jb:
