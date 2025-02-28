@@ -177,7 +177,7 @@ label .retainer:
         retainer "This show was supposed to be my breakthrough moment! When I started making friends and doing more in my life!"
         retainer "Instead I ended up here, without any accolades to show for it!"
         retainer "AHHHHHHHHH!"
-        p "I'll never get past him."
+        p "I'll never get past him, not with him like {i}this{/i}."
         jump dome
     else:
         scene bg dome
