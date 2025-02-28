@@ -86,6 +86,7 @@ default missedaspot = False
 default moolah = False
 default rusty = False
 default finalehint = False
+default whatdoilooklike = False
 
 # VARIOUS COUNTERS
 default money = 0

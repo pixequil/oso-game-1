@@ -117,7 +117,11 @@ label toasty_hints:
         p "Right."
         t neutral "No, really."
         p "Well, what am I supposed to do with this?"
-        t annoyed "What do I look like, a guide book? Figure it out yourself!"
+        if whatdoilooklike:
+            t annoyed "What do I look like, a {b}{color=#FFFF00}tool{/color}{/b}? Figure it out yourself!"
+        else:
+            t annoyed "What do I look like, a guide book? Figure it out yourself!"
+        $ whatdoilooklike = True
         return
     
     elif item.notice:
