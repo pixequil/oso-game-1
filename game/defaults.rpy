@@ -88,6 +88,7 @@ default rusty = False
 default finalehint = False
 default whatdoilooklike = False
 default easels_bother = False
+default binoc_obsessed = False
 
 # VARIOUS COUNTERS
 default money = 0

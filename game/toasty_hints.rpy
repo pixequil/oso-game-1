@@ -555,6 +555,11 @@ label toasty_hints:
         p suspicious "I guess there was that super sus hotdog painting..."
         show posty angry
         t pointandlaugh "Someone's hungry!!!"
+        if binoc_obsessed:
+            t smug2 "You and that {b}{color=#FFFF00}Binoculars{/color}{/b} guy must be obsessed with it or something!"
+        else:
+            t smug2 "You and that Binoculars guy must be obsessed with it or something!"
+        $ binoc_obsessed = True
         p "Okay, whatever."
         return
 
