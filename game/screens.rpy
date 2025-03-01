@@ -254,7 +254,8 @@ screen quick_menu():
             not renpy.get_screen('war_nav'),
             not renpy.get_screen('food_nav'),
             not renpy.get_screen('janitor_nav'),
-            not renpy.get_screen('tunezzz')
+            not renpy.get_screen('tunezzz'),
+            not renpy.get_screen('inventory_screen')
         ]
     ):
 
@@ -272,6 +273,20 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
+    elif not renpy.get_screen('inventory_screen'):
+        hbox:
+            xalign 1.0
+            yalign 0.0
+            imagebutton:
+                idle "inv1"
+                hover "inv2"
+                action Show("inventory_screen")
+
+
+image inv1:
+    "inventory1.png"
+image inv2:
+    "inventory2.png"
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

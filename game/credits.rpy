@@ -46,7 +46,7 @@ default cred2 = "Creative Director\n{b}FunnyBoy044{/b}\n\nProduction Director\n{
 
 default cred3 = "Puzzle Designers {b}\nSteppie Berry\nDominicK\nTawnyBarnOwl\nRiley Cooke\nMeow{/b}\n\nProgrammers {b}\nMartysh12\nA Jar of Copper Salts\nFunnyBoy044\nSatomi\nXKZ{/b}"
 
-default cred4 = "{size=+20}WRITERS{/size}\n\nItem Descriptions{b}\nThe Lemon Demon\nFluffyStar_XD\nMartysh12\nPenTick\nCrookie\nXKZ{/b}"
+default cred4 = "{size=+20}WRITERS{/size}\n\nItem Descriptions{b}\nThe Lemon Demon\nFluffyStar_XD\nMartysh12\nPenTick\nCrookie\nXKZ\nSatomi{/b}"
 
 default cred5 = "Dialogue{b}\nXKZ{space=120}xbeo\nGuru{space=120}Jurta\nMulti{space=120}m3xyuu\nracher{space=120}Satomi\nAd00d1{space=120}PenTick\nPlugBoy{space=120}Crookie\nmattArtz{space=120}Paramilk\nmintykiwi{space=120}Fanimator\nLoggybears{space=120}FunnyBoy044\nPurple Arin{space=120}AnArtichoke\n4DJumpman256{space=120}BumpBob Looly\nFluffyStar_XD{space=120}Miguel Refareal\nstrawanimations{space=120}OverbakedCracker\nTotallyNotSomeone{space=120}Foxyee Alphalicious\nLysander Phoenix (PenTick){/b}"
 

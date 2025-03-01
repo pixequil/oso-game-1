@@ -10,7 +10,7 @@ image cash_loot_nav:
     zoom 0.5
 
 image cash_total = Composite(
-    (400,400),
+    (400,200),
     (0,0), "cash_brandsoda",
     (400-260,50), "cash_bust",
     (150+20,100), "cash_alley",
