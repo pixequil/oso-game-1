@@ -545,6 +545,7 @@ label .rm:
     p concerned "Aw man!"
     p suspicious "You sure you don't have your lens cap on?"
     rm "I hope not! Ha! That would be too easy to fix! I'm sure I'll figure it out eventually though."
+    p neutral quiet "{i}This is too funny to try to solve.{/i}"
     jump museum_food
 
 # label .corndog:
