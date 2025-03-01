@@ -87,6 +87,7 @@ default moolah = False
 default rusty = False
 default finalehint = False
 default whatdoilooklike = False
+default easels_bother = False
 
 # VARIOUS COUNTERS
 default money = 0
