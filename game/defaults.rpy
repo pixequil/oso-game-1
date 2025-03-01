@@ -60,9 +60,6 @@ default saw.retainerpark = False
 default saw.easels = False
 default saw.capsule = False
 default saw.buff = False
-default saw.binoc = False
-default saw.binoc2 = False
-default saw.auto = False
 
 # VARIOUS FLAGS
 default win_flag = False
@@ -82,14 +79,9 @@ default vendingmachine_used = False
 default toastmeister = False
 default toastytwopaintings = False
 default that_dork = False
-default missedaspot = False
-default moolah = False
-default rusty = False
-default finalehint = False
-default whatdoilooklike = False
+default blue_distrust = False
 
 # VARIOUS COUNTERS
 default money = 0
 default paintings = 0
 default toastybtdistracted = 0
-default nicestart = 0
