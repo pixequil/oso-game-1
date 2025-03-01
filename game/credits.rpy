@@ -5,19 +5,12 @@ label credits:
     $ quick_menu = False
     stop music fadeout 1.0
     window hide
-    pause
     play music "sound/music/tetroid - Outro quieter.ogg" noloop
+    centered "{size=75}{cps=0}{color=#ff8080} {/color}{/cps}{/size}{p=0.5}{nw}"
     centered "{size=75}{cps=0}{color=#ff8080}Open{/color}{/cps}{/size}{p=0.5}{nw}"
     centered "{size=75}{cps=0}{color=#ff8080}Open Source{/color}{/cps}{/size}{p=0.5}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Ob{/color}{/cps}{/size}{p=0.5}{nw}"
     centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:{/color}{/cps}{/size}{p=0.5}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nT{/color}{/cps}{/size}{p=0.25}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nTh{/color}{/cps}{/size}{p=0.2}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe{/color}{/cps}{/size}{p=0.25}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe G{/color}{/cps}{/size}{p=0.2}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe Ga{/color}{/cps}{/size}{p=0.2}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe Gam{/color}{/cps}{/size}{p=0.2}{nw}"
-    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe Game{/color}{/cps}{/size}{p=0.55}{nw}"
+    centered "{size=75}{cps=0}{color=#ff8080}Open Source Objects:\nThe Game{/color}{/cps}{/size}{p=2.4}{nw}"
     centered "{size=30}{cps=0}{color=#ffae80}[cred2]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#ffdf80}[cred3]{/color}{/cps}{/size}{p=[plen]}{nw}"
     centered "{size=30}{cps=0}{color=#f0ff80}[cred4]{/color}{/cps}{/size}{p=[plen]}{nw}"
