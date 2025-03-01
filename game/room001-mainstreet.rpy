@@ -341,9 +341,12 @@ label firstscene:
     p "I have to go deliver this now. See you later, Toasty."
     t laugh "Hah, well, don't come crying to me if you need help with anything!"
 
+    "{b}{i}{color=#FFFF00}You can come back here and talk to Toasty if you ever need a hint.{/color}{/i}{/b}"
+
     hide toasty with moveoutright
 
     p "Welp. Better get going!"
+    $ renpy.display.draw.set_mouse_pos(604, 211)
 
 label mainstreet:
     $ renpy.choice_for_skipping()
