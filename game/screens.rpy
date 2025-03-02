@@ -273,7 +273,7 @@ screen quick_menu():
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
-    elif not renpy.get_screen('inventory_screen'):
+    elif not renpy.get_screen('inventory_screen') and not credits_start:
         hbox:
             xalign 1.0
             yalign 0.0

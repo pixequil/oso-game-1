@@ -329,7 +329,7 @@ label .rt:
         label .rt_money:
             menu:
                 "Offer cash." if (money > 0) and (quest.moneys == False):
-                    show cash_total
+                    show cash_total at truecenter
                     show posty concerned
                     p "Will this do?"
                     redtile "You would need to offer me way more money than that. You got anything else?"
