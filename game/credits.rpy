@@ -44,7 +44,7 @@ default cred4 = "{size=+20}WRITERS{/size}\n\nItem Descriptions{b}\nThe Lemon Dem
 
 default cred5 = "Dialogue{b}\nXKZ{space=120}xbeo\nGuru{space=120}Jurta\nMulti{space=120}m3xyuu\nracher{space=120}Satomi\nAd00d1{space=120}PenTick\nPlugBoy{space=120}Crookie\nmattArtz{space=120}Paramilk\nmintykiwi{space=120}Fanimator\nLoggybears{space=120}FunnyBoy044\nPurple Arin{space=120}AnArtichoke\n4DJumpman256{space=120}BumpBob Looly\nFluffyStar_XD{space=120}Miguel Refareal\nstrawanimations{space=120}OverbakedCracker\nTotallyNotSomeone{space=120}Foxyee Alphalicious\nLysander Phoenix (PenTick){/b}"
 
-default cred6 = "Original Writers{b}\nSteppie Berry\nBumpBob Looly\nFunnyBoy044{/b}\n\n\n\nCharacter Noises{b}\nFanimator\nFunnyBoy044\nSatomi\nBumpBob Looly{/b}"
+default cred6 = "Original Writers{b}\nSteppie Berry\nBumpBob Looly\nFunnyBoy044{/b}\n\n\n\nCharacter Noises{b}\nFanimator\nFunnyBoy044\nSatomi\nBumpBob Looly\ncoal bones{/b}"
 
 default cred7 = "{size=+20}ARTISTS{/size}\n\nMini Sprites{b}\nEmi{space=120}Urie{space=120}Nune\nEnoki{space=120}Stray{space=120}multi\nGreen{space=120}aples{space=120}JTRock\nNolvri{space=120}Satomi{space=120}brnzen\nChorkey{space=120}Legoian{space=120}Delango\nBryce B.{space=120}TOKUTETSU{space=120}skokapus\nzeekybluu{space=120}-shapester-{space=120}FunnyBoy044\nJustCherry!{space=120}MsBonnieArt{space=120}Rand0m_Anon\nSilverSpewer{space=120}4DJumpman256{space=120}alexlion0511\nmonologueslog{space=120}TheSeanimator{space=120}APotato/HriHof\nNon Edible Taco{space=120}ThatBlueSquare.{space=120}Giantonio Ortega\nRoastedToastedTea{space=120}NotReallyA_CardFan\nZ Animations Studio{/b}"
 

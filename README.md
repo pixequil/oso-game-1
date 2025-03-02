@@ -92,6 +92,7 @@ _(Don't remove the blank bullets)_
 * FunnyBoy044
 * Satomi
 * BumpBob Looly
+* coal bones
 
 ## Artists
 
