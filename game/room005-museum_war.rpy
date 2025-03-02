@@ -343,7 +343,7 @@ label .painting2:
     p "This painting looks so cool! Maybe nobody will notice if I..." 
     hide painting_war green # !! HIDING AND SHOWING THE PAINTING MOVES IT TO THE FRONT LAYER. changing its location should imply to the player that it is being 'taken'. this will probably make more sense once there are backgrounds, as the paintings will then feel more integrated.
     show painting_war green at center 
-    "You got an {b}art piece{/b}! \nThis painting looked a lot more meaningful and violent when it was in black and white. Now it just looks green. And violent."
+    "You got an {b}art piece{/b}! {w}\nThis painting looked a lot more meaningful and violent when it was in black and white. Now it just looks green. And violent."
     extend " It gives you a feeling of {color=#ffff00}{i}inspiration{/i}{/color}!"
     $ item.painting_war = True
     $ quest.painting_war = True
@@ -670,7 +670,7 @@ label .ahiss_deed:
             p neutral "Oh, look, a battery. Yoink!"
         hide battery_floor
         show battery_center
-        "You got the {b}battery{/b}!{w} A giant D battery meant to run large electrical devices."
+        "You got the {b}battery{/b}!{w} \nA giant D battery meant to run large electrical devices."
         $ item.battery = True
         hide battery_center
         if battery_asked:

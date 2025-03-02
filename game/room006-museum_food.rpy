@@ -517,12 +517,12 @@ label .painting:
     rm "Doubt it."
     hide rm with moveoutright
     show posty astonished
-    "The odd painting suddenly and inexplicably calls out to you. You are filled with {color=#ffff00}{i}inspiration{/i}{/color}."
+    "The odd painting suddenly and inexplicably calls out to you."
     p astonished quiet "{i}...I need it.{/i}"
     p happy quiet "{i}It's not like it'll be missed anyway!{/i}"
     hide painting_food
     show painting_food floor
-    "You got an {b}art piece{/b}! A strange painting depicting... brussel sprouts?"
+    "You got an {b}art piece{/b}! {w}\nA strange painting depicting... brussel sprouts? Regardless, you are filled with {color=#ffff00}{i}inspiration{/i}{/color}."
     $ item.painting_food = True
     $ quest.painting_food = True
     $ paintings += 1
