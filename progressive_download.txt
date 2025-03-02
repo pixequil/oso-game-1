@@ -6,4 +6,4 @@
 - image game/gui/**
 - image game/**
 + music game/audio/**
-+ voice game/voice/**
+- voice game/voice/**
