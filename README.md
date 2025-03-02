@@ -128,7 +128,7 @@ _(Don't remove the blank bullets)_
 * alexlion0511
 * aples
 * brnzen
-* iroha/AZ
+* TOKUTETSU
 * zeekybluu
 * skokapus
 * Delango
@@ -270,6 +270,9 @@ _(Don't remove the blank bullets)_
 * Urie
 * WalkieGuy
 * wolfolotl
+
+## Playtester
+* TOKUTETSU
 
 ## Music
 * A Jar of Copper Salts - citb (Main Menu Screen)

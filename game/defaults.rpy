@@ -87,9 +87,15 @@ default moolah = False
 default rusty = False
 default finalehint = False
 default whatdoilooklike = False
+default easels_bother = False
+default binoc_obsessed = False
 
 # VARIOUS COUNTERS
 default money = 0
 default paintings = 0
 default toastybtdistracted = 0
 default nicestart = 0
+
+# PERSISTENT (SPECIAL)
+default persistent.cps = False
+default persistent.win_art = False

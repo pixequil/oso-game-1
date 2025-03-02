@@ -3,6 +3,10 @@
 image bg museum_entrance_top:
     "map-bgs/museum_entrance_top.png"
 
+image bg museum_entrance_overlay:
+    "map-bgs/museum_entrance_overlay.png"
+    alpha 0.2
+
 image bg museum_entrance:
     "dbgs/museum_entrance_dbg.png"
     xzoom -1.0
@@ -23,6 +27,7 @@ screen entrance_nav():
     viewport:
         child_size (1280,720)
         add "bg museum_entrance_top"
+        add "bg museum_entrance_overlay"
 
         showif quest.paintings == False:
             imagebutton: # easels

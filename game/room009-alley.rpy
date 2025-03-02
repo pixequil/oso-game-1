@@ -4,6 +4,11 @@ image bg alley_top:
 image bg alley:
     "dbgs/alley_dbg.png"
 
+    
+image caution:
+    "CAUTION.png"
+    zoom 0.5
+
 default last.alleyy = 1.0
 
 screen alley_nav:
@@ -15,6 +20,14 @@ screen alley_nav:
 
         # textbutton "Show Hitboxes":
         #     action ToggleVariable("devmode",True,False)
+
+
+        imagebutton:
+            pos (790, 355)
+            idle "caution"
+        imagebutton:
+            pos (790, 385)
+            idle "caution"
 
         imagebutton:
             xanchor 0.5 
@@ -82,6 +95,8 @@ image nav_stick p = Composite(
     (0,0), "nav_stick",
     (0,10), "pnav rt"
 )
+
+
 
 label alley:
     $ renpy.choice_for_skipping()
