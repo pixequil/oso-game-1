@@ -14,7 +14,7 @@ screen inventory_screen:
             idle "butterfly_package"
             xalign 0.5
             yalign 1.3
-            action Notify("Butterfly package, addressed to Crayon Box, at the dome west of here.")
+            action Notify("Butterfly package, addressed to Crayon Box, at the dome east of here.")
 
     showif (item.painting_blue) and (quest.paintings == False):
         imagebutton:
