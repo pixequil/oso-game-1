@@ -321,10 +321,12 @@ label .bin:
         show posty angry
         binoc "Any luck?"
         p "This is stupid."
+        p "I'M NOT BONKING MY HEAD ON PAINTINGS!"
         binoc "Words of someone who doesn't want to find a secret passageway."
         p zany "Words of someone who doesn't want to bonk her head on a bunch of paintings!"
         binoc "Is there a difference, really?"
         p angry "Ugh!"
+        binoc "Come on, give it a try!"
         jump museum_food
     else:
         show binoc concerned

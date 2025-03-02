@@ -538,29 +538,35 @@ label toasty_hints:
     elif quest.paintings and (quest.money_food == False):
         show posty neutral
         show toasty neutral2
-        $ nicestart += 1
-        t "What'cha got there?"
-        p "Gold spray paint."
-        t smug3 "Wanting to get into mural art, Posty?"
-        p concerned "No, I'm just holding onto it. I'm not sure what to do with it though."
-        t enthused "Maybe you need to get some inspiration."
-        p happy "Like in the art museum?"
-        show posty angry
-        t smug2 "I was actually thinking about you ruminating in a hole in the ground, but the museum works too."
-        p "I already did that."
-        t smug "Ruminated in a hole in the ground?"
-        p "Got inspired in the museum. And I got reprimanded, and now I have this gold spray paint."
-        t annoyed "Oh right."
-        t smug3 "Well, do you feel done in the museum?"
-        p suspicious "I guess there was that super sus hotdog painting..."
-        show posty angry
-        t pointandlaugh "Someone's hungry!!!"
-        if binoc_obsessed:
-            t smug2 "You and that {b}{color=#FFFF00}Binoculars{/color}{/b} guy must be obsessed with it or something!"
+        if binoc_obsessed2:
+            p "Binoculars says to bonk my head into paintings."
+            p angry "There is no way I'm doing that."
+            t pointandlaugh "I think it would be funny!"
         else:
-            t smug2 "You and that Binoculars guy must be obsessed with it or something!"
-        $ binoc_obsessed = True
-        p "Okay, whatever."
+            $ nicestart += 1
+            t "What'cha got there?"
+            p "Gold spray paint."
+            t smug3 "Wanting to get into mural art, Posty?"
+            p concerned "No, I'm just holding onto it. I'm not sure what to do with it though."
+            t enthused "Maybe you need to get some inspiration."
+            p happy "Like in the art museum?"
+            show posty angry
+            t smug2 "I was actually thinking about you ruminating in a hole in the ground, but the museum works too."
+            p "I already did that."
+            t smug "Ruminated in a hole in the ground?"
+            p "Got inspired in the museum. And I got reprimanded, and now I have this gold spray paint."
+            t annoyed "Oh right."
+            t smug3 "Well, do you feel done in the museum?"
+            p suspicious "I guess there was that super sus hotdog painting..."
+            show posty angry
+            t pointandlaugh "Someone's hungry!!!"
+            if binoc_obsessed:
+                t smug2 "You and that {b}{color=#FFFF00}Binoculars{/color}{/b} guy must be obsessed with it or something!"
+                $ binoc_obsessed2 = True
+            else:
+                t smug2 "You and that Binoculars guy must be obsessed with it or something!"
+            $ binoc_obsessed = True
+            p "Okay, whatever."
         return
 
     elif quest.paintings and quest.bs and quest.money_food:

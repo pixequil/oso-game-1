@@ -90,6 +90,7 @@ default whatdoilooklike = False
 default easels_bother = False
 default binoc_obsessed = False
 default credits_start = False
+default binoc_obsessed2 = False
 
 # VARIOUS COUNTERS
 default money = 0
