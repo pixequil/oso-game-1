@@ -89,6 +89,7 @@ default finalehint = False
 default whatdoilooklike = False
 default easels_bother = False
 default binoc_obsessed = False
+default credits_start = False
 
 # VARIOUS COUNTERS
 default money = 0

@@ -3,6 +3,7 @@ default plen = 2.3
 label credits:
     scene black
     $ quick_menu = False
+    $ credits_start = True
     stop music fadeout 1.0
     window hide
     play music "sound/music/tetroid - Outro quieter.ogg" noloop
